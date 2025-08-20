@@ -1,0 +1,63 @@
+/*-- scss:defaults --*/
+// Theme adapted from Bootstrap LUX
+
+
+// Default the theme name
+$theme-name: if(variable-exists(theme), $theme, "gris");
+
+// Greyscale
+$white:    #fff !default;
+$grey-100: #f8f9fa !default;
+$grey-200: #f7f7f9 !default;
+$grey-300: #eceeef !default;
+$grey-400: #ced4da !default;
+$grey-500: #adb5bd !default;
+$grey-600: #919aa1 !default;
+$grey-700: #55595c !default;
+$grey-800: #343a40 !default;
+$grey-900: #1a1a1a !default;
+$black:    #000 !default;
+
+// Primary Colors
+$maroon:             #800000 !default;
+$light-greystone:    #D9D9D9 !default;
+$greystone:          #A6A6A6 !default;
+$dark-greystone:     #737373 !default;
+$footer-grey:        #404040 !default;
+$type-grey:          #4D4D4D !default;
+
+
+// Deep Accent Shades (Muted, UChicago Official)
+$brick:            #A4343A !default;   // deep brick red
+$dark-brick:       #643335 !default;   // darker, brownish red
+$dark-lake:        #002A3A !default;   // very deep blue-green
+$lake:             #007396 !default;   // deep muted teal/blue
+$dark-terracotta:   #A9431E !default;   // deep orange-brown
+$forest:           #275D38 !default;   // deep muted green
+
+// Dropdown/Accordion Category Colors (subtle yet distinct)
+$dropdown-before-class:  $brick !default;         // #A4343A
+$dropdown-class-meeting: $maroon !default;        // #800000
+$dropdown-info:          $dark-lake !default;     // #002A3A
+$dropdown-after-class:   $dark-brick !default;    // #643335
+
+// Text
+$text-on-dark:      #FAF8F5 !default;
+$text-on-light:     $maroon !default;          // For light backgrounds like $light-terracotta, use maroon or $type-grey
+
+// Shortcuts
+$primary: $maroon !default;
+$secondary: $greystone !default;
+$primary-muted: $brick !default;
+$secondary-muted: $dark-greystone !default;
+$accent1: $lake !default;
+$accent2: $dark-terracotta !default;
+$accent3: $forest !default;
+$light: $grey-200 !default;
+$dark: $grey-800 !default;
+
+// Status classes
+$success: $forest !default;
+$danger:  $brick !default;
+$info:    $lake !default;
+$warning: $dark-terracotta !default;

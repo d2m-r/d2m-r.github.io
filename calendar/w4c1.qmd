@@ -1,0 +1,164 @@
+```{=html}
+<!-- 
+
+Find and replace:
+
+- 4 : week number (numeral only)
+- 1 : class number (per week, numeral only)
+- Monday, January 27, 2025 : date in format Monday, January 1, 2025
+- Tidying & Wrangling Data : brief title/topic of the class meeting
+
+TODO: see if there's a way to make these variables
+The problem is that if they are includes with multiple on the index page, the variables would need to process before being included. 
+
+-->
+```
+
+```{=html}
+<!--
+#### Announcements/Housekeeping/Etc
+
+Text to appear before the accordion
+
+-->
+```
+
+::::::::::::::::::::::::::: {#w4c1 .accordion}
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 4 \| Class 1
+:::
+::::
+
+:::: accordion-item
+::: datebox
+Monday, January 27, 2025
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .prepbox type="button" data-bs-toggle="collapse" data-bs-target="#prep-w4c1" aria-expanded="false" aria-controls="prep-w4c1"}
+**Before class:** tidyr, forcats, stringr, purrr
+:::
+::::
+
+:::: {#prep-w4c1 .accordion-collapse .collapse data-bs-parent="#w4c1"}
+::: accordion-body
+**Readings & Resources:**
+
+-   dplyr joins
+    -   [documentation](https://dplyr.tidyverse.org/reference/mutate-joins.html)
+    -   [r4ds: 19 - joins](https://r4ds.hadley.nz/joins)
+-   tidyr
+    -   [documentation](https://tidyr.tidyverse.org/) & [cheatsheet](https://rstudio.github.io/cheatsheets/html/tidyr.html)
+    -   [tidyverse guide to tidy data](https://tidyr.tidyverse.org/articles/tidy-data.html)
+    -   [r4ds: 5 – Data tidying](https://r4ds.hadley.nz/data-tidy)
+-   forcats
+    -   [documentation](https://forcats.tidyverse.org/) & [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf)
+    -   [r4ds: 16 – Factors](https://r4ds.hadley.nz/factors)
+-   stringr
+    -   [documentation](https://stringr.tidyverse.org/) & [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/strings.pdf)
+    -   [r4ds: 14 – Strings](https://r4ds.hadley.nz/strings)
+    -   [r4ds: 15 – Regular expressions](https://r4ds.hadley.nz/regexps)
+-   purrr *(advanced, low priority for d2mr)*
+    -   [documentation](https://purrr.tidyverse.org/) & [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/purrr.pdf)
+    
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .classbox type="button" data-bs-toggle="collapse" data-bs-target="#class-w4c1" aria-expanded="false" aria-controls="class-w4c1"}
+**Class meeting:** Tidying & Wrangling Data
+:::
+::::
+
+:::: {#class-w4c1 .accordion-collapse .collapse data-bs-parent="#w4c1"}
+::: accordion-body
+**Materials:**
+
+-   [Slides](https://uchicago.box.com/s/awkyt76h3a2v6lcn37zxaii3k27z4fs1) *(updated 1/27/25 \@12:15pm)*
+
+**Class plans:**
+
+-   Lecture: Tidying & wrangling data
+    -   Demo code to be run along with the lecture (combining data, tidyr, stringr, and forcats) found in the `demo-snippets.R` script
+
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .infobox type="button" data-bs-toggle="collapse" data-bs-target="#info-w4c1" aria-expanded="false" aria-controls="info-w4c1"}
+**Info:** Class time and Slack announcements
+:::
+::::
+
+:::: {#info-w4c1 .accordion-collapse .collapse data-bs-parent="#w4c1"}
+::: accordion-body
+**Reminders:**
+
+-   Beginning this week, we will not spend class time addressing questions about class logistics, assignments, or other administrative topics. You will still have questions, and you will still get answers! But they will be asked and answered on Slack only. 
+-    I will make announcements on Slack in the dedicated `#announcements` channel. **You are responsible for all the information communicated this way, even if I never bring it up in class.** Be sure you have notifications turned on for Slack. At a minimum, you should get a notification when someone tags you or \@everyone, when someone directly replies to a thread you're in, and when someone posts in the `#announcements` channel. 
+-   There is/was an out of date version of the assessment doc in the `cleaning-level-1` mini-project. Please read the announcement in the Slack channel for more info and what to do if you have completed or intend to complete that project. 
+
+
+<!-- **Additional information:** -->
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todobox type="button" data-bs-toggle="collapse" data-bs-target="#post-4c1" aria-expanded="false" aria-controls="after-w4c1"}
+**After class:** Prepare for workshop, (5!) wrangling exercises
+:::
+::::
+
+:::: {#post-4c1 .accordion-collapse .collapse data-bs-parent="#w4c1"}
+::: accordion-body
+**To-do:** Prepare for Friday's workshop
+
+**Note:** The "conceptualize your dataset" exercise is designed to set you up for the workshop. I strongly recommend completing that exercise before Friday and spending your class time working on the to-do/to-learn list you generate, but you're free to work on other projects if you prefer.
+
+1. Select something to work on for the data preparation workshop on Friday. This can be a mini-project that involves cleaning and wrangling (not necessarily from the cleaning/wrangling categories) or part of the data prep needed for your final research project.
+2. Create a to-do list for what you'd like to accomplish in the 80 minute workshop. Note which parts you can do on your own and which parts you'd like help with. You'll have Dr. Dowling, your section TA, and your classmates to collaborate with; the more specific you can be identifying what you need help with *ahead of time* the more efficiently you'll be able to get that help.
+
+**Recommended exercises:** View slides and mini-project repo files for additional details for each exercise.
+
+-   **Conceptualize your dataset:** 
+    -   Conceptualize the dataset you'll need to create for your final research project. Imagine what kinds of figures you'd like to create or analyses you'd like to run. What variables and observations would you need for each? Articulate your research questions and hypotheses and see how they can map onto your dataset's structure. 
+    -   Create a tabular *mockup* of your goal dataset(s) using Excel, pencil and paper, or any non-programmy thing you like. Don't worry about whether you know how to get there yet. Focus on structure, not code.
+    -   In your final research project repo, create an .R script called `data-prep.R` (or similar). Use comments to write out in plain English the steps you'll need to take to turn your current dataset into your goal dataset.
+    -   Identify parts of the comments you can fill in now with R code you already know. Create a to-learn list for parts that you'll need to learn new functions or techniques.
+-   **Data wrangling structured exercises:**
+    -   ~~Walkthrough: Clean the iris Dataset~~
+        -   Walkthrough doesn't actually exist. At least not right now. Between the cleaning walkthrough, the cleaning projects, the in-class demos, and the highly structured format, you should be able to approach Level1 wrangling on your own. I may add one later if I see there is a need for it.
+    -   Level 1: Recreate a starwars Dataset
+        -   Work with a medium-sized dataset (starwars) and transform to match a goal dataset. Most tasks are outlined in the assignment script.
+        -   Associated mini-project: `02_data-wrangling/01_recreate-level-1`
+    -   Level 2: Recreate a gapminder Dataset
+        -   Work with a more complex dataset and perform more involved wrangling and transformation tasks. General guidance is given without much structured support.
+        -   Associated mini-project: `02_data-wrangling/02_recreate-level-2`
+-   **Wrangling group make-a-mess:**
+    -   Work together with a classmate to each dramatically transform/wrangle a dataset for the other(s) to recreate. Each partner will choose a publicly available dataset and transform it using tidyverse functions. You will then swap transformed datasets with your partner and attempt to recreate their work.
+    -   Associated mini-project: `02_data-wrangling/03_group-make-a-mess`
+-   **Create a data wrangling function:**
+    -   Define a function to execute procedural data wrangling tasks. Your final product should be an .R script that defines your function, then runs your function in a variety of test cases
+    -   "Wrangling" is loosely defined here. It should be a function that serves a useful and plausible purpose for data preparation.
+    -   **Note: You _may_ use your final research project data** to guide the development of your function in this mini-project, but code you submit for this mini-project will not also count toward demonstrating objectives on your final project.
+    -   Associated mini-project: `06_r-programming/03_wrangling-function`
+-   **Recreate an existing function:**
+    -   Recreate one or more existing functions from base R or a package of your choice. Your final product should be an .R script that defines your function, then compares the output with that of the original function. 
+    -   The goal is not to literally recreate the actual function, but to define a function that *conceptually* matches the function and achieves a similar result.
+    -   Note: This may sound intimidating, but it really is an any-level project. You can work towards a fully equivalent function that does produces exactly the same outpu in all cases, or you can take a function and just break it down fully conceptually without writing any code at all. Or (I expect in most cases) anywhere in between.
+    -   Associated mini-project: `06_r-programming/04_recreate-function`
+    
+:::
+::::
+:::::::
+:::::::::::::::::::::::::::

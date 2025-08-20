@@ -1,0 +1,122 @@
+---
+title: "D2M-R Site Element Theme Testing"
+---
+
+# Heading 1 (non-title)
+
+Paragraph text.
+
+## Heading 2
+
+### Heading 3
+
+Paragraph text.
+
+#### Heading 4
+
+##### Heading 5
+
+More text.
+
+###### Heading 6 -- smallest
+
+## Code Blocks
+
+An example code block using R code.
+
+```{r}
+x <- 1:10
+y <- x^2
+plot(x, y, type = "b", col = "blue", pch = 19,
+     xlab = "X-axis", ylab = "Y-axis",
+     main = "Example Plot")
+summary(lm(y ~ x))
+```
+
+
+## Boxes
+
+### Callouts
+
+::: {.callout}
+A default callout
+:::
+
+::: {.callout-important}
+An important callout
+:::
+
+::: {.callout-tip}
+A tip callout
+:::
+
+::: {.callout-note}
+A note callout
+:::
+
+::: {.callout-caution}
+A caution callout
+:::
+
+::: {.callout-warning}
+A caution callout
+:::
+
+I want to add custom ones here eventually.
+
+
+
+
+ 
+
+### Alerts
+
+::: {.alert .alert-danger role="alert"}
+Danger box!
+
+There be danger here.
+:::
+
+::: {.alert .alert-warning role="alert"}
+Warning box
+
+Be careful
+:::
+ 
+::: {.alert .alert-info role="alert"}
+Just some info, FYI.
+:::
+
+::: {.alert .alert-success role="alert"}
+Success box
+
+Hooray!
+:::
+
+
+### Buttons
+
+Hey look, it's a button:
+
+::: {.btn .btn-primary}
+Click it?
+:::
+
+Not sure why it's adding a margin within the button but it is, and for some reason this 
+one doesn't??
+
+[Alternative button ]{.btn .btn-primary .border-primary}
+
+[Warning button]{.btn .btn-warning}
+
+
+[Primary success button]{.btn .btn-primary .btn-success}
+
+[Bordered success button]{.btn .btn-success .border-success}
+
+[Secondary button]{.btn .btn-secondary}
+
+[Primary with added outline]{.btn .btn-secondary .border-primary}
+
+
+

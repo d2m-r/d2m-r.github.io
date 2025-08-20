@@ -1,13 +1,197 @@
 ---
-title: "d2m-r.github.io"
+title: "From Data to Manuscript in R"
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Winter 2025 Home
 
-```{r}
-1 + 1
-```
+- [Syllabus](syllabus/winter2025.html)
+- [Grading Policies](syllabus/grading.html)
+- [Objective-based Assessment](syllabus/assessment.html)
+- [Communication Policy](syllabus/communication.html)
+- [Classroom Climate](syllabus/climate.html)
+- [AI*2: Academic Integrity and Artificial Intelligence](syllabus/ai.html)
 
-A change to test github connection.
+### Professor
+
+  -   **Dr. Natalie Dowling**
+  -   Email: ndowling\@uchicago.edu
+  -   GitHub: \@nrdowling
+  -   Office: 1155 Building, Room 404
+    
+### Section 1
+
+  - Weekly meetings: Mondays and Fridays 1:30pm - 2:250pm
+  - 1155 E 60th St, Room 289B
+  - **TA: Mian Li**
+    - Email: lim1an\@uchicago.edu
+    - GitHub: \@lim1an
+
+### Section 2
+
+  - Weekly meetings: Mondays and Fridays 3:00pm - 4:20pm
+  - 1155 E 60th St, Room 289B
+  - **TA: Yuchen Jin**
+    - Email: yuchenjin\@uchicago.edu
+    - GitHub: \@regenchen
+    
+### Office hours
+
+Students are welcome to attend any office hours for help with ongoing work or general support, regardless of section. For discussion about grades, you should meet with your section TA or Dr. Dowling. TAs cannot discuss grades with students outside of their section.
+
+-   **Dr. Dowling**: Thursday 2pm - 4pm; 1155 E 60th St, Room 404
+    - [sign up via
+  GCal](https://calendar.app.google/b778h5XC1cwRKVeK6) or email me
+  to request an alternative time
+-   **Mian Li**: Friday ~~9am - 10:30am~~ 4:30pm - 6pm; 1155 E 60th St, MAPSS 4th Floor Lounge (no signup required)
+-   **Yuchen Jin**: Monday 4:30pm - 6pm; 1155 E 60th St, MAPSS 4th Floor Lounge (no signup required)
+
+### Hubs
+
+View the main [syllabus](syllabus/index.html) for details.
+
+-   [Course site & syllabus](https://nrdowling.github.io/d2mr/)
+-   [Slack workspace](https://join.slack.com/t/d2mr-winter2025/shared_invite/zt-2w6nggicl-wwo8WfBgSIXYeN9zUCa8cA) - moderated, requires UChicago email
+-   [Canvas](https://canvas.uchicago.edu/courses/54329)
+-   [Centralized assessment repo](https://github.com/nrdowling/d2mr-assessment)
+-   [Example repo: schelling-games](https://github.com/nrdowling/schelling-games)
+
+## Course schedule
+
+::: {.alert .alert-danger role="alert"}
+
+This schedule is subject to change. Refer to this page for syllabus updates (including new and updated links, files, etc.) throughout the quarter. Slides will typically be posted the morning of class and remain accessible through the end of the academic year.
+
+:::
+
+
+**The accordion boxes contain detailed information about each class meeting.** Tasks are color coded:
+
+-   [Ungraded assignments, preparatory tasks, readings, and resources
+    are in blue boxes.]{style="color:#005f73"}
+-   [Class meeting plans, lecture topics, and links to slides/materials are in orange boxes.]{style="color:#bb3e03"}
+-   [Reminders and extra information relevant to that class period are in
+    red boxes.]{style="color:#9b2226"}
+-   [General to-dos and optional exercises to complete following each class are in
+    teal boxes.]{style="color:#0a9396"}
+
+
+### Unit 1: Fundamentals of GitHub, R, and Quarto
+
+#### Week 1: Getting Started
+
+##### Setting Up; Solving Problems
+
+<!-- Class 1: Setting Up 1/6--> 
+{{< include calendar/w1c1.qmd >}}
+
+<!-- Class 2: Solving Problems 1/10--> 
+{{< include calendar/w1c2.qmd >}}
+
+
+#### Week 2: Fundamentals
+
+##### GitHub & R Essentials; Quarto & Markdown Essentials
+
+<!-- Class 1: GitHub & R Essentials 1/13-->
+{{< include calendar/w2c1.qmd >}}
+
+
+<!-- Class 2: Quarto & Markdown Essentials 1/17-->
+{{< include calendar/w2c2.qmd >}}
+
+
+### Unit 2: Managing data in the tidyverse
+
+#### Week 3: Welcome to the Tidyverse
+
+##### Tidy Data & Core Tidyverse Packages
+
+<!-- MONDAY MLK DAY NO CLASS 1/20-->
+<!-- Other quarters Class 2 is a demo/workshop day -->
+{{< include calendar/w3c1.qmd >}}
+
+<!-- Class 1: Welcome to the Tidyverse (overview, tibble, readr, dplyr) 1/24-->
+{{< include calendar/w3c2.qmd >}}
+
+
+#### Week 4: Manipulating Data
+
+##### Tidying & Wrangling Data; Data Preparation Workshop
+
+<!-- Class 1: Tidying & Wrangling Data (tidyr, purrr, stringr, forcats) 1/27-->
+{{< include calendar/w4c1.qmd >}}
+
+
+<!-- Class 2: Data Preparation Workshop (+ lecture catch-up) 1/31-->
+{{< include calendar/w4c2.qmd >}}
+
+
+### Unit 3: Analyzing and visualizing data
+
+#### Week 5: Data Visualization with ggplot2
+
+##### A Grammar of Graphics; Visualization Workshop
+
+<!-- Class 1: A Grammar of Graphics (aesthetics & layers) 2/3-->
+{{< include calendar/w5c1.qmd >}}
+
+
+<!-- Class 2: Visualization Workshop -->
+<!-- at least one person works through a plot conceptually on the board 2/7-->
+{{< include calendar/w5c2.qmd >}}
+
+
+#### Week 6: Presenting data for publication
+
+##### Pretty plots; Tables
+
+<!-- Class 1: "Pretty" plots 2/10-->
+{{< include calendar/w6c1.qmd >}}
+
+
+<!-- Class 2:  Tables (+ lecture catch-up) 2/14-->
+{{< include calendar/w6c2.qmd >}}
+
+
+#### Week 7: Basics of data analysis (for psychologists+)
+
+##### Descriptive Statistics; Hypothesis Testing
+<!-- This week just has a very extensive demo, no slides -->
+
+<!-- Class 1: Descriptive Statistics 2/17-->
+{{< include calendar/w7c1.qmd >}}
+
+
+<!-- Class 2: Hypothesis Testing 2/21-->
+{{< include calendar/w7c2.qmd >}}
+
+
+### Unit 4: Disseminating research dynamically
+
+
+#### Week 8: Creating your manuscript
+
+##### Dynamic text; BibTeX & citr
+
+<!-- Class 1: Dynamic text  2/24-->
+{{< include calendar/w8c1.qmd >}}
+
+
+<!-- Class 2: BibTeX & citr 2/28-->
+{{< include calendar/w8c2.qmd >}}
+
+
+#### Week 9: Publishing & polishing
+
+##### Making the most of Quarto; Your Data to Manuscript Workflow
+
+<!-- Class 1: Making the most of Quarto 3/3 -->
+{{< include calendar/w9c1.qmd >}}
+
+
+<!-- Class 2: Your Data to Manuscript Workflow 3/7 -->
+{{< include calendar/w9c2.qmd >}}
+
+
+

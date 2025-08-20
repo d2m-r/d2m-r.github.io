@@ -1,0 +1,166 @@
+
+<!-- 
+
+Find and replace:
+
+- 1 : week number (numeral only)
+- 2 : class number (per week, numeral only)
+- Friday, January 10, 2025 : date in format Monday, January 1, 2025
+- Solving Problems : brief title/topic of the class meeting
+
+TODO: see if there's a way to make these variables
+The problem is that if they are includes with multiple on the index page, the variables would need to process before being included. 
+
+-->
+
+<!--
+#### Announcements/Housekeeping/Etc
+
+Text to appear before the accordion
+
+-->
+
+:::::::::::::::::::::::::::::: {#w1c2 .accordion}
+
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 1 | Class 2
+:::
+::::
+
+:::: accordion-item
+::: {.datebox}
+Friday, January 10, 2025
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .prepbox type="button" data-bs-toggle="collapse" data-bs-target="#prep-w1c2" aria-expanded="false" aria-controls="prep-w1c2"}
+**Before class:** Catch up on setup tasks and come with questions
+:::
+::::
+
+:::: {#prep-w1c2 .accordion-collapse .collapse data-bs-parent="#w1c2"}
+::: accordion-body
+**Readings & Resources:** 
+
+- [Best practices for programming in R (in D2MR)](resources/best-practices.html)
+- [Tidyverse style guide](https://style.tidyverse.org/)
+- [Natalie's D2MR style guide](resources/natalie-style-guide.html)
+- [Using GitHub with RStudio](resources/guides/rstudio-github.html)
+- [Setting Up RStudio](resources/guides/setting-up-rstudio.html)
+- [Quarto and apaquarto](resources/guides/quarto-apa.html)
+- *More resources on best practices, troubleshooting, and debugging in the info box below.*
+
+**Tasks:**
+-   Download and install R and RStudio
+-   Join GitHub & the class Slack workspace
+    -   Slack invites are sent to your UChicago email, email Dr. Dowling if you don't have one
+    -   say hi in the intro channel (at a minimum, we need you to say your full name, GitHub username, and section number; please give more of an intro if you're up for it!)
+-   Connect GitHub and RStudio ([guide](resources/guides/rstudio-github.html))
+    - You can use your final project repo for this, but consider using a "tester" to get the hang of it first.
+-   Create a GitHub repo and RStudio project for your final project that uses Quarto and the `apaquarto` extension ([guide](resources/guides/quarto-apa.html))
+    - There are (at least) 3 ways to do this! Refer to the guide to decide which method you want to use:
+        1. Start totally 100% from scratch
+        2. Add just the required apaquarto extension files to an existing project
+        3. Add all apaquarto files to an existing project
+    - confirm you can pull from and push to your remote repo on github
+    - add Dr. Dowling (@nrdowling) & section TA (S1 Mian: @lim1an; S2: Yuchen: @regenchen) as collaborators
+-   Fork the assessments repo (guide in the repo's README)
+    - clone to an RStudio project
+    - confirm you can pull from the upstream repo and push to your fork
+    - add Dr. Dowling (@nrdowling) & section TA (S1 Mian: @lim1an; S2: Yuchen: @regenchen) as collaborators
+    
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .classbox type="button" data-bs-toggle="collapse" data-bs-target="#class-w1c2" aria-expanded="false" aria-controls="class-w1c2"}
+**Class meeting: Solving Problems**
+:::
+::::
+
+:::: {#class-w1c2 .accordion-collapse .collapse data-bs-parent="#w1c2"}
+::: accordion-body
+**Materials:**
+
+- [Slides](https://uchicago.box.com/s/ry8lafqgf5zlomfz287l1fxbqq2rlh8g)
+*(v1 1/9/25 @4:15pm)*
+
+**Class plans:**
+- Lecture: Best Practices & Troubleshooting
+- Activities: *(time permitting)*
+    - Troubleshooting setup tasks
+    - Setup and experiment with copilot in RStudio
+:::
+::::
+:::::::
+
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .infobox type="button" data-bs-toggle="collapse" data-bs-target="#info-w1c2" aria-expanded="false" aria-controls="info-w1c2"}
+**Info:** More problem-solving resources
+:::
+::::
+
+:::: {#info-w1c2 .accordion-collapse .collapse data-bs-parent="#w1c2"}
+::: accordion-body
+**Reminders:**
+
+-   **Dataset:** If you don't yet have a dataset, this needs to be a top priority for you right now. Review the [dataset selection guidelines](assessment/final-project.html) and email Dr. Dowling with any questions.
+
+**Even more resources:**
+
+-   Best practices:
+    -   [Understanding the DRY Principle](https://www.plutora.com/blog/understanding-the-dry-dont-repeat-yourself-principle)
+    -   [Ultimate Programming Best Practices Guide](https://codesigningstore.com/ultimate-programming-best-practices-guide)
+    -   [6 Coding Best Practices for Beginner Programmers](https://www.educative.io/blog/coding-best-practices)
+    -   [R function lifecycle stages documentation](https://lifecycle.r-lib.org/articles/stages.html#stable)
+    -   [Tidyverse style guide](https://style.tidyverse.org/)
+    -   [Best practices for (github) repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories)
+-   Troubleshooting:
+    -   [Rubber duck debugging](https://rubberduckdebugging.com/)
+    -   [How to use stack overflow (2023 beginner's guide)](https://careeremployer.com/web-development/how-to-use-stack-overflow/)
+    -   [Dubgging with chatGPT](https://rollbar.com/blog/how-to-debug-code-using-chatgpt/)
+    -   [Common errors and warnings in R](https://statisticsglobe.com/errors-warnings-r)
+-   Relevant subreddits:
+    -   [r/Rlanguage](https://www.reddit.com/r/Rlanguage/)
+    -   [r/rprogramming](https://www.reddit.com/r/rprogramming/)
+    -   [r/RStudio](https://www.reddit.com/r/RStudio/)
+    -   [r/github](https://www.reddit.com/r/github/)
+
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todobox type="button" data-bs-toggle="collapse" data-bs-target="#post-1c2" aria-expanded="false" aria-controls="after-w1c2"}
+**After class:** Put problem-solving strategies to use
+:::
+::::
+
+:::: {#post-1c2 .accordion-collapse .collapse data-bs-parent="#w1c2"}
+::: accordion-body
+
+**To-do:** 
+
+-   Finish any setup tasks you didn't complete before class
+-   Look ahead to next Monday's class materials. Lectures next week are long and dense, so reviewing resources ahead of time is going to be very important.
+
+**Recommended exercises:** 
+
+-   Create a README.md and .gitignore for your final project repo. Practice using the problem-solving strategies from today's class to figure out 1) what these things are, 2) why they're important, and 3) how to create them. Keep best practices in mind as you do this, especially regarding comments and transparency. 
+-   Set up Copilot in RStudio and experiment a little. What do you think? How could it be useful to you? Any immediate benefits or drawback jump out at you? Is it something you want to make use of in your work?
+
+
+
+:::
+::::
+:::::::
+::::::::::::::::::::::::::::::

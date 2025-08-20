@@ -1,0 +1,155 @@
+
+<!-- 
+
+Find and replace:
+
+- 7 : week number (numeral only)
+- 2 : class number (per week, numeral only)
+- Friday, February 21, 2025 : date in format Monday, January 1, 2025
+- Hypothesis Testing : brief title/topic of the class meeting
+
+TODO: see if there's a way to make these variables
+The problem is that if they are includes with multiple on the index page, the variables would need to process before being included. 
+
+-->
+
+<!--
+#### Announcements/Housekeeping/Etc
+
+Text to appear before the accordion
+
+-->
+
+:::::::::::::::::::::::::::::: {#w7c2 .accordion}
+
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 7 | Class 2
+:::
+::::
+
+:::: accordion-item
+::: {.datebox}
+Friday, February 21, 2025
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .prepbox type="button" data-bs-toggle="collapse" data-bs-target="#prep-w7c2" aria-expanded="false" aria-controls="prep-w7c2"}
+**Before class:** Inferential Statistics Resources
+:::
+::::
+
+:::: {#prep-w7c2 .accordion-collapse .collapse data-bs-parent="#w7c2"}
+::: accordion-body
+**Readings & Resources:**
+
+- [Stats and R](https://statsandr.com/)
+    - [ANOVA in R](https://statsandr.com/blog/anova-in-r/)
+    - [Multiple linear regression made simple](https://statsandr.com/blog/multiple-linear-regression-made-simple/)
+    - [Binary logistic regression in R](https://statsandr.com/blog/binary-logistic-regression-in-r/)
+    - [Chi-square test of independence in R](https://statsandr.com/blog/chi-square-test-of-independence-in-r/)
+- [A Practical Extension of Introductory Statistics in Psychology using R](https://rpsystats.com/)
+    - Ch 5 Simple Linear Regression
+    - Ch 10 One-way ANOVA
+    - Ch 12 GLM Approach Summary
+- [Learning Statistics with R](https://open.umn.edu/opentextbooks/textbooks/559)
+    - Ch 12 Categorical data analysis
+    - Ch 14 Comparing several means (1-way ANOVA)
+    - Ch 15 Linear regression
+- [Brown VA. (2021) An Introduction to Linear Mixed-Effects Modeling in R](https://journals.sagepub.com/doi/full/10.1177/2515245920960351).
+*Advances in Methods and Practices in Psychological Science.*
+- Linear & Mixed-effects model tutorials
+    - [lme4 Tutorial 1: Linear models and linear mixed effects models in R with linguistic applications.](http://arxiv.org/pdf/1308.5499.pdf)
+    - [lme4 Tutorial 2: A very basic tutorial for performing linear mixed effects analyses](https://jontalle.web.engr.illinois.edu/MISC/lme4/bw_LME_tutorial.pdf)
+
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .classbox type="button" data-bs-toggle="collapse" data-bs-target="#class-w7c2" aria-expanded="false" aria-controls="class-w7c2"}
+**Class meeting:** Hypothesis Testing / Inferential Statistics
+:::
+::::
+
+:::: {#class-w7c2 .accordion-collapse .collapse data-bs-parent="#w7c2"}
+::: accordion-body
+
+**Materials:**
+
+- ~~Slides~~ Demo only: `d2mr-assessment/00_in-class-materials/stats-demo-2.qmd`
+
+**Class plans:**
+
+- Stats part 2 demo (inferential statistics)
+- Group work: selecting analyses
+
+:::
+::::
+:::::::
+
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .infobox type="button" data-bs-toggle="collapse" data-bs-target="#info-w7c2" aria-expanded="false" aria-controls="info-w7c2"}
+**Info:** A very long message about mini-projects
+:::
+::::
+
+:::: {#info-w7c2 .accordion-collapse .collapse data-bs-parent="#w7c2"}
+::: accordion-body
+
+I get the impression that many of you aren’t feeling confident about how to earn all the points for your mini-projects. If I’m right, I want to fix this as soon as possible since we’re nearing the end of the quarter. The 2 biggest things I want to communicate in this long message are:
+
+1. **Talk to me if you need help.**
+2. **Don’t let flexibility be a distraction.**
+
+Not sure how many projects to do? Which projects to do? What counts as assessed and unassessed and off the menu and off the syllabus or any of the other terms I’m throwing around? **Please ask me.**This is the first time using an alternative grading system in this class, and it’s important to me that it is a *better* experience for you than the old system. Clearly not everything is going 100% smoothly, and I’m learning as we go what parts of the course design need fixing. That’s all well and good for future students who will benefit from changes made going forward, but I have a responsibility to make sure the less-than-helpful parts of the system aren’t holding *you* back right now.**If you are feeling unsure about how to get the grade you want, please email me.** We can work out a plan to give you more structure and guidance to get you where you want to go. You don’t have to just flail and guess and hope for the best.In addition to encouraging you to ask for help with your specific circumstances, here are some general bits of advice:
+
+1. **Again, don’t let flexibility be a distraction.** If you’re looking at this vast “menu” and all the many times I say “do whatever!” on the website and it’s making you feel like you don’t know where to start, tune it out. Pick the mini-projects you’re going to do now from the ones already published, ignore the optional/challenge parts, and set yourself deadlines for submission (you can ask me or the TAs to help you set goals).
+2. You only have to meet 20 unique objectives across all mini-projects. Pick which 20 you want those to be and work toward them. Frustrated by git and/or apaquarto and dreading the idea of making a new repo for those purposes? Don’t include those objectives in your 20.
+    1. I expect most students will need to complete 3-5 mini-projects to earn 50 points. If you’re not sure how many you should try, budget time for 6-7.
+    2. To help you plan, I’ve put together a list of all published mini-projects along with the essential info about each. [View that list here.](https://nrdowling.com/d2mr/assessment/menu.html)
+    3. If you’re unsure how to earn a point for some particular objective, look at the recommendations in the assessment file and follow them to the letter. In some cases that will mean forcing in some arbitrary elements just to prove you can.
+3. For the other 20 points, there’s a good chance that in the work you’re already doing you are checking off some of the “unassessed” objectives. Adding lots of comments? Using internally consistent style? Planning out your plots with the grammar of graphics? Transforming your data into a tidy format because you can identify that it needs to be tidy for plotting? These are all points. When you complete the assessment for a project, look at that list carefully and see if there are any points you already did without even thinking about it and/or if there are some you could hit with minimal additional effort.
+4. You do not need to push yourself to complete projects to exceptional standards. Remember: *Done is better than good*. If you have to choose between getting something *done* and making something “good,” choose done. In this system you are cumulatively earning points, not losing points for imperfections. There’s no reason not to turn in “bad” work if it’s going to get you to your ultimate goal.
+5. If the “off-the-menu” and “off-the-syllabus” project ideas are confusing, just ignore them. You don’t need either. These are there for people who are already motivated to pursue them for their own interests, not to distract anyone from focusing on the basics.
+
+I genuinely want every person in this class to earn an A, and from what I’ve seen so far I think you all can. **Again, it’s my responsibility to make sure this new class structure is not so chaotic that it harms your learning or your grades, but I can’t help you if you don’t let me know there’s a problem.**
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todobox type="button" data-bs-toggle="collapse" data-bs-target="#post-7c2" aria-expanded="false" aria-controls="after-w7c2"}
+**After class:** Get organized! And test hypotheses
+:::
+::::
+
+:::: {#post-7c2 .accordion-collapse .collapse data-bs-parent="#w7c2"}
+::: accordion-body
+
+**To-do: Make/review you plan**
+
+- It’s the end of 7th week — how close are you to the 50 mini-project points? The 40 research project points? What do you need to do to get the grade you want by the end of the quarter?
+- Deadlines:
+    - Mini-projects due **March 5th** (Wed Week 9)
+    - Final research projects due **March 12th** (Wed Finals Week)
+
+**Recommended exercise:**
+
+- **Inferential statistics structured exercise:**
+    - Practice using R to analyze data with common inferential statistics techniques. The exercise includes some work with ggplot2 and opportunities to use inline R code in narrative statistical interpretation.
+    - Associated files: `04_data-analysis/02_hypothesis-testing`
+ 
+
+:::
+::::
+:::::::
+::::::::::::::::::::::::::::::

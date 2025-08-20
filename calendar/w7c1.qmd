@@ -1,0 +1,142 @@
+
+<!-- 
+
+Find and replace:
+
+- 7 : week number (numeral only)
+- 1 : class number (per week, numeral only)
+- Monday, February 17, 2025 : date in format Monday, January 1, 2025
+- Descriptive Statistics : brief title/topic of the class meeting
+
+TODO: see if there's a way to make these variables
+The problem is that if they are includes with multiple on the index page, the variables would need to process before being included. 
+
+-->
+
+<!--
+#### Announcements/Housekeeping/Etc
+
+Text to appear before the accordion
+
+-->
+
+:::::::::::::::::::::::::::::: {#w7c1 .accordion}
+
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 7 | Class 1
+:::
+::::
+
+:::: accordion-item
+::: {.datebox}
+Monday, February 17, 2025
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .prepbox type="button" data-bs-toggle="collapse" data-bs-target="#prep-w7c1" aria-expanded="false" aria-controls="prep-w7c1"}
+**Before class:** Descriptive Statistics Resources
+:::
+::::
+
+:::: {#prep-w7c1 .accordion-collapse .collapse data-bs-parent="#w7c1"}
+::: accordion-body
+**Readings & resources:**
+
+- [Stats and R](https://statsandr.com/)
+    - [Correlogram in R: how to highlight the most correlated variables in a
+    dataset](https://statsandr.com/blog/correlogram-in-r-how-to-highlight-the-most-correlated-variables-in-a-dataset/)
+    - [Correlation coefficient and correlation test in R](https://statsandr.com/blog/correlation-coefficient-and-correlation-test-in-r/)
+    - [What statistical test should I do?](https://statsandr.com/blog/what-statistical-test-should-i-do/)
+        - With a much bigger and better flowchart than mine!!
+    - [Descriptive statistics in R](https://statsandr.com/blog/descriptive-statistics-in-r/)
+- [A Practical Extension of Introductory Statistics in Psychology using R](https://rpsystats.com/)
+    - Ch 6 Correlation
+    - Ch 7 One-sample t-test
+    - Ch 8 Dependent samples t-test
+    - Ch 9 Independent samples t-test
+- [Learning Statistics with R](https://open.umn.edu/opentextbooks/textbooks/559)
+    - Ch 5 Descriptive Statistics
+    - Ch 13 Comparing two means
+- [Desc. Stats. in R: Intro to Descriptive Statistics](https://libguides.princeton.edu/R-Descriptive) (Princeton Research Guide)
+- [Descriptives in R](https://www.datacamp.com/doc/r/descriptives) (Datacamp)
+- Intro to R for Adv. Research Methods: [Ch5 Descriptive Statistics and T-Tests in R](https://ryandonovan93.github.io/rintro/descriptive-statistics-and-t-tests-in-r.html) (University of Galway)
+
+**Essential Stats Packages for Psychologists:**
+
+- [stats](https://www.rdocumentation.org/packages/stats/versions/3.6.2) - essential statistics functions
+- [psych](https://www.rdocumentation.org/packages/psych/versions/2.4.12) - general purpose stats toolbox, originally for psychologists but with wider applicability
+- [DescTools](https://andrisignorell.github.io/DescTools/) - tools for descriptive statistics
+- [lme4](https://www.rdocumentation.org/packages/lme4/versions/1.1-36) - linear mixed effects models
+- [lmerTest](https://www.rdocumentation.org/packages/lmerTest/versions/3.1-3/topics/lmerTest-package) - add-on for lme4, adds p-values
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .classbox type="button" data-bs-toggle="collapse" data-bs-target="#class-w7c1" aria-expanded="false" aria-controls="class-w7c1"}
+**Class meeting:** Descriptive Statistics
+:::
+::::
+
+:::: {#class-w7c1 .accordion-collapse .collapse data-bs-parent="#w7c1"}
+::: accordion-body
+
+**Materials:**
+
+- ~~Slides~~ Demo only: `d2mr-assessment/00_in-class-materials/stats-demo-1.qmd`
+
+**Class plans:**
+
+- Stats part 1 demo (descriptive statistics)
+
+:::
+::::
+:::::::
+
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .infobox type="button" data-bs-toggle="collapse" data-bs-target="#info-w7c1" aria-expanded="false" aria-controls="info-w7c1"}
+**Info:** CLASS CANCELLED
+:::
+::::
+
+:::: {#info-w7c1 .accordion-collapse .collapse data-bs-parent="#w7c1"}
+::: accordion-body
+**Notice:**
+
+We will not meet for class today. Review the descriptive stats demo on your own. The TAs will be available for real-time help in the `#help-stats-and-analysis` channel during our normal class time.
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todobox type="button" data-bs-toggle="collapse" data-bs-target="#post-7c1" aria-expanded="false" aria-controls="after-w7c1"}
+**After class:** Stats!
+:::
+::::
+
+:::: {#post-7c1 .accordion-collapse .collapse data-bs-parent="#w7c1"}
+::: accordion-body
+
+**To-do:** 
+
+Take some time to plan out what statistics you'll want to run on your data for your final research project, both descriptive and inferential. Remember that you'll need to include both for full points. We'll cover how to implement common hypothesis testing/inferential statistics on Friday (e.g., ANOVA, chi2, linear regression, glm), and you'll want to be ready to try them out with your data during class. If you know you'll need to include a specific kind of analysis that's not one of the "basics," drop a message in the `#help-stats-and-analysis` channel with info about what you'll be using and I may add it to the materials for Friday if it's something I think others would benefit from covering too.
+
+**Recommended exercise:** 
+
+- **Descriptive statistics structured exercise:**
+    - Practice using R to calculate and interpret descriptive statistics. Unlike in previous assignments, you will not use a built-in dataset. Instead, you will use data from a published, open-access dataset capturing relationships between math anxiety and self-perception. The exercise includes simple tasks with tables and ggplot.
+    - Associated files: `04_data-analysis/01_descriptive`
+
+:::
+::::
+:::::::
+::::::::::::::::::::::::::::::

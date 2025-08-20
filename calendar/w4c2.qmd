@@ -1,0 +1,110 @@
+
+<!-- 
+
+Find and replace:
+
+- 4 : week number (numeral only)
+- 2 : class number (per week, numeral only)
+- Friday, January 31, 2025 : date in format Monday, January 1, 2025
+- Data Preparation Workshop : brief title/topic of the class meeting
+
+TODO: see if there's a way to make these variables
+The problem is that if they are includes with multiple on the index page, the variables would need to process before being included. 
+
+-->
+
+<!--
+#### Announcements/Housekeeping/Etc
+
+Text to appear before the accordion
+
+-->
+
+:::::::::::::::::::::::::::::: {#w4c2 .accordion}
+
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 4 | Class 2
+:::
+::::
+
+:::: accordion-item
+::: {.datebox}
+Friday, January 31, 2025
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .prepbox type="button" data-bs-toggle="collapse" data-bs-target="#prep-w4c2" aria-expanded="false" aria-controls="prep-w4c2"}
+**Before class:** Make a plan!
+:::
+::::
+
+:::: {#prep-w4c2 .accordion-collapse .collapse data-bs-parent="#w4c2"}
+::: accordion-body
+
+*(same as "after class" above, just worth saying twice!)*
+
+1. Select something to work on in class. This can be a mini-project that involves cleaning and wrangling (not necessarily from the cleaning/wrangling categories) or part of the data prep needed for your final research project.
+2. Create a to-do list for what you'd like to accomplish in the 80 minute workshop. Note which parts you can do on your own and which parts you'd like help with. You'll have Dr. Dowling, your section TA, and your classmates to collaborate with; the more specific you can be identifying what you need help with *ahead of time* the more efficiently you'll be able to get that help.
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .classbox type="button" data-bs-toggle="collapse" data-bs-target="#class-w4c2" aria-expanded="false" aria-controls="class-w4c2"}
+**Class meeting:** Data Preparation Workshop
+:::
+::::
+
+:::: {#class-w4c2 .accordion-collapse .collapse data-bs-parent="#w4c2"}
+::: accordion-body
+
+
+**Class plans:**
+
+-   Catch-up: If needed, we'll catch up on any slides we didn't get through on Monday.
+- Workshop: Data preparation - work solo, together with classmates, and with the support of Dr. Dowling & the TAs to make progress on either the data prep tasks necessary for your final project or a mini-project relating to (at least in part) data cleaning and wrangling.
+
+:::
+::::
+:::::::
+
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .infobox type="button" data-bs-toggle="collapse" data-bs-target="#info-w4c2" aria-expanded="false" aria-controls="info-w4c2"}
+**Info:** 
+:::
+::::
+
+:::: {#info-w4c2 .accordion-collapse .collapse data-bs-parent="#w4c2"}
+::: accordion-body
+**Reminders:**
+
+**Additional information:**
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todobox type="button" data-bs-toggle="collapse" data-bs-target="#post-4c2" aria-expanded="false" aria-controls="after-w4c2"}
+**After class:** 
+:::
+::::
+
+:::: {#post-4c2 .accordion-collapse .collapse data-bs-parent="#w4c2"}
+::: accordion-body
+
+**To-do:** 
+
+**Recommended exercises:** 
+
+:::
+::::
+:::::::
+::::::::::::::::::::::::::::::
