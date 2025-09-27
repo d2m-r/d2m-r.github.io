@@ -4,8 +4,9 @@
 Find and replace:
 
 - %WK% : week number (numeral only)
-- %CL% : class number (per week, numeral only)
+- %CL% : class number (if multiple -- per week, numeral only)
 - %DATE% : date in format Monday, January 1, 2025
+- %DATE-1%; %DATE-2% -- for multiple dates
 - %TOPIC% : brief title/topic of the class meeting
 
 TODO: see if there's a way to make these variables
@@ -14,61 +15,65 @@ The problem is that if they are includes with multiple on the index page, the va
 -->
 
 <!--
-#### Announcements/Housekeeping/Etc
 
 Text to appear before the accordion
 
 -->
 
-:::::::::::::::::::::::::::::: {#w%WK%c%CL% .accordion}
+:::::::::::::::::::::::::::::: {#week-%WK% .accordion}
 
 :::: accordion-item
 ::: {.accordion-header .titlebox}
-Week %WK% | Class %CL%
+Week %WK% | %TOPIC%
 :::
 ::::
 
 :::: accordion-item
-::: {.datebox}
-%DATE%
+::: datebox
+%DATE-1%; %DATE-2%
 :::
 ::::
 
 ::::::: accordion-item
 :::: accordion-header
-::: {.accordion-button .collapsed .prepbox type="button" data-bs-toggle="collapse" data-bs-target="#prep-w%WK%c%CL%" aria-expanded="false" aria-controls="prep-w%WK%c%CL%"}
-**Before class:**
+::: {.accordion-button .collapsed .overview type="button" data-bs-toggle="collapse" data-bs-target="#overview-week-%WK%" aria-expanded="false" aria-controls="overview-week-%WK%"}
+**Overview**
 :::
 ::::
 
-:::: {#prep-w%WK%c%CL% .accordion-collapse .collapse data-bs-parent="#w%WK%c%CL%"}
+:::: {#overview-week-%WK% .accordion-collapse .collapse data-bs-parent="#week-%WK%"}
 ::: accordion-body
-**Readings & Resources:** 
-
-**Tasks:**
-
-:::
-::::
-:::::::
-
-::::::: accordion-item
-:::: accordion-header
-::: {.accordion-button .collapsed .classbox type="button" data-bs-toggle="collapse" data-bs-target="#class-w%WK%c%CL%" aria-expanded="false" aria-controls="class-w%WK%c%CL%"}
-**Class meeting:** %TOPIC%
-:::
-::::
-
-:::: {#class-w%WK%c%CL% .accordion-collapse .collapse data-bs-parent="#w%WK%c%CL%"}
-::: accordion-body
-
-**Materials:**
-
-- [Slides]()
 
 **Class plans:**
 
-- Lecture: 
-- Activities:
+**Primary learning objectives:**
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .materials type="button" data-bs-toggle="collapse" data-bs-target="#materials-week-%WK%" aria-expanded="false" aria-controls="materials-week-%WK%"}
+**Materials & Resources** 
+:::
+::::
+
+:::: {#materials-week-%WK% .accordion-collapse .collapse data-bs-parent="#week-%WK%"}
+::: accordion-body
+
+**Class Materials:**
+
+- [Slides]()
+- [Textbook Chapter]()
+
+<!-- software, tools, datasets, etc -->
+
+**Additional Resources:**
+
+- readings
+- cheat-sheets
+- tutorials
 
 :::
 ::::
@@ -77,33 +82,36 @@ Week %WK% | Class %CL%
 
 ::::::: accordion-item
 :::: accordion-header
-::: {.accordion-button .collapsed .infobox type="button" data-bs-toggle="collapse" data-bs-target="#info-w%WK%c%CL%" aria-expanded="false" aria-controls="info-w%WK%c%CL%"}
-**Info:** 
+::: {.accordion-button .collapsed .todo type="button" data-bs-toggle="collapse" data-bs-target="#todo-week-%WK%" aria-expanded="false" aria-controls="todo-week-%WK%"}
+**Assignments & To-Do** 
 :::
 ::::
 
-:::: {#info-w%WK%c%CL% .accordion-collapse .collapse data-bs-parent="#w%WK%c%CL%"}
+:::: {#todo-week-%WK% .accordion-collapse .collapse data-bs-parent="#week-%WK%"}
 ::: accordion-body
+
+**Graded Submissions:**
+
+**Recommended Exercises:**
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-%WK%c%CL%" aria-expanded="false" aria-controls="misc-week-%WK%"}
+**Housekeeping** 
+:::
+::::
+
+:::: {#misc-%WK%c%CL% .accordion-collapse .collapse data-bs-parent="#misc-%WK%"}
+::: accordion-body
+
+**Announcements:**
+
 **Reminders:**
 
-**Additional information:**
-:::
-::::
-:::::::
-
-::::::: accordion-item
-:::: accordion-header
-::: {.accordion-button .collapsed .todobox type="button" data-bs-toggle="collapse" data-bs-target="#post-%WK%c%CL%" aria-expanded="false" aria-controls="after-w%WK%c%CL%"}
-**After class:** 
-:::
-::::
-
-:::: {#post-%WK%c%CL% .accordion-collapse .collapse data-bs-parent="#w%WK%c%CL%"}
-::: accordion-body
-
-**To-do:** 
-
-**Recommended exercises:** 
 
 :::
 ::::

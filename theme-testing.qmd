@@ -16,11 +16,13 @@ Paragraph text.
 
 ##### Heading 5
 
-More text.
+More text, and [a link]().
 
 ###### Heading 6 -- smallest
 
-## Code Blocks
+## Code
+
+Here is some `inline code` in a sentence. Like `x <- 1:10` or `mean(1,2,3)`.
 
 An example code block using R code.
 
@@ -33,82 +35,79 @@ plot(x, y, type = "b", col = "blue", pch = 19,
 summary(lm(y ~ x))
 ```
 
-
 ## Boxes
 
 ### Callouts
 
-::: {.callout}
-A default callout
+::: callout
+A default callout doesn't have a header
 :::
 
-::: {.callout-important}
-An important callout
+::: callout-important
+## With a header
+
+An important callout, but including a header of any level replaces "Important"
 :::
 
-::: {.callout-tip}
+::: callout-tip
 A tip callout
 :::
 
-::: {.callout-note}
+::: callout-note
 A note callout
 :::
 
-::: {.callout-caution}
+::: callout-caution
 A caution callout
 :::
 
-::: {.callout-warning}
+::: callout-warning
 A caution callout
 :::
 
 I want to add custom ones here eventually.
 
-
-
-
- 
-
 ### Alerts
 
 ::: {.alert .alert-danger role="alert"}
-Danger box!
+# Danger box!
 
 There be danger here.
 :::
 
-::: {.alert .alert-warning role="alert"}
-Warning box
+::: {.alert .alert-warning .alert-dismissible .fade .show role="alert"}
+## Dismissible warning box {data-toc="false"}
 
-Be careful
+~~Adding `{#}` to the alert header removes the anchor and TOC link.~~ No, it doesn't.
+
+Be careful, but dismiss it if you want.
+
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+
+</button>
 :::
- 
-::: {.alert .alert-info role="alert"}
-Just some info, FYI.
+
+::: {.alert .alert-info .alert-dismissible .fade .show role="alert"}
+Today I learned it's dismiss*i*ble and not dismiss*a*ble. Just some info, feel free to dismiss.
+
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+
+</button>
 :::
 
 ::: {.alert .alert-success role="alert"}
-Success box
+### Success box box {#}
 
 Hooray!
 :::
-
 
 ### Buttons
 
 Hey look, it's a button:
 
-::: {.btn .btn-primary}
-Click it?
-:::
-
-Not sure why it's adding a margin within the button but it is, and for some reason this 
-one doesn't??
-
-[Alternative button ]{.btn .btn-primary .border-primary}
+[Primary button]{.btn .btn-primary .border-primary}
 
 [Warning button]{.btn .btn-warning}
-
 
 [Primary success button]{.btn .btn-primary .btn-success}
 
@@ -116,7 +115,473 @@ one doesn't??
 
 [Secondary button]{.btn .btn-secondary}
 
-[Primary with added outline]{.btn .btn-secondary .border-primary}
+[Secondary with added outline]{.btn .btn-secondary .border-secondary}
 
+# Calendar Accordions
 
+## Unit 1: Introduction
 
+::::::::::::::::::::::::::: {#w1c1 .accordion}
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 1 \| Class 1
+:::
+::::
+
+:::: accordion-item
+::: datebox
+Monday, January 1, 2025
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .prep type="button" data-bs-toggle="collapse" data-bs-target="#prep-w1c1" aria-expanded="false" aria-controls="prep-w1c1"}
+**Preparation:** Prep resources
+:::
+::::
+
+:::: {#prep-w1c1 .accordion-collapse .collapse data-bs-parent="#w1c1"}
+::: accordion-body
+**Readings & Resources:**
+
+-   Reading
+-   List
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .inclass type="button" data-bs-toggle="collapse" data-bs-target="#inclass-w1c1" aria-expanded="false" aria-controls="inclass-w1c1"}
+**Class meeting:** Class meeting topic
+:::
+::::
+
+:::: {#inclass-w1c1 .accordion-collapse .collapse data-bs-parent="#w1c1"}
+::: accordion-body
+**Materials:**
+
+-   [Slides](https://uchicago.box.com/s/q8wn46x23pe6zj3hexpu0uc8mwlbqbo9) *(v1 2/3/25 12:30pm)*
+-   [Resource link](resources/guides/origin-upstream-repos.qmd)
+
+**Class plans:**
+
+-   Lecture: Lecture title
+-   Activities:
+    -   Demo
+    -   Practice
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todo type="button" data-bs-toggle="collapse" data-bs-target="#todo-w1c1" aria-expanded="false" aria-controls="after-w1c1"}
+**To-do:** Fix your repo, start data viz projects
+:::
+::::
+
+:::: {#todo-w1c1 .accordion-collapse .collapse data-bs-parent="#w1c1"}
+::: accordion-body
+**To-do:**
+
+1.  Download a resource
+2.  Set up your repo
+3.  Plan ahead for next class
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-w1c1" aria-expanded="false" aria-controls="misc-w1c1"}
+**Misc.:** Reminders and info
+:::
+::::
+
+:::: {#misc-w1c1 .accordion-collapse .collapse data-bs-parent="#w1c1"}
+::: accordion-body
+**Reminders:**
+
+-   **Something important:** You should know this.
+    -   Here are
+    -   Some details
+:::
+::::
+:::::::
+:::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::: {#w1c2 .accordion}
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 1 \| Class 1
+:::
+::::
+
+:::: accordion-item
+::: datebox
+Monday, January 2, 2025
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .prep type="button" data-bs-toggle="collapse" data-bs-target="#prep-w1c2" aria-expanded="false" aria-controls="prep-w1c2"}
+**Preparation:** Prep resources
+:::
+::::
+
+:::: {#prep-w1c2 .accordion-collapse .collapse data-bs-parent="#w1c2"}
+::: accordion-body
+**Readings & Resources:**
+
+-   Reading
+-   List
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .inclass type="button" data-bs-toggle="collapse" data-bs-target="#inclass-w1c2" aria-expanded="false" aria-controls="inclass-w1c2"}
+**Class meeting:** Class meeting topic
+:::
+::::
+
+:::: {#inclass-w1c2 .accordion-collapse .collapse data-bs-parent="#w1c2"}
+::: accordion-body
+**Materials:**
+
+-   [Slides](https://uchicago.box.com/s/q8wn46x23pe6zj3hexpu0uc8mwlbqbo9) *(v1 2/3/25 12:30pm)*
+-   [Resource link](resources/guides/origin-upstream-repos.qmd)
+
+**Class plans:**
+
+-   Lecture: Lecture title
+-   Activities:
+    -   Demo
+    -   Practice
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todo type="button" data-bs-toggle="collapse" data-bs-target="#todo-w1c2" aria-expanded="false" aria-controls="after-w1c2"}
+**To-do:** Fix your repo, start data viz projects
+:::
+::::
+
+:::: {#todo-w1c2 .accordion-collapse .collapse data-bs-parent="#w1c2"}
+::: accordion-body
+**To-do:**
+
+1.  Download a resource
+2.  Set up your repo
+3.  Plan ahead for next class
+:::
+::::
+:::::::
+
+:::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-w1c2" aria-expanded="false" aria-controls="misc-w1c2"}
+**Misc.:** Reminders and info
+:::
+::::
+
+::::: {#misc-w1c2 .accordion-collapse .collapse data-bs-parent="#w1c2"}
+:::: accordion-body
+**Reminders:**
+
+-   **Something important:** You should know this.
+    -   Here are
+    -   Some details
+
+::: {.alert .alert-info role="alert"}
+## Important note
+
+An alert within the accordion
+:::
+::::
+:::::
+::::::::
+::::::::::::::::::::::::::::
+
+## Unit 2: More content
+
+More accordions here to test colors.
+
+::::::::::::::::::::::::::: {#w2c1 .accordion}
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 1 \| Class 1
+:::
+::::
+
+:::: accordion-item
+::: datebox
+Monday, January 1, 2025
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .prep type="button" data-bs-toggle="collapse" data-bs-target="#prep-w2c1" aria-expanded="false" aria-controls="prep-w2c1"}
+**Preparation:** Prep resources
+:::
+::::
+
+:::: {#prep-w2c1 .accordion-collapse .collapse data-bs-parent="#w2c1"}
+::: accordion-body
+**Readings & Resources:**
+
+-   Reading
+-   List
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .inclass type="button" data-bs-toggle="collapse" data-bs-target="#inclass-w2c1" aria-expanded="false" aria-controls="inclass-w2c1"}
+**Class meeting:** Class meeting topic
+:::
+::::
+
+:::: {#inclass-w2c1 .accordion-collapse .collapse data-bs-parent="#w2c1"}
+::: accordion-body
+**Materials:**
+
+-   [Slides](https://uchicago.box.com/s/q8wn46x23pe6zj3hexpu0uc8mwlbqbo9) *(v1 2/3/25 12:30pm)*
+-   [Resource link](resources/guides/origin-upstream-repos.qmd)
+
+**Class plans:**
+
+-   Lecture: Lecture title
+-   Activities:
+    -   Demo
+    -   Practice
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todo type="button" data-bs-toggle="collapse" data-bs-target="#todo-w2c1" aria-expanded="false" aria-controls="after-w2c1"}
+**To-do:** Fix your repo, start data viz projects
+:::
+::::
+
+:::: {#todo-w2c1 .accordion-collapse .collapse data-bs-parent="#w2c1"}
+::: accordion-body
+**To-do:**
+
+1.  Download a resource
+2.  Set up your repo
+3.  Plan ahead for next class
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-w2c1" aria-expanded="false" aria-controls="misc-w2c1"}
+**Misc.:** Reminders and info
+:::
+::::
+
+:::: {#misc-w2c1 .accordion-collapse .collapse data-bs-parent="#w2c1"}
+::: accordion-body
+**Reminders:**
+
+-   **Something important:** You should know this.
+    -   Here are
+    -   Some details
+:::
+::::
+:::::::
+:::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::: {#w2c2 .accordion}
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 1 \| Class 1
+:::
+::::
+
+:::: accordion-item
+::: datebox
+Monday, January 1, 2025
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .prep type="button" data-bs-toggle="collapse" data-bs-target="#prep-w2c2" aria-expanded="false" aria-controls="prep-w2c2"}
+**Preparation:** Prep resources
+:::
+::::
+
+:::: {#prep-w2c2 .accordion-collapse .collapse data-bs-parent="#w2c2"}
+::: accordion-body
+**Readings & Resources:**
+
+-   Reading
+-   List
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .inclass type="button" data-bs-toggle="collapse" data-bs-target="#inclass-w2c2" aria-expanded="false" aria-controls="inclass-w2c2"}
+**Class meeting:** Class meeting topic
+:::
+::::
+
+:::: {#inclass-w2c2 .accordion-collapse .collapse data-bs-parent="#w2c2"}
+::: accordion-body
+**Materials:**
+
+-   [Slides](https://uchicago.box.com/s/q8wn46x23pe6zj3hexpu0uc8mwlbqbo9) *(v1 2/3/25 12:30pm)*
+-   [Resource link](resources/guides/origin-upstream-repos.qmd)
+
+**Class plans:**
+
+-   Lecture: Lecture title
+-   Activities:
+    -   Demo
+    -   Practice
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todo type="button" data-bs-toggle="collapse" data-bs-target="#todo-w2c2" aria-expanded="false" aria-controls="after-w2c2"}
+**To-do:** Fix your repo, start data viz projects
+:::
+::::
+
+:::: {#todo-w2c2 .accordion-collapse .collapse data-bs-parent="#w2c2"}
+::: accordion-body
+**To-do:**
+
+1.  Download a resource
+2.  Set up your repo
+3.  Plan ahead for next class
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-w2c2" aria-expanded="false" aria-controls="misc-w2c2"}
+**Misc.:** Reminders and info
+:::
+::::
+
+:::: {#misc-w2c2 .accordion-collapse .collapse data-bs-parent="#w2c2"}
+::: accordion-body
+**Reminders:**
+
+-   **Something important:** You should know this.
+    -   Here are
+    -   Some details
+:::
+::::
+:::::::
+:::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::: {#w3c1 .accordion}
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 1 \| Class 1
+:::
+::::
+
+:::: accordion-item
+::: datebox
+Monday, January 1, 2025
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .prep type="button" data-bs-toggle="collapse" data-bs-target="#prep-w3c1" aria-expanded="false" aria-controls="prep-w3c1"}
+**Preparation:** Prep resources
+:::
+::::
+
+:::: {#prep-w3c1 .accordion-collapse .collapse data-bs-parent="#w3c1"}
+::: accordion-body
+**Readings & Resources:**
+
+-   Reading
+-   List
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .inclass type="button" data-bs-toggle="collapse" data-bs-target="#inclass-w3c1" aria-expanded="false" aria-controls="inclass-w3c1"}
+**Class meeting:** Class meeting topic
+:::
+::::
+
+:::: {#inclass-w3c1 .accordion-collapse .collapse data-bs-parent="#w3c1"}
+::: accordion-body
+**Materials:**
+
+-   [Slides](https://uchicago.box.com/s/q8wn46x23pe6zj3hexpu0uc8mwlbqbo9) *(v1 2/3/25 12:30pm)*
+-   [Resource link](resources/guides/origin-upstream-repos.qmd)
+
+**Class plans:**
+
+-   Lecture: Lecture title
+-   Activities:
+    -   Demo
+    -   Practice
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todo type="button" data-bs-toggle="collapse" data-bs-target="#todo-w3c1" aria-expanded="false" aria-controls="after-w3c1"}
+**To-do:** Fix your repo, start data viz projects
+:::
+::::
+
+:::: {#todo-w3c1 .accordion-collapse .collapse data-bs-parent="#w3c1"}
+::: accordion-body
+**To-do:**
+
+1.  Download a resource
+2.  Set up your repo
+3.  Plan ahead for next class
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-w3c1" aria-expanded="false" aria-controls="misc-w3c1"}
+**Misc.:** Reminders and info
+:::
+::::
+
+:::: {#misc-w3c1 .accordion-collapse .collapse data-bs-parent="#w3c1"}
+::: accordion-body
+**Reminders:**
+
+-   **Something important:** You should know this.
+    -   Here are
+    -   Some details
+:::
+::::
+:::::::
+:::::::::::::::::::::::::::

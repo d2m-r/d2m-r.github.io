@@ -6,9 +6,39 @@ website:
   title: "d2m-r.github.io"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: Syllabus
+        menu:
+            - text: Winter 2025 Home & Calendar
+              href: d2m-r.github.io
+            - text: D2MR Syllabus
+              href: d2m-r.github.io
+      - text: Assessment
+        menu: 
+            - text: Assessment overview
+              href: d2m-r.github.io
+            - text: Learning objectives
+              href: d2m-r.github.io
+            - text: Mini-projects
+              href: d2m-r.github.io
+            - text: Mini-project menu
+              href: d2m-r.github.io
+            - text: Research project
+              href: d2m-r.github.io
+      - text: Guides & resources
+        menu:
+            - text: D2MR Best practices
+              href: d2m-r.github.io
+            - text: Using GitHub with RStudio
+              href: d2m-r.github.io
+            - text: Setting Up RStudio
+              href: d2m-r.github.io
+            - text: Quarto & APA extension
+              href: d2m-r.github.io
+            - text: "---"
+            - text: All guides & resources
+              href: d2m-r.github.io
+      - text: FAQ
+        href: d2m-r.github.io
 
 format:
   html:
@@ -17,5 +47,4 @@ format:
     #css: styles.css
     toc: true
 
-editor: visual
 

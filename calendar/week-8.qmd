@@ -1,0 +1,119 @@
+
+<!-- 
+
+Find and replace:
+
+- 8 : week number (numeral only)
+- %CL% : class number (if multiple -- per week, numeral only)
+- %DATE% : date in format Monday, January 1, 2025
+- %DATE-1%; %DATE-2% -- for multiple dates
+- Basic Data Reporting : brief title/topic of the class meeting
+
+TODO: see if there's a way to make these variables
+The problem is that if they are includes with multiple on the index page, the variables would need to process before being included. 
+
+-->
+
+<!--
+
+Text to appear before the accordion
+
+-->
+
+:::::::::::::::::::::::::::::: {#week-8 .accordion}
+
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Week 8 | Basic Data Reporting
+:::
+::::
+
+:::: accordion-item
+::: datebox
+%DATE-1%; %DATE-2%
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .overview type="button" data-bs-toggle="collapse" data-bs-target="#overview-week-8" aria-expanded="false" aria-controls="overview-week-8"}
+**Overview**
+:::
+::::
+
+:::: {#overview-week-8 .accordion-collapse .collapse data-bs-parent="#week-8"}
+::: accordion-body
+
+**Class plans:**
+
+**Primary learning objectives:**
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .materials type="button" data-bs-toggle="collapse" data-bs-target="#materials-week-8" aria-expanded="false" aria-controls="materials-week-8"}
+**Materials & Resources** 
+:::
+::::
+
+:::: {#materials-week-8 .accordion-collapse .collapse data-bs-parent="#week-8"}
+::: accordion-body
+
+**Class Materials:**
+
+- [Slides]()
+- [Textbook Chapter]()
+
+<!-- software, tools, datasets, etc -->
+
+**Additional Resources:**
+
+- readings
+- cheat-sheets
+- tutorials
+
+:::
+::::
+:::::::
+
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .todo type="button" data-bs-toggle="collapse" data-bs-target="#todo-week-8" aria-expanded="false" aria-controls="todo-week-8"}
+**Assignments & To-Do** 
+:::
+::::
+
+:::: {#todo-week-8 .accordion-collapse .collapse data-bs-parent="#week-8"}
+::: accordion-body
+
+**Graded Submissions:**
+
+**Recommended Exercises:**
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-8c%CL%" aria-expanded="false" aria-controls="misc-week-8"}
+**Housekeeping** 
+:::
+::::
+
+:::: {#misc-8c%CL% .accordion-collapse .collapse data-bs-parent="#misc-8"}
+::: accordion-body
+
+**Announcements:**
+
+**Reminders:**
+
+
+:::
+::::
+:::::::
+::::::::::::::::::::::::::::::
