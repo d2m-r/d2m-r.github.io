@@ -1,0 +1,14 @@
+---
+title: "Course Structure"
+format: html
+---
+
+- sequence
+    - general: broad objectives (research workflow, reproducibility, collaboration), main differences between i & ii
+    - d2m-r i: course description, objectives, logistics
+    - d2m-r ii: course description, objectives, logistics
+- repos
+- canvas
+- materials overview
+    - you'll need to bring a laptop to class every day with RStudio installed
+    - textbook is a work in progress, you can contribute for course credit!

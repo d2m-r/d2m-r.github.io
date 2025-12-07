@@ -3,40 +3,45 @@ project:
   output-dir: docs
 
 website:
-  title: "d2m-r.github.io"
+  title: "Data to Manuscript in R"
   navbar:
     left:
+      - text: D2M-R Home
+        href: d2m-r.github.io
       - text: Syllabus
         menu:
-            - text: Winter 2025 Home & Calendar
-              href: d2m-r.github.io
-            - text: D2MR Syllabus
-              href: d2m-r.github.io
+            - text: Course Structure
+              href: syllabus/structure.qmd
+            - text: Communication
+              href: syllabus/communication.qmd
+            - text: AI Use
+              href: syllabus/ai-policy.qmd
+            - text: Climate & Inclusion
+              href: syllabus/climate.qmd
       - text: Assessment
         menu: 
-            - text: Assessment overview
-              href: d2m-r.github.io
-            - text: Learning objectives
-              href: d2m-r.github.io
-            - text: Mini-projects
-              href: d2m-r.github.io
-            - text: Mini-project menu
-              href: d2m-r.github.io
-            - text: Research project
-              href: d2m-r.github.io
-      - text: Guides & resources
+            - text: Overview
+              href: assessment/overview.qmd
+            - text: Learning Objectives
+              href: assessment/objectives.qmd
+            - text: Accountability
+              href: assessment/accountability.qmd
+            - text: Community Engagement
+              href: assessment/engagement.qmd
+            - text: Integrative Data Project
+              href: assessment/data-project.qmd
+      - text: Materials
         menu:
-            - text: D2MR Best practices
-              href: d2m-r.github.io
-            - text: Using GitHub with RStudio
-              href: d2m-r.github.io
-            - text: Setting Up RStudio
-              href: d2m-r.github.io
-            - text: Quarto & APA extension
-              href: d2m-r.github.io
-            - text: "---"
-            - text: All guides & resources
-              href: d2m-r.github.io
+            - text: Textbook (WIP)
+              href: d2m-r.github.io/book/index.html
+            - text: Slides
+              href: materials/slides.qmd
+            - text: Misc. Materials
+              href: materials/misc-materials.qmd
+            - text: External Resources
+              href: materials/resources.qmd
+            - text: Finding Data
+              href: materials/finding-data.qmd
       - text: FAQ
         href: d2m-r.github.io
 
