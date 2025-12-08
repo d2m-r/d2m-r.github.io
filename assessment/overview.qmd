@@ -6,52 +6,86 @@ title: "Assessment Overview"
 
 This course uses a **standards-based grading** system designed to support your skill development while accommodating diverse backgrounds, interests, and paces of learning. The system is built around the following principles:
 
-- **Standards-based**: Your grade reflects your progress on a set of clearly defined core technical skills, interchangeably referred to as "standards" and "learning objectives." 
-- **Multiple pathways**: For most standards, you may choose from more structured activities, less structured / group activities, and minimally structured or self-designed small projects. You will show your mastery in smaller assignments and an integrative research project, both of which can be tailored to your interests and developed over the full quarter.
-- **Tiered credit**: Each standard is scored using a 4 / 5 / 6 point rubric. All three levels represent success. Higher scores reflect more independent and expansive use of the skill and allow you to reach your grade goals more quickly. Lower grades may be replaced by subsequent higher grades as you develop stronger command of the skills.
-- **Individualized**: Beyond mastering technical skills that form the foundation for data analysis in R, you will also earn points for accountability, community engagement, and optional enrichment activities, with many ways to earn credit in each of these categories. There are no top-down deadlines for completing assignments to meet core standards. This structure allows you to set your own priorities based on your individual interests and goals. 
+- **Standards-based:** Your grade reflects your progress on a set of clearly defined core technical skills, interchangeably referred to as "standards" and "core objectives." 
+- **Multiple pathways:** For most standards, you may choose from more structured activities, less structured / group activities, and minimally structured or self-designed small projects. You will show your mastery in smaller assignments and an integrative research project, both of which can be tailored to your interests and developed over the full quarter.
+- **Tiered credit:** Each standard is scored using a 4 / 5 / 6 point rubric. All three levels represent success. Higher scores reflect more independent and expansive use of the skill and allow you to reach your grade goals more quickly. Lower grades may be replaced by subsequent higher grades as you develop stronger command of the skills.
+- **Individualized:** Beyond mastering technical skills that form the foundation for data analysis in R, you will also earn points for accountability, community engagement, and optional enrichment activities, with many ways to earn credit in each of these categories. There are no top-down deadlines for completing assignments to meet core standards. This structure allows you to set your own priorities based on your individual interests and goals. 
 
 ### Self‑Pacing, Deadlines, and Workflow
 
-- **No fixed interim deadlines**: You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).
-- **Planning is part of the grade**: The Accountability & Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.
-- **Early completion is allowed**: You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter.
+- **No fixed interim deadlines:** You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).
+- **Planning is part of the grade:** The Accountability & Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.
+- **Early completion is allowed:** You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter.
 
-## Broad Learning Objectives
+## Broad Learning Objectives {#sec-broad-learning-objectives}
 
-<!-- stuff about workflow, research, accountability, etc that's true for both quarters -->
-   
-   
+There are specific skill-based core learning objectives for this course, detailed in the [Core Standards](objectives.qmd) section. In addition, this course will help you develop broader skills that are essential for success as a quantitative researcher:
 
-## Point Breakdown
+1. **Develop a reproducible and transparent research workflow.** Plan, execute, and document a data analysis project from start to finish including data acquisition, cleaning, analysis, visualization, and reporting.
+2. **Practice accountability & time management.** Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.
+3. **Engage with your research communities.** Collaborate effectively with peers, contribute to group learning, and seek help when needed.
+4. **Develop problem-solving and independent learning skills.** Develop specific strategies for debugging code, troubleshooting errors, asking good questions, and learning new skills independently using the myriad resources available online from R and open-science communities.
 
+## Grade Breakdown
+
+Earn up to 100 points across five categories:
+
+| Points | Category | Description |
 | ----- | ---------- | ---------------|
-| Max. Points | Category | Description |
-| --- | --- | --- |
-| 10 | [Accountability](assessment/accountability.qmd) | Create and maintain a personalized accountability plan |
-| 10 | [Community Engagement](assessment/engagement.qmd) | Participate actively in class and on Slack |
-| 60 | [Core Standards Mastery](assessment/objectives.qmd) | Demonstrate proficiency on 12 core technical skills (standards) |
-| 20 | [Integrative Data Project](assessment/data-project.qmd) | Complete a comprehensive data analysis project demonstrating mastery of all core standards |
-| Up to 10 | [Enrichment](assessment/enrichment.qmd) | Optional activities to deepen learning and supplement core work |
-| ----- | ---------- | ---------------|
+| 10 | [Accountability](accountability.qmd) | Create and maintain a personalized accountability plan |
+| 10 | [Community Engagement](engagement.qmd) | Participate actively in class and on Slack |
+| 60 | [Core Standards Mastery](objectives.qmd) | Demonstrate proficiency on 12 core technical skills (standards) |
+| 20 | [Integrative Data Project](data-project.qmd) | Complete a comprehensive data analysis project demonstrating mastery of all core standards |
+| ((10)) | [Enrichment](enrichment.qmd) | Optional activities to deepen learning and supplement core work |
 
 Because enrichment points are optional, it is possible to earn more than 100 raw points across categories. Final course grades are capped at 100.
 
+## Grading scale
+
+End-of quarter course grades are assigned as follows:
+
+| Points | Grade |
+|--------|-------|
+| 100-94 | A     |
+| 93-91  | A-    |
+| 90-88  | B+    |
+| 87-84  | B     |
+| 83-81  | B-    |
+| 80-78  | C+    |
+| 77-74  | C     |
+| 73-71  | C-    |
+| 70-68  | D+    |
+| 67-64  | D     |
+| 63-0   | F     |
+
+Typically no partial points are awarded in this class. On the rare occasion that they are, they will be rounded to the nearest whole number (0.5+ rounds up).
+
+## Grade changes
+
+You are in control of your grades, and your course grade will be transparent throughout the quarter. You can work toward 100 points by:
+
+-   Submitting multiple assignments showing the same core standard to improve your score on that standard. *Higher scores replace lower scores.*
+-   Submitting your integrative data project up to three times, revising based on feedback to improve your score. You can submit partial drafts to confirm that work you think is showing a standard is indeed meeting that standard before submitting the full project. *Your final submission is your final grade.*
+-   Completing optional enrichment activities to add points to your overall grade.
+
+**Grades are final.** Requests for regrades or grade changes will not be considered. You are welcome to discuss your graded assignments with the professor or your TA to learn how to do better going forward, but the grade you received is the grade you will keep.
+ 
+
 ## How to Get an A
 
-- **Target:** Earn **at least 94 total points**.
-- **Core strategy:**
+- **Target: Earn at least 94 total points**.
+- **Strategy:**
     - Demonstrate **all 12 standards** at least once at **4+ points** each.
     - Aim for **5s** on most standards, with a few **6s** where you feel strongest.
     - Earn **at least 5 enrichment points** to complement your core work.
     - Complete a data project that shows independence and competency with **all 12 standards**.
     - Be an active participant in all class meetings and on Slack.
     - Design a challenging but realistic accountability plan and stick to it.
-- **Think ahead:**
+- **Plan ahead:**
     - Aim for **at least 100 total points** to provide a cushion for any unexpected challenges.
     - Anticipate attempting to meet most standards multiple times to move from 4s to 5s and 6s.
     - Revise and resubmit your integrative project based on feedback at least once, so you're not stuck with a low grade based on simple misunderstandings or easy fixes.
-    - Build in time for accountability plan check-ins and adjustments.
+    - Build in time for accountability plan check-ins and catch-up periods.
     - Plan to earn 10 enrichment points as a buffer if some standards land at 4.
     - Start contributing on Slack early and often to build engagement points over time, since it can become more stressful and confusing to jump in as the course progresses.
     - Ask for help from classmates, the instructor, and the TA before challenges become crises.

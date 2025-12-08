@@ -2,3 +2,107 @@
 title: "Accountability"
 ---
 
+## Overview
+
+**Accountability and reflection** is worth 10/100 points of the final grade.
+This component is designed to meet two of the D2M-R [broad learning objectives](overview.qmd#sec-broad-learning-objectives):
+
+1. **Research workflow:** Plan, execute, and document a data analysis project from start to finish -- including data acquisition, cleaning, analysis, visualization, and reporting -- using reproducible and transparent research practices.
+2. **Accountability & time management:** Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.
+
+This is the only component of the course with top-down fixed deadlines. The plan you create will define your own deadlines for completing assignments during the quarter.
+
+## Components
+
+Submissions of the accountability plan and updates are due at three points during the quarter, on **Mondays of Weeks 2, 5, and 8.** Each component will be submitted on Canvas. Only the final submission will receive a grade, but all three submissions are required to earn full credit.
+
+| Due | Component |
+| ----- | ---------- |
+| Week 2 | Initial accountability plan |
+| Week 5 | Mid-quarter reflection & plan update | Reflect on your progress and update your accountability plan as needed. |
+| Week 8 | Final reflection & plan update | Reflect on your progress and update your final accountability plan. |
+
+::: callout-tip
+
+### Accommodations
+
+If you have accommodations through the Student Disability Services (SDS) for extended deadlines, you should build these into your accountability plan. 
+For example, you could set 2 deadlines for each planned submission (target and extended) or just add a note about how you will commit to meeting your goals given your accommodations (e.g., allowing for a default extension of X days on all deadlines).
+Ultimately, you'll be the one reflecting on your progress and suggesting a grade.
+You are responsible for staying accountable to yourself to meet the broad learning objectives stated above, but you have control over what that will look like.
+
+If you struggle with this kind of planning, whether or not you have SDS accommodations, I recommend starting with one of the [example accountability plans](). Personalize it to the extent you feel comfortable, or just leave it as-is if the idea of a self-paced course is overwhelming.
+
+:::
+
+### Initial Plan
+
+Due: **Monday, January 12th, 2026**
+
+Create an individual accountability plan to follow throughout the quarter.
+The way you structure your plan is up to you, but it should minimally lay out your **targets, timeline, and priorities** for the quarter.
+To get started, think about questions like:
+
+1. **Targets:** What is your target grade for the course? How many points do you plan to earn in each category (core standards, data project, enrichment, community engagement, accountability)? Will you aim for mostly 4s, 5s, or 6s on core standards? Will you plan on "buffer" points?
+2. **Timeline:** When do you plan to complete each core standard? When will you work on your data project? When will you decide whether to ? How will you space out your work to avoid last-minute stress?
+3. **Priorities:** Which standards or activities are most important to you? Are there any that you expect to be particularly challenging? How will you allocate your time and energy accordingly?
+
+I recommend also incorporating one or more less measurable elements:
+
+4. **Strategies:** What strategies will you use to stay on track? Will you set specific weekly goals? Use a planner or calendar? Seek support from peers or instructors?
+5. **Contingencies:** How will you handle unexpected challenges or changes in your schedule? What will you do if you fall behind or need to adjust your plan? 
+6. **Motivation:** Why is this course important to you? What are your personal or professional goals related to data analysis and R programming? How will you stay motivated throughout the quarter?
+
+The only requirements are that you 1) define elements #1-3 in some way and 2) submit the initial reflection by Monday of Week 2. If you join the course in Week 2 or later, contact Dr. Dowling to set a modified deadline.
+
+
+### Mid-Quarter Reflection & Plan Update
+
+Due: **Monday, February 2nd, 2026**
+
+Reflect on your progress toward your accountability plan and update it as needed. Submit a revised accountability plan that includes:
+
+1. A summary of your progress so far, including what you have completed and any challenges you faced.
+2. An updated timeline for the rest of the quarter, including any changes to your targets or priorities.
+3. Any new strategies or contingencies you have developed based on your experiences so far.
+
+### Final Reflection & Plan Update
+
+Due: **Monday, February 23rd, 2026**
+
+Reflect on your overall progress throughout the quarter and submit a final accountability plan that includes:
+
+1. A summary of your overall progress, including what you have completed and any challenges you faced.
+2. A clear list of what you need to do before the quarter ends to meet your goal, and a timeline for completing those tasks.
+3. A reflection on what you learned about accountability and time management during the course, including any strategies that worked well for you and areas for improvement in the future.
+4. A suggested grade (0-10 points) based on your performance in meeting the broad learning objectives related to accountability and time management. 
+
+Remember that your grade for this is based on the two broad learning objectives about developing a research workflow and staying accountable to yourself.
+This is *not* about what specific learning objectives you met or how satisfied you are with the work you have delivered.
+It's possible that you did amazing work but struggled with accountability, or that you failed to demonstrate technical skills but still developed strong habits for planning and follow-through.
+
+Similarly, the grade you assign yourself should be based primarily on how you used the plan, not the quality of the initial plan.
+If you started the class with a poor understanding of how much time and effort would be required, but you adjusted your plan and successfully met your goals, that is much more valuable than designing an ideal plan at the start and never looking at it again.
+
+In assigning yourself a grade, consider questions like:
+
+1.  How realistic was your initial plan? If/when you identified unrealistic plans, did you adjust them appropriately?
+2.  How well did you stick to your plan? Did you complete tasks on time? If you fell behind, did you take steps to get back on track?
+3.  How effectively did you manage your time? Did you allocate enough time for each task, or did you underestimate the time required?
+4.  Did you meet or exceed the targets you set for yourself? Did you keep sight of your priorities?
+    
+
+## Example Plans
+
+These examples are **optional templates**. You can:
+
+- Use one of them as-is.
+- Modify one to fit your situation.
+- Ignore them and design a fully custom plan.
+
+<!-- Create example plans in google docs or whatever and link here -->
+
+
+
+
+

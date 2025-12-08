@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Data to Manuscript in R</title>
+<title>Assessment Overview – Data to Manuscript in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1f3bbaaae0129e120d12d90b1a210fdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1f3bbaaae0129e120d12d90b1a210fdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Data to Manuscript in R</span>
     </a>
   </div>
@@ -123,29 +88,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./d2m-r.github.io"> 
-<span class="menu-text">D2M-R Home</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syllabus" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Syllabus</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
         <li>
-    <a class="dropdown-item" href="./syllabus/structure.html">
+    <a class="dropdown-item" href="../syllabus/structure.html">
  <span class="dropdown-text">Course Structure</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./syllabus/communication.html">
+    <a class="dropdown-item" href="../syllabus/communication.html">
  <span class="dropdown-text">Communication</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./syllabus/ai-policy.html">
+    <a class="dropdown-item" href="../syllabus/ai-policy.html">
  <span class="dropdown-text">AI Use</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./syllabus/climate.html">
+    <a class="dropdown-item" href="../syllabus/climate.html">
  <span class="dropdown-text">Climate &amp; Inclusion</span></a>
   </li>  
     </ul>
@@ -156,23 +117,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-assessment">    
         <li>
-    <a class="dropdown-item" href="./assessment/overview.html">
+    <a class="dropdown-item" href="../assessment/overview.html">
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assessment/objectives.html">
+    <a class="dropdown-item" href="../assessment/objectives.html">
  <span class="dropdown-text">Learning Objectives</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assessment/accountability.html">
+    <a class="dropdown-item" href="../assessment/accountability.html">
  <span class="dropdown-text">Accountability</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assessment/engagement.html">
+    <a class="dropdown-item" href="../assessment/engagement.html">
  <span class="dropdown-text">Community Engagement</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assessment/data-project.html">
+    <a class="dropdown-item" href="../assessment/data-project.html">
  <span class="dropdown-text">Integrative Data Project</span></a>
   </li>  
     </ul>
@@ -183,29 +144,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-materials">    
         <li>
-    <a class="dropdown-item" href="./d2m-r.github.io/book/index.html">
+    <a class="dropdown-item" href="../d2m-r.github.io/book/index.html">
  <span class="dropdown-text">Textbook (WIP)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./materials/slides.html">
+    <a class="dropdown-item" href="../materials/slides.html">
  <span class="dropdown-text">Slides</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./materials/misc-materials.html">
+    <a class="dropdown-item" href="../materials/misc-materials.html">
  <span class="dropdown-text">Misc. Materials</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./materials/resources.html">
+    <a class="dropdown-item" href="../materials/resources.html">
  <span class="dropdown-text">External Resources</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./materials/finding-data.html">
+    <a class="dropdown-item" href="../materials/finding-data.html">
  <span class="dropdown-text">Finding Data</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./d2m-r.github.io"> 
+    <a class="nav-link" href="../d2m-r.github.io"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
@@ -219,15 +180,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#philosophy" id="toc-philosophy" class="nav-link active" data-scroll-target="#philosophy">Philosophy</a>
+  <ul class="collapse">
+  <li><a href="#selfpacing-deadlines-and-workflow" id="toc-selfpacing-deadlines-and-workflow" class="nav-link" data-scroll-target="#selfpacing-deadlines-and-workflow">Self‑Pacing, Deadlines, and Workflow</a></li>
+  </ul></li>
+  <li><a href="#sec-broad-learning-objectives" id="toc-sec-broad-learning-objectives" class="nav-link" data-scroll-target="#sec-broad-learning-objectives">Broad Learning Objectives</a></li>
+  <li><a href="#grade-breakdown" id="toc-grade-breakdown" class="nav-link" data-scroll-target="#grade-breakdown">Grade Breakdown</a></li>
+  <li><a href="#grading-scale" id="toc-grading-scale" class="nav-link" data-scroll-target="#grading-scale">Grading scale</a></li>
+  <li><a href="#grade-changes" id="toc-grade-changes" class="nav-link" data-scroll-target="#grade-changes">Grade changes</a></li>
+  <li><a href="#how-to-get-an-a" id="toc-how-to-get-an-a" class="nav-link" data-scroll-target="#how-to-get-an-a">How to Get an A</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Assessment Overview</h1>
 </div>
 
 
@@ -244,15 +219,171 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>About this site</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<section id="philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="philosophy">Philosophy</h2>
+<p>This course uses a <strong>standards-based grading</strong> system designed to support your skill development while accommodating diverse backgrounds, interests, and paces of learning. The system is built around the following principles:</p>
+<ul>
+<li><strong>Standards-based:</strong> Your grade reflects your progress on a set of clearly defined core technical skills, interchangeably referred to as “standards” and “core objectives.”</li>
+<li><strong>Multiple pathways:</strong> For most standards, you may choose from more structured activities, less structured / group activities, and minimally structured or self-designed small projects. You will show your mastery in smaller assignments and an integrative research project, both of which can be tailored to your interests and developed over the full quarter.</li>
+<li><strong>Tiered credit:</strong> Each standard is scored using a 4 / 5 / 6 point rubric. All three levels represent success. Higher scores reflect more independent and expansive use of the skill and allow you to reach your grade goals more quickly. Lower grades may be replaced by subsequent higher grades as you develop stronger command of the skills.</li>
+<li><strong>Individualized:</strong> Beyond mastering technical skills that form the foundation for data analysis in R, you will also earn points for accountability, community engagement, and optional enrichment activities, with many ways to earn credit in each of these categories. There are no top-down deadlines for completing assignments to meet core standards. This structure allows you to set your own priorities based on your individual interests and goals.</li>
+</ul>
+<section id="selfpacing-deadlines-and-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="selfpacing-deadlines-and-workflow">Self‑Pacing, Deadlines, and Workflow</h3>
+<ul>
+<li><strong>No fixed interim deadlines:</strong> You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).</li>
+<li><strong>Planning is part of the grade:</strong> The Accountability &amp; Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.</li>
+<li><strong>Early completion is allowed:</strong> You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter.</li>
+</ul>
+</section>
+</section>
+<section id="sec-broad-learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="sec-broad-learning-objectives">Broad Learning Objectives</h2>
+<p>There are specific skill-based core learning objectives for this course, detailed in the <a href="../assessment/objectives.html">Core Standards</a> section. In addition, this course will help you develop broader skills that are essential for success as a quantitative researcher:</p>
+<ol type="1">
+<li><strong>Develop a reproducible and transparent research workflow.</strong> Plan, execute, and document a data analysis project from start to finish including data acquisition, cleaning, analysis, visualization, and reporting.</li>
+<li><strong>Practice accountability &amp; time management.</strong> Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.</li>
+<li><strong>Engage with your research communities.</strong> Collaborate effectively with peers, contribute to group learning, and seek help when needed.</li>
+<li><strong>Develop problem-solving and independent learning skills.</strong> Develop specific strategies for debugging code, troubleshooting errors, asking good questions, and learning new skills independently using the myriad resources available online from R and open-science communities.</li>
+</ol>
+</section>
+<section id="grade-breakdown" class="level2">
+<h2 class="anchored" data-anchor-id="grade-breakdown">Grade Breakdown</h2>
+<p>Earn up to 100 points across five categories:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Points</th>
+<th>Category</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10</td>
+<td><a href="../assessment/accountability.html">Accountability</a></td>
+<td>Create and maintain a personalized accountability plan</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><a href="../assessment/engagement.html">Community Engagement</a></td>
+<td>Participate actively in class and on Slack</td>
+</tr>
+<tr class="odd">
+<td>60</td>
+<td><a href="../assessment/objectives.html">Core Standards Mastery</a></td>
+<td>Demonstrate proficiency on 12 core technical skills (standards)</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td><a href="../assessment/data-project.html">Integrative Data Project</a></td>
+<td>Complete a comprehensive data analysis project demonstrating mastery of all core standards</td>
+</tr>
+<tr class="odd">
+<td>((10))</td>
+<td><a href="../assessment/enrichment.html">Enrichment</a></td>
+<td>Optional activities to deepen learning and supplement core work</td>
+</tr>
+</tbody>
+</table>
+<p>Because enrichment points are optional, it is possible to earn more than 100 raw points across categories. Final course grades are capped at 100.</p>
+</section>
+<section id="grading-scale" class="level2">
+<h2 class="anchored" data-anchor-id="grading-scale">Grading scale</h2>
+<p>End-of quarter course grades are assigned as follows:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Points</th>
+<th>Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100-94</td>
+<td>A</td>
+</tr>
+<tr class="even">
+<td>93-91</td>
+<td>A-</td>
+</tr>
+<tr class="odd">
+<td>90-88</td>
+<td>B+</td>
+</tr>
+<tr class="even">
+<td>87-84</td>
+<td>B</td>
+</tr>
+<tr class="odd">
+<td>83-81</td>
+<td>B-</td>
+</tr>
+<tr class="even">
+<td>80-78</td>
+<td>C+</td>
+</tr>
+<tr class="odd">
+<td>77-74</td>
+<td>C</td>
+</tr>
+<tr class="even">
+<td>73-71</td>
+<td>C-</td>
+</tr>
+<tr class="odd">
+<td>70-68</td>
+<td>D+</td>
+</tr>
+<tr class="even">
+<td>67-64</td>
+<td>D</td>
+</tr>
+<tr class="odd">
+<td>63-0</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<p>Typically no partial points are awarded in this class. On the rare occasion that they are, they will be rounded to the nearest whole number (0.5+ rounds up).</p>
+</section>
+<section id="grade-changes" class="level2">
+<h2 class="anchored" data-anchor-id="grade-changes">Grade changes</h2>
+<p>You are in control of your grades, and your course grade will be transparent throughout the quarter. You can work toward 100 points by:</p>
+<ul>
+<li>Submitting multiple assignments showing the same core standard to improve your score on that standard. <em>Higher scores replace lower scores.</em></li>
+<li>Submitting your integrative data project up to three times, revising based on feedback to improve your score. You can submit partial drafts to confirm that work you think is showing a standard is indeed meeting that standard before submitting the full project. <em>Your final submission is your final grade.</em></li>
+<li>Completing optional enrichment activities to add points to your overall grade.</li>
+</ul>
+<p><strong>Grades are final.</strong> Requests for regrades or grade changes will not be considered. You are welcome to discuss your graded assignments with the professor or your TA to learn how to do better going forward, but the grade you received is the grade you will keep.</p>
+</section>
+<section id="how-to-get-an-a" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-get-an-a">How to Get an A</h2>
+<ul>
+<li><strong>Target: Earn at least 94 total points</strong>.</li>
+<li><strong>Strategy:</strong>
+<ul>
+<li>Demonstrate <strong>all 12 standards</strong> at least once at <strong>4+ points</strong> each.</li>
+<li>Aim for <strong>5s</strong> on most standards, with a few <strong>6s</strong> where you feel strongest.</li>
+<li>Earn <strong>at least 5 enrichment points</strong> to complement your core work.</li>
+<li>Complete a data project that shows independence and competency with <strong>all 12 standards</strong>.</li>
+<li>Be an active participant in all class meetings and on Slack.</li>
+<li>Design a challenging but realistic accountability plan and stick to it.</li>
+</ul></li>
+<li><strong>Plan ahead:</strong>
+<ul>
+<li>Aim for <strong>at least 100 total points</strong> to provide a cushion for any unexpected challenges.</li>
+<li>Anticipate attempting to meet most standards multiple times to move from 4s to 5s and 6s.</li>
+<li>Revise and resubmit your integrative project based on feedback at least once, so you’re not stuck with a low grade based on simple misunderstandings or easy fixes.</li>
+<li>Build in time for accountability plan check-ins and catch-up periods.</li>
+<li>Plan to earn 10 enrichment points as a buffer if some standards land at 4.</li>
+<li>Start contributing on Slack early and often to build engagement points over time, since it can become more stressful and confusing to jump in as the course progresses.</li>
+<li>Ask for help from classmates, the instructor, and the TA before challenges become crises.</li>
+</ul></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

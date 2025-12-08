@@ -6,8 +6,6 @@ website:
   title: "Data to Manuscript in R"
   navbar:
     left:
-      - text: D2M-R Home
-        href: d2m-r.github.io
       - text: Syllabus
         menu:
             - text: Course Structure

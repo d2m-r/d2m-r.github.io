@@ -3,7 +3,19 @@ title: "Enrichment"
 format: html
 ---
 
+Soft Skills & Enrichment activities are **not** part of the base structure of the course grade. 
+Instead, they give you a way to recover or add points if you choose a more structured path or if some standards land at the 4‑point level.
+
 This is effectively up to 10 points of extra credit, but I don't like thinking about these skills or these kinds of experiences as "extra."
 I believe this category is as valuable as the core skills, but necessarily fuzzier and more open-ended.
 These 10 optional points are a way for you to customize your curriculum in this class to your own interests and goals.
 
+Examples include:
+
+- Debugging journals that document how you worked through specific problems
+- Short write‑ups teaching a peer how to do something (e.g., connecting RStudio and GitHub)
+- Simple documentation for your own utility functions
+- Reflections on responsible and productive use of AI tools in your workflow
+- Evidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)
+
+<!-- add examples from 2025 assessment repo -->

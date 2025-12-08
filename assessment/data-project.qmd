@@ -1,5 +1,69 @@
 ---
 title: "Integrative Data Project"
-format: html
 ---
+
+## Overview
+
+The integrative data project is a cumulative demonstration of all Quarter 1 learning objectives in a single coherent workflow.
+In addition to demonstrating each of the 12 core standards, the project should holistically show your ability to plan, execute, and document a complete data analysis from start to finish using reproducible and transparent research practices.
+
+The final project will look like a complete data analysis report created with RStudio and maintained in a GitHub repo that includes:
+
+- Data import
+- Data wrangling/cleaning
+- Basic descriptive statistics
+- Simple data visualization
+- Narrative markdown text explaining your choices and findings
+
+The project will use a single dataset of your choice.
+You may either use data from your own research or select a [publicly available dataset](). <!-- jean's data viz page has a great list -->
+
+
+## Grading
+
+The data project is worth **20 points** toward your final course grade. 
+Points are earned as follows:
+
+| Points | Component | Description |
+| ------ | --------- | ----------- |
+| 12 | Core standards | Demonstrate all 12 core standards at least at the 4-point level within your project. Each standard demonstrated earns 1 point. |
+| 2 | Reproducibility | Your code is fully reproducible, with no errors when run from start to finish in a clean R environment. |
+| 2 | Documentation | Your code is clearly commented, and your Quarto document includes narrative text that explains your coding choices and data presentation. |
+| 2 | Cohesion | Your data wrangling, statistics, and plots are clearly connected with narrative text and tell a coherent story about the data. |
+| 2 | Presentation | Your Quarto document is well-formatted, so that the .qmd is each to work with and the knitted .pdf is professional and readable. |
+
+"Above and beyond" demonstrations of core standards or exceptional quality may receive bonus points at the grader's discretion, but the project cannot contribute more than 20 points to the final grade. In other words, outstanding use of one standard might earn you a point that compensates for weaker presentation or documentation, but not a point of extra credit.
+
+### Submission
+
+You may submit the data project up to 3 times throughout the quarter.
+With each draft, you will also include a self-assessment, indicating which standards you believe you have demonstrated and how well you have met each of the grading components above.
+After scoring your work, your grader will provide feedback as a response to your self-assessment to help you improve your project for future submissions.
+
+You are allowed -- *and encouraged!* -- to submit partial drafts of your project to confirm that you are on the right track before submitting a full draft.
+You aren't expected to be able to demonstrate a skill before we cover it in class, so early submissions may only demonstrate a subset of the standards.
+That's fine! 
+Submitting a draft that shows only a few objectives will let you confirm that you are in fact meeting expectations for those objectives and will give you guidance on where to go next.
+
+Grades for resubmissions will replace previous scores. Your grade for the data project will be the score earned on your last submission before the end-of-quarter deadline.
+
+
+::: callout-warning
+
+### Data Project vs. Core Standards Assignments
+
+The Integrative Research Project is **graded entirely as its own 20‑point assignment.** 
+Although you are required to demonstrate the 12 core learning objectives, your Core Standards Mastery score (out of 60) is calculated only from the standards-focused assignments and is *not* affected by your project score or project work. 
+
+Unless an assignment says otherwise or you receive advance permission from the professor, there should be no overlap in data or code between your core standards assignments and your integrative data project.
+
+:::
+
+
+
+
+<!-- ## Data Selection -->
+
+<!-- How to be sure your dataset meets the requirements for the project -->
+<!-- How to find a dataset if you don't have one already -->
 

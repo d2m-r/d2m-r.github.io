@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Data to Manuscript in R</title>
+<title>Accountability – Data to Manuscript in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1f3bbaaae0129e120d12d90b1a210fdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1f3bbaaae0129e120d12d90b1a210fdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Data to Manuscript in R</span>
     </a>
   </div>
@@ -123,29 +88,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./d2m-r.github.io"> 
-<span class="menu-text">D2M-R Home</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syllabus" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Syllabus</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
         <li>
-    <a class="dropdown-item" href="./syllabus/structure.html">
+    <a class="dropdown-item" href="../syllabus/structure.html">
  <span class="dropdown-text">Course Structure</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./syllabus/communication.html">
+    <a class="dropdown-item" href="../syllabus/communication.html">
  <span class="dropdown-text">Communication</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./syllabus/ai-policy.html">
+    <a class="dropdown-item" href="../syllabus/ai-policy.html">
  <span class="dropdown-text">AI Use</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./syllabus/climate.html">
+    <a class="dropdown-item" href="../syllabus/climate.html">
  <span class="dropdown-text">Climate &amp; Inclusion</span></a>
   </li>  
     </ul>
@@ -156,23 +117,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-assessment">    
         <li>
-    <a class="dropdown-item" href="./assessment/overview.html">
+    <a class="dropdown-item" href="../assessment/overview.html">
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assessment/objectives.html">
+    <a class="dropdown-item" href="../assessment/objectives.html">
  <span class="dropdown-text">Learning Objectives</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assessment/accountability.html">
+    <a class="dropdown-item" href="../assessment/accountability.html">
  <span class="dropdown-text">Accountability</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assessment/engagement.html">
+    <a class="dropdown-item" href="../assessment/engagement.html">
  <span class="dropdown-text">Community Engagement</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./assessment/data-project.html">
+    <a class="dropdown-item" href="../assessment/data-project.html">
  <span class="dropdown-text">Integrative Data Project</span></a>
   </li>  
     </ul>
@@ -183,29 +144,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-materials">    
         <li>
-    <a class="dropdown-item" href="./d2m-r.github.io/book/index.html">
+    <a class="dropdown-item" href="../d2m-r.github.io/book/index.html">
  <span class="dropdown-text">Textbook (WIP)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./materials/slides.html">
+    <a class="dropdown-item" href="../materials/slides.html">
  <span class="dropdown-text">Slides</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./materials/misc-materials.html">
+    <a class="dropdown-item" href="../materials/misc-materials.html">
  <span class="dropdown-text">Misc. Materials</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./materials/resources.html">
+    <a class="dropdown-item" href="../materials/resources.html">
  <span class="dropdown-text">External Resources</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./materials/finding-data.html">
+    <a class="dropdown-item" href="../materials/finding-data.html">
  <span class="dropdown-text">Finding Data</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./d2m-r.github.io"> 
+    <a class="nav-link" href="../d2m-r.github.io"> 
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
@@ -219,15 +180,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#components" id="toc-components" class="nav-link" data-scroll-target="#components">Components</a>
+  <ul class="collapse">
+  <li><a href="#initial-plan" id="toc-initial-plan" class="nav-link" data-scroll-target="#initial-plan">Initial Plan</a></li>
+  <li><a href="#mid-quarter-reflection-plan-update" id="toc-mid-quarter-reflection-plan-update" class="nav-link" data-scroll-target="#mid-quarter-reflection-plan-update">Mid-Quarter Reflection &amp; Plan Update</a></li>
+  <li><a href="#final-reflection-plan-update" id="toc-final-reflection-plan-update" class="nav-link" data-scroll-target="#final-reflection-plan-update">Final Reflection &amp; Plan Update</a></li>
+  </ul></li>
+  <li><a href="#example-plans" id="toc-example-plans" class="nav-link" data-scroll-target="#example-plans">Example Plans</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Accountability</h1>
 </div>
 
 
@@ -244,15 +218,114 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>About this site</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p><strong>Accountability and reflection</strong> is worth 10/100 points of the final grade. This component is designed to meet two of the D2M-R <a href="../assessment/overview.html#sec-broad-learning-objectives">broad learning objectives</a>:</p>
+<ol type="1">
+<li><strong>Research workflow:</strong> Plan, execute, and document a data analysis project from start to finish – including data acquisition, cleaning, analysis, visualization, and reporting – using reproducible and transparent research practices.</li>
+<li><strong>Accountability &amp; time management:</strong> Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.</li>
+</ol>
+<p>This is the only component of the course with top-down fixed deadlines. The plan you create will define your own deadlines for completing assignments during the quarter.</p>
+</section>
+<section id="components" class="level2">
+<h2 class="anchored" data-anchor-id="components">Components</h2>
+<p>Submissions of the accountability plan and updates are due at three points during the quarter, on <strong>Mondays of Weeks 2, 5, and 8.</strong> Each component will be submitted on Canvas. Only the final submission will receive a grade, but all three submissions are required to earn full credit.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Due</th>
+<th>Component</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Week 2</td>
+<td>Initial accountability plan</td>
+</tr>
+<tr class="even">
+<td>Week 5</td>
+<td>Mid-quarter reflection &amp; plan update</td>
+</tr>
+<tr class="odd">
+<td>Week 8</td>
+<td>Final reflection &amp; plan update</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Accommodations
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>If you have accommodations through the Student Disability Services (SDS) for extended deadlines, you should build these into your accountability plan. For example, you could set 2 deadlines for each planned submission (target and extended) or just add a note about how you will commit to meeting your goals given your accommodations (e.g., allowing for a default extension of X days on all deadlines). Ultimately, you’ll be the one reflecting on your progress and suggesting a grade. You are responsible for staying accountable to yourself to meet the broad learning objectives stated above, but you have control over what that will look like.</p>
+<p>If you struggle with this kind of planning, whether or not you have SDS accommodations, I recommend starting with one of the <a href="">example accountability plans</a>. Personalize it to the extent you feel comfortable, or just leave it as-is if the idea of a self-paced course is overwhelming.</p>
+</div>
+</div>
+<section id="initial-plan" class="level3">
+<h3 class="anchored" data-anchor-id="initial-plan">Initial Plan</h3>
+<p>Due: <strong>Monday, January 12th, 2026</strong></p>
+<p>Create an individual accountability plan to follow throughout the quarter. The way you structure your plan is up to you, but it should minimally lay out your <strong>targets, timeline, and priorities</strong> for the quarter. To get started, think about questions like:</p>
+<ol type="1">
+<li><strong>Targets:</strong> What is your target grade for the course? How many points do you plan to earn in each category (core standards, data project, enrichment, community engagement, accountability)? Will you aim for mostly 4s, 5s, or 6s on core standards? Will you plan on “buffer” points?</li>
+<li><strong>Timeline:</strong> When do you plan to complete each core standard? When will you work on your data project? When will you decide whether to ? How will you space out your work to avoid last-minute stress?</li>
+<li><strong>Priorities:</strong> Which standards or activities are most important to you? Are there any that you expect to be particularly challenging? How will you allocate your time and energy accordingly?</li>
+</ol>
+<p>I recommend also incorporating one or more less measurable elements:</p>
+<ol start="4" type="1">
+<li><strong>Strategies:</strong> What strategies will you use to stay on track? Will you set specific weekly goals? Use a planner or calendar? Seek support from peers or instructors?</li>
+<li><strong>Contingencies:</strong> How will you handle unexpected challenges or changes in your schedule? What will you do if you fall behind or need to adjust your plan?</li>
+<li><strong>Motivation:</strong> Why is this course important to you? What are your personal or professional goals related to data analysis and R programming? How will you stay motivated throughout the quarter?</li>
+</ol>
+<p>The only requirements are that you 1) define elements #1-3 in some way and 2) submit the initial reflection by Monday of Week 2. If you join the course in Week 2 or later, contact Dr.&nbsp;Dowling to set a modified deadline.</p>
+</section>
+<section id="mid-quarter-reflection-plan-update" class="level3">
+<h3 class="anchored" data-anchor-id="mid-quarter-reflection-plan-update">Mid-Quarter Reflection &amp; Plan Update</h3>
+<p>Due: <strong>Monday, February 2nd, 2026</strong></p>
+<p>Reflect on your progress toward your accountability plan and update it as needed. Submit a revised accountability plan that includes:</p>
+<ol type="1">
+<li>A summary of your progress so far, including what you have completed and any challenges you faced.</li>
+<li>An updated timeline for the rest of the quarter, including any changes to your targets or priorities.</li>
+<li>Any new strategies or contingencies you have developed based on your experiences so far.</li>
+</ol>
+</section>
+<section id="final-reflection-plan-update" class="level3">
+<h3 class="anchored" data-anchor-id="final-reflection-plan-update">Final Reflection &amp; Plan Update</h3>
+<p>Due: <strong>Monday, February 23rd, 2026</strong></p>
+<p>Reflect on your overall progress throughout the quarter and submit a final accountability plan that includes:</p>
+<ol type="1">
+<li>A summary of your overall progress, including what you have completed and any challenges you faced.</li>
+<li>A clear list of what you need to do before the quarter ends to meet your goal, and a timeline for completing those tasks.</li>
+<li>A reflection on what you learned about accountability and time management during the course, including any strategies that worked well for you and areas for improvement in the future.</li>
+<li>A suggested grade (0-10 points) based on your performance in meeting the broad learning objectives related to accountability and time management.</li>
+</ol>
+<p>Remember that your grade for this is based on the two broad learning objectives about developing a research workflow and staying accountable to yourself. This is <em>not</em> about what specific learning objectives you met or how satisfied you are with the work you have delivered. It’s possible that you did amazing work but struggled with accountability, or that you failed to demonstrate technical skills but still developed strong habits for planning and follow-through.</p>
+<p>Similarly, the grade you assign yourself should be based primarily on how you used the plan, not the quality of the initial plan. If you started the class with a poor understanding of how much time and effort would be required, but you adjusted your plan and successfully met your goals, that is much more valuable than designing an ideal plan at the start and never looking at it again.</p>
+<p>In assigning yourself a grade, consider questions like:</p>
+<ol type="1">
+<li>How realistic was your initial plan? If/when you identified unrealistic plans, did you adjust them appropriately?</li>
+<li>How well did you stick to your plan? Did you complete tasks on time? If you fell behind, did you take steps to get back on track?</li>
+<li>How effectively did you manage your time? Did you allocate enough time for each task, or did you underestimate the time required?</li>
+<li>Did you meet or exceed the targets you set for yourself? Did you keep sight of your priorities?</li>
+</ol>
+</section>
+</section>
+<section id="example-plans" class="level2">
+<h2 class="anchored" data-anchor-id="example-plans">Example Plans</h2>
+<p>These examples are <strong>optional templates</strong>. You can:</p>
+<ul>
+<li>Use one of them as-is.</li>
+<li>Modify one to fit your situation.</li>
+<li>Ignore them and design a fully custom plan.</li>
+</ul>
+<!-- Create example plans in google docs or whatever and link here -->
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
