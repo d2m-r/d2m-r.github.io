@@ -1,0 +1,51 @@
+---
+title: "RStudio Workflow"
+---
+
+<!-- DRAFT -- this is just a quick copy/paste from a list somewhere else. need to make is an actual page -->
+
+<!-- note somewhere that there's a version of this standard for both quarters, with lots of overlap but also higher expectations in II -->
+
+Additional guidelines for demonstrating Standard 1: RStudio + Quarto Workflow in your assignments:
+
+**RStudio + Quarto workflow** Create an RStudio project for course work, use relative paths, and knit simple Quarto documents that combine code and narrative.
+
+basic (4 points)
+
+- [ ] Create an RStudio project for the assignment by cloning the GitHub Classroom assignment or your own repo.
+- [ ] Use multiple markdown elements (e.g., heading levels, lists, text styling, etc.) in your text outside code chunks
+- [ ] Include labels and at least one chunk option (e.g., echo, warning, message, etc.) in *all* your R code chunks.
+- [ ] Knit the .qmd to a .html, .docx, or .pdf without errors or missing pieces, saving the output file in your project folder.
+- [ ] Include at least one line of code that *writes* to a relative path and one that *reads* to a relative path
+    - Some assignments have this requirement built-in, but for some you may need to add this yourself. It's ok if it's just arbitrarily reading and writing just to meet the requirement.
+    - This has to be code *you write yourself.* If an assignment comes pre-loaded with code that reads/writes to relative paths, that is not demonstrating your ability to do this yourself. If it *prompts* you to write the code (e.g., "Use `read_csv()` to read in the data from your data subdirectory"), that is you writing the code yourself and is acceptable.
+   
+intermediate (5 points)
+- [ ]
+
+advanced (6 points)
+- [ ]
+
+You can include additional evidence beyond what is contained in the assignment repo to demonstrate your proficiency with RStudio + Quarto workflow. Examples of additional evidence include:
+
+- Screenshots showing effective use of RStudio, like the organization of files and folders or customization of the RStudio interface
+- Brief explanation of how you manage your RStudio projects and Quarto documents for different assignments
+- Short screen recording demonstrating your RStudio workflow, including how you create projects, manage files, and knit Quarto documents, accompanied by a brief written description of the video.
+- Written reflection (200-300 words) on your experience using RStudio and Quarto for assignments, highlighting any challenges you faced and how you overcame them.
+- Comparison of different output formats (HTML, PDF, Word) generated from the same Quarto document, discussing the pros and cons of each format for different types of assignments.
+- Summary of best practices or tips and tricks you've developed for using RStudio and Quarto effectively in your coursework, such as keyboard shortcuts, package management, or version control integration.
+- Demonstration of advanced Quarto features, such as parameterized reports, custom templates, or interactive elements, showcasing your ability to enhance your documents beyond basic functionality.
+    - What counts as "advanced" will differ by quarter. Anything on the syllabus for D2M-R II will count as advanced for D2M-R I (e.g., using the apaquarto extension, citing with BibTeX, using chunk options to customize figure output). In D2M-R II you will be expected to go beyond what is covered in the syllabus (e.g., creating a website with Quarto and GitHub pages, creating an interactive dashboard, using Quarto extensions other than apaquarto).
+
+
+
+
+
+
+
+
+
+
+
+
+

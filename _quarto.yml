@@ -45,9 +45,5 @@ website:
 
 format:
   html:
-    theme: 
-      - d2mr-theme.scss
-    #css: styles.css
+    theme: [default, theme/color-theme.scss, theme/d2mr-theme.scss, theme/bubbles.scss]
     toc: true
-
-

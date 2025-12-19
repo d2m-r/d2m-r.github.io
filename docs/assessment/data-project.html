@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1f3bbaaae0129e120d12d90b1a210fdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d740b9aca1e804a685ea7468e1a48d71.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -180,8 +180,18 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a>
+  <ul class="collapse">
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -205,8 +215,90 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>The integrative data project is a cumulative demonstration of all Quarter 1 learning objectives in a single coherent workflow. In addition to demonstrating each of the 12 core standards, the project should holistically show your ability to plan, execute, and document a complete data analysis from start to finish using reproducible and transparent research practices.</p>
+<p>The final project will look like a complete data analysis report created with RStudio and maintained in a GitHub repo that includes:</p>
+<ul>
+<li>Data import</li>
+<li>Data wrangling/cleaning</li>
+<li>Basic descriptive statistics</li>
+<li>Simple data visualization</li>
+<li>Narrative markdown text explaining your choices and findings</li>
+</ul>
+<p>The project will use a single dataset of your choice. You may either use data from your own research or select a <a href="">publicly available dataset</a>. <!-- jean's data viz page has a great list --></p>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<p>The data project is worth <strong>20 points</strong> toward your final course grade. Points are earned as follows:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 34%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Points</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>12</td>
+<td>Core standards</td>
+<td>Demonstrate all 12 core standards at least at the 4-point level within your project. Each standard demonstrated earns 1 point.</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Reproducibility</td>
+<td>Your code is fully reproducible, with no errors when run from start to finish in a clean R environment.</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Documentation</td>
+<td>Your code is clearly commented, and your Quarto document includes narrative text that explains your coding choices and data presentation.</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Cohesion</td>
+<td>Your data wrangling, statistics, and plots are clearly connected with narrative text and tell a coherent story about the data.</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Presentation</td>
+<td>Your Quarto document is well-formatted, so that the .qmd is each to work with and the knitted .pdf is professional and readable.</td>
+</tr>
+</tbody>
+</table>
+<p>“Above and beyond” demonstrations of core standards or exceptional quality may receive bonus points at the grader’s discretion, but the project cannot contribute more than 20 points to the final grade. In other words, outstanding use of one standard might earn you a point that compensates for weaker presentation or documentation, but not a point of extra credit.</p>
+<section id="submission" class="level3">
+<h3 class="anchored" data-anchor-id="submission">Submission</h3>
+<p>You may submit the data project up to 3 times throughout the quarter. With each draft, you will also include a self-assessment, indicating which standards you believe you have demonstrated and how well you have met each of the grading components above. After scoring your work, your grader will provide feedback as a response to your self-assessment to help you improve your project for future submissions.</p>
+<p>You are allowed – <em>and encouraged!</em> – to submit partial drafts of your project to confirm that you are on the right track before submitting a full draft. You aren’t expected to be able to demonstrate a skill before we cover it in class, so early submissions may only demonstrate a subset of the standards. That’s fine! Submitting a draft that shows only a few objectives will let you confirm that you are in fact meeting expectations for those objectives and will give you guidance on where to go next.</p>
+<p>Grades for resubmissions will replace previous scores. Your grade for the data project will be the score earned on your last submission before the end-of-quarter deadline.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Project vs.&nbsp;Core Standards Assignments
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Integrative Research Project is <strong>graded entirely as its own 20‑point assignment.</strong> Although you are required to demonstrate the 12 core learning objectives, your Core Standards Mastery score (out of 60) is calculated only from the standards-focused assignments and is <em>not</em> affected by your project score or project work.</p>
+<p>Unless an assignment says otherwise or you receive advance permission from the professor, there should be no overlap in data or code between your core standards assignments and your integrative data project.</p>
+</div>
+</div>
+<!-- ## Data Selection -->
+<!-- How to be sure your dataset meets the requirements for the project -->
+<!-- How to find a dataset if you don't have one already -->
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

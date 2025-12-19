@@ -3,7 +3,7 @@ title: "Enrichment"
 format: html
 ---
 
-Soft Skills & Enrichment activities are **not** part of the base structure of the course grade. 
+Enrichment activities are **not** part of the base structure of the course grade. 
 Instead, they give you a way to recover or add points if you choose a more structured path or if some standards land at the 4‑point level.
 
 This is effectively up to 10 points of extra credit, but I don't like thinking about these skills or these kinds of experiences as "extra."
@@ -17,5 +17,19 @@ Examples include:
 - Simple documentation for your own utility functions
 - Reflections on responsible and productive use of AI tools in your workflow
 - Evidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)
+- Short explorations of advanced R packages or techniques beyond the core curriculum
+- Identifying a need in your own research workflow and designing a solution using R
+- Discovering and effectively making use of specialized R packages for your specific needs
+- Mini‑projects that apply course skills to your own research questions (must be different from your final data project)
+- Contributions to open‑source R packages or communities (e.g., GitHub issues, Stack Overflow answers)
+
+This is not a comprehensive list, and really the more creative and customized you approach this, the more useful it will be for your own learning (and the easier it will be to earn points). If you have an idea for an enrichment activity that isn't listed here, send an email to Dr. Dowling to confirm that it is appropriate before you start working on it.
+
+You may submit evidence for enrichment points up to 5 times during the quarter.
+Evidence may be in the form of a dedicated project (e.g., a debugging journal) or as a companion to another assignment (e.g., writing up how you used AI tools to help solve a problem in a core standards assignment).
+Points will be awarded based on overall quality and depth, which may look like creativity, independent learning, clear communication, thoughtful self-evaluation, or other dimensions depending on the nature of the activity.
+Your submission will include an opportunity for you to explain how the activity contributed to your learning and how many points you believe you have earned.
+
+The Canvas assignments include details on exactly how to submit and document different kinds of demonstrations.
 
 <!-- add examples from 2025 assessment repo -->

@@ -4,25 +4,27 @@ title: "Core Standards & Learning Objectives"
 
 ## Quarter 1 Core Standards {#sec-core-standards}
 
-The 12 Quarter‑1 core learning objectives are all **technical and observable**. For each one ask: *Is there clear, identifyable code or output that shows this skill?*
+The 12 Quarter‑1 core learning objectives are all **technical and observable**. For each one ask: *Is there clear, identifiable code or output that shows this skill?*
 
 The objectives are listed (more or less) in the order they are covered in class, but you can demonstrate them in any order.
 
 1. **RStudio + Quarto workflow**
     - Create an RStudio project for course work, use relative paths, and knit simple Quarto documents that combine code and narrative.
+    - [Additional guidelines for RStudio/Quarto Workflow objective](../misc/github-workflow.qmd)
 2. **GitHub repositories and version control**
     - Create and maintain a GitHub repo with README, .gitignore, and a commit history that reflects real work over time.
+    - [Additional guidelines for GitHub/Version Control objective](../misc/github-assessment.qmd)
 3. **Base R syntax and data structures**
-    - Use vectors, lists, and data frames correctly in scripts, including creation, indexing, and simple manipulation.
+    - Create, index, and manipulate vectors, lists, and data frames, including handling missing data.
 4. **Control flow (if/else, loops)**
     - Use if/else and loops to branch logic and automate repetitive tasks in multiple contexts.
-5. **Missing data and subsetting/filtering**
-    - Detect, remove, or handle missing values and subset data with logical conditions in multiple contexts.
+5. **Defining functions in Base R**
+    - Define and use functions with arguments and return values with reusable code logic in multiple contexts.
 6. **Importing data with tidyverse tools**
-    - Import datasets (e.g., CSV/TSV) with readr or similar, handling paths and basic options.
+    - Import datasets with readr and related packages, handling paths and basic options.
 7. **Data manipulation with dplyr and pipelines**
     - Use multiple dplyr verbs (filter, select, mutate, summarize, arrange, group_by) in chained pipelines.
-8. **Tidy data structure (identify and apply)**
+8. **Tidy data structure**
     - Diagnose untidy data and reshape to a tidy format, with explanation.
 9. **Reshaping data with tidyr**
     - Use multiple tidyr functions (pivot_longer/pivot_wider/separate/unite) to reshape data.
@@ -40,16 +42,17 @@ Each standard is scored on a 4 / 5 / 6 point scale based on the quality and inde
 | Points | Label | Description |
 | --- | --- | --- |
 | *No grade* | *No demonstration* | *You have not yet demonstrated this skill.* |
-| **4** | **Meets Expectations** | You demonstrate the skill accurately in structured or familiar contexts (for example, following a guided assignment or closely modeled example). |
+| **4** | **Meets Expectations** | You demonstrate the skill correctly in structured or familiar contexts (for example, following a guided assignment or closely modeled example). |
 | **5** | **Exceeds Expectations** | You apply the skill correctly and independently in a novel context, with clear, well-chosen code that would generalize to new datasets or problems. |
 | **6** | **Outstanding** | You use the skill in an especially expansive way: combining it with other skills, applying it to a complex or less-structured task, or going beyond the scope of in-class examples. |
 
 All three levels (4, 5, 6) are successful demonstrations. If you do not demonstrate a skill at least at the 4-point level, you will not earn credit for that standard.
 
-Each assignment will receive a score for each standard it addresses based on this rubric.
-Individual assignments may not be resubmitted for a higher score.
+Earning an average of 5 points per standard will earn you all 60 points. An average lower than 5 points can still result in an 'A' grade for the class if you complete [enrichment activities](enrichment.qmd).
 
-You may improve your score for a standard by submitting new assignments that demonstrate that standard at a higher level.
+Each assignment will receive a score for each standard it addresses based on this rubric.
+Individual assignments may not be resubmitted for a higher score, but you may improve your score for a standard by submitting new assignments that demonstrate that standard at a higher level.
+
 *Higher scores always replace lower scores for core standards*, so after earning a high score with an impressive assignment, subsequent assignments that use the skill at a more basic level won't lower your score.
 
 

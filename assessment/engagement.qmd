@@ -21,12 +21,24 @@ Here's a non-exhaustive list of things that can contribute to the community enga
     -  Team up with a partner or small group to meet for working groups outside of class
     -  Take on one or more of the optional collaborative assignments in the assessment menu
 
-*How do I know if I'm doing well?* If you're actively participating in class, asking questions, answering questions, and generally engaging with the material and your peers, you're probably doing great! At the end of the course, your engagement grade will be assigned based on your own self-assessment in a short written reflection. You can do that totally retrospectively, but you can also start keeping track of your own engagement throughout the quarter to make it easier to reflect on later. Make note of specific examples of how you engaged with the class and your peers, both in and out of the classroom. Posting to Slack? Joining a study group? Coming to office hours? Tackling a more ambitious project than you needed to? Add it to the list of things you did and include that list in your self-assessment. If you can name specific examples of how you participated in the class community, I'll be able to confidently assign you a high engagement grade.
+::: {.callout-note .large}
 
-::: callout-tip
 
 ### Independent and collaborative problem-solving
 
 A large portion of the course is developing your search skills when it comes to debugging your code ([look for advice and solutions from others who have faced similar problems on sites like stackoverflow and github](https://xkcd.com/979/))! Developing this skill and supporting others can be a major component of the community engagement grade. Week 1 slides will include a formal procedure to follow for troubleshooting help.
 
+
 :::
+
+::: {.callout-tip .large}
+
+### *How do I know if I'm doing well?* 
+
+If you're actively participating in class, asking questions, answering questions, and generally engaging with the material and your peers, you're probably doing great! At the end of the course, your engagement grade will be assigned based on your own self-assessment in a short written reflection. You can do that totally retrospectively, but you can also start keeping track of your own engagement throughout the quarter to make it easier to reflect on later. 
+
+Make note of specific examples of how you engaged with the class and your peers, both in and out of the classroom. Posting to Slack? Joining a study group? Coming to office hours? Tackling a more ambitious project than you needed to? Add it to the list of things you did and include that list in your self-assessment. If you can name specific examples of how you participated in the class community, I'll be able to confidently assign you a high engagement grade.
+
+:::
+
+
