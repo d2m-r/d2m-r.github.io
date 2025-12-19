@@ -1,5 +1,5 @@
 ---
-title: "Introduction to D2M-R - TEST EDIT 4"
+title: "Introduction to D2M-R - TEST EDIT 5"
 subtitle: "syllabus, problem-solving, RStudio"
 date: "1/6/2026"
 

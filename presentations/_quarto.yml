@@ -1,7 +1,7 @@
 # for slide rendering only
 
 project:
-  output-dir: ../docs/slides
+  output-dir: ../docs/presentations
 
 format:
   revealjs:
