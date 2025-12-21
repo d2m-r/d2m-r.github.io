@@ -10,10 +10,10 @@ The objectives are listed (more or less) in the order they are covered in class,
 
 1. **RStudio + Quarto workflow**
     - Create an RStudio project for course work, use relative paths, and knit simple Quarto documents that combine code and narrative.
-    - [Additional guidelines for RStudio/Quarto Workflow objective](../misc/github-workflow.qmd)
+    - [Additional guidelines for RStudio/Quarto Workflow objective](misc/workflow-assessment.qmd)
 2. **GitHub repositories and version control**
     - Create and maintain a GitHub repo with README, .gitignore, and a commit history that reflects real work over time.
-    - [Additional guidelines for GitHub/Version Control objective](../misc/github-assessment.qmd)
+    - [Additional guidelines for GitHub/Version Control objective](misc/gh-assessment.qmd)
 3. **Base R syntax and data structures**
     - Create, index, and manipulate vectors, lists, and data frames, including handling missing data.
 4. **Control flow (if/else, loops)**

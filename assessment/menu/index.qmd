@@ -1,0 +1,27 @@
+---
+title: "Project Menu"
+---
+
+1. Version Control
+    1. Skeleton repo (Semi-structured)
+    2. Collaborative repo (Unstructured group project)
+2. R Programming Foundations
+    1. Adoption Day at the Animal Shelter (Structured)
+    2. `hello_world()` function (Semi-structured)
+    3. Create a wrangling function (Unstructured)
+3. Data Wrangling in the Tidyverse
+    1. Clean the mtcars Dataset (Structured)
+    2. Clean the midwest Dataset (Semi-structured)
+    3. Uncleaning (Unstructured group project)
+    4. Recreate a starwars dataset (Structured)
+    5. Recreate a gapminder Dataset (Semi-structured)
+    6. Make-a-mess (Unstructured group project)
+    7. Recreate an existing function (Unstructured)
+4. Data Reporting
+    1. Simple Quarto notebook report (Semi-structured)
+    2. Class topic demo (Unstructured)
+    3. Descriptive statistics & visualization exercise (Structured)
+    4. Descriptive statistics & visualization open report (Unstructured)
+5. Multiple/other *(opportunities to demonstrate a range of standards depending on approach)*
+    1. Contribute to the course textbook repo (Unstructured)
+    2. Contribute to the Schelling Problems example repo (Unstructured)

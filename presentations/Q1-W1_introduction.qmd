@@ -1,6 +1,6 @@
 ---
-title: "Introduction to D2M-R - TEST EDIT 5"
-subtitle: "syllabus, problem-solving, RStudio"
+title: "Introduction to D2M-R"
+subtitle: "syllabus, workflow overview"
 date: "1/6/2026"
 
 format: revealjs
@@ -17,9 +17,13 @@ editor: source
 
 ### From Data to Manuscript in R - Quarter 1
 
+::: {nonincremental}
+
 -   **PSYC/MAPS/MACS/CHDV 30550**
 -   **Course website:** [d2m-r.github.io](https://d2m-r.github.io/)
 -   **Textbook:** [Data to Manuscript in R](https://d2m-r.github.io/book/)
+
+:::
 
 ## People
 
@@ -62,23 +66,12 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
 
 ## Expectations & Course Goals
 
-::: {.incremental}
 
-### D2M-R will give you:
+1. **Develop a reproducible and transparent research workflow.** Plan, execute, and document a data analysis project from start to finish including data acquisition, cleaning, analysis, visualization, and reporting.
+2. **Practice accountability & time management.** Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.
+3. **Engage with your research communities.** Collaborate effectively with peers, contribute to group learning, and seek help when needed.
+4. **Develop problem-solving and independent learning skills.** Develop specific strategies for debugging code, troubleshooting errors, asking good questions, and learning new skills independently using the myriad resources available online from R and open-science communities.
 
--   Familiarity with GitHub, R, RStudio, and Quarto markdown
--   Actionable troubleshooting/debugging strategies
--   Supports for maintaining a research project workflow
--   Base tools for working with your own data
-
-### D2M-R will __*not*__ give you:
-
--   Comprehensive expertise in the topics covered
--   People to solve your problems for you
--   Hand-holding or "correct" ways of working
--   New knowledge of statistics or research design
-
-:::
 
 ::: notes
 ### D2M-R will give you:
@@ -96,9 +89,35 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
 -   New knowledge of statistics or research design practices
 :::
 
-## D2M-R Workflow
+## Course Philosophy
 
-::: incremental
+This class is for you. You should come away with:
+
+- Foundational skills that everything else is built on
+- Application of those skills designed around your individual priorities, interests, and goals
+
+To get you there, the class is designed around four key principles:
+
+- Standards-based grading
+- Multiple pathways to demonstrate course objectives
+- Tiered credit for mastery levels
+- Individualized plans and pacing
+
+::: notes
+
+This course uses a **standards-based grading** system designed to support your skill development while accommodating diverse backgrounds, interests, and paces of learning. The system is built around the following principles:
+
+- **Standards-based:** Your grade reflects your progress on a set of clearly defined core technical skills, interchangeably referred to as "standards" and "core objectives." 
+- **Multiple pathways:** For most standards, you may choose from more structured activities, less structured / group activities, and minimally structured or self-designed small projects. You will show your mastery in smaller assignments and an integrative data project, both of which can be tailored to your interests and developed over the quarter.
+- **Tiered credit:** Each standard is scored using a 4 / 5 / 6 point rubric. Higher scores reflect more independent and expansive use of the skill and allow you to reach your grade goals more quickly. Lower grades may be replaced by subsequent higher grades as you develop stronger command of the skills. All three levels represent success, and earning mostly 4s does not preclude getting an A in the class.
+- **Individualized:** Beyond mastering technical skills that form the foundation for data analysis in R, you will also earn points for accountability, community engagement, and optional enrichment activities, with many ways to earn credit in each of these categories. There are no top-down deadlines for completing assignments to meet core standards. This structure allows you to set your own priorities based on your individual interests and goals. 
+- **No fixed interim deadlines:** You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).
+- **Planning is part of the grade:** The Accountability & Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.
+- **Early completion is allowed:** You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter.
+:::
+
+
+## D2M-R Workflow
 
 1.  Create and sync a GitHub repo and R project
 2.  Begin a full manuscript in a Quarto notebook (.qmd)
@@ -110,7 +129,6 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
 8.  1-click knit your manuscript to a publishable file format
 9.  Dynamically update and maintain your manuscript
 
-:::
 
 ::: notes
 
@@ -128,6 +146,8 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
 
 ## Quarter 1
 
+::: {.nonincremental}
+
 1.  **Create and sync a GitHub repo and R project**
 2.  **Begin a full manuscript in a Quarto notebook (.qmd)**
 3.  **Use R scripts and chunks to read in, clean, and wrangle data**
@@ -137,6 +157,8 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
 7.  <span class="text-blur">Compose the manuscript narrative in your notebook</span>
 8.  <span class="text-blur">1-click knit your manuscript to a publishable file format</span>
 9.  <span class="text-blur">Dynamically update and maintain your manuscript</span>
+
+:::
 
 # Course Policies: Overview
 
@@ -239,7 +261,7 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
     
 ## Climate
 
-- View the class climate policy [here]().
+- View the class climate policy [here](../syllabus/climate.qmd).
 - Basically, just be cool, ok?
 - If you have problems with other students or the TA:
     - Contact me first
@@ -250,7 +272,7 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
 - **You can *always* go to CARES without going through me or anyone else first.**
 
 ::: notes
-- View the class climate policy [here]().
+- View the class climate policy [here](../syllabus/climate.qmd).
 - But really just...be cool, ok?
 - We will all be kind, respectful, responsive, and supportive to one another in the classroom,
 on Slack, and all other interaction.
@@ -274,8 +296,8 @@ a more welcoming and respectful environment.
     - You *never* need to disclose personal details to me or anyone outside SDS
 - Meet with me in office hours for informal accommodation requests
     - Note: *All* arrangements must align with SDS policies for equity.
-- You must schedule a meeting with me before Friday Week 2 to integrate accommodations into your accountability plan
-    
+- You will factor your own accommodations into your accountability plan
+
 ::: notes
 - Requests for formal accommodations should go through Student Disability Services
     - SDS will send *undergraduate* accommodation letters to me automatically
@@ -299,55 +321,15 @@ You do *not* need to:
     - *Your instructor is not allowed to ask for one!*
 - Defend your need for accommodations
 
+::: {.alert .alert-warning .fragment}
 You are an adult with priorities and the capacity for cost/benefit decision-making. You can decide what you want to share and with whom. If you need to miss class because you have terrible period cramps, are having a panic attack, are recovering from a migraine, think your roommate might have COVID, need to cram for an exam for a different class, are shamefully hung over, or just really don't wanna come to campus. You do not need to explain yourself to me or anyone else. Just take care of yourself, and take responsibility for effects on your learning and grades.
 
 This doesn't mean there are never consequences for missing class. You are responsible for keeping up with the material and assignments (per your accommodations, if applicable), and are subject to penalties defined by the syllabus.
-
-
-
-## Accountability Plan
-
-- **You create an assignment schedule for yourself.** 
-    - Defining your own goals is part of the research workflow
-    - This is part of *an explicit learning objective* and part of your grade
-- You will create a personal timeline and accountability plan for the quarter
-    - Checkpoints on Mondays of Weeks 2, 5, and 8
-- Optionally: Base your plan on the suggested timeline in the [assignment instructions](d2m-r.github.io/assessment/accountability.html)
-    - This is not supposed to feel overwhelming, so take advantage of this if it helps! 
-- SDS approved accommodations for extensions are built into your plan
-- **10%** of your final grade is based on your accountability plan, including:
-    - Meeting the 3 checkpoint deadlines for the plan itself (meta-deadlines)
-    - Meeting the deadlines you set for yourself
-    - Reflecting on your progress and making adjustments
-    - *Suggesting* a grade (of 10)
-
-::: notes
-- **You create an assignment schedule for yourself.** With very few exceptions, there are no top-down deadlines in this class. Why?
-    - This class is about developing and maintaining a research workflow
-    - A major part of that is learning how to set and meet your own deadlines
-    - Making your own plan and sticking to it *is part of the syllabus*
-- You will create a personal timeline and accountability plan for the quarter
-    - Initial plans are due by Monday of Week 2
-    - Revised plans and reflections are due by Monday of Week 5
-    - Final reflections are due Monday of Week 8
-- You can base your plan on the suggested timeline in the [assignment instructions]()
-    - Use the suggested plan without changes (great option of the idea of designing your own schedule feels overwhelming)
-    - Start with this plan and make adjustments
-    - Start from scratch!
-- If your SDS accommodations include extended deadlines, you will factor those into the plan
-    - i.e. We are using this plan to agree on extensions now. I will not grant extensions to the
-    planned extensions as we go.
-- **10%** of your final grade is based on your accountability plan, including:
-    - Meeting the actual deadlines that I have set for the plan itself
-    - Meeting the deadlines you set for yourself
-    - Reflecting on your progress and making adjustments to your plan
-    - *Suggesting* a grade (of 10) for how well you think you followed your plan
 :::
-
 
 ## Academic Integrity: Overview
 
-- View the academic integrity policy [here]().
+- View the academic integrity policy [here](../syllabus/ai-policy.qmd).
 - Plagiarism is bad. Cheating is bad. Don't do it.
     - Why are you even here?
 - All written/textual content in your submitted assignments must be fully produced by you
@@ -408,255 +390,307 @@ in higher education.
 
 # Assessment & Grading
 
-## Q1 Learning Objectives: Broad
-
-- Organize and independently maintain a plan for project goals, timelines, and accountability
-- Develop and implement a research workflow using: 
-    - Git, GitHub, and version control
-    - RStudio, RMarkdown, and Quarto
-    - Base R and tidyverse packages
-- Learn and practice strategies for debugging and troubleshooting in the data-to-manuscript process
-- Learn and practice skills in data wrangling, analysis, and visualization
-- Apply skills to an independent project with your own^[Your Q1 final project may use publicly available data with approval.] data
-
-## Q1 Learning Objectives: Specific
-
-You earn points by demonstrating each of [##] specific learning objectives
-...
-
-
-
 ## Grading Overview
 
-You start at 0 points and work up to 100. You don't start at 100 and lose points. Meeting minimum requirements will get you an 85, a B. Earning an A takes more than that.
+Earn up to 100 points across five categories:
 
-::: columns
+| Points | Category | Description |
+| ----- | ---------- | ---------------|
+| 10 | [Accountability](../assessment/accountability.qmd) | Create and maintain a personalized accountability plan |
+| 10 | [Community Engagement](../assessment/engagement.qmd) | Participate actively in class and on Slack |
+| 60 | [Core Standards Mastery](../assessment/objectives.qmd) | Demonstrate proficiency on 12 core technical skills (standards) |
+| 20 | [Integrative Data Project](../assessment/data-project.qmd) | Complete a comprehensive data analysis project demonstrating mastery of all core standards |
+| *((10))* | [Enrichment](../assessment/enrichment.qmd) | Optional activities to deepen learning and supplement core work |
 
-::: {.column width="40%"}
+Because enrichment points are optional, it is possible to earn more than 100 raw points across categories. Final course grades are capped at 100.
 
-### Minimum Requirements: 85 points
-
-- Submit, follow, and reflect on your accountability plan (10 points)
-- Engage with the community in the classroom and on Slack (10 points)
-- Demonstrate specific course objectives in unit projects (50 points)
-- Demonstrate specific course objectives in final project (15 points)
+::: alert-info
+You start at 0 points and work up to 100. You don't start at 100 and lose points. Meeting minimum requirements means you will pass the class. Earning an A takes more than that.
 :::
 
-::: {.column width="10%"}
 
-:::
+## Accountability Plan (10pt)
 
-::: {.column width="40%"}
-
-### Additional Engagement: 15 points
-
-- Provide exceptional peer support or other community engagement
-- Demonstrate mastery of course objectives at a higher level that strictly required
-- Add elements to projects that include self-directed learning
-
-Examples of what "additional engagement" might look like can be found [here]().
-
-:::
-:::
-
-<!-- this is part of the week 1 content, but should be additionally packaged as an independent lecture that can be reused in quarter 2 -->
-
-# Solving Your Own Problems
-
-## A Preface
-
--   Debugging is programming.
-    -   It's not extra; it's essential.
--   Programming depends on collaboration.
-    -   Asking for help is not cheating!
--   Questions \> Answers
-    -   Get the basics down, then get everything else you need when you need it.
--   Troubleshooting includes debugging, *among other things*.
-    -   These skills translate beyond fixing code.
-    -   Please stop telling me that "in programming it's called debugging."
-
-## The Myth of the "Programmer"
-
-:::: columns
-
-::: {.column width="60%"}
-
--   Programmers are geniuses who have a sacred knowledge.
--   The debugging coders do is a highly specialized skill.
--   If you're debugging, you did something wrong.
--   Programming requires mastery of a programming language.
--   You can recognize an expert programmer by their abundant knowledge of the language.
-    - or their wardrobe of unwashed hoodies meticulously curated to signal how much they don't care about anything but code
-    
-:::
-
-::: {.column width="40%"}
-<!-- probably a gif from silicon valley -->
-:::
-
-::::
-
-
-## The Reality of Getting Shit Done
-
-:::: columns
-
-::: {.column width="60%"}
-
--   Debugging is not extra – it's the majority of the process.
--   Debugging is one application of more generalizable problem-solving skills.
--   Programming depends on collaboration.
--   Once you "master" the foundations, you learn the rest by just going for it.
--   You can recognize an expert programmer by their ability to find solutions.
-    -   They might also wear gross hoodies, but don't we all from time to time?
-
-:::
-
-::: {.column width="40%"}
-
-<!-- a cartoon about most of programming being dubugging, of which there are many -->
-
-:::
-
-:::::
-
-
-::: {.callout-tip .bigger}
-## Questions \> Answers
-Knowing how to ask the right questions to solve problems and learn independently is legitimately, indisputably more valuable than the party trick of recalling lots of functions and language-specific processes.
-:::
+- **You create an assignment schedule for yourself.** 
+    - Defining your own goals is part of the research workflow
+    - This is part of *an explicit learning objective* and part of your grade
+- You will create a personal timeline and accountability plan for the quarter
+    - Checkpoints on Mondays of Weeks 2, 5, and 8
+- Optionally: Base your plan on the suggested timeline in the [assignment instructions](../assessment/accountability.html)
+    - This is not supposed to feel overwhelming, so take advantage of this if it helps! 
+- SDS approved accommodations for extensions are built into your plan
+- **10%** of your final grade is based on your accountability plan, including:
+    - Meeting the 3 checkpoint deadlines for the plan itself (meta-deadlines)
+    - Meeting the deadlines you set for yourself
+    - Reflecting on your progress and making adjustments
+    - *Suggesting* a grade (of 10)
 
 ::: notes
 
--   **Debugging is not extra – it's essential**
-    -   80% of programming time is spent debugging <!-- there's got to be a cartoon for this -->
--   **Troubleshooting includes debugging, *among other things*.**
-    -   These skills translate beyond fixing code.
-    -   Please stop telling me that "in programming it's called debugging."
--   **Programming depends on collaboration**
-    -   Asking for help is not cheating!
-    -   Programming knowledge is freely **distributed and shared**
--   **Questions \> Answers**
-    -   Get the basics down, then get everything else you need when you need it.
--   **Master the foundations and then just go for it**
+- **No fixed interim deadlines:** You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).
+- **Planning is part of the grade:** The Accountability & Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.
+- **Early completion is allowed:** You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter.
+
+- **You create an assignment schedule for yourself.** With very few exceptions, there are no top-down deadlines in this class. Why?
+    - This class is about developing and maintaining a research workflow
+    - A major part of that is learning how to set and meet your own deadlines
+    - Making your own plan and sticking to it *is part of the syllabus*
+        - This means that "reasonable accommodations" must not prevent you from reaching this objective
+- You will create a personal timeline and accountability plan for the quarter
+    - Initial plans are due by Monday of Week 2
+    - Revised plans and reflections are due by Monday of Week 5
+    - Final reflections are due Monday of Week 8
+- You can base your plan on the suggested timeline in the [assignment instructions]()
+    - Use the suggested plan without changes (great option of the idea of designing your own schedule feels overwhelming)
+    - Start with this plan and make adjustments
+    - Start from scratch!
+- If your SDS accommodations include extended deadlines, you will factor those into the plan
+    - i.e. We are using this plan to agree on extensions now. I will not grant extensions to the
+    planned extensions as we go.
+- **10%** of your final grade is based on your accountability plan, including:
+    - Meeting the actual deadlines that I have set for the plan itself
+    - Meeting the deadlines you set for yourself
+    - Reflecting on your progress and making adjustments to your plan
+    - *Suggesting* a grade (of 10) for how well you think you followed your plan
 :::
 
-# Best Practices
 
-> The best way to troubleshoot is to avoid it. 
+## Community Engagement (10pt)
 
-## Keep Your Code:
+Attending class and paying attention are basic expectations.
+Your engagement grade is based on how you show investment in the course and your peers, both in and out of class. Some ways to do this include:
 
-::::: columns
-::: {.column width="50%"}
--   **Standardized**
-    -   style guides, internal consistency
--   **Intelligible** - clear comments and naming
-    -   informative comments, meaningful naming, documentation
+- In-class:
+    - Ask and answer questions during lecture
+    - Use workshop time wisely and generously
+    - Participate in group activities
+- Outside the classroom:
+    - Be an active participant on Slack
+    - Seek support from peers and instructors when needed
+    - Collaborate with peers
+    - Complete collaborative assignments
+
+::: notes
+Aside from the basic expectation that you'll attend class and pay attention, this can look different for everyone. The community engagement grade is not about meeting the minimum requirement (e.g., attending class!). It's about demonstrating a high level of investment in the course and your peers. **This is not an attendance grade.**
+
+Here's a non-exhaustive list of things that can contribute to the community engagement grade:
+
+1.  In-classroom:
+    - Make active contributions in a large group setting by asking/answering questions during lecture
+    - Use workshop time wisely and generously, seeking and offering support from/to classmates with debugging and troubleshooting
+    - Participating in group activities
+    - Generally paying attention and staying focused during class time
+2.  Outside the classroom:
+    -  Be an active participant on the class Slack channel, both asking and answering questions
+    -  Get support from classmates, TAs, and the professor
+    -  Team up with a partner or small group to meet for working groups outside of class
+    -  Take on one or more of the optional collaborative assignments in the assessment menu
+:::
+
+
+
+
+## Core Standards Mastery (60pt)
+
+Demonstrate proficiency on 12 core technical skills (standards).
+
+Choose from an assignment "menu" to demonstrate each skill, or design your own projects
+
+-   Structured assignments that guide you through skills step-by-step
+-   Semi-structured assignments that provide a clear framework with room for creativity
+-   Unstructured assignments that give suggested approaches to meet objectives
+-   Group assignments
+-   "Off-the-menu" Self-designed small projects
+
+View the [menu](../assessment/menu.qmd).
+
+
+## Core Standards Mastery (60pt)
+
+The 12 core skills for the first quarter are:
+
+1. RStudio + Quarto workflow
+2. GitHub repositories and version control
+3. Base R syntax and data structures
+4. Control flow (if/else, loops)
+5. Defining functions in Base R
+6. Importing data with tidyverse tools
+7. Data manipulation with dplyr and pipelines
+8. Tidy data structure
+9. Reshaping data with tidyr
+10. Character strings with stringr
+11. Factors with forcats
+12. Basic reporting: plots and descriptives in Quarto
+
+::: notes
+
+You earn points by demonstrating each of 12 specific learning objectives
+
+1. **RStudio + Quarto workflow**
+    - Create an RStudio project for course work, use relative paths, and knit simple Quarto documents that combine code and narrative.
+    - [Additional guidelines for RStudio/Quarto Workflow objective](../misc/github-workflow.qmd)
+2. **GitHub repositories and version control**
+    - Create and maintain a GitHub repo with README, .gitignore, and a commit history that reflects real work over time.
+    - [Additional guidelines for GitHub/Version Control objective](../misc/github-assessment.qmd)
+3. **Base R syntax and data structures**
+    - Create, index, and manipulate vectors, lists, and data frames, including handling missing data.
+4. **Control flow (if/else, loops)**
+    - Use if/else and loops to branch logic and automate repetitive tasks in multiple contexts.
+5. **Defining functions in Base R**
+    - Define and use functions with arguments and return values with reusable code logic in multiple contexts.
+6. **Importing data with tidyverse tools**
+    - Import datasets with readr and related packages, handling paths and basic options.
+7. **Data manipulation with dplyr and pipelines**
+    - Use multiple dplyr verbs (filter, select, mutate, summarize, arrange, group_by) in chained pipelines.
+8. **Tidy data structure**
+    - Diagnose untidy data and reshape to a tidy format, with explanation.
+9. **Reshaping data with tidyr**
+    - Use multiple tidyr functions (pivot_longer/pivot_wider/separate/unite) to reshape data.
+10. **Character strings with stringr**
+    - Use stringr functions (e.g., str_detect, str_replace, str_extract) to solve text cleaning or extraction tasks.
+11. **Factors with forcats**
+    - Recode, reorder, and/or lump factor levels to prepare categorical variables for analysis or plotting.
+12. **Basic reporting: plots and descriptives in Quarto**
+    - Create simple ggplot2 plots and compute/report basic descriptive statistics (means, medians, counts, proportions) in a Quarto document with clear captions and narrative.
 
 :::
 
-::: {.column width="50%"}
--   **Maintainable**
-    -   sustainable over time and transportable
--   **Contextualized**
--   appropriate for your community and your project
+
+
+## Core Standards Mastery (60pt)
+
+Each standard is scored on a 4 / 5 / 6 point scale based on the quality and independence of your demonstration of the skill. 
+
+| Points | Label | Description |
+| --- | --- | --- |
+| *No grade* | *No demonstration* | *You have not yet demonstrated this skill.* |
+| **4** | **Meets Expectations** | You demonstrate the skill correctly in structured or familiar contexts. |
+| **5** | **Exceeds Expectations** | You apply the skill correctly and independently in a novel context. |
+| **6** | **Outstanding** | You use the skill in an especially expansive way. |
+
+
+
+::: notes
+
+Each standard is scored on a 4 / 5 / 6 point scale based on the quality and independence of your demonstration of the skill. 
+
+| Points | Label | Description |
+| --- | --- | --- |
+| *No grade* | *No demonstration* | *You have not yet demonstrated this skill.* |
+| **4** | **Meets Expectations** | You demonstrate the skill correctly in structured or familiar contexts (for example, following a guided assignment or closely modeled example). |
+| **5** | **Exceeds Expectations** | You apply the skill correctly and independently in a novel context, with clear, well-chosen code that would generalize to new datasets or problems. |
+| **6** | **Outstanding** | You use the skill in an especially expansive way: combining it with other skills, applying 
+it to a complex or less-structured task, or going beyond the scope of in-class examples. |
+
+All three levels (4, 5, 6) are successful demonstrations. If you do not demonstrate a skill at least at the 4-point level, you will not earn credit for that standard.
+
+Earning an average of 5 points per standard will earn you all 60 points. An average lower than 5 points can still result in an 'A' grade for the class if you complete [enrichment activities](enrichment.qmd).
+
+Each assignment will receive a score for each standard it addresses based on this rubric.
+Individual assignments may not be resubmitted for a higher score, but you may improve your score for a standard by submitting new assignments that demonstrate that standard at a higher level.
+
+*Higher scores always replace lower scores for core standards*, so after earning a high score with an impressive assignment, subsequent assignments that use the skill at a more basic level won't lower your score.
+
+
 :::
-:::::
 
-## Standardized Code
+## Integrative Data Project (20pt)
 
--   **Standardized** code is easier to read, understand, and maintain.
--   Use a style guide
--   Maintain internal consistency
+The final project is a data analysis report created with RStudio and maintained in a GitHub repo that includes:
 
-## R Standard Formatting
+- Data import
+- Data wrangling/cleaning
+- Basic descriptive statistics
+- Simple data visualization
+- Narrative markdown text explaining your choices and findings
 
-::::: columns
-::: {.column width="50%"}
-### R is pretty forgiving
+## Integrative Data Project (20pt)
 
--   Whitespace insensitive
--   Few "forbidden" characters
+Earn up to 20 points on the data project:
 
-### So choose where to be cautious
+| Points | Component | Description |
+| ------ | --------- | ----------- |
+| 12 | Core standards | Demonstrate all 12 core standards at 4pt-level or above |
+| 2 | Reproducibility | Code is fully reproducible, with no errors |
+| 2 | Documentation | Code is clearly commented with explanatory Quarto narrative text |
+| 2 | Cohesion | Data wrangling, statistics, and plots are clearly connected with narrative text|
+| 2 | Presentation | Quarto document is well-formatted and knits without error |
 
--   Avoid special characters (even if they are technically allowed)
--   Prioritize readability over conciseness
+Submit your data project **up to 3 times** to get early feedback and/or complete the requirement early.
+
+::: notes
+
+"Above and beyond" demonstrations of core standards or exceptional quality may receive bonus points at the grader's discretion, but the project cannot contribute more than 20 points to the final grade. In other words, outstanding use of one standard might earn you a point that compensates for weaker presentation or documentation, but not a point of extra credit.
+
+You may submit the data project up to 3 times throughout the quarter.
+With each draft, you will also include a self-assessment, indicating which standards you believe you have demonstrated and how well you have met each of the grading components above.
+After scoring your work, your grader will provide feedback as a response to your self-assessment to help you improve your project for future submissions.
+
+You are allowed -- *and encouraged!* -- to submit partial drafts of your project to confirm that you are on the right track before submitting a full draft.
+You aren't expected to be able to demonstrate a skill before we cover it in class, so early submissions may only demonstrate a subset of the standards.
+That's fine! 
+Submitting a draft that shows only a few objectives will let you confirm that you are in fact meeting expectations for those objectives and will give you guidance on where to go next.
+
+Grades for resubmissions will replace previous scores. Your grade for the data project will be the score earned on your last submission before the end-of-quarter deadline.
+
 :::
 
-::: {.column width="50%"}
-### Style Guides
+## Enrichment (up to 10pt)
 
--   **The right style is the one you can stick to**
-    -   [Google's R Style Guide](https://google.github.io/styleguide/Rguide.html)
-    -   [Tidyverse Style Guide](https://style.tidyverse.org/)
-    -   [Individualized Style Guide]()
-        -   my own guide, a tweaked version of the tidyverse guide
-:::
-:::::
+These 10 optional points are a way for you to customize your curriculum in this class to your own interests and goals.
+
+You can earn 100 points without any enrichment points, but you can make up for lower scores on core standards by completing enrichment activities.
+
+Examples include:
+
+- Debugging journals that document how you worked through specific problems
+- Short write‑ups teaching a peer how to do something (e.g., connecting RStudio and GitHub)
+- Reflections on responsible and productive use of AI tools in your workflow
+- Evidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)
+- Contributions to open‑source R packages or communities (e.g., GitHub issues, Stack Overflow answers)
 
 ::: callout-tip
-(note about the stylr package)
+
+### Where do I find them?
+
+For the most part it's up to you to design your own enrichment activities.
+Figuring out for yourself what would be most useful for your own learning is part of the point of this category.
+If you are totally lost as to where to start, there are a few unstructured activities listed on the assignment menu.
+
 :::
 
-# Intelligible Code
 
-## Commenting Best Practices
+::: notes
 
-:::::::: columns
-:::: {.column width="60%"}
-::: incremental
-1.  Comments should not duplicate code
-2.  Good comments do not excuse unclear code
-3.  If you can't write a clear comment, there may be a problem with the code
-4.  Comments should dispel confusion, not cause it
-5.  Explain unidiomatic code in comments
-6.  Provide links to the original source of copied code
-7.  Include links to external references where helpful
-8.  Add comments when fixing bugs
-9.  Use comments to mark incomplete implementations
-:::
-::::
+Enrichment activities are **not** part of the base structure of the course grade. 
+Instead, they give you a way to recover or add points if you choose a more structured path or if some standards land at the 4‑point level.
 
-::::: {.column width="40%" style="font-size: 1.3em"}
-::: {.callout-tip style="margin-bottom: 2em"}
-## Keep Collaboration in Mind
+This is effectively up to 10 points of extra credit, but I don't like thinking about these skills or these kinds of experiences as "extra."
+I believe this category is as valuable as the core skills, but necessarily fuzzier and more open-ended.
+These 10 optional points are a way for you to customize your curriculum in this class to your own interests and goals.
 
-Be kind not just to others who may work with you, but also to future-you.
-:::
+Examples include:
 
-::: callout-important
-## Natural languages \> programming languages
+- Debugging journals that document how you worked through specific problems
+- Short write‑ups teaching a peer how to do something (e.g., connecting RStudio and GitHub)
+- Simple documentation for your own utility functions
+- Reflections on responsible and productive use of AI tools in your workflow
+- Evidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)
+- Short explorations of advanced R packages or techniques beyond the core curriculum
+- Identifying a need in your own research workflow and designing a solution using R
+- Discovering and effectively making use of specialized R packages for your specific needs
+- Mini‑projects that apply course skills to your own research questions (must be different from your final data project)
+- Contributions to open‑source R packages or communities (e.g., GitHub issues, Stack Overflow answers)
 
-The language you speak is infinitely more intuitive, nuanced, specific, and adaptable. Take advantage of it.
-:::
-:::::
-::::::::
+This is not a comprehensive list, and really the more creative and customized you approach this, the more useful it will be for your own learning (and the easier it will be to earn points). If you have an idea for an enrichment activity that isn't listed here, send an email to Dr. Dowling to confirm that it is appropriate before you start working on it.
 
-## Meaningful Naming
+You may submit evidence for enrichment points up to 5 times during the quarter.
+Evidence may be in the form of a dedicated project (e.g., a debugging journal) or as a companion to another assignment (e.g., writing up how you used AI tools to help solve a problem in a core standards assignment).
+Points will be awarded based on overall quality and depth, which may look like creativity, independent learning, clear communication, thoughtful self-evaluation, or other dimensions depending on the nature of the activity.
+Your submission will include an opportunity for you to explain how the activity contributed to your learning and how many points you believe you have earned.
 
-> “There are only two hard things in Computer Science: cache invalidation and naming things.”
-> — Phil Karlton
+The Canvas assignments include details on exactly how to submit and document different kinds of demonstrations.
 
-::::::: columns
-
-::::: {.column width="40%"}
-
-::: callout-warning
-## Names should describe the named thing!
-
-Not as easy as it sounds.
 :::
 
-- Avoid disinformation
-- Use pronounceable names
-- Use searchable names
-- Pick one word/format per concept
-- Avoid encodings
 
-:::::
-
-::::: {.column width="60%"}
-
-![Keep it simple, stupid – commitstrip.com](../images/variable-name-cartoon.jpg){style="align: right;"}

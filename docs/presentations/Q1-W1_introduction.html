@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="Q1-W1_introduction_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Q1-W1_introduction_files/libs/quarto-html/tabby.min.js"></script>
-<script src="Q1-W1_introduction_files/libs/quarto-html/popper.min.js"></script>
-<script src="Q1-W1_introduction_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="Q1-W1_introduction_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Q1-W1_introduction_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Q1-W1_introduction_files/libs/quarto-html/quarto-syntax-highlighting-213b55af01392fe150d2f058d760f8e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="dcterms.date" content="2026-01-06">
-  <title>Introduction to D2M-R - TEST EDIT 5</title>
+  <title>Data to Manuscript in R – Introduction to D2M-R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="Q1-W1_introduction_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="Q1-W1_introduction_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,13 +29,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="Q1-W1_introduction_files/libs/revealjs/dist/theme/quarto-e0724c554c9e4328f38d786ebc6d0b55.css">
-  <link href="Q1-W1_introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="Q1-W1_introduction_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="Q1-W1_introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="Q1-W1_introduction_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="Q1-W1_introduction_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="Q1-W1_introduction_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -47,7 +45,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -124,16 +121,14 @@
       margin-right: 0; 
     }
   </style>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script type="text/javascript" src="../theme/bubbles.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction to D2M-R - TEST EDIT 5</h1>
-  <p class="subtitle">syllabus, problem-solving, RStudio</p>
+  <h1 class="title">Introduction to D2M-R</h1>
+  <p class="subtitle">syllabus, workflow overview</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -143,11 +138,13 @@
 <section id="course" class="slide level2">
 <h2>Course</h2>
 <h3 id="from-data-to-manuscript-in-r---quarter-1">From Data to Manuscript in R - Quarter 1</h3>
+<div class="{nonincremental}">
 <ul>
 <li><strong>PSYC/MAPS/MACS/CHDV 30550</strong></li>
 <li><strong>Course website:</strong> <a href="https://d2m-r.github.io/">d2m-r.github.io</a></li>
 <li><strong>Textbook:</strong> <a href="https://d2m-r.github.io/book/">Data to Manuscript in R</a></li>
 </ul>
+</div>
 </section>
 <section id="people" class="slide level2">
 <h2>People</h2>
@@ -200,29 +197,21 @@
 </section>
 <section id="expectations-course-goals" class="slide level2">
 <h2>Expectations &amp; Course Goals</h2>
-<h3 id="d2m-r-will-give-you">D2M-R will give you:</h3>
-<ul>
-<li class="fragment">Familiarity with GitHub, R, RStudio, and Quarto markdown</li>
-<li class="fragment">Actionable troubleshooting/debugging strategies</li>
-<li class="fragment">Supports for maintaining a research project workflow</li>
-<li class="fragment">Base tools for working with your own data</li>
-</ul>
-<h3 id="d2m-r-will-not-give-you">D2M-R will <strong><em>not</em></strong> give you:</h3>
-<ul>
-<li class="fragment">Comprehensive expertise in the topics covered</li>
-<li class="fragment">People to solve your problems for you</li>
-<li class="fragment">Hand-holding or “correct” ways of working</li>
-<li class="fragment">New knowledge of statistics or research design</li>
-</ul>
+<ol type="1">
+<li><strong>Develop a reproducible and transparent research workflow.</strong> Plan, execute, and document a data analysis project from start to finish including data acquisition, cleaning, analysis, visualization, and reporting.</li>
+<li><strong>Practice accountability &amp; time management.</strong> Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.</li>
+<li><strong>Engage with your research communities.</strong> Collaborate effectively with peers, contribute to group learning, and seek help when needed.</li>
+<li><strong>Develop problem-solving and independent learning skills.</strong> Develop specific strategies for debugging code, troubleshooting errors, asking good questions, and learning new skills independently using the myriad resources available online from R and open-science communities.</li>
+</ol>
 <aside class="notes">
-<h3 id="d2m-r-will-give-you-1">D2M-R will give you:</h3>
+<h3 id="d2m-r-will-give-you">D2M-R will give you:</h3>
 <ul>
 <li>A basic knowledge of how to use GitHub, R, RStudio, Quarto/RMarkdown, and the tidyverse packages</li>
 <li>Strategies for how to identify and resolve bugs in the data-to-manuscript process</li>
 <li>Supports for establishing and maintaining a workflow within your project</li>
 <li>Tools to implement your own data analysis and visualization plans</li>
 </ul>
-<h3 id="d2m-r-will-not-give-you-1">D2M-R will <strong><em>not</em></strong> give you:</h3>
+<h3 id="d2m-r-will-not-give-you">D2M-R will <strong><em>not</em></strong> give you:</h3>
 <ul>
 <li>Comprehensive expertise in any of the tools or packages or depth in packages outside the tidyverse</li>
 <li>Instructors or classmates who solve your technical problems for you</li>
@@ -241,18 +230,55 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="d2m-r-workflow" class="slide level2 scrollable">
+<section id="course-philosophy" class="slide level2">
+<h2>Course Philosophy</h2>
+<p>This class is for you. You should come away with:</p>
+<ul>
+<li>Foundational skills that everything else is built on</li>
+<li>Application of those skills designed around your individual priorities, interests, and goals</li>
+</ul>
+<p>To get you there, the class is designed around four key principles:</p>
+<ul>
+<li>Standards-based grading</li>
+<li>Multiple pathways to demonstrate course objectives</li>
+<li>Tiered credit for mastery levels</li>
+<li>Individualized plans and pacing</li>
+</ul>
+<aside class="notes">
+<p>This course uses a <strong>standards-based grading</strong> system designed to support your skill development while accommodating diverse backgrounds, interests, and paces of learning. The system is built around the following principles:</p>
+<ul>
+<li><strong>Standards-based:</strong> Your grade reflects your progress on a set of clearly defined core technical skills, interchangeably referred to as “standards” and “core objectives.”</li>
+<li><strong>Multiple pathways:</strong> For most standards, you may choose from more structured activities, less structured / group activities, and minimally structured or self-designed small projects. You will show your mastery in smaller assignments and an integrative data project, both of which can be tailored to your interests and developed over the quarter.</li>
+<li><strong>Tiered credit:</strong> Each standard is scored using a 4 / 5 / 6 point rubric. Higher scores reflect more independent and expansive use of the skill and allow you to reach your grade goals more quickly. Lower grades may be replaced by subsequent higher grades as you develop stronger command of the skills. All three levels represent success, and earning mostly 4s does not preclude getting an A in the class.</li>
+<li><strong>Individualized:</strong> Beyond mastering technical skills that form the foundation for data analysis in R, you will also earn points for accountability, community engagement, and optional enrichment activities, with many ways to earn credit in each of these categories. There are no top-down deadlines for completing assignments to meet core standards. This structure allows you to set your own priorities based on your individual interests and goals.</li>
+<li><strong>No fixed interim deadlines:</strong> You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).</li>
+<li><strong>Planning is part of the grade:</strong> The Accountability &amp; Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.</li>
+<li><strong>Early completion is allowed:</strong> You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="d2m-r-workflow" class="slide level2">
 <h2>D2M-R Workflow</h2>
 <ol type="1">
-<li class="fragment">Create and sync a GitHub repo and R project</li>
-<li class="fragment">Begin a full manuscript in a Quarto notebook (.qmd)</li>
-<li class="fragment">Use R scripts and chunks to read in, clean, and wrangle data</li>
-<li class="fragment">Source .R scripts for “background” needs</li>
-<li class="fragment">Analyze and visualize your data within your Quarto notebook</li>
-<li class="fragment">Maintain a BibTeX file with all manuscript citations</li>
-<li class="fragment">Compose the manuscript narrative in your notebook</li>
-<li class="fragment">1-click knit your manuscript to a publishable file format</li>
-<li class="fragment">Dynamically update and maintain your manuscript</li>
+<li>Create and sync a GitHub repo and R project</li>
+<li>Begin a full manuscript in a Quarto notebook (.qmd)</li>
+<li>Use R scripts and chunks to read in, clean, and wrangle data</li>
+<li>Source .R scripts for “background” needs</li>
+<li>Analyze and visualize your data within your Quarto notebook</li>
+<li>Maintain a BibTeX file with all manuscript citations</li>
+<li>Compose the manuscript narrative in your notebook</li>
+<li>1-click knit your manuscript to a publishable file format</li>
+<li>Dynamically update and maintain your manuscript</li>
 </ol>
 <aside class="notes">
 <ol type="1">
@@ -278,7 +304,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="quarter-1" class="slide level2 scrollable">
+<section id="quarter-1" class="slide level2">
 <h2>Quarter 1</h2>
 <ol type="1">
 <li><strong>Create and sync a GitHub repo and R project</strong></li>
@@ -456,7 +482,7 @@
 <section id="climate" class="slide level2">
 <h2>Climate</h2>
 <ul>
-<li>View the class climate policy <a href="">here</a>.</li>
+<li>View the class climate policy <a href="../syllabus/climate.html">here</a>.</li>
 <li>Basically, just be cool, ok?</li>
 <li>If you have problems with other students or the TA:
 <ul>
@@ -472,7 +498,7 @@
 </ul>
 <aside class="notes">
 <ul>
-<li>View the class climate policy <a href="">here</a>.</li>
+<li>View the class climate policy <a href="../syllabus/climate.html">here</a>.</li>
 <li>But really just…be cool, ok?</li>
 <li>We will all be kind, respectful, responsive, and supportive to one another in the classroom, on Slack, and all other interaction.</li>
 <li>If you have problems with other students or the TA:
@@ -514,7 +540,7 @@
 <ul>
 <li>Note: <em>All</em> arrangements must align with SDS policies for equity.</li>
 </ul></li>
-<li>You must schedule a meeting with me before Friday Week 2 to integrate accommodations into your accountability plan</li>
+<li>You will factor your own accommodations into your accountability plan</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -557,82 +583,15 @@
 </ul></li>
 <li>Defend your need for accommodations</li>
 </ul>
+<div class="alert alert-warning fragment">
 <p>You are an adult with priorities and the capacity for cost/benefit decision-making. You can decide what you want to share and with whom. If you need to miss class because you have terrible period cramps, are having a panic attack, are recovering from a migraine, think your roommate might have COVID, need to cram for an exam for a different class, are shamefully hung over, or just really don’t wanna come to campus. You do not need to explain yourself to me or anyone else. Just take care of yourself, and take responsibility for effects on your learning and grades.</p>
 <p>This doesn’t mean there are never consequences for missing class. You are responsible for keeping up with the material and assignments (per your accommodations, if applicable), and are subject to penalties defined by the syllabus.</p>
-</section>
-<section id="accountability-plan" class="slide level2">
-<h2>Accountability Plan</h2>
-<ul>
-<li><strong>You create an assignment schedule for yourself.</strong>
-<ul>
-<li>Defining your own goals is part of the research workflow</li>
-<li>This is part of <em>an explicit learning objective</em> and part of your grade</li>
-</ul></li>
-<li>You will create a personal timeline and accountability plan for the quarter
-<ul>
-<li>Checkpoints on Mondays of Weeks 2, 5, and 8</li>
-</ul></li>
-<li>Optionally: Base your plan on the suggested timeline in the <a href="d2m-r.github.io/assessment/accountability.html">assignment instructions</a>
-<ul>
-<li>This is not supposed to feel overwhelming, so take advantage of this if it helps!</li>
-</ul></li>
-<li>SDS approved accommodations for extensions are built into your plan</li>
-<li><strong>10%</strong> of your final grade is based on your accountability plan, including:
-<ul>
-<li>Meeting the 3 checkpoint deadlines for the plan itself (meta-deadlines)</li>
-<li>Meeting the deadlines you set for yourself</li>
-<li>Reflecting on your progress and making adjustments</li>
-<li><em>Suggesting</em> a grade (of 10)</li>
-</ul></li>
-</ul>
-<aside class="notes">
-<ul>
-<li><strong>You create an assignment schedule for yourself.</strong> With very few exceptions, there are no top-down deadlines in this class. Why?
-<ul>
-<li>This class is about developing and maintaining a research workflow</li>
-<li>A major part of that is learning how to set and meet your own deadlines</li>
-<li>Making your own plan and sticking to it <em>is part of the syllabus</em></li>
-</ul></li>
-<li>You will create a personal timeline and accountability plan for the quarter
-<ul>
-<li>Initial plans are due by Monday of Week 2</li>
-<li>Revised plans and reflections are due by Monday of Week 5</li>
-<li>Final reflections are due Monday of Week 8</li>
-</ul></li>
-<li>You can base your plan on the suggested timeline in the <a href="">assignment instructions</a>
-<ul>
-<li>Use the suggested plan without changes (great option of the idea of designing your own schedule feels overwhelming)</li>
-<li>Start with this plan and make adjustments</li>
-<li>Start from scratch!</li>
-</ul></li>
-<li>If your SDS accommodations include extended deadlines, you will factor those into the plan
-<ul>
-<li>i.e.&nbsp;We are using this plan to agree on extensions now. I will not grant extensions to the planned extensions as we go.</li>
-</ul></li>
-<li><strong>10%</strong> of your final grade is based on your accountability plan, including:
-<ul>
-<li>Meeting the actual deadlines that I have set for the plan itself</li>
-<li>Meeting the deadlines you set for yourself</li>
-<li>Reflecting on your progress and making adjustments to your plan</li>
-<li><em>Suggesting</em> a grade (of 10) for how well you think you followed your plan</li>
-</ul></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</div>
 </section>
 <section id="academic-integrity-overview" class="slide level2">
 <h2>Academic Integrity: Overview</h2>
 <ul>
-<li>View the academic integrity policy <a href="">here</a>.</li>
+<li>View the academic integrity policy <a href="../syllabus/ai-policy.html">here</a>.</li>
 <li>Plagiarism is bad. Cheating is bad. Don’t do it.
 <ul>
 <li>Why are you even here?</li>
@@ -694,148 +653,112 @@
 <h1>Assessment &amp; Grading</h1>
 
 </section>
-<section id="q1-learning-objectives-broad" class="slide level2 scrollable">
-<h2>Q1 Learning Objectives: Broad</h2>
-<ul>
-<li>Organize and independently maintain a plan for project goals, timelines, and accountability</li>
-<li>Develop and implement a research workflow using:
-<ul>
-<li>Git, GitHub, and version control</li>
-<li>RStudio, RMarkdown, and Quarto</li>
-<li>Base R and tidyverse packages</li>
-</ul></li>
-<li>Learn and practice strategies for debugging and troubleshooting in the data-to-manuscript process</li>
-<li>Learn and practice skills in data wrangling, analysis, and visualization</li>
-<li>Apply skills to an independent project with your own<sup>1</sup> data</li>
-</ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Your Q1 final project may use publicly available data with approval.</p></li></ol></aside></section>
-<section id="q1-learning-objectives-specific" class="slide level2">
-<h2>Q1 Learning Objectives: Specific</h2>
-<p>You earn points by demonstrating each of [##] specific learning objectives …</p>
-</section>
 <section id="grading-overview" class="slide level2">
 <h2>Grading Overview</h2>
-<p>You start at 0 points and work up to 100. You don’t start at 100 and lose points. Meeting minimum requirements will get you an 85, a B. Earning an A takes more than that.</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<h3 id="minimum-requirements-85-points">Minimum Requirements: 85 points</h3>
-<ul>
-<li>Submit, follow, and reflect on your accountability plan (10 points)</li>
-<li>Engage with the community in the classroom and on Slack (10 points)</li>
-<li>Demonstrate specific course objectives in unit projects (50 points)</li>
-<li>Demonstrate specific course objectives in final project (15 points)</li>
-</ul>
-</div><div class="column" style="width:10%;">
-
-</div><div class="column" style="width:40%;">
-<h3 id="additional-engagement-15-points">Additional Engagement: 15 points</h3>
-<ul>
-<li>Provide exceptional peer support or other community engagement</li>
-<li>Demonstrate mastery of course objectives at a higher level that strictly required</li>
-<li>Add elements to projects that include self-directed learning</li>
-</ul>
-<p>Examples of what “additional engagement” might look like can be found <a href="">here</a>.</p>
-</div></div>
-<!-- this is part of the week 1 content, but should be additionally packaged as an independent lecture that can be reused in quarter 2 -->
-</section></section>
-<section>
-<section id="solving-your-own-problems" class="title-slide slide level1 center">
-<h1>Solving Your Own Problems</h1>
-
+<p>Earn up to 100 points across five categories:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Points</th>
+<th>Category</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10</td>
+<td><a href="../assessment/accountability.html">Accountability</a></td>
+<td>Create and maintain a personalized accountability plan</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><a href="../assessment/engagement.html">Community Engagement</a></td>
+<td>Participate actively in class and on Slack</td>
+</tr>
+<tr class="odd">
+<td>60</td>
+<td><a href="../assessment/objectives.html">Core Standards Mastery</a></td>
+<td>Demonstrate proficiency on 12 core technical skills (standards)</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td><a href="../assessment/data-project.html">Integrative Data Project</a></td>
+<td>Complete a comprehensive data analysis project demonstrating mastery of all core standards</td>
+</tr>
+<tr class="odd">
+<td><em>((10))</em></td>
+<td><a href="../assessment/enrichment.html">Enrichment</a></td>
+<td>Optional activities to deepen learning and supplement core work</td>
+</tr>
+</tbody>
+</table>
+<p>Because enrichment points are optional, it is possible to earn more than 100 raw points across categories. Final course grades are capped at 100.</p>
+<div class="alert-info">
+<p>You start at 0 points and work up to 100. You don’t start at 100 and lose points. Meeting minimum requirements means you will pass the class. Earning an A takes more than that.</p>
+</div>
 </section>
-<section id="a-preface" class="slide level2">
-<h2>A Preface</h2>
+<section id="accountability-plan-10pt" class="slide level2">
+<h2>Accountability Plan (10pt)</h2>
 <ul>
-<li>Debugging is programming.
+<li><strong>You create an assignment schedule for yourself.</strong>
 <ul>
-<li>It’s not extra; it’s essential.</li>
+<li>Defining your own goals is part of the research workflow</li>
+<li>This is part of <em>an explicit learning objective</em> and part of your grade</li>
 </ul></li>
-<li>Programming depends on collaboration.
+<li>You will create a personal timeline and accountability plan for the quarter
 <ul>
-<li>Asking for help is not cheating!</li>
+<li>Checkpoints on Mondays of Weeks 2, 5, and 8</li>
 </ul></li>
-<li>Questions &gt; Answers
+<li>Optionally: Base your plan on the suggested timeline in the <a href="../assessment/accountability.html">assignment instructions</a>
 <ul>
-<li>Get the basics down, then get everything else you need when you need it.</li>
+<li>This is not supposed to feel overwhelming, so take advantage of this if it helps!</li>
 </ul></li>
-<li>Troubleshooting includes debugging, <em>among other things</em>.
+<li>SDS approved accommodations for extensions are built into your plan</li>
+<li><strong>10%</strong> of your final grade is based on your accountability plan, including:
 <ul>
-<li>These skills translate beyond fixing code.</li>
-<li>Please stop telling me that “in programming it’s called debugging.”</li>
-</ul></li>
-</ul>
-</section>
-<section id="the-myth-of-the-programmer" class="slide level2">
-<h2>The Myth of the “Programmer”</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<ul>
-<li>Programmers are geniuses who have a sacred knowledge.</li>
-<li>The debugging coders do is a highly specialized skill.</li>
-<li>If you’re debugging, you did something wrong.</li>
-<li>Programming requires mastery of a programming language.</li>
-<li>You can recognize an expert programmer by their abundant knowledge of the language.
-<ul>
-<li>or their wardrobe of unwashed hoodies meticulously curated to signal how much they don’t care about anything but code</li>
+<li>Meeting the 3 checkpoint deadlines for the plan itself (meta-deadlines)</li>
+<li>Meeting the deadlines you set for yourself</li>
+<li>Reflecting on your progress and making adjustments</li>
+<li><em>Suggesting</em> a grade (of 10)</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:40%;">
-<!-- probably a gif from silicon valley -->
-</div></div>
-</section>
-<section id="the-reality-of-getting-shit-done" class="slide level2">
-<h2>The Reality of Getting Shit Done</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<ul>
-<li>Debugging is not extra – it’s the majority of the process.</li>
-<li>Debugging is one application of more generalizable problem-solving skills.</li>
-<li>Programming depends on collaboration.</li>
-<li>Once you “master” the foundations, you learn the rest by just going for it.</li>
-<li>You can recognize an expert programmer by their ability to find solutions.
-<ul>
-<li>They might also wear gross hoodies, but don’t we all from time to time?</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:40%;">
-<!-- a cartoon about most of programming being dubugging, of which there are many -->
-</div></div>
-<div class="bigger">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Questions &gt; Answers</strong></p>
-</div>
-<div class="callout-content">
-<p>Knowing how to ask the right questions to solve problems and learn independently is legitimately, indisputably more valuable than the party trick of recalling lots of functions and language-specific processes.</p>
-</div>
-</div>
-</div>
-</div>
 <aside class="notes">
 <ul>
-<li><strong>Debugging is not extra – it’s essential</strong>
+<li><p><strong>No fixed interim deadlines:</strong> You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).</p></li>
+<li><p><strong>Planning is part of the grade:</strong> The Accountability &amp; Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.</p></li>
+<li><p><strong>Early completion is allowed:</strong> You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter.</p></li>
+<li><p><strong>You create an assignment schedule for yourself.</strong> With very few exceptions, there are no top-down deadlines in this class. Why?</p>
 <ul>
-<li>80% of programming time is spent debugging <!-- there's got to be a cartoon for this --></li>
-</ul></li>
-<li><strong>Troubleshooting includes debugging, <em>among other things</em>.</strong>
+<li>This class is about developing and maintaining a research workflow</li>
+<li>A major part of that is learning how to set and meet your own deadlines</li>
+<li>Making your own plan and sticking to it <em>is part of the syllabus</em>
 <ul>
-<li>These skills translate beyond fixing code.</li>
-<li>Please stop telling me that “in programming it’s called debugging.”</li>
+<li>This means that “reasonable accommodations” must not prevent you from reaching this objective</li>
 </ul></li>
-<li><strong>Programming depends on collaboration</strong>
+</ul></li>
+<li><p>You will create a personal timeline and accountability plan for the quarter</p>
 <ul>
-<li>Asking for help is not cheating!</li>
-<li>Programming knowledge is freely <strong>distributed and shared</strong></li>
+<li>Initial plans are due by Monday of Week 2</li>
+<li>Revised plans and reflections are due by Monday of Week 5</li>
+<li>Final reflections are due Monday of Week 8</li>
 </ul></li>
-<li><strong>Questions &gt; Answers</strong>
+<li><p>You can base your plan on the suggested timeline in the <a href="">assignment instructions</a></p>
 <ul>
-<li>Get the basics down, then get everything else you need when you need it.</li>
+<li>Use the suggested plan without changes (great option of the idea of designing your own schedule feels overwhelming)</li>
+<li>Start with this plan and make adjustments</li>
+<li>Start from scratch!</li>
 </ul></li>
-<li><strong>Master the foundations and then just go for it</strong></li>
+<li><p>If your SDS accommodations include extended deadlines, you will factor those into the plan</p>
+<ul>
+<li>i.e.&nbsp;We are using this plan to agree on extensions now. I will not grant extensions to the planned extensions as we go.</li>
+</ul></li>
+<li><p><strong>10%</strong> of your final grade is based on your accountability plan, including:</p>
+<ul>
+<li>Meeting the actual deadlines that I have set for the plan itself</li>
+<li>Meeting the deadlines you set for yourself</li>
+<li>Reflecting on your progress and making adjustments to your plan</li>
+<li><em>Suggesting</em> a grade (of 10) for how well you think you followed your plan</li>
+</ul></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -848,178 +771,381 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section></section>
-<section>
-<section id="best-practices" class="title-slide slide level1 center">
-<h1>Best Practices</h1>
-<blockquote>
-<p>The best way to troubleshoot is to avoid it.</p>
-</blockquote>
 </section>
-<section id="keep-your-code" class="slide level2">
-<h2>Keep Your Code:</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section id="community-engagement-10pt" class="slide level2">
+<h2>Community Engagement (10pt)</h2>
+<p>Attending class and paying attention are basic expectations. Your engagement grade is based on how you show investment in the course and your peers, both in and out of class. Some ways to do this include:</p>
 <ul>
-<li><strong>Standardized</strong>
+<li>In-class:
 <ul>
-<li>style guides, internal consistency</li>
+<li>Ask and answer questions during lecture</li>
+<li>Use workshop time wisely and generously</li>
+<li>Participate in group activities</li>
 </ul></li>
-<li><strong>Intelligible</strong> - clear comments and naming
+<li>Outside the classroom:
 <ul>
-<li>informative comments, meaningful naming, documentation</li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<ul>
-<li><strong>Maintainable</strong>
-<ul>
-<li>sustainable over time and transportable</li>
-</ul></li>
-<li><strong>Contextualized</strong></li>
-<li>appropriate for your community and your project</li>
-</ul>
-</div></div>
-</section>
-<section id="standardized-code" class="slide level2">
-<h2>Standardized Code</h2>
-<ul>
-<li><strong>Standardized</strong> code is easier to read, understand, and maintain.</li>
-<li>Use a style guide</li>
-<li>Maintain internal consistency</li>
-</ul>
-</section>
-<section id="r-standard-formatting" class="slide level2">
-<h2>R Standard Formatting</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="r-is-pretty-forgiving">R is pretty forgiving</h3>
-<ul>
-<li>Whitespace insensitive</li>
-<li>Few “forbidden” characters</li>
-</ul>
-<h3 id="so-choose-where-to-be-cautious">So choose where to be cautious</h3>
-<ul>
-<li>Avoid special characters (even if they are technically allowed)</li>
-<li>Prioritize readability over conciseness</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="style-guides">Style Guides</h3>
-<ul>
-<li><strong>The right style is the one you can stick to</strong>
-<ul>
-<li><a href="https://google.github.io/styleguide/Rguide.html">Google’s R Style Guide</a></li>
-<li><a href="https://style.tidyverse.org/">Tidyverse Style Guide</a></li>
-<li><a href="">Individualized Style Guide</a>
-<ul>
-<li>my own guide, a tweaked version of the tidyverse guide</li>
-</ul></li>
+<li>Be an active participant on Slack</li>
+<li>Seek support from peers and instructors when needed</li>
+<li>Collaborate with peers</li>
+<li>Complete collaborative assignments</li>
 </ul></li>
 </ul>
-</div></div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>(note about the stylr package)</p>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="intelligible-code" class="title-slide slide level1 center">
-<h1>Intelligible Code</h1>
-
-</section>
-<section id="commenting-best-practices" class="slide level2 scrollable">
-<h2>Commenting Best Practices</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
+<aside class="notes">
+<p>Aside from the basic expectation that you’ll attend class and pay attention, this can look different for everyone. The community engagement grade is not about meeting the minimum requirement (e.g., attending class!). It’s about demonstrating a high level of investment in the course and your peers. <strong>This is not an attendance grade.</strong></p>
+<p>Here’s a non-exhaustive list of things that can contribute to the community engagement grade:</p>
 <ol type="1">
-<li class="fragment">Comments should not duplicate code</li>
-<li class="fragment">Good comments do not excuse unclear code</li>
-<li class="fragment">If you can’t write a clear comment, there may be a problem with the code</li>
-<li class="fragment">Comments should dispel confusion, not cause it</li>
-<li class="fragment">Explain unidiomatic code in comments</li>
-<li class="fragment">Provide links to the original source of copied code</li>
-<li class="fragment">Include links to external references where helpful</li>
-<li class="fragment">Add comments when fixing bugs</li>
-<li class="fragment">Use comments to mark incomplete implementations</li>
+<li>In-classroom:
+<ul>
+<li>Make active contributions in a large group setting by asking/answering questions during lecture</li>
+<li>Use workshop time wisely and generously, seeking and offering support from/to classmates with debugging and troubleshooting</li>
+<li>Participating in group activities</li>
+<li>Generally paying attention and staying focused during class time</li>
+</ul></li>
+<li>Outside the classroom:
+<ul>
+<li>Be an active participant on the class Slack channel, both asking and answering questions</li>
+<li>Get support from classmates, TAs, and the professor</li>
+<li>Team up with a partner or small group to meet for working groups outside of class</li>
+<li>Take on one or more of the optional collaborative assignments in the assessment menu</li>
+</ul></li>
 </ol>
-</div><div class="column" style="font-size: 1.3em">
-<div style="margin-bottom: 2em">
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="core-standards-mastery-60pt" class="slide level2">
+<h2>Core Standards Mastery (60pt)</h2>
+<p>Demonstrate proficiency on 12 core technical skills (standards).</p>
+<p>Choose from an assignment “menu” to demonstrate each skill, or design your own projects</p>
+<ul>
+<li>Structured assignments that guide you through skills step-by-step</li>
+<li>Semi-structured assignments that provide a clear framework with room for creativity</li>
+<li>Unstructured assignments that give suggested approaches to meet objectives</li>
+<li>Group assignments</li>
+<li>“Off-the-menu” Self-designed small projects</li>
+</ul>
+<p>View the <a href="../assessment/menu.html">menu</a>.</p>
+</section>
+<section id="core-standards-mastery-60pt-1" class="slide level2">
+<h2>Core Standards Mastery (60pt)</h2>
+<p>The 12 core skills for the first quarter are:</p>
+<ol type="1">
+<li>RStudio + Quarto workflow</li>
+<li>GitHub repositories and version control</li>
+<li>Base R syntax and data structures</li>
+<li>Control flow (if/else, loops)</li>
+<li>Defining functions in Base R</li>
+<li>Importing data with tidyverse tools</li>
+<li>Data manipulation with dplyr and pipelines</li>
+<li>Tidy data structure</li>
+<li>Reshaping data with tidyr</li>
+<li>Character strings with stringr</li>
+<li>Factors with forcats</li>
+<li>Basic reporting: plots and descriptives in Quarto</li>
+</ol>
+<aside class="notes">
+<p>You earn points by demonstrating each of 12 specific learning objectives</p>
+<ol type="1">
+<li><strong>RStudio + Quarto workflow</strong>
+<ul>
+<li>Create an RStudio project for course work, use relative paths, and knit simple Quarto documents that combine code and narrative.</li>
+<li><a href="../misc/github-workflow.qmd">Additional guidelines for RStudio/Quarto Workflow objective</a></li>
+</ul></li>
+<li><strong>GitHub repositories and version control</strong>
+<ul>
+<li>Create and maintain a GitHub repo with README, .gitignore, and a commit history that reflects real work over time.</li>
+<li><a href="../misc/github-assessment.qmd">Additional guidelines for GitHub/Version Control objective</a></li>
+</ul></li>
+<li><strong>Base R syntax and data structures</strong>
+<ul>
+<li>Create, index, and manipulate vectors, lists, and data frames, including handling missing data.</li>
+</ul></li>
+<li><strong>Control flow (if/else, loops)</strong>
+<ul>
+<li>Use if/else and loops to branch logic and automate repetitive tasks in multiple contexts.</li>
+</ul></li>
+<li><strong>Defining functions in Base R</strong>
+<ul>
+<li>Define and use functions with arguments and return values with reusable code logic in multiple contexts.</li>
+</ul></li>
+<li><strong>Importing data with tidyverse tools</strong>
+<ul>
+<li>Import datasets with readr and related packages, handling paths and basic options.</li>
+</ul></li>
+<li><strong>Data manipulation with dplyr and pipelines</strong>
+<ul>
+<li>Use multiple dplyr verbs (filter, select, mutate, summarize, arrange, group_by) in chained pipelines.</li>
+</ul></li>
+<li><strong>Tidy data structure</strong>
+<ul>
+<li>Diagnose untidy data and reshape to a tidy format, with explanation.</li>
+</ul></li>
+<li><strong>Reshaping data with tidyr</strong>
+<ul>
+<li>Use multiple tidyr functions (pivot_longer/pivot_wider/separate/unite) to reshape data.</li>
+</ul></li>
+<li><strong>Character strings with stringr</strong>
+<ul>
+<li>Use stringr functions (e.g., str_detect, str_replace, str_extract) to solve text cleaning or extraction tasks.</li>
+</ul></li>
+<li><strong>Factors with forcats</strong>
+<ul>
+<li>Recode, reorder, and/or lump factor levels to prepare categorical variables for analysis or plotting.</li>
+</ul></li>
+<li><strong>Basic reporting: plots and descriptives in Quarto</strong>
+<ul>
+<li>Create simple ggplot2 plots and compute/report basic descriptive statistics (means, medians, counts, proportions) in a Quarto document with clear captions and narrative.</li>
+</ul></li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="core-standards-mastery-60pt-2" class="slide level2">
+<h2>Core Standards Mastery (60pt)</h2>
+<p>Each standard is scored on a 4 / 5 / 6 point scale based on the quality and independence of your demonstration of the skill.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Points</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>No grade</em></td>
+<td><em>No demonstration</em></td>
+<td><em>You have not yet demonstrated this skill.</em></td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td><strong>Meets Expectations</strong></td>
+<td>You demonstrate the skill correctly in structured or familiar contexts.</td>
+</tr>
+<tr class="odd">
+<td><strong>5</strong></td>
+<td><strong>Exceeds Expectations</strong></td>
+<td>You apply the skill correctly and independently in a novel context.</td>
+</tr>
+<tr class="even">
+<td><strong>6</strong></td>
+<td><strong>Outstanding</strong></td>
+<td>You use the skill in an especially expansive way.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Each standard is scored on a 4 / 5 / 6 point scale based on the quality and independence of your demonstration of the skill.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Points</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>No grade</em></td>
+<td><em>No demonstration</em></td>
+<td><em>You have not yet demonstrated this skill.</em></td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td><strong>Meets Expectations</strong></td>
+<td>You demonstrate the skill correctly in structured or familiar contexts (for example, following a guided assignment or closely modeled example).</td>
+</tr>
+<tr class="odd">
+<td><strong>5</strong></td>
+<td><strong>Exceeds Expectations</strong></td>
+<td>You apply the skill correctly and independently in a novel context, with clear, well-chosen code that would generalize to new datasets or problems.</td>
+</tr>
+<tr class="even">
+<td><strong>6</strong></td>
+<td><strong>Outstanding</strong></td>
+<td>You use the skill in an especially expansive way: combining it with other skills, applying</td>
+</tr>
+<tr class="odd">
+<td>it to a complex or less-structured task, or going beyond the scope of in-class examples.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>All three levels (4, 5, 6) are successful demonstrations. If you do not demonstrate a skill at least at the 4-point level, you will not earn credit for that standard.</p>
+<p>Earning an average of 5 points per standard will earn you all 60 points. An average lower than 5 points can still result in an ‘A’ grade for the class if you complete <a href="enrichment.qmd">enrichment activities</a>.</p>
+<p>Each assignment will receive a score for each standard it addresses based on this rubric. Individual assignments may not be resubmitted for a higher score, but you may improve your score for a standard by submitting new assignments that demonstrate that standard at a higher level.</p>
+<p><em>Higher scores always replace lower scores for core standards</em>, so after earning a high score with an impressive assignment, subsequent assignments that use the skill at a more basic level won’t lower your score.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="integrative-data-project-20pt" class="slide level2">
+<h2>Integrative Data Project (20pt)</h2>
+<p>The final project is a data analysis report created with RStudio and maintained in a GitHub repo that includes:</p>
+<ul>
+<li>Data import</li>
+<li>Data wrangling/cleaning</li>
+<li>Basic descriptive statistics</li>
+<li>Simple data visualization</li>
+<li>Narrative markdown text explaining your choices and findings</li>
+</ul>
+</section>
+<section id="integrative-data-project-20pt-1" class="slide level2">
+<h2>Integrative Data Project (20pt)</h2>
+<p>Earn up to 20 points on the data project:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 34%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Points</th>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>12</td>
+<td>Core standards</td>
+<td>Demonstrate all 12 core standards at 4pt-level or above</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Reproducibility</td>
+<td>Code is fully reproducible, with no errors</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Documentation</td>
+<td>Code is clearly commented with explanatory Quarto narrative text</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Cohesion</td>
+<td>Data wrangling, statistics, and plots are clearly connected with narrative text</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Presentation</td>
+<td>Quarto document is well-formatted and knits without error</td>
+</tr>
+</tbody>
+</table>
+<p>Submit your data project <strong>up to 3 times</strong> to get early feedback and/or complete the requirement early.</p>
+<aside class="notes">
+<p>“Above and beyond” demonstrations of core standards or exceptional quality may receive bonus points at the grader’s discretion, but the project cannot contribute more than 20 points to the final grade. In other words, outstanding use of one standard might earn you a point that compensates for weaker presentation or documentation, but not a point of extra credit.</p>
+<p>You may submit the data project up to 3 times throughout the quarter. With each draft, you will also include a self-assessment, indicating which standards you believe you have demonstrated and how well you have met each of the grading components above. After scoring your work, your grader will provide feedback as a response to your self-assessment to help you improve your project for future submissions.</p>
+<p>You are allowed – <em>and encouraged!</em> – to submit partial drafts of your project to confirm that you are on the right track before submitting a full draft. You aren’t expected to be able to demonstrate a skill before we cover it in class, so early submissions may only demonstrate a subset of the standards. That’s fine! Submitting a draft that shows only a few objectives will let you confirm that you are in fact meeting expectations for those objectives and will give you guidance on where to go next.</p>
+<p>Grades for resubmissions will replace previous scores. Your grade for the data project will be the score earned on your last submission before the end-of-quarter deadline.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="enrichment-up-to-10pt" class="slide level2">
+<h2>Enrichment (up to 10pt)</h2>
+<p>These 10 optional points are a way for you to customize your curriculum in this class to your own interests and goals.</p>
+<p>You can earn 100 points without any enrichment points, but you can make up for lower scores on core standards by completing enrichment activities.</p>
+<p>Examples include:</p>
+<ul>
+<li>Debugging journals that document how you worked through specific problems</li>
+<li>Short write‑ups teaching a peer how to do something (e.g., connecting RStudio and GitHub)</li>
+<li>Reflections on responsible and productive use of AI tools in your workflow</li>
+<li>Evidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)</li>
+<li>Contributions to open‑source R packages or communities (e.g., GitHub issues, Stack Overflow answers)</li>
+</ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Keep Collaboration in Mind</strong></p>
+<p><strong>Where do I find them?</strong></p>
 </div>
 <div class="callout-content">
-<p>Be kind not just to others who may work with you, but also to future-you.</p>
+<p>For the most part it’s up to you to design your own enrichment activities. Figuring out for yourself what would be most useful for your own learning is part of the point of this category. If you are totally lost as to where to start, there are a few unstructured activities listed on the assignment menu.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Natural languages &gt; programming languages</strong></p>
-</div>
-<div class="callout-content">
-<p>The language you speak is infinitely more intuitive, nuanced, specific, and adaptable. Take advantage of it.</p>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="meaningful-naming" class="slide level2">
-<h2>Meaningful Naming</h2>
-<blockquote>
-<p>“There are only two hard things in Computer Science: cache invalidation and naming things.” — Phil Karlton</p>
-</blockquote>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Names should describe the named thing!</strong></p>
-</div>
-<div class="callout-content">
-<p>Not as easy as it sounds.</p>
-</div>
-</div>
-</div>
+<aside class="notes">
+<p>Enrichment activities are <strong>not</strong> part of the base structure of the course grade. Instead, they give you a way to recover or add points if you choose a more structured path or if some standards land at the 4‑point level.</p>
+<p>This is effectively up to 10 points of extra credit, but I don’t like thinking about these skills or these kinds of experiences as “extra.” I believe this category is as valuable as the core skills, but necessarily fuzzier and more open-ended. These 10 optional points are a way for you to customize your curriculum in this class to your own interests and goals.</p>
+<p>Examples include:</p>
 <ul>
-<li>Avoid disinformation</li>
-<li>Use pronounceable names</li>
-<li>Use searchable names</li>
-<li>Pick one word/format per concept</li>
-<li>Avoid encodings</li>
+<li>Debugging journals that document how you worked through specific problems</li>
+<li>Short write‑ups teaching a peer how to do something (e.g., connecting RStudio and GitHub)</li>
+<li>Simple documentation for your own utility functions</li>
+<li>Reflections on responsible and productive use of AI tools in your workflow</li>
+<li>Evidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)</li>
+<li>Short explorations of advanced R packages or techniques beyond the core curriculum</li>
+<li>Identifying a need in your own research workflow and designing a solution using R</li>
+<li>Discovering and effectively making use of specialized R packages for your specific needs</li>
+<li>Mini‑projects that apply course skills to your own research questions (must be different from your final data project)</li>
+<li>Contributions to open‑source R packages or communities (e.g., GitHub issues, Stack Overflow answers)</li>
 </ul>
-</div><div class="column" style="width:60%;">
-<div class="quarto-figure quarto-figure-center" style="align: right;">
-<figure>
-<p><img data-src="../images/variable-name-cartoon.jpg"></p>
-<figcaption>Keep it simple, stupid – commitstrip.com</figcaption>
-</figure>
-</div>
+<p>This is not a comprehensive list, and really the more creative and customized you approach this, the more useful it will be for your own learning (and the easier it will be to earn points). If you have an idea for an enrichment activity that isn’t listed here, send an email to Dr.&nbsp;Dowling to confirm that it is appropriate before you start working on it.</p>
+<p>You may submit evidence for enrichment points up to 5 times during the quarter. Evidence may be in the form of a dedicated project (e.g., a debugging journal) or as a companion to another assignment (e.g., writing up how you used AI tools to help solve a problem in a core standards assignment). Points will be awarded based on overall quality and depth, which may look like creativity, independent learning, clear communication, thoughtful self-evaluation, or other dimensions depending on the nature of the activity. Your submission will include an opportunity for you to explain how the activity contributed to your learning and how many points you believe you have earned.</p>
+<p>The Canvas assignments include details on exactly how to submit and document different kinds of demonstrations.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
-</div></div>
+
 </section></section>
-
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -1028,20 +1154,19 @@
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="Q1-W1_introduction_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="Q1-W1_introduction_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="Q1-W1_introduction_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="Q1-W1_introduction_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="Q1-W1_introduction_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="Q1-W1_introduction_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="Q1-W1_introduction_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="Q1-W1_introduction_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="Q1-W1_introduction_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="Q1-W1_introduction_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="Q1-W1_introduction_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -1056,8 +1181,7 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -1078,7 +1202,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -1183,14 +1307,14 @@
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'slide',
+        transition: 'none',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'fade',
+        backgroundTransition: 'none',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,
@@ -1203,9 +1327,9 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1600,
+        width: 1050,
 
-        height: 900,
+        height: 700,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
@@ -1228,7 +1352,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
           RevealMath,
           RevealNotes,

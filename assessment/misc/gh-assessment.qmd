@@ -1,0 +1,68 @@
+---
+title: "Git & GitHub Assessment"
+---
+
+This course uses a mix of regular-old-repositories and GitHub Classrooms assignment repos for assignment completion.
+GH Classroom submissions are not sufficient to meet the Git & GitHub core learning objectives on their own.
+
+This document outlines how to demonstrate Core Standard 2 by showing more advanced skills in a Classroom assignment and/or creating and managing your own GitHub repositories.
+This standard is less straightforward that most others, so you can use these guidelines as a checklist to ensure you are meeting the expectations for your desired point level.
+
+These guidelines apply to all assignments unless specified elsewhere.
+
+View the [Git & GitHub Submissions Guidelines](gh-submissions.qmd) for detailed instructions on how to complete and submit assignments using GitHub Classroom and private GitHub repositories.
+
+## Basic Class Expectation, No Points
+
+To fully participate in the class, you need to have simple proficiency with GitHub Classrooms.
+You are expected to be able to execute the following Classrooms workflow, separately from the core standard:
+
+- [ ] Clone the GitHub Classroom assignment repo to your local machine as an RStudio project
+- [ ] Complete work in RStudio
+- [ ] Commit and push changes to the GitHub Classroom assignment repo for submission
+- [ ] Subscribe to the auto-generated pull request to review grades and communicate with your grader
+
+## 4 Points
+
+The minimum requirements to demonstrate Core Standard 2 at the 4-point level for an assignment are:
+
+- [ ] Follow the GitHub Classrooms workflow as described above
+- [ ] Add or significantly edit a README.md file describing the assignment, the work you have done, and the structure of the repo
+- [ ] Add or significantly edit a .gitignore file that excludes at least one element in your project/repo
+    - You can opt to use a standard R .gitignore template, but you must add at least one additional custom rule with commented description *that actually ignores something.*
+    - The easiest way to do this is just to add something you don't strictly need (like a localonly folder or `ignore-me.R`) then ignore that file/folder explicitly.
+    - Be sure your added ignore line does not ignore any files necessary for assignment submission (e.g., Quarto notebooks, data files, the README.md, the .gitignore itself, your .html or .pdf knitted output, etc.)
+- [ ] Make at least 3 meaningful commits with descriptive messages that reflect your work over time.
+    - This does not include any commits that are made for you automatically, like when the repo is initialized.
+
+## 5 Points
+
+To demonstrate Core Standard 2 at the 5-point level for an assignment, you must go beyond the GitHub Classrooms workflow and create your own dedicated GitHub repository for the assignment.
+
+- [ ] Create a *dedicated, private* GitHub repository for the assignment, connected to an RStudio project.
+    - This repo should *only* contain files for this assignment (no extra files from other work) and should be created from scratch (not cloned, not a subfolder of a larger repo).
+    - If you will need to use files from a Classrooms assignment repo, you should download them and add them manually to your dedicated repo. Do not clone the Classrooms repo directly. The goal is to show the whole process of creating and managing your own repo start to finish.
+- [ ] Complete all requirements above about README.md, .gitignore, and commits.
+- [ ] Create a reasonable structure for your repo, with at least 2 subdirectories (e.g., `data/`, `scripts/`, `output/`, etc.) to organize your files.
+    - The directories should be meaningfully named to reflect their contents.
+    - Each directory should have at least 1 file in it (GitHub does not track empty directories!). These can be "dummy" files if necessary, but they should be appropriate for the directory's purpose (e.g., an .R script in the `scripts/` folder, a .csv file in the `data/` folder, an .html or .pdf file in the `output/` folder, etc.)
+- [ ] Invite the instructor and/or TA as collaborators on your private repo so they can view and grade your work.
+    - Be sure you set the repo to private so that only you and the instructor/TA can see it! You will receive feedback and grades in the repo itself, and **if you don't make it private others will be able to see those grades!!**
+- [ ] Create a `feedback` branch and initiate a pull request from `feedback` to `main` so that your grader can leave comments directly on your code/files.
+    
+    
+## 6 Points
+
+To demonstrate Core Standard 2 at the 6-point level for an assignment, you must meet all requirements for the 5-point level and go beyond them in meaningful ways.
+There is no fixed list of additional requirements for the 6-point level; rather, you should aim to exceed expectations in multiple areas of your GitHub repo management.
+Some ways you might do this include:
+
+- Making more than the minimum required number of meaningful commits (e.g., 5 or more), with clear and descriptive messages.
+- Implementing a more complex or thoughtful directory structure that reflects the needs of your project.
+- Adding additional documentation to your README.md file, such as usage instructions, dependencies, or examples of output.
+- Using advanced Git/GitHub features (e.g., branching, merging, forking, pull requests), to manage different versions or features of your work.
+- Creating GitHub issues to track bugs, enhancements, or tasks related to your assignment.
+- Collaborating with assignments on a shared repo, with all collaborators making meaningful contributions independently.
+
+
+

@@ -1,0 +1,286 @@
+---
+title: "Guidelines for GitHub Submissions"
+format: html
+---
+
+# GitHub Submission Overview
+
+In D2M-R, most work is submitted through GitHub repositories.
+A GitHub repository (repo) is where your project files live and where we review your code and reports.
+
+There are two main ways your repos are created:
+
+- **GitHub Classroom assignments**: You click an invitation link. GitHub automatically creates a private repo for you in the course organization and sets up a special `feedback` branch and pull request (PR) where your grader leaves comments.
+- **Student-created repositories**: You create your own private repo, either in the `d2m-r` organization (for Core Standards and Enrichment projects) or in your personal GitHub account (for Integrative Data Projects). You then create a `feedback` branch and PR that we use for grading.
+    
+In both cases:
+
+- Your graded work lives on the `main` branch.
+- A pull request from `main` to a `feedback` branch is the space where feedback is left.
+- You must complete a `submission.qmd` document with self-evaluation and AI disclosure.
+- Only you, the instructors, and (for group assignments) your designated group members can see your repo, your pull request, and your feedback. Other students cannot.
+- Your work is not "submitted" until you submit the [Project Submission Form](d2m-r.github.io/submit.html).
+
+---
+
+# Submitting GitHub Classroom assignments
+
+Most projects on the Project Menu have an option to complete via a GitHub Classroom assignment. 
+In these cases, GitHub handles most of the setup for you.
+
+## Accept the assignment and create your repo
+
+When you open the GitHub Classroom invitation link for an assignment GitHub will create a private repo for you in the D2M-R course organization. 
+You can find this repo on GitHub under the organization with a name that includes your username and the assignment.
+
+Note that GH Assignments are based on template repos that will also be visible in the organization's list of repos.
+Be sure you are looking at *your* repo, not the template.
+
+## Work locally in RStudio
+
+Clone the repo to your local machine as an RStudio project, then do your work in R/RStudio.
+
+As you make progress, you should commit regularly and push whenever you want your work backed up or visible in GitHub. 
+At a minimum, you must push when you are ready to submit.
+
+In RStudio:
+
+- Use the Git pane to review changed files.
+- Click **Commit** to open the commit dialog, write a clear message, and commit.
+- Click **Push** to send your latest commits to GitHub.
+
+Command line equivalent:
+
+```bash
+git add .
+git commit -m "Describe what you did"
+git push origin main
+```
+
+Before you submit the assignment, make sure all the work you want graded has been committed and pushed to the `main` branch.
+If you are working in a GH Classrooms assignment, you do not need to interact with branches at all.
+The `main` branch will be active by default, and there is no need to create or change branches as you work.
+
+Do *not* try to create the `feedback` branch yourself! It is created automatically when you submit.
+
+## GitHub's `feedback` Branch and Pull Request
+
+For Classroom assignments:
+
+- GitHub automatically creates a `feedback` branch and a pull request that allows for communication between you and your grader.
+- Your grader will use this PR to:
+    - Leave inline comments on specific lines (if necessary)
+    - Leave file-level comments on specific files (if necessary)
+    - Leave a summary review on the Pull Request itself, including points awarded
+
+You should be auto-subscribed to the PR when it is created, but you should confirm subscription to be sure you are notified when your work has been graded. You can see all grader feedback in the pull requests tab on the repo's GitHub page.
+
+## Complete the Project Submission Form
+
+Submit your work via the [Project Submission Form](d2m-r.github.io/submit.html). 
+This requires the URL of your pull request, which you can find in the original GH notification about the PR or navigating to the request and copying the URL from your browser.
+
+***Your work is not in the grading queue until you also submit the form!***
+
+---
+
+# Submitting Work from your Own Repo
+
+There are several cases where you will not work from a GH Classroom assignment:
+
+- **Demonstration of Git/GitHub core standard:** Using GH Classrooms is not sufficient to demonstrate GitHub core objectives. 
+Earning points requires completing a project in a private repo you create yourself within the `d2m-r` organization.
+    - Read the [Git & GitHub Assessment Guidelines](gh-asessment.qmd) for details on how to demonstrate this core standard.
+- **Standards Projects without Classroom options:** Some Core Standards and Enrichment projects do not have GH Classroom options.
+In these cases, you create a private repo in the `d2m-r` organization for the project, like above.
+- **Integrative Data Projects:** You create a private repo in your personal GitHub account. You add the instructor and TA(s) as collaborators with Write (or higher) access. You have full ownership of the repo and retain control after the course ends.
+
+In these cases, the submission workflow is effectively mimicking what you'd get from GH Classrooms:
+
+- Make sure your graded work is on `main`.
+- Create a `feedback` branch.
+- Open a PR from `main` to that feedback branch with a standard title and description.
+- Submit the PR link via the Project Submission Form.
+- Watch the PR for feedback and, if invited, make revisions.
+
+The sections below spell out these steps in more detail.
+
+## Setting up your own repo and access
+
+### Core Standards and Enrichment projects (repos in `d2m-r`)
+
+For these projects, you will work in a **private** repo in the `d2m-r` organization.
+
+1. Create a new private repo in the `d2m-r` org for the project. Give your repo a sensible, descriptive name that ends with your username (e.g., `d2m-r/pet-adoption-nrdowling`)
+2. Because the repo is in the course organization, instructors already have access. If you are completing a group project, one group member should initialize the repo and add the other group members as collaborators with Write access.
+
+### Integrative Data Projects (repos in your own account)
+
+For Integrative Data Projects, you will work in a private repo in your personal GitHub account.
+
+1. Create a new private repo in your own GitHub account for your data project. Give your repo a sensible name descriptive of the project's data or research questions.
+    1. You should create and maintain its repo as though you were going to invite collaborators from outside the class. They don't know what `data-project` or `natalie-d2mr-final` mean. They (and future you) want `child-gesture` or `chicago-crime-rates`, where they/you immediately know what to expect to find inside.
+2. Add the instructor and TA(s) as collaborators 
+
+This lets you keep using the same repo after the course ends, while still allowing us to review and comment during the quarter.
+
+### Privacy and visibility
+
+For all projects, you must initiate your repos as private. Invite group members as collaborators for group projects (all members will be able to see all comments in the repo). Invite instructors if the repo is not in the D2M-R organization.
+
+**Any collaborators you add will be able to see all pull requests, including feedback and grades.**
+
+To add collaborators:
+    1. Go to your repo on GitHub.
+    2. Open **Settings → Collaborators and teams** (or **Manage access**).
+    3. Click **Add people** and add the GitHub usernames. (View course site for instructor/TA info.)
+
+## Preparing your project for submission
+
+Before you create the feedback branch and pull request, make sure that your work on `main` reflects what you want graded.
+
+By the time you submit, everything you want graded must be pushed to the `main` branch.
+
+In RStudio, you should see the name of the current branch in the Git pane. Use the pane to stage files, commit with a final informative message (e.g., `Final submission for pet adoption assignment` or `Integrative data project draft -- submission 2`), and push to GitHub.
+
+Command line equivalent:
+
+```bash
+git add .
+git commit -m "Final submission for pet adoption assignment"
+git push origin main
+```
+
+## Create a `feedback` branch 
+
+The `feedback` branch exists so we can open a PR and leave feedback in a dedicated space, similar to GitHub Classroom's `feedback` branch.
+
+***Reminder: If you are working in a GH Classrooms assignment, the `feedback` branch is created for you. Do not try to create it yourself or terrible merge disasters may happen!***
+
+In RStudio:
+
+1. Make sure you are on the `main` branch. In the Git pane, use the branch dropdown to check that `main` is selected.
+2. Create a new branch named `feedback` from `main` by choosing "New Branch..." from the dropdown and enter `feedback`.
+3. Switch to the `feedback` branch with the dropdown if RStudio does not do this automatically.
+4. Click **Push** so that the `feedback` branch exists on GitHub.
+
+Command line equivalent:
+
+```bash
+git checkout main
+git pull
+git branch feedback
+git push -u origin feedback
+```
+
+After this, you should see two branches in your repo on GitHub: `main` and `feedback`. At this point, they should be identical.
+
+**Reminder: The `feedback` branch is for comparison and feedback only. All the work you complete must happen in the `main` branch.** This means if you continue working on the project after creating the feedback branch, you will need to switch back to `main`.
+
+### `feedback-N` branches (Integrative Data Projects)
+
+Integrative Data Projects may be submitted up to 3 times during the quarter. In this case, you will use numbered feedback branches so each submission attempt has its own pull request:
+
+- First submission: branch `feedback-1`
+- Second submission: branch `feedback-2`
+- Third submission: branch `feedback-3`
+
+## Open the pull request from `main` to `feedback`
+
+Once your `feedback` branch exists and matches `main`, you will open a PR where grading and feedback will happen.
+
+Pull requests are created through the GitHub web interface, not RStudio or the command line.
+
+On GitHub, go to your project repo and open the Pull requests tab. Click New pull request.
+
+Set the base branch to `feedback` and compare branch to `main`.
+
+GitHub may show "Able to merge" and possibly "0 files changed" if the branches are identical; that's fine. We are using the PR as a discussion and feedback space, not as a real merge step.
+
+Use a clear PR title ending with "LastName, FirstName". For example:
+
+- Core Standards / Enrichment project:
+    
+    > Submission: Pet Adoption - Gilroy, Audrey
+    > 
+- Integrative Data Project (multiple attempts):
+    
+    > Submission: Integrative Data Project (2nd draft) - Dowling, Natalie
+    > 
+
+### Add a PR description
+
+In the PR description, include your full name, the title of the assignment (it should match what you submit on the form), the contents of the repo, and a *brief* description of the project (or updates since last submission).
+
+You can also add a message to your grader if you like.
+
+Example:
+
+```markdown
+## Assignment
+- Name: Natalie Dowling
+- Assignment name: Pet Adoption (control flow)
+- Description: structured control flow exercise
+
+## Contents
+- completed pet-adoption.qmd
+- completed submission.qmd
+- README.md
+- .gitignore
+- output/ folder with a knitted pdf of the main doc and an exported .csv of one of the data frames created in the assignment
+
+## Notes for the grader
+This is the same structured exercise about control flow as the one in the GH classrooms assignment.
+I built it in its own repo to demonstrate Obj #2.
+
+```
+
+Then click Create pull request.
+
+This PR is now your official submission space, equivalent to the auto-generated PR from GitHub Classroom.
+
+
+## Complete the Project Submission Form
+
+Just like with a GH Classrooms assignment:
+
+Submit your work via the [Project Submission Form](d2m-r.github.io/submit.html). This requires the URL of your pull request, which you can find by navigating to the request and copying the URL from your browser.
+
+***Your work is not in the grading queue until you also submit the form!***
+
+# Receiving feedback and making revisions
+
+If you are subscribed to the pull request that you (or the GH auto-bot) created, you will be notified when your grader has left comments. Be aware that you may get multiple notifications as the grader works. You will know it's complete when you see the general comment with numeric scores.
+
+Your grader will use this PR to leave inline code comments, file-level comments, and a summary review with points awarded.
+
+You can respond to comments in the PR if the assignment invites revision or follow-up. Otherwise, treat the comments as feedback to inform your future work.
+
+## Revisions for Core Standards and Enrichment projects
+
+Menu projects cannot be resubmitted for a higher grade, but in rare cases your grader may ask you to revise and resubmit for specific purposes.
+
+Typically this is either because:
+
+1. **You missed the mark in a way that suggests you didn't understand the assignment.** Instead of grading your work and giving a 0 (after which you could not resubmit), your grader may suggest you start over to make the most of the work you've already done.
+2. **You missed the mark in a _tiny, trivial_ way.** Something that was significant enough to where your grader can't give you the points, but minor enough that it's clear you could earn the points if you made a very *very* small correction that you will likely know exactly how to do without any guidance (because that's how obvious it was that you had a good grasp of the skill!).
+
+You *may* use the PR to notify your grader if you believe there was a clear mistake in grading. For example, if the number assigned in on GitHub does not match Canvas, or if you clearly demonstrated a skill at a high level but the skill does not have any comments or score attached at all.
+
+You *may not* use the PR (or any other communication) to request resubmission or argue that you deserve a better grade. Outside of clear cases of simple human error, grades will not be changed after they are posted.
+
+## Revisions for Integrative Data Projects
+
+The Integrative Data Project allows up to 3 submissions:
+
+- Each submission attempt will typically use a separate numbered feedback branch and PR:
+    - First attempt: PR from `main` to `feedback-1`
+    - Second attempt: PR from `main` to `feedback-2`
+    - Third attempt: PR from `main` to `feedback-3`
+- Each submission will be graded separately.
+
+Using separate branches and PRs keeps each submission's feedback and standards clearly organized and easy to review over time.
+
+
+
+

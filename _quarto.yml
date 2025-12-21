@@ -26,6 +26,8 @@ website:
               href: assessment/accountability.qmd
             - text: Community Engagement
               href: assessment/engagement.qmd
+            - text: Project Menu
+              href: assessment/menu/index.qmd
             - text: Integrative Data Project
               href: assessment/data-project.qmd
       - text: Materials
