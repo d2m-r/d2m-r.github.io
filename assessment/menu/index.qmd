@@ -2,6 +2,29 @@
 title: "Project Menu"
 ---
 
+# Quarter 1 Project Menu
+
+This menu lists all the projects available for Quarter 1 assessment. 
+Each project is tagged as **Structured**, **Semi-structured**, or **Unstructured** based on how much guidance and scaffolding is provided.
+In general, the less structured the project, the higher the potential score you can earn for demonstrating core standards.
+
+You may choose to modify or expand any of these projects to better suit your interests or goals.
+For example:
+
+1. Combine multiple projects into a larger, more cohesive project
+2. Expand a project to include additional data sources, analyses, or reporting elements
+3. Go beyond the instructions of structured and semi-structured projects to make them more open-ended and show more (or more advanced) skills
+4. Add descriptive analyses or simple data visualizations to any projects with data cleaning/wrangling elements
+5. Incorporate enrichment elements into the core projects (e.g., include a folder in your repo with debugging logs or exploratory code)
+
+You may also go "off the menu" to create your own projects from scratch.
+If you choose to do so, email Dr. Dowling before you begin to confirm that your project will meet the assessment requirements.
+
+## Core Project List
+
+Where projects link to GitHub Classroom Assignments, the project can be completed directly within the assignment.
+Alternatively, you can copy the materials from the GH assignment into a new, dedicated repo to show GitHub skills.
+
 1. Version Control
     1. Skeleton repo (Semi-structured)
     2. Collaborative repo (Unstructured group project)
