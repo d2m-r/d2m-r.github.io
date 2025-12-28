@@ -18,7 +18,7 @@ format:
     height: 900
     margin: 0.1
     scrollable: true
-    incremental: false
+    incremental: true
     transition: slide
     background-transition: fade
     highlight-style: theme/d2mr-code-theme.theme
