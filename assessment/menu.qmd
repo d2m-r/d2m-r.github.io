@@ -4,47 +4,76 @@ title: "Project Menu"
 
 # Quarter 1 Project Menu
 
-This menu lists all the projects available for Quarter 1 assessment. 
-Each project is tagged as **Structured**, **Semi-structured**, or **Unstructured** based on how much guidance and scaffolding is provided.
-In general, the less structured the project, the higher the potential score you can earn for demonstrating core standards.
+This menu lists all the projects available for Quarter 1 assessment. Each project is tagged as **Structured**, **Semi-structured**, or **Unstructured** based on how much guidance and scaffolding is provided. In general, the less structured the project, the higher the potential score you can earn for demonstrating core standards.
 
-You may choose to modify or expand any of these projects to better suit your interests or goals.
-For example:
+You may choose to modify or expand any of these projects to better suit your interests or goals. For example:
 
-1. Combine multiple projects into a larger, more cohesive project
-2. Expand a project to include additional data sources, analyses, or reporting elements
-3. Go beyond the instructions of structured and semi-structured projects to make them more open-ended and show more (or more advanced) skills
-4. Add descriptive analyses or simple data visualizations to any projects with data cleaning/wrangling elements
-5. Incorporate enrichment elements into the core projects (e.g., include a folder in your repo with debugging logs or exploratory code)
+1.  Combine multiple projects into a larger, more cohesive project
+2.  Expand a project to include additional data sources, analyses, or reporting elements
+3.  Go beyond the instructions of structured and semi-structured projects to make them more open-ended and show more (or more advanced) skills
+4.  Add descriptive analyses or simple data visualizations to any projects with data cleaning/wrangling elements
+5.  Incorporate enrichment elements into the core projects (e.g., include a folder in your repo with debugging logs or exploratory code)
 
-You may also go "off the menu" to create your own projects from scratch.
-If you choose to do so, email Dr. Dowling before you begin to confirm that your project will meet the assessment requirements.
+You may also go "off the menu" to create your own projects from scratch. If you choose to do so, email Dr. Dowling before you begin to confirm that your project will meet the assessment requirements and make a submission plan.
 
 ## Core Project List
 
-Where projects link to GitHub Classroom Assignments, the project can be completed directly within the assignment.
-Alternatively, you can copy the materials from the GH assignment into a new, dedicated repo to show GitHub skills.
+Where projects link to GitHub Classroom Assignments, the project can be completed directly within the assignment. Alternatively, you can access the materials from the student hub repository to create new, dedicated repo to show more advanced GitHub skills.
 
-1. Version Control
-    1. Skeleton repo (Semi-structured)
-    2. Collaborative repo (Unstructured group project)
-2. R Programming Foundations
-    1. Adoption Day at the Animal Shelter (Structured)
-    2. `hello_world()` function (Semi-structured)
-    3. Create a wrangling function (Unstructured)
-3. Data Wrangling in the Tidyverse
-    1. Clean the mtcars Dataset (Structured)
-    2. Clean the midwest Dataset (Semi-structured)
-    3. Uncleaning (Unstructured group project)
-    4. Recreate a starwars dataset (Structured)
-    5. Recreate a gapminder Dataset (Semi-structured)
-    6. Make-a-mess (Unstructured group project)
-    7. Recreate an existing function (Unstructured)
-4. Data Reporting
-    1. Simple Quarto notebook report (Semi-structured)
-    2. Class topic demo (Unstructured)
-    3. Descriptive statistics & visualization exercise (Structured)
-    4. Descriptive statistics & visualization open report (Unstructured)
-5. Multiple/other *(opportunities to demonstrate a range of standards depending on approach)*
-    1. Contribute to the course textbook repo (Unstructured)
-    2. Contribute to the Schelling Problems example repo (Unstructured)
+1.  Version Control
+    1.  Skeleton repo (Semi-structured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/version-control/skeleton-repo.md)
+    2.  Collaborative repo (Unstructured group project)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/version-control/collaborative-repo.md)
+2.  R Programming Foundations
+    1.  Adoption Day at the Animal Shelter (Structured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/r-programming/adoption-day)
+        2.  [GitHub Classroom](https://classroom.github.com/a/c7sB7-uF)
+    2.  `hello_world()` function (Semi-structured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/r-programming/hello-world)
+        2.  [GitHub Classroom](https://classroom.github.com/a/NFDDBX2g)
+    3.  Create a wrangling function (Unstructured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/r-programming/wrangling-function.md)
+        2.  [GitHub Classroom](https://classroom.github.com/a/CtaIO64Y)
+3.  Data Wrangling in the Tidyverse
+    1.  Clean the mtcars Dataset (Structured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/tidyverse/clean-level-1-mtcars)
+        2.  [GitHub Classroom](https://classroom.github.com/a/T7b4x6Za)
+    2.  Clean the midwest Dataset (Semi-structured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/tidyverse/clean-level-2-midwest)
+        2.  [GitHub Classroom](https://classroom.github.com/a/e37NGpd6)
+    3.  Make-a-mess/Uncleaning (Unstructured group project)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/tidyverse/clean-group.md)
+        2.  [GitHub Classroom](https://classroom.github.com/a/vCZatEWp)
+    4.  Recreate a starwars dataset (Structured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/tidyverse/wrangle-level-1-starwars)
+        2.  [GitHub Classroom](https://classroom.github.com/a/4c2jLCNP)
+    5.  Recreate a gapminder Dataset (Semi-structured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/tidyverse/wrangle-level-2-gapminder)
+        2.  [GitHub Classroom](https://classroom.github.com/a/b7b64_7u)
+    6.  Let loose/Unwrangling (Unstructured group project)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/tidyverse/wrangle-group.md)
+        2.  [GitHub Classroom](https://classroom.github.com/a/V1pLlzwP)
+    7.  Recreate an existing function (Unstructured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/tidyverse/recreate-function.md)
+        2.  [GitHub Classroom](https://classroom.github.com/a/AYA7rZiC)
+4.  Data Reporting
+    1.  Simple Quarto notebook report (Semi-structured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/data-reporting/simple-qmd.md)
+        2.  [GitHub Classroom](https://classroom.github.com/a/ySzN1o_u)
+    2.  Class topic demo (Unstructured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/data-reporting/class-demo.md)
+        2.  [GitHub Classroom](https://classroom.github.com/a/waqPvKad)
+    3.  Descriptive statistics & visualization exercise (Structured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/data-reporting/reporting-level-1)
+        2.  [GitHub Classroom](https://classroom.github.com/a/ufJsNpOG)
+    4.  Descriptive statistics & visualization open report (Unstructured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/data-reporting/reporting-level-2.md)
+        2.  [GitHub Classroom](https://classroom.github.com/a/EFG-gISQ)
+5.  Multiple/other *(opportunities to demonstrate a range of standards depending on approach)*
+    1.  Contribute to the course textbook repo (Unstructured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/other/contribution-textbook.md)
+        2.  [GitHub Classroom](https://classroom.github.com/a/tzFygvTs)
+    2.  Contribute to the Schelling Games example repo (Unstructured)
+        1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/other/contribution-schelling.md)
+        2.  [GitHub Classroom](https://classroom.github.com/a/Qp807Vdh)
