@@ -37,13 +37,9 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
-*_files/
 
 # R Environment Variables
 .Renviron
-
-# pkgdown site
-docs/
 
 # translation temp files
 po/*~
@@ -52,5 +48,4 @@ po/*~
 rsconnect/
 
 # Ignore exceptions
-!docs/
 /.quarto/
