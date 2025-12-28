@@ -1,55 +1,11 @@
+# _quarto-site.yml
+## This is the default render. It includes everything EXCEPT the slides.
 project:
-  type: website
-  output-dir: docs
+  render:
+    - "*.qmd"                  # top-level .qmd
+    - "**/*.qmd"               # all .qmd in subfolders
+    - "!presentations/*.qmd"   # EXCLUDE only slide .qmd
+    - "!slides/*.qmd"   # EXCLUDE only slide .qmd
 
-website:
-  title: "Data to Manuscript in R"
-  navbar:
-    left:
-      - text: Syllabus
-        menu:
-            - text: Course Structure
-              href: syllabus/structure.qmd
-            - text: Communication
-              href: syllabus/communication.qmd
-            - text: AI Use
-              href: syllabus/ai-policy.qmd
-            - text: Climate & Inclusion
-              href: syllabus/climate.qmd
-      - text: Assessment
-        menu:
-            - text: Overview
-              href: assessment/overview.qmd
-            - text: Learning Objectives
-              href: assessment/objectives.qmd
-            - text: Accountability
-              href: assessment/accountability.qmd
-            - text: Community Engagement
-              href: assessment/engagement.qmd
-            - text: Integrative Data Project
-              href: assessment/data-project.qmd
-      - text: Materials
-        menu:
-            - text: Textbook (WIP)
-              href: d2m-r.github.io/book/index.html
-            - text: Slides
-              href: materials/slides.qmd
-            - text: Misc. Materials
-              href: materials/misc-materials.qmd
-            - text: External Resources
-              href: materials/resources.qmd
-            - text: Finding Data
-              href: materials/finding-data.qmd
-      - text: Submit Project
-        href: submit.qmd
-      - text: FAQ
-        href: d2m-r.github.io
-
-format:
-  html:
-    theme:
-      - d2mr-theme.scss
-    #css: styles.css
-    toc: true
 
 

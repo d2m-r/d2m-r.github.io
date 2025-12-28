@@ -90,7 +90,7 @@ There are several cases where you will not work from a GH Classroom assignment:
 
 - **Demonstration of Git/GitHub core standard:** Using GH Classrooms is not sufficient to demonstrate GitHub core objectives. 
 Earning points requires completing a project in a private repo you create yourself within the `d2m-r` organization.
-    - Read the [Git & GitHub Assessment Guidelines](gh-asessment.qmd) for details on how to demonstrate this core standard.
+    - Read the [Git & GitHub Assessment Guidelines](gh-assessment.qmd) for details on how to demonstrate this core standard.
 - **Standards Projects without Classroom options:** Some Core Standards and Enrichment projects do not have GH Classroom options.
 In these cases, you create a private repo in the `d2m-r` organization for the project, like above.
 - **Integrative Data Projects:** You create a private repo in your personal GitHub account. You add the instructor and TA(s) as collaborators with Write (or higher) access. You have full ownership of the repo and retain control after the course ends.

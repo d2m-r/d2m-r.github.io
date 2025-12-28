@@ -3,5 +3,9 @@ title: "Slides"
 format: html
 ---
 
-outline w/ presentation links
-repo
+## D2M-R Quarter I Slides
+
+
+
+
+## D2M-R Quarter II Slides

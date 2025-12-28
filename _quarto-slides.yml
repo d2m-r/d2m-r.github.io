@@ -1,8 +1,9 @@
 # _quarto-slides.yml -- profile for slide rendering only
 project:
-  type: default       # <--- override: NOT a book
-  output-dir: docs/slides
+  type: default       # <--- override: NOT the regular website type
+  output-dir: docs
   render:
+    - "presentations/*.qmd"  # only your slide decks
     - "slides/*.qmd"  # only your slide decks
 
 format:
