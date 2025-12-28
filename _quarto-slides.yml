@@ -3,7 +3,6 @@ project:
   type: default       # <--- override: NOT the regular website type
   output-dir: docs
   render:
-    - "presentations/*.qmd"  # only your slide decks
     - "slides/*.qmd"  # only your slide decks
 
 format:

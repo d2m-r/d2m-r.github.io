@@ -4,7 +4,6 @@ project:
   render:
     - "*.qmd"                  # top-level .qmd
     - "**/*.qmd"               # all .qmd in subfolders
-    - "!presentations/*.qmd"   # EXCLUDE only slide .qmd
     - "!slides/*.qmd"   # EXCLUDE only slide .qmd
 
 
