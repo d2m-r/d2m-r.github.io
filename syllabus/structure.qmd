@@ -3,12 +3,106 @@ title: "Course Structure"
 format: html
 ---
 
-- sequence
-    - general: broad objectives (research workflow, reproducibility, collaboration), main differences between i & ii
-    - d2m-r i: course description, objectives, logistics
-    - d2m-r ii: course description, objectives, logistics
-- repos
-- canvas
-- materials overview
-    - you'll need to bring a laptop to class every day with RStudio installed
-    - textbook is a work in progress, you can contribute for course credit!
+# Course Structure Overview
+
+Data to Manuscript in R is a two-quarter sequence that covers the basic skills needed to build a research workflow with the R programming language to create reproducible, open-science friendly reports that can be easily updated with ongoing data collection or receiving comments from readers. 
+
+The course structure differs from traditional methods courses in its emphasis on hands-on skill development, cumulative assessment, and student-directed learning.
+
+This page offers an at-a-glace overview of the course goals and structure. Detailed information about learning objectives, syllabus policies, and assessment structure are available on the course website.
+
+## Broad Learning Objectives
+
+The sequence emphasizes four interconnected goals:
+
+1. **Develop a reproducible and transparent research workflow.** Plan, execute, and document a data analysis project from start to finish including data acquisition, cleaning, analysis, visualization, and reporting.
+2. **Practice accountability & time management.** Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.
+3. **Engage with your research communities.** Collaborate effectively with peers, contribute to group learning, and seek help when needed.
+4. **Develop problem-solving and independent learning skills.** Develop specific strategies for debugging code, troubleshooting errors, asking good questions, and learning new skills independently using the myriad resources available online from R and open-science communities.
+
+## The Two-Quarter Sequence
+
+Both quarters of the sequence are best suited for students actively working on a quantitative research project like a BA or MA thesis.
+
+**D2M-R I** (Winter Quarter) focuses on the "Data" side of the workflow, with topics including core R programming, data wrangling in the Tidyverse, using GitHub for version control, and simple data analysis and visualization. 
+
+*Preparation:*  
+
+- No previous experience with R or programming is required.
+- Best suited for students actively working on a quantitative research project like a BA or MA thesis.
+- Final data project may be completed with original or publicly available data.
+- Consent required for undergraduates.
+
+*Core learning objectives:* RStudio + Quarto workflow, GitHub repositories and version control, Base R syntax and data structures, Control flow (if/else, loops), Defining functions in Base R, Importing data with tidyverse tools, Data manipulation with dplyr and pipelines, Tidy data structure, Reshaping data with tidyr, Character strings with stringr, Factors with forcats, Basic data reporting in Quarto
+
+**D2M-R II** (Spring Quarter) advances to the "Manuscript" side of the workflow, with topics including the application of statistical analyses commonly used in the social sciences, creating publication-quality plots with the ggplot2 package, and the integration of R code with dynamic narrative text via the open-source Quarto publishing system.  
+
+*Preparation:* 
+
+- Assumes familiarity with R, the tidyverse ecosystem, and GitHub.
+- Data to Manuscript I is highly recommended, but not required.
+- Best suited for students actively working on a quantitative research project like a BA or MA thesis.
+- Final data project must be completed with original data. Exceptions may be granted for publicly available data if the student has a sophisticated analysis plan.
+- Consent required for undergraduates.
+
+*Core learning objectives:* Descriptive statistics and summary tables, Inferential statistical tests (t-tests, ANOVA, chi-square, correlation), Linear modeling (regression and GLMs), Advanced ggplot2 customization, Multi-panel figures, APA-formatted tables, Dynamic in-text references, BibTeX and citations, Advanced Quarto features, Custom function development, Manuscript-ready output, Reproducible project organization
+
+## Course Materials & Platforms
+
+### GitHub Repositories
+
+Course materials, assignments, and student work live in GitHub repositories in the [D2M-R GitHub organization](https://github.com/d2m-r). Students complete projects in private repos (both within the organization and through individual accounts). Many projects may be completed through GitHub Classroom assignments.
+
+Students should sign up for a [GitHub individual account with the education plan upgrade](https://github.com/education) before the course begins.
+
+### Canvas
+
+The Canvas page is used for tracking grades, and little else.
+
+### Course Website
+
+The course website ([d2m-r.github.io](http://d2m-r.github.io)) serves as the primary reference, with guides, resources, and syllabus information. 
+
+The class calendar on the site’s home page is updated regularly with announcements, reminders, and links to each week’s readings and slides.
+
+### Textbook
+
+D2M-R includes an [early-in-development textbook](github.com/d2m-r/book) covering everything in the D2M-R I & II syllabi. It starts with the first steps of getting RStudio to work then moves through topics like beginner and intermediate R programming, tidy data wrangling, visualization, statistical analysis, and creating reproducible, dynamic publications with Quarto.
+
+When relevant content is in the current version of the textbook, it will be assigned as a reading for the week. Where content is incomplete or missing, alternative readings from texts like [R for Data Science](https://r4ds.hadley.nz/), [R for the Rest of Us](https://book.rfortherestofus.com/), and [Hands-On Programming with R](https://rstudio-education.github.io/hopr/).
+
+**The textbook is a work in progress—students can contribute improvements, corrections, or new content for course credit!**
+
+## Assessment Structure
+
+### D2M-R I: Portfolio-Based Assessment
+
+Grade composition:
+
+- **20% Engagement:** Independent accountability planning (10%) and community participation (10%)
+- **60% Core Data Skills Portfolio:** Demonstration of 12 core standards through structured and unstructured projects from an assessment menu
+- **20% Integrative Data Project:** Final project integrating all 12 standards
+- **Up to 10% Enrichment:** Optional (bonus) supplemental skills and independent learning
+
+Students select projects matching their skill level and interests, demonstrating competencies when ready rather than on fixed deadlines. Skills are assessed as meeting expectations (4pt), exceeding expectations (5pt), or outstanding (6pt).
+
+### D2M-R II: Advanced Integration
+
+Assessment details are still being finalized for D2M-R II, but will follow a generally similar structure to D2M-R I.
+
+One key difference is an emphasis on start-to-finish research, with more weight given to a longer, more complex, and highly polished data project.
+
+## Technical Requirements
+
+**You'll need to bring a laptop to class every day with RStudio installed.** Class sessions blend lecture, live coding demonstrations, and hands-on workshops. Students should have R, RStudio, Git, and GitHub configured by the end of Week 1.
+
+Required software (all free):
+
+- R (latest version)
+- RStudio Desktop
+- Git
+- GitHub account
+- Slack
+- Recommended: GitHub Desktop for repository management when RStudio freaks out
+
+Setup guides and troubleshooting resources are available on the course website.

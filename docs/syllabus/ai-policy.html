@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-10b6fab8aa1041b3e53a9ff011200445.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-15c96ae875d60a9101c25b0bc06c806c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -188,8 +188,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#academic-integrity" id="toc-academic-integrity" class="nav-link active" data-scroll-target="#academic-integrity">AI &amp; Academic Integrity</a></li>
+  <li><a href="#ai-llm" id="toc-ai-llm" class="nav-link" data-scroll-target="#ai-llm">Generative AI</a>
+  <ul class="collapse">
+  <li><a href="#ethical-use" id="toc-ethical-use" class="nav-link" data-scroll-target="#ethical-use">Ethical AI Use</a></li>
+  <li><a href="#constructive-use" id="toc-constructive-use" class="nav-link" data-scroll-target="#constructive-use">Constructive AI Use</a></li>
+  <li><a href="#tips" id="toc-tips" class="nav-link" data-scroll-target="#tips">Tips, Tricks, and Strategies</a>
+  <ul class="collapse">
+  <li><a href="#suggested-appropriate-and-constructive-uses-of-ai-writing-and-coding-tools" id="toc-suggested-appropriate-and-constructive-uses-of-ai-writing-and-coding-tools" class="nav-link" data-scroll-target="#suggested-appropriate-and-constructive-uses-of-ai-writing-and-coding-tools">Suggested Appropriate and Constructive Uses of AI Writing and Coding Tools</a></li>
+  <li><a href="#treat-ai-like-a-person" id="toc-treat-ai-like-a-person" class="nav-link" data-scroll-target="#treat-ai-like-a-person">Treat AI Like a Person</a></li>
+  <li><a href="#tools-vs-generators" id="toc-tools-vs-generators" class="nav-link" data-scroll-target="#tools-vs-generators">Learning Tools vs.&nbsp;Content Generators</a></li>
+  </ul></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -213,10 +231,234 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="academic-integrity" class="level1">
+<h1>AI &amp; Academic Integrity</h1>
+<p>Academic integrity has become inextricably linked with artificial intelligence in the classroom, but they are not equivalent. AI tools are not inherently unethical, nor are they inherently ethical. They can be used to cheat, but they can also be used to learn. They can be used to misrepresent, but they can also be used to clarify. They can be used to plagiarize, but they can also be used to create.</p>
+<p>This policy outlines what will count as cheating in this class and offers suggestions for how to use LLMs constructively. It is not exhaustive, and it is not a substitute for your own judgment. If you are ever unsure whether a particular use of AI is appropriate, ask me.</p>
+<p>Students in this course are expected to follow UChicago’s <a href="https://studentmanual.uchicago.edu/academic-policies/academic-honesty-plagiarism/">Academic Honesty &amp; Plagiarism policy</a>. To add clarity to this general policy, in this class I am using <a href="https://www.ox.ac.uk/students/academic/guidance/skills/plagiarism">Oxford University’s explanation of plagiarism</a>:</p>
+<blockquote class="blockquote">
+<p>Plagiarism is presenting work or ideas from another source as your own, with or without consent of the original author, by incorporating it into your work without full acknowledgement. All published and unpublished material, whether in manuscript, printed or electronic form, is covered under this definition, as is the use of material generated wholly or in part through use of artificial intelligence (save when use of Artificial Intelligence - AI for assessment has received prior authorisation e.g.&nbsp;as a reasonable adjustment for a student’s disability). Plagiarism can also include re-using your own work without citation.</p>
+</blockquote>
+<p>In <em>Data to Manuscript in R</em>, you may use AI tools for coding, but not for writing. This means you may use AI to generate and revise code without penalty.</p>
+<p><strong>You may not submit any AI-generated written work,</strong> including but not limited to:</p>
+<ol type="1">
+<li>Written responses to questions in assignments</li>
+<li>Narrative text of your data project</li>
+<li>Project reflections</li>
+<li>AI statements<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ol>
+<p>“AI-generated written work” includes using AI to generate text that you then revise or edit.</p>
+<div style="color: #bb0000; background-color: #ffffff;">
+<p>Plagiarized written work, whether from human or AI creators, will receive a non-negotiable 0.</p>
+</div>
+</section>
+<section id="ai-llm" class="level1">
+<h1>Generative AI</h1>
+<div class="alert alert-info">
+<p><em>This document reflects the policies and recommendations I (Dr.&nbsp;Dowling) use in my classes, based on my own evolving perspectives on AI. Other classes and professors will have different policies and recommendations, and you are expected to follow those guidelines in other contexts.</em></p>
+</div>
+<p><strong>Most of what follows is pretty abstract. If you’re looking for actionable advice on how you can use AI, skip to the <a href="#tips">Tips, Tricks, and Strategies</a> section. If you want concrete examples of what is and isn’t appropriate use of AI in D2M-R, skip to the <a href="#examples">Examples</a> section.</strong></p>
+<p>Large language models and other generative AI tools like ChatGPT, Bard, Copilot, and Gemini have become ubiquitous in and outside of academia. Whatever your views and principles, there’s no going back. I do not believe there is any one “correct” way students should (or shouldn’t) use AI. It will depend on many factors like the content and structure of the class, the level of instruction, the course’s learning objectives, and the pedagogical styles of individual instructors (among other things).</p>
+<p>Although what is appropriate and acceptable use of AI will be somewhat contextually dependent, there are two issues that apply across the board:</p>
+<ol type="1">
+<li>Students should not use AI <em>unethically</em>, misrepresenting themselves or others or presenting false claims as truthful.</li>
+<li>Students should not use AI <em>destructively</em>, working against their educational, professional, or personal goals.</li>
+</ol>
+<p>This document will offer some general guidelines for using AI ethically and constructively. Not all guidelines will be useful in all contexts, but this may be a useful starting point to reflect on your own philosophy of AI use. It may also help you understand the motivations behind AI policies that can vary significantly from class to class.</p>
+<section id="ethical-use" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-use">Ethical AI Use</h2>
+<p>The relationship between AI and plagiarism is complicated, to put it mildly. ChatGPT doesn’t care if you plagiarize it. Bard’s career isn’t going to suffer if you benefit from its work without giving due credit. Dall-E doesn’t have artistic integrity. It doesn’t matter to AI, but it should matter to you.</p>
+<p>The work you produce as a student is a representation of you. It not only demonstrates the skills you’ve gained in your education, it is often the only “you” some professors, employers, and peers will know before making important judgments and decisions that directly affect you. If you, for example, apply to a PhD program with a writing sample and personal statement that someone or something else wrote, you will be expected to produce comparable intellectual contributions on the spot at interviews and throughout your career.</p>
+<p>This kind of misrepresentation cuts both ways. AI seems extraordinarily intelligent and capable, but it is not nearly as smart and capable as you are when it comes to telling the difference between reality and fantasy. You may be prone to human error, less-than-perfect writing, or other academic struggles, but AI is prone to hallucinations. It asserts completely inaccurate things with extreme confidence. When you claim AI’s work as your own, you are taking ownership over any inaccurate, confusing, bizarre, offensive, or otherwise problematic material it has created.</p>
+<p>I believe AI can be used ethically, but I caution you to give serious thought to whether and how you choose to use it, apart from whether and how you are permitted to do so. The ethical complications of AI extend well beyond plagiarism and misrepresentation concerns; any use of large language models will have global consequences. It is your responsibility to weigh the risks and benefits with regard to your personal use, within the bounds of what is explicitly allowed.</p>
+<p>LLMs are actively <a href="https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117">harming the environment</a> and <a href="https://theconversation.com/ai-is-a-multi-billion-dollar-industry-its-underpinned-by-an-invisible-and-exploited-workforce-240568">exploiting workers</a>, in both cases disproportionately so in low-income and already exploited regions. These models <a href="https://www.nature.com/articles/s41586-024-07856-5">perpetuate racist and classist societal bias</a> and <a href="https://ist.psu.edu/news/non-western-cultures-misrepresented-harmed-by-generative-ai-researchers-say">misrepresent non-Western cultures</a>. We as users are complicit, whether or not we hold these biases ourselves.</p>
+</section>
+<section id="constructive-use" class="level2">
+<h2 class="anchored" data-anchor-id="constructive-use">Constructive AI Use</h2>
+<p>Large language models aren’t the first technological breakthrough to revolutionize learning. Graphing calculators allow you to tackle more complex problems in calculus. R, Stata, and SPSS allow us to apply statistical analyses and visualize data rapidly and reliably. Spell check and tools like Grammarly<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> can make your writing process more efficient. Citations managers like Zotero let you spend more time on reading and analyzing materials and less time poring over style guides.</p>
+<p>But a graphing calculator won’t do your homework if you don’t know enough calculus to make use of it. RStudio won’t give you anything to work with unless you understand how the programming language works and have a solid grasp on how to select and apply analyses. Spelling and grammar checkers are notorious for making bizarre, decontextualized, and flat out incorrect suggestions that you need to be able to identify and manually fix. Zotero can’t produce a comprehensive and accurate References section if you don’t maintain your database consistently.</p>
+<p>Similarly, ChatGPT can’t produce quality (or accurate, reliable, or relevant) content if you don’t have the foundational skills to create effective prompts. The most constructive way to use LLM tools will depend on what you the user are bringing to the “conversation.”</p>
+<p>You shouldn’t use AI to cheat yourself out of an education or set yourself up for failure. Don’t use AI-generated content for anything you couldn’t generate yourself. Instead, use AI to help you learn the material and get to the point where you can do it yourself (and so can make constructive use of AI-generated shortcuts). Use it to break down a dense passage in a reading. Ask it the questions you’d rather not bring up in class.</p>
+<p>You can find some concrete examples of how to constructively use AI in different contexts in the section <span id="tools-vs-generators">Learning Tools vs.&nbsp;Content Generators</span> below.</p>
+</section>
+<section id="tips" class="level2">
+<h2 class="anchored" data-anchor-id="tips">Tips, Tricks, and Strategies</h2>
+<p>So in practice, what exactly are you literally supposed to do?</p>
+<p>First and foremost, <strong>when an instructor has explicitly stated what uses of AI are and are not allowed in their class, that’s how you should and shouldn’t use AI in that class.</strong> Full stop.</p>
+<p>When there’s no explicit statement, it’s up to you to rely on your common sense and integrity. This section has some general guidelines and rules of thumb for how to approach this.</p>
+<section id="suggested-appropriate-and-constructive-uses-of-ai-writing-and-coding-tools" class="level3">
+<h3 class="anchored" data-anchor-id="suggested-appropriate-and-constructive-uses-of-ai-writing-and-coding-tools">Suggested Appropriate and Constructive Uses of AI Writing and Coding Tools</h3>
+<ol type="1">
+<li>Coming up with a title for your paper</li>
+<li>Finding alternative wording for a specific idea you are struggling to articulate</li>
+<li>Making your writing more concise</li>
+<li>Brainstorming topics and research questions</li>
+<li>Creating a list of important researchers in your topic area to start looking for sources</li>
+<li>Proofreading and copy-editing your full drafts</li>
+<li>Generating base-level code to correct and develop (akin to the kind of responses you’d get on Stack Overflow)</li>
+<li>Performing a preliminary translation between natural or programming languages with short blocks of text or code</li>
+</ol>
+<p>Even in these cases, you should be careful to critically evaluate the output and make sure it is accurate and representative of what you’re intending to communicate. LLMs are particularly bad at making good judgments about what is important to keep and ok to lose when it comes to making your writing more concise. It definitely <em>can</em> help with that, but you have to give it a lot of guidance to keep it focused on cutting unnecessary content only.</p>
+</section>
+<section id="treat-ai-like-a-person" class="level3">
+<h3 class="anchored" data-anchor-id="treat-ai-like-a-person">Treat AI Like a Person</h3>
+<p>It is unethical and plagiaristic to claim the ideas and writing of another entity–including digital entities like ChatGPT–are your own. There is admittedly a fine line between using a phrase or wording suggestion produced by AI and using so much generated text as to constitute plagiarism. To figure out which side of the line you’re on in a given situation, pretend that ChatGPT is a person.</p>
+<p><strong>Ask yourself:</strong> If this work was created by a human…</p>
+<ol type="1">
+<li>How would you cite it?
+<ol type="a">
+<li>If you’re using a phrasing suggestion that you might find in any written work, general knowledge facts you asked AI to retrieve, or anything else that you could access in many other ways, that’s probably ok to use.</li>
+<li>If you would cite the source as a direct (with quotation marks and in-text citation) or indirect (paraphrased and in-text citation) quote, you should account for it. You might directly quote a human source if you are using narrowly defined text or using a large chunk of text. In this case, if you do use the quote you should cite it according to your style guide’s recommendations. See the APA guidelines <a href="">here</a>. The better option is to figure out where AI got the idea from in the first place, then go read that source and cite it directly.</li>
+</ol></li>
+<li>Would you copy and paste it?
+<ol type="a">
+<li><em>For written text:</em> If you want to include so much text from an LLM source that you’d copy and paste it into your document, you need to treat it like a direct quote. At that point it’s not just helping you write, it’s doing it for you. If you aren’t quite sure whether it’s too much text to use without citing the AI, type it out yourself rather than copying and pasting. If the idea of typing out that much seems silly, it’s probably inappropriate to use it.</li>
+<li><em>For coding/programming:</em> Because programming is, well, programmatic, there’s not a lot of variation between efficient code written by different humans for relatively simple tasks. It’s common and ethical practice to reuse your own old code. It’s also usually ok to copy-paste code from publicly available learning and development resources (e.g., the Cookbook for R) or from crowd-sourced sites (e.g., Stack Overflow). It’s not ok to find someone else’s script on GitHub and present it as your own work without proper citation. Applying these rules to AI, it’s probably ok to ask ChatGPT to write a function for you to do a specific task or a block of code to address a specific issue you’re stuck on. It’s probably <em>not</em> ok to generate a full, complex script without proper citation. It’s <em>definitely not</em> ok to do so for class assignments. (This is a point about ethical use only. There’s more about constructive AI use for programming below.)</li>
+</ol></li>
+<li>Would you trust it?
+<ol type="a">
+<li>You wouldn’t (or at least shouldn’t) take just any human-generated writing as perfectly accurate, unbiased, or fully informed. Before referencing any work, you would (should) check the credentials of the individual and/or publication, fact-check claims on topics you’re not an expert on, and think critically about whether/how these ideas fit into the wider literature and big-picture concepts.</li>
+<li>Maybe this will change in years to come, but right now in 2025 AI-generated writing is typically less accurate, more biased, and less informed compared to human-generated writing. Don’t give it any undue credit or benefit of the doubt!</li>
+</ol></li>
+</ol>
+</section>
+<section id="tools-vs-generators" class="level3">
+<h3 class="anchored" data-anchor-id="tools-vs-generators">Learning Tools vs.&nbsp;Content Generators</h3>
+<p>Assess your own knowledge and experience in any given context to decide whether AI should be a tool to improve your efficiency (like a calculator, programming language, or citation manager) or a tool to facilitate learning.</p>
+<section id="what-do-you-want" class="level4">
+<h4 class="anchored" data-anchor-id="what-do-you-want">What do <em>you</em> want?</h4>
+<p>Ultimately it’s up to you do decide what “constructive” use of AI means to you. It’s up to you to decide whether you even care that you use AI constructively. As you’re figuring it out, reflect on this question: <em>Why are you here and not somewhere else?</em></p>
+<div class="large callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<em>Why are you here and not somewhere else?</em>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="text-align: center; margin-bottom: 0rem;">
+<p><img src="../images/decorative/why-are-you-here.jpg" style="width: 80%; display: block; margin: .25em auto;" alt="A wall with text in neon lights reading 'Why are you here and not somewhere else?'"></p>
+</div>
+<p>It’s a UChicago Booth unofficial motto (which may not be the absolute best place to find your personal guiding ethics), but the question is worth asking wherever you find yourself. If you want to use AI to get ahead, great! But what does “getting ahead” actually mean? Why are you putting your valuable time, energy, and money into your education? What do you want out of this experience? How can you use AI to not just arbitrarily “get ahead,” but to move toward the places you personally want to go?</p>
+<p>You have chosen to dedicate your precious financial, emotional, and cognitive resources to earning your UChicago degree, a piece of paper that is <a href="https://divinity.uchicago.edu/sightings/articles/chatgpt-letter-my-students">only meaningful if it is symbolic</a> of the knowledge you gained and produced. An unearned degree may (or may not) get you a job, but it will not sustain your success. Reliance on LLMs can <a href="https://rdcu.be/eAMK6">make you less creative</a> and lead to <a href="https://www.media.mit.edu/publications/your-brain-on-chatgpt/">decreased long-term neural and cognitive function</a>.</p>
+<p>Even if you view your education as purely transactional, consider that using AI may <a href="https://www.pnas.org/doi/10.1073/pnas.2426766122">damage your chances</a> on the job market. When you claim AI’s work as your own, you are taking ownership of <a href="https://link.springer.com/article/10.1007/s10676-024-09775-5">its bullshit</a> and risking reputational consequences.</p>
+</div>
+</div>
+<p>I suggest really giving some thought to what “constructive” AI use means to you. Imagine yourself using ChatGPT in different ways in different contexts. Which ones are worth it?</p>
+</section>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p>If you’re not sure what all this means in practice, here are some hypothetical scenarios. I lay these out based on my own reflections on what is useful and ethical in different contexts. You may have other feelings, which is fine. Just be deliberate about the choices you make.</p>
+<p>In my view, using LLMs in programming and technical work has different ethical and productive implications than in writing context, so I’ve broken the examples up into two categories.</p>
+<p><em>As a reminder, in D2M-R you are allowed to use AI for coding, but not for producing written work.</em></p>
+</section>
+<div class="card mb-3">
+<section id="programming" class="level2 card-header">
+<h2 class="anchored" data-anchor-id="programming">Programming</h2>
+</section>
+<section id="beginner-programming" class="level3 card-title">
+<h3 class="anchored" data-anchor-id="beginner-programming">Beginner Programming</h3>
+</section>
+<div class="card-body">
+<div class="card-text">
+<p><strong>You are in a class introducing you to coding in R</strong> (<em>hey look! it’s D2M-R!</em>).</p>
+<p>You intend to use R to conduct analyses for your own research and plan to take more advanced quantitative methods courses over the next few years. You want to make use of RStudio’s integrated Copilot functionality, and your instructor permits AI use for coding assignments.</p>
+<section id="option-1-content-generation" class="level4">
+<h4 class="anchored" data-anchor-id="option-1-content-generation">Option 1: Content generation</h4>
+<p><em>You use Copilot to generate code for homework assignments.</em></p>
+<p>You prompt the AI by feeding it the assignment, and it produces code that works perfectly and gets an A. The final project/exam for the class requires you to not just produce working code, but evaluate the efficiency of code presented to you. Even though you’ve always managed to get code that works, you can’t pass the assignment/exam because you don’t know why it works.</p>
+<p>When you go to use R for your own research and enroll in more advanced courses, Copilot’s code does not work “out of the box.” You can’t identify where most errors are occurring, and you can’t fix the errors you do identify. When you manage to get the code to run without errors, you don’t realize that even though it works, it’s not doing accomplishing the tasks you actually need it to accomplish. The code produces inaccurate results, leading you to make unfounded claims in your thesis.</p>
+<p>Using AI as a shortcut didn’t save you time since you need to relearn it all, and the inaccuracies in your research are a poor reflection on you and your scientific contributions.</p>
+</section>
+<section id="option-2-learning-tool" class="level4">
+<h4 class="anchored" data-anchor-id="option-2-learning-tool">Option 2: Learning tool</h4>
+<p><em>You use Copilot or other LLMs to help learn the skills you’re covering in class.</em></p>
+<p>When you get stuck on a problem in a homework assignment, you prompt AI to explain the concept to you in more depth than you covered in class. When your code has errors that you don’t know how to fix, you ask ChatGPT what those error messages mean so you know what to do when you see them again. You write a very long block of code that works, but you suspect it’s inefficient. You feed your code to GPT or Copilot and ask it to point out ways to clean up your code for efficiency and readability.</p>
+<p>Using AI helped you solidify a foundation, so when you need to produce more complicated code for your own research, you can generate base code with Copilot, identify and correct errors, and expand on it to meet your needs.</p>
+</section>
+</div>
+</div>
+<section id="quantitative-research-project" class="level3 card-title">
+<h3 class="anchored" data-anchor-id="quantitative-research-project">Quantitative Research Project</h3>
+</section>
+<div class="card-body">
+<div class="card-text">
+<p><strong>You are working on a research paper where you need to perform a complex statistical analysis and produce clear figures.</strong></p>
+<p>You have taken statistics courses and have a plan for analyses. You took a class learning the basics of R and have since dedicated time to improving your mastery of the language. You need to perform some basic data wrangling before you can write your analysis. Your experience means you know which packages you want to use, have a solid idea for you want the cleaned data to look like, and understand why the data needs to be wrangled for your purposes. Instead of writing out the same code you’ve written a million times before, you use your experience to craft an excellent prompt for ChatGPT. You review the code it generates, correct any errors you see, and make any necessary adjustments for your purposes.</p>
+<p>Using AI as a shortcut has increased your efficiency without compromising the utility of the code or creating something you aren’t prepared to work with going forward.</p>
+</div>
+</div>
+</div>
+<div class="card card-alt1 mb-3">
+<section id="academic-professional-writing" class="level2 card-header">
+<h2 class="anchored" data-anchor-id="academic-professional-writing">Academic &amp; Professional Writing</h2>
+</section>
+<section id="seminar-paper" class="level3 card-title">
+<h3 class="anchored" data-anchor-id="seminar-paper">Seminar paper</h3>
+</section>
+<div class="card-body">
+<div class="card-text">
+<p><strong>You are in a seminar on a topic you’d like to do research on later, but most of the material is new to you.</strong></p>
+<p>You’re struggling to keep up and feel like you’re having a harder time than your classmates understanding the readings. The grade for the class is based only on weekly written responses and a final 5-page literature review.</p>
+<section id="option-1-content-generation-1" class="level4">
+<h4 class="anchored" data-anchor-id="option-1-content-generation-1">Option 1: Content generation</h4>
+<p><em>You use ChatGPT to write your first weekly response paper.</em></p>
+<p>AI produces something pretty good and you get an A, but you still aren’t able to keep up with class discussion. Since your grade is only based on written assignments, you count on ChatGPT to produce your weekly papers and do your best to follow along. When you turn in your final paper, ChatGPT has hallucinated some of your citations. As a result, the paper it writes to connect these real and hallucinated articles doesn’t make theoretical sense. You get a passing grade in the class, but you didn’t make a great impression with the faculty member.</p>
+<p>The next quarter you need to enroll in a graduate-level seminar on the same topic. Most of the grade in this class is based on on-the-spot things like leading discussion and in-class small group projects. You can’t contribute much and your grade suffers. The final paper depends on strong writing skills, being receptive and responsive to feedback, and demonstrating a nuanced understanding of niche topics. ChatGPT not only fails to meet these standards, it produces a paper with some very problematic ideas that you wouldn’t endorse yourself. You’ve lost the opportunity to get support from your professor and are facing an uphill battle to be taken seriously in your field.</p>
+<p>Generating writing with ChatGPT let you skip over actually learning the material and put you in a position to fail when you were in a situation that was about more than just a grade.</p>
+</section>
+<section id="option-2-learning-tool-1" class="level4">
+<h4 class="anchored" data-anchor-id="option-2-learning-tool-1">Option 2: Learning tool</h4>
+<p><em>You use ChatGPT to help understand difficult concepts, define jargon in scientific articles, find related materials to use for your papers, proofread your assignments, and prepare for discussion by clarifying things you’re confused about ahead of time.</em></p>
+<p>It’s still a challenging class, and you might end up with a better grade if you fully relied on AI for your writing. By choosing not to, you end up familiar enough with the material to ask for help in office hours and build a relationship with a professor in a field you’re very interested in.</p>
+<p>When you take a more advanced seminar on the topic, you’re prepared to write more sophisticated papers and comfortable speaking with faculty and classmates about the material. You have connections to two faculty members in the field who can help start you on a research path or write you strong letters of recommendation.</p>
+<p>Using AI as one way of breaking into difficult concepts set you up for more challenging scenarios that you were very invested in.</p>
+</section>
+</div>
+</div>
+<section id="journal-article" class="level3 card-title">
+<h3 class="anchored" data-anchor-id="journal-article">Journal article</h3>
+</section>
+<div class="card-body">
+<div class="card-text">
+<p><strong>You are preparing a journal article for publication based on your MA thesis research.</strong></p>
+<p>You’ve got more to learn, but you have earned a degree of expertise on your research topic.</p>
+<section id="option-1-content-generation-2" class="level4">
+<h4 class="anchored" data-anchor-id="option-1-content-generation-2">Option 1: Content generation</h4>
+<p><em>You ask AI to write your literature review.</em></p>
+<p>You’re not sure what to include, so you ask ChatGPT to generate a literature review for you. The writing sounds generic, but professional. You recognize a lot of the references since you’ve read a lot of the literature, so you assume the ones you don’t recognize are probably good. You don’t have time to check them all, so you include them all in your paper.</p>
+<p>When you present your research at a conference, you’re asked about a citation that you haven’t read, and maybe doesn’t even exist. You’re not sure what to say, so you make something up or skirt the question and embarrass yourself and your advisor.</p>
+<p>Feeling foolish, you double check that all your citations actually exist before submitting for publication. Your reviewers tear you to shreds. You misinterpreted important work (maybe even <em>their</em> work). Beyond misrepresenting research, the writing that seems fine at a surface level has no depth or informed argument.</p>
+<p>You may in fact be an expert in your field, but you’ve given the impression that you’re not. In the best case scenario that you are able to revise and resubmit for publication, you have to go back and do all the labor of writing you could have done in the beginning. You have made a poor impression on your reviewer and anyone who saw your work.</p>
+<p>Crossing the line into AI-plagiarism probably didn’t ruin your career, but you’ve sold yourself short and lost opportunities to actually develop your expertise and credibility.</p>
+</section>
+<section id="option-2-research-support-tool" class="level4">
+<h4 class="anchored" data-anchor-id="option-2-research-support-tool">Option 2: Research support tool</h4>
+<p><em>You ask AI to generate a list of sources that will be useful in your literature review.</em></p>
+<p>You’re already familiar with most of them and can decide whether they are worth including. When you don’t recognize the citation, you can tell whether it’s a reference you should look into or a non-existent citation that ChatGPT hallucinated. As you write, you struggle with a paragraph that feels too wordy, so you ask ChatGPT to shorten it a bit. You see that it cut out something important and that it used a synonym that changes the meaning of a sentence quite a bit, so you keep most of the shorter wording but correct those issues so that it communicates your intended message concisely.</p>
+<p>You used AI to assist with your writing process, keeping things efficient and clean without compromising accuracy or integrity.</p>
+</section>
+</div>
+</div>
+</div>
+<p><strong>Are these scenarios completely contrived to make precisely the points I’m trying to make? Yes, absolutely.</strong> They literally could not be more contrived. They do get at the points I’m trying to make though.</p>
+<p>If these examples feel completely unrelatable or unrealistic to you, think of some scenarios you’re in right now. Leave the ethics and the shoulds out of it for now and remember AI is not inherently good or bad – <em>how can you realistically use AI to get you where you want to go?</em></p>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The irony here is brutal, but this is the #1 place I have had AI policy violations in the past.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Grammarly will also make your writing terrible. Not just in a “you’re cheating yourself out of learning to write” way (though that’s true). I mean Grammarly will take the writing you give it and make it <em>terrible.</em> Grammarly is a <em>bad writer.</em> The more you use it, the less you’ll recognize how shitty it is. I swear to you, it sucks. Also, you should know that it is not a simple spelling and grammar checker, even the features that are marketed that way. It’s all AI now. It’s all generative. It all produces very shitty writing.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

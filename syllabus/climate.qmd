@@ -3,3 +3,42 @@ title: "Climate & Inclusion"
 format: html
 ---
 
+## Accessibility and Accommodation
+
+I am committed to making this course accessible to students of all backgrounds, identities, and abilities. 
+If there are circumstances that make aspects of this course difficult for you to access, please contact me so we can discuss how to accommodate your needs. 
+This includes, but is not limited to, accommodations around the format of course materials, the use of Canvas and other digital resources, the classroom and other physical resources, and the structure of assignments.
+
+I will work with you to create an accessible learning environment whether or not you disclose your disability or personal circumstances. 
+If you choose to disclose personal information with me, I will keep those discussions confidential. 
+For certain accommodations you may need to contact Student Disability Services at (773) 702-6000 or disabilities\@uchicago.edu. 
+If you have a documented disability (or think you may have a disability) and need a reasonable accommodation to participate in class, complete course requirements, or benefit from the University's programs or services, I encourage you to contact Student Disability Services.
+
+### Accommodations Procedures
+
+Requests for formal accommodations should go through Student Disability Services (SDS).
+SDS works differently for undergraduate and graduate students.
+
+- SDS will send *undergraduate* accommodation letters to me automatically
+- *Graduate students* need to ask SDS to send me a letter
+
+You *never* need to disclose personal details to me or anyone outside SDS.
+
+After sending your letter, schedule a meeting with me to make an accommodation plan.
+Independently developing and adhering to a research plan is a learning objective for the course, so "reasonable" accommodations must not interfere with this objective.
+In practice, this means that if you have accommodations that affect deadlines, you will factor these into your [accountability plan](../assessment/accountability.qmd) rather than requesting extensions on individual assignments.
+    
+If you have an informal request for an accommodation, meet with me in office hours. 
+We can almost always work something out, but all requests must follow SDS policies for equity.
+
+## Diversity, Inclusion, and Community
+
+We will commit as a class to creating a welcoming, respectful, and productive classroom and expect the following from each other: 
+
+1. We will be mutually respectful of our meaningful identities. 
+2. We will be considerate of the diversity of our classroom with regards to gender, sexuality, disability, race, ethnicity, religion, socioeconomic status, immigration status, and language when we engage with each other in discussion.
+3. We will maintain respectful dialogue in the classroom, which includes using correct names and pronouns. 
+
+If a member of our community--including myself--is creating an unwelcome space for you, I hope you will bring this to my attention immediately.
+
+If you would prefer to discuss the situation with someone outside our class, I encourage you to take advantage of the [UChicago CARES reporting and conflict resolution processes](https://cares.uchicago.edu/support-and-resources/).

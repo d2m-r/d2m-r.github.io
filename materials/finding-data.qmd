@@ -3,3 +3,126 @@ title: "Finding Data"
 format: html
 ---
 
+# Why You Need a Dataset
+
+The integrative data project requires you to demonstrate the full research workflow: data preparation, analysis, and manuscript reporting. You'll build a reproducible pipeline from raw data to publication-ready output.
+
+This differs from core standards projects, which focus on specific technical skills. The integrative project integrates everything across the quarter.
+
+Your dataset should be complete enough to support a full analysis pipeline—from data cleaning and transformation through statistical modeling to final visualization. Even in D2M-R I when we don’t cover advanced analysis, this should still be the goal for your data. This means having sufficient observations, relevant variables for your research questions, and enough complexity to demonstrate meaningful data wrangling skills without being so messy that cleaning becomes the entire project.
+
+## Using Your Own Data
+
+"Your own data" means data you have a personal stake in analyzing as part of research you're conducting or contributing to. This includes:
+
+- Thesis or dissertation data (BA, MA, or PhD)
+- Data from a lab you work in or research team you're part of
+- Data you're collecting for a faculty member's project
+- Pilot data from studies you're designing
+- Data from independent research projects
+
+It does not necessarily have to be data you collected yourself, and it can even be data collected for an entirely different purpose. “Your” data just means it’s something you’re bringing to the table for your own work rather than trying to find something out there to make work for this class specifically.
+
+**Quarter 1:** Using your own data is strongly preferred. Students working with thesis data (BA or MA), lab projects, or ongoing research get the most from this course. You'll build directly applicable skills and advance your actual research.
+
+**Quarter 2:** You are required to use your own data for the integrative project. You must have a dataset with personal investment and clear research questions before the start of the quarter.
+
+If you lack your own data, publicly available datasets work for Quarter 1. However, start identifying your own dataset early—you'll need it by Quarter 2.
+
+## Finding Public Data
+
+**Start with your research question.** Identify the domain (psychology, public health, social science) and core variables you need. This focus prevents getting lost in vast repositories.
+
+**Use multiple search approaches:**
+
+- **Domain-specific repositories** (ICPSR, Roper, Journal of Open Psychology Data) offer curated, documented datasets
+- **Meta-search engines** (Google Dataset Search, [re3data.org](http://re3data.org)) cast a wider net across repositories
+- **General platforms** (Harvard Dataverse, Figshare, Kaggle) provide diverse options with varying quality
+- **Specialized collections** (Data is Plural, Components, Awesome Public Datasets) surface interesting datasets you might not find otherwise
+
+**Evaluate documentation quality.** Well-documented datasets include codebooks, data dictionaries, and methodology descriptions. Poor documentation will cost you time and introduce errors.
+
+See below for a list of public data collections to get started.
+
+## Essential Dataset Criteria
+
+### Completeness
+
+You need a dataset covering all variables for your analysis. If your research question requires demographics, behavioral measures, and temporal data, the dataset must include all three.
+
+Partial datasets work only if you can extract a complete subset. Pilot data with full variable coverage beats a larger dataset missing key variables.
+
+### Structural Consistency
+
+Check for uniform column names, consistent date formats, and standardized categorical values. Inconsistencies like "Yes"/"yes"/"Y" or "01/15/2024"/"2024-01-15" create silent errors that corrupt analyses.
+
+Inspect the first 50-100 rows for structural oddities before committing to a dataset. Structural inconsistency at the outset doesn’t need to be a dealbreaker, but it means you’ll have more work to do in data preparation stages.
+
+### Plain Text Format
+
+R processes plain text. While packages can read Excel or SPSS files, you'll convert them to CSV or TSV eventually. Start with formats ending in .csv, .tsv, or .txt when possible.
+
+Most repositories offer CSV export. If only proprietary formats exist, verify conversion tools work before investing time in the dataset.
+
+### Tabular Structure
+
+Data must organize into rows and columns. Standard tidy format (each column = variable, each row = observation) simplifies analysis, but transposed or nested structures work if convertible.
+
+Spreadsheets typically meet this criterion. Unstructured text or XML requires preprocessing.
+
+### Research Question Alignment
+
+The dataset must enable answering specific research questions. On day one, articulate 2-3 concrete questions the data can address.
+
+Students with interesting research projects tend to be more interested in the work and generally learn more. Generic exploration of unfocused datasets produces generic insights.
+
+### Anonymization
+
+GitHub retains complete history. Only commit fully anonymized data. Never plan to "anonymize later."
+
+For human subjects data, verify no personally identifiable information exists. Random participant IDs, geographic aggregation to region level, and date jittering are standard approaches.
+
+If you are using publicly available data from a credible source, you don’t have to worry about anonymization. However, if you are using your own data or “quasi-”open data (like from a large research project with collaborators at multiple institutions), you’ll need to be very careful about this.
+
+Check with advisors about discipline-specific anonymization standards.
+
+## Common Pitfalls
+
+**Dataset too large.** Start with manageable size (under 100MB). You can always expand later.
+
+**Missing codebook.** Variable names like "V1", "V2", "Q37" without explanation make analysis impossible.
+
+**Aggregated data when you need individual observations.** Summary statistics can't be disaggregated.
+
+**Licensing restrictions.** Verify the dataset permits academic use and redistribution if needed.
+
+**Format mismatch.** PDF tables or image-based data require extraction work that exceeds course scope.
+
+## Getting Help
+
+If uncertain about dataset suitability, download it, examine the first few rows, and bring specific questions to Dr. Dowling or your TA. "Can this work?" questions need concrete examples, not abstract descriptions.
+
+# Public Data
+
+- [Find and use R's built-in datasets](http://www.sthda.com/english/wiki/r-built-in-data-sets)
+    - Not suitable for integrative data projects, but great for practice and core standards projects
+- [data.gov](https://data.gov/)
+- [Chicago Data Portal](https://data.cityofchicago.org/)
+- [Harvard’s Data Repository](https://dataverse.harvard.edu/dataverse/harvard?q=&fq0=subject_ss%3A%22Social%20Sciences%22&types=dataverses%3Adatasets&sort=dateSort&order=desc)
+- [ICPSR Data Repository](https://www.icpsr.umich.edu/web/pages/ICPSR/index.html)
+- [Google’s Dataset Search](https://datasetsearch.research.google.com/)
+- [Kaggle datasets](https://www.kaggle.com/)
+- [Components Datasets](https://components.one/datasets)
+- [Roper iPoll public opinion data](https://ropercenter-cornell-edu.proxy.uchicago.edu/ipoll/)
+- [AWS Data](https://registry.opendata.aws/)
+- [Data.world open datasets](https://data.world/datasets/open-data)
+- [re3data.org registry of data repositories](https://www.re3data.org/)
+- [Journal of Open Psychology Data](https://openpsychologydata.metajnl.com/)
+- [Journal of Open Archeology Data](https://openarchaeologydata.metajnl.com/)
+- [Journal of Open Public Health Data](https://openhealthdata.metajnl.com/)
+- [Open Data Network](https://www.opendatanetwork.com/)
+- [Figshare](https://figshare.com/)
+- [Awesome Public Datasets on Github](https://github.com/awesomedata/awesome-public-datasets)
+- [Data is plural database (fun datasets of all types!)](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0)
+
+*Thank you to [Dr. Jean Clipperton](https://macs40700.netlify.app/faq/finding-data/) for compiling the majority of this list for her class on Data Visualization!*

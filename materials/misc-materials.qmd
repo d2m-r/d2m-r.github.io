@@ -3,3 +3,75 @@ title: "Miscellaneous Course Materials"
 format: html
 ---
 
+# D2MR Workflow & Course Guides
+
+Guides and walkthroughs to get you through many of the gritty bits of D2MR.[^1]
+
+-   [Best Practices](guides/best-practices.html)
+    -   A collection of best practices for programming in R (for D2MR students)
+-   [Natalie's Style Guide](guides/natalie-style-guide.html)
+    -   Just for reference of what a style guide might look like -- you don't have to use it!
+-   [Using RStudio with GitHub](guides/rstudio-github.html)
+    -   Simplified version of the complete guide from "R for the Rest of Us" below
+-   [Setting up RStudio](guides/setting-up-rstudio.html)
+    -   Covers the RStudio settings you are most likely to want to tweak
+-   [GitHub Submissions](../assessment/misc/gh-submissions.html)
+    -   Guide to submitting assignments via GitHub repos and GitHub Classroom
+-   [Git & GitHub Assessment](../assessment/misc/gh-assessment.html)
+    -   Guidelines and recommendations for meeting the Git & GitHub learning objective requirements
+-   [Research Workflow Assessment](../assessment/misc/workflow-assessment.html)
+    -   Guidelines and recommendations for meeting the RStudio+Quarto Workflow learning objective requirements
+-   [Creating APA Manuscripts with Quarto](guides/quarto-apa.html)
+    -   Guide to setting up an RProject/repo with the apaquarto extension
+-   [BibTeX References with Zotero & citr](guides/bibtex-citr-zotero.html)
+    -   Guide to citing sources in markdown in a Quarto-compatible workflow
+    -   Includes instructions for Zotero, the Better BibTeX extension, and the citr addin
+
+[^1]: If you have stumbled upon this page without being be a member of the class (hello!) you may or may not find these guides helpful, and you may even -- very validly -- disagree with how I present things. These guides are created specifically for the class *From Data to Manuscript in R* at the University of Chicago, which is a short, hands-on crash course with no prerequisites. They are by no means comprehensive, definitive, or universal. 
+
+
+# Essentials
+
+Software and packages you'll need for this course:
+
+- [Slack](https://slack.com/downloads/)
+    -   Used for class communication and announcements
+- [R](https://www.r-project.org/)
+- [RStudio](https://posit.co/download/rstudio-desktop/)
+- [GitHub](github.com)
+- [GitHub Desktop](https://desktop.github.com/)
+    -   Not used in this class, but can be handy when RStudio's Git pane is being finicky
+- R packages (install with the `install.packages` command)[^2]
+    -   [tidyverse](https://www.tidyverse.org/)
+        - Suite of packages for data manipulation and visualization, including ggplot2
+    -   [knitr](https://yihui.org/knitr/)
+        -   Dynamic report generation, necessary for Quarto/R markdown
+    -   [bibtex](https://github.com/ropensci/bibtex)
+        -   Citation management in markdown
+    -   [DescTools](https://cran.r-project.org/web/packages/DescTools/index.html)
+        -   Tools for descriptive statistics
+    - Other useful packages:
+        -   [papaja](https://github.com/crsh/papaja)
+            -   Alternative to apaquarto for creating APA-style manuscripts
+            -   This isn't an "essential" anymore if you've converted to Quarto, but can be a full alternative if you prefer, and it does have some nice convenience functions
+        -   [psych](https://personality-project.org/r/psych/)
+            -   Data analysis with psychologists' common needs in mind
+        -   [stats](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/00Index.html)
+            -   Base R functions for statistical analysis, a nice complement to the psych package, but also has some conflicts with it, so be thoughtful the order you load them in
+        -   [lme4](https://github.com/lme4/lme4/)
+            -   Fitting linear mixed-effects models
+        -   [data.table](https://rdatatable.gitlab.io/data.table/)
+            -   Fast data manipulation, not necessarily always the most cooperative with the tidyverse
+        - [ggpubr](https://rpkgs.datanovia.com/ggpubr/)
+            -   Publication-ready plots
+        - [ggsci](https://nanx.me/ggsci/)
+            -   Color palettes for ggplot2 based on journals, universities, and pop culture (my favorite is Futurama)
+        - [patchwork](https://patchwork.data-imaginist.com/)
+            -   Combine multiple ggplot2 plots into one
+        - [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+            -   Color palettes for R
+        - [vcd](https://cran.r-project.org/web/packages/vcd/index.html)
+            -   Visualizing categorical data
+
+
+[^2]: If packages fail to install with the `install.packages` command, you can typically download them directly from the package's GitHub page with `remotes::install_github("crsh/papaja")`. Replace `crsh/papaja` with whatever follows "github.com/".

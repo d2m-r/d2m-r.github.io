@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-10b6fab8aa1041b3e53a9ff011200445.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-15c96ae875d60a9101c25b0bc06c806c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -188,8 +188,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#d2mr-workflow-course-guides" id="toc-d2mr-workflow-course-guides" class="nav-link active" data-scroll-target="#d2mr-workflow-course-guides">D2MR Workflow &amp; Course Guides</a></li>
+  <li><a href="#essentials" id="toc-essentials" class="nav-link" data-scroll-target="#essentials">Essentials</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -213,10 +220,140 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="d2mr-workflow-course-guides" class="level1">
+<h1>D2MR Workflow &amp; Course Guides</h1>
+<p>Guides and walkthroughs to get you through many of the gritty bits of D2MR.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<ul>
+<li><a href="guides/best-practices.html">Best Practices</a>
+<ul>
+<li>A collection of best practices for programming in R (for D2MR students)</li>
+</ul></li>
+<li><a href="guides/natalie-style-guide.html">Natalie’s Style Guide</a>
+<ul>
+<li>Just for reference of what a style guide might look like – you don’t have to use it!</li>
+</ul></li>
+<li><a href="guides/rstudio-github.html">Using RStudio with GitHub</a>
+<ul>
+<li>Simplified version of the complete guide from “R for the Rest of Us” below</li>
+</ul></li>
+<li><a href="guides/setting-up-rstudio.html">Setting up RStudio</a>
+<ul>
+<li>Covers the RStudio settings you are most likely to want to tweak</li>
+</ul></li>
+<li><a href="../assessment/misc/gh-submissions.html">GitHub Submissions</a>
+<ul>
+<li>Guide to submitting assignments via GitHub repos and GitHub Classroom</li>
+</ul></li>
+<li><a href="../assessment/misc/gh-assessment.html">Git &amp; GitHub Assessment</a>
+<ul>
+<li>Guidelines and recommendations for meeting the Git &amp; GitHub learning objective requirements</li>
+</ul></li>
+<li><a href="../assessment/misc/workflow-assessment.html">Research Workflow Assessment</a>
+<ul>
+<li>Guidelines and recommendations for meeting the RStudio+Quarto Workflow learning objective requirements</li>
+</ul></li>
+<li><a href="guides/quarto-apa.html">Creating APA Manuscripts with Quarto</a>
+<ul>
+<li>Guide to setting up an RProject/repo with the apaquarto extension</li>
+</ul></li>
+<li><a href="guides/bibtex-citr-zotero.html">BibTeX References with Zotero &amp; citr</a>
+<ul>
+<li>Guide to citing sources in markdown in a Quarto-compatible workflow</li>
+<li>Includes instructions for Zotero, the Better BibTeX extension, and the citr addin</li>
+</ul></li>
+</ul>
+</section>
+<section id="essentials" class="level1">
+<h1>Essentials</h1>
+<p>Software and packages you’ll need for this course:</p>
+<ul>
+<li><a href="https://slack.com/downloads/">Slack</a>
+<ul>
+<li>Used for class communication and announcements</li>
+</ul></li>
+<li><a href="https://www.r-project.org/">R</a></li>
+<li><a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
+<li><a href="github.com">GitHub</a></li>
+<li><a href="https://desktop.github.com/">GitHub Desktop</a>
+<ul>
+<li>Not used in this class, but can be handy when RStudio’s Git pane is being finicky</li>
+</ul></li>
+<li>R packages (install with the <code>install.packages</code> command)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+<ul>
+<li><a href="https://www.tidyverse.org/">tidyverse</a>
+<ul>
+<li>Suite of packages for data manipulation and visualization, including ggplot2</li>
+</ul></li>
+<li><a href="https://yihui.org/knitr/">knitr</a>
+<ul>
+<li>Dynamic report generation, necessary for Quarto/R markdown</li>
+</ul></li>
+<li><a href="https://github.com/ropensci/bibtex">bibtex</a>
+<ul>
+<li>Citation management in markdown</li>
+</ul></li>
+<li><a href="https://cran.r-project.org/web/packages/DescTools/index.html">DescTools</a>
+<ul>
+<li>Tools for descriptive statistics</li>
+</ul></li>
+<li>Other useful packages:
+<ul>
+<li><a href="https://github.com/crsh/papaja">papaja</a>
+<ul>
+<li>Alternative to apaquarto for creating APA-style manuscripts</li>
+<li>This isn’t an “essential” anymore if you’ve converted to Quarto, but can be a full alternative if you prefer, and it does have some nice convenience functions</li>
+</ul></li>
+<li><a href="https://personality-project.org/r/psych/">psych</a>
+<ul>
+<li>Data analysis with psychologists’ common needs in mind</li>
+</ul></li>
+<li><a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/00Index.html">stats</a>
+<ul>
+<li>Base R functions for statistical analysis, a nice complement to the psych package, but also has some conflicts with it, so be thoughtful the order you load them in</li>
+</ul></li>
+<li><a href="https://github.com/lme4/lme4/">lme4</a>
+<ul>
+<li>Fitting linear mixed-effects models</li>
+</ul></li>
+<li><a href="https://rdatatable.gitlab.io/data.table/">data.table</a>
+<ul>
+<li>Fast data manipulation, not necessarily always the most cooperative with the tidyverse</li>
+</ul></li>
+<li><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a>
+<ul>
+<li>Publication-ready plots</li>
+</ul></li>
+<li><a href="https://nanx.me/ggsci/">ggsci</a>
+<ul>
+<li>Color palettes for ggplot2 based on journals, universities, and pop culture (my favorite is Futurama)</li>
+</ul></li>
+<li><a href="https://patchwork.data-imaginist.com/">patchwork</a>
+<ul>
+<li>Combine multiple ggplot2 plots into one</li>
+</ul></li>
+<li><a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">RColorBrewer</a>
+<ul>
+<li>Color palettes for R</li>
+</ul></li>
+<li><a href="https://cran.r-project.org/web/packages/vcd/index.html">vcd</a>
+<ul>
+<li>Visualizing categorical data</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>If you have stumbled upon this page without being be a member of the class (hello!) you may or may not find these guides helpful, and you may even – very validly – disagree with how I present things. These guides are created specifically for the class <em>From Data to Manuscript in R</em> at the University of Chicago, which is a short, hands-on crash course with no prerequisites. They are by no means comprehensive, definitive, or universal.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>If packages fail to install with the <code>install.packages</code> command, you can typically download them directly from the package’s GitHub page with <code>remotes::install_github("crsh/papaja")</code>. Replace <code>crsh/papaja</code> with whatever follows “github.com/”.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

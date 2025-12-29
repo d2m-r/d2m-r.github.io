@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-10b6fab8aa1041b3e53a9ff011200445.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-15c96ae875d60a9101c25b0bc06c806c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -188,8 +188,30 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-you-need-a-dataset" id="toc-why-you-need-a-dataset" class="nav-link active" data-scroll-target="#why-you-need-a-dataset">Why You Need a Dataset</a>
+  <ul class="collapse">
+  <li><a href="#using-your-own-data" id="toc-using-your-own-data" class="nav-link" data-scroll-target="#using-your-own-data">Using Your Own Data</a></li>
+  <li><a href="#finding-public-data" id="toc-finding-public-data" class="nav-link" data-scroll-target="#finding-public-data">Finding Public Data</a></li>
+  <li><a href="#essential-dataset-criteria" id="toc-essential-dataset-criteria" class="nav-link" data-scroll-target="#essential-dataset-criteria">Essential Dataset Criteria</a>
+  <ul class="collapse">
+  <li><a href="#completeness" id="toc-completeness" class="nav-link" data-scroll-target="#completeness">Completeness</a></li>
+  <li><a href="#structural-consistency" id="toc-structural-consistency" class="nav-link" data-scroll-target="#structural-consistency">Structural Consistency</a></li>
+  <li><a href="#plain-text-format" id="toc-plain-text-format" class="nav-link" data-scroll-target="#plain-text-format">Plain Text Format</a></li>
+  <li><a href="#tabular-structure" id="toc-tabular-structure" class="nav-link" data-scroll-target="#tabular-structure">Tabular Structure</a></li>
+  <li><a href="#research-question-alignment" id="toc-research-question-alignment" class="nav-link" data-scroll-target="#research-question-alignment">Research Question Alignment</a></li>
+  <li><a href="#anonymization" id="toc-anonymization" class="nav-link" data-scroll-target="#anonymization">Anonymization</a></li>
+  </ul></li>
+  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls">Common Pitfalls</a></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
+  </ul></li>
+  <li><a href="#public-data" id="toc-public-data" class="nav-link" data-scroll-target="#public-data">Public Data</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -213,8 +235,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="why-you-need-a-dataset" class="level1">
+<h1>Why You Need a Dataset</h1>
+<p>The integrative data project requires you to demonstrate the full research workflow: data preparation, analysis, and manuscript reporting. You’ll build a reproducible pipeline from raw data to publication-ready output.</p>
+<p>This differs from core standards projects, which focus on specific technical skills. The integrative project integrates everything across the quarter.</p>
+<p>Your dataset should be complete enough to support a full analysis pipeline—from data cleaning and transformation through statistical modeling to final visualization. Even in D2M-R I when we don’t cover advanced analysis, this should still be the goal for your data. This means having sufficient observations, relevant variables for your research questions, and enough complexity to demonstrate meaningful data wrangling skills without being so messy that cleaning becomes the entire project.</p>
+<section id="using-your-own-data" class="level2">
+<h2 class="anchored" data-anchor-id="using-your-own-data">Using Your Own Data</h2>
+<p>“Your own data” means data you have a personal stake in analyzing as part of research you’re conducting or contributing to. This includes:</p>
+<ul>
+<li>Thesis or dissertation data (BA, MA, or PhD)</li>
+<li>Data from a lab you work in or research team you’re part of</li>
+<li>Data you’re collecting for a faculty member’s project</li>
+<li>Pilot data from studies you’re designing</li>
+<li>Data from independent research projects</li>
+</ul>
+<p>It does not necessarily have to be data you collected yourself, and it can even be data collected for an entirely different purpose. “Your” data just means it’s something you’re bringing to the table for your own work rather than trying to find something out there to make work for this class specifically.</p>
+<p><strong>Quarter 1:</strong> Using your own data is strongly preferred. Students working with thesis data (BA or MA), lab projects, or ongoing research get the most from this course. You’ll build directly applicable skills and advance your actual research.</p>
+<p><strong>Quarter 2:</strong> You are required to use your own data for the integrative project. You must have a dataset with personal investment and clear research questions before the start of the quarter.</p>
+<p>If you lack your own data, publicly available datasets work for Quarter 1. However, start identifying your own dataset early—you’ll need it by Quarter 2.</p>
+</section>
+<section id="finding-public-data" class="level2">
+<h2 class="anchored" data-anchor-id="finding-public-data">Finding Public Data</h2>
+<p><strong>Start with your research question.</strong> Identify the domain (psychology, public health, social science) and core variables you need. This focus prevents getting lost in vast repositories.</p>
+<p><strong>Use multiple search approaches:</strong></p>
+<ul>
+<li><strong>Domain-specific repositories</strong> (ICPSR, Roper, Journal of Open Psychology Data) offer curated, documented datasets</li>
+<li><strong>Meta-search engines</strong> (Google Dataset Search, <a href="http://re3data.org">re3data.org</a>) cast a wider net across repositories</li>
+<li><strong>General platforms</strong> (Harvard Dataverse, Figshare, Kaggle) provide diverse options with varying quality</li>
+<li><strong>Specialized collections</strong> (Data is Plural, Components, Awesome Public Datasets) surface interesting datasets you might not find otherwise</li>
+</ul>
+<p><strong>Evaluate documentation quality.</strong> Well-documented datasets include codebooks, data dictionaries, and methodology descriptions. Poor documentation will cost you time and introduce errors.</p>
+<p>See below for a list of public data collections to get started.</p>
+</section>
+<section id="essential-dataset-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="essential-dataset-criteria">Essential Dataset Criteria</h2>
+<section id="completeness" class="level3">
+<h3 class="anchored" data-anchor-id="completeness">Completeness</h3>
+<p>You need a dataset covering all variables for your analysis. If your research question requires demographics, behavioral measures, and temporal data, the dataset must include all three.</p>
+<p>Partial datasets work only if you can extract a complete subset. Pilot data with full variable coverage beats a larger dataset missing key variables.</p>
+</section>
+<section id="structural-consistency" class="level3">
+<h3 class="anchored" data-anchor-id="structural-consistency">Structural Consistency</h3>
+<p>Check for uniform column names, consistent date formats, and standardized categorical values. Inconsistencies like “Yes”/“yes”/“Y” or “01/15/2024”/“2024-01-15” create silent errors that corrupt analyses.</p>
+<p>Inspect the first 50-100 rows for structural oddities before committing to a dataset. Structural inconsistency at the outset doesn’t need to be a dealbreaker, but it means you’ll have more work to do in data preparation stages.</p>
+</section>
+<section id="plain-text-format" class="level3">
+<h3 class="anchored" data-anchor-id="plain-text-format">Plain Text Format</h3>
+<p>R processes plain text. While packages can read Excel or SPSS files, you’ll convert them to CSV or TSV eventually. Start with formats ending in .csv, .tsv, or .txt when possible.</p>
+<p>Most repositories offer CSV export. If only proprietary formats exist, verify conversion tools work before investing time in the dataset.</p>
+</section>
+<section id="tabular-structure" class="level3">
+<h3 class="anchored" data-anchor-id="tabular-structure">Tabular Structure</h3>
+<p>Data must organize into rows and columns. Standard tidy format (each column = variable, each row = observation) simplifies analysis, but transposed or nested structures work if convertible.</p>
+<p>Spreadsheets typically meet this criterion. Unstructured text or XML requires preprocessing.</p>
+</section>
+<section id="research-question-alignment" class="level3">
+<h3 class="anchored" data-anchor-id="research-question-alignment">Research Question Alignment</h3>
+<p>The dataset must enable answering specific research questions. On day one, articulate 2-3 concrete questions the data can address.</p>
+<p>Students with interesting research projects tend to be more interested in the work and generally learn more. Generic exploration of unfocused datasets produces generic insights.</p>
+</section>
+<section id="anonymization" class="level3">
+<h3 class="anchored" data-anchor-id="anonymization">Anonymization</h3>
+<p>GitHub retains complete history. Only commit fully anonymized data. Never plan to “anonymize later.”</p>
+<p>For human subjects data, verify no personally identifiable information exists. Random participant IDs, geographic aggregation to region level, and date jittering are standard approaches.</p>
+<p>If you are using publicly available data from a credible source, you don’t have to worry about anonymization. However, if you are using your own data or “quasi-”open data (like from a large research project with collaborators at multiple institutions), you’ll need to be very careful about this.</p>
+<p>Check with advisors about discipline-specific anonymization standards.</p>
+</section>
+</section>
+<section id="common-pitfalls" class="level2">
+<h2 class="anchored" data-anchor-id="common-pitfalls">Common Pitfalls</h2>
+<p><strong>Dataset too large.</strong> Start with manageable size (under 100MB). You can always expand later.</p>
+<p><strong>Missing codebook.</strong> Variable names like “V1”, “V2”, “Q37” without explanation make analysis impossible.</p>
+<p><strong>Aggregated data when you need individual observations.</strong> Summary statistics can’t be disaggregated.</p>
+<p><strong>Licensing restrictions.</strong> Verify the dataset permits academic use and redistribution if needed.</p>
+<p><strong>Format mismatch.</strong> PDF tables or image-based data require extraction work that exceeds course scope.</p>
+</section>
+<section id="getting-help" class="level2">
+<h2 class="anchored" data-anchor-id="getting-help">Getting Help</h2>
+<p>If uncertain about dataset suitability, download it, examine the first few rows, and bring specific questions to Dr.&nbsp;Dowling or your TA. “Can this work?” questions need concrete examples, not abstract descriptions.</p>
+</section>
+</section>
+<section id="public-data" class="level1">
+<h1>Public Data</h1>
+<ul>
+<li><a href="http://www.sthda.com/english/wiki/r-built-in-data-sets">Find and use R’s built-in datasets</a>
+<ul>
+<li>Not suitable for integrative data projects, but great for practice and core standards projects</li>
+</ul></li>
+<li><a href="https://data.gov/">data.gov</a></li>
+<li><a href="https://data.cityofchicago.org/">Chicago Data Portal</a></li>
+<li><a href="https://dataverse.harvard.edu/dataverse/harvard?q=&amp;fq0=subject_ss%3A%22Social%20Sciences%22&amp;types=dataverses%3Adatasets&amp;sort=dateSort&amp;order=desc">Harvard’s Data Repository</a></li>
+<li><a href="https://www.icpsr.umich.edu/web/pages/ICPSR/index.html">ICPSR Data Repository</a></li>
+<li><a href="https://datasetsearch.research.google.com/">Google’s Dataset Search</a></li>
+<li><a href="https://www.kaggle.com/">Kaggle datasets</a></li>
+<li><a href="https://components.one/datasets">Components Datasets</a></li>
+<li><a href="https://ropercenter-cornell-edu.proxy.uchicago.edu/ipoll/">Roper iPoll public opinion data</a></li>
+<li><a href="https://registry.opendata.aws/">AWS Data</a></li>
+<li><a href="https://data.world/datasets/open-data">Data.world open datasets</a></li>
+<li><a href="https://www.re3data.org/">re3data.org registry of data repositories</a></li>
+<li><a href="https://openpsychologydata.metajnl.com/">Journal of Open Psychology Data</a></li>
+<li><a href="https://openarchaeologydata.metajnl.com/">Journal of Open Archeology Data</a></li>
+<li><a href="https://openhealthdata.metajnl.com/">Journal of Open Public Health Data</a></li>
+<li><a href="https://www.opendatanetwork.com/">Open Data Network</a></li>
+<li><a href="https://figshare.com/">Figshare</a></li>
+<li><a href="https://github.com/awesomedata/awesome-public-datasets">Awesome Public Datasets on Github</a></li>
+<li><a href="https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0">Data is plural database (fun datasets of all types!)</a></li>
+</ul>
+<p><em>Thank you to <a href="https://macs40700.netlify.app/faq/finding-data/">Dr.&nbsp;Jean Clipperton</a> for compiling the majority of this list for her class on Data Visualization!</em></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
