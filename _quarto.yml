@@ -38,7 +38,7 @@ website:
       - text: Materials
         menu:
             - text: Textbook (WIP)
-              href: d2m-r.github.io/book/index.html
+              href: github.com/d2m-r/book/index.html
             - text: Slides
               href: materials/slides.qmd
             - text: Misc. Materials
