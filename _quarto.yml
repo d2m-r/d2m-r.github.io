@@ -31,6 +31,8 @@ website:
               href: assessment/engagement.qmd
             - text: Project Menu
               href: assessment/menu.qmd
+            - text: Enrichment Activities
+              href: assessment/enrichment.qmd
             - text: Integrative Data Project
               href: assessment/data-project.qmd
       - text: Materials
