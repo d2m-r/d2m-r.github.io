@@ -4,10 +4,10 @@
 Find and replace:
 
 - 2 : week number (numeral only)
-- %CL% : class number (if multiple -- per week, numeral only)
+- %CL% : class number (if needed -- per week, numeral only)
 - %DATE% : date in format Monday, January 1, 2025
-- %DATE-1%; %DATE-2% -- for multiple dates
-- RStudio IDE : brief title/topic of the class meeting
+- Jan-13; Jan-15 -- for multiple dates
+- Git & GitHub : brief title/topic of the class meeting
 
 TODO: see if there's a way to make these variables
 The problem is that if they are includes with multiple on the index page, the variables would need to process before being included. 
@@ -24,13 +24,13 @@ Text to appear before the accordion
 
 :::: accordion-item
 ::: {.accordion-header .titlebox}
-Week 2 | RStudio IDE
+Week 2 | Git & GitHub
 :::
 ::::
 
 :::: accordion-item
 ::: datebox
-%DATE-1%; %DATE-2%
+Jan-13; Jan-15
 :::
 ::::
 
@@ -40,6 +40,7 @@ Week 2 | RStudio IDE
 **Overview**
 :::
 ::::
+
 
 :::: {#overview-week-2 .accordion-collapse .collapse data-bs-parent="#week-2"}
 ::: accordion-body
@@ -98,22 +99,23 @@ Week 2 | RStudio IDE
 ::::
 :::::::
 
+
 ::::::: accordion-item
 :::: accordion-header
-::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-2c%CL%" aria-expanded="false" aria-controls="misc-week-2"}
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-week-2" aria-expanded="false" aria-controls="misc-week-2"}
 **Housekeeping** 
 :::
 ::::
 
-:::: {#misc-2c%CL% .accordion-collapse .collapse data-bs-parent="#misc-2"}
+:::: {#misc-week-2 .accordion-collapse .collapse data-bs-parent="#week-2"}
 ::: accordion-body
 
 **Announcements:**
 
 **Reminders:**
 
-
 :::
 ::::
 :::::::
+
 ::::::::::::::::::::::::::::::

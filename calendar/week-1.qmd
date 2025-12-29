@@ -4,9 +4,9 @@
 Find and replace:
 
 - 1 : week number (numeral only)
-- %CL% : class number (if multiple -- per week, numeral only)
+- %CL% : class number (if needed -- per week, numeral only)
 - %DATE% : date in format Monday, January 1, 2025
-- %DATE-1%; %DATE-2% -- for multiple dates
+- Jan-6; Jan-8 -- for multiple dates
 - Introduction to D2M-R : brief title/topic of the class meeting
 
 TODO: see if there's a way to make these variables
@@ -30,7 +30,7 @@ Week 1 | Introduction to D2M-R
 
 :::: accordion-item
 ::: datebox
-%DATE-1%; %DATE-2%
+Jan-6; Jan-8
 :::
 ::::
 
@@ -40,6 +40,7 @@ Week 1 | Introduction to D2M-R
 **Overview**
 :::
 ::::
+
 
 :::: {#overview-week-1 .accordion-collapse .collapse data-bs-parent="#week-1"}
 ::: accordion-body
@@ -98,22 +99,23 @@ Week 1 | Introduction to D2M-R
 ::::
 :::::::
 
+
 ::::::: accordion-item
 :::: accordion-header
-::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-1c%CL%" aria-expanded="false" aria-controls="misc-week-1"}
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-week-1" aria-expanded="false" aria-controls="misc-week-1"}
 **Housekeeping** 
 :::
 ::::
 
-:::: {#misc-1c%CL% .accordion-collapse .collapse data-bs-parent="#misc-1"}
+:::: {#misc-week-1 .accordion-collapse .collapse data-bs-parent="#week-1"}
 ::: accordion-body
 
 **Announcements:**
 
 **Reminders:**
 
-
 :::
 ::::
 :::::::
+
 ::::::::::::::::::::::::::::::

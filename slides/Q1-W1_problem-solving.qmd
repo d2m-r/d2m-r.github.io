@@ -159,8 +159,7 @@ Knowing how to ask the right questions to solve problems and learn independently
 ## Commenting Best Practices
 
 :::::::: columns
-:::: {.column width="60%"}
-::: incremental
+::: {.column width="60%"}
 1.  Comments should not duplicate code
 2.  Good comments do not excuse unclear code
 3.  If you can't write a clear comment, there may be a problem with the code
@@ -171,21 +170,22 @@ Knowing how to ask the right questions to solve problems and learn independently
 8.  Add comments when fixing bugs
 9.  Use comments to mark incomplete implementations
 :::
-::::
 
-::::: {.column width="40%" style="font-size: 1.3em"}
+:::: {.column width="40%" style="font-size: 1.3em"}
 ::: {.callout-tip style="margin-bottom: 2em"}
 ## Keep Collaboration in Mind
 
 Be kind not just to others who may work with you, but also to future-you.
+
 :::
 
 ::: callout-important
 ## Natural languages \> programming languages
 
 The language you speak is infinitely more intuitive, nuanced, specific, and adaptable. Take advantage of it.
+
 :::
-:::::
+::::
 ::::::::
 
 ## Meaningful Naming
@@ -213,4 +213,7 @@ Not as easy as it sounds.
 
 ::::: {.column width="60%"}
 
-![Keep it simple, stupid – commitstrip.com](../images/variable-name-cartoon.jpg){style="align: right;"}
+![Keep it simple, stupid – commitstrip.com](../images/comics-memes/variable-name-cartoon.jpg){style="align: right;"}
+
+:::::
+:::::::

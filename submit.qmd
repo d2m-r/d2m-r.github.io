@@ -1,5 +1,22 @@
 ---
 title: "Project Submission"
+format: html
+execute: 
+  enabled: false
 ---
 
-<iframe src="https://nrdowling.notion.site/ebd//2ca7b904f28d80519a9ac671d8ef7b87" width="100%" height="600" frameborder="0" allowfullscreen />
+Use this form to submit work to the grading queue.
+Creating a pull request on your repo and/or tagging instructors *will not* count as submission.
+
+See more about how to submit work for D2M-R in the [GitHub submissions guidelines](assessment/misc/gh-submissions.qmd).
+
+::: {#notion-frame}
+<iframe 
+  src="https://nrdowling.notion.site/ebd//2ca7b904f28d80519a9ac671d8ef7b87" 
+  width="100%" 
+  height="600" 
+  style="border:2px solid black;" 
+  allowfullscreen 
+  loading="lazy">
+</iframe>
+:::

@@ -4,10 +4,10 @@
 Find and replace:
 
 - 6 : week number (numeral only)
-- %CL% : class number (if multiple -- per week, numeral only)
+- %CL% : class number (if needed -- per week, numeral only)
 - %DATE% : date in format Monday, January 1, 2025
-- %DATE-1%; %DATE-2% -- for multiple dates
-- The Tidyverse : brief title/topic of the class meeting
+- Feb-10; Feb-12 -- for multiple dates
+- Tidyverse Data Wrangling, part 1 : brief title/topic of the class meeting
 
 TODO: see if there's a way to make these variables
 The problem is that if they are includes with multiple on the index page, the variables would need to process before being included. 
@@ -24,13 +24,13 @@ Text to appear before the accordion
 
 :::: accordion-item
 ::: {.accordion-header .titlebox}
-Week 6 | The Tidyverse
+Week 6 | Tidyverse Data Wrangling, part 1
 :::
 ::::
 
 :::: accordion-item
 ::: datebox
-%DATE-1%; %DATE-2%
+Feb-10; Feb-12
 :::
 ::::
 
@@ -40,6 +40,7 @@ Week 6 | The Tidyverse
 **Overview**
 :::
 ::::
+
 
 :::: {#overview-week-6 .accordion-collapse .collapse data-bs-parent="#week-6"}
 ::: accordion-body
@@ -98,22 +99,23 @@ Week 6 | The Tidyverse
 ::::
 :::::::
 
+
 ::::::: accordion-item
 :::: accordion-header
-::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-6c%CL%" aria-expanded="false" aria-controls="misc-week-6"}
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-week-6" aria-expanded="false" aria-controls="misc-week-6"}
 **Housekeeping** 
 :::
 ::::
 
-:::: {#misc-6c%CL% .accordion-collapse .collapse data-bs-parent="#misc-6"}
+:::: {#misc-week-6 .accordion-collapse .collapse data-bs-parent="#week-6"}
 ::: accordion-body
 
 **Announcements:**
 
 **Reminders:**
 
-
 :::
 ::::
 :::::::
+
 ::::::::::::::::::::::::::::::

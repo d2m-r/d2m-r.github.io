@@ -239,20 +239,20 @@ This course uses a **standards-based grading** system designed to support your s
     -   i.e. don't ask your "quick question" after class
 - Notice for absences is not required
 - Be cautious about disclosing personal information over email/Slack
-- The [student toolkit]() has a guide to help write emails
-    - Pro tip: Don't use chatGPT. It's super annoying.
+- The [student toolkit](https://nrdowling.notion.site/2cc7b904f28d80129ff0c922f3055ef3?v=2d47b904f28d803abe84000c1454c58f&source=copy_link) has a guide to help write emails
+    - Pro tip: Don't use chatGPT. It's [super annoying](https://www.reddit.com/r/Professors/search/?q=ai+email&cId=923440df-c068-48b5-8d9c-dc6bc4f01dab&iId=ba6d2df2-a367-42b7-a402-fe8f0d1b8df4).
 
 
 ::: notes
 - Dr. Dowling's office hours are Thursdays 2-4pm by appointment
-    - Appointments are required -- [book here]()
+    - Appointments are required
 - *TA office hours information*
 - Call me either Natalie or Dr/Professor Dowling
 - You do not need to let us know if you will be missing class
     - But you can reach out if you feel behind due to absences
 - Be cautious about disclosing personal information over email/Slack
     - Remember you *never* need to share details about your health!
-- Stressed about emails? The [student toolkit]() has a guide to help you out
+- Stressed about emails? The [student toolkit](https://nrdowling.notion.site/2cc7b904f28d80129ff0c922f3055ef3?v=2d47b904f28d803abe84000c1454c58f&source=copy_link) has a guide to help you out
     -   Side note: We can tell when you use chatGPT. It really doesn't look good. We'd rather get a kind of weird email from you than one of those "I kindly request" emails.
 - **Please do not line up to ask questions at the end of class.**
     - Those "1-minute" questions add up

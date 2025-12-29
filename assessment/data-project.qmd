@@ -16,7 +16,7 @@ The final project will look like a complete data analysis report created with RS
 - Narrative markdown text explaining your choices and findings
 
 The project will use a single dataset of your choice.
-You may either use data from your own research or select a [publicly available dataset](). <!-- jean's data viz page has a great list -->
+You may either use data from your own research or select a [publicly available dataset](../materials/finding-data.qmd). <!-- jean's data viz page has a great list -->
 
 
 ## Grading

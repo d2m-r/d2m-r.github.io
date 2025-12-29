@@ -32,4 +32,4 @@ Your submission will include an opportunity for you to explain how the activity 
 
 The Canvas assignments include details on exactly how to submit and document different kinds of demonstrations.
 
-<!-- add examples from 2025 assessment repo -->
+<!-- add examples from 2025 assessment repo, or put these on the menu page if I want to really formalize them -->

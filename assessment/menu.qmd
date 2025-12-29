@@ -14,7 +14,10 @@ You may choose to modify or expand any of these projects to better suit your int
 4.  Add descriptive analyses or simple data visualizations to any projects with data cleaning/wrangling elements
 5.  Incorporate enrichment elements into the core projects (e.g., include a folder in your repo with debugging logs or exploratory code)
 
+::: callout-tip
+### DIY Projects
 You may also go "off the menu" to create your own projects from scratch. If you choose to do so, email Dr. Dowling before you begin to confirm that your project will meet the assessment requirements and make a submission plan.
+:::
 
 ## Core Project List
 
@@ -77,3 +80,7 @@ Where projects link to GitHub Classroom Assignments, the project can be complete
     2.  Contribute to the Schelling Games example repo (Unstructured)
         1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/other/contribution-schelling.md)
         2.  [GitHub Classroom](https://classroom.github.com/a/Qp807Vdh)
+
+
+
+<!-- In the future I may add some formalized enrichment projects here. -->

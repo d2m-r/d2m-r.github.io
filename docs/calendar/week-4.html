@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d740b9aca1e804a685ea7468e1a48d71.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-10b6fab8aa1041b3e53a9ff011200445.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -179,6 +179,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <div id="quarto-announcement" data-announcement-id="48511bd1606019110bae8cd7f2578900" class="alert alert-danger hidden"><i class="bi bi-exclamation-octagon-fill quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>The Winter 2026 home for D2M-R I is still under construction!</strong></p>
+<p>You can browse what’s here now to start thinking ahead, but some sections are incomplete or missing. Some posted content may change slightly before the beginning of the quarter.</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -198,10 +202,10 @@ ul.task-list li input[type="checkbox"] {
 Find and replace:
 
 - 4 : week number (numeral only)
-- %CL% : class number (if multiple -- per week, numeral only)
+- %CL% : class number (if needed -- per week, numeral only)
 - %DATE% : date in format Monday, January 1, 2025
-- %DATE-1%; %DATE-2% -- for multiple dates
-- R Programming Language : brief title/topic of the class meeting
+- Jan-27; Jan-29 -- for multiple dates
+- Tidyverse Essentials : brief title/topic of the class meeting
 
 TODO: see if there's a way to make these variables
 The problem is that if they are includes with multiple on the index page, the variables would need to process before being included. 
@@ -215,12 +219,12 @@ Text to appear before the accordion
 <div id="week-4" class="accordion">
 <div class="accordion-item">
 <div class="accordion-header titlebox">
-<p>Week 4 | R Programming Language</p>
+<p>Week 4 | Tidyverse Essentials</p>
 </div>
 </div>
 <div class="accordion-item">
 <div class="datebox">
-<p>%DATE-1%; %DATE-2%</p>
+<p>Jan-27; Jan-29</p>
 </div>
 </div>
 <div class="accordion-item">
@@ -274,16 +278,18 @@ Text to appear before the accordion
 </div>
 <div class="accordion-item">
 <div class="accordion-header">
-<div class="accordion-button collapsed misc" type="button" data-bs-toggle="collapse" data-bs-target="#misc-4c%CL%" aria-expanded="false" aria-controls="misc-week-4">
+<div class="accordion-button collapsed misc" type="button" data-bs-toggle="collapse" data-bs-target="#misc-week-4" aria-expanded="false" aria-controls="misc-week-4">
 <p><strong>Housekeeping</strong></p>
 </div>
 </div>
-<p>:::: {#misc-4c%CL% .accordion-collapse .collapse data-bs-parent=“#misc-4”} ::: accordion-body</p>
+<div id="misc-week-4" class="accordion-collapse collapse" data-bs-parent="#week-4">
+<div class="accordion-body">
 <p><strong>Announcements:</strong></p>
 <p><strong>Reminders:</strong></p>
 </div>
 </div>
-<p>::::::: ::::::::::::::::::::::::::::::</p>
+</div>
+</div>
 
 
 

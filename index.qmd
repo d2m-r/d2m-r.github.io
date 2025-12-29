@@ -2,95 +2,132 @@
 title: "Data to Manuscript in R"
 ---
 
+::: {.alert .alert-warning role="alert"}
 
-## Winter 2025 Home
+This page will be the home for D2M-R I in Winter 2026. If you're seeing this warning, the site is still under construction! You can browse what's here now to start thinking ahead, but some sections are incomplete or missing. Some posted content may change slightly before the beginning of the quarter.
 
-- [Syllabus](syllabus/winter2025.html)
-- [Grading Policies](syllabus/grading.html)
-- [Objective-based Assessment](syllabus/assessment.html)
-- [Communication Policy](syllabus/communication.html)
-- [Classroom Climate](syllabus/climate.html)
-- [AI*2: Academic Integrity and Artificial Intelligence](syllabus/ai.html)
+:::
 
-### Professor
+*Welcome to the first quarter of Data to Manuscript in R!*
 
-  -   **Dr. Natalie Dowling**
-  -   Email: ndowling\@uchicago.edu
-  -   GitHub: \@nrdowling
-  -   Office: 1155 Building, Room 404
+D2M-R is designed to equip you with the tools necessary to conduct reproducible data analysis using R.
+D2M-R I in Winter 2026 will cover foundational R programming skills, data wrangling using the tidyverse, and foundational data reporting techniques.
 
-<!--
-### Section 1
+The course structure is unusual, so please review all course policies and assessment details from the syllabus below:
 
-  - Weekly meetings: Mondays and Fridays 1:30pm - 2:250pm
-  - 1155 E 60th St, Room 289B
-  - **TA: Mian Li**
-    - Email: lim1an\@uchicago.edu
-    - GitHub: \@lim1an
--->
-    
-### Office hours
+-   [Course Overview](syllabus/structure.qmd)
+    -   [Classroom Climate](syllabus/climate.qmd)
+    -   [Communication Policy](syllabus/communication.qmd)
+    -   [AI & Academic Integrity](syllabus/ai-policy.qmd)
+-   [Grading & Assessment Overview](assessment/overview.qmd)
+    -   [Core Learning Objectives](assessment/objectives.qmd)
+    -   [Integrated Data Project](assessment/data-project.qmd)
+    -   [Accountability & Reflection](assessment/accountability.qmd)
+    -   [Community Engagement](assessment/engagement.qmd)
+    -   [Enrichment Opportunities](assessment/enrichment.qmd)
+    -   [Project Menu](assessment/menu.qmd)
 
 
--   **Dr. Dowling**: Thursday 2pm - 4pm; 1155 E 60th St, Room 404
-    - [sign up via
-  GCal](https://calendar.app.google/b778h5XC1cwRKVeK6) or email me
-  to request an alternative time
-  
-<!-- TA HOURS
--   **Mian Li**: Friday ~~9am - 10:30am~~ 4:30pm - 6pm; 1155 E 60th St, MAPSS 4th Floor Lounge (no signup required)
--->
+# Winter 2026 Details
+
+## Class Meetings
+
+-  **When:** Tuesdays & Thursdays, 11am-12:20pm
+-  **Where:** 1155 E 60th St, Room 289A
+
+## Professor
+
+-   **Dr. Natalie Dowling**
+-   **Email:** ndowling\@uchicago.edu
+-   **GitHub:** \@nrdowling
+-   **Office Location:** 1155 Building, Room 181
+-   **Office Hours**: Thursday 2pm - 4pm; 1155 E 60th St, Room 181
+    -   [Sign up via
+GCal](https://calendar.app.google/b778h5XC1cwRKVeK6) or email me
+to request an alternative time
+
+## Teaching Assistant
+
+-   **Qilong Bi**
+-   **Email:** bql20\@uchicago.edu
+-   **GitHub:** \@--
+-   **Office Hours Location:** TBD
+-   **Office Hours**: TBD
 
 
-### Hubs
+## Hubs
 
 View course policies, assessment, and other details in the [syllabus](syllabus/index.html).
 
--   [Course site](https://d2m-r.github.io)
--   [GitHub organization]()
-    -   [Textbook]()
-    -   [Slides]()
+-   [Course site](https://d2m-r.github.io) - *you are here!*
+-   [GitHub organization](github.com/d2m-r)
+    -   [Textbook](github.com/d2m-r/book) - a collaborative work in progress
+    -   [Slides](materials/slides.qmd)
+    -   [Student Hub](github.com/d2m-r/student-hub) - scripts, templates, in-class materials, etc.
 -   [Slack workspace]() - moderated, requires UChicago email
 -   [Canvas]()
--   [Example repo: schelling-games](https://github.com/nrdowling/schelling-games)
+-   [Example repo: schelling-games](https://github.com/d2m-r/schelling-games)
 
-## Winter 2026 Course schedule
+
+## Materials
+
+### Slides
+
+**Slides** will typically be posted on Mondays and remain accessible through the end of the academic year.
+Links in the course calendar below will take you directly to the web presentation version of the slides.
+
+You can alternatively find the Quarto files in the [website's repo](https://github.com/d2m-r/d2m-r.github.io/tree/main/slides), which include additional details and notes not visible in the presentation format.
+
+### Readings
+
+**D2M-R textbook chapters** correspond to subjects in the textbook that goes with this class.
+This book is very much in development, with large portions entirely untouched as of the start of the quarter.
+Where relevant chapters are missing or incomplete, readings from external sources like [R for Data Science](https://r4ds.hadley.nz/) will be assigned instead. 
+
+**You can contribute to any unfinished sections of the textbook for course credit!** See the [student hub documents](https://github.com/d2m-r/student-hub/blob/main/project-documents/other/contribution-textbook.md) for textbook contributions for details.
+
+
+# Winter 2026 Calendar
 
 ::: {.alert .alert-danger role="alert"}
 
-This schedule is subject to change. Refer to this page for syllabus updates (including new and updated links, files, etc.) throughout the quarter. Slides will typically be posted on Mondays and remain accessible through the end of the academic year.
+This calendar will be updated with materials, announcements, and other information throughout the quarter.
+This should be your first stop for course information.
+
+**Check this calendar at least once a week to stay up to date on course materials and assignments!**
 
 :::
 
 
-### Unit 1: Establishing a Workflow
+
+## Unit 1: Establishing a Workflow
 
 <!-- Week 1: Introduction to D2M-R --> 
 {{< include calendar/week-1.qmd >}}
 
-<!-- Week 2: RStudio IDE -->
+<!-- Week 2: Git & GitHub -->
 {{< include calendar/week-2.qmd >}}
 
-<!-- Week 3: Git & GitHub -->
+## Unit 2: R Programming Foundations
+
+<!-- Week 3: R Programming Language -->
 {{< include calendar/week-3.qmd >}}
 
-### Unit 2: R Programming Foundations
-
-<!-- Week 4: R Programming Language --> 
+<!-- Week 4: Tidyverse Essentials --> 
 {{< include calendar/week-4.qmd >}}
 
 <!-- Week 5: Mid-quarter Review & R Workshops -->
 {{< include calendar/week-5.qmd >}}
 
-<!-- Week 6: The Tidyverse -->
+## Unit 3: Data Wrangling & Reporting
+
+<!-- Week 6: Tidyverse Data Wrangling, part 1 -->
 {{< include calendar/week-6.qmd >}}
 
-### Unit 3: Data Wrangling & Reporting
-
-<!-- Week 7: Datatypes in the Tidyverse --> 
+<!-- Week 7: Tidyverse Data Wrangling, part 2 --> 
 {{< include calendar/week-7.qmd >}}
 
-<!-- Week 8: Basic Data Reporting -->
+<!-- Week 8: Data Reporting Essentials -->
 {{< include calendar/week-8.qmd >}}
 
 <!-- Week 9: Data Wrangling & Reporting Workshops -->

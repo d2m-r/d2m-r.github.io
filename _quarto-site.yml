@@ -6,5 +6,13 @@ project:
     - "**/*.qmd"               # all .qmd in subfolders
     - "!slides/*.qmd"   # EXCLUDE only slide .qmd
 
-
-
+website:
+  announcement: 
+    icon: exclamation-octagon-fill
+    dismissable: true
+    content: |
+        **The Winter 2026 home for D2M-R I is still under construction!** 
+        
+        You can browse what's here now to start thinking ahead, but some sections are incomplete or missing. Some posted content may change slightly before the beginning of the quarter.
+    type: danger
+    position: below-navbar

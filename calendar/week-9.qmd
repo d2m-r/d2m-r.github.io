@@ -4,9 +4,9 @@
 Find and replace:
 
 - 9 : week number (numeral only)
-- %CL% : class number (if multiple -- per week, numeral only)
+- %CL% : class number (if needed -- per week, numeral only)
 - %DATE% : date in format Monday, January 1, 2025
-- %DATE-1%; %DATE-2% -- for multiple dates
+- Mar-3; Mar-5 -- for multiple dates
 - Data Wrangling & Reporting Workshops : brief title/topic of the class meeting
 
 TODO: see if there's a way to make these variables
@@ -30,7 +30,7 @@ Week 9 | Data Wrangling & Reporting Workshops
 
 :::: accordion-item
 ::: datebox
-%DATE-1%; %DATE-2%
+Mar-3; Mar-5
 :::
 ::::
 
@@ -40,6 +40,7 @@ Week 9 | Data Wrangling & Reporting Workshops
 **Overview**
 :::
 ::::
+
 
 :::: {#overview-week-9 .accordion-collapse .collapse data-bs-parent="#week-9"}
 ::: accordion-body
@@ -98,22 +99,23 @@ Week 9 | Data Wrangling & Reporting Workshops
 ::::
 :::::::
 
+
 ::::::: accordion-item
 :::: accordion-header
-::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-9c%CL%" aria-expanded="false" aria-controls="misc-week-9"}
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-week-9" aria-expanded="false" aria-controls="misc-week-9"}
 **Housekeeping** 
 :::
 ::::
 
-:::: {#misc-9c%CL% .accordion-collapse .collapse data-bs-parent="#misc-9"}
+:::: {#misc-week-9 .accordion-collapse .collapse data-bs-parent="#week-9"}
 ::: accordion-body
 
 **Announcements:**
 
 **Reminders:**
 
-
 :::
 ::::
 :::::::
+
 ::::::::::::::::::::::::::::::

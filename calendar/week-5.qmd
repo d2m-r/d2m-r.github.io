@@ -4,9 +4,9 @@
 Find and replace:
 
 - 5 : week number (numeral only)
-- %CL% : class number (if multiple -- per week, numeral only)
+- %CL% : class number (if needed -- per week, numeral only)
 - %DATE% : date in format Monday, January 1, 2025
-- %DATE-1%; %DATE-2% -- for multiple dates
+- Feb-3; Feb-5 -- for multiple dates
 - Mid-quarter Review & R Workshops : brief title/topic of the class meeting
 
 TODO: see if there's a way to make these variables
@@ -30,7 +30,7 @@ Week 5 | Mid-quarter Review & R Workshops
 
 :::: accordion-item
 ::: datebox
-%DATE-1%; %DATE-2%
+Feb-3; Feb-5
 :::
 ::::
 
@@ -40,6 +40,7 @@ Week 5 | Mid-quarter Review & R Workshops
 **Overview**
 :::
 ::::
+
 
 :::: {#overview-week-5 .accordion-collapse .collapse data-bs-parent="#week-5"}
 ::: accordion-body
@@ -98,22 +99,23 @@ Week 5 | Mid-quarter Review & R Workshops
 ::::
 :::::::
 
+
 ::::::: accordion-item
 :::: accordion-header
-::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-5c%CL%" aria-expanded="false" aria-controls="misc-week-5"}
+::: {.accordion-button .collapsed .misc type="button" data-bs-toggle="collapse" data-bs-target="#misc-week-5" aria-expanded="false" aria-controls="misc-week-5"}
 **Housekeeping** 
 :::
 ::::
 
-:::: {#misc-5c%CL% .accordion-collapse .collapse data-bs-parent="#misc-5"}
+:::: {#misc-week-5 .accordion-collapse .collapse data-bs-parent="#week-5"}
 ::: accordion-body
 
 **Announcements:**
 
 **Reminders:**
 
-
 :::
 ::::
 :::::::
+
 ::::::::::::::::::::::::::::::
