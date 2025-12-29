@@ -3,7 +3,7 @@ title: "Course Structure"
 format: html
 ---
 
-# Course Structure Overview
+# Overview
 
 Data to Manuscript in R is a two-quarter sequence that covers the basic skills needed to build a research workflow with the R programming language to create reproducible, open-science friendly reports that can be easily updated with ongoing data collection or receiving comments from readers. 
 

@@ -1,9 +1,9 @@
 ---
-title: "AI Policy"
+title: "AI & Academic Integrity Policy"
 format: html
 ---
 
-# AI & Academic Integrity {#academic-integrity}
+# Overview {#academic-integrity}
 
 Academic integrity has become inextricably linked with artificial intelligence in the classroom, but they are not equivalent. AI tools are not inherently unethical, nor are they inherently ethical. They can be used to cheat, but they can also be used to learn. They can be used to misrepresent, but they can also be used to clarify. They can be used to plagiarize, but they can also be used to create.
 
