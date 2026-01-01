@@ -1,19 +1,61 @@
 ---
-title: "Solving Problems"
+title: "Preventing & Solving Problems"
 subtitle: "best practices, debugging, independent learning"
 date: "1/6/2026"
 
 format: revealjs
+engine: knitr
+
+revealjs-plugins:
+  - codefocus
 
 execute:
   echo: true
-  eval: false
   warning: false
   message: false
 editor: source
 ---
 
-# Solving Your Own Problems
+
+<!--
+Required packages:
+- lifecycle
+
+-->
+
+
+# Preventing & Solving Problems
+
+<!-- ## Bubbles from the bottom -->
+
+
+<!-- ::: bubble-chain -->
+<!--   <p class="bubble-left fragment">Students ask? Students ask?Students ask?Students ask?Students ask? Students ask? Students ask? Students ask? Students ask?Students ask? </p> -->
+<!--   <p class="bubble-right fragment">And I respond!</p> -->
+<!-- ::: -->
+
+<!-- This slide has speech bubbles that pop in after all content has been covered. -->
+
+<!-- The container is anchored at the bottom of the page, and the tails point downward. -->
+
+
+<!-- - Left bubbles, in blue, are things I hear commonly from students -->
+<!-- - Right bubbles, in red, are my responses -->
+
+
+
+
+<!-- ## Bubbles from the top -->
+
+<!-- On this slide, things are a little different: -->
+
+<!-- - The container is anchored to the top of the content section.  -->
+<!-- - Bubbles are mirrored vertically with tails pointing up. -->
+
+<!-- ::: {.bubble-chain .top} -->
+<!--   <p class="bubble-left fragment">Students ask - UP TOP?</p> -->
+<!--   <p class="bubble-right fragment">And I respond, also up top!</p> -->
+<!-- ::: -->
 
 ## A Preface
 
@@ -29,57 +71,45 @@ editor: source
 
 ## The Myth of the "Programmer"
 
-:::: columns
-
+::::: columns
 ::: {.column width="60%"}
-
--   Programmers are geniuses who have a sacred knowledge.
+-   Programmers are geniuses who have a sacred knowledge. `r 2+2`
 -   The debugging coders do is a highly specialized skill.
 -   If you're debugging, you did something wrong.
 -   Programming requires mastery of a programming language.
 -   You can recognize an expert programmer by their abundant knowledge of the language.
-    - or their wardrobe of unwashed hoodies meticulously curated to signal how much they don't care about anything but code
-    
+    -   or their wardrobe of unwashed hoodies meticulously curated to signal how much they don't care about anything but code
 :::
 
 ::: {.column width="40%"}
 <!-- probably a gif from silicon valley -->
 :::
-
-::::
-
+:::::
 
 ## The Reality of Getting Shit Done
 
-:::: columns
-
+::::: columns
 ::: {.column width="60%"}
-
 -   Debugging is not extra – it's the majority of the process.
 -   Debugging is one application of more generalizable problem-solving skills.
 -   Programming depends on collaboration.
 -   Once you "master" the foundations, you learn the rest by just going for it.
 -   You can recognize an expert programmer by their ability to find solutions.
     -   They might also wear gross hoodies, but don't we all from time to time?
-
 :::
 
 ::: {.column width="40%"}
-
 <!-- a cartoon about most of programming being dubugging, of which there are many -->
-
 :::
-
 :::::
-
 
 ::: {.callout-tip .bigger}
 ## Questions \> Answers
+
 Knowing how to ask the right questions to solve problems and learn independently is legitimately, indisputably more valuable than the party trick of recalling lots of functions and language-specific processes.
 :::
 
 ::: notes
-
 -   **Debugging is not extra – it's essential**
     -   80% of programming time is spent debugging <!-- there's got to be a cartoon for this -->
 -   **Troubleshooting includes debugging, *among other things*.**
@@ -91,12 +121,11 @@ Knowing how to ask the right questions to solve problems and learn independently
 -   **Questions \> Answers**
     -   Get the basics down, then get everything else you need when you need it.
 -   **Master the foundations and then just go for it**
-
 :::
 
 # Best Practices
 
-> The best way to troubleshoot is to avoid it. 
+> The best way to troubleshoot is to avoid it.
 
 ## Keep Your Code:
 
@@ -106,7 +135,6 @@ Knowing how to ask the right questions to solve problems and learn independently
     -   style guides, internal consistency
 -   **Intelligible** - clear comments and naming
     -   informative comments, meaningful naming, documentation
-
 :::
 
 ::: {.column width="50%"}
@@ -146,7 +174,6 @@ Knowing how to ask the right questions to solve problems and learn independently
     -   [Tidyverse Style Guide](https://style.tidyverse.org/)
     -   [Individualized Style Guide]()
         -   my own guide, a tweaked version of the tidyverse guide
-
 :::
 :::::
 
@@ -158,7 +185,7 @@ Knowing how to ask the right questions to solve problems and learn independently
 
 ## Commenting Best Practices
 
-:::::::: columns
+::::::: columns
 ::: {.column width="60%"}
 1.  Comments should not duplicate code
 2.  Good comments do not excuse unclear code
@@ -171,49 +198,860 @@ Knowing how to ask the right questions to solve problems and learn independently
 9.  Use comments to mark incomplete implementations
 :::
 
-:::: {.column width="40%" style="font-size: 1.3em"}
+::::: {.column width="40%" style="font-size: 1.3em"}
 ::: {.callout-tip style="margin-bottom: 2em"}
 ## Keep Collaboration in Mind
 
 Be kind not just to others who may work with you, but also to future-you.
-
 :::
 
 ::: callout-important
 ## Natural languages \> programming languages
 
 The language you speak is infinitely more intuitive, nuanced, specific, and adaptable. Take advantage of it.
-
 :::
-::::
-::::::::
+:::::
+:::::::
 
 ## Meaningful Naming
 
-> “There are only two hard things in Computer Science: cache invalidation and naming things.”
-> — Phil Karlton
+> “There are only two hard things in Computer Science: cache invalidation and naming things.” — Phil Karlton
 
-::::::: columns
-
-::::: {.column width="40%"}
-
+:::::: columns
+:::: {.column width="40%"}
 ::: callout-warning
 ## Names should describe the named thing!
 
 Not as easy as it sounds.
 :::
 
-- Avoid disinformation
-- Use pronounceable names
-- Use searchable names
-- Pick one word/format per concept
-- Avoid encodings
+-   Avoid disinformation
+-   Use pronounceable names
+-   Use searchable names
+-   Pick one word/format per concept
+-   Avoid encodings
+::::
 
-:::::
-
-::::: {.column width="60%"}
-
+::: {.column width="60%"}
 ![Keep it simple, stupid – commitstrip.com](../images/comics-memes/variable-name-cartoon.jpg){style="align: right;"}
+:::
+::::::
 
-:::::
-:::::::
+# Maintainable
+
+## Function Lifecycles
+
+R is constantly evolving! CRAN uses 4 lifecycle stages for functions:
+
+<table style="width: 80%; font-size: .8em">
+<tr style="font-size: 1.2em;">
+  <th>Stage</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td style="width: 30%; vertical-align: middle;"><img src="../images/icons/lifecycle/experimental.svg" alt="Experimental" style="height: 2em;"></td>
+  <td>
+    <ul>
+      <li>In development ("beta"), may never reach <em>stable</em></li>
+      <li>Can be helpful for specific use-cases</li>
+      <li>Use with caution & comments</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td style="vertical-align: middle;"><img src="../images/icons/lifecycle/stable.svg" alt="Stable" style="height: 2em;"></td>
+  <td>
+    <ul>
+      <li>Default stage</li>
+      <li>Functional, current, maintained</li>
+      <li><strong>Prioritize these!</strong></li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td style="vertical-align: middle;"><img src="../images/icons/lifecycle/superseded.svg" alt="Superseded" style="height: 2em;"></td>
+  <td>
+    <ul>
+      <li>Still supported, safe to use</li>
+      <li>Better (stable) alternative exists</li>
+      <li>Will not be updated, but will not go away</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td style="vertical-align: middle;"><img src="../images/icons/lifecycle/deprecated.svg" alt="Deprecated" style="height: 2em"></td>
+  <td>
+    <ul>
+      <li>Works now but not for long</li>
+      <li>Use only as a temporary last resort</li>
+      <li>Look for recommended replacements</li>
+    </ul>
+  </td>
+</tr>
+</table>
+
+
+::: notes
+If you don't see a lifecycles tag in the CRAN documentation, that means it's stable.\
+
+**Experimental**
+
+-   In development ("beta")
+-   May or may not reach stable
+-   Can be very helpful for a specific use-case
+-   Use with caution
+-   Note use in comments in case updates produce errors or collaborators only use stable functions
+
+**Stable**
+
+-   Default stage
+-   Functional, current, maintained
+-   **Prioritize these!**
+
+**Superseded**
+
+-   Still supported
+-   Better (stable) alternative exists
+-   Will not be updated, but will not go away
+-   Safe to use, but prioritize recommended replacements
+
+**Deprecated**
+
+-   Works now but not for long
+-   Use only as a temporary last resort
+-   Prioritize recommended replacement
+:::
+
+## Data Lifecycles
+
+::: nonincremental
+
+::: {.container-fluid}
+::: {.row .equal-height style="height: 50vh;"}
+::: col-6
+::: {.callout-note .large icon=false style="font-size: 1.1em;"}
+### [⇄ How much could your data change?]{style="padding-left:1em;"}
+
+- Incomplete datasets will get more data
+- "Complete" datasets may eliminate some data
+- Variables may need to be combined, anonymized, mutated, etc.
+:::
+:::
+
+::: col-6
+::: {.callout-tip .large icon=false style="font-size: 1.1em;"}
+### [⇆  How similar are your data to other data]{style="padding-left:1em;"}
+
+- Will you (or anyone else) conduct a follow-up or replication?
+- Do you already know there were problems in data collection that will mean new data format when fixed next time?
+- Do other researchers in your area use similar data collection methods but different organization methods?
+:::
+:::
+:::
+:::
+
+:::
+
+
+## DRY Programming
+
+[**D**on't **R**epeat **Y**ourself](https://www.plutora.com/blog/understanding-the-dry-dont-repeat-yourself-principle)
+
+::: container-fluid
+
+::: row
+::: col-6
+
+**Avoid**
+
+:::
+::: col-6
+
+**Promote**
+
+:::
+:::
+
+::: row
+::: col-6
+
+- Propagating errors
+- Duplication conflicts
+- Verbosity hiding small errors
+
+:::
+::: col-6
+
+- Replicable, reproducible code
+- Abstracted code for multiple contexts
+- Code usable by others and future-you
+
+:::
+:::
+
+:::
+
+
+::: notes
+
+-   Avoid copy/paste programming within your own code
+
+Avoid:
+Propagating mistakes that must be corrected individually
+Duplication conflicts
+Combing through verbose scripts for minor errors
+
+Promote:
+Replicable, reproducible code
+Abstracting code to use in multiple contexts
+Code usable by and relevant to other people and future-you
+
+:::
+
+## Caveat: Non-evil Copy/Paste
+
+When *should* you copy and paste?
+
+-   [Forking]{.keyword}: purposefully creating variants for exploration
+-   [Templates]{.keyword}: starting points for new projects
+-   [Debugging]{.keyword}: temporary workarounds to identify specific problems
+-   ["Clone and own"]{.keyword}: adapt foundational code to new contexts
+
+::: notes
+copy-and-paste coding is bad, but there's nothing wrong with copying and pasting code in principle.
+When should you copy and paste?
+
+purposefully creating variants for exploration
+don't reinvent the wheel for the sake of originality
+temporary workarounds
+copy foundational code and adapt to specific contexts
+
+:::
+
+
+## Abstraction
+
+### Absolute vs. Relative Paths
+
+```{r}
+#| eval: false
+#| echo: true
+
+## Only works on my computer no matter what
+absolute_path <- "Users/Natalie/repos/d2mr/example-repo/images/barplot.jpg"
+
+# Works on your machine if you clone it to this location on your computer
+mixed_path <- "~/repos/d2mr/example-repo/images/barplot.jpg"
+
+# Works when you clone the repo anywhere
+relative_path <- "/images/barplot.jpg"
+
+```
+
+### Hard-coded vs. Dynamic Variables
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Always equals 3
+my_mean <- (2 + 4)/2
+
+# Output will change to reflect changes to 2 input variables
+x <- 2; y <- 4 # or...
+# x <- 3; y <- 10
+the_mean <- (x + y)/2
+
+# Output will change no matter how many input numerals are averaged
+number_list <- c(2,3) # or...
+# number_list <- 2:8 # or...
+# number_list <- c(1,2,8,100)
+a_mean <- sum(number_list)/length(number_list)
+
+```
+
+
+::: notes
+Abstracted (relative) paths and variables are more durable than hard-coded (absolute) ones
+:::
+
+# Contextualized
+
+## Community standards
+
+- [R Conventions](https://bookdown.org/yih_huynh/Guide-to-R-Book/r-conventions.html) (for everyone)
+- [R Developer Community Culture](https://journal.r-project.org/articles/RJ-2021-110/)
+- Find your communities and respect their rules.
+    - Gatekeep-y? Admittedly, yes, but that's not the goal
+    - Facilitate communication, collaboration, and shared ownership
+
+::: notes
+Find your communities (plural) and do your best to respect their rules. This isn’t so much about gatekeeping and in-grouping (though it can certainty feel that way). It’s more about promoting collaboration. When everyone talks about their work in a similar way – whether it’s using the same style guide, preferring certain plots for certain analyses, opting for one package or another, formatting example random data, whatever – it’s much easier to work in forked repos, respond to crowd-sourced questions, understand others’ presentations, and just generally work together toward shared intentions.
+
+:::
+
+## Priorities {.bigger}
+
+
+::: {.container-fluid style="width: 80%; font-size: 1.2em; text-align: center;"}
+
+::: {.alert .alert-danger style="font-size: 1.2em;" .fragment fragment-index="1"}
+**The best code is the code that works.**
+:::
+
+::: {.alert .alert-info .fragment fragment-index="2"}
+::: {.fragment .blur-out .custom fragment-index="4"}
+Best practices may not be practical in practice.
+:::
+:::
+
+::: {.alert .alert-warning .fragment fragment-index="3"}
+::: {.fragment .blur-out .custom fragment-index="4"}
+Your project's goals come first.
+:::
+:::
+
+:::
+
+
+## Garbage in []{.bi-trash} garbage out
+
+
+- The quality of output of any system is determined by the quality of the input.
+- Immaculate code can't make up for horrendous data.
+- Neither code nor data can fix terrible human decisions. 
+
+::: {.r-stack}
+![](../images/misc/gigo/gamage.jpg){.fragment .absolute bottom=25 left="0%" height="50%"}
+
+![](../images/misc/gigo/garbde.jpg){.fragment .absolute bottom=40 left="25%" height="50%"}
+
+![](../images/misc/gigo/garbet.jpg){.fragment .absolute bottom=8 left="50%" height="50%"}
+
+![](../images/misc/gigo/garmbeity.jpg){.fragment .absolute bottom=64 left="75%" height="50%"}
+
+:::
+
+::: notes
+
+The quality of output of any system is determined by the quality of the input.
+Immaculate code can't make up for horrendous data.
+Corollary: Neither code nor data can fix terrible human decisions.
+
+:::
+
+##  Take out your trash
+
+::: {.container-fluid style="margin-top: -1em"}
+
+::: row
+
+::: col-2
+![](../images/icons/garbage.png){style="max-height: 6em; margin-top: 1em"}
+:::
+
+::: {.col-8 style="text-align: center;"}
+
+::: {.callout-tip style="font-size: 1.2em; text-align: center;" icon=false}
+### The quality of output of any system is determined by the quality of the input. 
+
+Immaculate code can't make up for horrendous data.
+
+Neither code nor data can fix terrible human decisions.
+:::
+
+:::
+
+::: {.col-2 style="text-align: right;"}
+![](../images/icons/garbage.png){style="max-height: 6em; margin-top: 1em;"}
+:::
+
+:::
+
+::: {.row style="height: 100%"}
+::: col-6
+
+::: {.card style="height: 100%"}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+Your data are bad because they are:
+:::
+:::
+
+::: card-body
+
+-   Incorrect.
+-   Incorrectly obtained or recorded.
+-   Too different from other data.
+-   Too similar to other data.
+-   Missing.
+-   Not applicable to the your situation.
+:::
+:::
+:::
+
+
+::: col-6
+::: {.card .card-alt1 style="height: 100%"}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+Your decisions are bad because you have:
+:::
+:::
+
+::: card-body
+
+-   Misunderstood causality.
+-   Incomplete, missing, or inaccurate documentation.
+-   Incorrect hypotheses.
+-   Inadequate research design.
+-   Miscommunication.
+-   Erroneous judgments and reliance on human intuition.
+
+:::
+
+:::
+
+:::
+:::
+:::
+
+
+::: notes
+-   Incorrect (includes errors).
+-   Incorrectly obtained or recorded.
+-   Too different from other data (also known as outliers).
+-   Too similar to other data.
+-   Missing.
+-   Not applicable to the particular situation or application.
+
+
+Poor understanding of causality.
+Incomplete, missing or inaccurate documentation.
+Wrong hypotheses.
+Inadequate research.
+Use of incorrect methods or statistical tests.
+Miscommunications.
+Misunderstanding of goals.
+Erroneous judgments and reliance on human intuition.
+:::
+
+
+# Specific Best Practices
+
+::: notes
+This will all be repeated (exactly) in slides for later weeks, but they're here for reference.
+:::
+
+## Git(Hub) cardinal rules []{.bi-github} 
+
+::: container-fluid
+
+::: {.row}
+
+::: {.col-4}
+
+::: {.card .fragment}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+Your workflow:
+:::
+:::
+
+::: card-body
+::: {style="text-align: center;"}
+Commit *[little]{style="font-size: .7em; font-weight: lighter;"}* & commit **[lots]{style="font-size: 1.3em; font-variant: small-caps;"}**
+:::
+
+![](../images/misc/git-workflow.png)
+
+1. Pull before you start editing
+2. Commit often as your work
+3. Push when you close your session
+:::
+
+:::
+:::
+
+::: {.col-8 .d-flex .align-content-between .flex-wrap}
+
+<div style="width: 100%"><!--setting this off with a literal div is the only way I can get the spacing to work for some reason-->
+
+[Thou shalt:]{.fragment style="font-size: 1.5em; font-weight: bold;"}
+
+- Use frequent, informative commit messages
+- Use a .gitignore to specify files and filetypes to keep local
+- Maintain a README.md file documenting your repo's structure and purpose
+- Be intentional managing public and protected files
+
+</div>
+
+::: {.alert .alert-warning .fragment .flex-grow-1}
+
+[**Remember the whole point of GitHub is version control!**]{style="font-size: 1.3em"}
+
+Each assignment has a *unique repo.* Each repo is a *unique files.*
+
+*Never* create multiple copies of the same files!!!
+:::
+:::
+:::
+
+:::
+
+
+::: notes
+
+Commit little; commit often
+
+"little" as in the commits themselves are little changes
+
+Use a .gitignore to specify files and filetypes that should not be included in pulls or pushes
+Maintain a README.md file providing at least minimal documentation of the structure of your repo and purpose of the project
+Make purposeful and wise decisions about managing public, private, and protected data and files 
+Use informative commit messages
+Pull before you start editing; commit as you work; push when you close your session
+
+Remember the whole point of github is version control!
+
+Each assignment has a *unique repo.* Each repo is a *unique files.*
+
+*Do not create multiple copies of the same files!!!*
+
+Your repos are the homes of your projects, not a random collection of notes and homework. Keep them organized, future-proof, and collaborator-friendly for contexts beyond this class.
+
+:::
+
+## Quarto & R Notebooks
+
+::: container-fluid
+
+::: row
+::: {.overlap-box .fragment}
+::: {.box-title}
+[Use comments liberally...]{.fragment}
+:::
+
+::: {.box-content}
+
+- in the "narrative" of the manuscript using html comment notation: \
+    `<!-- This is a comment that readr and quarto will ignore -->`
+- in R code chunks just like in R scripts: \
+    `# This will be ignored by R when it runs the chunks while knitting`
+
+:::
+:::
+
+:::
+
+
+::: row
+::: col-6
+::: {.overlap-box .overlap-box-blue .fragment}
+::: {.box-title}
+[Chunks should...]{.fragment}
+:::
+
+::: {.box-content}
+-   do 1 and *only 1* thing
+-   have informative & unique names 
+-   specify how to run and display when knit
+-   be placed where used
+-   be short
+
+:::
+:::
+:::
+
+::: {.col-6 .d-flex .flex-wrap}
+
+::: {.card style="font-size: 1.3em; font-weight: bolder; text-align: center; margin-bottom: 0em; border-width:8px; border-color: #c00; flex: 1 1 100%; background-color: #ffeaa9;"  .fragment}
+::: {.card-body style="display: flex; align-items: center; justify-content: center; gap: .1em;"}
+![](../images/icons/priority.png){style="max-height: 3em;"}
+
+Do not use the visual editor!!
+
+![](../images/icons/priority.png){style="max-height: 3em;"}
+:::
+:::
+
+:::
+
+:::
+:::
+
+
+::: notes
+
+The visual editor generates a lot of hidden code and formatting that makes your .qmd files difficult to read, troubleshoot, and maintain. This is really critical if you ever want to really fine-tune your formatting or layout. Switching into the visual editor can just break everything without an easy undo to restore what was working.
+
+
+-   do 1 and only 1 thing
+-   have informative & unique names 
+-   specify whether to run and what to display when knit
+-   be placed at the point they are needed/referenced
+-   be (relatively) short – source longer scripts if necessary
+
+
+ 
+ 
+:::
+
+## Chunk Names
+
+Name your chunks to minimize human error. They should be:
+
+- Unique
+- Informative
+    - `fig-gesture-stacked-bar` not `gesture-graph`
+- Conventional (conservative + correct)
+    - Avoid: special characters, spaces, underscores
+    - Prefer: letters, hyphens, numerals
+    
+::: {.callout-warning .fragment}
+
+### 1 Chunk 1 Thing
+
+*Unique* and *informative* chunk names depend on each chunk doing *1 and only 1 thing.* Can you explain what the point of the chunk is in 1-3 words? If not, you've probably got 1 chunk doing too many things.
+
+:::
+
+::: notes
+
+- Conventional (conservative + correct)
+    - R variables cannot start with a numeral, so even though chunk names legally can, it's better to avoid it. 
+    - Don't use underscores or spaces! Even if they "work," they won't *work* work. They'll break in things that can otherwise understand quarto documents but aren't quarto.
+    
+    1 Chunk ➝ 1 Thing
+
+ Even if you are creating multiple closely related figures (or tables), best practice is to have each figure actually generate (i.e., knit) from its own chunk.
+ In the spirit of minimal copy/paste + 1 thing per chunk, consider a figure setup chunk where the "1 thing" it does is lay out all the properties (themes, layers, data filtering, etc.) that are shared by the figures to follow
+    
+:::
+
+# Debugging/Troubleshooting
+
+# Documentation
+
+Step 1 for any problem: Look it up.
+
+## Demo: ?help
+
+::: container-fluid
+
+::: row
+
+::: col-5
+1. Open up a *FRESH* instance of R (no libraries loaded) and try out the 5 functions in the console one by one.
+2. Load the tidyverse packages with `library(tidyverse)` and run each again. What differences do you notice?
+:::
+
+::: col-7
+
+::: {style="font-size: 1.5em;"}
+```r
+?paste
+?paste0
+?filter
+?read_csv
+??read_csv
+```
+:::
+:::
+:::
+:::
+
+
+## Function Documentation: [inner_join()]{.func}
+
+<!-- The codefocus plugin is required for correct animations on this slide. https://github.com/reuning/codefocus/tree/main/_extensions/codefocus -->
+
+::: container-fluid
+::: row
+::: {.col-4 style="font-size: .8em"}
+
+Looking up documentation for any of the `*_join()` functions in dplyr brings you to a shared page for all of them.
+
+
+[[Function name]{.custom-keyword style="background-color: #2ac8fe80; color: #000;"}: here `inner_join()`]{.fragment data-code-focus="1,9" style="display: block; margin-top: 2em; margin-bottom: 1em;"}
+
+[[Required arguments]{.custom-keyword style="background-color: #da6d7180; color: #000;"}: here `file`. listed first; no assigned default value; omitting results in an error message]{.fragment data-code-focus="2,3" style="display: block; margin-bottom: 1em;"}
+
+[[Optional arguments]{.custom-keyword style="background-color: #f1f56c80; color: #000;"}: here `col_names = TRUE, col_types = NULL ... show_col_types = TRUE` ; listed after required arguments; omitting will use the assigned default value]{.fragment data-code-focus="4-6,8" style="display: block; margin-bottom: 1em;"}
+
+[[Other parameters]{.custom-keyword style="background-color: #39eef280; color: #000;"}: always `...` ; accepts extra arguments not explicitly listed]{.fragment data-code-focus="7" style="display: block; margin-bottom: 1em;"}
+
+[[Related reference]{.custom-keyword style="background-color: #f5c36c80; color: #000;"}: here, `?read_delim` ; functions that share a basic structure and may have helpful documentation]{.fragment data-code-focus="11" style="display: block;"}
+
+:::
+
+::: {.col-8 style="border-width:6px !important; border-style: solid !important; border-color: #ccc !important; border-radius: 8px; padding: 10px; background-color: #f9f9f9; font-size: .8em;}"}
+
+<h3 style="margin-top:0em">Mutating joins</h3>
+
+#### Description
+
+Mutating joins add columns from y to x, matching observations based on the keys. There are four mutating joins: the inner join, and the three outer joins.
+
+*Inner join*
+An inner_join() only keeps observations from x that have a matching key in y.
+
+*[...text omitted...]{style="color: #999"}*
+
+#### Usage
+
+```{.r}
+inner_join(
+  x,
+  y,
+  by = NULL,
+  copy = FALSE,
+  suffix = c(".x", ".y"),
+  ...,
+  keep = NULL
+)
+
+left_join(
+  x,
+  y,
+  by = NULL,
+  copy = FALSE,
+  suffix = c(".x", ".y"),
+  ...,
+  keep = NULL
+)
+```
+
+:::
+
+:::
+:::
+
+## Package Documentation: [ggplot2]{.pkg}
+
+
+::: container-fluid
+
+::: row
+
+::: col-3
+
+::: {.card .card-alt1}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+[CRAN](https://cran.r-project.org/web/packages/ggplot2/index.html){style="color: #fff"}
+:::
+:::
+::: card-body
+- **C**omprehensive **R** **A**rchive **N**etwork
+- meta-info about the package, developer, license, etc.
+- links to READMEs, manuals, repos, and other function-level documentation
+:::
+
+:::
+
+:::
+
+::: col-3
+
+::: {.card height="100%"}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+[Reference Manual (PDF)](https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf){style="color: #fff"}
+:::
+:::
+::: card-body
+- packages on CRAN typically include a pdf manual in a uniform format
+- function-level, granular info
+- vignettes
+:::
+
+:::
+
+:::
+
+::: col-3
+
+::: {.card .card-alt1}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+[Developer website](https://ggplot2.tidyverse.org/){style="color: #fff"}
+:::
+:::
+::: card-body
+- popular & complex packages
+- tutorials, examples, FAQs, cheatsheets, etc.
+:::
+
+:::
+
+:::
+
+::: col-3
+
+::: card
+
+::: card-header
+::: {.card-title style="color: #fff"}
+[GitHub Repo](https://github.com/tidyverse/ggplot2){style="color: #fff"}
+:::
+:::
+::: card-body
+- access the scripts that define the functions within the package
+- README usually includes general documentation and links to granular documentation
+- links to direct/binary install if not accessible through CRAN
+:::
+
+:::
+
+:::
+
+:::
+:::
+
+::: notes
+
+We'll talk about "packages" next time – but the idea is that they are collections of functions that work together nicely toward similar programming goals.
+There are "base R" functions that are built in, but the vast majority of function you'll use come from packages you need to install and load.
+
+Packages must meet certain requirements to be accessible through CRAN, including being fully 100% compatible with current versions of R.
+There are lots of excellent, high-quality, well-maintained packages that aren't in the CRAN list! 
+
+:::
+
+
+## Resources
+
+# Solving your own problems
+
+## Error messages
+
+## Common error messages (link to textbook?)
+
+## Errors vs warnings
+
+## Line-by-line debugging
+
+## Rubber duck debugging
+
+# Asking for help
+
+## How to Ask Questions
+
+## Minimally reproducible examples
+
+## Ask the Internet
+
+## Ask Humans
+
+## Ask AI
+
+## Starting from nothing
+
+# D2M-R troubleshooting process

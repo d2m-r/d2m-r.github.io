@@ -50,9 +50,9 @@ to request an alternative time
 
 -   **Qilong Bi**
 -   **Email:** bql20\@uchicago.edu
--   **GitHub:** \@--
--   **Office Hours Location:** TBD
--   **Office Hours**: TBD
+-   **GitHub:** \@QilongBi
+-   **Office Hours Location:** TBA
+-   **Office Hours**: TBA
 
 
 ## Hubs

@@ -1,5 +1,5 @@
 profile:
-  default: site
+  default: slides # slides or site
 
 project:
   type: website
@@ -55,3 +55,4 @@ format:
     theme: [default, theme/color-theme.scss, theme/d2mr-theme.scss, theme/bubbles.scss]
     toc: true
 
+engine: knitr

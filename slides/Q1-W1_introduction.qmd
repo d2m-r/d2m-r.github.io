@@ -6,8 +6,7 @@ date: "1/6/2026"
 format: revealjs
 
 execute:
-  echo: true
-  eval: false
+  #echo: true
   warning: false
   message: false
 editor: source
@@ -49,15 +48,15 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
     
 ::: {.column width="50%"}
 
-### Teaching Assistant: (NAME)
+### Teaching Assistant: Qilong Bi
 
--   **Preferred name:** ---
--   **Pronouns:** ---
--   **Email:** ---
--   **GitHub:** \@---
+-   **Preferred name:** Qilong
+-   **Pronouns:** he/him
+-   **Email:** bql20\@uchicago.edu
+-   **GitHub:** \@QilongBi
 -   **Office hours:**
-    -   *location*
-    -   *day/time*
+    -   *location TBA*
+    -   *day/time TBA*
 :::
 
 :::

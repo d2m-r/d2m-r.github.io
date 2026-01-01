@@ -1,6 +1,7 @@
 /*-- scss:defaults --*/
 
 @import 'color-theme';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
 
 // Default the theme name
@@ -201,6 +202,7 @@ h6 {
 .text-blur {
     filter: blur(2px) saturate(0) opacity(.5);
 }
+
 
 .blockquote {
     color: mix($dark, $accent1, 10%);
@@ -672,14 +674,7 @@ $code-block-border-left-color: $table-border-color !default;
   padding-right: 0.35em;
 }
 
-.callout > .callout-body > .callout-icon-container > .no-icon,
-.callout > .callout-header > .callout-icon-container > .no-icon {
-  display: none;
-}
 
-.no-margin-bottom {
-  margin-bottom: 0 !important;
-}
 
 // Generate per callout type css to customize their appearance
 // Define the callouts for which we should define styles
@@ -767,41 +762,92 @@ $callouts: (
   div.callout-#{$name} .callout-toggle::before {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{colorToRGB($body-color)}" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
   }
-  
+      
     // --- size variants ---
-
-  // size variant: any callout of this type with .large
-  div.callout-#{$name}.large {
-    font-size: 1em;
-  }
-
-  div.callout-#{$name}.large .callout-body {
-    font-size: .9em;
-    padding: .3em 1em;
-  }
-
-
-  div.callout-#{$name}.large .callout-header {
-    font-size: 1.1em;
-    padding: .3em 1em;
-  }
-  
-    div.callout-#{$name}.large .callout-icon-container {
-    	margin: 0;
-    	padding: 0;
-    	display: flex;
-    	align-items: center;
+    // HTML (direct class on callout)
+    div.callout-#{$name}.large {
+      font-size: 1em;
+    }
+    div.callout-#{$name}.large .callout-body {
+      font-size: .9em;
+      padding: .3em 1em;
+    }
+    div.callout-#{$name}.large .callout-header {
+      font-size: 1.1em;
+      padding: .3em 1em;
     }
     
-    div.callout-#{$name}.large .callout-icon::before {
-    	width: 1em;
-    	height: 1em;
-    	background-size: contain;   // keep if icon is via background-image
-    	background-repeat: no-repeat;
-    	display: inline-block;
+    // RevealJS (.large WRAPS callout)
+    div.large div.callout-#{$name} {
+      font-size: 1em !important;
+    }
+    div.large div.callout-#{$name} .callout-body {
+      font-size: .9em !important;
+      padding: .3em 1em;
+    }
+    div.large div.callout-#{$name} .callout-title {
+      font-size: 1.1em !important;
+      padding: .3em 1em;
+    }
+    
+    // Icon fixes - ULTRA PRECISE
+    div.large div.callout-#{$name} .callout-icon-container,
+    div.callout-#{$name}.large .callout-icon-container {
+      display: inline-flex !important;
+      align-items: center !important;
+      vertical-align: middle !important;
+      line-height: 1.1em !important;
+      height: 1.1em !important;
+    }
+    
+    div.large div.callout-#{$name} .callout-title,
+    div.callout-#{$name}.large .callout-title {
+      display: flex !important;
+      align-items: center !important;
+      vertical-align: middle !important;
+    }
+    
+    div.large div.callout-#{$name} i.callout-icon,
+    div.callout-#{$name}.large i.callout-icon {
+      display: inline-block !important;
+      vertical-align: middle !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      line-height: 1 !important;
     }
 
-  
+}
+
+.callout > .callout-body > .callout-icon-container > .no-icon,
+.callout > .callout-header > .callout-icon-container > .no-icon {
+  display: none;
+}
+
+/* Universal .no-icon fix for all wrapper structures */
+.no-icon .callout-icon-container {
+  display: none !important;
+}
+
+.no-icon .callout-title {
+  padding-left: 0 !important;  /* Remove icon space */
+}
+
+/* Also cover direct class on callout (rare case) */
+.callout.no-icon .callout-icon-container {
+  display: none !important;
+}
+
+
+/* .no-icon override - beats everything */
+div.large.no-icon .callout.callout-tip .callout-icon-container,
+div.large.no-icon .callout.callout-note .callout-icon-container,
+div.large.no-icon .callout.callout-important .callout-icon-container,
+div.large.no-icon .callout-icon-container {
+  display: none !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
 }
 
 
@@ -814,7 +860,8 @@ $callouts: (
 $card-main-color: $primary;
 $card-alt1-color: $accent1;
 
-.card {
+.card,
+.reveal .card {
     border-radius: 10px;
     border-width: 2px;
     border-color: mix($dark, $card-main-color, 90%);
@@ -822,15 +869,16 @@ $card-alt1-color: $accent1;
 
 }
 
-.card-body {
+.card-body,
+.reveal .card-body {
     > h1, h2, h3, h4 {
         font-size: 1.2em;
         color: mix($dark, $card-main-color, 30%);
     }
 }
 
-
-.card-title {
+.card-title,
+.reveal .card-title {
     font-weight: bold;
     text-align: center;
     padding-top: 0em;
@@ -849,7 +897,8 @@ $card-alt1-color: $accent1;
     }
 }
 
-.card-header {
+.card-header,
+.reveal .card-header {
         
     padding-top: 0em;
     padding-bottom: 0em;
@@ -874,19 +923,22 @@ $card-alt1-color: $accent1;
 
 // Card color variations
 
-.card-alt1 {
+.card-alt1,
+.reveal .card-alt1 {
     background-color: $accent1;
     border-color: mix($dark, $card-alt1-color, 90%);
     background-color: mix($light, $card-alt1-color, 90%);
 }
 
-.card-alt1 .card-body {
+.card-alt1 .card-body,
+.reveal .card-alt1 .card-body {
     > h1, h2, h3, h4 {
         font-size: 1.2em;  color: mix($dark, $card-alt1-color, 30%);
     }
 }
 
-.card-alt1 .card-title {
+.card-alt1 .card-title,
+.reveal .card-alt1 .card-title {
     border-bottom-color: mix($light-greystone, $card-alt1-color, 70%);
     
     > h1, h2, h3, h4 {
@@ -894,7 +946,8 @@ $card-alt1-color: $accent1;
     }
 }
 
-.card-alt1 .card-header {
+.card-alt1 .card-header,
+.reveal .card-alt1 .card-header {
     border-bottom-color: mix($light-greystone, $card-alt1-color, 0%);
     background-color: $card-alt1-color;
     
@@ -1147,6 +1200,30 @@ pre > code.sourceCode > span {
 }
 
 
+/* Equal height callouts - ONLY for .equal-height rows */
+.reveal .equal-height {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.reveal .equal-height .col-6 {
+  display: flex !important;
+}
+
+.reveal .equal-height .large,
+.reveal .equal-height .callout {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.reveal .equal-height .callout-body {
+  flex: 1 !important;
+}
+
+
+
+
 /* Links */
 .reveal a {
     color: $link-color;
@@ -1223,6 +1300,12 @@ pre > code.sourceCode > span {
 .reveal .critical {
     background-color: lighten($danger, 45%);
     color: $danger;    
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.reveal .custom-keyword {
     font-weight: 700;
     padding: 2px 6px;
     border-radius: 4px;
@@ -1305,7 +1388,108 @@ pre > code.sourceCode > span {
   
 }
 
+.reveal .fragment.blur-out {
+  opacity: 1 !important;
+}
 
+.reveal .fragment.blur-out.visible {
+  filter: blur(2px) saturate(.2) opacity(.4) !important;
+  transition: filter 0.3s ease;
+}
+
+/* Content boxes */
+
+.overlap-box {
+  position: relative;
+  margin-top: 1em;
+  padding-top: 1.5em; // Space for the overlapping title
+  
+  .box-title {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    //transform: translateX(-50%); // to position by center
+    background-color: $maroon; // 
+    color: $warm-white;
+    padding: 0em 2em; // contained text has its own v-padding
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 6px;
+    border-color: $warm-dark; // 
+    font-weight: bold;
+    font-size: 1.2em;
+    z-index: 2;
+    min-width: 50%;
+    text-align: left;
+  }
+ 
+  
+  .box-content {
+    background-color: mix($warm-white, $maroon, 80%); // Warm-white
+    padding: 1.5em .8em .3em .8em; // Extra top padding for overlap
+    min-height: 2em;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 6px;
+    border-color: $warm-dark; // 
+    position: relative;
+    z-index: 1;
+    
+      p, ul, ol {
+        margin: 0em 0em;  // Reduce default margins
+        padding: 0em 1em;
+      }
+      
+      li {
+        margin: 0.4em 0 !important;  // Vertical spacing between items
+        line-height: 1.3em !important;  // Tighten line spacing within items
+      }
+      
+        // Remove extra space on first/last items
+      li:first-child {
+        margin-top: .5em;
+      }
+      
+      li:last-child {
+        margin-bottom: 0;
+      }
+      
+      code {
+          font-size: .8em;
+          padding: 0.1em 0.3em;
+      }
+  }
+}
+
+.overlap-box-blue {
+  
+  .box-title {
+    background-color: $mid-lake; // $mid-lake
+    color: $warm-white;
+  }
+ 
+  
+  .box-content {
+    background-color: mix($warm-white, $mid-lake, 80%); // Warm-white mix
+  }
+}
+
+
+
+/* NEW: Target parent .alert from inner fragment */
+.reveal .alert > .fragment.blur-out.visible {
+  filter: none !important;  /* Inner stays clear */
+}
+
+.reveal .alert:has(.fragment.blur-out.visible) {
+  filter: blur(2px) saturate(.2) opacity(.4) !important;
+  transition: filter 0.3s ease;
+}
+
+
+div.large.no-icon .callout-title {
+  padding-left: 0 !important;
+}
 
 
 // Questionably necessary rules
