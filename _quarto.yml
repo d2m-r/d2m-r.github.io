@@ -1,5 +1,5 @@
 profile:
-  default: site # slides or site
+  default: slides # slides or site
 
 project:
   type: website

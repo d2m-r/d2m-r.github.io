@@ -7,7 +7,7 @@ format: html
 
 ## D2M-R Quarter I Slides
 
--   Week 1: [Introduction to D2M-R](../slides/Q1-W1_introduction.html) and [Problem Solving Strategies](../slides/Q1-W1_problem_solving.html)
+-   Week 1: [Introduction to D2M-R](../slides/Q1-W1_introduction.html) and [Problem Solving Strategies](../slides/Q1-W1_problem-solving.html)
 -   Week 2: Git & GitHub
 -   Week 3: R Programming Language
 -   Week 4: Tidyverse Essentials
