@@ -1,5 +1,5 @@
 profile:
-  default: slides # slides or site
+  default: site # slides or site
 
 project:
   type: website
@@ -41,8 +41,8 @@ website:
               href: github.com/d2m-r/book/index.html
             - text: Slides
               href: materials/slides.qmd
-            - text: Misc. Materials
-              href: materials/misc-materials.qmd
+            - text: Course Resources
+              href: materials/course-resources.qmd
             - text: External Resources
               href: materials/resources.qmd
             - text: Finding Data

@@ -47,7 +47,20 @@ Jan-6; Jan-8
 
 **Class plans:**
 
+-   Tuesday: Introduction to the course, syllabus review
+-   Thursday: Debugging & problem-solving strategies
+-   Example Assignment - Tentatively, the plan here is:
+    -   Tuesday end of class: connect RStudio and GitHub, accept the assignment, and clone the repo
+    -   Before Thursday: figure out anything you didn't get working on Tuesday, up to having the repo locally
+    -   Thursday end of class: complete the assignment, fill out the submission doc, push to GH, and create a pull request
+    -   Realistically, we may have little time to work on this in class. There are *detailed* instructions to get you through each step of this assignment on this site, other R learning sites, and in the files of the assignment itself. Whether or not we work on it in class, you should complete it before Tuesday Week 2.
+    -   *See "Assignments & To-Do" below for details about the assignment itself.*
+    
+
 **Primary learning objectives:**
+
+-   (1) RStudio + Quarto workflow
+-   (2) GitHub repositories and version control
 
 :::
 ::::
@@ -65,8 +78,9 @@ Jan-6; Jan-8
 
 **Class Materials:**
 
-- [Slides]()
-- [Textbook Chapter]()
+- [Intro Slides](../slides/Q1-W1_introduction.html)
+- [Problem-Solving Slides](../slides/Q1-W1_problem-solving.html)
+- [Textbook Chapter](github.com/d2m-r/book/)
 
 <!-- software, tools, datasets, etc -->
 
@@ -93,7 +107,28 @@ Jan-6; Jan-8
 
 **Graded Submissions:**
 
+-   Accountability Plan - Initial Submission
+    -   Due: Monday, January 12th, 2026
+    -   Submit to Canvas.
+    -   Create an individual accountability plan to follow throughout the quarter.
+    -   See the [accountability page](../assessment/accountability.html) for details about this assignment.
+
 **Recommended Exercises:**
+
+-   Example Assignment:
+    -   This is a crash course in using RStudio with GitHub, working in Quarto documents with markdown, and running simple R code within a Quarto document.
+    -   Use this [GH classroom invite](https://classroom.github.com/a/oiL9tsfr) to access the assignment so you can figure out the process of cloning, editing, committing, pushing, and submitting assignments through GitHub and GH Classroom.
+    -   Between Tuesday and Thursday, you should get everything set up at least through have the repo cloned on your computer and accessible with an RStudio project.
+    -   Before Week 2 you should complete the rest of the assignment, using the problem-solving slides to help if you get stuck.
+
+**To-do:**
+
+-   Join the [course Slack workspace](d2m-r.slack.com) and introduce yourself in the #introductions channel
+    -   Minimally, send a message including your name and github username, but we'd also love to know a little bit about you and/or why you're taking the class!
+-   Review the syllabus policies and assessment structure on this site
+-   Get your GitHub education account set up and join the d2m-r organization
+-   Familiarize yourself with the course GitHub organization and student hub repos
+
 
 :::
 ::::
@@ -110,9 +145,9 @@ Jan-6; Jan-8
 :::: {#misc-week-1 .accordion-collapse .collapse data-bs-parent="#week-1"}
 ::: accordion-body
 
-**Announcements:**
-
+<!-- **Announcements:** -->
 **Reminders:**
+
 
 :::
 ::::

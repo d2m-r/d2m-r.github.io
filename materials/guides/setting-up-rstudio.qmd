@@ -1,0 +1,52 @@
+---
+title: "Setting Up RStudio"
+---
+
+RStudio will almost certainly do what you need it to do without messing with any settings. However, part of what makes it a fantastic IDE is its impressive customization. The following is a collection of settings many people will want to tweak. Unless otherwise specified, these settings are found in Tools > Global Options.
+
+Note that because the vast majority of students use Macs (as do I), some details will be Mac-specific. Translating to PC (or Linux) is well-documented and should be pretty straightforward with common sense and minimal googling.
+
+One of the main reasons I include this information is to clarify why my screen doesn't look like yours when I do demos, since that's caused some confusion for students in the past. You don't need to change anything if you don't feel the need to, but you should understand how to interact with setups that appear or operate differently than yours.
+
+## Prerequisites
+
+  - Download and/or install R, RStudio, Git
+  - Create GitHub account (for education) and connect to RStudio
+    - Not technically required but highly recommended
+    
+## General Settings and Expected Behavior
+
+  - General
+    - In the Basic tab, select a sensible folder to set as your default working directory. By default this will be your home directory ("~" is a stand-in for "/Users/YourName/"). In this class you'll organize work in R projects, which have their own working directory. I recommend containing those projects (i.e., repositories) in one directory, then creating a "catch-all" fake repo folder to set as a default, e.g., "~/repos/other".
+  - Pane Layout
+    - RStudio looks like a grid of 4 panels which you can rearrange as you like. Your "Source" (one or more tabs of open files or viewers) will always be one panel; your "Console" (including the Terminal and Background Jobs) will always be one panel. The other two panels will be one or more tabs of useful information and actions. You can customize which tabs are shown (and in which panel) and which panels go in which corners.
+  - Git/SVN
+    - You should not need to change anything here if you set up a connection to GitHub the "easy" way already. If you're having problems though, you may need to be aware of these settings.
+  - Accessibility
+    - A modest selection of accessibility settings. This continues to expand with new versions of RStudio.
+    
+## Source/Code Editing (the "Data" bit)
+
+  - Code
+    - Editing
+      - "Insert spaces for Tab" - [Whether to use tabs or spaces in programming is an absurd and timeless debate.](https://www.alpharithms.com/tabs-vs-spaces-the-timeless-debate-581511/) R is a whitespace-insensitive programming language, meaning ***any*** kind of blank characters (both spaces and tabs) are helpful for readability but don't matter for running the code. Use spaces, use tabs, use nothing (well, use something — human people need to read your code!). It may just be a matter of form rather than function, but you'll likely develop a preference here. Personally I check the box and use a tab width of 4.
+      - The rest of these options are things you might want to tweak if something feels unintuitive while you're coding. For example, when you insert a full line comment, what should happen when you hit enter and start a new line? Should we assume that next line will be a continuation of that long comment? Which is more intuitive for you?
+      - Check out the keybindings (click "Modify Keyboard Shortcuts" to see them all) to get an overview of the default keyboard shortcuts. Set this to another set of shortcuts (like Sublime Text or vi) if you're already used to something else and/or customize shortcuts to your liking. Most of these shortcuts you'll never use, but others you'll rely on heavily (e.g., inserting pipes and new code chunks).
+      - "Ctrl+Enter executes:" This is really just specifying the behavior of one important shortcut. When you use this keybind (for Mac users, both ctrl and cmd work here), it will run code where your cursor is. It's up to you how much of that code should run — typically either that exact line of code (until a line break) or the current R statement (ignoring line breaks, but stopping at the end of the statement or pipe chain). Mostly I just point this out so you know the shortcut exists! You don't need to highlight the code and click the run button every time.
+    - Completion
+      - This section has options for autocompleting functions. So if you type "read_" you'll see a popup list of all the functions (from loaded packages) that begin with "read_". By default you can use the arrow keys to scroll through the options and tab to complete the one you have selected. You can adjust this behavior or disable it entirely.
+  - Appearance
+    - Setting up how you want RStudio to look can be just as much about function as about aesthetics. If you're perfectly happy with RStudio's look out of the box, great! If something feels unintuitive, if you find the source code difficult to read, if the layout leaves you mixing up the source and console panels, etc., mess around with this stuff for a better overall experience. Mess with the theme for the RStudio GUI and text/font if you want.
+    - Select your favorite editor theme or [create your own](https://rstudio.github.io/rstudio-extensions/rstudio-theme-creation.html)! This is like setting light or dark mode, but x1000. The default is perfectly fine, but you'll be amazed at how much a few subtle changes can make for your ability to stare at code for hours on end without getting a migraine.
+      - If you're watching me demo something and wondering what my theme is — it's a modified version of Clouds.
+        
+## R Markdown (the "Manuscript" bit)
+  
+  - Basic
+    - Pay attention to the settings that alter where the output of code chunks in R Markdown is displayed. Note that (by default) executing code chunks will show the output (tables, plots, stats, etc.) underneath the chunk in the Notebook itself. This is different from if you were working in a regular R document or the console, where (depending on the type) output would show up in the console or a plot/viewer tab. Not all packages play equally nicely with R Notebooks. If something isn't rendering output as expected, troubleshoot by running the code somewhere else.
+  - Visual
+    - DO NOT USE THE VISUAL EDITOR.
+      - For one thing, it's still pretty glitchy. Also, when it works as intended it still produces some odd results. **Switching between visual and markdown editing will significantly change your text.** The visual editor is more built for HTML than Markdown, so if you go back to the plain text editor much of your Markdown will be HTML-ified with no simple way to get it back.
+      - But also, part of this class is learning to work in R Markdown. So that's just what we're doing.
+  - Citations
+    - If you were to use the visual editor — which you are not — you could set it up for citation features. This is a buggier and less reliable version (at least as of June 2023) of what we'll do with knitr, citr, Zotero, and Better BibTeX.

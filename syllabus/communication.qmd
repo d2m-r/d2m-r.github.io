@@ -16,7 +16,7 @@ We will use Slack for communication outside of class, aside from one-on-one disc
 In addition to seeing important announcements from the instructors, you can use Slack to ask questions, share resources, and get help from your classmates. 
 You can also use it to share your work and get feedback from your peers, or to find classmates to collaborate on group assignments. 
 
-You can access the Slack workspace [here](). 
+You can access the Slack workspace [here](d2m-r.slack.com). 
 
 The primary purpose of using Slack is for students to support their peers. 
 We encourage you to not only ask questions, but to reply to others' questions when you know the answer. 

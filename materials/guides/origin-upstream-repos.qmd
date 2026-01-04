@@ -1,0 +1,315 @@
+---
+title: "Creating Your Assessment Repo Clone"
+---
+
+::: {.alert .alert-danger role="alert"}
+
+This page outlines an alternative to creating a fork of a repository that is better suited to the needs of this class, both for students and instructors. This switch will be necessary for submitting mini-projects going forward (beginning Week 5). There are instructions for how to switch from a fork to a private clone in the guide below.
+
+**Don't forget to invite Dr. Dowling and your TA to your new private clone repo!** 
+
+:::
+
+All materials for in-class activities and mini-projects are published in the GitHub repository: [https://github.com/nrdowling/d2mr-assessment](https://github.com/nrdowling/d2mr-assessment).
+
+To access and edit the materials, including completing mini-projects, you will need to create a copy of this repo that you own and have edit access to, while maintaining a connection to the "upstream" repository. 
+
+The typical way to do this is to *fork* the repository -- and in fact that's the whole point of forking. Forking, however, is intended to facilitate collaboration and sharing of code. This is great for open source projects, but presents problematic limitations for the purposes of this class where everyone is working individually.
+
+Instead you will *clone* the repository and set up an upstream connection to mimic the behavior of a fork. This is a workaround for the limitations (or features, depending on your perspective) of GitHub's permissions system. It is the best way to 1) allows you to fully control every part of your repo, 2) stay fully "synced" with the class repo, and 3) allow TAs and instructors to access what we need to.
+
+To follow any of the instructions below, you first need to create a GitHub account and connect it to RStudio with a personal access token. If you haven't done this yet, please follow the instructions in the [Setting Up RStudio and GitHub](rstudio-github.qmd) guide.
+
+## Step 0: Back up your work
+
+If you have any existing version of the assessment repo (like a fork), make sure to back it up before proceeding. You can do this by copying the files to a new location on your computer (just like copying any other folder, doesn't matter that it's a repo).
+
+## Step 1: Create a new "bare" repository
+
+1. Go to GitHub and log in using your GitHub Education account (which allows you to create unlimited private repositories).
+2. Click the "+" icon in the top right corner and select "New repository".
+3. Name the repository something like "d2mr-assessment-yourgithubname" (e.g., "d2mr-assessment-nrdowling").
+    - **Note:** If you are creating a clone after having already created a fork with this name, you can add a suffix like "-clone" to the name to differentiate it. Later you can delete (or rename) the fork and rename this clone to the original name if you want. You can also just leave it with the suffix; we get what's going on.
+4. Initialize a bare, private repository:
+    1. **Do not** check the box to add a README file
+    2. **Do not** add a `.gitignore` file.
+    3. Set permissions to **private**.
+5. Click "Create repository" and note its URL.
+
+
+## Step 2; Option 1: Clone the upstream repository {#clone-from-upstream}
+
+If you *don't* already have a fork of the assessment repo or you just want to fully start from scratch, follow these instructions.
+
+If you *do* already have a fork and you want to transfer it to a clone, skip to [Step 2; Option 2](#clone-from-fork).
+
+To clone the source repository, access the [assessment repo hosted by Dr. Dowling](https://github.com/nrdowling/d2mr-assessment.git).
+
+1. Click the green "Code" button on the right side of the page.
+2. Copy the URL that appears in the dropdown.
+3. Open RStudio and create a new project.
+4. Select "Version Control" and "Git".
+5. Paste the URL into the "Repository URL" field.
+6. Choose a directory on your computer to save the project.
+7. Click "Create Project".
+
+Before moving on, take a look at how your remotes are currently set up. Open the terminal in RStudio (not the R console) and run the following command:
+
+```
+git remote -v
+```
+
+_**What you're doing:** This command lists the remote repositories that your local repository is connected to._
+
+You should see something like this:
+
+```
+origin  https://github.com/nrdowling/d2mr-assessment.git (fetch)
+origin  https://github.com/nrdowling/d2mr-assessment.git (push)
+```
+
+You now have a local copy of the assessment repo on your computer. At the moment, RStudio assumes you want this repo to be a local copy of the original, remote repo owned by Dr. Dowling, which you do not have edit access to.
+
+To make it your own, you need to change the remote URL to point to a new repository that you own while maintaining that upstream connection to the original repo. This means you'll be able to fetch and merge updates from the original repo, but keep your own work pushed to your private, cloned repo.
+
+As mentioned, this is the purpose of "forking" a repo, which is *not* what we are actually doing here. This is a bit of a hack, but it's the best way to keep your work private while still being able to pull in updates from the main repo.
+
+In a forked repository, the "upstream" repo is the original repo that you forked from, the one you don't own and don't want to push to (at least not by default). The "origin" repo is your fork, the one you do own and do want to push to.
+
+Here we need to configure git to replicate that behavior, but with a clone instead of a fork.
+
+
+Convert the current *origin* to the *upstream* source repo:
+
+```
+git remote rename origin upstream
+```
+
+_**What you're doing:** This renames the original remote to "upstream", which is the convention for the original (source) repo in a forked repo setup._
+
+Set the new *origin* URL to point to your new repository, using the URL of the repository you created in Step 1:
+
+```
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git
+```
+
+_**What you're doing:** Since you renamed the original remote to "upstream", you are now free to add a new remote called "origin", which is the convention for the forked repo in a forked repo setup._
+
+Configure the new *origin* to push to the `main` branch:
+
+```
+git push -u origin main
+```
+
+_**What you're doing:** This command pushes your local `main` branch to the new remote `origin` and sets it as the default upstream branch. This means that in the future, pushing and pulling with the RStudio interface (or with the `git push` and `git pull` commands) will default to pushing and pulling to and from the `main` branch of your new private repo._
+
+
+## Step 2; Option 2: Clone from your old fork first {#clone-from-fork}
+
+If you *already have a fork* that you've worked in, you can clone it into a new *local* repo then change the remotes to mimic the behavior of a fork. 
+
+If you *don't* have a fork or you want to start from scratch, follow the instructions above in [Step 2; Option 1](#clone-from-upstream).
+
+In this option you're not actually cloning the repo like you would have if you cloned the upstream repo like in the directions above. What you're actually doing is:
+
+1. cloning your *remote* (i.e., associated with a github repo) fork repo into a new *local* (i.e., only existing on your computer) repo 
+2. assigning the upstream repo to mimic fork behavior
+3. turning the local repo into a new remote repo that you own
+
+This is like duplicating the folder on your computer that contains all your repo files, but it has the added benefit of keeping the git history.
+
+~~Open the RStudio project for your forked repo~~ When you clone your new local repo, it will be created as a new folder in the working directory. You'll want to be sure you're in your home directory (or a directory where you keep all your repos) before you clone the new repo. 
+
+If you're working in an RProject, the working directory is set to that project's directory, so you'll need to change it. Start by closing the project you have open by clicking the dropdown in the top right corner of the screen and choosing "close project." Then open the *terminal* pane and enter the command `pwd` to see the current working directory. If it's not your home directory (e.g., `/Users/Natalie`), navigate there by entering `cd ~`. Alternatively, you can navigate to a directory where you keep all your repos by entering `cd path/to/your/repos` (e.g., `cd ~/Documents/repos`, which will print as `/Users/Natalie/Documents/repos`).
+
+Take note of your working directory so that you can easily locate the cloned directory later. Run the following command to clone the forked repo into a new local repo:
+
+```
+git clone https://github.com/YOUR-USERNAME/YOUR-FORK.git YOUR-NEW-CLONE-REPO
+```
+
+Here, `https://github.com/YOUR-USERNAME/YOUR-FORK.git` is the URL of your old, forked repo, which is what you'd see if you went to that repo on GitHub and clicked the green "Code" button to get the URL. `YOUR-NEW-CLONE-REPO` is the name of the new directory that will be created on your computer. This is *not* the URL of the new private repo you created in Step 1, but it will eventually become that. That means what you enter in this command is just a folder name, not a URL, and it should match whatever you named the new private repo in Step 1.
+
+_**What you're doing:** This command clones the forked repo into a new directory called `YOUR-NEW-CLONE-REPO` on your computer. This is a new, local repo that is not connected to any remote repositories. You should find the folder in the same directory as your forked repo._
+
+Create a new RStudio project for the new private clone repo. **Do not** use the "version control" method to create the project. Instead, create a project with the "existing directory" option and navigate to the directory where you cloned the forked repo (e.g., `~/d2mr-assessment-nrdowling-clone`). Open the project and make sure you can see all the files from your old fork in the "Files" pane. I recommend *not* opening it in a new session, so you don't have both the fork and the clone projects open at once and accidentally work in the wrong one.
+
+Connect your new local repo to the source, upstream repo you want to maintain a connection with. In the terminal pane, enter the command:
+
+```
+git remote add upstream https://github.com/nrdowling/d2mr-assessment.git
+```
+
+_**What you're doing:** This command adds a new remote called "upstream" that points to the original, source repo. This is the convention for the original repo in a forked repo setup._
+
+Connect your new local repo to the bare remote repo you made in Step 1. In the terminal pane, navigate to the directory of the new private repo (it will be in the same directory as your fork's repo) and run the following command using the URL of the new private clone repo you created in Step 1:
+
+```
+git remote set-url origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git
+
+_**What you're doing:** This command changes the URL of the remote called "origin" to point to the new private remote GitHub repo you created._
+
+```
+Do a quick check to make sure the remotes are set up correctly:
+
+```
+git remote -v
+```
+You should see something like this:
+
+```
+origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git (fetch)
+origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git (push)
+upstream https://github.com/nrdowling/d2mr-assessment.git (fetch)
+upstream https://github.com/nrdowling/d2mr-assessment.git (push)  
+```
+Open your git pane in RStudio and confirm that there are no files waiting to be committed. If there are, commit them with a message like "initial commit of cloned repo" or something similar.
+
+Assuming everything looks good, push your local repo to the new private repo:
+
+```
+git push -u origin --all
+```
+
+_**What you're doing:** This command pushes all the branches and tags to the new remote repo and sets the default upstream branch to `main`._
+
+Usually this command runs without merge conflicts (since you're pushing to an empty repo), but if you do get a conflict, you'll need to resolve it before you can push. Follow the directions for resolving merge conflicts in the [Workflow in your new repo](#workflow-in-your-new-repo) section below.
+
+**You only need to run the commands in this step once to set up the new private clone repo.** From now on, you can work in the new private repo as you would in a forked repo, pulling in updates from the original repo, making changes, and pushing your work to your own private repo.
+
+If you try to run these commands again, you'll get an error message that the remotes already exist. That's fine; it just means you've already set them up correctly.
+
+
+## Step 3: Confirm setup
+
+Check that the remotes are set up correctly:
+
+```
+git remote -v
+```
+
+You should (still) see something like this:
+
+```
+origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git (fetch)
+origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git (push)
+upstream https://github.com/nrdowling/d2mr-assessment.git (fetch)
+upstream https://github.com/nrdowling/d2mr-assessment.git (push)  
+```
+
+Check that the `main` branch is set up as the default upstream branch:
+
+```
+git branch -vv
+```
+
+You should see something like this:
+
+```
+* main 1234567 [origin/main] Most recent commit message
+```
+
+Check (and configure) default merge functionality:
+
+```
+git config pull.rebase
+```
+
+If the output is `false`, you probably want to change this to `true` for this repository:
+
+```
+git config pull.rebase true
+```
+
+Or globally (for all repositories on your local machine):
+
+```
+git config --global pull.rebase true
+```
+
+_**What you're doing:** This command sets the default behavior for `git pull` to rebase (vs. `ff` or "fast forward"). This is a personal preference, but it can help keep your commit history clean and linear._
+
+Merging with "ff" means that your commits are simply added to the end of the commit history. This can make it difficult to track changes and can lead to a messy commit history. The merge can fail if there are conflicts, rather than giving you a chance to resolve them.
+
+Merging with "rebase" temporarily removes your commits, pulls in the changes from the remote, and then reapplies your commits on top. This can make it easier to track changes and keep your commit history clean. The merge will pause if there are conflicts, allowing you to resolve them before continuing.
+
+The workflow steps below assume that you have set `pull.rebase` to `true`. If you prefer not to set rebase as your default, you may need to modify some things to rebase manually at certain points.
+
+
+## Step 4: Workflow in your new repo
+
+Now you can work in your new private repo as you would in a forked repo. You can pull in updates from the original repo, make changes, and push your work to your own private repo.
+
+Every session working in RStudio should begin with pulling in commits from the upstream repo (and your cloned repo if necessary), involve frequent committed changes as you work, and end with pushing your changes to your private repo.
+
+By "session" I mean a period of time when you are actively working on the repo, not the time that RStudio is open. I mean "start and end a session of work." You can have multiple sessions in a day, and you should pull at the start and push at the end of each one. Leave RStudio open forever if you want, but commit and push every time you're going to take a break from your work or switch to a different task for more than a few minutes.
+
+### Start a session
+
+Open RStudio and open the project you created in Step 2.
+
+Pull in updates from your repo clone if there is any possibility that changes were made remotely *to your own repo* (e.g., if you were working on a different computer). You can do so either by clicking "Pull" in the RStudio interface or by running the following command in the terminal: `git pull origin main`.[^1]
+
+[^1]: This is not strictly necessary if you are the only one working on the repo and you only work on one local machine, but it's a good habit to get into. 
+
+Pull in updates from the original, source repo:
+
+```
+git pull upstream main
+```
+
+_**What you're doing:** This command *fetches* the changes from the `main` branch of the `upstream` repo and *merges* them into your local `main` branch. This is the equivalent of clicking "Pull" in the RStudio interface for your origin/private repo, but for the source/upstream repo._
+
+You can also do the fetch and merge separately:
+
+```
+git fetch upstream
+git merge upstream/main
+```
+
+The advantage of doing this in two steps is that you can see the changes that are fetched before you merge them. This can be helpful if you want to review the changes before merging them. Most of the time you can just do the fetch and merge in combined "pull" step.
+
+Resolve merge conflicts with rebase (if necessary). If you get a message that there are conflicts, you will need to resolve them and then continue the rebase. There are many ways to resolve conflicts, but we'll cover how to do it in the RStudio editor here:
+
+1.   Identify which files have conflicts by looking at the output of the rebase command. You can also see these files listed in the "Git" tab in RStudio; right click and choose "open file" to take you to the editor (or open them like normal from the files pane).
+2.  Look for the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) in the file. These indicate the sections of the file that are in conflict. The text above the equal signs is the version of the code from the source repo, and the text below the equal signs is the version of the code from your repo.
+3.  For each conflict, decide which version of the code you want to keep. Delete the conflict markers and any code/text you don't want to keep. Save the file(s).
+4.  Stage the resolved files by clicking the "Stage" button in the "Git" tab in RStudio. **Do not** commit here, just stage.
+5.  Continue the rebase by clicking the "Continue rebase" button in the "Git" tab in RStudio or with the command `git rebase --continue` in the terminal.
+6.  Rebase will attempt to merge one commit at a time, so if you have made multiple commits between the last time you pulled from the upstream repo and now, you may need to repeat this process for each commit that has conflicts.
+
+You may get a prompt in the terminal to enter a commit message for the merge commit. This is the message that will be associated with the merge commit that resolves the conflicts. You can use the default message that appears in the editor, or you can write your own. 
+
+To enter your own message, press `i` to enter insert mode, type your message, then press `esc` to exit insert mode. To save (*w*rite) and exit (*q*uit), type `:wq` and press `enter`.
+
+To use the default, just type `:wq`.
+    
+### Work in the session
+
+Do whatever you're going to do in the session. Make changes, add files, whatever. After every notable change, you should commit your changes using an informative commit message.
+
+Commit your changes with a descriptive message. In the Git pane, open up the "commit" window. Select any files that have been changed that you can describe with a single message. Write a descriptive message in the "Commit message" box. Click "Commit".
+
+You don't have to commit changes to all edited files at once. You can commit changes to different files in separate commits. For example, you did a lot of data wrangling work across multiple files and file types. You could just check off all files and include a single commit message: `Data wrangling for gesture count data`. Or you could commit just the .R scripts (commit: `added wrangling pipeline for creating minimal gesture count df`), then the .csv files (commit: `minimal gesture count dfs; removed speech data`), then the .qmd manuscript file (commit: `added simple table to results section using new minimal df`).
+
+You can push your committed changes to your private repo at any time by clicking "Push" in the RStudio interface. It's not necessary to do this after every commit, but it's a good idea to do it regularly to keep your work backed up and it doesn't hurt.
+
+### End the session
+
+Always end a session by committing your changes and pushing them to your private repo. This ensures that your work is backed up and that you can access it from other computers.
+
+Commit any changes you've made since the last commit.
+
+Push your changes to your private repo by clicking "Push" in the RStudio interface.
+    
+
+
+
+
+
+
+
+
+
+
+

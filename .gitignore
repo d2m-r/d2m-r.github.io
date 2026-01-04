@@ -37,6 +37,7 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+*_files/
 
 # R Environment Variables
 .Renviron
@@ -49,3 +50,4 @@ rsconnect/
 
 # Ignore exceptions
 /.quarto/
+!/docs/*

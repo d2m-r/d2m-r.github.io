@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Guided Exercise: Create and Sync a GitHub Repo with RStudio – Data to Manuscript in R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-674040da490b9a8d4816ee8e29c91e3e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Data to Manuscript in R</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syllabus" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Syllabus</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
+        <li>
+    <a class="dropdown-item" href="../../syllabus/structure.html">
+ <span class="dropdown-text">Course Structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../syllabus/communication.html">
+ <span class="dropdown-text">Communication</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../syllabus/ai-policy.html">
+ <span class="dropdown-text">AI Use</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../syllabus/climate.html">
+ <span class="dropdown-text">Climate &amp; Inclusion</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-assessment" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Assessment</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-assessment">    
+        <li>
+    <a class="dropdown-item" href="../../assessment/overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/objectives.html">
+ <span class="dropdown-text">Learning Objectives</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/accountability.html">
+ <span class="dropdown-text">Accountability</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/engagement.html">
+ <span class="dropdown-text">Community Engagement</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/menu.html">
+ <span class="dropdown-text">Project Menu</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/enrichment.html">
+ <span class="dropdown-text">Enrichment Activities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/data-project.html">
+ <span class="dropdown-text">Integrative Data Project</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Materials</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-materials">    
+        <li>
+    <a class="dropdown-item" href="../../github.com/d2m-r/book/index.html">
+ <span class="dropdown-text">Textbook (WIP)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../materials/slides.html">
+ <span class="dropdown-text">Slides</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../materials/course-resources.html">
+ <span class="dropdown-text">Course Resources</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../materials/resources.html">
+ <span class="dropdown-text">External Resources</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../materials/finding-data.html">
+ <span class="dropdown-text">Finding Data</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../d2m-r.github.io"> 
+<span class="menu-text">FAQ</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <div id="quarto-announcement" data-announcement-id="48511bd1606019110bae8cd7f2578900" class="alert alert-danger hidden"><i class="bi bi-exclamation-octagon-fill quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>The Winter 2026 home for D2M-R I is still under construction!</strong></p>
+<p>You can browse what’s here now to start thinking ahead, but some sections are incomplete or missing. Some posted content may change slightly before the beginning of the quarter.</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link" data-scroll-target="#pre-requisites">Pre-requisites</a></li>
+  <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps">Steps</a></li>
+  </ul></li>
+  <li><a href="#step-1-create-a-github-repo" id="toc-step-1-create-a-github-repo" class="nav-link" data-scroll-target="#step-1-create-a-github-repo">Step 1: Create a GitHub Repo</a></li>
+  <li><a href="#step-2-clone-the-repo-in-rstudio" id="toc-step-2-clone-the-repo-in-rstudio" class="nav-link" data-scroll-target="#step-2-clone-the-repo-in-rstudio">Step 2: Clone the Repo in RStudio</a></li>
+  <li><a href="#rstudio-to-github" id="toc-rstudio-to-github" class="nav-link" data-scroll-target="#rstudio-to-github">RStudio to GitHub</a>
+  <ul class="collapse">
+  <li><a href="#edit-your-.gitignore-file" id="toc-edit-your-.gitignore-file" class="nav-link" data-scroll-target="#edit-your-.gitignore-file">Edit your .gitignore file</a></li>
+  <li><a href="#commit-your-changes-and-push-to-github" id="toc-commit-your-changes-and-push-to-github" class="nav-link" data-scroll-target="#commit-your-changes-and-push-to-github">Commit your changes and push to GitHub</a></li>
+  </ul></li>
+  <li><a href="#github-to-rstudio" id="toc-github-to-rstudio" class="nav-link" data-scroll-target="#github-to-rstudio">GitHub to RStudio</a>
+  <ul class="collapse">
+  <li><a href="#edit-your-readme-file-on-github" id="toc-edit-your-readme-file-on-github" class="nav-link" data-scroll-target="#edit-your-readme-file-on-github">Edit your README file on GitHub</a></li>
+  <li><a href="#commit-your-changes-and-pull-to-rstudio" id="toc-commit-your-changes-and-pull-to-rstudio" class="nav-link" data-scroll-target="#commit-your-changes-and-pull-to-rstudio">Commit your changes and pull to RStudio</a></li>
+  </ul></li>
+  <li><a href="#review-your-commit-history" id="toc-review-your-commit-history" class="nav-link" data-scroll-target="#review-your-commit-history">Review your commit history</a></li>
+  <li><a href="#create-and-resolve-a-conflict" id="toc-create-and-resolve-a-conflict" class="nav-link" data-scroll-target="#create-and-resolve-a-conflict">Create and Resolve a Conflict</a>
+  <ul class="collapse">
+  <li><a href="#make-and-commit-a-change-in-rstudio" id="toc-make-and-commit-a-change-in-rstudio" class="nav-link" data-scroll-target="#make-and-commit-a-change-in-rstudio">Make and commit a change in RStudio</a></li>
+  <li><a href="#make-and-commit-a-conflicting-change-on-github" id="toc-make-and-commit-a-conflicting-change-on-github" class="nav-link" data-scroll-target="#make-and-commit-a-conflicting-change-on-github">Make and commit a conflicting change on GitHub</a></li>
+  <li><a href="#try-to-push-pull-from-rstudio" id="toc-try-to-push-pull-from-rstudio" class="nav-link" data-scroll-target="#try-to-push-pull-from-rstudio">Try to Push &amp; Pull from RStudio</a></li>
+  <li><a href="#identify-the-conflict" id="toc-identify-the-conflict" class="nav-link" data-scroll-target="#identify-the-conflict">Identify the Conflict</a></li>
+  <li><a href="#resolve-the-conflict-in-rstudio" id="toc-resolve-the-conflict-in-rstudio" class="nav-link" data-scroll-target="#resolve-the-conflict-in-rstudio">Resolve the Conflict in RStudio</a></li>
+  <li><a href="#complete-the-rebase" id="toc-complete-the-rebase" class="nav-link" data-scroll-target="#complete-the-rebase">Complete the Rebase</a></li>
+  <li><a href="#review-your-commit-history-1" id="toc-review-your-commit-history-1" class="nav-link" data-scroll-target="#review-your-commit-history-1">Review your commit history</a></li>
+  </ul></li>
+  <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up">Wrap-up</a>
+  <ul class="collapse">
+  <li><a href="#major-takeaways" id="toc-major-takeaways" class="nav-link" data-scroll-target="#major-takeaways">Major Takeaways</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Guided Exercise: Create and Sync a GitHub Repo with RStudio</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<!-- Introduction and goals -->
+<section id="pre-requisites" class="level3">
+<h3 class="anchored" data-anchor-id="pre-requisites">Pre-requisites</h3>
+<ol type="1">
+<li>A GitHub account.</li>
+<li>RStudio installed with git configured.</li>
+</ol>
+</section>
+<section id="steps" class="level3">
+<h3 class="anchored" data-anchor-id="steps">Steps</h3>
+<ol type="1">
+<li>Create a repo on GitHub.</li>
+<li>Clone it in RStudio.</li>
+<li>Make a change in RStudio.</li>
+<li>Commit and push the change.</li>
+<li>Check the change on GitHub.</li>
+<li>Make a change on GitHub (and commit).</li>
+<li>Pull the change in RStudio.</li>
+<li>Create a conflict by making and committing a change in RStudio and a different (conflicting) change on GitHub.</li>
+<li>Resolve the conflict in RStudio.</li>
+</ol>
+</section>
+</section>
+<section id="step-1-create-a-github-repo" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-create-a-github-repo">Step 1: Create a GitHub Repo</h2>
+<p>Log in to your GitHub account and navigate to “My Repositories.” Create a new repository by clicking the “New” button.</p>
+<p>On the “Create a new repository” page, choose a repository name, add a brief description, and choose whether to make it public or private.</p>
+<p>Toggle on “Add README” to initialize the repository with a README file. Add a .gitignore file using the R template. Skip the “Add license” option.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github-rstudio-repo/github-create-repo.png" class="img-fluid figure-img"></p>
+<figcaption>Create a new repo</figcaption>
+</figure>
+</div>
+<p>Click “Create repository” to finalize the creation of your new GitHub repository. GitHub will take you to your repo’s main page, where you should see:</p>
+<ol type="1">
+<li>The repo name and public/private tag</li>
+<li>A short “about” sidebar with your brief description</li>
+<li>A list of files currently in the repo: <code>.gitignore</code> and <code>README.me</code></li>
+<li>Above the list is your most recent (and at this point only) commit message: “Initial commit”, along with the user who made the commit (you), the time since the commit, and a unique commit hash.</li>
+<li>A rendered view of your <code>README.md</code> file, including the title and description</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github-rstudio-repo/github-new-repo.png" class="img-fluid figure-img"></p>
+<figcaption>New repo main page</figcaption>
+</figure>
+</div>
+</section>
+<section id="step-2-clone-the-repo-in-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-clone-the-repo-in-rstudio">Step 2: Clone the Repo in RStudio</h2>
+<p>In RStudio, go to <code>File</code> &gt; <code>New Project...</code> &gt; <code>Version Control</code> &gt; <code>Git</code>.</p>
+<p>Back on your repo’s main page on GitHub, click the green “Code” button and copy the URL under “HTTPS”.</p>
+<p>In the RStudio project dialog, paste the URL into the “Repository URL” field. Add a name for your project in the “Project directory name” field. Typically the name is the same as the repo name (minus the .git). Choose a directory on your computer where you want to save the project. This should be a directory where you keep your R projects, or a subdirectory for a collection of repos (e.g., the repos for this class).</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The directory you choose must be stored locally on your computer’s hard drive. <strong>Do not save your project to any cloud storage!</strong></p>
+</div>
+</div>
+<p>Click “Create Project” to clone the repo and open it in RStudio.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github-rstudio-repo/rstudio-clone-repo.png" class="img-fluid figure-img"></p>
+<figcaption>Clone repo in RStudio</figcaption>
+</figure>
+</div>
+<p>When you view your new project in RStudio, you’ll see it matches the contents of your GitHub repo. The Files pane should show the <code>.gitignore</code> and <code>README.md</code> files, as well as a new <code>.Rproj</code> file that RStudio created for you.</p>
+<p>Open your README.md file in RStudio to see the markdown content. You can click “Preview” to render markdown to HTML, which is how it will appear on the repo’s GitHub page.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github-rstudio-repo/rstudio-repo-readme.png" class="img-fluid figure-img"></p>
+<figcaption>RStudio project with README</figcaption>
+</figure>
+</div>
+</section>
+<section id="rstudio-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-to-github">RStudio to GitHub</h2>
+<!-- Edit a file in RStudio. Commit and Push from RStudio to GitHub. View it on GitHub. -->
+<section id="edit-your-.gitignore-file" class="level3">
+<h3 class="anchored" data-anchor-id="edit-your-.gitignore-file">Edit your .gitignore file</h3>
+<p>Rendering to HTML will add the <code>README.html</code> file to your project directory. Open the Git pane in RStudio to see that this file is listed as an untracked file. Git has detected a difference between the contents of the last commit and the work you have done in your project directory, namely adding this new file.</p>
+<p>This HTML file is generated automatically by GitHub when it renders your <code>README.md</code> file, so it doesn’t need to be synced with GitHub or tracked by Git.</p>
+<p>Open the <code>.gitignore</code> file in RStudio. This file tells git which files and folders to ignore when detecting and committing changes.</p>
+<p>If you initialized your repo using the R gitignore template, it should already include common files and folders to ignore for R projects, like:</p>
+<pre><code># History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+.RDataTmp
+
+# User-specific files
+.Ruserdata</code></pre>
+<p>Add the following lines to the <code>.gitignore</code> file to ignore the generated HTML file:</p>
+<pre><code># Autogenerated files
+README.html</code></pre>
+<p>Save the <code>.gitignore</code> file. Take another look at your Git pane. The <code>README.html</code> file should no longer be listed as an untracked file, and you should see a new file appear in the list of detected differences: <code>.gitignore</code>.</p>
+<p>You should also see the .Rproj file itself in the Git pane. This is a file that RStudio automatically creates for every project with settings specific to your RStudio environment. I prefer not to track or sync this file, since it can contain user-specific settings that may not be relevant to other users of the repo.</p>
+<p>The R gitignore template does not include this file by default, but does already have a section for RStudio files. Add your .Rproj file to that section by adding <code>*.Rproj</code> to your <code>.gitignore</code> file:</p>
+<pre><code># RStudio files
+.Rproj.user/
+*.Rproj</code></pre>
+<p>By including the <code>*</code> wildcard character, Git will ignore all files with the <code>.Rproj</code> extension. This is more relevant for other file types, but is nice here as a favor to anyone cloning your project. They may give their R project a different name, which would change the .Rproj filename. Listing out the specific filename would not ignore their file, but using the wildcard will.</p>
+<p>Save the <code>.gitignore</code> file again, and notice that the <code>.Rproj</code> file has disappeared from the Git pane.</p>
+</section>
+<section id="commit-your-changes-and-push-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="commit-your-changes-and-push-to-github">Commit your changes and push to GitHub</h3>
+<p>In the Git pane, check the box next to <code>.gitignore</code> to stage the change. “Stage” means to prepare the change to be committed. Only staged files will be included in the next commit.</p>
+<p>In this case, we have only made changes to one file, so we are staging that one file. If you have made changes to multiple files, you can choose to only stage some of them. This is useful if some of the changes you made are not ready to be committed, or if your changes are unrelated and you want to commit them separately with different explanations in the commit messages.</p>
+<p>Click the “Commit” button to open the Review Changes dialog. Selecting the gitignore file allows you to see all the changes you made to it since the last commit.</p>
+<p>Make sure that the box next to <code>.gitignore</code> is checked in the dialog, indicating that it is staged for commit. If you forget to stage/unstage files in the Git pane, you can still do so here.</p>
+<p>Add a brief, informative commit message:</p>
+<pre><code>add .Rproj and README.html to .gitignore</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github-rstudio-repo/rstudio-commit-dialog.png" class="img-fluid figure-img"></p>
+<figcaption>Commit dialog</figcaption>
+</figure>
+</div>
+<p>Click the “Commit” button in the dialog to finalize the commit. You’ll see a new dialog summarizing what was included.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github-rstudio-repo/rstudio-commit-success.png" class="img-fluid figure-img"></p>
+<figcaption>Commit summary dialog</figcaption>
+</figure>
+</div>
+<p>Click “Close” to return to the Review Changes dialog, which should no longer list any staged or unstaged changed files. Instead, you should see the message: “Your branch is ahead of ‘origin/main’ by 1 commit.” This means that you have made a commit in your local repo that has not yet been pushed to the remote repo on GitHub. You can confirm this by refreshing your repo’s GitHub page, which will be unchanged.</p>
+<p>To actually sync your changes to GitHub, click the “Push” button in the Git pane. You’ll see another dialog confirming that the push was successful. This dialog will also show any warnings or errors if the push failed.</p>
+<p>Back in the Review Changes window, the message about your branch being ahead of ‘origin/main’ should be gone, indicating that your local and remote repos are now in sync.</p>
+<p>Confirm this by refreshing your repo’s GitHub page. You should see a few changes:</p>
+<ol type="1">
+<li>The commit you just made is listed above the file list</li>
+<li>The commit message is also displayed next to the <code>.gitignore</code> file, but not the README file, since you did not make any changes to that file in RStudio.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github-rstudio-repo/github-after-push.png" class="img-fluid figure-img"></p>
+<figcaption>GitHub after push</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="github-to-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="github-to-rstudio">GitHub to RStudio</h2>
+<!-- Edit a file on GitHub. Commit from GitHub. Pull from RStudio. View it in RStudio. -->
+<p>You can do the same process in reverse, making changes on GitHub and pulling them into RStudio. In practice, there is rarely good reason to do this, but it’s a good way to get the hang of how pulling and pushing works.</p>
+<section id="edit-your-readme-file-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="edit-your-readme-file-on-github">Edit your README file on GitHub</h3>
+<p>On the repo’s page, click on the <code>README.md</code> file to view it. Click the pencil icon in the top right corner to directly edit the text file.</p>
+<p>Make the following changes to the file directly in the browser editor:</p>
+<ol type="1">
+<li>Change the level 1 heading (your repo’s name) to title case.</li>
+<li>Add a level 2 heading for “Overview”.</li>
+<li>Edit the brief description to be a complete sentence (or sentence) using sentence case.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github-rstudio-repo/github-edit-readme.png" class="img-fluid figure-img"></p>
+<figcaption>Edit README on GitHub</figcaption>
+</figure>
+</div>
+</section>
+<section id="commit-your-changes-and-pull-to-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="commit-your-changes-and-pull-to-rstudio">Commit your changes and pull to RStudio</h3>
+<p>Click the green “Commit changes” button and add a commit message (e.g., <code>Improve README formatting</code>). Leave the extended description blank, and leave “commit directly to the main branch” selected. Click the “Commit changes” button to finalize the commit.</p>
+<p>Back on the repo’s page, you should see your newest commit message replace the previous one and appear next to the README.md file. Your changes to the file should also be reflected in the rendered view below the file list.</p>
+<p>Go back to RStudio and open the Git pane. You won’t see any changes to your files, and unlike when you went from RStudio to GitHub, you <em>won’t</em> see any indication that your local repo is now 1 commit behind the remote repo.</p>
+<p>To sync your local repo with the remote repo, click the “Pull” button in the Git pane.</p>
+<p>The Git Pull dialog will show you a summary of the pull, including the strategy it used to merge the changes (in this case, a “fast-forward” merge unless you’ve made other changes in RStudio).</p>
+<p>You can now open the updated README.md file in the Files pane to see the changes you made on GitHub.</p>
+</section>
+</section>
+<section id="review-your-commit-history" class="level2">
+<h2 class="anchored" data-anchor-id="review-your-commit-history">Review your commit history</h2>
+<p>In the Git pane, click the “History” button to view your commit history. This is actually the same “Review Changes” window from when you committed changes, just toggled to a different view (top left corner). You should see 3 commits in order of newest to oldest:</p>
+<ol type="1">
+<li>The readme change you made on GitHub</li>
+<li>The .gitignore change you made in RStudio</li>
+<li>The initial commit made when you created the repo</li>
+</ol>
+<p>Click any of these commits to see the changes that were included in that commit.</p>
+</section>
+<section id="create-and-resolve-a-conflict" class="level2">
+<h2 class="anchored" data-anchor-id="create-and-resolve-a-conflict">Create and Resolve a Conflict</h2>
+<!-- Create a conflict by making and committing a change in RStudio and a different (conflicting) change on GitHub. Resolve the conflict in RStudio. -->
+<p>To practice resolving merge conflicts, create a simple conflict by making and committing a change in RStudio and a different (conflicting) change on GitHub.</p>
+<p>To make this as simple and clear as possible, you’ll make example, unrealistic changes to the README.md file in both places.</p>
+<section id="make-and-commit-a-change-in-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="make-and-commit-a-change-in-rstudio">Make and commit a change in RStudio</h3>
+<p>In RStudio, open the <code>README.md</code> file and add a new section with a level 2 heading for “Conflicting Changes”. Add a sentence under this heading indicating that you made this change in RStudio:</p>
+<pre><code>## Conflicting Changes
+
+This change was made in RStudio.</code></pre>
+<p>Save, stage, and commit this change with the message <code>example change with RStudio</code>, but <strong>do not push yet</strong>.</p>
+</section>
+<section id="make-and-commit-a-conflicting-change-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="make-and-commit-a-conflicting-change-on-github">Make and commit a conflicting change on GitHub</h3>
+<p>On GitHub, open README.md in the browser, and under the same heading, add instead:</p>
+<pre><code>## Conflicting Changes
+
+This change was made on GitHub.</code></pre>
+<p>Commit directly to the main branch with the message <code>example change on GitHub</code>.</p>
+</section>
+<section id="try-to-push-pull-from-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="try-to-push-pull-from-rstudio">Try to Push &amp; Pull from RStudio</h3>
+<p>Back in RStudio, click Push in the Git pane. Instead of a summary of the push, you’ll see an error message that the push was rejected.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github-rstudio-repo/rstudio-push-failure.png" class="img-fluid figure-img"></p>
+<figcaption>Push rejected error</figcaption>
+</figure>
+</div>
+<p>The dialog suggests that your changes can’t be pushed because the remote repository has conflicting changes that must be pulled first.</p>
+<p>Per this suggestion, click the “Pull” icon in the Git pane or Review Changes window to pull the changes from GitHub. Git will attempt to merge, but will report a merge conflict due to “divergent branches” that must be reconciled.</p>
+<p><img src="images/github-rstudio-repo/rstudio-pull-failure.png" class="img-fluid" alt="Merge conflict error"> In the Git pane (not the Review Changes window), notice that there is a dropdown arrow next to the Pull icon. Click this arrow and “Pull with Rebase.”</p>
+<p>This will attempt to reapply your local commit on top of the pulled commit from GitHub. Sometimes this will be enough to resolve the conflict automatically, but in this case, it will still report a merge conflict that you need to resolve manually. The dialog gives you some hints on how to resolve the conflict, but they may not make a lot of sense to you right now.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/github-rstudio-repo/rstudio-pull-rebase-failure.png" class="img-fluid figure-img"></p>
+<figcaption>Merge conflict with rebase error</figcaption>
+</figure>
+</div>
+<p>Close the dialog and return to the Git pane. You’ll see that:</p>
+<ol type="1">
+<li>You’re not in the “main” branch anymore, but in a special “rebasing main” state.</li>
+<li>The push and pull buttons are disabled.</li>
+<li>The README.md file is listed as having a conflict that needs to be resolved. The orange “U” indicates that the file is “unmerged.”</li>
+</ol>
+</section>
+<section id="identify-the-conflict" class="level3">
+<h3 class="anchored" data-anchor-id="identify-the-conflict">Identify the Conflict</h3>
+<p>If you already have the README file open, you’ll see text from both versions of the file, along with special marker lines indicating the conflict.</p>
+<p>Open RStudio’s Terminal pane (not the console!) and type:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will:</p>
+<ol type="1">
+<li>Show you the ongoing status of your repo: <code>interactive rebase in progress; onto 02bb8e3</code></li>
+<li>Give you some hints on how to complete or abandon the rebase (using terminal commands)</li>
+<li>Indicate which files are unmerged and need to be resolved: <code>both modified: README.md</code></li>
+</ol>
+<p>Open README.md in RStudio if it isn’t open already. You’ll see the conflict marked with lines like:</p>
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+This change was made in RStudio.
+=======
+This change was made on GitHub.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; [commit-hash]</code></pre>
+<p>These markers show both versions of the change and indicate a conflict to be resolved manually.</p>
+<p>Thanks to the clear example changes, it’s easy to see that the text <em>above</em> the <code>===</code> line is the <em>local</em> commit made in RStudio, and the text <em>below</em> it is the remote commit made on GitHub. This is always the case: local changes are above the <code>===</code> line, and remote changes are below it.</p>
+</section>
+<section id="resolve-the-conflict-in-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="resolve-the-conflict-in-rstudio">Resolve the Conflict in RStudio</h3>
+<p>Edit the file to remove the marker lines (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;) and decide which content to keep, or combine both as appropriate. In this case, you can combine both changes:</p>
+<pre><code>## Conflicting Changes
+
+These changes were made in RStudio and on GitHub.</code></pre>
+<p>Save the file, go to the Git pane, stage the file, then commit. This is the same process as before, but notice the “no branch, rebasing main” message at the top of the pane. That tells you that even though you’re following the same general steps, Git is in a special state of merging files and handling things a bit differently.</p>
+<p>Use a commit message that indicates that you are resolving a merge conflict, e.g., <code>resolve merge conflict in README.md</code>. (We’ll come back to what the best commit message here would be in the last step!)</p>
+</section>
+<section id="complete-the-rebase" class="level3">
+<h3 class="anchored" data-anchor-id="complete-the-rebase">Complete the Rebase</h3>
+<p>Everything should now look normal again in the Git pane, except that you’re still in the “rebasing main” state. To complete the rebase and return to the main branch, go back to the Terminal pane and type:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase <span class="at">--continue</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Since we’ve already staged and committed the resolved file, this command will complete the rebase and return you to the main branch. If there were any other conflicts, it would prompt you to resolve them before continuing.</p>
+<p>Back in the Git pane, you should now see that you’re back on the main branch, and the push and pull buttons are enabled again. You’ll see the message that your branch is ahead of ‘origin/main’ by 1 commit, indicating that you have local changes that need to be pushed to GitHub. Complete the merge by clicking the Push button to sync your resolved changes to GitHub.</p>
+<p>Take another look the the GitHub page for your repo. If all has gone well, you should see your latest commit message indicating that you resolved the merge conflict, and the README.md file should show the combined changes.</p>
+</section>
+<section id="review-your-commit-history-1" class="level3">
+<h3 class="anchored" data-anchor-id="review-your-commit-history-1">Review your commit history</h3>
+<p>Everything is good to go, but take a look through your commit history one last time.</p>
+<p>On GitHub, click the “X commits” link above the file list to view the commit history. In RStudio, click the “History” button in the Git pane.</p>
+<p>In both places, you should see 5 commits in order of newest to oldest:</p>
+<ol type="1">
+<li>The merge conflict resolution commit</li>
+<li>The readme change (with conflict) you made on GitHub</li>
+<li>The formatting change (no conflict) you made on GitHub</li>
+<li>The gitignore additions (no conflict) you made in RStudio</li>
+<li>The initial commit made when you created the repo</li>
+</ol>
+<p>Notice what is missing: the commit you made in RStudio that caused the conflict.</p>
+<p>This commit is not in the history because it was effectively rewritten during the rebase process. Your commit message “example change with RStudio” is gone, and replaced by “resolve merge conflict in README.md”.</p>
+<p>This may or may not be what you want in practice, so be thoughtful about the commit you use to resolve the conflict. Imagine a scenario where the GitHub change was a minor typo fix, but your RStudio change was a substantial addition to your data analysis scripts. In that case, a message about <code>merge conflict</code> would not be a good representation of the important work you did in RStudio. It would be more informative to use a commit message that reflects the substantive change you made, and just note in the extended description that you resolved a merge conflict.</p>
+</section>
+</section>
+<section id="wrap-up" class="level2">
+<h2 class="anchored" data-anchor-id="wrap-up">Wrap-up</h2>
+<p>You’ve successfully created a GitHub repository, cloned it in RStudio, made changes in both environments, and resolved a merge conflict.</p>
+<p>These are the core skills you’ll need to effectively use Git and GitHub in your data science projects. Of course, things are never so simple in real project. Merge conflicts are famously infuriating and baffling, especially if you’re using Git in relatively limited contexts (like we do in this class). The more you do it, the more problems you’ll encounter, and the better you’ll get at both understanding what Git is trying (though perhaps failing) to do for you and how to fix it when things go terribly wrong.</p>
+<section id="major-takeaways" class="level3">
+<h3 class="anchored" data-anchor-id="major-takeaways">Major Takeaways</h3>
+<ol type="1">
+<li>Be diligent about keeping your local and remote repos in sync by regularly pulling and pushing changes.</li>
+<li>Follow the Git workflow: Pull changes when you sit down, commit frequently as you work, and push changes when you step away.</li>
+<li>Use clear, informative commit messages to document your changes and the context around them.</li>
+<li>Don’t freak out when you encounter merge conflicts. Try not to think of them as something going wrong, but something actually going very right! Git is doing its job by protecting you from accidentally overwriting changes.</li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

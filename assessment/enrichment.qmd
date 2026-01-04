@@ -30,6 +30,4 @@ Evidence may be in the form of a dedicated project (e.g., a debugging journal) o
 Points will be awarded based on overall quality and depth, which may look like creativity, independent learning, clear communication, thoughtful self-evaluation, or other dimensions depending on the nature of the activity.
 Your submission will include an opportunity for you to explain how the activity contributed to your learning and how many points you believe you have earned.
 
-The Canvas assignments include details on exactly how to submit and document different kinds of demonstrations.
-
 <!-- add examples from 2025 assessment repo, or put these on the menu page if I want to really formalize them -->

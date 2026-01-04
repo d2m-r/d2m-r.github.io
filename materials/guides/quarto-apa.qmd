@@ -1,0 +1,250 @@
+---
+title: Creating an APA7 Manuscript in Quarto
+---
+
+::: {.alert .alert-danger role="alert"}
+
+As of Winter 2025, the D2MR syllabus is switching from using the [papaja](https://github.com/crsh/papaja) package for knitting APA-formatted manuscript documents with R Markdown to [Quarto](https://quarto.org/) with the [apaquarto extension](https://wjschne.github.io/apaquarto/).
+
+Quarto is a little more streamlined and (as of now) is more actively maintained, and will likely be better suited for our purposes *but* I still highly recommend papaja!
+
+Since we are transitioning, this guide will be imperfect. Please let me know if you spot any issues I can add or correct!
+
+:::
+
+# Introduction
+
+### What is Quarto?
+
+[Quarto](https://quarto.org/) is an open-source publishing system. It was created by Posit (the RStudio people) to be the "next generation of R Markdown." A major strength of Quarto is that despite being largely premised on R Markdown, it is multilingual/language-agnostic. That means you can use a unified system to create content with R, Python, Julia, or Observable. We'll stick to R in this class, but the Quarto skills you learn should translate to these other languages.
+
+Quarto is very powerful and flexible. You can use it to create documents, presentations, manuscripts, dashboards, books, and websites (like this very website you're currently reading!).
+
+### What is apaquarto?
+
+In D2MR we will use Quarto with the [apaquarto extension](https://wjschne.github.io/apaquarto/) extension to produce dynamic APA7 formatted manuscripts[^1]. You write your paper in RStudio using [R Markdown](https://rmarkdown.rstudio.com/)[^2] then render it into a fully styled HTML, PDF, or Word document. It takes care of simple aesthetic stuff like formatting heading levels as well as fussier stuff like tables, figures, and citations.
+
+> But I'm not a psychologist!
+
+Well too bad! At least temporarily. In D2MR we'll use this extension and APA styling, but beyond this class you can use similar extensions to flavor Quarto with the [custom style and format of your choice] or even create your own. Like with the whole "language-agnostic" thing, the skills you learn from using the APA extension will carry over.
+
+> I *am* a psychologist but I hate quarto!
+
+Well, ok I guess. You still have to use it in this class. Outside and after D2M, give the [papaja](https://github.com/crsh/papaja) package a try. It's what our syllabus used to use and has a lot of strengths.
+
+### Markdown vs Visual Editor
+
+In RStudio you can write markdown documents in either the source or visual editor. The source editor is a plain text file; it works like Mac's TextEdit, Windows Notepad, or Sublime Text. The visual editor is [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) and will be much more intuitive for you if you've never worked in a markdown language. 
+
+I strongly discourage using it before you feel comfortable working with Pandoc Markdown in plain text. While Quarto does play nicely with the visual editor, it's not perfect. What you see in the editor can be very different from actual the pdf/Word/HTML output, and switching back and forth between the two editors can make some surprising and potentially problematic changes to your document that you might not notice.
+
+### Documentation
+
+The rest of this page will walk you through how to set up and use Quarto in D2M, but you should get familiar with the extensive documentation for [Quarto](https://quarto.org/docs/guide/) and [apaquarto](https://wjschne.github.io/apaquarto/writing.html). They should be your first stop for troubleshooting.
+
+# Getting started
+
+Before starting, make sure you have correctly installed R and RStudio and have integrated RStudio with GitHub.
+
+[RStudio & GitHub Setup](rstudio-github.qmd){.btn .btn-info}
+
+
+### Step 1: Confirm Quarto is installed.
+
+If you're using a recent release of RStudio (post v2022.07) it should be installed automatically. You can confirm by running
+
+```
+quarto --version
+```
+
+in Terminal or the Terminal tab in RStudio. If needed, [download and install Quarto CLI](https://quarto.org/docs/get-started/). Note that this works like installing an application, not an R package.  
+
+### Step 2: Load the quarto R Package.
+
+The `quarto` package is not the same as Quarto itself (from step 1). It's a collection of functions to make working with Quarto and R more convenient. You can load it like any other package with: `library(quarto)`. If necessary, install or update it with `install.packages("quarto")`. 
+
+### Step 3: Install *apaquarto* to your project.
+
+When you install an R *package*, it is available to load in any R session. This Quarto *extension* is installed at the project/directory level. It adds required files within the working directory of the active project, so you'll do this step any time you want to use the extension with a new project.
+
+There are two functions in the quarto package that can be used to install the extension, each with slightly different results: 
+
+The `quarto_use_template()` function installs all necessary files -- including some very helpful example documents -- into the current working directory. The catch is that the directory needs to be completely empty. When you create an RStudio project, an .Rproj file is created in it's root directory (i.e., it's not empty), but there are a few ways of working around this. The `quarto_add_extension()` function will let you convert an existing (non-empty) directory into an apaquarto project, but it won't create exactly the same files as with `quarto_use_template()`. Specifically, it won't create the helpful example documents. What you do will depend on the current state of your repo.
+
+::: {.accordion #install-apaq} 
+
+::: {.accordion-item}
+::: {.accordion-header .titlebox}
+
+Where are you in your project creation?
+
+:::
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .lightbox1 type="button" data-bs-toggle="collapse" data-bs-target="#option1" aria-expanded="false" aria-controls="option1"}
+
+**Option 1:** I haven't created anything yet.
+
+
+:::
+:::
+
+::: {#option1 .accordion-collapse .collapse data-bs-parent="#install-apaq"}
+::: {.accordion-body}
+
+
+Start a "project" without an RStudio Project. In Finder/File Explorer/the Files tab in RStudio/whatever, create a new (empty) folder that will become your project's local repo. In RStudio, set your working directory to that newly created folder's path with the code:
+
+```
+setwd("~/my/example/project")
+```
+
+Alternatively, you can navigate to the folder in the RStudio files tab, confirm that there are no files within, and select "Set working directory" from the "More" dropdown.
+
+In your console, run:
+
+```
+quarto::quarto_use_template("wjschne/apaquarto", no_prompt = TRUE)
+```
+
+to populate all necessary files[^3]. Now you can turn this directory into an R Project by going to "New Project..." and choosing the "Existing Directory" option.
+
+Once your RStudio project is configured, you'll need to link it to a fresh[^4] GitHub repo. [Click here](rstudio-github.html#rstudio-to-github) to see how to create a new GitHub repo directly from RStudio or [click here](rstudio-github.html#link-existing) if you already have an empty GitHub repo you want to link up to your new project.
+
+:::
+:::
+    
+:::    
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .mainbox1 type="button" data-bs-toggle="collapse" data-bs-target="#option2" aria-expanded="false" aria-controls="option2"}
+
+**Option 2:** I already have an RStudio Project and/or a non-empty directory connected to a GitHub repo. I just want the files necessary to make the extension work.
+
+:::
+:::
+
+::: {#option2 .accordion-collapse .collapse data-bs-parent="#install-apaq"}
+::: {.accordion-body}
+
+Check that your project directory is currently set as your working directory with `getwd()` (and if not, set it).
+
+Run the following code in your R console:
+
+```
+quarto::quarto_add_extension("wjschne/apaquarto")
+```
+
+This will add and `_extensions` folder containing all required content. From here, you should be able to render any existing or new .qmd files in your top level directory. 
+
+This method assumes you can do the rest of the setup for your project. For example, you will need to add a bibliography (.bib) file. You'll also need to manually set the YAML options of any .qmd to be compatible. The extension's [documentation](https://wjschne.github.io/apaquarto/installation.html#after-installing-apaquarto) provides this minimal example of what that YAML header might look like:
+
+```
+---
+title: "My Paper's Title: A Full Analysis of Everything"
+shorttitle: "My Paper's Title"
+author:
+  - name: W. Joel Schneider
+    corresponding: true
+    orcid: 0000-0002-8393-5316
+    email: schneider@temple.edu
+    affiliations:
+      - name: Temple University
+        department: College of Education and Human Development
+        address: 1301 Cecil B. Moore Ave.
+        city: Philadelphia
+        region: PA
+        postal-code: 19122-6091
+abstract: "This is my abstract."
+keywords: [keyword1, keyword2]
+author-note:
+  disclosures:
+    conflict of interest: The author has no conflict of interest to declare.
+bibliograpy: mybibfile.bib     
+format:
+  apaquarto-docx: default
+  apaquarto-html: default
+  apaquarto-pdf: default
+---
+```
+
+
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .darkbox1 type="button" data-bs-toggle="collapse" data-bs-target="#option3" aria-expanded="false" aria-controls="option3"}
+
+**Option 3:** I already have an RStudio Project and/or a non-empty directory connected to a GitHub repo. I want to install the full extension, including the example files.
+
+:::
+:::
+
+::: {#option3 .accordion-collapse .collapse data-bs-parent="#install-apaq"}
+::: {.accordion-body}
+
+This is not hard to do, but takes a small workaround. If you run the `quarto_use_template()` function in your RStudio project folder, you'll get the error message:  
+
+```
+ERROR: Unable to install in /Users/your/project/path as the directory isn't empty.
+```
+
+You could instead run the `quarto_add_extension()` function (like in the previous option), which does work with non-empty directories, but you would not have any template or example files to start from.
+
+Create a temporary empty directory within your existing project. In the top level of your project/repo, make a new folder called `temp` (or whatever you like). Now follow the instructions for Option 1: Set that new, totally empty folder as your working directory, run the code:
+
+```
+quarto::quarto_use_template("wjschne/apaquarto", no_prompt = TRUE)
+```
+
+In Finder (or equivalent), find the temp folder you created. You'll see the `_extensions` folder along with all the example and template files added within it. Move *everything* in that temp folder to the level above it. Delete the now empty temp folder.
+
+This is not the intended method for using the extension, but it has worked very reliably for me. Still, be prepared to troubleshoot minor issues. 
+
+:::
+:::
+
+:::
+
+::: 
+
+# Setting up your manuscript
+
+Coming soon!
+<!--
+### Pre-req: examine the example.qmd
+
+### Make the document
+
+name it good
+
+### Set up a minimal YAML
+
+do a good job
+
+### Make a .bib file
+
+it can be empty for now
+-->
+
+
+
+
+
+[^1]: Quarto actually uses the term "manuscript" differently. A [Quarto manuscript](https://quarto.org/docs/manuscripts/) is a scholarly article in the output format of a website, [like this](https://quarto-ext.github.io/manuscript-template-jupyter/). What we'll call a manuscript in our class is more accurately a [Quarto *document*](https://quarto.org/docs/output-formats/all-formats.html), which is pretty generic.
+
+[^2]: Ok technically it's not R Markdown, it's Quarto, but for our purposes it's functionally the same. I'm going to call it R Markdown for...Reasons. I'll point out in class where things deviate.
+
+[^3]: The `no_prompt = TRUE` argument bypasses the prompt to trust the creator. If you don't include this, just type "Yes" or "y" when prompted and hit enter.
+
+[^4]: In theory it does not need to be completely empty, it just needs to not have any merge conflicts. In experimenting with this I've run into odd issues with nonempty repos, so I suggest starting fully from scratch if you're starting a new project anyway.
+

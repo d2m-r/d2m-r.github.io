@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RStudio Workflow – Data to Manuscript in R</title>
+<title>RStudio &amp; Quarto Workflow Assessment – Data to Manuscript in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-15c96ae875d60a9101c25b0bc06c806c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-674040da490b9a8d4816ee8e29c91e3e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -160,8 +160,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Slides</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../materials/misc-materials.html">
- <span class="dropdown-text">Misc. Materials</span></a>
+    <a class="dropdown-item" href="../../materials/course-resources.html">
+ <span class="dropdown-text">Course Resources</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../materials/resources.html">
@@ -192,15 +192,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#basic-class-expectation-no-points" id="toc-basic-class-expectation-no-points" class="nav-link active" data-scroll-target="#basic-class-expectation-no-points"><strong>Basic Class Expectation, No Points</strong></a></li>
+  <li><a href="#points" id="toc-points" class="nav-link" data-scroll-target="#points"><strong>4 Points</strong></a></li>
+  <li><a href="#points-1" id="toc-points-1" class="nav-link" data-scroll-target="#points-1"><strong>5 Points</strong></a></li>
+  <li><a href="#points-2" id="toc-points-2" class="nav-link" data-scroll-target="#points-2"><strong>6 Points</strong></a>
+  <ul class="collapse">
+  <li><a href="#additional-evidence-beyond-assignments" id="toc-additional-evidence-beyond-assignments" class="nav-link" data-scroll-target="#additional-evidence-beyond-assignments"><strong>Additional Evidence Beyond Assignments</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">RStudio Workflow</h1>
+<h1 class="title">RStudio &amp; Quarto Workflow Assessment</h1>
 </div>
 
 
@@ -217,39 +229,98 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- DRAFT -- this is just a quick copy/paste from a list somewhere else. need to make is an actual page -->
-<!-- note somewhere that there's a version of this standard for both quarters, with lots of overlap but also higher expectations in II -->
-<p>Additional guidelines for demonstrating Standard 1: RStudio + Quarto Workflow in your assignments:</p>
-<p><strong>RStudio + Quarto workflow</strong> Create an RStudio project for course work, use relative paths, and knit simple Quarto documents that combine code and narrative.</p>
-<p>basic (4 points)</p>
+<p>This course requires all assignments to be completed using RStudio and Quarto, with GitHub Classroom submissions demonstrating basic proficiency. However, GitHub Classroom submissions alone are not sufficient to meet Core Standard 1: RStudio + Quarto workflow.</p>
+<p>This document outlines how to demonstrate Core Standard 1 by showing more advanced skills in your assignments, including effective project organization, comprehensive use of Quarto features, and professional documentation practices. Use these guidelines as a checklist to ensure you are meeting the expectations for your desired point level.</p>
+<p>These guidelines apply to all assignments unless specified elsewhere.</p>
+<section id="basic-class-expectation-no-points" class="level2">
+<h2 class="anchored" data-anchor-id="basic-class-expectation-no-points"><strong>Basic Class Expectation, No Points</strong></h2>
+<p>To fully participate in the class, you need to have simple proficiency with RStudio and Quarto. You are expected to be able to execute the following workflow, separately from the core standard:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Create an RStudio project for the assignment by cloning the GitHub Classroom assignment or your own repo.</label></li>
+<li><label><input type="checkbox">Create an RStudio project (typically by cloning a GitHub Classroom assignment repo)</label></li>
+<li><label><input type="checkbox">Use relative paths to read and write files within your project</label></li>
+<li><label><input type="checkbox">Write a Quarto document that combines code chunks and narrative text</label></li>
+<li><label><input type="checkbox">Knit the .qmd file to an output format (.html, .pdf, or .docx) without errors</label></li>
+</ul>
+</section>
+<section id="points" class="level2">
+<h2 class="anchored" data-anchor-id="points"><strong>4 Points</strong></h2>
+<p>The minimum requirements to demonstrate Core Standard 1 at the 4-point level for an assignment are:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Create an RStudio project for the assignment by cloning the GitHub Classroom assignment or your own repo</label></li>
 <li><label><input type="checkbox">Use multiple markdown elements (e.g., heading levels, lists, text styling, etc.) in your text outside code chunks</label></li>
-<li><label><input type="checkbox">Include labels and at least one chunk option (e.g., echo, warning, message, etc.) in <em>all</em> your R code chunks.</label></li>
-<li><label><input type="checkbox">Knit the .qmd to a .html, .docx, or .pdf without errors or missing pieces, saving the output file in your project folder.</label></li>
-<li><label><input type="checkbox">Include at least one line of code that <em>writes</em> to a relative path and one that <em>reads</em> to a relative path</label>
+<li><label><input type="checkbox">Include labels and at least one chunk option (e.g., echo, warning, message, etc.) in <em>all</em> your R code chunks</label>
 <ul>
-<li>Some assignments have this requirement built-in, but for some you may need to add this yourself. It’s ok if it’s just arbitrarily reading and writing just to meet the requirement.</li>
-<li>This has to be code <em>you write yourself.</em> If an assignment comes pre-loaded with code that reads/writes to relative paths, that is not demonstrating your ability to do this yourself. If it <em>prompts</em> you to write the code (e.g., “Use <code>read_csv()</code> to read in the data from your data subdirectory”), that is you writing the code yourself and is acceptable.</li>
+<li>Chunk labels should be unique and informative, reflecting the purpose of the code</li>
+<li>Chunk options should be used appropriately to control output visibility and formatting</li>
+</ul></li>
+<li><label><input type="checkbox">Knit the .qmd to a .html, .docx, or .pdf without errors or missing pieces, saving the output file in your project folder</label></li>
+<li><label><input type="checkbox">Include at least one line of code that <em>writes</em> to a relative path and one that <em>reads</em> from a relative path</label>
+<ul>
+<li>Some assignments have this requirement built-in, but for some you may need to add this yourself. It’s acceptable to add code that arbitrarily reads and writes just to meet the requirement</li>
+<li>This has to be code <em>you write yourself.</em> If an assignment comes pre-loaded with code that reads/writes to relative paths, that does not demonstrate your ability to do this. If it <em>prompts</em> you to write the code (e.g., “Use <code>read_csv()</code> to read in the data from your data subdirectory”), that is you writing the code yourself and is acceptable</li>
 </ul></li>
 </ul>
-<p>intermediate (5 points) - [ ]</p>
-<p>advanced (6 points) - [ ]</p>
+</section>
+<section id="points-1" class="level2">
+<h2 class="anchored" data-anchor-id="points-1"><strong>5 Points</strong></h2>
+<p>To demonstrate Core Standard 1 at the 5-point level for an assignment, you must go beyond the basic workflow and show more sophisticated use of RStudio and Quarto features:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Complete all requirements for the 4-point level</label></li>
+<li><label><input type="checkbox">Create a reasonable directory structure for your RStudio project, with at least 2 subdirectories (e.g., <code>data/</code>, <code>scripts/</code>, <code>output/</code>, <code>figures/</code>, etc.) to organize your files</label>
+<ul>
+<li>The directories should be meaningfully named to reflect their contents</li>
+<li>Use these directories consistently throughout your project with appropriate relative paths</li>
+</ul></li>
+<li><label><input type="checkbox">Use at least 2 different chunk options across your document to control code execution and output display (e.g., <code>echo</code>, <code>warning</code>, <code>message</code>, <code>include</code>, <code>eval</code>, <code>fig-width</code>, <code>fig-height</code>, <code>fig-cap</code>, etc.)</label>
+<ul>
+<li>Options should be used purposefully, not arbitrarily</li>
+</ul></li>
+<li><label><input type="checkbox">Demonstrate more advanced markdown formatting, including at least 3 of the following:</label>
+<ul>
+<li>Multiple heading levels to create a clear document hierarchy</li>
+<li>Both bulleted and numbered lists</li>
+<li>Text styling (bold, italic, code formatting)</li>
+<li>Block quotes or callouts</li>
+<li>Hyperlinks</li>
+<li>Tables</li>
+</ul></li>
+<li><label><input type="checkbox">Include YAML header options beyond just title and format to control document behavior and appearance (e.g., <code>toc: true</code>, <code>toc-depth</code>, <code>number-sections</code>, <code>theme</code>, <code>highlight-style</code>, etc.)</label></li>
+<li><label><input type="checkbox">Ensure your knitted output is polished and professional, with no stray output, appropriate formatting, and clear presentation</label></li>
+</ul>
+</section>
+<section id="points-2" class="level2">
+<h2 class="anchored" data-anchor-id="points-2"><strong>6 Points</strong></h2>
+<p>To demonstrate Core Standard 1 at the 6-point level for an assignment, you must meet all requirements for the 5-point level and go beyond them in meaningful ways. There is no fixed list of additional requirements for the 6-point level; rather, you should aim to exceed expectations in multiple areas of your RStudio and Quarto workflow. Some ways you might do this include:</p>
+<ul>
+<li>Creating a more sophisticated project organization with nested subdirectories and clear documentation of the structure</li>
+<li>Configuring your YAML header with options beyond the defaults (e.g., <code>toc</code>, <code>number-sections</code>, <code>theme</code>, <code>code-fold</code>, <code>df-print</code>, etc.)</li>
+<li>Using advanced chunk options to create more complex behaviors (e.g., conditional execution, caching, cross-referencing figures and tables)</li>
+<li>Implementing custom YAML configurations for specialized output (e.g., APA formatting with apaquarto, custom CSS/LaTeX styling, parameterized reports)</li>
+<li>Using inline R code extensively to create dynamic narrative text that updates automatically with your data</li>
+<li>Creating multiple output formats from the same .qmd file with format-specific customization</li>
+<li>Demonstrating advanced Quarto features such as tabsets, margin content, cross-references, or custom layouts</li>
+<li>Including comprehensive code comments and markdown documentation that explain your workflow and decisions</li>
+<li>Creating a detailed <a href="http://README.md">README.md</a> file that documents your project structure, dependencies, and workflow</li>
+</ul>
+<section id="additional-evidence-beyond-assignments" class="level3">
+<h3 class="anchored" data-anchor-id="additional-evidence-beyond-assignments"><strong>Additional Evidence Beyond Assignments</strong></h3>
 <p>You can include additional evidence beyond what is contained in the assignment repo to demonstrate your proficiency with RStudio + Quarto workflow. Examples of additional evidence include:</p>
 <ul>
 <li>Screenshots showing effective use of RStudio, like the organization of files and folders or customization of the RStudio interface</li>
 <li>Brief explanation of how you manage your RStudio projects and Quarto documents for different assignments</li>
-<li>Short screen recording demonstrating your RStudio workflow, including how you create projects, manage files, and knit Quarto documents, accompanied by a brief written description of the video.</li>
-<li>Written reflection (200-300 words) on your experience using RStudio and Quarto for assignments, highlighting any challenges you faced and how you overcame them.</li>
-<li>Comparison of different output formats (HTML, PDF, Word) generated from the same Quarto document, discussing the pros and cons of each format for different types of assignments.</li>
-<li>Summary of best practices or tips and tricks you’ve developed for using RStudio and Quarto effectively in your coursework, such as keyboard shortcuts, package management, or version control integration.</li>
-<li>Demonstration of advanced Quarto features, such as parameterized reports, custom templates, or interactive elements, showcasing your ability to enhance your documents beyond basic functionality.
+<li>Short screen recording demonstrating your RStudio workflow, including how you create projects, manage files, and knit Quarto documents, accompanied by a brief written description of the video</li>
+<li>Written reflection (200-300 words) on your experience using RStudio and Quarto for assignments, highlighting any challenges you faced and how you overcame them</li>
+<li>Comparison of different output formats (HTML, PDF, Word) generated from the same Quarto document, discussing the pros and cons of each format for different types of assignments</li>
+<li>Summary of best practices or tips and tricks you’ve developed for using RStudio and Quarto effectively in your coursework, such as keyboard shortcuts, package management, or version control integration</li>
+<li>Demonstration of advanced Quarto features, such as parameterized reports, custom templates, or interactive elements, showcasing your ability to enhance your documents beyond basic functionality
 <ul>
-<li>What counts as “advanced” will differ by quarter. Anything on the syllabus for D2M-R II will count as advanced for D2M-R I (e.g., using the apaquarto extension, citing with BibTeX, using chunk options to customize figure output). In D2M-R II you will be expected to go beyond what is covered in the syllabus (e.g., creating a website with Quarto and GitHub pages, creating an interactive dashboard, using Quarto extensions other than apaquarto).</li>
+<li>What counts as “advanced” will differ by quarter. Anything on the syllabus for D2M-R II will count as advanced for D2M-R I (e.g., using the apaquarto extension, citing with BibTeX, using chunk options to customize figure output). In D2M-R II you will be expected to go beyond what is covered in the syllabus (e.g., creating a website with Quarto and GitHub pages, creating an interactive dashboard, using Quarto extensions other than apaquarto)</li>
 </ul></li>
 </ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

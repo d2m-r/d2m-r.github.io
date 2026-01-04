@@ -1055,7 +1055,7 @@ ___
 
 ::: credit
 
-Artwork by @allison_horst"
+Artwork by \@allison_horst
 
 ::: 
 
@@ -1424,7 +1424,7 @@ How do I get someone to answer?
 
 -   In-class workshops and lectures
     -   *You have to actually ask a question to get an answer!*
--   D2M-R Slack
+-   [D2M-R Slack](d2m-r.slack.com)
 -   Study groups
 -   Office hours
 

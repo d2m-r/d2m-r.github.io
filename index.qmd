@@ -64,8 +64,8 @@ View course policies, assessment, and other details in the [syllabus](syllabus/i
     -   [Textbook](github.com/d2m-r/book) - a collaborative work in progress
     -   [Slides](materials/slides.qmd)
     -   [Student Hub](github.com/d2m-r/student-hub) - scripts, templates, in-class materials, etc.
--   [Slack workspace]() - moderated, requires UChicago email
--   [Canvas]()
+-   [Slack workspace](d2m-r.slack.com) - moderated, requires UChicago email
+-   [Canvas](https://canvas.uchicago.edu/courses/68272) - grade tracking, accountability/engagement submissions
 -   [Example repo: schelling-games](https://github.com/d2m-r/schelling-games)
 
 

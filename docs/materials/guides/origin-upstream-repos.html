@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Creating Your Assessment Repo Clone – Data to Manuscript in R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-674040da490b9a8d4816ee8e29c91e3e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Data to Manuscript in R</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syllabus" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Syllabus</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-syllabus">    
+        <li>
+    <a class="dropdown-item" href="../../syllabus/structure.html">
+ <span class="dropdown-text">Course Structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../syllabus/communication.html">
+ <span class="dropdown-text">Communication</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../syllabus/ai-policy.html">
+ <span class="dropdown-text">AI Use</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../syllabus/climate.html">
+ <span class="dropdown-text">Climate &amp; Inclusion</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-assessment" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Assessment</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-assessment">    
+        <li>
+    <a class="dropdown-item" href="../../assessment/overview.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/objectives.html">
+ <span class="dropdown-text">Learning Objectives</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/accountability.html">
+ <span class="dropdown-text">Accountability</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/engagement.html">
+ <span class="dropdown-text">Community Engagement</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/menu.html">
+ <span class="dropdown-text">Project Menu</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/enrichment.html">
+ <span class="dropdown-text">Enrichment Activities</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../assessment/data-project.html">
+ <span class="dropdown-text">Integrative Data Project</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-materials" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Materials</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-materials">    
+        <li>
+    <a class="dropdown-item" href="../../github.com/d2m-r/book/index.html">
+ <span class="dropdown-text">Textbook (WIP)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../materials/slides.html">
+ <span class="dropdown-text">Slides</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../materials/course-resources.html">
+ <span class="dropdown-text">Course Resources</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../materials/resources.html">
+ <span class="dropdown-text">External Resources</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../materials/finding-data.html">
+ <span class="dropdown-text">Finding Data</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../d2m-r.github.io"> 
+<span class="menu-text">FAQ</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <div id="quarto-announcement" data-announcement-id="48511bd1606019110bae8cd7f2578900" class="alert alert-danger hidden"><i class="bi bi-exclamation-octagon-fill quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>The Winter 2026 home for D2M-R I is still under construction!</strong></p>
+<p>You can browse what’s here now to start thinking ahead, but some sections are incomplete or missing. Some posted content may change slightly before the beginning of the quarter.</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#step-0-back-up-your-work" id="toc-step-0-back-up-your-work" class="nav-link active" data-scroll-target="#step-0-back-up-your-work">Step 0: Back up your work</a></li>
+  <li><a href="#step-1-create-a-new-bare-repository" id="toc-step-1-create-a-new-bare-repository" class="nav-link" data-scroll-target="#step-1-create-a-new-bare-repository">Step 1: Create a new “bare” repository</a></li>
+  <li><a href="#clone-from-upstream" id="toc-clone-from-upstream" class="nav-link" data-scroll-target="#clone-from-upstream">Step 2; Option 1: Clone the upstream repository</a></li>
+  <li><a href="#clone-from-fork" id="toc-clone-from-fork" class="nav-link" data-scroll-target="#clone-from-fork">Step 2; Option 2: Clone from your old fork first</a></li>
+  <li><a href="#step-3-confirm-setup" id="toc-step-3-confirm-setup" class="nav-link" data-scroll-target="#step-3-confirm-setup">Step 3: Confirm setup</a></li>
+  <li><a href="#step-4-workflow-in-your-new-repo" id="toc-step-4-workflow-in-your-new-repo" class="nav-link" data-scroll-target="#step-4-workflow-in-your-new-repo">Step 4: Workflow in your new repo</a>
+  <ul class="collapse">
+  <li><a href="#start-a-session" id="toc-start-a-session" class="nav-link" data-scroll-target="#start-a-session">Start a session</a></li>
+  <li><a href="#work-in-the-session" id="toc-work-in-the-session" class="nav-link" data-scroll-target="#work-in-the-session">Work in the session</a></li>
+  <li><a href="#end-the-session" id="toc-end-the-session" class="nav-link" data-scroll-target="#end-the-session">End the session</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Creating Your Assessment Repo Clone</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="alert alert-danger" role="alert">
+<p>This page outlines an alternative to creating a fork of a repository that is better suited to the needs of this class, both for students and instructors. This switch will be necessary for submitting mini-projects going forward (beginning Week 5). There are instructions for how to switch from a fork to a private clone in the guide below.</p>
+<p><strong>Don’t forget to invite Dr.&nbsp;Dowling and your TA to your new private clone repo!</strong></p>
+</div>
+<p>All materials for in-class activities and mini-projects are published in the GitHub repository: <a href="https://github.com/nrdowling/d2mr-assessment">https://github.com/nrdowling/d2mr-assessment</a>.</p>
+<p>To access and edit the materials, including completing mini-projects, you will need to create a copy of this repo that you own and have edit access to, while maintaining a connection to the “upstream” repository.</p>
+<p>The typical way to do this is to <em>fork</em> the repository – and in fact that’s the whole point of forking. Forking, however, is intended to facilitate collaboration and sharing of code. This is great for open source projects, but presents problematic limitations for the purposes of this class where everyone is working individually.</p>
+<p>Instead you will <em>clone</em> the repository and set up an upstream connection to mimic the behavior of a fork. This is a workaround for the limitations (or features, depending on your perspective) of GitHub’s permissions system. It is the best way to 1) allows you to fully control every part of your repo, 2) stay fully “synced” with the class repo, and 3) allow TAs and instructors to access what we need to.</p>
+<p>To follow any of the instructions below, you first need to create a GitHub account and connect it to RStudio with a personal access token. If you haven’t done this yet, please follow the instructions in the <a href="../../materials/guides/rstudio-github.html">Setting Up RStudio and GitHub</a> guide.</p>
+<section id="step-0-back-up-your-work" class="level2">
+<h2 class="anchored" data-anchor-id="step-0-back-up-your-work">Step 0: Back up your work</h2>
+<p>If you have any existing version of the assessment repo (like a fork), make sure to back it up before proceeding. You can do this by copying the files to a new location on your computer (just like copying any other folder, doesn’t matter that it’s a repo).</p>
+</section>
+<section id="step-1-create-a-new-bare-repository" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-create-a-new-bare-repository">Step 1: Create a new “bare” repository</h2>
+<ol type="1">
+<li>Go to GitHub and log in using your GitHub Education account (which allows you to create unlimited private repositories).</li>
+<li>Click the “+” icon in the top right corner and select “New repository”.</li>
+<li>Name the repository something like “d2mr-assessment-yourgithubname” (e.g., “d2mr-assessment-nrdowling”).
+<ul>
+<li><strong>Note:</strong> If you are creating a clone after having already created a fork with this name, you can add a suffix like “-clone” to the name to differentiate it. Later you can delete (or rename) the fork and rename this clone to the original name if you want. You can also just leave it with the suffix; we get what’s going on.</li>
+</ul></li>
+<li>Initialize a bare, private repository:
+<ol type="1">
+<li><strong>Do not</strong> check the box to add a README file</li>
+<li><strong>Do not</strong> add a <code>.gitignore</code> file.</li>
+<li>Set permissions to <strong>private</strong>.</li>
+</ol></li>
+<li>Click “Create repository” and note its URL.</li>
+</ol>
+</section>
+<section id="clone-from-upstream" class="level2">
+<h2 class="anchored" data-anchor-id="clone-from-upstream">Step 2; Option 1: Clone the upstream repository</h2>
+<p>If you <em>don’t</em> already have a fork of the assessment repo or you just want to fully start from scratch, follow these instructions.</p>
+<p>If you <em>do</em> already have a fork and you want to transfer it to a clone, skip to <a href="#clone-from-fork">Step 2; Option 2</a>.</p>
+<p>To clone the source repository, access the <a href="https://github.com/nrdowling/d2mr-assessment.git">assessment repo hosted by Dr.&nbsp;Dowling</a>.</p>
+<ol type="1">
+<li>Click the green “Code” button on the right side of the page.</li>
+<li>Copy the URL that appears in the dropdown.</li>
+<li>Open RStudio and create a new project.</li>
+<li>Select “Version Control” and “Git”.</li>
+<li>Paste the URL into the “Repository URL” field.</li>
+<li>Choose a directory on your computer to save the project.</li>
+<li>Click “Create Project”.</li>
+</ol>
+<p>Before moving on, take a look at how your remotes are currently set up. Open the terminal in RStudio (not the R console) and run the following command:</p>
+<pre><code>git remote -v</code></pre>
+<p><em><strong>What you’re doing:</strong> This command lists the remote repositories that your local repository is connected to.</em></p>
+<p>You should see something like this:</p>
+<pre><code>origin  https://github.com/nrdowling/d2mr-assessment.git (fetch)
+origin  https://github.com/nrdowling/d2mr-assessment.git (push)</code></pre>
+<p>You now have a local copy of the assessment repo on your computer. At the moment, RStudio assumes you want this repo to be a local copy of the original, remote repo owned by Dr.&nbsp;Dowling, which you do not have edit access to.</p>
+<p>To make it your own, you need to change the remote URL to point to a new repository that you own while maintaining that upstream connection to the original repo. This means you’ll be able to fetch and merge updates from the original repo, but keep your own work pushed to your private, cloned repo.</p>
+<p>As mentioned, this is the purpose of “forking” a repo, which is <em>not</em> what we are actually doing here. This is a bit of a hack, but it’s the best way to keep your work private while still being able to pull in updates from the main repo.</p>
+<p>In a forked repository, the “upstream” repo is the original repo that you forked from, the one you don’t own and don’t want to push to (at least not by default). The “origin” repo is your fork, the one you do own and do want to push to.</p>
+<p>Here we need to configure git to replicate that behavior, but with a clone instead of a fork.</p>
+<p>Convert the current <em>origin</em> to the <em>upstream</em> source repo:</p>
+<pre><code>git remote rename origin upstream</code></pre>
+<p><em><strong>What you’re doing:</strong> This renames the original remote to “upstream”, which is the convention for the original (source) repo in a forked repo setup.</em></p>
+<p>Set the new <em>origin</em> URL to point to your new repository, using the URL of the repository you created in Step 1:</p>
+<pre><code>git remote add origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git</code></pre>
+<p><em><strong>What you’re doing:</strong> Since you renamed the original remote to “upstream”, you are now free to add a new remote called “origin”, which is the convention for the forked repo in a forked repo setup.</em></p>
+<p>Configure the new <em>origin</em> to push to the <code>main</code> branch:</p>
+<pre><code>git push -u origin main</code></pre>
+<p><em><strong>What you’re doing:</strong> This command pushes your local <code>main</code> branch to the new remote <code>origin</code> and sets it as the default upstream branch. This means that in the future, pushing and pulling with the RStudio interface (or with the <code>git push</code> and <code>git pull</code> commands) will default to pushing and pulling to and from the <code>main</code> branch of your new private repo.</em></p>
+</section>
+<section id="clone-from-fork" class="level2">
+<h2 class="anchored" data-anchor-id="clone-from-fork">Step 2; Option 2: Clone from your old fork first</h2>
+<p>If you <em>already have a fork</em> that you’ve worked in, you can clone it into a new <em>local</em> repo then change the remotes to mimic the behavior of a fork.</p>
+<p>If you <em>don’t</em> have a fork or you want to start from scratch, follow the instructions above in <a href="#clone-from-upstream">Step 2; Option 1</a>.</p>
+<p>In this option you’re not actually cloning the repo like you would have if you cloned the upstream repo like in the directions above. What you’re actually doing is:</p>
+<ol type="1">
+<li>cloning your <em>remote</em> (i.e., associated with a github repo) fork repo into a new <em>local</em> (i.e., only existing on your computer) repo</li>
+<li>assigning the upstream repo to mimic fork behavior</li>
+<li>turning the local repo into a new remote repo that you own</li>
+</ol>
+<p>This is like duplicating the folder on your computer that contains all your repo files, but it has the added benefit of keeping the git history.</p>
+<p><del>Open the RStudio project for your forked repo</del> When you clone your new local repo, it will be created as a new folder in the working directory. You’ll want to be sure you’re in your home directory (or a directory where you keep all your repos) before you clone the new repo.</p>
+<p>If you’re working in an RProject, the working directory is set to that project’s directory, so you’ll need to change it. Start by closing the project you have open by clicking the dropdown in the top right corner of the screen and choosing “close project.” Then open the <em>terminal</em> pane and enter the command <code>pwd</code> to see the current working directory. If it’s not your home directory (e.g., <code>/Users/Natalie</code>), navigate there by entering <code>cd ~</code>. Alternatively, you can navigate to a directory where you keep all your repos by entering <code>cd path/to/your/repos</code> (e.g., <code>cd ~/Documents/repos</code>, which will print as <code>/Users/Natalie/Documents/repos</code>).</p>
+<p>Take note of your working directory so that you can easily locate the cloned directory later. Run the following command to clone the forked repo into a new local repo:</p>
+<pre><code>git clone https://github.com/YOUR-USERNAME/YOUR-FORK.git YOUR-NEW-CLONE-REPO</code></pre>
+<p>Here, <code>https://github.com/YOUR-USERNAME/YOUR-FORK.git</code> is the URL of your old, forked repo, which is what you’d see if you went to that repo on GitHub and clicked the green “Code” button to get the URL. <code>YOUR-NEW-CLONE-REPO</code> is the name of the new directory that will be created on your computer. This is <em>not</em> the URL of the new private repo you created in Step 1, but it will eventually become that. That means what you enter in this command is just a folder name, not a URL, and it should match whatever you named the new private repo in Step 1.</p>
+<p><em><strong>What you’re doing:</strong> This command clones the forked repo into a new directory called <code>YOUR-NEW-CLONE-REPO</code> on your computer. This is a new, local repo that is not connected to any remote repositories. You should find the folder in the same directory as your forked repo.</em></p>
+<p>Create a new RStudio project for the new private clone repo. <strong>Do not</strong> use the “version control” method to create the project. Instead, create a project with the “existing directory” option and navigate to the directory where you cloned the forked repo (e.g., <code>~/d2mr-assessment-nrdowling-clone</code>). Open the project and make sure you can see all the files from your old fork in the “Files” pane. I recommend <em>not</em> opening it in a new session, so you don’t have both the fork and the clone projects open at once and accidentally work in the wrong one.</p>
+<p>Connect your new local repo to the source, upstream repo you want to maintain a connection with. In the terminal pane, enter the command:</p>
+<pre><code>git remote add upstream https://github.com/nrdowling/d2mr-assessment.git</code></pre>
+<p><em><strong>What you’re doing:</strong> This command adds a new remote called “upstream” that points to the original, source repo. This is the convention for the original repo in a forked repo setup.</em></p>
+<p>Connect your new local repo to the bare remote repo you made in Step 1. In the terminal pane, navigate to the directory of the new private repo (it will be in the same directory as your fork’s repo) and run the following command using the URL of the new private clone repo you created in Step 1:</p>
+<pre><code>git remote set-url origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git
+
+_**What you're doing:** This command changes the URL of the remote called "origin" to point to the new private remote GitHub repo you created._
+</code></pre>
+<p>Do a quick check to make sure the remotes are set up correctly:</p>
+<pre><code>git remote -v</code></pre>
+<p>You should see something like this:</p>
+<pre><code>origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git (fetch)
+origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git (push)
+upstream https://github.com/nrdowling/d2mr-assessment.git (fetch)
+upstream https://github.com/nrdowling/d2mr-assessment.git (push)  </code></pre>
+<p>Open your git pane in RStudio and confirm that there are no files waiting to be committed. If there are, commit them with a message like “initial commit of cloned repo” or something similar.</p>
+<p>Assuming everything looks good, push your local repo to the new private repo:</p>
+<pre><code>git push -u origin --all</code></pre>
+<p><em><strong>What you’re doing:</strong> This command pushes all the branches and tags to the new remote repo and sets the default upstream branch to <code>main</code>.</em></p>
+<p>Usually this command runs without merge conflicts (since you’re pushing to an empty repo), but if you do get a conflict, you’ll need to resolve it before you can push. Follow the directions for resolving merge conflicts in the <a href="#workflow-in-your-new-repo">Workflow in your new repo</a> section below.</p>
+<p><strong>You only need to run the commands in this step once to set up the new private clone repo.</strong> From now on, you can work in the new private repo as you would in a forked repo, pulling in updates from the original repo, making changes, and pushing your work to your own private repo.</p>
+<p>If you try to run these commands again, you’ll get an error message that the remotes already exist. That’s fine; it just means you’ve already set them up correctly.</p>
+</section>
+<section id="step-3-confirm-setup" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-confirm-setup">Step 3: Confirm setup</h2>
+<p>Check that the remotes are set up correctly:</p>
+<pre><code>git remote -v</code></pre>
+<p>You should (still) see something like this:</p>
+<pre><code>origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git (fetch)
+origin https://github.com/YOUR-USERNAME/YOUR-NEW-CLONE-REPO.git (push)
+upstream https://github.com/nrdowling/d2mr-assessment.git (fetch)
+upstream https://github.com/nrdowling/d2mr-assessment.git (push)  </code></pre>
+<p>Check that the <code>main</code> branch is set up as the default upstream branch:</p>
+<pre><code>git branch -vv</code></pre>
+<p>You should see something like this:</p>
+<pre><code>* main 1234567 [origin/main] Most recent commit message</code></pre>
+<p>Check (and configure) default merge functionality:</p>
+<pre><code>git config pull.rebase</code></pre>
+<p>If the output is <code>false</code>, you probably want to change this to <code>true</code> for this repository:</p>
+<pre><code>git config pull.rebase true</code></pre>
+<p>Or globally (for all repositories on your local machine):</p>
+<pre><code>git config --global pull.rebase true</code></pre>
+<p><em><strong>What you’re doing:</strong> This command sets the default behavior for <code>git pull</code> to rebase (vs.&nbsp;<code>ff</code> or “fast forward”). This is a personal preference, but it can help keep your commit history clean and linear.</em></p>
+<p>Merging with “ff” means that your commits are simply added to the end of the commit history. This can make it difficult to track changes and can lead to a messy commit history. The merge can fail if there are conflicts, rather than giving you a chance to resolve them.</p>
+<p>Merging with “rebase” temporarily removes your commits, pulls in the changes from the remote, and then reapplies your commits on top. This can make it easier to track changes and keep your commit history clean. The merge will pause if there are conflicts, allowing you to resolve them before continuing.</p>
+<p>The workflow steps below assume that you have set <code>pull.rebase</code> to <code>true</code>. If you prefer not to set rebase as your default, you may need to modify some things to rebase manually at certain points.</p>
+</section>
+<section id="step-4-workflow-in-your-new-repo" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-workflow-in-your-new-repo">Step 4: Workflow in your new repo</h2>
+<p>Now you can work in your new private repo as you would in a forked repo. You can pull in updates from the original repo, make changes, and push your work to your own private repo.</p>
+<p>Every session working in RStudio should begin with pulling in commits from the upstream repo (and your cloned repo if necessary), involve frequent committed changes as you work, and end with pushing your changes to your private repo.</p>
+<p>By “session” I mean a period of time when you are actively working on the repo, not the time that RStudio is open. I mean “start and end a session of work.” You can have multiple sessions in a day, and you should pull at the start and push at the end of each one. Leave RStudio open forever if you want, but commit and push every time you’re going to take a break from your work or switch to a different task for more than a few minutes.</p>
+<section id="start-a-session" class="level3">
+<h3 class="anchored" data-anchor-id="start-a-session">Start a session</h3>
+<p>Open RStudio and open the project you created in Step 2.</p>
+<p>Pull in updates from your repo clone if there is any possibility that changes were made remotely <em>to your own repo</em> (e.g., if you were working on a different computer). You can do so either by clicking “Pull” in the RStudio interface or by running the following command in the terminal: <code>git pull origin main</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Pull in updates from the original, source repo:</p>
+<pre><code>git pull upstream main</code></pre>
+<p><em><strong>What you’re doing:</strong> This command <em>fetches</em> the changes from the <code>main</code> branch of the <code>upstream</code> repo and <em>merges</em> them into your local <code>main</code> branch. This is the equivalent of clicking “Pull” in the RStudio interface for your origin/private repo, but for the source/upstream repo.</em></p>
+<p>You can also do the fetch and merge separately:</p>
+<pre><code>git fetch upstream
+git merge upstream/main</code></pre>
+<p>The advantage of doing this in two steps is that you can see the changes that are fetched before you merge them. This can be helpful if you want to review the changes before merging them. Most of the time you can just do the fetch and merge in combined “pull” step.</p>
+<p>Resolve merge conflicts with rebase (if necessary). If you get a message that there are conflicts, you will need to resolve them and then continue the rebase. There are many ways to resolve conflicts, but we’ll cover how to do it in the RStudio editor here:</p>
+<ol type="1">
+<li>Identify which files have conflicts by looking at the output of the rebase command. You can also see these files listed in the “Git” tab in RStudio; right click and choose “open file” to take you to the editor (or open them like normal from the files pane).</li>
+<li>Look for the conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>) in the file. These indicate the sections of the file that are in conflict. The text above the equal signs is the version of the code from the source repo, and the text below the equal signs is the version of the code from your repo.</li>
+<li>For each conflict, decide which version of the code you want to keep. Delete the conflict markers and any code/text you don’t want to keep. Save the file(s).</li>
+<li>Stage the resolved files by clicking the “Stage” button in the “Git” tab in RStudio. <strong>Do not</strong> commit here, just stage.</li>
+<li>Continue the rebase by clicking the “Continue rebase” button in the “Git” tab in RStudio or with the command <code>git rebase --continue</code> in the terminal.</li>
+<li>Rebase will attempt to merge one commit at a time, so if you have made multiple commits between the last time you pulled from the upstream repo and now, you may need to repeat this process for each commit that has conflicts.</li>
+</ol>
+<p>You may get a prompt in the terminal to enter a commit message for the merge commit. This is the message that will be associated with the merge commit that resolves the conflicts. You can use the default message that appears in the editor, or you can write your own.</p>
+<p>To enter your own message, press <code>i</code> to enter insert mode, type your message, then press <code>esc</code> to exit insert mode. To save (<em>w</em>rite) and exit (<em>q</em>uit), type <code>:wq</code> and press <code>enter</code>.</p>
+<p>To use the default, just type <code>:wq</code>.</p>
+</section>
+<section id="work-in-the-session" class="level3">
+<h3 class="anchored" data-anchor-id="work-in-the-session">Work in the session</h3>
+<p>Do whatever you’re going to do in the session. Make changes, add files, whatever. After every notable change, you should commit your changes using an informative commit message.</p>
+<p>Commit your changes with a descriptive message. In the Git pane, open up the “commit” window. Select any files that have been changed that you can describe with a single message. Write a descriptive message in the “Commit message” box. Click “Commit”.</p>
+<p>You don’t have to commit changes to all edited files at once. You can commit changes to different files in separate commits. For example, you did a lot of data wrangling work across multiple files and file types. You could just check off all files and include a single commit message: <code>Data wrangling for gesture count data</code>. Or you could commit just the .R scripts (commit: <code>added wrangling pipeline for creating minimal gesture count df</code>), then the .csv files (commit: <code>minimal gesture count dfs; removed speech data</code>), then the .qmd manuscript file (commit: <code>added simple table to results section using new minimal df</code>).</p>
+<p>You can push your committed changes to your private repo at any time by clicking “Push” in the RStudio interface. It’s not necessary to do this after every commit, but it’s a good idea to do it regularly to keep your work backed up and it doesn’t hurt.</p>
+</section>
+<section id="end-the-session" class="level3">
+<h3 class="anchored" data-anchor-id="end-the-session">End the session</h3>
+<p>Always end a session by committing your changes and pushing them to your private repo. This ensures that your work is backed up and that you can access it from other computers.</p>
+<p>Commit any changes you’ve made since the last commit.</p>
+<p>Push your changes to your private repo by clicking “Push” in the RStudio interface.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This is not strictly necessary if you are the only one working on the repo and you only work on one local machine, but it’s a good habit to get into.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

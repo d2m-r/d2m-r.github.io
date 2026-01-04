@@ -100,7 +100,7 @@ These examples are **optional templates**. You can:
 - Modify one to fit your situation.
 - Ignore them and design a fully custom plan.
 
-<!-- Create example plans in google docs or whatever and link here -->
+<!-- TO-DO: LINK TO EXAMPLE PLANS -->
 
 ## Suggestions
 

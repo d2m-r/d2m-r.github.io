@@ -1,0 +1,115 @@
+---
+title: "BibTeX References with Zotero & citr"
+engine: knitr
+---
+
+```{css echo=FALSE}
+body img {
+  max-width: 400px !important;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-style: solid;
+  border-width: 2px;
+}
+```
+
+Note: These instructions presume you will be using the most recent version of Zotero[^1] and Better BibTeX[^2]. If you are using an older version of Zotero, you may need to adjust the instructions somewhat, but the general process should be the same.
+
+[^1]: As of this writing, the most recent version of Zotero is v7.0.13
+[^2]: As of this writing, the most recent version of Better BibTeX is v7.0.5
+
+## Setup
+
+Start by getting the basics installed and configured.
+
+1.  Download, install, and set up [Zotero](https://www.zotero.org/)
+    1.  Import from EndNote or [Mendeley](https://www.zotero.org/support/kb/mendeley_import) if needed
+    2.  Recommended: Set up a Zotero account and [sync your library](https://www.zotero.org/support/sync)
+        1.  This will allow you to access your library from multiple devices and back it up in case of data loss
+        2.  Use your UChicago email address to get free unlimited storage with Zotero directly
+        3.  You can alternatively sync to Box, Dropbox, etc., but it takes some extra setup
+2.  Install the [Better BibTeX](https://retorque.re/zotero-better-bibtex/) plugin ![Zotero Better BibTeX](images/zotero-install-plugin.png)
+    1.  Download the latest release, which will be an `.xpi` file
+    2.  Open Zotero and go to Tools > Plugins
+    3.  Click the gear icon and select Install Add-on From File
+    4.  Select the downloaded .xpi file and click Install
+    5.  Restart Zotero (not technically required with Zotero 7+, but can't hurt)
+3.  Configure Better BibTeX
+    1.  Go to Zotero Settings/Preferences > Better BibTeX
+    2.  Review or change the citation key format as desired
+        1.  Default is `auth.lower + shorttitle(3,3) + year` (e.g., `cooperriderThePalm-upPuzzle2018`)
+        2.  See the [JabRef Bibliography Management documentation](https://docs.jabref.org/) for more options or use the [BibTeX Citation Key Generator](https://docs.jabref.org/setup/citationkeypatterns) to test your format
+        3.  e.g., My preferred format is `authEtAl.lower+"_"+year+"_"+shorttitle(1,0).lower` (e.g., `cooperrideretal_2018_palmup`)
+        4.  You can change this later, but the earlier you do it the easier it will be to stay consistent and avoid human error
+        5.  At a minimum, take note of the format to easily incorporate it into your documents
+4.  Connect Zotero & RStudio
+    1.  In RStudio, go to Tools > Global Options > R Markdown and select the Citations tab ![RStudio Global Options](images/zotero-connect-rstudio.png)
+    2.  Confirm or change settings:
+        1.  Zotero Library: Local
+        2.  Zotero Data Directory: the folder where your Zotero data is stored
+            1.  Default is `~/Zotero`
+            2.  You can find (or change) this by going to Zotero > Settings > Advanced > Files and Folders > Data Directory Location
+        3.  Check the box to use Better BibTeX citation keys
+        4.  Apply changes
+5.  Install the `citr` addin for RStudio
+    1.  Open RStudio and run `devtools::install_github("crsh/citr")` (`citr` is not currently available to download from CRAN with the `install.packages()` function)
+    2.  Restart RStudio
+    3.  The `citr` addin should now be available in the Addins dropdown menu ![RStudio Addins](images/citr-dropdown.png)
+
+
+## Zotero
+
+1.  As you discover literature, add it to Zotero. 
+    1.  Use the [Zotero Connector browser extension](https://www.zotero.org/download/connectors) to save references from Chrome or Firefox
+    2.  Add citations manually or import from databases like PubMed, Web of Science, or Google Scholar using DOI or PMID
+    3.  Upload PDFs and "Retrieve Metadata" to automatically create a citation parent (hit or miss, depends on the OCR quality of the PDF)
+3.  Add and edit PDFs and other files to any citation
+4.  Organize your library into collections for each project
+    1.  For the best bibtex file organization, have one dedicated collection for each paper that requires a bibliography that includes the references in that collection for easy export ![Zotero Collections](images/zotero-collection.png)
+
+
+## Set up your Quarto notebook
+
+1.  Create a bibliography for a paper
+    1.  In Zotero, select the collection(s) you want to include
+    2.  Right-click and "Export Collection..." ![Zotero Export Collection 1](images/zotero-export-1.png)
+    3.  Choose "Better BibTeX" as the format ![Zotero Export Collection 2](images/zotero-export-2.png)
+    4.  Optionally, select "Keep updated". This will (attempt to) automatically update the exported file when you add or edit references in the collection. Turning this on will mean you're choosing Option 2 from the citr section below. Leaving it off means you can choose Option 1.
+    5.  Save the .bib file to the top level of your local project repo (name it whatever you want, but we'll say "bibliography.bib" since that's the apaquarto default name)
+2.  In the YAML header of your Quarto notebook, add the line `bibliography: bibliography.bib`
+    1.  If you called it anything else or put it anywhere besides the top level directory, you'll need to double check the file path and adjust
+  
+  
+## citr
+
+The `citr` package is an RStudio addin that allows you to search for and add citations into your text rather than manually entering the key. You'll be very grateful to have this addin when your bibliography grows to dozens or hundreds of references.[^3]
+
+[^3]: If you work in RStudio's visual editor, it can actually do this for you without citr involved at all. Just type the `@` symbol and start typing the citation key. However, as we know, the visual editor is evil. If you insist on using it, you're on your own when everything goes to hell.
+
+There are two main approaches to using citr with Zotero and Quarto:
+
+1. **Link citr to your Zotero library.** This allows you to search your full Zotero library for references. You search for one or more references, select them, and insert them into your document. If the reference is not in your bibliography, citr will automatically add it to the .bib file - so handy! Usually if someone talks about using citr with Zotero, they mean this method.
+    1.  To link citr to Zotero, go to the Addins dropdown menu in RStudio and select "citr: Insert Citations".
+    2.  If you have Zotero open and Better BibTeX installed, you should see an option to link to Zotero. Click this and follow the instructions. It may take a minute to index your library.
+    3.  Once linked, searching in the citr addin should show you results from anywhere in your Zotero library. ![citr linked to Zotero full library](images/citr-search-library-results.png)
+2.  **Link citr to a bib file.** Rather than search your whole library, this method allows you to search only the references already in your bibtex bibliography file for that notebook. Since it only accesses the citations already in the bibliography, it can't add new references to the bibliography for you.
+    1.  To link citr to a .bib file, add the `bibliography: bibliography.bib` line to the YAML header of your Quarto notebook (which you should have already done in setup).
+    2.  Once linked, searching in the citr addin should show you results from the .bib file you linked to. ![citr linked to a bib file](images/citr-search-bib-results.png)
+  
+Option 1 is more powerful and can be more convenient, but Option 2 has its advantages (and has recently become my preferred method). For one thing, if you have a massive Zotero library, linking to the whole library can be slow and unwieldy. For another, if you're working on a paper with a specific set of references, you may not want to see all the other references in your library where you could accidentally select a reference with a similar title. It's also better suited to collaboration, where you and your coauthors can add citions whether or not both libraries have the same references.
+
+The reason I've recently switched to Option 2 is that I've found the automatic updating of the .bib file from Zotero to be much more reliable in Zotero 7.0 (though I admit I'm still kind of paranoid and check it manually). This method means I do 100% of my editing and organizing in one place: the Zotero folder. I can add and remove citations and edit metadata, then see that reflected in my Quarto render. The fact that I cannot automatically add citations from elsewhere in my library is useful, because it forces me to be more intentional about what references I include in a given paper and ensures I can actually go find all the actual literature (not just the citations) in one place when I need it.
+
+
+## Citations in Quarto markdown
+
+1.  In your Quarto document, place your cursor where you want to insert a citation
+    1.  If you're not using citr, just type the citation key in the format you chose in Better BibTeX preceded by the `@` sign (e.g., `@winger2010greendale`). If you are using citr, continue. ![Quarto Citations- markdown](images/bib-intext-raw.png)
+2.  Use the keyboard shortcut `Alt/Opt + C` to open the citr addin (you can configure this shortcut in RStudio or use the addin dropdown)
+    1.  Search for and select the reference(s) you want to cite, keeping in mind whether you chose option 1 or 2 above
+    2.  Check whether you want the citation to be in parentheses or not
+    3.  Click insert.
+    4.  Magic! ![Quarto citations - rendered](images/bib-intext-render.png)
+  

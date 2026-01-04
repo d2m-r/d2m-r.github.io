@@ -1,0 +1,226 @@
+---
+title: "Natalie's R Style Guide"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This document describes recommended style choices for working in R, especially in the tidyverse. These are not rules *per se* but allow for consistency within and across your scripts and projects. Having a persistent and transparent style system in place is especially useful when a project has active collaborators.
+
+This style guide is not intended to be distributed; it is for personal and classroom use only. <span style="color: red">The majority of this text is taken word for word from the [tidyverse style guide by Hadley Wickham](https://style.tidyverse.org/index.html).</span> I have made some additions and revisions based on my own personal preferences that you (my student? research assistant? future self?) may very well hate and change back. Just be consistent!
+
+# Naming Conventions
+
+> "There are only two hard things in Computer Science: cache invalidation and 
+> naming things." 
+>
+> --- Phil Karlton
+
+I prefer to use clearly differentiated naming styles for different kinds of objects. It helps me from getting confused about what exactly I'm working with when a lot of things in the environment have similar names.
+
+## Files
+
+File names should be meaningful and end in `.R` or `.Rmd`. Avoid using special characters 
+in file names - stick with numbers, letters, `-`, and `_`. Use *hyphens* as general connectors and *underscores* for appending prefixes and suffixes (see below).
+
+    # Good
+    fit-models.R
+    utility-functions.R
+
+    # Bad
+    fit models.R
+    foo.rmd
+    stuff.r
+    functions (utility).R
+
+If files should be run in a particular order, prefix them with numbers. Left pad single digits with zero:
+
+    00_download.R
+    01_explore.R
+    ...
+    09_model.R
+    10_visualize.R
+    
+If there is a need to include an author indicator in the file name (although in principle there really shouldn't be), append author initials as `_XY`:
+    
+    style-guide_ND.R
+    09_gaze-data_SGM.Rmd
+
+File names should generally use lower case, but strategic capitalization is acceptable.
+
+    setup_READ-ONLY.R
+    NYC-survey.Rmd
+    
+## Objects
+
+NOTE: These conventions differ significantly from the tidyverse style guide.
+
+"Complex" or "stand-alone" data-containing objects like dataframes, matrices, and special objects analysis results (ask: is this the kind of thing I'd pull up and look at with my human eyeballs on its own? if "yes", then it's this) should use periods:
+
+    my.dataframe
+    corr.results
+    gender.votes.chi2
+
+"Simple" or "internal" data-containing objects like dataframe columns and static variables (ask: is this something that is entirely or primarily useful as part of something else or as a temporary need?) should use underscores ("snake case"):
+
+    my_variable
+    visit_12
+    subjects_EC
+    excluded_subjects
+    
+"Publishable" or rendered objects like plots, kables, and images should use camel case. I also like to append suffixes with underscores to note plot type:
+
+    myPlot
+    gazeByType_filledBar
+    gazeByType_dodgedBar
+    corrResults_kbl
+
+## Functions
+
+Functions should use underscores/snake case. Unlike "simple" objects, functions should never use capitalization. Function names should read like verbs/actions.
+
+    compare_sets
+    prep_gaze_data
+    format_as_ec
+
+# Syntax
+
+### Punctuation and spaces
+
+#### Quotes
+
+Use double quotes (`"`) for strings in code. Similarly, use double quotes as the outside quotes in markdown.
+
+#### Spaces
+
+Like in English, put spaces after commas and not before commas.
+
+    # Good
+    x[, 1]
+    x[2, 1]
+    
+    # Bad
+    x[ ,1]
+    x[ 2 , 1 ]
+    x[2,1]
+    
+Like in English, do not put spaces immediately inside or outside parentheses or brackets (with some exceptions):
+
+    # Good
+    mean(x, na.rm = TRUE)
+    
+    # Bad
+    mean (x, na.rm = TRUE)
+    mean( x, na.rm = TRUE )
+    
+Exception 1: Do put a space between parentheses and brackets, as in conditionals, loops, and function definitions. Additionally, `if`, `for`, and `while` should be treated as verbs, not functions, and so be followed by a space.
+
+    function(x) {}
+    if (debug) {
+        show(x)
+        }
+        
+Exception 2: Do put spaces inside the rarely used "embracing operator":
+
+    max_by <- function(data, var, by) {
+      data %>%
+        group_by({{ by }}) %>%
+        summarise(maximum = max({{ var }}, na.rm = TRUE))
+    }
+    
+Most infix operators (`==`, `+`, `-`, `<-`, etc.) should always be surrounded by spaces:
+
+    height <- (feet * 12) + inches
+    mean(x, na.rm = TRUE)
+    
+The operators with [high precedence][syntax]: `::`, `:::`, `$`, `@`, `[`, `[[`, `^`, unary `-`, unary `+`, and `:` should not be surrounded by spaces:
+
+    sqrt(x^2 + y^2)
+    df$z
+    x <- 1:10
+    
+Other exceptions [are listed here](https://style.tidyverse.org/syntax.html).
+
+### Line breaks and tabs
+
+For the most part R studio will take care of appropriate tabs as long as there are sensible line breaks. I keep tab set to =4 spaces.
+
+The first line of loops and conditionals should always be `VERB (condition) {` (and nothing else). Closing brackets `}` should always begin a new line. Opening brackets `{` should be followed by a line break *unless* immediately followed by `else {`.
+
+    if (y == 0) {
+      if (x > 0) {
+        log(x)
+      } else {
+        message("x is negative or zero")
+      }
+    } else {
+      y^x
+    }
+
+### Pipes
+
+The pipe operator `%>%` should always be preceded by a space and followed by a line break. (Though brief comments may be added after the pipe.)
+
+If the arguments to a function don’t all fit on one line, put each argument on its own line and indent. There should be a line break following the opening parenthesis, following each comma, and before the final closing parenthesis.
+
+    iris %>%
+      group_by(Species) %>%
+      summarise(
+        Sepal.Length = mean(Sepal.Length),
+        Sepal.Width = mean(Sepal.Width),
+        Species = n_distinct(Species)
+      ) %>% 
+      ungroup()
+      
+Pipes should begin with the data name as the first line of the pipe, rather than within the first function:
+
+    gesture.summary <- gestures %>% 
+        group_by(form) %>% 
+        summarize(mean_duration = mean(duration))
+        
+    NOT:
+    gesture.summary <- group_by(gestures, form) %>% 
+        summarize(mean_duration = mean(duration))
+        
+
+### ggplot2
+
+Plots made with ggplot should follow the same spacing and line break rules as pipes. Layers and pipes are on the same tab level (i.e., the layer add `+` works like `%>%`).
+
+New layers should always be on their own lines.
+
+# Internal organization for .R files
+
+Load all libraries (or source code that loads libraries) before literally anything else.
+
+Organization in an R markdown document is pretty straightforward. Within an .R document, use all caps to denote header levels and surround the header with one or more `#`s. Headers should always have at least one blank line before and after. Headers should use a sort of "inverse markdown" structure.
+
+    ### LEVEL 1 HEADER ###
+    ## LEVEL 2 HEADER ##
+    # LEVEL 3 HEADER #
+    # Additional segmenters surrounded by hashes but in sentence case #
+    
+Informative comments should be preceded by a single `#` and be written in sentence or all lower case. Break large comment chunks into multiple lines manually (don't rely on wrap; you should see a `#` for every line). If large comments need a "title" use an all-caps comment. To-do items should read `## TODO: :
+
+    # TROUBLESHOOTING PLOTTING ERRORS
+    # For some reason ggplot is rendering pictures of John Oliver
+    # rather than the bar graph I would like it to produce. Not that
+    # I don't support the mods, but this is ineffective here. 
+    ## TODO: check the original .txt file for clues
+    ## TODO: watch Last Week Tonight
+    
+# Miscellaneous
+
+Use convenience functions (/infix operators) from the `data.table` package when possible. Load `data.table` last to overwrite other packages (there are lots of `%like%`s out there).
+
+    %between%
+    %inrange%
+    %chin% (like base %in% but faster for characters)
+    %notin%
+    %like%
+    %ilike% (ignore.case)
+    %flike% (fixed: pattern is literal string, not regex)
+    %plike% (perl: perl-compatible regex)
+    
