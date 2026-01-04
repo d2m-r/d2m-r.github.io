@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="Q1-W1_problem-solving_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Q1-W1_problem-solving_files/libs/quarto-html/tabby.min.js"></script>
-<script src="Q1-W1_problem-solving_files/libs/quarto-html/popper.min.js"></script>
-<script src="Q1-W1_problem-solving_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="Q1-W1_problem-solving_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Q1-W1_problem-solving_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Q1-W1_problem-solving_files/libs/quarto-html/quarto-syntax-highlighting-213b55af01392fe150d2f058d760f8e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-213b55af01392fe150d2f058d760f8e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="dcterms.date" content="2026-01-06">
-  <title>Preventing &amp; Solving Problems</title>
+  <title>Data to Manuscript in R – Preventing &amp; Solving Problems</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="Q1-W1_problem-solving_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="Q1-W1_problem-solving_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -97,14 +97,14 @@
     code span.vs { color: #6a3d9a; } /* VerbatimString */
     code span.wa { color: #842222; } /* Warning */
   </style>
-  <link rel="stylesheet" href="Q1-W1_problem-solving_files/libs/revealjs/dist/theme/quarto-1bb5574cd6b3bf142ba526b4aa245727.css">
-  <link href="Q1-W1_problem-solving_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-code-focus/codefocus.css" rel="stylesheet">
-  <link href="Q1-W1_problem-solving_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-1bb5574cd6b3bf142ba526b4aa245727.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-code-focus/codefocus.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -765,30 +765,30 @@ Look for recommended replacements
 <h2>Abstraction</h2>
 <h3 id="absolute-vs.-relative-paths">Absolute vs.&nbsp;Relative Paths</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="do">## Only works on my computer no matter what</span></span>
-<span id="cb1-2"><a href=""></a>absolute_path <span class="ot">&lt;-</span> <span class="st">"Users/Natalie/repos/d2mr/example-repo/images/barplot.jpg"</span></span>
-<span id="cb1-3"><a href=""></a></span>
-<span id="cb1-4"><a href=""></a><span class="co"># Works on your machine if you clone it to this location on your computer</span></span>
-<span id="cb1-5"><a href=""></a>mixed_path <span class="ot">&lt;-</span> <span class="st">"~/repos/d2mr/example-repo/images/barplot.jpg"</span></span>
-<span id="cb1-6"><a href=""></a></span>
-<span id="cb1-7"><a href=""></a><span class="co"># Works when you clone the repo anywhere</span></span>
-<span id="cb1-8"><a href=""></a>relative_path <span class="ot">&lt;-</span> <span class="st">"/images/barplot.jpg"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="do">## Only works on my computer no matter what</span></span>
+<span id="cb1-2"><a></a>absolute_path <span class="ot">&lt;-</span> <span class="st">"Users/Natalie/repos/d2mr/example-repo/images/barplot.jpg"</span></span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co"># Works on your machine if you clone it to this location on your computer</span></span>
+<span id="cb1-5"><a></a>mixed_path <span class="ot">&lt;-</span> <span class="st">"~/repos/d2mr/example-repo/images/barplot.jpg"</span></span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="co"># Works when you clone the repo anywhere</span></span>
+<span id="cb1-8"><a></a>relative_path <span class="ot">&lt;-</span> <span class="st">"/images/barplot.jpg"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <h3 id="hard-coded-vs.-dynamic-variables">Hard-coded vs.&nbsp;Dynamic Variables</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Always equals 3</span></span>
-<span id="cb2-2"><a href=""></a>my_mean <span class="ot">&lt;-</span> (<span class="dv">2</span> <span class="sc">+</span> <span class="dv">4</span>)<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb2-3"><a href=""></a></span>
-<span id="cb2-4"><a href=""></a><span class="co"># Output will change to reflect changes to 2 input variables</span></span>
-<span id="cb2-5"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">2</span>; y <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># or...</span></span>
-<span id="cb2-6"><a href=""></a><span class="co"># x &lt;- 3; y &lt;- 10</span></span>
-<span id="cb2-7"><a href=""></a>the_mean <span class="ot">&lt;-</span> (x <span class="sc">+</span> y)<span class="sc">/</span><span class="dv">2</span></span>
-<span id="cb2-8"><a href=""></a></span>
-<span id="cb2-9"><a href=""></a><span class="co"># Output will change no matter how many input numerals are averaged</span></span>
-<span id="cb2-10"><a href=""></a>number_list <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>) <span class="co"># or...</span></span>
-<span id="cb2-11"><a href=""></a><span class="co"># number_list &lt;- 2:8 # or...</span></span>
-<span id="cb2-12"><a href=""></a><span class="co"># number_list &lt;- c(1,2,8,100)</span></span>
-<span id="cb2-13"><a href=""></a>a_mean <span class="ot">&lt;-</span> <span class="fu">sum</span>(number_list)<span class="sc">/</span><span class="fu">length</span>(number_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Always equals 3</span></span>
+<span id="cb2-2"><a></a>my_mean <span class="ot">&lt;-</span> (<span class="dv">2</span> <span class="sc">+</span> <span class="dv">4</span>)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="co"># Output will change to reflect changes to 2 input variables</span></span>
+<span id="cb2-5"><a></a>x <span class="ot">&lt;-</span> <span class="dv">2</span>; y <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># or...</span></span>
+<span id="cb2-6"><a></a><span class="co"># x &lt;- 3; y &lt;- 10</span></span>
+<span id="cb2-7"><a></a>the_mean <span class="ot">&lt;-</span> (x <span class="sc">+</span> y)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb2-8"><a></a></span>
+<span id="cb2-9"><a></a><span class="co"># Output will change no matter how many input numerals are averaged</span></span>
+<span id="cb2-10"><a></a>number_list <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>) <span class="co"># or...</span></span>
+<span id="cb2-11"><a></a><span class="co"># number_list &lt;- 2:8 # or...</span></span>
+<span id="cb2-12"><a></a><span class="co"># number_list &lt;- c(1,2,8,100)</span></span>
+<span id="cb2-13"><a></a>a_mean <span class="ot">&lt;-</span> <span class="fu">sum</span>(number_list)<span class="sc">/</span><span class="fu">length</span>(number_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>Abstracted (relative) paths and variables are more durable than hard-coded (absolute) ones</p>
@@ -1189,11 +1189,11 @@ Look for recommended replacements
 </div>
 <div class="col-7">
 <div style="font-size: 1.5em;">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>?paste</span>
-<span id="cb3-2"><a href=""></a>?paste0</span>
-<span id="cb3-3"><a href=""></a>?filter</span>
-<span id="cb3-4"><a href=""></a>?read_csv</span>
-<span id="cb3-5"><a href=""></a>??read_csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>?paste</span>
+<span id="cb3-2"><a></a>?paste0</span>
+<span id="cb3-3"><a></a>?filter</span>
+<span id="cb3-4"><a></a>?read_csv</span>
+<span id="cb3-5"><a></a>??read_csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1221,25 +1221,25 @@ Mutating joins
 <p><em>Inner join</em> An inner_join() only keeps observations from x that have a matching key in y.</p>
 <p><em><span style="color: #999">…text omitted…</span></em></p>
 <h4 id="usage">Usage</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">inner_join</span>(</span>
-<span id="cb4-2"><a href=""></a>  x,</span>
-<span id="cb4-3"><a href=""></a>  y,</span>
-<span id="cb4-4"><a href=""></a>  <span class="at">by =</span> <span class="cn">NULL</span>,</span>
-<span id="cb4-5"><a href=""></a>  <span class="at">copy =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb4-6"><a href=""></a>  <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">".x"</span>, <span class="st">".y"</span>),</span>
-<span id="cb4-7"><a href=""></a>  ...,</span>
-<span id="cb4-8"><a href=""></a>  <span class="at">keep =</span> <span class="cn">NULL</span></span>
-<span id="cb4-9"><a href=""></a>)</span>
-<span id="cb4-10"><a href=""></a></span>
-<span id="cb4-11"><a href=""></a><span class="fu">left_join</span>(</span>
-<span id="cb4-12"><a href=""></a>  x,</span>
-<span id="cb4-13"><a href=""></a>  y,</span>
-<span id="cb4-14"><a href=""></a>  <span class="at">by =</span> <span class="cn">NULL</span>,</span>
-<span id="cb4-15"><a href=""></a>  <span class="at">copy =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb4-16"><a href=""></a>  <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">".x"</span>, <span class="st">".y"</span>),</span>
-<span id="cb4-17"><a href=""></a>  ...,</span>
-<span id="cb4-18"><a href=""></a>  <span class="at">keep =</span> <span class="cn">NULL</span></span>
-<span id="cb4-19"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">inner_join</span>(</span>
+<span id="cb4-2"><a></a>  x,</span>
+<span id="cb4-3"><a></a>  y,</span>
+<span id="cb4-4"><a></a>  <span class="at">by =</span> <span class="cn">NULL</span>,</span>
+<span id="cb4-5"><a></a>  <span class="at">copy =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-6"><a></a>  <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">".x"</span>, <span class="st">".y"</span>),</span>
+<span id="cb4-7"><a></a>  ...,</span>
+<span id="cb4-8"><a></a>  <span class="at">keep =</span> <span class="cn">NULL</span></span>
+<span id="cb4-9"><a></a>)</span>
+<span id="cb4-10"><a></a></span>
+<span id="cb4-11"><a></a><span class="fu">left_join</span>(</span>
+<span id="cb4-12"><a></a>  x,</span>
+<span id="cb4-13"><a></a>  y,</span>
+<span id="cb4-14"><a></a>  <span class="at">by =</span> <span class="cn">NULL</span>,</span>
+<span id="cb4-15"><a></a>  <span class="at">copy =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-16"><a></a>  <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">".x"</span>, <span class="st">".y"</span>),</span>
+<span id="cb4-17"><a></a>  ...,</span>
+<span id="cb4-18"><a></a>  <span class="at">keep =</span> <span class="cn">NULL</span></span>
+<span id="cb4-19"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1345,9 +1345,9 @@ Mutating joins
 </ul></li>
 <li class="fragment">D2M-R Course site:
 <ul>
-<li class="fragment"><a href="../materials/resources.qmd">List of external resources</a></li>
+<li class="fragment"><a href="../materials/resources.html">List of external resources</a></li>
 <li class="fragment"><a href="../materials/misc-materials.qmd">Miscellaneous materials and course guides</a></li>
-<li class="fragment"><a href="../materials/slides.qmd">Slides archive</a></li>
+<li class="fragment"><a href="../materials/slides.html">Slides archive</a></li>
 </ul></li>
 </ul>
 </section></section>
@@ -1846,6 +1846,7 @@ Know the outcome you want and work backwards. You don’t need to fully understa
 </div>
 </div>
 
+
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -1855,21 +1856,21 @@ Know the outcome you want and work backwards. You don’t need to fully understa
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-code-focus/codefocus.js"></script>
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-code-focus/codefocus.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="Q1-W1_problem-solving_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

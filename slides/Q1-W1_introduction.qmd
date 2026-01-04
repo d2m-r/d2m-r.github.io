@@ -5,6 +5,7 @@ date: "1/6/2026"
 footer: "D2M-R I | Week 1" #  quarter, week, and class
 
 format: revealjs
+engine: knitr
 
 execute:
   #echo: true
