@@ -2,6 +2,7 @@
 title: "Introduction to D2M-R"
 subtitle: "syllabus, workflow overview"
 date: "1/6/2026"
+footer: "D2M-R I | Week 1" #  quarter, week, and class
 
 format: revealjs
 
@@ -21,6 +22,7 @@ editor: source
 -   **PSYC/MAPS/MACS/CHDV 30550**
 -   **Course website:** [d2m-r.github.io](https://d2m-r.github.io/)
 -   **Textbook:** [Data to Manuscript in R](https://d2m-r.github.io/book/)
+    -   *In early development!!*
 
 :::
 

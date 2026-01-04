@@ -97,7 +97,7 @@
     code span.vs { color: #6a3d9a; } /* VerbatimString */
     code span.wa { color: #842222; } /* Warning */
   </style>
-  <link rel="stylesheet" href="Q1-W1_problem-solving_files/libs/revealjs/dist/theme/quarto-2436a20693fc44ba2eb2a0066f5303e1.css">
+  <link rel="stylesheet" href="Q1-W1_problem-solving_files/libs/revealjs/dist/theme/quarto-1bb5574cd6b3bf142ba526b4aa245727.css">
   <link href="Q1-W1_problem-solving_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Q1-W1_problem-solving_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1314,7 +1314,7 @@ Mutating joins
 </div>
 </div>
 <aside class="notes">
-<p>We’ll talk about “packages” next time – but the idea is that they are collections of functions that work together nicely toward similar programming goals. There are “base R” functions that are built in, but the vast majority of function you’ll use come from packages you need to install and load.</p>
+<p>We’ll talk about “packages” more comprehensively when we get to R programming fundamentals – but the idea is that they are collections of functions that work together nicely toward similar programming goals. There are “base R” functions that are built in, but the vast majority of function you’ll use come from packages you need to install and load.</p>
 <p>Packages must meet certain requirements to be accessible through CRAN, including being fully 100% compatible with current versions of R. There are lots of excellent, high-quality, well-maintained packages that aren’t in the CRAN list!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1330,58 +1330,527 @@ Mutating joins
 </section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
+<ul>
+<li class="fragment"><a href="https://posit.co/resources/cheatsheets/">R/RStudio Cheatsheets</a></li>
+<li class="fragment">Web textbooks, e.g.:
+<ul>
+<li class="fragment"><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></li>
+<li class="fragment"><a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a></li>
+<li class="fragment"><a href="https://rstudio-education.github.io/hopr/index.html">Hands-On Programming with R</a></li>
+<li class="fragment"><a href="https://d2m-r.github.io/book/">D2M-R Textbook</a>
+<ul>
+<li class="fragment"><em>very much still in early development!</em></li>
+<li class="fragment">Contribute to the textbook as a course project through the <a href="github.com/d2m-r/book">repo</a></li>
+</ul></li>
+</ul></li>
+<li class="fragment">D2M-R Course site:
+<ul>
+<li class="fragment"><a href="../materials/resources.qmd">List of external resources</a></li>
+<li class="fragment"><a href="../materials/misc-materials.qmd">Miscellaneous materials and course guides</a></li>
+<li class="fragment"><a href="../materials/slides.qmd">Slides archive</a></li>
+</ul></li>
+</ul>
 </section></section>
 <section>
 <section id="solving-your-own-problems" class="title-slide slide level1 center">
 <h1>Solving your own problems</h1>
+<p>No one will help you until you at least try.</p>
+</section>
+<section class="slide level2">
 
+<div class="notitle-slide">
+<p><img data-src="../images/comics-memes/debugging.png"></p>
+<div class="credit">
+<p>Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span>”</p>
+</div>
+</div>
 </section>
 <section id="error-messages" class="slide level2">
 <h2>Error messages</h2>
+<p>Errors starting with these phrases are super common and have predictable causes:</p>
+<ul>
+<li class="fragment"><code>could not find function</code>: the function’s package is not loaded (or more commonly, typos)</li>
+<li class="fragment"><code>Error in if</code>: non-logical data or missing values passed to R’s <code>if</code> conditional statement</li>
+<li class="fragment"><code>Error in eval</code>: references to objects that don’t exist</li>
+<li class="fragment"><code>cannot open</code>: attempts to read a file that doesn’t exist or can’t be accessed</li>
+<li class="fragment"><code>no applicable method</code>: using an object-oriented function on a data type it doesn’t support</li>
+<li class="fragment"><code>subscript out of bounds</code>: trying to access an element or dimension that doesn’t exist</li>
+<li class="fragment"><code>package errors</code>: R cannot install or load a package due to missing dependencies or conflicts</li>
+</ul>
+<!-- ## Bubbles from the bottom -->
+<div class="bubble-chain">
+<p class="bubble-left fragment">
+But my error message isn’t common!
+</p>
+<p class="bubble-left fragment">
+My error is common but the solution isn’t working!
+</p>
+<p class="bubble-left fragment">
+I have literally no idea what this error message means!
+</p>
+<p class="bubble-right fragment">
+<span style="font-size: 2em !important;"><strong>GOOGLE IT.</strong></span>
+</p>
+</div>
+<div class="credit">
+<p>List from <a href="https://warin.ca/posts/rcourse-howto-interpretcommonerrors/">How to: Interpret Common Errors in R</a></p>
+</div>
+<aside class="notes">
+<p>The D2M-R textbook includes a longer list of specific error messages and suggestions for handling them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="common-error-messages-link-to-textbook" class="slide level2">
-<h2>Common error messages (link to textbook?)</h2>
-</section>
-<section id="errors-vs-warnings" class="slide level2">
-<h2>Errors vs warnings</h2>
+<section id="errors-warnings-messages" class="slide level2">
+<h2>Errors, Warnings, Messages</h2>
+<div class="container-fluid">
+<div class="row">
+<div class="col-4 d-flex align-items-stretch">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><strong>Errors</strong> <em>must</em> be addressed</strong></p>
+</div>
+<div class="callout-content">
+<p><em>R says:</em> “Something has gone wrong and I cannot and will not move forward.”</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-4 d-flex align-items-stretch">
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><strong>Warnings</strong> should <em>usually</em> be addressed</strong></p>
+</div>
+<div class="callout-content">
+<p><em>R says:</em> “This doesn’t look right but I’m just a robot what do I know.”</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-4 d-flex align-items-stretch">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><strong>Messages</strong> are informational only</strong></p>
+</div>
+<div class="callout-content">
+<p><em>R says:</em> “No problem, done! But just FYI…”</p>
+<p><em>Not all alarming words and big red Xs are problems.</em></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-4 d-flex align-items-stretch">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/screenshots/error-in-filter.png"></p>
+<figcaption>The object <code>subjects</code> doesn’t exist. The object’s name is <code>subject</code>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="col-4 d-flex align-items-stretch">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/screenshots/warning-coercion.png"></p>
+<figcaption>The string <code>"NA"</code> doesn’t look like a numeral, but that’s ok because it’s not supposed to become a numeral.</figcaption>
+</figure>
+</div>
+</div>
+<div class="col-4 d-flex align-items-stretch">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/screenshots/message-conflict.png"></p>
+<figcaption>The functions <code>filter()</code> and <code>lag()</code> were already defined when the stats package was loaded so loading dplyr now overrides them. If we want the stats versions of these, we need to load that package after dplyr.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="line-by-line-debugging" class="slide level2">
-<h2>Line-by-line debugging</h2>
+<h2>Line-by-Line Debugging</h2>
+<p>There is a problem, but <em>where</em> is the problem?</p>
+<ul>
+<li class="fragment">Break down code into smaller pieces and run them one line at a time.</li>
+<li class="fragment">Debug <em>outside</em> a code “container” by hardcoding values
+<ul>
+<li class="fragment">loops, functions, pipelines</li>
+</ul></li>
+<li class="fragment">Use <a href="https://support.posit.co/hc/en-us/articles/205612627-Debugging-with-the-RStudio-IDE">RStudio’s debugging tools</a></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>RStudio Debugging Shortcut</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">Run current line or selected code: <code>Cmd + Return</code></li>
+<li class="fragment">Run current chunk: <code>Cmd + Option + C</code></li>
+<li class="fragment">Run all: <code>Shift + Cmd + Return</code></li>
+</ul>
+<p><em>Windows: Cmd=Ctrl, Option=Alt, Return=Enter</em></p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>If you get an error message, it will tell you exactly where things went wrong. Otherwise, you do line-by-line.</p>
+<p>What if the code runs just fine, but doesn’t produce the expected output?</p>
+<p>Break down code into smaller pieces and run them in order l-b-l debug outside the loop/function/pipe sequence by “hard-coding” the arguments that will eventually rely on changeable input Tips for line-by-line debugging in RStudio</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="rubber-duck-debugging" class="slide level2">
 <h2>Rubber duck debugging</h2>
+<p><img data-src="../images/comics-memes/rubber-duck.jpg" class="border-img-primary" style="position: absolute; z-index: 99; float: left; max-height: 20em; margin-left: 1em; bottom: 1em;"></p>
+<div class="d-flex flex-row column-gap-3">
+<div class="card p-2 d-flex fragment" style="flex: 1">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>Step 1:</p>
+</div>
+</div>
+<div class="card-body">
+<p>Beg, borrow, steal, buy, fabricate or otherwise obtain a rubber duck* (bathtub variety).</p>
+</div>
+</div>
+<div class="card card-alt1 p-2 d-flex fragment" style="flex: 1">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>Step 2:</p>
+</div>
+</div>
+<div class="card-body">
+<p>Place rubber duck on desk and inform it you are just going to go over some code with it, if that’s all right.</p>
+</div>
+</div>
+<div class="card p-2 d-flex fragment" style="flex: 1">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>Step 3:</p>
+</div>
+</div>
+<div class="card-body">
+<p>Explain to the duck what your code is supposed to do, consider that the duck may need some specifics, and then go into detail and explain your code line by line.</p>
+</div>
+</div>
+<div class="card card-alt1 p-2 d-flex fragment" style="flex: 1">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>Step 4:</p>
+</div>
+</div>
+<div class="card-body">
+<p>At some point you will tell the duck what you are doing next and then realize that is not in fact what you are actually doing.</p>
+</div>
+</div>
+<div class="card p-2 d-flex fragment" style="flex: 1">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>Step 5:</p>
+</div>
+</div>
+<div class="card-body">
+<p>Enjoy as the duck sit there serenely, happy in the knowledge that it has helped you on your way.</p>
+<p><img data-src="../images/icons/rubber-duck.png"></p>
+</div>
+</div>
+</div>
+<div class="credit" style="float: right !important; width: 60% !important">
+<p>In a pinch a colleague or trusted human might be able to substitute for the duck, however, it is often preferred to confide mistakes to the duck instead of the human.</p>
+</div>
 </section></section>
 <section>
 <section id="asking-for-help" class="title-slide slide level1 center">
 <h1>Asking for help</h1>
 
 </section>
-<section id="how-to-ask-questions" class="slide level2">
-<h2>How to Ask Questions</h2>
+<section id="start-strong" class="slide level2">
+<h2>Start Strong</h2>
+<ul>
+<li class="fragment"><span class="bi-exclamation-octagon-fill"></span> Get what you can from error messages.</li>
+<li class="fragment"><span class="bi-pin-map-fill"></span> Identify the problem points as precisely as possible.</li>
+<li class="fragment"><span class="bi-hourglass-split"></span> Do your best to figure it out yourself.</li>
+</ul>
+<aside class="notes">
+<p>Ask for help! Yay asking for help! BUT YOU STILL NEED TO TRY TO FIGURE IT OUT YOURSELF FIRST. You’ll know what to look for and how to ask the right questions if you’ve already done that work. Also people will want to know what steps you’ve already tried so their answers will be useful.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="minimally-reproducible-examples" class="slide level2">
-<h2>Minimally reproducible examples</h2>
+<section class="slide level2">
+
+<blockquote>
+<p><span style="font-size: 1.4em;">I think the problem, to be quite honest with you, is that you’ve never actually known what the question is.</span></p>
+<p><span style="font-size: .9em;"><em>Douglas Adams</em></span></p>
+</blockquote>
+
+<img data-src="../images/comics-memes/xkcd-answer.jpg" class="r-stretch"></section>
+<section id="how-to-ask-good-questions" class="slide level2">
+<h2>How to Ask Good Questions</h2>
+<div class="container-fluid">
+<div class="row">
+<div class="col-6 d-flex" style="flex: 1">
+<div class="overlap-box fragment">
+<div class="box-title">
+<p>How do I ask a good question?</p>
+</div>
+<div class="box-content">
+<p><a href="http://www.catb.org/~esr/faqs/smart-questions.html" class="fragment">How to Ask Questions the Smart Way</a></p>
+<ul>
+<li class="fragment">Prepare sufficiently</li>
+<li class="fragment">Choose the appropriate forum</li>
+<li class="fragment">Be clear and specific</li>
+<li class="fragment">Describe the goal, not the step</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-6 d-flex" style="flex: 1">
+<div class="overlap-box overlap-box-blue fragment">
+<div class="box-title">
+<p>How do I get someone to answer?</p>
+</div>
+<div class="box-content">
+<p><a href="https://codereview.stackexchange.com/help/how-to-ask" class="fragment">How do I ask a good question?</a></p>
+<ul>
+<li class="fragment">Be on-topic</li>
+<li class="fragment">Use an informative title</li>
+<li class="fragment">Provide reproducible code and an explanation of the code and its intention</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="minimally-reproducible-examples" class="slide level2 scrollable">
+<h2>Minimally Reproducible Examples</h2>
+<ul>
+<li class="fragment"><strong>Minimal:</strong> only the code necessary to reproduce the problem</li>
+<li class="fragment"><strong>Reproducible:</strong> includes any data or package dependencies</li>
+<li class="fragment"><strong>Example:</strong> illustrates the problem clearly</li>
+</ul>
+<div class="large fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>MRE Ingredients</strong></p>
+</div>
+<div class="callout-content">
+<p><a href="https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610"><em>StackOverflow</em></a></p>
+<ol type="1">
+<li>The minimal and sufficient dataset used (usually not your actual data! better to use built-in data like iris or cars; run <code>data()</code> for more).</li>
+<li>Minimal and sufficient runnable code</li>
+<li>Necessary session and OS info, including loaded libraries and seed if used.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="ask-the-internet" class="slide level2">
 <h2>Ask the Internet</h2>
+<ul>
+<li class="fragment"><a href="https://stackoverflow.com/questions/tagged/r">Stack Overflow</a></li>
+<li class="fragment"><a href="https://community.rstudio.com/c/r/9">RStudio Community</a></li>
+<li class="fragment">Reddit
+<ul>
+<li class="fragment"><a href="https://www.reddit.com/r/rstats/">r/rstats</a></li>
+<li class="fragment"><a href="https://www.reddit.com/r/rprogramming">r/rprogramming</a></li>
+<li class="fragment"><a href="https://www.reddit.com/r/rstudio">r/rstudio</a></li>
+<li class="fragment"><a href="https://www.reddit.com/r/quarto">r/quarto</a></li>
+</ul></li>
+</ul>
 </section>
 <section id="ask-humans" class="slide level2">
 <h2>Ask Humans</h2>
+<ul>
+<li class="fragment">In-class workshops and lectures
+<ul>
+<li class="fragment"><em>You have to actually ask a question to get an answer!</em></li>
+</ul></li>
+<li class="fragment">D2M-R Slack</li>
+<li class="fragment">Study groups</li>
+<li class="fragment">Office hours</li>
+</ul>
 </section>
 <section id="ask-ai" class="slide level2">
 <h2>Ask AI</h2>
+<ul>
+<li class="fragment"><a href="https://docs.posit.co/ide/user/ide/guide/tools/copilot.html">Use GitHub Copilot in RStudio</a></li>
+<li class="fragment">Yes, you can and should use AI. Just be smart about it.</li>
+<li class="fragment">AI is your overconfident and entirely uninvested collaborator.</li>
+<li class="fragment">As a beginner programmer:
+<ul>
+<li class="fragment">DO use AI as a debugging resource</li>
+<li class="fragment">DO use AI to explain code</li>
+<li class="fragment">DON’T use AI to generate code you can’t write yourself</li>
+<li class="fragment">DON’T give it the same confidence it gives itself</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>AI is great and a gamechanger for programming, but it cannot replace knowledge of how the code actually works. Asking AI to produce anything but the simplest code is going to produce errors. They are often SUPER EASY to fix, but you’ll need to know how to recognize what’s going on. You need to know how it’s supposed to work even if you didn’t generate it all yourself.</p>
+<p>Basically think of chatGPT as a collaborator. They can do a ton, but if this project is ultimately your responsibility, you need to have the foundations to work WITH it (and know how and when to give up and do it yourself when the AI is totally fucked).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="starting-from-nothing" class="slide level2">
-<h2>Starting from nothing</h2>
-</section></section>
-<section id="d2m-r-troubleshooting-process" class="title-slide slide level1 center">
-<h1>D2M-R troubleshooting process</h1>
-
+<h2>Starting from “Nothing”</h2>
+<div class="bubble-chain top">
+<p class="bubble-left fragment" style="margin-left: 25%; width: 500px;">
+How do I get started with really complex packages, like ggplot2, stats, and psych?
+</p>
+<p class="bubble-left fragment" style="margin-left: 10%;">
+How do I find an existing function or package that I need when I don’t even know whether such a thing exists?
+</p>
+</div>
+<div class="bubble-chain bottom">
+<p class="bubble-left fragment" style="margin-left: 15%; margin-top: -15%;">
+You keep throwing around words like I’m supposed to know it already, and then you say if I don’t know it, I should do some other thing I don’t know. Not fair.
+</p>
+<p class="bubble-right fragment" style="margin-top: -30%;">
+Know the outcome you want and work backwards. You don’t need to fully understand everything. What do you need to know? What are the questions to ask to get those answers? Where can you turn with those particular questions?
+</p>
+</div>
 </section>
+<section id="your-d2m-r-troubleshooting-path" class="slide level2">
+<h2>YOUR D2M-R TROUBLESHOOTING PATH</h2>
+<div style="display: grid; grid-template-columns: 1fr 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr; grid-template-rows: auto 3em auto; gap: 8px;">
+<!-- Row 1: Steps 1-4 -->
+<div class="flow-box" style="grid-column: 1; grid-row: 1; background-color: #800000;">
+<p>Read relevant documentation.</p>
+<div class="flow-icon-circle">
+<p><span class="bi-file-text-fill"></span></p>
+</div>
+</div>
+<div class="flow-arrow" style="grid-column: 2; grid-row: 1;">
+<p><span class="bi-arrow-right-circle-fill"></span></p>
+</div>
+<div class="flow-box" style="grid-column: 3; grid-row: 1; background-color: #6e0e10;">
+<p>Identify any error messages or warnings and attempt to resolve them. ️</p>
+<div class="flow-icon-circle">
+<p><span class="bi-exclamation-octagon-fill"></span></p>
+</div>
+</div>
+<div class="flow-arrow" style="grid-column: 4; grid-row: 1;">
+<p><span class="bi-arrow-right-circle-fill"></span></p>
+</div>
+<div class="flow-box" style="grid-column: 5; grid-row: 1; background-color: #5b1b21;">
+<p>Confirm that your data and code are playing together.</p>
+<div class="flow-icon-circle">
+<p><span class="bi-yin-yang"></span></p>
+</div>
+</div>
+<div class="flow-arrow" style="grid-column: 6; grid-row: 1;">
+<p><span class="bi-arrow-right-circle-fill"></span></p>
+</div>
+<div class="flow-box" style="grid-column: 7; grid-row: 1; background-color: #492931;">
+<p>Review your code at a granular level (line-by-line, rubber ducking).</p>
+<div class="flow-icon-circle">
+<p><span class="bi-zoom-in"></span></p>
+</div>
+</div>
+<!-- Down arrow -->
+<div class="flow-arrow" style="grid-column: 7; grid-row: 2; ">
+<p><span class="bi-arrow-down-circle-fill"></span></p>
+</div>
+<!-- Row 2: Steps 5-8 (in reverse order) -->
+<div class="flow-box" style="grid-column: 7; grid-row: 3; background-color: #373642;">
+<p>Identify as specific issues and generate specific questions.</p>
+<div class="flow-icon-circle">
+<p><span class="bi-card-list"></span></p>
+</div>
+</div>
+<div class="flow-arrow" style="grid-column: 6; grid-row: 3;">
+<p><span class="bi-arrow-left-circle-fill"></span></p>
+</div>
+<div class="flow-box" style="grid-column: 5; grid-row: 3; background-color: #254452;">
+<p>Use community resources (e.g., Slack, StackOverflow, Reddit) to find answers.</p>
+<div class="flow-icon-circle">
+<p><span class="bi-person-lines-fill"></span></p>
+</div>
+</div>
+<div class="flow-arrow" style="grid-column: 4; grid-row: 3;">
+<p><span class="bi-arrow-left-circle-fill"></span></p>
+</div>
+<div class="flow-box" style="grid-column: 3; grid-row: 3; background-color: #125163;">
+<p>Email your TA. ️</p>
+<div class="flow-icon-circle">
+<p><span class="bi-envelope"></span></p>
+</div>
+</div>
+<div class="flow-arrow" style="grid-column: 2; grid-row: 3;">
+<p><span class="bi-arrow-left-circle-fill"></span></p>
+</div>
+<div class="flow-box" style="grid-column: 1; grid-row: 3; background-color: #005f73;">
+<p>Email Dr.&nbsp;Dowling. ️</p>
+<div class="flow-icon-circle">
+<p><span class="bi-envelope-fill"></span></p>
+</div>
+</div>
+</div>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>D2M-R I | Week 1</p>
 </div>
 </div></div>
 

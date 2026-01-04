@@ -2,6 +2,7 @@
 title: "Preventing & Solving Problems"
 subtitle: "best practices, debugging, independent learning"
 date: "1/6/2026"
+footer: "D2M-R I | Week 1" #  quarter, week, and class
 
 format: revealjs
 engine: knitr
@@ -1017,7 +1018,7 @@ left_join(
 
 ::: notes
 
-We'll talk about "packages" next time – but the idea is that they are collections of functions that work together nicely toward similar programming goals.
+We'll talk about "packages" more comprehensively when we get to R programming fundamentals – but the idea is that they are collections of functions that work together nicely toward similar programming goals.
 There are "base R" functions that are built in, but the vast majority of function you'll use come from packages you need to install and load.
 
 Packages must meet certain requirements to be accessible through CRAN, including being fully 100% compatible with current versions of R.
@@ -1028,30 +1029,594 @@ There are lots of excellent, high-quality, well-maintained packages that aren't 
 
 ## Resources
 
+- [R/RStudio Cheatsheets](https://posit.co/resources/cheatsheets/)
+- Web textbooks, e.g.:
+    -   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+    -   [R for Data Science (2e)](https://r4ds.hadley.nz/)
+    -   [Hands-On Programming with R](https://rstudio-education.github.io/hopr/index.html)
+    -   [D2M-R Textbook](https://d2m-r.github.io/book/)
+        -   *very much still in early development!* 
+        -   Contribute to the textbook as a course project through the [repo](github.com/d2m-r/book)
+- D2M-R Course site:
+    -   [List of external resources](../materials/resources.qmd)
+    -   [Miscellaneous materials and course guides](../materials/misc-materials.qmd)
+    -   [Slides archive](../materials/slides.qmd)
+
+
 # Solving your own problems
+
+No one will help you until you at least try.
+
+___
+
+::: notitle-slide
+
+![](../images/comics-memes/debugging.png)
+
+::: credit
+
+Artwork by @allison_horst"
+
+::: 
+
+:::
 
 ## Error messages
 
-## Common error messages (link to textbook?)
+Errors starting with these phrases are super common and have predictable causes:
 
-## Errors vs warnings
+-   `could not find function`: the function's package is not loaded (or more commonly, typos)
+-   `Error in if`: non-logical data or missing values passed to R's `if` conditional statement
+-  ` Error in eval`: references to objects that don't exist
+-   `cannot open`: attempts to read a file that doesn't exist or can't be accessed
+-   `no applicable method`: using an object-oriented function on a data type it doesn't support
+-   `subscript out of bounds`: trying to access an element or dimension that doesn't exist
+-   `package errors`: R cannot install or load a package due to missing dependencies or conflicts
 
-## Line-by-line debugging
+
+<!-- ## Bubbles from the bottom -->
+
+::: bubble-chain
+
+<p class="bubble-left fragment">But my error message isn't common!</p>
+<p class="bubble-left fragment">My error is common but the solution isn't working!</p>
+<p class="bubble-left fragment">I have literally no idea what this error message means!</p>
+      
+<p class="bubble-right fragment"><span style="font-size: 2em !important;">**GOOGLE IT.**</span></p>
+  
+:::
+
+::: credit
+
+List from [How to: Interpret Common Errors in R](https://warin.ca/posts/rcourse-howto-interpretcommonerrors/)
+
+:::
+
+::: notes
+
+The D2M-R textbook includes a longer list of specific error messages and suggestions for handling them.
+
+:::
+
+
+## Errors, Warnings, Messages
+
+::: container-fluid
+
+::: row
+
+::: {.col-4 .d-flex .align-items-stretch}
+
+::: callout-warning
+
+### **Errors** *must* be addressed
+
+*R says:* "Something has gone wrong and I cannot and will not move forward."
+
+:::
+
+:::
+
+::: {.col-4 .d-flex .align-items-stretch}
+
+::: callout-caution
+
+### **Warnings** should *usually* be addressed
+
+*R says:* "This doesn't look right but I'm just a robot what do I know."
+
+:::
+
+:::
+
+::: {.col-4 .d-flex .align-items-stretch}
+
+::: callout-tip
+
+### **Messages** are informational only
+
+*R says:* "No problem, done! But just FYI..." 
+
+*Not all alarming words and big red Xs are problems.*
+
+:::
+
+:::
+
+:::
+
+::: row
+
+::: {.col-4 .d-flex .align-items-stretch}
+
+![The object `subjects` doesn't exist. The object's name is `subject`.](../images/screenshots/error-in-filter.png)
+
+:::
+
+::: {.col-4 .d-flex .align-items-stretch}
+
+![The string `"NA"` doesn't look like a numeral, but that's ok because it's not supposed to become a numeral.](../images/screenshots/warning-coercion.png)
+
+:::
+
+::: {.col-4 .d-flex .align-items-stretch}
+
+![The functions `filter()` and `lag()` were already defined when the stats package was loaded so loading dplyr now overrides them. If we want the stats versions of these, we need to load that package after dplyr.](../images/screenshots/message-conflict.png)
+
+:::
+
+:::
+
+:::
+
+
+## Line-by-Line Debugging
+
+There is a problem, but *where* is the problem?
+
+-   Break down code into smaller pieces and run them one line at a time.
+-   Debug *outside* a code "container" by hardcoding values
+    -   loops, functions, pipelines
+-   Use [RStudio's debugging tools](https://support.posit.co/hc/en-us/articles/205612627-Debugging-with-the-RStudio-IDE)
+
+::: {.callout-tip .fragment}
+
+### RStudio Debugging Shortcut
+
+-   Run current line or selected code: `Cmd + Return`
+-   Run current chunk: `Cmd + Option + C`
+-   Run all: `Shift + Cmd + Return`
+
+*Windows: Cmd=Ctrl, Option=Alt, Return=Enter*
+
+:::
+
+
+
+::: notes
+
+If you get an error message, it will tell you exactly where things went wrong.
+Otherwise, you do line-by-line.
+
+What if the code runs just fine, but doesn't produce the expected output?
+
+Break down code into smaller pieces and run them in order
+l-b-l debug outside the loop/function/pipe sequence by "hard-coding" the arguments that will eventually rely on changeable input
+Tips for line-by-line debugging in RStudio
+
+:::
 
 ## Rubber duck debugging
 
+![](../images/comics-memes/rubber-duck.jpg){.border-img-primary style="position: absolute; z-index: 99; float: left; max-height: 20em; margin-left: 1em; bottom: 1em;"}
+
+::: {.d-flex .flex-row .column-gap-3}
+
+::: {.card .p-2 .d-flex style="flex: 1" .fragment}
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Step 1:
+
+:::
+:::
+
+::: card-body
+
+Beg, borrow, steal, buy, fabricate or otherwise obtain a rubber duck\* (bathtub variety).
+
+:::
+:::
+
+::: {.card .card-alt1 .p-2 .d-flex style="flex: 1" .fragment}
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Step 2:
+
+:::
+:::
+
+::: card-body
+
+Place rubber duck on desk and inform it you are just going to go over some code with it, if that’s all right.
+
+:::
+:::
+
+::: {.card .p-2 .d-flex style="flex: 1" .fragment}
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Step 3:
+
+:::
+:::
+
+::: card-body
+
+Explain to the duck what your code is supposed to do, consider that the duck may need some specifics, and then go into detail and explain your code line by line.
+
+:::
+:::
+
+::: {.card .card-alt1 .p-2 .d-flex style="flex: 1" .fragment}
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Step 4:
+
+:::
+:::
+
+::: card-body
+
+At some point you will tell the duck what you are doing next and then realize that is not in fact what you are actually doing.
+
+:::
+:::
+
+::: {.card .p-2 .d-flex style="flex: 1" .fragment}
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Step 5:
+
+:::
+:::
+
+::: card-body
+
+Enjoy as the duck sit there serenely, happy in the knowledge that it has helped you on your way.
+
+![](../images/icons/rubber-duck.png)
+
+:::
+:::
+
+:::
+
+::: {.credit style="float: right !important; width: 60% !important"}
+
+In a pinch a colleague or trusted human might be able to substitute for the duck, however, it is often preferred to confide mistakes to the duck instead of the human.
+
+:::
+
+
 # Asking for help
 
-## How to Ask Questions
+## Start Strong
 
-## Minimally reproducible examples
+-   []{.bi-exclamation-octagon-fill} Get what you can from error messages. 
+-   []{.bi-pin-map-fill} Identify the problem points as precisely as possible.
+-   []{.bi-hourglass-split} Do your best to figure it out yourself.
+
+::: notes
+
+Ask for help! Yay asking for help! BUT YOU STILL NEED TO TRY TO FIGURE IT OUT YOURSELF FIRST. You'll know what to look for and how to ask the right questions if you've already done that work. Also people will want to know what steps you've already tried so their answers will be useful.
+
+:::
+
+---
+
+
+> [I think the problem, to be quite honest with you, is that you’ve never actually known what the question is.]{style="font-size: 1.4em;"}
+>
+> [*Douglas Adams*]{style="font-size: .9em;"}
+
+![](../images/comics-memes/xkcd-answer.jpg)
+
+
+
+## How to Ask Good Questions
+
+::: container-fluid
+
+::: row
+
+::: {.col-6 .d-flex style="flex: 1"}
+
+::: {.overlap-box .fragment}
+
+::: {.box-title}
+
+How do I ask a good question?
+
+:::
+
+::: {.box-content}
+
+[How to Ask Questions the Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html){.fragment}
+
+-   Prepare sufficiently
+-   Choose the appropriate forum
+-   Be clear and specific
+-   Describe the goal, not the step
+
+:::
+
+:::
+
+:::
+
+::: {.col-6 .d-flex style="flex: 1"}
+
+::: {.overlap-box .overlap-box-blue .fragment}
+
+::: {.box-title}
+
+How do I get someone to answer?
+
+:::
+
+::: {.box-content}
+
+[How do I ask a good question?](https://codereview.stackexchange.com/help/how-to-ask){.fragment}
+
+-   Be on-topic
+-   Use an informative title
+-   Provide reproducible code and an explanation of the code and its intention
+
+:::
+
+:::
+
+:::
+
+:::
+
+:::
+
+## Minimally Reproducible Examples
+
+-   **Minimal:** only the code necessary to reproduce the problem
+-   **Reproducible:** includes any data or package dependencies
+-   **Example:** illustrates the problem clearly
+
+
+::: {.callout-tip .large .fragment}
+
+
+### MRE Ingredients
+
+[*StackOverflow*](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610)
+
+::: nonincremental
+1. The minimal and sufficient dataset used (usually not your actual data! better to use built-in data like iris or cars; run `data()` for more).
+2. Minimal and sufficient runnable code
+3. Necessary session and OS info, including loaded libraries and seed if used.
+:::
+
+:::
 
 ## Ask the Internet
 
+-   [Stack Overflow](https://stackoverflow.com/questions/tagged/r)
+-   [RStudio Community](https://community.rstudio.com/c/r/9)
+-   Reddit
+    -   [r/rstats](https://www.reddit.com/r/rstats/)
+    -   [r/rprogramming](https://www.reddit.com/r/rprogramming)
+    -   [r/rstudio](https://www.reddit.com/r/rstudio)
+    -   [r/quarto](https://www.reddit.com/r/quarto)
+
+
 ## Ask Humans
+
+-   In-class workshops and lectures
+    -   *You have to actually ask a question to get an answer!*
+-   D2M-R Slack
+-   Study groups
+-   Office hours
 
 ## Ask AI
 
-## Starting from nothing
+-   [Use GitHub Copilot in RStudio](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html)
+-   Yes, you can and should use AI. Just be smart about it.
+-   AI is your overconfident and entirely uninvested collaborator.
+-   As a beginner programmer:
+    -   DO use AI as a debugging resource
+    -   DO use AI to explain code
+    -   DON'T use AI to generate code you can't write yourself
+    -   DON'T give it the same confidence it gives itself
 
-# D2M-R troubleshooting process
+::: notes
+
+AI is great and a gamechanger for programming, but it cannot replace knowledge of how the code actually works. Asking AI to produce anything but the simplest code is going to produce errors. They are often SUPER EASY to fix, but you'll need to know how to recognize what's going on. You need to know how it's supposed to work even if you didn't generate it all yourself.
+
+Basically think of chatGPT as a collaborator. They can do a ton, but if this project is ultimately your responsibility, you need to have the foundations to work WITH it (and know how and when to give up and do it yourself when the AI is totally fucked).
+
+:::
+
+## Starting from "Nothing"
+
+::: {.bubble-chain .top}  
+
+<p class="bubble-left fragment" style="margin-left: 25%; width: 500px;">How do I get started with really complex packages, like ggplot2, stats, and psych? </p>
+<p class="bubble-left fragment" style="margin-left: 10%;">How do I find an existing function or package that I need when I don't even know whether such a thing exists?
+</p>
+
+:::
+
+::: {.bubble-chain .bottom}  
+<p class="bubble-left fragment" style="margin-left: 15%; margin-top: -15%;">You keep throwing around words like I'm supposed to know it already, and then you say if I don't know it, I should do some other thing I don't know. Not fair.</p>
+
+
+<p class="bubble-right fragment" style="margin-top: -30%;">Know the outcome you want and work backwards. You don't need to fully understand everything. \n
+What do you need to know? \n
+What are the questions to ask to get those answers? \n
+Where can you turn with those particular questions?</p>
+
+:::
+
+---
+
+
+## YOUR D2M-R TROUBLESHOOTING PATH
+
+::: {style="display: grid; grid-template-columns: 1fr 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr; grid-template-rows: auto 3em auto; gap: 8px;"}
+
+<!-- Row 1: Steps 1-4 -->
+
+::: {.flow-box style="grid-column: 1; grid-row: 1; background-color: #800000;"}
+
+Read relevant documentation.
+
+::: flow-icon-circle
+
+[]{.bi-file-text-fill}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 2; grid-row: 1;"}
+
+[]{.bi-arrow-right-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 3; grid-row: 1; background-color: #6e0e10;"}
+
+Identify any error messages or warnings and attempt to resolve them. ️
+
+::: flow-icon-circle
+
+[]{.bi-exclamation-octagon-fill}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 4; grid-row: 1;"}
+
+[]{.bi-arrow-right-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 5; grid-row: 1; background-color: #5b1b21;"}
+
+Confirm that your data and code are playing together.
+
+::: flow-icon-circle
+
+[]{.bi-yin-yang}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 6; grid-row: 1;"}
+
+[]{.bi-arrow-right-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 7; grid-row: 1; background-color: #492931;"}
+
+Review your code at a granular level (line-by-line, rubber ducking).
+
+::: flow-icon-circle
+
+[]{.bi-zoom-in}
+
+:::
+
+:::
+
+<!-- Down arrow -->
+
+::: {.flow-arrow style="grid-column: 7; grid-row: 2; "}
+
+[]{.bi-arrow-down-circle-fill}
+
+:::
+
+<!-- Row 2: Steps 5-8 (in reverse order) -->
+
+::: {.flow-box style="grid-column: 7; grid-row: 3; background-color: #373642;"}
+
+Identify as specific issues and generate specific questions.
+
+::: flow-icon-circle
+
+[]{.bi-card-list}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 6; grid-row: 3;"}
+
+[]{.bi-arrow-left-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 5; grid-row: 3; background-color: #254452;"}
+
+Use community resources (e.g., Slack, StackOverflow, Reddit) to find answers.
+
+::: flow-icon-circle
+
+[]{.bi-person-lines-fill}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 4; grid-row: 3;"}
+
+[]{.bi-arrow-left-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 3; grid-row: 3; background-color: #125163;"}
+
+Email your TA. ️
+
+::: flow-icon-circle
+
+[]{.bi-envelope}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 2; grid-row: 3;"}
+
+[]{.bi-arrow-left-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 1; grid-row: 3; background-color: #005f73;"}
+
+Email Dr. Dowling. ️
+
+::: flow-icon-circle
+
+[]{.bi-envelope-fill}
+
+:::
+
+:::
+
+:::

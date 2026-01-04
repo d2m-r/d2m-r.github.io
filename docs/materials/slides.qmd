@@ -1,0 +1,22 @@
+---
+title: "Slides"
+format: html
+---
+
+<!-- Note: Only link to .html files for slides, not .qmd. Slides are rendered in a different profile and calling theme here will cause conflicts when the site profile renders. -->
+
+## D2M-R Quarter I Slides
+
+-   Week 1: [Introduction to D2M-R](../slides/Q1-W1_introduction.html) and [Problem Solving Strategies](../slides/Q1-W1_problem_solving.html)
+-   Week 2: Git & GitHub
+-   Week 3: R Programming Language
+-   Week 4: Tidyverse Essentials
+-   Week 5: *no slides*
+-   Week 6: Tidyverse Data Wrangling, part 1
+-   Week 7: Tidyverse Data Wrangling, part 2
+-   Week 8: Data Reporting Essentials
+-   Week 9: *no slides*
+
+## D2M-R Quarter II Slides
+
+*D2M-R II slides will be available in Spring 2026.*
