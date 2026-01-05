@@ -9,7 +9,9 @@ title: "Guided Exercise: Create and Sync a GitHub Repo with RStudio"
 ### Pre-requisites
 
 1. A GitHub account.
-2. RStudio installed with git configured.
+2. RStudio installed with git configured. Learn more:
+    1. [Happy Git and GitHub for the useR](https://happygitwithr.com/connect-intro)
+    2. [Using GitHub with RStudio - D2M-R Guide](rstudio-github.qmd)
 
 ### Steps
 

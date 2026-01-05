@@ -23,6 +23,20 @@ You may also go "off the menu" to create your own projects from scratch. If you 
 
 Where projects link to GitHub Classroom Assignments, the project can be completed directly within the assignment. Alternatively, you can access the materials from the student hub repository to create new, dedicated repo to show more advanced GitHub skills.
 
+::: callout-tip
+
+### Example Assignment
+
+This example assignment is a crash course in using RStudio with GitHub, working in Quarto documents with markdown, and running simple R code within a Quarto document.
+
+Click the link to accept the GitHub Classroom invitation and access the assignment so you can figure out the process of cloning, editing, committing, pushing, and submitting assignments through GitHub and GH Classroom.
+
+Need more help? Read the [GitHub submission guidelines](misc/gh-submissions.qmd).
+
+Example Assignment: [GitHub Classroom](https://classroom.github.com/a/oiL9tsfr)
+
+:::
+
 1.  Version Control
     1.  Skeleton repo (Semi-structured)
         1.  [Student Hub](https://github.com/d2m-r/student-hub/blob/main/project-documents/version-control/skeleton-repo.md)

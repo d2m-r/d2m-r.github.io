@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-674040da490b9a8d4816ee8e29c91e3e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-823d145ded7e46f5397f613d4ab5fe44.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -402,14 +402,72 @@ Text to appear before the accordion
 <ul>
 <li><a href="../slides/Q1-W1_introduction.html">Intro Slides</a></li>
 <li><a href="../slides/Q1-W1_problem-solving.html">Problem-Solving Slides</a></li>
-<li><a href="github.com/d2m-r/book/">Textbook Chapter</a></li>
+<li>Course guides:
+<ul>
+<li><a href="../materials/guides/setting-up-rstudio.html">Setting Up RStudio Guide</a></li>
+<li><a href="../materials/guides/rstudio-github.qmd">Using GitHub with RStudio</a></li>
+</ul></li>
+<li>Textbook
+<ul>
+<li><strong>Reminder:</strong> The textbook is in its infancy! I hope you’ll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources.</li>
+<li><a href="https://d2m-r.com/book/chapters/intro.html">Ch1: Introduction to D2M-R) Problems</a>
+<ul>
+<li>Chapter status (Jan 2025): overview of what the book is and isn’t, basically nothing else</li>
+</ul></li>
+<li><a href="https://d2m-r.com/book/chapters/r-programming.html">Ch2: Solving (Your Own) Problems</a>
+<ul>
+<li>Chapter status (Jan 2025): ~90% first draft for Best Practices section; 2% for debugging (stick to slides for now)</li>
+</ul></li>
+<li><a href="https://d2m-r.com/book/chapters/rstudio.html">Ch3: RStudio Essentials</a>
+<ul>
+<li>Chapter status (Jan 2025): ~75% first draft</li>
+</ul></li>
+</ul></li>
 </ul>
 <!-- software, tools, datasets, etc -->
+<p><strong>Downloads:</strong></p>
+<ul>
+<li><a href="https://cran.r-project.org/">R</a></li>
+<li><a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
+<li><a href="https://git-scm.com/downloads">Git</a>
+<ul>
+<li>You don’t usually need to install Git separately, but you can</li>
+</ul></li>
+</ul>
 <p><strong>Additional Resources:</strong></p>
 <ul>
-<li>readings</li>
-<li>cheat-sheets</li>
-<li>tutorials</li>
+<li>Getting started with R and RStudio:
+<ul>
+<li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></li>
+<li><a href="https://rstudio-education.github.io/hopr/basics.html">Hands on Programming for R: The Very Basics</a></li>
+<li><a href="https://docs.posit.co/ide/user/ide/get-started/">RStudio User Guide: Get Started</a>
+<ul>
+<li>Detailed introduction to the RStudio interface by the people who make it</li>
+</ul></li>
+</ul></li>
+<li>Best practices:
+<ul>
+<li><a href="https://www.plutora.com/blog/understanding-the-dry-dont-repeat-yourself-principle">Understanding the DRY Principle</a></li>
+<li><a href="https://codesigningstore.com/ultimate-programming-best-practices-guide">Ultimate Programming Best Practices Guide</a></li>
+<li><a href="https://www.educative.io/blog/coding-best-practices">6 Coding Best Practices for Beginner Programmers</a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable">R function lifecycle stages documentation</a></li>
+<li><a href="https://style.tidyverse.org/">Tidyverse style guide</a></li>
+<li><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories">Best practices for (github) repositories</a></li>
+</ul></li>
+<li>Troubleshooting:
+<ul>
+<li><a href="https://rubberduckdebugging.com/">Rubber duck debugging</a></li>
+<li><a href="https://careeremployer.com/web-development/how-to-use-stack-overflow/">How to use stack overflow (2023 beginner’s guide)</a></li>
+<li><a href="https://rollbar.com/blog/how-to-debug-code-using-chatgpt/">Dubgging with chatGPT</a></li>
+<li><a href="https://statisticsglobe.com/errors-warnings-r">Common errors and warnings in R</a></li>
+</ul></li>
+<li>Relevant subreddits:
+<ul>
+<li><a href="https://www.reddit.com/r/Rlanguage/">r/Rlanguage</a></li>
+<li><a href="https://www.reddit.com/r/rprogramming/">r/rprogramming</a></li>
+<li><a href="https://www.reddit.com/r/RStudio/">r/RStudio</a></li>
+<li><a href="https://www.reddit.com/r/github/">r/github</a></li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -440,6 +498,11 @@ Text to appear before the accordion
 <li>Use this <a href="https://classroom.github.com/a/oiL9tsfr">GH classroom invite</a> to access the assignment so you can figure out the process of cloning, editing, committing, pushing, and submitting assignments through GitHub and GH Classroom.</li>
 <li>Between Tuesday and Thursday, you should get everything set up at least through have the repo cloned on your computer and accessible with an RStudio project.</li>
 <li>Before Week 2 you should complete the rest of the assignment, using the problem-solving slides to help if you get stuck.</li>
+</ul></li>
+<li><a href="../materials/guides/walkthrough-github-rstudio.qmd">Guided Exercise: Create and Sync a GitHub Repo with RStudio</a>
+<ul>
+<li>This exercise walks you through creating a GitHub repository and connecting it to an RStudio project.</li>
+<li>This is similar to what you’ll do for the example assignment, but with more detailed instructions and without the pressure of a graded submission.</li>
 </ul></li>
 </ul>
 <p><strong>To-do:</strong></p>

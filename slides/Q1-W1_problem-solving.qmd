@@ -1039,7 +1039,7 @@ There are lots of excellent, high-quality, well-maintained packages that aren't 
         -   Contribute to the textbook as a course project through the [repo](github.com/d2m-r/book)
 - D2M-R Course site:
     -   [List of external resources](../materials/resources.qmd)
-    -   [Miscellaneous materials and course guides](../materials/misc-materials.qmd)
+    -   [Miscellaneous materials and course guides](../materials/course-resources.qmd)
     -   [Slides archive](../materials/slides.qmd)
 
 

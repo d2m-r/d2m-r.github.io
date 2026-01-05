@@ -18,7 +18,7 @@ editor: source
 
 ### From Data to Manuscript in R - Quarter 1
 
-::: {nonincremental}
+::: {.nonincremental}
 
 -   **PSYC/MAPS/MACS/CHDV 30550**
 -   **Course website:** [d2m-r.github.io](https://d2m-r.github.io/)
@@ -31,9 +31,11 @@ editor: source
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="50%" .fragment}
 
 ### Professor: Dr. Natalie Dowling
+
+::: nonincremental
 
 -   **Preferred name:** Natalie or Dr. Dowling
 -   **Pronouns:** she/her
@@ -43,15 +45,17 @@ editor: source
     -   1155 E 60th St, Rm 404
     -   Thursdays 2-4pm by appointment - [book here]()
     -   Email to set up an alternative meeting time
+    
 :::
     
-:::notes
-I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happy with either, so do whatever feels comfortable for you.
 :::
+
     
-::: {.column width="50%"}
+::: {.column width="50%" .fragment}
 
 ### Teaching Assistant: Qilong Bi
+
+::: nonincremental
 
 -   **Preferred name:** Qilong
 -   **Pronouns:** he/him
@@ -60,8 +64,14 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
 -   **Office hours:**
     -   *location TBA*
     -   *day/time TBA*
+
+:::
 :::
 
+:::
+
+:::notes
+I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happy with either, so do whatever feels comfortable for you.
 :::
 
 # Syllabus
@@ -69,21 +79,27 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
 ## Expectations & Course Goals
 
 
+1. **Develop a reproducible and transparent research workflow.** 
+2. **Practice accountability & time management.** 
+3. **Engage with your research communities.** 
+4. **Develop problem-solving and independent learning skills.** 
+
+
+::: notes
+
 1. **Develop a reproducible and transparent research workflow.** Plan, execute, and document a data analysis project from start to finish including data acquisition, cleaning, analysis, visualization, and reporting.
 2. **Practice accountability & time management.** Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.
 3. **Engage with your research communities.** Collaborate effectively with peers, contribute to group learning, and seek help when needed.
 4. **Develop problem-solving and independent learning skills.** Develop specific strategies for debugging code, troubleshooting errors, asking good questions, and learning new skills independently using the myriad resources available online from R and open-science communities.
 
-
-::: notes
-### D2M-R will give you:
+D2M-R will give you:
 
 -   A basic knowledge of how to use GitHub, R, RStudio, Quarto/RMarkdown, and the tidyverse packages
 -   Strategies for how to identify and resolve bugs in the data-to-manuscript process
 -   Supports for establishing and maintaining a workflow within your project
 -   Tools to implement your own data analysis and visualization plans
 
-### D2M-R will __*not*__ give you:
+D2M-R will __*not*__ give you:
 
 -   Comprehensive expertise in any of the tools or packages or depth in packages outside the tidyverse
 -   Instructors or classmates who solve your technical problems for you
@@ -93,17 +109,52 @@ I genuinely don't care if you call me Natalie or Dr. Dowling. I'm perfectly happ
 
 ## Course Philosophy
 
-This class is for you. You should come away with:
+::: row
 
-- Foundational skills that everything else is built on
-- Application of those skills designed around your individual priorities, interests, and goals
+::: col-6
 
-To get you there, the class is designed around four key principles:
+::: {.overlap-box .fragment}
+
+::: box-title
+
+This class is for you.
+
+:::
+
+::: box-content
+
+- Gain foundational skills that everything else is built on
+- Apply those skills designed around your individual priorities, interests, and goals
+
+:::
+
+:::
+
+:::
+
+::: col-6
+
+::: {.overlap-box .fragment}
+
+::: box-title
+
+Four key principles
+
+:::
+
+::: box-content
 
 - Standards-based grading
 - Multiple pathways to demonstrate course objectives
 - Tiered credit for mastery levels
 - Individualized plans and pacing
+
+:::
+
+:::
+
+:::
+:::
 
 ::: notes
 
@@ -198,14 +249,33 @@ This course uses a **standards-based grading** system designed to support your s
 
 ## Communication: Email vs. Slack
 
+::: overlap-box
 
-### Email
+::: box-title
+
+Email
+
+:::
+
+::: box-content
 
 - Private communication with professor/TAs
 - Topics that concern *you and only you*
 - Accommodation requests
 
-### Slack
+:::
+
+:::
+
+::: overlap-box
+
+::: box-title
+
+Slack
+
+:::
+
+::: box-content
 
 - Class-wide communication with instructors and students
 - Topics that may concern others, e.g.:
@@ -213,17 +283,20 @@ This course uses a **standards-based grading** system designed to support your s
     - Clarifications about grading policies
     - Requests for support
 
+:::
+
+:::
 
 ::: notes
 
-### Email
+Email:
 
 - Private communication with professors or TAs
 - Use for personal matters, scheduling, or other private issues
     - Topics that concern you and only you
 - Requests for accommodations
 
-### Slack
+Slack:
 
 - Class-wide communication with instructors and students
 - Topics that may concern others, e.g.:
@@ -233,19 +306,6 @@ This course uses a **standards-based grading** system designed to support your s
     - Really anything that might help another student if they saw it!
 - Optionally: Private communication with other students
 
-:::
-
-## Communication: Other
-
-- Attend office hours to ask questions in person
-    -   i.e. don't ask your "quick question" after class
-- Notice for absences is not required
-- Be cautious about disclosing personal information over email/Slack
-- The [student toolkit](https://nrdowling.notion.site/2cc7b904f28d80129ff0c922f3055ef3?v=2d47b904f28d803abe84000c1454c58f&source=copy_link) has a guide to help write emails
-    - Pro tip: Don't use chatGPT. It's [super annoying](https://www.reddit.com/r/Professors/search/?q=ai+email&cId=923440df-c068-48b5-8d9c-dc6bc4f01dab&iId=ba6d2df2-a367-42b7-a402-fe8f0d1b8df4).
-
-
-::: notes
 - Dr. Dowling's office hours are Thursdays 2-4pm by appointment
     - Appointments are required
 - *TA office hours information*
@@ -259,6 +319,7 @@ This course uses a **standards-based grading** system designed to support your s
 - **Please do not line up to ask questions at the end of class.**
     - Those "1-minute" questions add up
     - That's what Slack is for
+    
 :::
     
 ## Climate
@@ -292,15 +353,17 @@ a more welcoming and respectful environment.
 
 ## Accessibility & Accommodation
 
-
 - Requests for formal accommodations should go through Student Disability Services
     - *Graduate students* need to request accommodation letters be sent to me
     - You *never* need to disclose personal details to me or anyone outside SDS
 - Meet with me in office hours for informal accommodation requests
-    - Note: *All* arrangements must align with SDS policies for equity.
 - You will factor your own accommodations into your accountability plan
 
 ::: notes
+
+Note: *All* arrangements must align with SDS policies for equity.
+Informal accommodations cannot disadvantage students with formal accommodations.
+
 - Requests for formal accommodations should go through Student Disability Services
     - SDS will send *undergraduate* accommodation letters to me automatically
     - *Graduate students* need to ask SDS to send me a letter
@@ -316,7 +379,7 @@ a more welcoming and respectful environment.
 
 **You are never required to disclose personal information to me or any instructors.** These guidelines are for all classes at UChicago, not just this one.
 
-You do *not* need to:
+[__You do *not* need to:__]{ .fragment}
 
 - Share details about your health, disability, or reasoning for accommodations
 - Get a doctor's note for absences
@@ -331,19 +394,29 @@ This doesn't mean there are never consequences for missing class. You are respon
 
 ## Academic Integrity: Overview
 
+![](../images/misc/why-are-you-here.jpg)
+
 - View the academic integrity policy [here](../syllabus/ai-policy.html).
 - Plagiarism is bad. Cheating is bad. Don't do it.
     - Why are you even here?
 - All written/textual content in your submitted assignments must be fully produced by you
 - Code may be produced with AI (or human) assistance with a full disclosure statement
-- Disclosure statements are required for *all submitted work*, even if you didn't use AI
-    - AI disclosure statement is included in the assessment document submitted with all assignments
+- Disclosure statements are required for *all submitted work*
 
 ## Academic Integrity: Grading Penalties
 
 ::: columns
 ::: {.column width="50%"}
+
+::: {.overlap-box .overlap-box-blue .fragment}
+
+::: {.box-title .small-title}
+
 You will *not* be penalized for (with disclosure):
+
+:::
+
+::: {.box-content .nonincremental}
 
 - Using AI to help you with *code*
 - Using code snippets from print or online resources
@@ -353,30 +426,67 @@ You will *not* be penalized for (with disclosure):
 
 :::
 
+:::
+
+
+:::
+
 ::: {.column width="50%"}
 
+::: {.overlap-box .fragment}
+
+::: {.box-title .small-title}
+
 You *will* be penalized for:
+
+:::
+
+::: {.box-content .nonincremental}
 
 - Failing to disclose any of the above
 - Using AI to generate *text* for ANY submitted work
 - Using *text* written by any human other than you, including classmates
     - Exceptions for some group projects may be granted, but must be requested in advance
+    
+:::
+
+:::
+    
 :::
 :::
 
-<span style="font-size: 1.2em; font-weight: bolder;">Submissions that do not follow these guidelines will receive a non-negotiable 0.</span>
+::: {.alert .alert-danger style="text-align: center" .fragment}
+
+![](../images/icons/priority.png){style="max-height: 3em;"}
+Submissions that do not follow these guidelines will receive a non-negotiable 0.
+![](../images/icons/priority.png){style="max-height: 3em;"}
+
+:::
 
 ## Academic Integrity: You & AI
 
 ::: columns
 ::: {.column width="40%"}
 
-![The AIlephant in the room. This is DALL-E's best attempt at "An elephant with the letters A and I on its ears." Not very impressive, but I can't blame it too much. It wasn't a good pun to begin with.](../images/ai-lephant.png)
+![The AIlephant in the room. This is DALL-E's best attempt at "An elephant with the letters A and I on its ears." Not very impressive, but I can't blame it too much. It wasn't a good pun to begin with.](../images/comics-memes/ai-lephant.png)
 
 <span style="font-size: .8em;">
 To see GPT's coding skills in action, watch [DougDoug force it to create Snake 2](https://www.youtube.com/watch?v=YnN6eBamwj4) (with mixed success).</span>
 :::
+
 ::: {.column width="60%"}
+
+You should only be taking this class if you want to gain practical skills that will be useful to you outside of the class. 
+
+If you don't care enough to actually learn the material yourself, this probably isn't the right class for you.
+
+[My personal AI philosophy & Official Class Policy](d2m-r.github.io/syllabus/ai-policy.html)
+
+:::
+
+:::
+
+::: notes
 
 You should only be taking this class if you want to gain practical skills that will be useful to you outside of the class. 
 
@@ -384,10 +494,8 @@ Hopefully you are using the class to make progress on a research project you are
 
 You can read my [guide](d2m-r.github.io/syllabus/ai-policy.html) for what I personally believe are ethical and constructive uses of AI
 in higher education. 
-:::
-:::
 
-
+:::
 
 
 # Assessment & Grading
@@ -413,19 +521,42 @@ You start at 0 points and work up to 100. You don't start at 100 and lose points
 
 ## Accountability Plan (10pt)
 
-- **You create an assignment schedule for yourself.** 
-    - Defining your own goals is part of the research workflow
-    - This is part of *an explicit learning objective* and part of your grade
-- You will create a personal timeline and accountability plan for the quarter
-    - Checkpoints on Mondays of Weeks 2, 5, and 8
-- Optionally: Base your plan on the suggested timeline in the [assignment instructions](../assessment/accountability.html)
-    - This is not supposed to feel overwhelming, so take advantage of this if it helps! 
+::: {.overlap-box .fragment}
+
+::: box-title
+
+You create an assignment schedule for yourself.
+
+:::
+
+::: box-content
+
+- Defining your own goals is part of the research workflow and *an explicit learning objective* and part of your grade
 - SDS approved accommodations for extensions are built into your plan
-- **10%** of your final grade is based on your accountability plan, including:
-    - Meeting the 3 checkpoint deadlines for the plan itself (meta-deadlines)
-    - Meeting the deadlines you set for yourself
-    - Reflecting on your progress and making adjustments
-    - *Suggesting* a grade (of 10)
+- You will create a personal timeline and accountability plan for the quarter
+
+:::
+
+:::
+
+::: {.overlap-box .fragment}
+
+::: box-title
+
+Accountability is **10%** of your final grade.
+
+:::
+
+::: box-content
+
+- Meeting the 3 checkpoint deadlines for the plan itself (meta-deadlines); Mondays of Weeks 2, 5, and 8
+- Meeting the deadlines you set for yourself
+- Reflecting on your progress and making adjustments
+- *Suggesting* a grade (of 10)
+
+:::
+
+:::
 
 ::: notes
 
@@ -454,13 +585,14 @@ You start at 0 points and work up to 100. You don't start at 100 and lose points
     - Meeting the deadlines you set for yourself
     - Reflecting on your progress and making adjustments to your plan
     - *Suggesting* a grade (of 10) for how well you think you followed your plan
+    
 :::
 
 
 ## Community Engagement (10pt)
 
 Attending class and paying attention are basic expectations.
-Your engagement grade is based on how you show investment in the course and your peers, both in and out of class. Some ways to do this include:
+Your engagement grade is based on how you show investment in the course and your peers, both in and out of class. 
 
 - In-class:
     - Ask and answer questions during lecture
@@ -473,6 +605,7 @@ Your engagement grade is based on how you show investment in the course and your
     - Complete collaborative assignments
 
 ::: notes
+
 Aside from the basic expectation that you'll attend class and pay attention, this can look different for everyone. The community engagement grade is not about meeting the minimum requirement (e.g., attending class!). It's about demonstrating a high level of investment in the course and your peers. **This is not an attendance grade.**
 
 Here's a non-exhaustive list of things that can contribute to the community engagement grade:
@@ -487,6 +620,7 @@ Here's a non-exhaustive list of things that can contribute to the community enga
     -  Get support from classmates, TAs, and the professor
     -  Team up with a partner or small group to meet for working groups outside of class
     -  Take on one or more of the optional collaborative assignments in the assessment menu
+    
 :::
 
 
@@ -494,17 +628,13 @@ Here's a non-exhaustive list of things that can contribute to the community enga
 
 ## Core Standards Mastery (60pt)
 
-Demonstrate proficiency on 12 core technical skills (standards).
-
-Choose from an assignment "menu" to demonstrate each skill, or design your own projects
+Demonstrate proficiency on 12 core technical skills (standards) selecting from a [project menu](../assessment/menu.html).
 
 -   Structured assignments that guide you through skills step-by-step
 -   Semi-structured assignments that provide a clear framework with room for creativity
 -   Unstructured assignments that give suggested approaches to meet objectives
 -   Group assignments
 -   "Off-the-menu" Self-designed small projects
-
-View the [menu](../assessment/menu.html).
 
 
 ## Core Standards Mastery (60pt)
@@ -566,10 +696,9 @@ Each standard is scored on a 4 / 5 / 6 point scale based on the quality and inde
 | Points | Label | Description |
 | --- | --- | --- |
 | *No grade* | *No demonstration* | *You have not yet demonstrated this skill.* |
-| **4** | **Meets Expectations** | You demonstrate the skill correctly in structured or familiar contexts. |
-| **5** | **Exceeds Expectations** | You apply the skill correctly and independently in a novel context. |
-| **6** | **Outstanding** | You use the skill in an especially expansive way. |
-
+|[**4**]{.fragment fragment-index="1"} | [**Meets Expectations**]{.fragment fragment-index="1"} | [You demonstrate the skill correctly in structured or familiar contexts.]{.fragment fragment-index="1"}|
+| [**5**]{.fragment fragment-index="2"} | [**Exceeds Expectations**]{.fragment fragment-index="2"} | [You apply the skill correctly and independently in a novel context.]{.fragment fragment-index="2"} |
+| [**6**]{.fragment fragment-index="3"} | [**Outstanding**]{.fragment fragment-index="3"} | [You use the skill in an especially expansive way.]{.fragment fragment-index="3"} |
 
 
 ::: notes
@@ -596,7 +725,33 @@ Individual assignments may not be resubmitted for a higher score, but you may im
 
 :::
 
+## Access and Complete Core Projects
+
+::: nonincremental
+
+1. Visit the menu of core standards assignments [here](../assessment/menu.html).
+2. Select assignments that address the standards you want to demonstrate.
+3. Use the links on the menu to create a repo within the [D2M-R GitHub organization](github.com/d2m-r) by either:
+    1.  Accepting the GitHub classroom invitation (if available)
+    2.  Creating a private repo from scratch and adding in the associated files from the [student hub repo](github.com/d2m-r/student-hub)
+4. Complete the assignment according to the instructions in the assignment's README file or Quarto notebook.
+5. Complete the corresponding submission document (`student-hub/templates`)
+5. Finalize your assignment with a GitHub pull request.
+6. Submit to the grading queue with the "Submit" form on the website.
+
+:::
+
+There are *extremely detailed* instructions for how do do each step of this process in the student-hub repo, on each submission document, and on the website. [Start here.](https://d2m-r.github.io/assessment/misc/gh-submissions.html/)
+
+We'll do a demo of what this looks like later.
+
 ## Integrative Data Project (20pt)
+
+::: container-fluid
+
+::: row
+
+::: col-4
 
 The final project is a data analysis report created with RStudio and maintained in a GitHub repo that includes:
 
@@ -606,17 +761,29 @@ The final project is a data analysis report created with RStudio and maintained 
 - Simple data visualization
 - Narrative markdown text explaining your choices and findings
 
+:::
+
+::: col-8
+
+![](../images/screenshots/render-quarto.png){alt="Screenshot of a data project showing code chunks and narrative text in a Quarto document."}
+
+:::
+
+:::
+
+:::
+
 ## Integrative Data Project (20pt)
 
 Earn up to 20 points on the data project:
 
 | Points | Component | Description |
 | ------ | --------- | ----------- |
-| 12 | Core standards | Demonstrate all 12 core standards at 4pt-level or above |
-| 2 | Reproducibility | Code is fully reproducible, with no errors |
-| 2 | Documentation | Code is clearly commented with explanatory Quarto narrative text |
-| 2 | Cohesion | Data wrangling, statistics, and plots are clearly connected with narrative text|
-| 2 | Presentation | Quarto document is well-formatted and knits without error |
+| [12]{.fragment fragment-index="1"} | [Core standards]{.fragment fragment-index="1"} | [Demonstrate all 12 core standards at 4pt-level or above]{.fragment fragment-index="1"} |
+| [2]{.fragment fragment-index="2"} | [Reproducibility]{.fragment fragment-index="2"} | [Code is fully reproducible, with no errors]{.fragment fragment-index="2"} |
+| [2]{.fragment fragment-index="3"} | [Documentation]{.fragment fragment-index="3"} | [Code is clearly commented with explanatory Quarto narrative text]{.fragment fragment-index="3"} |
+| [2]{.fragment fragment-index="4"} | [Cohesion]{.fragment fragment-index="4"} | [Data wrangling, statistics, and plots are clearly connected with narrative text]{.fragment fragment-index="4"} |
+| [2]{.fragment fragment-index="5"} | [Presentation]{.fragment fragment-index="5"} | [Quarto document is well-formatted and knits without error]{.fragment fragment-index="5"} |
 
 Submit your data project **up to 3 times** to get early feedback and/or complete the requirement early.
 
@@ -639,9 +806,9 @@ Grades for resubmissions will replace previous scores. Your grade for the data p
 
 ## Enrichment (up to 10pt)
 
-These 10 optional points are a way for you to customize your curriculum in this class to your own interests and goals.
+**10 optional points:** customize your curriculum to your own interests
 
-You can earn 100 points without any enrichment points, but you can make up for lower scores on core standards by completing enrichment activities.
+You can earn 100 points without any enrichment points.
 
 Examples include:
 
@@ -651,13 +818,13 @@ Examples include:
 - Evidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)
 - Contributions to open‑source R packages or communities (e.g., GitHub issues, Stack Overflow answers)
 
-::: callout-tip
+::: {.callout-tip .bigger .fragment}
 
 ### Where do I find them?
 
 For the most part it's up to you to design your own enrichment activities.
 Figuring out for yourself what would be most useful for your own learning is part of the point of this category.
-If you are totally lost as to where to start, there are a few unstructured activities listed on the assignment menu.
+If you are totally lost as to where to start, there are a few unstructured activities available in the `student-hub` repo.
 
 :::
 
@@ -691,8 +858,38 @@ Evidence may be in the form of a dedicated project (e.g., a debugging journal) o
 Points will be awarded based on overall quality and depth, which may look like creativity, independent learning, clear communication, thoughtful self-evaluation, or other dimensions depending on the nature of the activity.
 Your submission will include an opportunity for you to explain how the activity contributed to your learning and how many points you believe you have earned.
 
-The Canvas assignments include details on exactly how to submit and document different kinds of demonstrations.
+:::
+
+# LET'S DO SOME STUFF!
+
+## Get Yourself Sorted
+
+Use your common sense and the many resources on the course website to get the following done:
+
+1. Make your GitHub account, apply for the education account.
+2. Install R and RStudio.
+3. Connect GitHub and RStudio using the guide on the course site.
+
+## Example Assignment
+
+In the meantime, while you figure yourself out, I'm going to demo the workflow of an example assignment.
+
+Follow along if you're ready to go, otherwise just watch me and do it on your own later.
+
+1. Go to the assignment menu and click the GitHub classroom invite for the example assignment.
+2. Accept the assignment and create your GitHub repo.
+3. Clone the repo to your computer using RStudio.
+4. Open the example R script in RStudio and follow the instructions to complete the assignment.
+    -   Even if you don't have the github/RStudio thing sorted yet, you should open RStudio at this point and try out the interface.
+5. Submit the assignment for (fake) grading with a pull request and the class submission form.
+
+::: {.callout-caution .bigger .fragment}
+
+### If you're not sure how to do something, figure it out! 
+
+That's the point. Practice finding resources and solving problems on your own. If you get stuck, ask for help on Slack. Thursday we'll talk about specific problem-solving and debugging strategies.
 
 :::
+
 
 

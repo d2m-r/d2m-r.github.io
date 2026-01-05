@@ -1460,10 +1460,15 @@ pre > code.sourceCode > span {
     font-weight: bold;
     font-size: 1.2em;
     z-index: 2;
-    min-width: 50%;
+    min-width: 40%;
+    max-width: 80%;
     text-align: left;
   }
- 
+  
+  .small-title {
+    font-size: .9em;
+    padding: 0em .9em;
+  }
   
   .box-content {
     background-color: mix($warm-white, $maroon, 80%); // Warm-white
@@ -1500,6 +1505,10 @@ pre > code.sourceCode > span {
           padding: 0.1em 0.3em;
       }
   }
+}
+
+.nudge-down {
+    padding-top: 2em !important;
 }
 
 .overlap-box-blue {
