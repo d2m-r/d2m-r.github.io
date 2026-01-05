@@ -1,0 +1,164 @@
+---
+title: "D2M-R Syllabus"
+format: html
+---
+
+::: callout-tip
+
+### Syllabus Overview
+
+On this page you'll find an abbreviated syllabus. View the links provided in each section for full policies and course details. View info about the current quarter's schedule and instructors on the course [home page](../index.qmd).
+
+:::
+
+## Course Description
+
+Data to Manuscript in R is a two-quarter sequence that covers the basic skills needed to build a research workflow with the R programming language to create reproducible, open-science friendly reports that can be easily updated with ongoing data collection or receiving comments from readers. 
+
+**D2M-R I** in Winter 2026 will cover foundational R programming skills, data wrangling using the tidyverse, and foundational data reporting techniques.
+
+**D2M-R II** in Spring 2026 advances to the "Manuscript" side of the workflow, with topics including the application of statistical analyses commonly used in the social sciences, creating publication-quality plots with the ggplot2 package, and the integration of R code with dynamic narrative text via the open-source Quarto publishing system.
+
+### Learning Objectives
+
+Both quarters of D2M-R will help you develop broad skills that are essential for success as a quantitative researcher:
+
+1. **Develop a reproducible and transparent research workflow.** Plan, execute, and document a data analysis project from start to finish including data acquisition, cleaning, analysis, visualization, and reporting.
+2. **Practice accountability & time management.** Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.
+3. **Engage with your research communities.** Collaborate effectively with peers, contribute to group learning, and seek help when needed.
+4. **Develop problem-solving and independent learning skills.** Develop specific strategies for debugging code, troubleshooting errors, asking good questions, and learning new skills independently using the myriad resources available online from R and open-science communities.
+
+Additionally, each quarter has 12 specific core technical learning objectives aligned with the quarter's content.
+
+Read more:
+
+-   [Course structure overview](structure.qmd)
+-   [Core learning objectives](../assessment/objectives.qmd)
+
+### Materials
+
+Students must attend each class meeting with a charged laptop with R and RStudio installed.
+
+There are no books or materials to purchase for this course. All materials are freely available. The *Materials* menu on the home page links to several collections of resources that may be useful throughout the course.
+
+Links to weekly readings, slides, and other materials will be posted to the [course home page](../index.qmd).
+
+Required software and accounts:
+
+-   Slack
+-   R
+-   RStudio
+-   GitHub (education account recommended)
+
+In D2M-R I, students will complete the integrated data project with a dataset of their choosing. This may be their own data (e.g., MA thesis data) or a publicly available dataset.
+
+In D2M-R II, students must use their own data for the integrated data project. Exceptions for students without their own data will be considered on a case-by-case basis.
+
+In all cases, students are responsible for finding their own data, and for ensuring the instructors are able to access any parts of the data required to run code and assess the project.
+
+Read more:
+
+-   [D2M-R course materials & guides](../materials/course-resources.qmd)
+-   [External resources](../materials/resources.qmd)
+-   [Finding data for your project](../materials/finding-data.qmd)
+-   [Slides](../materials/slides.qmd)
+
+
+## Assessment Structure
+
+
+### Philosophy
+
+This course uses a **standards-based grading** system designed to support your skill development while accommodating diverse backgrounds, interests, and paces of learning. The system is built around the following principles:
+
+- **Standards-based:** Your grade reflects your progress on a set of clearly defined core technical skills.
+- **Multiple pathways:** You may choose from a "menu" of structured, semi-structured, and unstructured activities to demonstrate mastery of each standard, opting to complete the ones you feel will be most useful to you.
+- **Tiered credit:** Each standard is scored using a 4 / 5 / 6 point rubric. All three levels represent success, and earning mostly 4s does not preclude getting an A in the class.
+- **Individualized:** Beyond mastering technical skills, you will also earn points for accountability, community engagement, and optional enrichment activities.
+
+### Self‑Pacing, Deadlines, and Workflow
+
+- **No fixed interim deadlines:** You may complete nearly all assignments on your own schedule within the quarter, with a few specific exceptions.
+- **Planning is part of the grade:** The Accountability & Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.
+- **Early completion is allowed:** You can earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment at any point during the quarter.
+
+### Grade Breakdown
+
+Earn up to 100 points across five categories:
+
+| Points | Category | Description |
+| ----- | ---------- | ---------------|
+| 10 | [Accountability](../assessment/accountability.qmd) | Create and maintain a personalized accountability plan |
+| 10 | [Community Engagement](../assessment/engagement.qmd) | Participate actively in class and on Slack |
+| 60 | [Core Standards Mastery](../assessment/objectives.qmd) | Demonstrate proficiency on 12 core technical skills (standards) |
+| 20 | [Integrative Data Project](../assessment/data-project.qmd) | Complete a comprehensive data analysis project demonstrating mastery of all core standards |
+| ((10)) | [Enrichment](../assessment/enrichment.qmd) | Optional activities to deepen learning and supplement core work |
+
+Because enrichment points are optional, it is possible to earn more than 100 raw points across categories. Final course grades are capped at 100.
+
+View the links in the table above to learn more about each component.
+
+Read more:
+
+-   [Assessment Structure Overview](../assessment/overview.qmd)
+-   [Core Standards Project Menu](../assessment/menu.qmd)
+
+
+## Policies
+
+### AI & Academic Integrity
+
+Students in this course are expected to follow UChicago's [Academic Honesty & Plagiarism policy](https://studentmanual.uchicago.edu/academic-policies/academic-honesty-plagiarism/).
+
+In this class, you may use AI tools for coding, but not for writing. This means you may use AI to generate and revise code without penalty. 
+
+**You may not submit any AI-generated written work,** including but not limited to:
+
+1. Written responses to questions in assignments
+2. Narrative text of your data project
+3. Project reflections
+4. AI statements
+
+"AI-generated written work" includes using AI to generate text that you then revise or edit.
+
+::: {style="color: #bb0000; background-color: #ffffff;"}
+Plagiarized written work, whether from human or AI creators, will receive a non-negotiable 0. 
+:::
+
+Read more:
+
+-   [Academic Integrity Policy & AI Philosophy](ai-policy.qmd)
+
+### Communication
+
+-   **Slack**: We will use Slack for most course communication. The Slack is moderated and only open to members of the class. You must use your UChicago email address to join.
+-  **Email**: Use email for private communication with Dr. Dowling or your TA. You should expect a response within about 2 days. If you have not received a response within 3 days please send a follow-up email.
+-  **Office hours**: Dr. Dowling and TAs will hold office hours each week. You can find the schedule on the [course home page](../index.html). You can also make an appointment to meet outside of office hours if needed.
+
+**Email is the best way to reach Dr. Dowling or TAs for private communication.**
+
+Read more:
+
+-   [Communication Policy](communication.qmd)
+
+### Climate & Inclusion
+
+I am committed to making this course accessible to students of all backgrounds, identities, and abilities. 
+If there are circumstances that make aspects of this course difficult for you to access, please contact me so we can discuss how to accommodate your needs. 
+This includes, but is not limited to, accommodations around the format of course materials, the use of Canvas and other digital resources, the classroom and other physical resources, and the structure of assignments.
+
+Students needing accommodations through SDS should confirm that accommodation letters have been sent to me. Note that SDS does not automatically send letters for graduate students; you must request that they do so.
+
+Accommodations involving extended deadlines will be handled via your accountability plan.
+
+We will commit as a class to creating a welcoming, respectful, and productive classroom.
+If a member of our community--including myself--is creating an unwelcome space for you, I hope you will bring this to my attention immediately.
+
+If you would prefer to discuss the situation with someone outside our class, I encourage you to take advantage of the [UChicago CARES reporting and conflict resolution processes](https://cares.uchicago.edu/support-and-resources/). You do *not* need to discuss the situation with me or anyone else befor contacting UChicago Cares unless you wish to.
+
+Read more:
+
+-   [Climate & Inclusion Policy](climate.qmd)
+
+
+

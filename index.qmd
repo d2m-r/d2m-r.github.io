@@ -2,12 +2,6 @@
 title: "Data to Manuscript in R"
 ---
 
-::: {.alert .alert-warning role="alert"}
-
-This page will be the home for D2M-R I in Winter 2026. If you're seeing this warning, the site is still under construction! You can browse what's here now to start thinking ahead, but some sections are incomplete or missing. Some posted content may change slightly before the beginning of the quarter.
-
-:::
-
 *Welcome to the first quarter of Data to Manuscript in R!*
 
 D2M-R is designed to equip you with the tools necessary to conduct reproducible data analysis using R.
