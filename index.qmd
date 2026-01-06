@@ -35,7 +35,7 @@ The course structure is unusual, so please review all course policies and assess
 -   **Email:** ndowling\@uchicago.edu
 -   **GitHub:** \@nrdowling
 -   **Office Location:** 1155 Building, Room 181
--   **Office Hours**: Thursday 2pm - 4pm; 1155 E 60th St, Room 181
+-   **Office Hours**: Thursday 2pm - 4pm
     -   [Sign up via
 GCal](https://calendar.app.google/b778h5XC1cwRKVeK6) or email me
 to request an alternative time
@@ -46,7 +46,7 @@ to request an alternative time
 -   **Email:** bql20\@uchicago.edu
 -   **GitHub:** \@QilongBi
 -   **Office Hours Location:** TBA
--   **Office Hours**: TBA
+-   **Office Hours**: Tuesday 2-3:30pm
 
 
 ## Hubs

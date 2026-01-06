@@ -149,6 +149,7 @@ Jan-6; Jan-8
     -   Submit to Canvas.
     -   Create an individual accountability plan to follow throughout the quarter.
     -   See the [accountability page](../assessment/accountability.html) for details about this assignment.
+    -   *We'll talk about this on Thursday.*
 
 **Recommended Exercises:**
 
@@ -157,17 +158,17 @@ Jan-6; Jan-8
     -   Use this [GH classroom invite](https://classroom.github.com/a/oiL9tsfr) to access the assignment so you can figure out the process of cloning, editing, committing, pushing, and submitting assignments through GitHub and GH Classroom.
     -   Between Tuesday and Thursday, you should get everything set up at least through have the repo cloned on your computer and accessible with an RStudio project.
     -   Before Week 2 you should complete the rest of the assignment, using the problem-solving slides to help if you get stuck.
--   [Guided Exercise: Create and Sync a GitHub Repo with RStudio](../materials/guides/walkthrough-github-rstudio.qmd)
+-   [Guided Exercise: Create and Sync a GitHub Repo with RStudio](../materials/guides/walkthrough-github-rstudio.html)
     -   This exercise walks you through creating a GitHub repository and connecting it to an RStudio project.
-    -   This is similar to what you'll do for the example assignment, but with more detailed instructions and without the pressure of a graded submission.
+    -   This is similar to what you'll do for the example assignment, but with more detailed instructions and without the logistical complications of GH Classroom.
 
-**To-do:**
+**Other To-do:**
 
--   Join the [course Slack workspace](d2m-r.slack.com) and introduce yourself in the #introductions channel
+-   [ ] Join the [course Slack workspace](d2m-r.slack.com) and introduce yourself in the `#introductions` channel
     -   Minimally, send a message including your name and github username, but we'd also love to know a little bit about you and/or why you're taking the class!
--   Review the syllabus policies and assessment structure on this site
--   Get your GitHub education account set up and join the d2m-r organization
--   Familiarize yourself with the course GitHub organization and student hub repos
+-   [ ] Review the syllabus policies and assessment structure on this site
+-   [ ] Get your GitHub education account set up and join the d2m-r organization
+-   [ ] Familiarize yourself with the course GitHub organization and student hub repos
 
 
 :::

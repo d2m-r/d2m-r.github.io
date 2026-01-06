@@ -42,7 +42,7 @@ editor: source
 -   **Email:** ndowling\@uchicago.edu
 -   **GitHub:** \@nrdowling
 -   **Office hours:**
-    -   1155 E 60th St, Rm 404
+    -   1155 E 60th St, Rm 181
     -   Thursdays 2-4pm by appointment - [book here]()
     -   Email to set up an alternative meeting time
     
@@ -63,7 +63,7 @@ editor: source
 -   **GitHub:** \@QilongBi
 -   **Office hours:**
     -   *location TBA*
-    -   *day/time TBA*
+    -   Tuesdays 2-3:30pm (open)
 
 :::
 :::
