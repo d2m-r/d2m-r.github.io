@@ -1,3 +1,8 @@
+## 1/6/26:  I got the single render to work for both slides and site without 
+## the need for separate profiles. Leaving this here so I can come back to
+## make a profile for optional slides-only use later, but this is not 
+## currently in use.
+
 # _quarto-slides.yml -- profile for slide rendering only
 project:
   type: default       # <--- override: NOT the regular website type
