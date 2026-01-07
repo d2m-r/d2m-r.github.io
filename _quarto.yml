@@ -7,6 +7,7 @@ project:
 
 website:
   title: "Data to Manuscript in R"
+  favicon: images/icons/hex3.png
   navbar:
     left:
       - text: Syllabus

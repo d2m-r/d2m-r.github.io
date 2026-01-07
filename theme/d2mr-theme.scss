@@ -1290,6 +1290,16 @@ pre > code.sourceCode > span {
         font-size: .8em !important;
     }
     
+.reveal .compact {
+        font-size: .9em !important;
+        line-height: .6 !important;    
+    li, p {
+        margin-top: 0em !important;
+        margin-bottom: 0em !important;
+        color: #f00;
+    }
+}
+    
 /* Special formatting for larger text */
 .reveal .bigger {
         font-size: 1.5em;
@@ -1594,6 +1604,47 @@ div.large.no-icon .callout-title {
   font-size: 2em;
   box-shadow: 0 10px 10px rgba(0,0,0,0.2);
 }
+
+
+// more containers
+
+.contained-box {
+  background-color: mix($warm-white, $maroon, 80%);
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 6px;
+  border-color: $warm-dark;
+  padding: 0.8em;
+  
+  .box-icon {
+    font-size: 2em;
+    color: $maroon;
+    text-align: center;
+    margin-bottom: 0.4em;
+    img {
+      max-width: 3em;
+      max-height: 3em;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  
+  .box-title {
+    background-color: $maroon;
+    color: $warm-white;
+    padding: 0.3em 0.8em;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 0.6em;
+  }
+  
+  .box-content {
+    font-size: 0.9em;
+  }
+}
+
 
 // Questionably necessary rules
 
