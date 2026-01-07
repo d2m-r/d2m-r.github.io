@@ -116,14 +116,14 @@
     "href": "slides/Q1-W1_introduction.html#course",
     "title": "Introduction to D2M-R",
     "section": "Course",
-    "text": "Course\nFrom Data to Manuscript in R - Quarter 1\n\n\nPSYC/MAPS/MACS/CHDV 30550\nCourse website: d2m-r.github.io\nTextbook: Data to Manuscript in R\n\nIn early development!!"
+    "text": "Course\nFrom Data to Manuscript in R - Quarter 1\n\nPSYC/MAPS/MACS/CHDV 30550\nCourse website: d2m-r.github.io\nTextbook: Data to Manuscript in R\n\nIn early development!!"
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#people",
     "href": "slides/Q1-W1_introduction.html#people",
     "title": "Introduction to D2M-R",
     "section": "People",
-    "text": "People\n\n\n\nProfessor: Dr. Natalie Dowling\n\n\nPreferred name: Natalie or Dr. Dowling\nPronouns: she/her\nEmail: ndowling@uchicago.edu\nGitHub: @nrdowling\nOffice hours:\n\n1155 E 60th St, Rm 181\nThursdays 2-4pm by appointment - book here\nEmail to set up an alternative meeting time\n\n\n\n\n\nTeaching Assistant: Qilong Bi\n\n\nPreferred name: Qilong\nPronouns: he/him\nEmail: bql20@uchicago.edu\nGitHub: @QilongBi\nOffice hours:\n\nlocation TBA\nTuesdays 2-3:30pm (open)\n\n\n\n\n\n\nI genuinely don’t care if you call me Natalie or Dr. Dowling. I’m perfectly happy with either, so do whatever feels comfortable for you."
+    "text": "People\n\n\nProfessor: Dr. Natalie Dowling\n\nPreferred name: Natalie or Dr. Dowling\nPronouns: she/her\nEmail: ndowling@uchicago.edu\nGitHub: @nrdowling\nOffice hours:\n\n1155 E 60th St, Rm 181\nThursdays 2-4pm by appointment - book here\nEmail to set up an alternative meeting time\n\n\n\nTeaching Assistant: Qilong Bi\n\nPreferred name: Qilong\nPronouns: he/him\nEmail: bql20@uchicago.edu\nGitHub: @QilongBi\nOffice hours:\n\nlocation TBA\nTuesdays 2-3:30pm (open)\n\n\n\n\nI genuinely don’t care if you call me Natalie or Dr. Dowling. I’m perfectly happy with either, so do whatever feels comfortable for you."
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#expectations-course-goals",
@@ -151,7 +151,7 @@
     "href": "slides/Q1-W1_introduction.html#quarter-1",
     "title": "Introduction to D2M-R",
     "section": "Quarter 1",
-    "text": "Quarter 1\n\n\nCreate and sync a GitHub repo and R project\nBegin a full manuscript in a Quarto notebook (.qmd)\nUse R scripts and chunks to read in, clean, and wrangle data\nSource .R scripts for “background” needs\nFirst steps: Analyze and visualize your data within your Quarto notebook \nMaintain a BibTeX file with all manuscript citations\nCompose the manuscript narrative in your notebook\n1-click knit your manuscript to a publishable file format\nDynamically update and maintain your manuscript"
+    "text": "Quarter 1\n\nCreate and sync a GitHub repo and R project\nBegin a full manuscript in a Quarto notebook (.qmd)\nUse R scripts and chunks to read in, clean, and wrangle data\nSource .R scripts for “background” needs\nFirst steps: Analyze and visualize your data within your Quarto notebook \nMaintain a BibTeX file with all manuscript citations\nCompose the manuscript narrative in your notebook\n1-click knit your manuscript to a publishable file format\nDynamically update and maintain your manuscript"
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#communication-slack",
@@ -200,14 +200,14 @@
     "href": "slides/Q1-W1_introduction.html#academic-integrity-grading-penalties",
     "title": "Introduction to D2M-R",
     "section": "Academic Integrity: Grading Penalties",
-    "text": "Academic Integrity: Grading Penalties\n\n\n\n\nYou will not be penalized for (with disclosure):\n\n\n\nUsing AI to help you with code\nUsing code snippets from print or online resources\nCo-writing code with classmates/other humans\nUnintentionally crossing the line with AI if it is fully disclosed\n\nI will ask to you revise and resubmit without penalty\n\n\n\n\n\n\n\nYou will be penalized for:\n\n\n\nFailing to disclose any of the above\nUsing AI to generate text for ANY submitted work\nUsing text written by any human other than you, including classmates\n\nExceptions for some group projects may be granted, but must be requested in advance\n\n\n\n\n\n\n\n Submissions that do not follow these guidelines will receive a non-negotiable 0."
+    "text": "Academic Integrity: Grading Penalties\n\n\n\n\nYou will not be penalized for (with disclosure):\n\n\n\nUsing AI to help you with code\nUsing code snippets from print or online resources\nCo-writing code with classmates/other humans\nUnintentionally crossing the line with AI if it is fully disclosed\n\nI will ask to you revise and resubmit without penalty\n\n\n\n\n\n\n\nYou will be penalized for:\n\n\n\nFailing to disclose any of the above\nUsing AI to generate text for ANY submitted work\nUsing text written by any human other than you, including classmates\n\nExceptions for some group projects may be granted, but must be requested in advance\n\n\n\n\n\n\n Submissions that do not follow these guidelines will receive a non-negotiable 0."
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#academic-integrity-you-ai",
     "href": "slides/Q1-W1_introduction.html#academic-integrity-you-ai",
     "title": "Introduction to D2M-R",
     "section": "Academic Integrity: You & AI",
-    "text": "Academic Integrity: You & AI\n\n\n\n\n\nThe AIlephant in the room. This is DALL-E’s best attempt at “An elephant with the letters A and I on its ears.” Not very impressive, but I can’t blame it too much. It wasn’t a good pun to begin with.\n\n\n To see GPT’s coding skills in action, watch DougDoug force it to create Snake 2 (with mixed success).\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nIf you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nMy personal AI philosophy & Official Class Policy\n\n\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nHopefully you are using the class to make progress on a research project you are invested in. If you do not use AI wisely, you may not be “cheating” in a way that will hurt your grade, but you will be cheating yourself out of the reason you joined the class. If you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nYou can read my guide for what I personally believe are ethical and constructive uses of AI in higher education."
+    "text": "Academic Integrity: You & AI\n\n\n\n\n\nThe AIlephant in the room. This is DALL-E’s best attempt at “An elephant with the letters A and I on its ears.” Not very impressive, but I can’t blame it too much. It wasn’t a good pun to begin with.\n\n\n To see GPT’s coding skills in action, watch DougDoug force it to create Snake 2 (with mixed success).\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nIf you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nMy personal AI philosophy & Official Class Policy\n\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nHopefully you are using the class to make progress on a research project you are invested in. If you do not use AI wisely, you may not be “cheating” in a way that will hurt your grade, but you will be cheating yourself out of the reason you joined the class. If you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nYou can read my guide for what I personally believe are ethical and constructive uses of AI in higher education."
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#grading-overview",
@@ -256,7 +256,7 @@
     "href": "slides/Q1-W1_introduction.html#access-and-complete-core-projects",
     "title": "Introduction to D2M-R",
     "section": "Access and Complete Core Projects",
-    "text": "Access and Complete Core Projects\n\n\nVisit the menu of core standards assignments here.\nSelect assignments that address the standards you want to demonstrate.\nUse the links on the menu to create a repo within the D2M-R GitHub organization by either:\n\nAccepting the GitHub classroom invitation (if available)\nCreating a private repo from scratch and adding in the associated files from the student hub repo\n\nComplete the assignment according to the instructions in the assignment’s README file or Quarto notebook.\nComplete the corresponding submission document (student-hub/templates)\nFinalize your assignment with a GitHub pull request.\nSubmit to the grading queue with the “Submit” form on the website.\n\n\nThere are extremely detailed instructions for how do do each step of this process in the student-hub repo, on each submission document, and on the website. Start here.\nWe’ll do a demo of what this looks like later."
+    "text": "Access and Complete Core Projects\n\nVisit the menu of core standards assignments here.\nSelect assignments that address the standards you want to demonstrate.\nUse the links on the menu to create a repo within the D2M-R GitHub organization by either:\n\nAccepting the GitHub classroom invitation (if available)\nCreating a private repo from scratch and adding in the associated files from the student hub repo\n\nComplete the assignment according to the instructions in the assignment’s README file or Quarto notebook.\nComplete the corresponding submission document (student-hub/templates)\nFinalize your assignment with a GitHub pull request.\nSubmit to the grading queue with the “Submit” form on the website.\n\nThere are extremely detailed instructions for how do do each step of this process in the student-hub repo, on each submission document, and on the website. Start here.\nWe’ll do a demo of what this looks like later."
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#integrative-data-project-20pt",
@@ -291,7 +291,7 @@
     "href": "slides/Q1-W1_introduction.html#example-assignment",
     "title": "Introduction to D2M-R",
     "section": "Example Assignment",
-    "text": "Example Assignment\nIn the meantime, while you figure yourself out, I’m going to demo the workflow of an example assignment.\nFollow along if you’re ready to go, otherwise just watch me and do it on your own later.\n\nGo to the assignment menu and click the GitHub classroom invite for the example assignment.\nAccept the assignment and create your GitHub repo.\nClone the repo to your computer using RStudio.\nOpen the example R script in RStudio and follow the instructions to complete the assignment.\n\nEven if you don’t have the github/RStudio thing sorted yet, you should open RStudio at this point and try out the interface.\n\nSubmit the assignment for (fake) grading with a pull request and the class submission form.\n\n\n\n\n\n\n\n\nIf you’re not sure how to do something, figure it out!\n\n\nThat’s the point. Practice finding resources and solving problems on your own. If you get stuck, ask for help on Slack. Thursday we’ll talk about specific problem-solving and debugging strategies.\n\n\n\n\n\n\n\nD2M-R I | Week 1"
+    "text": "Example Assignment\nIn the meantime, while you figure yourself out, I’m going to demo the workflow of an example assignment.\nFollow along if you’re ready to go, otherwise just watch me and do it on your own later.\n\nGo to the assignment menu and click the GitHub classroom invite for the example assignment.\nAccept the assignment and create your GitHub repo.\nClone the repo to your computer using RStudio.\nOpen the example R script in RStudio and follow the instructions to complete the assignment.\n\nEven if you don’t have the github/RStudio thing sorted yet, you should open RStudio at this point and try out the interface.\n\nSubmit the assignment for (fake) grading with a pull request and the class submission form.\n\n\n\n\n\n\n\n\nIf you’re not sure how to do something, figure it out!\n\n\nThat’s the point. Practice finding resources and solving problems on your own. If you get stuck, ask for help on Slack. Thursday we’ll talk about specific problem-solving and debugging strategies."
   },
   {
     "objectID": "assessment/accountability.html",
@@ -1180,112 +1180,119 @@
     "href": "slides/Q1-W1_problem-solving.html#the-myth-of-the-programmer",
     "title": "Preventing & Solving Problems",
     "section": "The Myth of the “Programmer”",
-    "text": "The Myth of the “Programmer”\n\n\n\nProgrammers are geniuses who have a sacred knowledge. 4\nThe debugging coders do is a highly specialized skill.\nIf you’re debugging, you did something wrong.\nProgramming requires mastery of a programming language.\nYou can recognize an expert programmer by their abundant knowledge of the language.\n\nor their wardrobe of unwashed hoodies meticulously curated to signal how much they don’t care about anything but code"
+    "text": "The Myth of the “Programmer”\n\n\n\nProgrammers are geniuses who have a sacred knowledge.\nThe debugging coders do is a highly specialized skill.\nIf you’re debugging, you did something wrong.\nProgramming requires mastery of a programming language.\nYou can recognize an expert programmer by their abundant knowledge of the language.\n\nor their wardrobe of unwashed hoodies meticulously curated to signal how much they don’t care about anything but code"
   },
   {
     "objectID": "slides/Q1-W1_problem-solving.html#the-reality-of-getting-shit-done",
     "href": "slides/Q1-W1_problem-solving.html#the-reality-of-getting-shit-done",
     "title": "Preventing & Solving Problems",
     "section": "The Reality of Getting Shit Done",
-    "text": "The Reality of Getting Shit Done\n\n\n\nDebugging is not extra – it’s the majority of the process.\nDebugging is one application of more generalizable problem-solving skills.\nProgramming depends on collaboration.\nOnce you “master” the foundations, you learn the rest by just going for it.\nYou can recognize an expert programmer by their ability to find solutions.\n\nThey might also wear gross hoodies, but don’t we all from time to time?\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestions &gt; Answers\n\n\nKnowing how to ask the right questions to solve problems and learn independently is legitimately, indisputably more valuable than the party trick of recalling lots of functions and language-specific processes.\n\n\n\n\n\n\nDebugging is not extra – it’s essential\n\n80% of programming time is spent debugging \n\nTroubleshooting includes debugging, among other things.\n\nThese skills translate beyond fixing code.\nPlease stop telling me that “in programming it’s called debugging.”\n\nProgramming depends on collaboration\n\nAsking for help is not cheating!\nProgramming knowledge is freely distributed and shared\n\nQuestions &gt; Answers\n\nGet the basics down, then get everything else you need when you need it.\n\nMaster the foundations and then just go for it"
+    "text": "The Reality of Getting Shit Done\n\n\n\nDebugging is not extra – it’s the majority of the process.\nDebugging is one application of more generalizable problem-solving skills.\nProgramming depends on collaboration.\nOnce you “master” the foundations, you learn the rest by just going for it.\nYou can recognize an expert programmer by their ability to find solutions.\n\nThey might also wear gross hoodies, but don’t we all from time to time?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestions &gt; Answers\n\n\nKnowing how to ask the right questions to solve problems and learn independently is legitimately, indisputably more valuable than the party trick of recalling lots of functions and language-specific processes.\n\n\n\n\n\n\nDebugging is not extra – it’s essential\n\n80% of programming time is spent debugging \n\nTroubleshooting includes debugging, among other things.\n\nThese skills translate beyond fixing code.\nPlease stop telling me that “in programming it’s called debugging.”\n\nProgramming depends on collaboration\n\nAsking for help is not cheating!\nProgramming knowledge is freely distributed and shared\n\nQuestions &gt; Answers\n\nGet the basics down, then get everything else you need when you need it.\n\nMaster the foundations and then just go for it"
   },
   {
     "objectID": "slides/Q1-W1_problem-solving.html#keep-your-code",
     "href": "slides/Q1-W1_problem-solving.html#keep-your-code",
     "title": "Preventing & Solving Problems",
     "section": "Keep Your Code:",
-    "text": "Keep Your Code:\n\n\n\nStandardized\n\nstyle guides, internal consistency\n\nIntelligible - clear comments and naming\n\ninformative comments, meaningful naming, documentation\n\n\n\n\nMaintainable\n\nsustainable over time and transportable\n\nContextualized\n\nappropriate for your community and your project"
+    "text": "Keep Your Code:\n\n\n\n\n\n\n\nStandardized\n\n\n\nstyle guides\ninternal consistency\n\n\n\n\n\n\n\n\nIntelligible\n\n\n\ninformative comments\nmeaningful naming\ndocumentation\n\n\n\n\n\n\n\n\nMaintainable\n\n\n\nsustainable over time\ntransportable\n\n\n\n\n\n\n\n\nContextualized\n\n\n\nappropriate for your community\nfunctional for your project"
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#standardized-code",
-    "href": "slides/Q1-W1_problem-solving.html#standardized-code",
+    "objectID": "slides/Q1-W1_problem-solving.html#standardized-code-style",
+    "href": "slides/Q1-W1_problem-solving.html#standardized-code-style",
     "title": "Preventing & Solving Problems",
-    "section": "Standardized Code",
-    "text": "Standardized Code\n\nStandardized code is easier to read, understand, and maintain.\nUse a style guide\nMaintain internal consistency"
+    "section": " Standardized Code: Style",
+    "text": "Standardized Code: Style\n\nStandardized Intelligible Maintainable Contextualized\n\nStandardized code is easier to read, understand, and maintain\n\n\n\n\nR is pretty forgiving\n\n\n\nWhitespace insensitive\nFew “forbidden” characters\n\n\n\n\n\nChoose to be cautious\n\n\n\nAvoid special characters\nPrioritize readability over conciseness\n\n\n\n\n\n\nStyle Guides\n\n\nPick one and stick to it\n\nGoogle’s R Style Guide\nTidyverse Style Guide\nIndividualized Style Guide"
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#r-standard-formatting",
-    "href": "slides/Q1-W1_problem-solving.html#r-standard-formatting",
+    "objectID": "slides/Q1-W1_problem-solving.html#intelligible-code-commenting",
+    "href": "slides/Q1-W1_problem-solving.html#intelligible-code-commenting",
     "title": "Preventing & Solving Problems",
-    "section": "R Standard Formatting",
-    "text": "R Standard Formatting\n\n\nR is pretty forgiving\n\nWhitespace insensitive\nFew “forbidden” characters\n\nSo choose where to be cautious\n\nAvoid special characters (even if they are technically allowed)\nPrioritize readability over conciseness\n\n\nStyle Guides\n\nThe right style is the one you can stick to\n\nGoogle’s R Style Guide\nTidyverse Style Guide\nIndividualized Style Guide\n\nmy own guide, a tweaked version of the tidyverse guide\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n(note about the stylr package)"
+    "section": " Intelligible Code: Commenting",
+    "text": "Intelligible Code: Commenting\n\nStandardized Intelligible Maintainable Contextualized\n\n\n\n\nComments should not duplicate code\nGood comments do not excuse unclear code\nIf you can’t write a clear comment, there may be a problem with the code\nComments should dispel confusion, not cause it\nExplain unidiomatic code in comments\nProvide links to the original source of copied code\nInclude links to external references where helpful\nAdd comments when fixing bugs\nUse comments to mark incomplete implementations"
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#commenting-best-practices",
-    "href": "slides/Q1-W1_problem-solving.html#commenting-best-practices",
+    "objectID": "slides/Q1-W1_problem-solving.html#intelligible-code-commenting-1",
+    "href": "slides/Q1-W1_problem-solving.html#intelligible-code-commenting-1",
     "title": "Preventing & Solving Problems",
-    "section": "Commenting Best Practices",
-    "text": "Commenting Best Practices\n\n\n\nComments should not duplicate code\nGood comments do not excuse unclear code\nIf you can’t write a clear comment, there may be a problem with the code\nComments should dispel confusion, not cause it\nExplain unidiomatic code in comments\nProvide links to the original source of copied code\nInclude links to external references where helpful\nAdd comments when fixing bugs\nUse comments to mark incomplete implementations\n\n\n\n\n\n\n\n\n\nKeep Collaboration in Mind\n\n\nBe kind not just to others who may work with you, but also to future-you.\n\n\n\n\n\n\n\n\n\n\nNatural languages &gt; programming languages\n\n\nThe language you speak is infinitely more intuitive, nuanced, specific, and adaptable. Take advantage of it."
+    "section": " Intelligible Code: Commenting",
+    "text": "Intelligible Code: Commenting\n\nStandardized Intelligible Maintainable Contextualized\n\n\n\n\n\n\n\n\n\n\nKeep Collaboration in Mind\n\n\nBe kind not just to others who may work with you, but also to future-you.\n\n\n\n\n\n\n\n\n\n\n\nNatural languages &gt; programming languages\n\n\nThe language you speak is infinitely more intuitive, nuanced, specific, and adaptable. Take advantage of it."
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#meaningful-naming",
-    "href": "slides/Q1-W1_problem-solving.html#meaningful-naming",
+    "objectID": "slides/Q1-W1_problem-solving.html#intelligible-code-meaningful-naming",
+    "href": "slides/Q1-W1_problem-solving.html#intelligible-code-meaningful-naming",
     "title": "Preventing & Solving Problems",
-    "section": "Meaningful Naming",
-    "text": "Meaningful Naming\n\n“There are only two hard things in Computer Science: cache invalidation and naming things.” — Phil Karlton\n\n\n\n\n\n\n\n\n\nNames should describe the named thing!\n\n\nNot as easy as it sounds.\n\n\n\n\nAvoid disinformation\nUse pronounceable names\nUse searchable names\nPick one word/format per concept\nAvoid encodings\n\n\n\n\n\nKeep it simple, stupid – commitstrip.com"
+    "section": " Intelligible Code: Meaningful Naming",
+    "text": "Intelligible Code: Meaningful Naming\n\nStandardized Intelligible Maintainable Contextualized\n\n\n\n\nNames should describe the named thing.\n\n\n\n\n\n\n“There are only two hard things in Computer Science: cache invalidation and naming things.”\n— Phil Karlton\n\n\nAvoid disinformation\nUse pronounceable names\nUse searchable names\nPick one word/format per concept\nAvoid encodings\n\n\n\n\n\n\n\nKeep it simple, stupid – commitstrip.com"
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#function-lifecycles",
-    "href": "slides/Q1-W1_problem-solving.html#function-lifecycles",
+    "objectID": "slides/Q1-W1_problem-solving.html#maintainable-code-function-lifecycles",
+    "href": "slides/Q1-W1_problem-solving.html#maintainable-code-function-lifecycles",
     "title": "Preventing & Solving Problems",
-    "section": "Function Lifecycles",
-    "text": "Function Lifecycles\nR is constantly evolving! CRAN uses 4 lifecycle stages for functions:\n\n\n\nStage\n\n\nDescription\n\n\n\n\n\n\n\n\n\nIn development (“beta”), may never reach stable\n\n\nCan be helpful for specific use-cases\n\n\nUse with caution & comments\n\n\n\n\n\n\n\n\n\n\n\nDefault stage\n\n\nFunctional, current, maintained\n\n\nPrioritize these!\n\n\n\n\n\n\n\n\n\n\n\nStill supported, safe to use\n\n\nBetter (stable) alternative exists\n\n\nWill not be updated, but will not go away\n\n\n\n\n\n\n\n\n\n\n\nWorks now but not for long\n\n\nUse only as a temporary last resort\n\n\nLook for recommended replacements\n\n\n\n\n\n\nIf you don’t see a lifecycles tag in the CRAN documentation, that means it’s stable.\n\nExperimental\n\nIn development (“beta”)\nMay or may not reach stable\nCan be very helpful for a specific use-case\nUse with caution\nNote use in comments in case updates produce errors or collaborators only use stable functions\n\nStable\n\nDefault stage\nFunctional, current, maintained\nPrioritize these!\n\nSuperseded\n\nStill supported\nBetter (stable) alternative exists\nWill not be updated, but will not go away\nSafe to use, but prioritize recommended replacements\n\nDeprecated\n\nWorks now but not for long\nUse only as a temporary last resort\nPrioritize recommended replacement"
+    "section": " Maintainable Code: Function Lifecycles",
+    "text": "Maintainable Code: Function Lifecycles\n\nStandardized Intelligible Maintainable Contextualized\n\n\n\n\nStage\n\n\nDescription\n\n\n\n\n\n\n\n\n\nIn development (beta), may never reach stable\n\n\nCan be helpful for specific use-cases\n\n\nUse with caution & comments\n\n\n\n\n\n\n\n\n\n\n\nDefault stage\n\n\nFunctional, current, maintained\n\n\nPrioritize these!\n\n\n\n\n\n\n\n\n\n\n\nStill supported, safe to use\n\n\nBetter (stable) alternative exists\n\n\nWill not be updated, but will not go away\n\n\n\n\n\n\n\n\n\n\n\nWorks now but not for long\n\n\nUse only as a temporary last resort\n\n\nLook for recommended replacements\n\n\n\n\n\n\nIf you don’t see a lifecycles tag in the CRAN documentation, that means it’s stable.\n\nExperimental\n\nIn development (“beta”)\nMay or may not reach stable\nCan be very helpful for a specific use-case\nUse with caution\nNote use in comments in case updates produce errors or collaborators only use stable functions\n\nStable\n\nDefault stage\nFunctional, current, maintained\nPrioritize these!\n\nSuperseded\n\nStill supported\nBetter (stable) alternative exists\nWill not be updated, but will not go away\nSafe to use, but prioritize recommended replacements\n\nDeprecated\n\nWorks now but not for long\nUse only as a temporary last resort\nPrioritize recommended replacement"
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#data-lifecycles",
-    "href": "slides/Q1-W1_problem-solving.html#data-lifecycles",
+    "objectID": "slides/Q1-W1_problem-solving.html#maintainable-code-data-lifecycles",
+    "href": "slides/Q1-W1_problem-solving.html#maintainable-code-data-lifecycles",
     "title": "Preventing & Solving Problems",
-    "section": "Data Lifecycles",
-    "text": "Data Lifecycles\n\n\n\n\n\n\n\n\n⇄ How much could your data change?\n\n\n\nIncomplete datasets will get more data\n“Complete” datasets may eliminate some data\nVariables may need to be combined, anonymized, mutated, etc.\n\n\n\n\n\n\n\n\n\n\n\n⇆ How similar are your data to other data\n\n\n\nWill you (or anyone else) conduct a follow-up or replication?\nDo you already know there were problems in data collection that will mean new data format when fixed next time?\nDo other researchers in your area use similar data collection methods but different organization methods?"
+    "section": " Maintainable Code: Data Lifecycles",
+    "text": "Maintainable Code: Data Lifecycles\n\nStandardized Intelligible Maintainable Contextualized\n\n\n\n\n\n\n\n\n⇄ How much could your data change?\n\n\n\nIncomplete datasets will get more data\n“Complete” datasets may eliminate some data\nVariables may need to be combined, anonymized, mutated, etc.\n\n\n\n\n\n\n\n\n\n\n\n⇆ How similar are your data to other data?\n\n\n\nWill you (or anyone else) conduct a follow-up or replication?\nDo you already know there were problems in data collection that will mean new data format when fixed next time?\nDo other researchers in your area use similar data collection methods but different organization methods?"
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#dry-programming",
-    "href": "slides/Q1-W1_problem-solving.html#dry-programming",
+    "objectID": "slides/Q1-W1_problem-solving.html#maintainable-code-dry-programming",
+    "href": "slides/Q1-W1_problem-solving.html#maintainable-code-dry-programming",
     "title": "Preventing & Solving Problems",
-    "section": "DRY Programming",
-    "text": "DRY Programming\nDon’t Repeat Yourself\n\n\n\nAvoid\n\n\nPromote\n\n\n\n\n\nPropagating errors\nDuplication conflicts\nVerbosity hiding small errors\n\n\n\n\nReplicable, reproducible code\nAbstracted code for multiple contexts\nCode usable by others and future-you\n\n\n\n\n\n\nAvoid copy/paste programming within your own code\n\nAvoid: Propagating mistakes that must be corrected individually Duplication conflicts Combing through verbose scripts for minor errors\nPromote: Replicable, reproducible code Abstracting code to use in multiple contexts Code usable by and relevant to other people and future-you"
+    "section": " Maintainable Code: DRY Programming",
+    "text": "Maintainable Code: DRY Programming\n\nStandardized Intelligible Maintainable Contextualized\n\n\nDon’t Repeat Yourself\n\n\n\n\n\nAvoid\n\n\n\nPropagating errors\nDuplication conflicts\nVerbosity hiding small errors\n\n\n\n\n\n\n\nPromote\n\n\n\nReplicable, reproducible code\nAbstracted code for multiple contexts\nCode usable by others and future-you\n\n\n\n\n\n\n\nAvoid copy/paste programming within your own code\n\nAvoid: Propagating mistakes that must be corrected individually Duplication conflicts Combing through verbose scripts for minor errors\nPromote: Replicable, reproducible code Abstracting code to use in multiple contexts Code usable by and relevant to other people and future-you"
   },
   {
     "objectID": "slides/Q1-W1_problem-solving.html#caveat-non-evil-copypaste",
     "href": "slides/Q1-W1_problem-solving.html#caveat-non-evil-copypaste",
     "title": "Preventing & Solving Problems",
-    "section": "Caveat: Non-evil Copy/Paste",
-    "text": "Caveat: Non-evil Copy/Paste\nWhen should you copy and paste?\n\nForking: purposefully creating variants for exploration\nTemplates: starting points for new projects\nDebugging: temporary workarounds to identify specific problems\n“Clone and own”: adapt foundational code to new contexts\n\n\ncopy-and-paste coding is bad, but there’s nothing wrong with copying and pasting code in principle. When should you copy and paste?\npurposefully creating variants for exploration don’t reinvent the wheel for the sake of originality temporary workarounds copy foundational code and adapt to specific contexts"
+    "section": " Caveat: Non-evil Copy/Paste",
+    "text": "Caveat: Non-evil Copy/Paste\n\nStandardized Intelligible Maintainable Contextualized\n\nWhen should you copy and paste?\n\nForking: purposefully creating variants for exploration\nTemplates: starting points for new projects\nDebugging: temporary workarounds to identify specific problems\n“Clone and own”: adapt foundational code to new contexts\n\n\ncopy-and-paste coding is bad, but there’s nothing wrong with copying and pasting code in principle. When should you copy and paste?\npurposefully creating variants for exploration don’t reinvent the wheel for the sake of originality temporary workarounds copy foundational code and adapt to specific contexts"
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#abstraction",
-    "href": "slides/Q1-W1_problem-solving.html#abstraction",
+    "objectID": "slides/Q1-W1_problem-solving.html#maintainable-code-abstraction",
+    "href": "slides/Q1-W1_problem-solving.html#maintainable-code-abstraction",
     "title": "Preventing & Solving Problems",
-    "section": "Abstraction",
-    "text": "Abstraction\nAbsolute vs. Relative Paths\n\n## Only works on my computer no matter what\nabsolute_path &lt;- \"Users/Natalie/repos/d2mr/example-repo/images/barplot.jpg\"\n\n# Works on your machine if you clone it to this location on your computer\nmixed_path &lt;- \"~/repos/d2mr/example-repo/images/barplot.jpg\"\n\n# Works when you clone the repo anywhere\nrelative_path &lt;- \"/images/barplot.jpg\"\n\nHard-coded vs. Dynamic Variables\n\n# Always equals 3\u000b\nmy_mean &lt;- (2 + 4)/2\n\n# Output will change to reflect changes to 2 input variables\u000b\nx &lt;- 2; y &lt;- 4 # or...\n# x &lt;- 3; y &lt;- 10\nthe_mean &lt;- (x + y)/2\n\n# Output will change no matter how many input numerals are averaged\nnumber_list &lt;- c(2,3) # or...\n# number_list &lt;- 2:8 # or...\n# number_list &lt;- c(1,2,8,100)\na_mean &lt;- sum(number_list)/length(number_list)\n\n\nAbstracted (relative) paths and variables are more durable than hard-coded (absolute) ones"
+    "section": " Maintainable Code: Abstraction",
+    "text": "Maintainable Code: Abstraction\n\nStandardized Intelligible Maintainable Contextualized\n\nAbsolute vs. Relative Paths\n## Only works on my computer no matter what\nabsolute_path &lt;- \"Users/Natalie/repos/d2mr/example-repo/images/barplot.jpg\"\n\n# Works on your machine if you clone it to this location on your computer\nmixed_path &lt;- \"~/repos/d2mr/example-repo/images/barplot.jpg\"\n\n# Works when you clone the repo anywhere\nrelative_path &lt;- \"/images/barplot.jpg\""
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#community-standards",
-    "href": "slides/Q1-W1_problem-solving.html#community-standards",
+    "objectID": "slides/Q1-W1_problem-solving.html#maintainable-code-abstraction-1",
+    "href": "slides/Q1-W1_problem-solving.html#maintainable-code-abstraction-1",
     "title": "Preventing & Solving Problems",
-    "section": "Community standards",
-    "text": "Community standards\n\nR Conventions (for everyone)\nR Developer Community Culture\nFind your communities and respect their rules.\n\nGatekeep-y? Admittedly, yes, but that’s not the goal\nFacilitate communication, collaboration, and shared ownership\n\n\n\nFind your communities (plural) and do your best to respect their rules. This isn’t so much about gatekeeping and in-grouping (though it can certainty feel that way). It’s more about promoting collaboration. When everyone talks about their work in a similar way – whether it’s using the same style guide, preferring certain plots for certain analyses, opting for one package or another, formatting example random data, whatever – it’s much easier to work in forked repos, respond to crowd-sourced questions, understand others’ presentations, and just generally work together toward shared intentions."
+    "section": " Maintainable Code: Abstraction",
+    "text": "Maintainable Code: Abstraction\n\nStandardized Intelligible Maintainable Contextualized\n\nHard-coded vs. Dynamic Variables\n# Always equals 3\u000b\nmy_mean &lt;- (2 + 4)/2\n\n# Output will change to reflect changes to 2 input variables\u000b\nx &lt;- 2; y &lt;- 4 # or...\nx &lt;- 3; y &lt;- 10\nthe_mean &lt;- (x + y)/2\n\n# Output will change no matter how many input numerals are averaged\nnumber_list &lt;- c(2,3) # or...\nnumber_list &lt;- 2:8 # or...\nnumber_list &lt;- c(1,2,8,100)\na_mean &lt;- sum(number_list)/length(number_list)\n\nAbstracted (relative) paths and variables are more durable than hard-coded (absolute) ones"
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#priorities",
-    "href": "slides/Q1-W1_problem-solving.html#priorities",
+    "objectID": "slides/Q1-W1_problem-solving.html#contextualized-code-community-standards",
+    "href": "slides/Q1-W1_problem-solving.html#contextualized-code-community-standards",
     "title": "Preventing & Solving Problems",
-    "section": "Priorities",
-    "text": "Priorities\n\n\nThe best code is the code that works.\n\n\n\nBest practices may not be practical in practice.\n\n\n\n\nYour project’s goals come first."
+    "section": " Contextualized Code: Community Standards",
+    "text": "Contextualized Code: Community Standards\n\nStandardized Intelligible Maintainable Contextualized\n\nKnow your community and follow its conventions.\n\nR Conventions (for everyone)\nR Developer Community Culture\nFind your communities and respect their rules.\n\nGatekeep-y? Admittedly, yes, but that’s not the goal\nFacilitate communication, collaboration, and shared ownership\n\n\n\nFind your communities (plural) and do your best to respect their rules. This isn’t so much about gatekeeping and in-grouping (though it can certainty feel that way). It’s more about promoting collaboration. When everyone talks about their work in a similar way – whether it’s using the same style guide, preferring certain plots for certain analyses, opting for one package or another, formatting example random data, whatever – it’s much easier to work in forked repos, respond to crowd-sourced questions, understand others’ presentations, and just generally work together toward shared intentions."
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#garbage-in-garbage-out",
-    "href": "slides/Q1-W1_problem-solving.html#garbage-in-garbage-out",
+    "objectID": "slides/Q1-W1_problem-solving.html#contextualized-code-priorities",
+    "href": "slides/Q1-W1_problem-solving.html#contextualized-code-priorities",
     "title": "Preventing & Solving Problems",
-    "section": "Garbage in  garbage out",
-    "text": "Garbage in  garbage out\n\nThe quality of output of any system is determined by the quality of the input.\nImmaculate code can’t make up for horrendous data.\nNeither code nor data can fix terrible human decisions.\n\n\n\n\n\n\n\n\nThe quality of output of any system is determined by the quality of the input. Immaculate code can’t make up for horrendous data. Corollary: Neither code nor data can fix terrible human decisions."
+    "section": " Contextualized Code: Priorities",
+    "text": "Contextualized Code: Priorities\n\nStandardized Intelligible Maintainable Contextualized\n\n\n\nThe best code is the code that works.\n\n\n\nBest practices may not be practical in practice.\n\n\n\n\nYour project’s goals come first."
   },
   {
-    "objectID": "slides/Q1-W1_problem-solving.html#take-out-your-trash",
-    "href": "slides/Q1-W1_problem-solving.html#take-out-your-trash",
+    "objectID": "slides/Q1-W1_problem-solving.html#contextualized-code-garbage-in-garbage-out",
+    "href": "slides/Q1-W1_problem-solving.html#contextualized-code-garbage-in-garbage-out",
     "title": "Preventing & Solving Problems",
-    "section": "Take out your trash",
-    "text": "Take out your trash\n\n\n\n\n\n\n\n\n\n\nThe quality of output of any system is determined by the quality of the input.\n\n\nImmaculate code can’t make up for horrendous data.\nNeither code nor data can fix terrible human decisions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYour data are bad because they are:\n\n\n\n\nIncorrect.\nIncorrectly obtained or recorded.\nToo different from other data.\nToo similar to other data.\nMissing.\nNot applicable to the your situation.\n\n\n\n\n\n\n\n\nYour decisions are bad because you have:\n\n\n\n\nMisunderstood causality.\nIncomplete, missing, or inaccurate documentation.\nIncorrect hypotheses.\nInadequate research design.\nMiscommunication.\nErroneous judgments and reliance on human intuition.\n\n\n\n\n\n\n\n\nIncorrect (includes errors).\nIncorrectly obtained or recorded.\nToo different from other data (also known as outliers).\nToo similar to other data.\nMissing.\nNot applicable to the particular situation or application.\n\nPoor understanding of causality. Incomplete, missing or inaccurate documentation. Wrong hypotheses. Inadequate research. Use of incorrect methods or statistical tests. Miscommunications. Misunderstanding of goals. Erroneous judgments and reliance on human intuition."
+    "section": " Contextualized Code: Garbage in  garbage out",
+    "text": "Contextualized Code: Garbage in  garbage out\n\nStandardized Intelligible Maintainable Contextualized\n\n\nThe quality of output of any system is determined by the quality of the input.\nImmaculate code can’t make up for horrendous data.\nNeither code nor data can fix terrible human decisions.\n\n\n\n\n\n\n\n\nThe quality of output of any system is determined by the quality of the input. Immaculate code can’t make up for horrendous data. Corollary: Neither code nor data can fix terrible human decisions."
+  },
+  {
+    "objectID": "slides/Q1-W1_problem-solving.html#contextualized-code-take-out-your-trash",
+    "href": "slides/Q1-W1_problem-solving.html#contextualized-code-take-out-your-trash",
+    "title": "Preventing & Solving Problems",
+    "section": " Contextualized Code: Take out your trash",
+    "text": "Contextualized Code: Take out your trash\n\nStandardized Intelligible Maintainable Contextualized\n\n\n\n\n\n\n\n\n\n\n\nThe quality of output of any system is determined by the quality of the input.\n\n\nImmaculate code can’t make up for horrendous data.\nNeither code nor data can fix terrible human decisions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYour data are bad because they are:\n\n\n\n\nIncorrect.\nIncorrectly obtained or recorded.\nToo different from other data.\nToo similar to other data.\nMissing.\nNot applicable to the your situation.\n\n\n\n\n\n\n\n\nYour decisions are bad because you have:\n\n\n\n\nMisunderstood causality.\nIncomplete, missing, or inaccurate documentation.\nIncorrect hypotheses.\nInadequate research design.\nMiscommunication.\nErroneous judgments and reliance on human intuition.\n\n\n\n\n\n\n\n\nIncorrect (includes errors).\nIncorrectly obtained or recorded.\nToo different from other data (also known as outliers).\nToo similar to other data.\nMissing.\nNot applicable to the particular situation or application.\n\nPoor understanding of causality. Incomplete, missing or inaccurate documentation. Wrong hypotheses. Inadequate research. Use of incorrect methods or statistical tests. Miscommunications. Misunderstanding of goals. Erroneous judgments and reliance on human intuition."
   },
   {
     "objectID": "slides/Q1-W1_problem-solving.html#github-cardinal-rules",
@@ -1348,7 +1355,7 @@
     "href": "slides/Q1-W1_problem-solving.html#errors-warnings-messages",
     "title": "Preventing & Solving Problems",
     "section": "Errors, Warnings, Messages",
-    "text": "Errors, Warnings, Messages\n\n\n\n\n\n\n\n\n\nErrors must be addressed\n\n\nR says: “Something has gone wrong and I cannot and will not move forward.”\n\n\n\n\n\n\n\n\n\n\n\nWarnings should usually be addressed\n\n\nR says: “This doesn’t look right but I’m just a robot what do I know.”\n\n\n\n\n\n\n\n\n\n\n\nMessages are informational only\n\n\nR says: “No problem, done! But just FYI…”\nNot all alarming words and big red Xs are problems.\n\n\n\n\n\n\n\n\n\n\nThe object subjects doesn’t exist. The object’s name is subject.\n\n\n\n\n\n\n\nThe string \"NA\" doesn’t look like a numeral, but that’s ok because it’s not supposed to become a numeral.\n\n\n\n\n\n\n\nThe functions filter() and lag() were already defined when the stats package was loaded so loading dplyr now overrides them. If we want the stats versions of these, we need to load that package after dplyr."
+    "text": "Errors, Warnings, Messages\n\n\n\n\n\n\n\n\n\nErrors must be addressed\n\n\nR says: “Something has gone wrong. I cannot and will not move forward.”\n\n\n\n\n\n\n\n\n\n\n\nWarnings should usually be addressed\n\n\nR says: “This doesn’t look right but I’m just a robot what do I know.”\n\n\n\n\n\n\n\n\n\n\n\nMessages are informational only\n\n\nR says: “No problem, done! But just FYI…”\nNot all alarming words and big red Xs are problems.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe object subjects doesn’t exist. The object’s name is subject.\nThe string \"NA\" doesn’t look like a numeral, but that’s ok because it’s not supposed to become a numeral.\nThe functions filter() and lag() were already defined when the stats package was loaded so loading dplyr now overrides them. If we want the stats versions of these, we need to load that package after dplyr."
   },
   {
     "objectID": "slides/Q1-W1_problem-solving.html#line-by-line-debugging",
@@ -1383,7 +1390,7 @@
     "href": "slides/Q1-W1_problem-solving.html#minimally-reproducible-examples",
     "title": "Preventing & Solving Problems",
     "section": "Minimally Reproducible Examples",
-    "text": "Minimally Reproducible Examples\n\nMinimal: only the code necessary to reproduce the problem\nReproducible: includes any data or package dependencies\nExample: illustrates the problem clearly\n\n\n\n\n\n\n\n\nMRE Ingredients\n\n\nStackOverflow\n\n\nThe minimal and sufficient dataset used (usually not your actual data! better to use built-in data like iris or cars; run data() for more).\nMinimal and sufficient runnable code\nNecessary session and OS info, including loaded libraries and seed if used."
+    "text": "Minimally Reproducible Examples\n\nMinimal: only the code necessary to reproduce the problem\nReproducible: includes any data or package dependencies\nExample: illustrates the problem clearly\n\n\n\n\n\n\n\n\nMRE Ingredients\n\n\nStackOverflow\n\nThe minimal and sufficient dataset used (usually not your actual data! better to use built-in data like iris or cars; run data() for more).\nMinimal and sufficient runnable code\nNecessary session and OS info, including loaded libraries and seed if used."
   },
   {
     "objectID": "slides/Q1-W1_problem-solving.html#ask-the-internet",
@@ -1418,7 +1425,7 @@
     "href": "slides/Q1-W1_problem-solving.html#your-d2m-r-troubleshooting-path",
     "title": "Preventing & Solving Problems",
     "section": "YOUR D2M-R TROUBLESHOOTING PATH",
-    "text": "YOUR D2M-R TROUBLESHOOTING PATH\n\n\n\nRead relevant documentation.\n\n\n\n\n\n\n\n\nIdentify any error messages or warnings and attempt to resolve them. ️\n\n\n\n\n\n\n\n\nConfirm that your data and code are playing together.\n\n\n\n\n\n\n\n\nReview your code at a granular level (line-by-line, rubber ducking).\n\n\n\n\n\n\n\n\n\n\nIdentify as specific issues and generate specific questions.\n\n\n\n\n\n\n\n\nUse community resources (e.g., Slack, StackOverflow, Reddit) to find answers.\n\n\n\n\n\n\n\n\nEmail your TA. ️\n\n\n\n\n\n\n\n\nEmail Dr. Dowling. ️\n\n\n\n\n\n\n\n\nD2M-R I | Week 1"
+    "text": "YOUR D2M-R TROUBLESHOOTING PATH\n\n\n\nRead relevant documentation.\n\n\n\n\n\n\n\n\nIdentify any error messages or warnings and attempt to resolve them. ️\n\n\n\n\n\n\n\n\nConfirm that your data and code are playing together.\n\n\n\n\n\n\n\n\nReview your code at a granular level (line-by-line, rubber ducking).\n\n\n\n\n\n\n\n\n\n\nIdentify as specific issues and generate specific questions.\n\n\n\n\n\n\n\n\nUse community resources (e.g., Slack, StackOverflow, Reddit) to find answers.\n\n\n\n\n\n\n\n\nEmail your TA. ️\n\n\n\n\n\n\n\n\nEmail your professor. ️"
   },
   {
     "objectID": "syllabus/climate.html",
