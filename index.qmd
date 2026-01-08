@@ -54,11 +54,11 @@ to request an alternative time
 View course policies, assessment, and other details in the [syllabus](syllabus/index.html).
 
 -   [Course site](https://d2m-r.github.io) - *you are here!*
--   [GitHub organization](github.com/d2m-r)
-    -   [Textbook](github.com/d2m-r/book) - a collaborative work in progress
+-   [GitHub organization](http://github.com/d2m-r)
+    -   [Textbook](http://github.com/d2m-r/book) - a collaborative work in progress
     -   [Slides](materials/slides.qmd)
-    -   [Student Hub](github.com/d2m-r/student-hub) - scripts, templates, in-class materials, etc.
--   [Slack workspace](d2m-r.slack.com) - moderated, requires UChicago email
+    -   [Student Hub](http://github.com/d2m-r/student-hub) - scripts, templates, in-class materials, etc.
+-   [Slack workspace](http://d2m-r.slack.com) - moderated, requires UChicago email
 -   [Canvas](https://canvas.uchicago.edu/courses/68272) - grade tracking, accountability/engagement submissions
 -   [Example repo: schelling-games](https://github.com/d2m-r/schelling-games)
 
@@ -76,9 +76,9 @@ You can alternatively find the Quarto files in the [website's repo](https://gith
 
 **D2M-R textbook chapters** correspond to subjects in the textbook that goes with this class.
 This book is very much in development, with large portions entirely untouched as of the start of the quarter.
-Where relevant chapters are missing or incomplete, readings from external sources like [R for Data Science](https://r4ds.hadley.nz/) will be assigned instead. 
+Prioritize the assigned resources from external sources like [R for Data Science](https://r4ds.hadley.nz/). 
 
-**You can contribute to any unfinished sections of the textbook for course credit!** See the [student hub documents](https://github.com/d2m-r/student-hub/blob/main/project-documents/other/contribution-textbook.md) for textbook contributions for details.
+**You can contribute to any part of the textbook for course credit!** See the [student hub documents](https://github.com/d2m-r/student-hub/blob/main/project-documents/other/contribution-textbook.md) for textbook contributions for details.
 
 
 # Winter 2026 Calendar

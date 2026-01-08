@@ -164,7 +164,7 @@ Jan-6; Jan-8
 
 **Other To-do:**
 
--   [ ] Join the [course Slack workspace](d2m-r.slack.com) and introduce yourself in the `#introductions` channel
+-   [ ] Join the [course Slack workspace](http://d2m-r.slack.com) and introduce yourself in the `#introductions` channel
     -   Minimally, send a message including your name and github username, but we'd also love to know a little bit about you and/or why you're taking the class!
 -   [ ] Review the syllabus policies and assessment structure on this site
 -   [ ] Get your GitHub education account set up and join the d2m-r organization
