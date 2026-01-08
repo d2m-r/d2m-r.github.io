@@ -100,10 +100,193 @@ These examples are **optional templates**. You can:
 - Modify one to fit your situation.
 - Ignore them and design a fully custom plan.
 
-<!-- TO-DO: LINK TO EXAMPLE PLANS -->
+
+:::::::::::::::::::::::::::::: {#example-plans .accordion}
+
+:::: accordion-item
+::: {.accordion-header .titlebox}
+Example Accountability Plans
+:::
+::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .steady-progress type="button" data-bs-toggle="collapse" data-bs-target="#steady-progress" aria-expanded="false" aria-controls="steady-progress"}
+**Example 1: Steady Progress**
+:::
+::::
+
+
+:::: {#steady-progress .accordion-collapse .collapse data-bs-parent="#example-plans"}
+::: accordion-body
+
+**Target grade:** B+ (90/100 points)
+
+**Point breakdown:**
+
+- Core Standards: 55 points (aim for mostly 5s, with some 4s)
+- Integrative Data Project: 18 points
+- Accountability: 9 points
+- Community Engagement: 8 points
+- Enrichment: 0 points (not planning to pursue)
+
+### Timeline
+
+#### Weeks 1-3 (Unit 1 & early Unit 2)
+
+Complete 1-2 core standards projects
+
+- **Week 1:** Complete example assignment, join Slack, submit initial accountability plan
+- **Week 2:** Start project(s) targeting RStudio workflow, GitHub basics, & R fundamentals, post to Slack at least twice to rip off the social anxiety band-aid
+- **Week 3:** Complete & submit project(s), select data for integrative data project (ask TA/prof to confirm suitability if unsure)
+
+#### Weeks 4-5 (Unit 2 & mid-quarter)
+
+Complete 1-2 core standards projects
+
+- **Week 4:** Start 1-2 core standards projects targeting base R programming & tidyverse basics (+make up for lower points from earlier projects if needed), create a basic repo and RStudio project for the IDP
+- **Week 5:** (More time to dedicate to projects because it’s a workshop week) Submit mid-quarter reflection, complete & submit the 1-2 core standards project, begin IDP import and cleaning, submit draft #1 of the IDP to confirm initial setup works and basic objectives are met
+
+#### Weeks 6-8 (Unit 3)
+
+Complete 2 core standards projects
+
+- **Week 6:** Start 1 core standards project targeting any skills I missed or didn’t get 5s on, decide whether I need to do an enrichment project if I’m behind
+- **Week 7:** Start 1 core standards projects targeting multiple levels of tidyverse skills
+- **Week 8:** Submit final reflection, finish data project draft up to start of visualization & narrative text, add simple analysis/visualization to one of the 2 projects that are started but not yet submitted & submit them both
+
+#### Week 9 (wrap-up)
+
+- Add visualization and narrative text to IDP
+- Complete another small core project or enrichment project if total scores are lower than expected
+
+### Priorities
+
+1. Completing all core standards at a solid level (aiming for 5s), anticipating that I may miss 1-2 and/or get 4s on a few
+2. Building a clean, complete data project that demonstrates everything I've learned.
+
+**Okay to skip:** Enrichment projects. If I have extra time, great, but not essential for my goals.
+
+### Strategies
+
+- **Weekly check-in:** Every Sunday, review what I completed this week and what's due next week, consider checking in with partner/group if I’m not doing great with following my own deadlines
+- **Office hours:** Attend at least 2 office hours sessions (one before mid-quarter, one before Week 8)
+- **Slack engagement:** Post at least once per week in discussion channels to stay connected
+- **Buffer time:** Plan to finish each core standard 2-3 days before I want to move on, in case troubleshooting takes longer than expected
+- **Focused core projects:** Plan for a lot of small projects to target just 1-3 standards each. Combine into bigger projects if that feels realistic.
+
+### Contingencies
+
+- If I fall behind by Week 5, I'll reassess whether I can realistically complete all 10 core standards or should focus on 8-9 strong submissions
+- If a core standard takes much longer than expected, I'll start/join a study group
+- If I'm ahead of schedule by Week 7, I'll consider adding one enrichment project or improving earlier core standards submissions
+
+:::
+::::
+:::::::
+
+::::::: accordion-item
+:::: accordion-header
+::: {.accordion-button .collapsed .front-loaded type="button" data-bs-toggle="collapse" data-bs-target="#front-loaded" aria-expanded="false" aria-controls="front-loaded"}
+**Example 2: Front-Loaded with Flexibility**
+:::
+::::
+
+:::: {#front-loaded .accordion-collapse .collapse data-bs-parent="#example-plans"}
+::: accordion-body
+
+**Target grade:** A (aim for 100/100 points for buffer over the required 94)\
+
+**Point breakdown:**
+
+- Core Standards: 60 points (aim for only 5s and 6s)
+- Integrative Data Project: 18 points
+- Accountability: 10 points
+- Community Engagement: 10 points
+- Enrichment: 5 points (1-2 projects)
+
+### Timeline
+
+#### Weeks 1-4 (heavy workload period)
+
+I have more time in January, so I'm front-loading work before other commitments pick up.
+
+- **Core standards:**
+    - Complete 1 big(ish) combined core standards + enrichment project.
+    - Primarily target skills 1-5.
+    - Since I already have some prior knowledge of basic tidyverse stuff, I can try to add in one or more of 6-8.
+    - I’m very familiar with the theory of basic data structures and control flow from my Python class last quarter, so I can aim for a couple 6s.
+- **Enrichment:** While completing the core standards project, keep a debugging and AI use journal to include for enrichment points.
+- **Community:** Start an accountability group with other students and ask if anyone wants to do a group project in the second half of the quarter.
+- **Integrative Data Project:**
+    - Confirm that my thesis project data is in good shape to use for the integrative data project, including checking with my PI that I’ve anonymized everything correctly
+    - Create the repo & RStudio project, set up the manuscript qmd, add a source script for data import and basic cleaning
+    - Ask the postdoc I’m working with if she wants to be a collaborator on the repo
+    - Submit a draft of by the end of Week 4 no matter how much/little progress I’ve made
+
+#### Week 5 (mid-quarter check-in & in-class workshop)
+
+- Recruit a few people for a group project (or pick something to complete by myself if I can’t find a group)
+- If needed: Complete 1 smaller core standards project targeting any skills I didn’t get 5s in
+- Review all the “soft” stuff for the IDE, like making sure I’m set up with lots of comments, using informative commits, and adding in narrative text that I already have drafted from my thesis proposal
+
+#### Weeks 6-8 (managing other deadlines)
+
+I have major deadlines in another class, so keeping D2M-R work lighter but consistent.
+
+- **Core standards:**
+    - Complete 1 combined core standards + enrichment project.
+        - Try to make this a group project to show community engagement later
+    - Primarily target skills 6-12. I may have to work ahead a little bit to add simple analysis/visualization before we cover it in class in week 8. There’s at least one very structured project that looks like I can do it mostly in advance and then finish in week 8 if needed.
+- **Enrichment:** I should have earned ~5 enrichment points with the first project, but if I need more I can submit a small, dedicated project here. I think I’m going to need a dedicated package to import some of my data that’s in a specialized format, so I could show that as independent learning and documentation.
+- **Community:**
+    - Keep posting to slack. Make an office hours appointment if I’m feeling behind.
+- **Integrative Data Project:**
+    - Submit a second draft by start of week 8 with whatever additions and revisions I can make.
+    - If I feel comfortable with adding basic data reporting early, I can try for this to be the final draft. Otherwise I’ll just plan to have minor additions after this one.
+
+#### Week 9 (buffer week & in-class workshop)
+
+- Finish data project if the 2nd draft wasn’t complete (start now, submit finals week)
+- May need to do 1 more core standard project to make up for 4s
+
+### Priorities
+
+**Most important:** Demonstrating strong technical skills on core standards, including a few 6s early on given my prior knowledge of basic Python.
+
+**Also important:** Starting my data project early so I'm not rushing at the end, and actually making progress on the thesis instead of just focusing on class minimum requirements.
+
+**Nice to have:** 1-2 enrichment projects that showcase problem-solving or collaboration skills. I’d prefer to have these combined with the core projects, but I think I can put a couple small projects together relatively quickly if I need to.
+
+**Bonus goal:** I’d like to contribute to one of the course repos. It feels to intimidating to make it part of the plan, but if I get more comfortable I want to try.
+
+### Strategies
+
+- **Front-load early weeks:** Take advantage of lighter workload in January to get ahead
+- **Enrichment integration:** Where possible, add enrichment-y stuff to the IDE drafts and core projects to get some buffer points without dedicated enrichment projects
+- **Learning ahead:** Get a head start of tidyverse stuff. Try to start data reporting in week 7 and then fill in gaps when we cover it in class in week 8.
+- **Peer collaboration:** Form a study group or accountability buddy system with 2-3 classmates early, so I can entice them into doing a group project with me in week 5 or 6.
+
+### Contingencies
+
+- If I can’t cover as many skills in the big project in Weeks 1-4, I'll adjust to doing a few smaller projects in the second half instead of another big one.
+- If enrichment projects feel too time-consuming, I'll drop them.
+- Community engagement and accountability should be easy perfect scores as long as I pay attention, but I’ll need to check in often to make sure I am in fact paying attention.
+- If I'm struggling with a concept, I'll attend office hours immediately rather than letting confusion build up.
+
+:::
+::::
+:::::::
+
+
+::::::::::::::::::::::::::::::
+
+
+
 
 ## Suggestions
 
 1. **Be realistic.** It's better to set achievable goals and exceed them than to set overly ambitious goals and fall short. Consider your other commitments and responsibilities when creating your plan.
 2. **Plan for skill snowballing.** The skills taught in this class are cumulative, which means that early in the quarter your projects will be simpler, taking relatively little time to tackle but only demonstrating one or two core standards at a time. As the quarter progresses, projects demonstrating more advanced standards will necessarily also demonstrate earlier standards, meaning more time and effort per project, but also ample opportunity to fill in gaps and improve scores on earlier standards. Critically, **you will inevitably spend much more time on core standards assignments in the second half of the quarter than the first.** If you want to distribute your workload more evenly, consider front-loading enrichment activities, starting your data project early, and/or working ahead with the many resources available to get a head start on a more advanced project. Many projects on the [menu](menu.qmd) require skills covered over several weeks, but you can make progress on them as we go rather than waiting until we've covered all the material necessary for 100% of the project.
 3. **Work with others.** Share your plan with classmates, form study groups, and check-in on Slack when you're nervous about falling behind. Accountability to yourself is an important skill to build, but building in accountability to others never hurts.
+
