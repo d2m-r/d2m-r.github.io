@@ -85,7 +85,7 @@ Jan-6; Jan-8
     -   [Using GitHub with RStudio](../materials/guides/rstudio-github.html)
 -   Textbook
     -   **Reminder:** The textbook is in its infancy! I hope you'll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources.
-    -   [Ch1: Introduction to D2M-R) Problems](https://d2m-r.com/book/chapters/intro.html)
+    -   [Ch1: Introduction to D2M-R](https://d2m-r.com/book/chapters/intro.html)
         - Chapter status (Jan 2025): overview of what the book is and isn't, basically nothing else
     -   [Ch2: Solving (Your Own) Problems](https://d2m-r.com/book/chapters/r-programming.html)
         - Chapter status (Jan 2025): ~90% first draft for Best Practices section; 2% for debugging (stick to slides for now)
@@ -107,25 +107,26 @@ Jan-6; Jan-8
 -   Getting started with R and RStudio:
     -   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
     -   [Hands on Programming for R: The Very Basics](https://rstudio-education.github.io/hopr/basics.html)
+    -   [Intro2r: Ch1 Getting Started](https://intro2r.com/chap1.html)
     -   [RStudio User Guide: Get Started](https://docs.posit.co/ide/user/ide/get-started/)
         -   Detailed introduction to the RStudio interface by the people who make it
 - Best practices:
-    - [Understanding the DRY Principle](https://www.plutora.com/blog/understanding-the-dry-dont-repeat-yourself-principle)
-    - [Ultimate Programming Best Practices Guide](https://codesigningstore.com/ultimate-programming-best-practices-guide)
-    - [6 Coding Best Practices for Beginner Programmers](https://www.educative.io/blog/coding-best-practices)
-    - [R function lifecycle stages documentation](https://lifecycle.r-lib.org/articles/stages.html#stable)
-    - [Tidyverse style guide](https://style.tidyverse.org/)
-    - [Best practices for (github) repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories)
+    -   [Understanding the DRY Principle](https://www.plutora.com/blog/understanding-the-dry-dont-repeat-yourself-principle)
+    -   [Ultimate Programming Best Practices Guide](https://codesigningstore.com/ultimate-programming-best-practices-guide)
+    -   [6 Coding Best Practices for Beginner Programmers](https://www.educative.io/blog/coding-best-practices)
+    -   [R function lifecycle stages documentation](https://lifecycle.r-lib.org/articles/stages.html#stable)
+    -   [Tidyverse style guide](https://style.tidyverse.org/)
+    -   [Best practices for (github) repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories)
 - Troubleshooting:
-    - [Rubber duck debugging](https://rubberduckdebugging.com/)
-    - [How to use stack overflow (2023 beginner’s guide)](https://careeremployer.com/web-development/how-to-use-stack-overflow/)
-    - [Dubgging with chatGPT](https://rollbar.com/blog/how-to-debug-code-using-chatgpt/)
-    - [Common errors and warnings in R](https://statisticsglobe.com/errors-warnings-r)
+    -   [Rubber duck debugging](https://rubberduckdebugging.com/)
+    -   [How to use stack overflow (2023 beginner’s guide)](https://careeremployer.com/web-development/how-to-use-stack-overflow/)
+    -   [Dubgging with chatGPT](https://rollbar.com/blog/how-to-debug-code-using-chatgpt/)
+    -   [Common errors and warnings in R](https://statisticsglobe.com/errors-warnings-r)
 - Relevant subreddits:
-    - [r/Rlanguage](https://www.reddit.com/r/Rlanguage/)
-    - [r/rprogramming](https://www.reddit.com/r/rprogramming/)
-    - [r/RStudio](https://www.reddit.com/r/RStudio/)
-    - [r/github](https://www.reddit.com/r/github/)
+    -   [r/Rlanguage](https://www.reddit.com/r/Rlanguage/)
+    -   [r/rprogramming](https://www.reddit.com/r/rprogramming/)
+    -   [r/RStudio](https://www.reddit.com/r/RStudio/)
+    -   [r/github](https://www.reddit.com/r/github/)
 
 :::
 ::::
@@ -189,6 +190,7 @@ Jan-6; Jan-8
 <!-- **Announcements:** -->
 **Reminders:**
 
+-   Initial accountability plans are due on Monday, January 12th. Look at [the examples](../assessment/accountability.html) if you need inspiration. Remember that ultimately these plans are for you, not me, so they should be in a form that you'll actually use. Make them fancy, make them minimal. Copy and paste directly from the examples, write a few sentences for each element, or make a full database with day by day planning. Don't force yourself into a format that will be more overwhelming than functional.
 
 :::
 ::::

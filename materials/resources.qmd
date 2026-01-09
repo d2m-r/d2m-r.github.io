@@ -23,7 +23,7 @@ format: html
 - [Git cheat sheet](https://training.github.com/downloads/github-git-cheat-sheet/)
 - [An introduction to Git and how to use it with RStudio](https://r-bio.github.io/intro-git-rstudio/)
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/) - A companion to STAT545 (see above)
-- [Oh shit, Git!?!](https://ohshitgit.com/) - Plain English explanations to prevent git-induced panic attackes and/or migraines
+- [Oh shit, Git!?!](https://ohshitgit.com/) - Plain English explanations to prevent git-induced panic attacks and/or migraines
 
 ### R
 
