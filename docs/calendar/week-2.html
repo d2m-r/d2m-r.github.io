@@ -237,7 +237,27 @@ Text to appear before the accordion
 <div id="overview-week-2" class="accordion-collapse collapse" data-bs-parent="#week-2">
 <div class="accordion-body">
 <p><strong>Class plans:</strong></p>
+<ul>
+<li>Tuesday: Introduction to the Git &amp; GitHub (mostly slides)
+<ul>
+<li>Now that you’ve got it set up, actually learning what it is.</li>
+</ul></li>
+<li>Thursday: Finish slides if needed + hands-on practice with Git &amp; GitHub
+<ul>
+<li>Create a repository, make changes, commit, push, pull, etc.</li>
+<li>Q&amp;A/demo as needed for RStudio and GitHub</li>
+</ul></li>
+<li>Time permitting, a brief diversion into Quarto and markdown</li>
+</ul>
 <p><strong>Primary learning objectives:</strong></p>
+<ul>
+<li><ol type="1">
+<li>RStudio + Quarto workflow</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>GitHub repositories and version control</li>
+</ol></li>
+</ul>
 </div>
 </div>
 </div>
@@ -251,15 +271,53 @@ Text to appear before the accordion
 <div class="accordion-body">
 <p><strong>Class Materials:</strong></p>
 <ul>
-<li><a href="">Slides</a></li>
-<li><a href="">Textbook Chapter</a></li>
+<li><a href="">Git &amp; GitHub Slides</a></li>
+<li>Course guides:
+<ul>
+<li><a href="../materials/guides/rstudio-github.html">Using GitHub with RStudio</a></li>
+<li><a href="../materials/guides/walkthrough-github-rstudio.html">Guided Exercise: Create and Sync a GitHub Repo with RStudio</a></li>
+</ul></li>
+<li>Textbook
+<ul>
+<li><strong>Reminder:</strong> The textbook is in its infancy! I hope you’ll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources.</li>
+<li><a href="https://d2m-r.github.io/book/chapters/git-github.html">Ch4: Git and GitHub</a>
+<ul>
+<li>Chapter status (Jan 2025): primarily outline, includes some content and speaker notes from slides</li>
+</ul></li>
+</ul></li>
 </ul>
 <!-- software, tools, datasets, etc -->
 <p><strong>Additional Resources:</strong></p>
 <ul>
-<li>readings</li>
-<li>cheat-sheets</li>
-<li>tutorials</li>
+<li>GitHub
+<ul>
+<li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a>
+<ul>
+<li>In my opinion this is the absolute best resource for learning about Git(Hub) as an R user. When you git stuck, this should be your first stop.
+<ul>
+<li>That was a typo, not a pun, but I’m committing to it now.
+<ul>
+<li>That one actually was intentional.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>An Introduction to R, Douglas et al.&nbsp;(2024)
+<ul>
+<li><a href="https://intro2r.com/github_r.html">Chapter 8: Version Control with Git and GitHub</a></li>
+</ul></li>
+<li>R for the Rest of Us: <a href="https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r">How to Use Git/GitHub with R</a></li>
+<li>Bryan J. 2017. <a href="https://doi.org/10.7287/peerj.preprints.3159v2">Excuse me, do you have a moment to talk about version control?</a> PeerJ Preprints</li>
+<li><a href="https://git-scm.com/docs/gitignore">.gitignore Documentation</a></li>
+<li><a href="https://ohshitgit.com/">Oh shit, Git!?!</a>
+<ul>
+<li>Plain English explanations to prevent git-induced panic attacks and/or migraines</li>
+</ul></li>
+</ul></li>
+<li>Quarto/Markdown
+<ul>
+<li><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/quarto.pdf">Quarto cheatsheet</a></li>
+<li><a href="https://r4ds.hadley.nz/quarto.html">r4ds: Quarto</a></li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -272,8 +330,31 @@ Text to appear before the accordion
 </div>
 <div id="todo-week-2" class="accordion-collapse collapse" data-bs-parent="#week-2">
 <div class="accordion-body">
-<p><strong>Graded Submissions:</strong></p>
-<p><strong>Recommended Exercises:</strong></p>
+<p><strong>Next Steps:</strong> After this week you’re ready to dive into some repos.</p>
+<ol type="1">
+<li>Make a repo and linked RStudio project for your integrated data project.
+<ul>
+<li>This is a <em>private repo</em> in your <em>private account.</em> Do not create the repo within the D2M-R organization. Add prof+TA as collaborators before submitting your first draft.</li>
+<li>All you need at this point to get started is a name. Hopefully you have a plan for what data you’ll be using, which should be enough to form a sensible name. Though it’s generally not recommended if you can avoid it, you can change the name later (via GitHub settings) if needed, so there’s really no reason to wait on this.</li>
+<li>Start by adding the essential files:
+<ul>
+<li>README.md and .gitignore can be created when you make the repo on GitHub or added later via RStudio</li>
+<li>Create a manuscript Quarto file (e.g., <code>manuscript.qmd</code>) in the root directory.</li>
+<li>Add a <code>/data</code> folder with any data files you have ready to go – be sure they are anonymized and safe to upload to a private repo first!</li>
+</ul></li>
+<li>Add some content (real or placeholder) to your readme and manuscript files so you have something to commit and push. Experiment with simple markdown formatting in both files (e.g., headings, bold/italic text, lists, links, etc.) and add a code chunk to the manuscript file.</li>
+<li>Remember the cardinal rules of Git: Pull when you sit down. Commit more than you think you should. Push when you stand up.</li>
+</ul></li>
+<li>Explore the Skeleton Repo core skills project. You can complete this <em>right now</em> to get points for objectives 1 &amp; 2, or start it now and build it up over the next couple weeks to add points toward objectives 3-5 (or more).
+<ul>
+<li><a href="../materials/projects/skeleton-repo-core-skills.html">Skeleton Repo core skills project instructions</a></li>
+<li>Note that this project requires creating a <em>private repo from scratch in the D2M-R organization</em>. There is no GitHub Classroom assignment option.</li>
+</ul></li>
+</ol>
+<p><strong>Recommendation:</strong></p>
+<ol type="1">
+<li>Make a few human friends in class and form a study or accountability group. This will be a nice supplement your new rubber duck friend and open up options for group projects later.</li>
+</ol>
 </div>
 </div>
 </div>

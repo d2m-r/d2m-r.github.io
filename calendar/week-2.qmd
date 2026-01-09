@@ -47,7 +47,17 @@ Jan-13; Jan-15
 
 **Class plans:**
 
+-   Tuesday: Introduction to the Git & GitHub (mostly slides)
+    -   Now that you've got it set up, actually learning what it is.
+-   Thursday: Finish slides if needed + hands-on practice with Git & GitHub
+    -   Create a repository, make changes, commit, push, pull, etc.
+    -   Q&A/demo as needed for RStudio and GitHub
+-   Time permitting, a brief diversion into Quarto and markdown
+
 **Primary learning objectives:**
+
+-   (1) RStudio + Quarto workflow
+-   (2) GitHub repositories and version control
 
 :::
 ::::
@@ -65,17 +75,35 @@ Jan-13; Jan-15
 
 **Class Materials:**
 
-- [Slides]()
-- [Textbook Chapter]()
+-   [Git & GitHub Slides]()
+-   Course guides:
+    -   [Using GitHub with RStudio](../materials/guides/rstudio-github.html)
+    -   [Guided Exercise: Create and Sync a GitHub Repo with RStudio](../materials/guides/walkthrough-github-rstudio.html)
+-   Textbook
+    -   **Reminder:** The textbook is in its infancy! I hope you'll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources.
+    -   [Ch4: Git and GitHub](https://d2m-r.github.io/book/chapters/git-github.html)
+        - Chapter status (Jan 2025): primarily outline, includes some content and speaker notes from slides
 
 <!-- software, tools, datasets, etc -->
 
 **Additional Resources:**
 
-- readings
-- cheat-sheets
-- tutorials
-
+-   GitHub
+    -   [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+        -   In my opinion this is the absolute best resource for learning about Git(Hub) as an R user. When you git stuck, this should be your first stop.
+            -   That was a typo, not a pun, but I'm committing to it now.
+                -   That one actually was intentional.
+    -   An Introduction to R, Douglas et al. (2024)
+        -   [Chapter 8: Version Control with Git and GitHub](https://intro2r.com/github_r.html)
+    -   R for the Rest of Us: [How to Use Git/GitHub with R](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r)
+    -   Bryan J. 2017. [Excuse me, do you have a moment to talk about version control?](https://doi.org/10.7287/peerj.preprints.3159v2) PeerJ Preprints
+    -   [.gitignore Documentation](https://git-scm.com/docs/gitignore)
+    -   [Oh shit, Git!?!](https://ohshitgit.com/)   
+        - Plain English explanations to prevent git-induced panic attacks and/or migraines
+-   Quarto/Markdown
+    -   [Quarto cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/quarto.pdf)
+    -   [r4ds: Quarto](https://r4ds.hadley.nz/quarto.html)
+        
 :::
 ::::
 :::::::
@@ -91,10 +119,25 @@ Jan-13; Jan-15
 :::: {#todo-week-2 .accordion-collapse .collapse data-bs-parent="#week-2"}
 ::: accordion-body
 
-**Graded Submissions:**
+**Next Steps:** After this week you're ready to dive into some repos.
 
-**Recommended Exercises:**
+1.  Make a repo and linked RStudio project for your integrated data project.
+    -   This is a *private repo* in your *private account.* Do not create the repo within the D2M-R organization. Add prof+TA as collaborators before submitting your first draft.
+    -   All you need at this point to get started is a name. Hopefully you have a plan for what data you'll be using, which should be enough to form a sensible name. Though it's generally not recommended if you can avoid it, you can change the name later (via GitHub settings) if needed, so there's really no reason to wait on this.
+    -   Start by adding the essential files: 
+        -   README.md and .gitignore can be created when you make the repo on GitHub or added later via RStudio
+        -   Create a manuscript Quarto file (e.g., `manuscript.qmd`) in the root directory.
+        -   Add a `/data` folder with any data files you have ready to go -- be sure they are anonymized and safe to upload to a private repo first!
+    -   Add some content (real or placeholder) to your readme and manuscript files so you have something to commit and push. Experiment with simple markdown formatting in both files (e.g., headings, bold/italic text, lists, links, etc.) and add a code chunk to the manuscript file.
+    -   Remember the cardinal rules of Git: Pull when you sit down. Commit more than you think you should. Push when you stand up.
+2.  Explore the Skeleton Repo core skills project. You can complete this *right now* to get points for objectives 1 & 2, or start it now and build it up over the next couple weeks to add points toward objectives 3-5 (or more).
+    -   [Skeleton Repo core skills project instructions](../materials/projects/skeleton-repo-core-skills.html)
+    -   Note that this project requires creating a *private repo from scratch in the D2M-R organization*. There is no GitHub Classroom assignment option. 
+    
+**Recommendation:**
 
+1.  Make a few human friends in class and form a study or accountability group. This will be a nice supplement your new rubber duck friend and open up options for group projects later.
+    
 :::
 ::::
 :::::::
