@@ -1489,5 +1489,201 @@
     "title": "Course Structure",
     "section": "",
     "text": "You’ll need to bring a laptop to class every day with RStudio installed. Class sessions blend lecture, live coding demonstrations, and hands-on workshops. Students should have R, RStudio, Git, and GitHub configured by the end of Week 1.\nRequired software (all free):\n\nR (latest version)\nRStudio Desktop\nGit\nGitHub account\nSlack\nRecommended: GitHub Desktop for repository management when RStudio freaks out\n\nSetup guides and troubleshooting resources are available on the course website."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#housekeeping",
+    "href": "slides/Q1-W2_git-github.html#housekeeping",
+    "title": "Git & GitHub",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nAccountability plans due YESTERDAY\nMake sure you have GitHub account created\nRStudio + Git setup: happygitwithr.com"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#final_ndrevisions-finalmarch22_finalfinal.docx",
+    "href": "slides/Q1-W2_git-github.html#final_ndrevisions-finalmarch22_finalfinal.docx",
+    "title": "Git & GitHub",
+    "section": "Final_NDrevisions-finalmarch22_FINALFINAL.docx",
+    "text": "Final_NDrevisions-finalmarch22_FINALFINAL.docx\n\n\nPhD Comics: notFinal.doc"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#version-control-basics",
+    "href": "slides/Q1-W2_git-github.html#version-control-basics",
+    "title": "Git & GitHub",
+    "section": "Version Control Basics",
+    "text": "Version Control Basics\n\n\n\n\n\nMinimally:\n\nWhat changed?\n\nadditions, deletions, modifications\n\nWhen?\n\ntimestamp for each change\n\nWho changed what?\n\ntrack author contributions in collaborative work\n\nRevert changes!\n\ngo back to any previous version instantly\n\n\n\n\n\n\n\n\nGoogle Doc version history\n\n\n\n\n\n\n“version control” is basically a system for keeping track of changes to files over time. A very simple and user-friendly version control system is what you’ll find in the “version history” of edits on a google doc."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#git-version-control",
+    "href": "slides/Q1-W2_git-github.html#git-version-control",
+    "title": "Git & GitHub",
+    "section": "Git Version Control",
+    "text": "Git Version Control\n\n\n\nGit is a robust version control system designed for text-based files\n\n\nWhat? When? Who? Revert! plus:\n\n\n\n\nWhich change is this?\n\nunique IDs for every revision\n\nWhy did it change?\n\ncommit messages explain purpose\n\nBranch and merge\n\nwork on multiple features simultaneously\n\nBackup\n\nproject (aka repository) history lives in multiple places\n\nAsynchronous collaboration\n\nidentify and resolve conflicting changes\n\nIntegration\n\nwith IDEs (e.g., RStudio) and cloud services (e.g., GitHub)\n\n\n\n\n\n\n\n\n\n\nGit commit history\n\n\n\n\n\n\nVersion control is like having a complete backup of every version of your project, plus a detailed log of what changed and why. It’s not just for programmers - anyone who works with files that change over time benefits."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#git-repositories",
+    "href": "slides/Q1-W2_git-github.html#git-repositories",
+    "title": "Git & GitHub",
+    "section": "Git Repositories",
+    "text": "Git Repositories\nA repository (or “repo”) is a project folder tracked by Git. Everything Git does is centered around repos.\nGit repos can be local (on your computer) or remote (hosted on a server like GitHub).\nAny folder on your computer can be turned into a Git repository (i.e. “initialized”), but a well-organized repo typically includes a few key components:\n\nProject files (e.g., scripts, data, documents)\nMetadata files (hidden files and directories that Git uses to manage version control)\nBespoke files like README.md, .gitignore, and .yml files (more on these later)"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#git-github",
+    "href": "slides/Q1-W2_git-github.html#git-github",
+    "title": "Git & GitHub",
+    "section": "Git ≠ GitHub",
+    "text": "Git ≠ GitHub\n\n\n\nGitHub: a web-based platform for hosting public and private Git repositories.\nGitHub and Git are related, but not the same thing.\n\n\n\n\n\n\n\nGit\n\n\n\n\nVersion control system\nTracks changes in metadata files\nYour files + metadata files = project repository (aka “repo”)\nRepos stored locally on your computer\nWorks offline\nFree & open source\nThe standard for version control\n\n\n\n\n\n\n\n\n\n\n\nGitHub\n\n\n\n\nWeb-based hosting service\nCloud storage for Git repositories\nAll repo contents, full history, additional features\nUser-friendly web interface for Git\nCollaboration tools\nFree and paid features\nOne of many Git hosting services\n\n\n\n\n\n\n\nEducation users (anyone with a .edu address) can access premium features for free.\nGITHUB is designed to promote code sharing and collaboration, but very useful for individuals, too.\nAnalogy: Git is like a local photo album, GitHub is like syncing to icloud or dropbox.\nGit does the version control work on your computer. GitHub is just one place to store and share your Git repositories online. There are alternatives like GitLab, Bitbucket, etc."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#github-features",
+    "href": "slides/Q1-W2_git-github.html#github-features",
+    "title": "Git & GitHub",
+    "section": "GitHub Features",
+    "text": "GitHub Features\n\n\n\nIn this class we’ll use GitHub to:\n\nMaintain all class materials\nCreate and share your work\nSubmit assignments using pull requests\nCollaborate on group projects\n\n\n\nBut GitHub offers many more features, including:\n\nGitHub Pages\nGitHub Copilot\nActions\nProjects\nCodespaces\nIssues\n\n\n\n\n\nSome of these extras you’ll be able to play around with during this course, but they won’t be explicitly part of the syllabus. Developing familiarity with these features can contribute to the engagement portion of your grade.\n\nGitHub Pages to host websites directly from a repository\nGitHub Copilot to assist with code generation and suggestions\nActions to automate workflows\nProjects to organize and prioritize work\nCodespaces to provide cloud-based development environments\nIssues to track bugs and feature requests"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#git-vocabulary",
+    "href": "slides/Q1-W2_git-github.html#git-vocabulary",
+    "title": "Git & GitHub",
+    "section": "Git Vocabulary",
+    "text": "Git Vocabulary\nNot all of these are essential at the start, but you should quickly get comfortable with the ones highlighted in red.\n\n\n\nRepo-level\n\nRepository or repo\n\na project folder tracked by Git\n\ninit\n\ninitialize a new Git repository\n\nclone\n\ncreate your own personal copy of an existing repository\n\nfork\n\ncopy a repository keeping a connection to the original\n\nbranch\n\ncreate your own temporary line of work in a repo\n\ncheckout\n\nswitch between branches in a repo\n\n\n\n\nFile-level\n\ncommit\n\nsave a snapshot of changes with a descriptive message\n\nfetch\n\nget latest changes from remote repo without merging\n\nmerge\n\ncombine changes from different branches\n\npull \n\nget latest changes from remote repo (=fetch+merge)\n\npush\n\nsend your commits to remote repo\n\nmerge conflict\n\nconflicting changes that need manual resolution\n\n\n\n\n\n\n\n\n\n\n\n\n\nMore to look for on your own\n\n\ndiff, stash, rebase, tag, cherry-pick, revert, reset, HEAD, remote, origin, upstream\n\n\n\n\n\n\n\n\nRepo: A directory (i.e., folder) the holds all documents and document edits associated with a project Init: Initializing a repo, making an existing directory ready to work with git (RStudio will do this for you) Clone: Copy an existing repository, creating a fully distinct and separate repo that you own and control Fork: Copy an existing repository, maintaining a connection to the original; you have full control over your fork, but not the original repo Branch: Create an isolated segment of a repo (that you own), so that you can make many changes before combining it back with the original (for collaboration) Checkout: Swap between different branches of a repo\nCommit: A snapshot of changes in the repo; documented with an informative note left for posterity called a commit message\nPull: Synchronizing your local repo with latest changes from a remote server (like Github)\nPush: Sending your commits (and the changed docs) from your local repo to the remote server\nDiff: The process run by git comparing and combining old and new files when you push changes\nMerge: The resulting process of a diff, where multiple versions of a file are intelligently combined\nMerge conflict: Error (recognized in the diff) where multiple changes to any single line of text can’t be automatically resolved and require user decisions"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#commits-snapshots-in-time",
+    "href": "slides/Q1-W2_git-github.html#commits-snapshots-in-time",
+    "title": "Git & GitHub",
+    "section": "Commits: Snapshots in Time",
+    "text": "Commits: Snapshots in Time\nA commit is the metadata associated with a change.\n\n\n\ncommit UNIQUE ID HASH\nAuthor: YOUR NAME &lt;YOUR@EMAIL.ADDRESS&gt;\nDate: FULL DATE & TIMESTAMP\n    \n    ONE LINE SUMMARY OF CHANGE(S)\n    \n    - OPTIONAL\n    - DESCRIPTIVE\n    - DETAILS\n\n\ncommit a3d2f1b\nAuthor: Natalie Dowling &lt;ndowling@uchicago.edu&gt;\nDate: Mon Jan 20 14:30:15 2026\n    \n    Add data cleaning script for survey responses\n    \n    - Remove duplicate entries\n    - Standardize column names  \n    - Handle missing values in age variable"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#commit-messages-best-practices",
+    "href": "slides/Q1-W2_git-github.html#commit-messages-best-practices",
+    "title": "Git & GitHub",
+    "section": "Commit Messages: Best Practices",
+    "text": "Commit Messages: Best Practices\n\n\n\nGood commit messages:\n\nDescribe what and why, not how\nStart with a present tense verb (“Add”, “Fix”, “Update”)\nFirst line under 50 characters\n\n\nAdd data cleaning script for survey responses\n\nMove glms out of qmd into a separate script\n\nStart zero-drafting methods\n\n\n\nBad commit messages:\n\nVague\nUninformative\nCover way too many or unrelated changes\n\n\nUpdates to data\n\nFriday afternoon commit\n\ndata cleaning script, move glms, start methods, fix typos, add bibliography\n\n\n\n\n\n\n\n\n\n\n\n\nA shameful confession\n\n\nI am a total hypocrite and rarely follow these guidelines. Actual commits from my actual repos: oops i broke the kid data but the adult glms work now, omg i can't anymore here are some broken plots fix this later or don't i don't care, i need a drink.\nI’m not proud, but what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you).\n\n\n\n\n\n\n\n\nI am a total hypocrite and rarely follow these “good” and “bad” guidelines. The longer I work, the more likely my commit messages devolve into oops i broke the kid data but the adult glms work now or omg i can't anymore here are some broken plots fix this later or don't i don't care or i need a drink.\nThese are actual commits from my actual repos. I’m not proud. Present-me is often pretty frustrated with past-me’s choices, but I can’t pretend that I don’t also find it entertaining and humanizing. (You’d think I wouldn’t need to humanize myself to myself, wouldn’t you? You’d be wrong.)\nWhile I encourage you to do as I say, not as I do, what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you)."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#the-basic-github-workflow",
+    "href": "slides/Q1-W2_git-github.html#the-basic-github-workflow",
+    "title": "Git & GitHub",
+    "section": "The Basic Git(Hub) Workflow",
+    "text": "The Basic Git(Hub) Workflow\n\nPull changes\n\nEvery time you sit down to work, before doing anything else\n\nCommit changes\n\nVery frequently!\nAny time you’ve made a “nameable” change\nUse brief, informative commit messages\n\nPush changes\n\nDon’t forget to commit first\nEvery time you pause or complete a work session\n\n\n\n\nThis means you should have way more commits than pushes. Each commit is a snapshot of your project at a specific point in time. Pushing sends all your committed changes to GitHub."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#merge-conflicts",
+    "href": "slides/Q1-W2_git-github.html#merge-conflicts",
+    "title": "Git & GitHub",
+    "section": "Merge Conflicts",
+    "text": "Merge Conflicts\nmerge conflict: Git cannot automatically reconcile differences between two versions of a file\nSymbols like &lt;&lt;&lt;, ===, and &gt;&gt;&gt; mark conflicting sections.\nAll you have to do is change the text and delete the markers.\n\n\n\nWhat you’ll see in a conflicted file:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nThis is the original line in the file.\n=======\nThis is the conflicting change made by another user.\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-branch\n\n\nYou manually edit the file to resolve the conflict:\nThis is the original line in the file.\nThis is the conflicting change made by another user.\n\n\n\n\nA merge conflict occurs when Git cannot automatically reconcile differences between two versions of a file. You’ll see symbols like &lt;&lt;&lt;, ===, and &gt;&gt;&gt; marking the conflicting sections. All you have to do is change the text and delete the markers."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#git-in-the-command-line-terminal",
+    "href": "slides/Q1-W2_git-github.html#git-in-the-command-line-terminal",
+    "title": "Git & GitHub",
+    "section": "Git in the Command Line / Terminal",
+    "text": "Git in the Command Line / Terminal\nLocal git repos are managed through the command line (Terminal on Mac, Git Bash on Windows)\n\n\nStep 1: Set up your local workspace\n# navigate to local repo directory\ncd repos/d2m-r/slides\n\n# get latest changes from upstream repo\ngit pull origin main\n\n\nStep 2: Do stuff. Make changes, additions, whatever in the repo files\n\n\nStep 2.5: Commit your work frequently after every “nameable” change.\n# commit staged changes with \"m\"essage\ngit commit -m \"Create first draft for GitHub lecture\"\n\n\nStep 3: Send your committed changes back to the remote repo\n# send commits to upstream repo\ngit push origin main\n\n\nLocal git repos are managed through the command line (Terminal on Mac, Git Bash on Windows). The process of sitting down to work, pulling from an upstream repo, making a few changes, adding those edited files to the staging area, committing with a brief commit message, and then pushing to upstream at the end of your work session might look something like this."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#git-in-rstudio",
+    "href": "slides/Q1-W2_git-github.html#git-in-rstudio",
+    "title": "Git & GitHub",
+    "section": "Git in RStudio",
+    "text": "Git in RStudio\nIn D2M-R, you’ll interact with Git through RStudio rather than Terminal or Command Prompt.\n\nIn D2M-R, you’ll interact with Git through RStudio rather than Terminal or Command Prompt.\nYou’ll mostly use the Git pane, which gives you a pretty user-friendly interface for the same commands you would run in the terminal.\nBut you can also use the Terminal tab in RStudio to run git commands directly, exactly as you would in a standalone terminal.\nYou’ll need this for more advanced tasks like resolving merge conflicts, but you can always opt to use it instead of the interface if you prefer."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#repository-structure",
+    "href": "slides/Q1-W2_git-github.html#repository-structure",
+    "title": "Git & GitHub",
+    "section": "Repository Structure",
+    "text": "Repository Structure\nA typical Git repository includes:\n\nProject files\n\nThe actual content of your project (e.g., scripts, data, documents), organized in a logical folder structure\n\nMetadata files\n\nHidden files and directories (like .git/) that Git uses to manage version control\n\nREADME.md\n\nA markdown file that provides an overview of the project, instructions for use, and other relevant information\n\n.gitignore\n\nA text file that specifies which files or directories Git should ignore\n\nConfiguration files (as needed)\n\nThings like .yml options, bibliography files, themes, etc."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#repo-structure-example-1",
+    "href": "slides/Q1-W2_git-github.html#repo-structure-example-1",
+    "title": "Git & GitHub",
+    "section": "Repo Structure: Example 1",
+    "text": "Repo Structure: Example 1\nMy preferred structure for a Quarto manuscript project:\n\n\n\nProject file directories\n\n/localonly: only present in your local R Project, listed in your .gitignore and never synced to github\n/data: .csv/tabular data files for all raw or intermediate datasets read into in your .qmd, optional /raw subfolder for raw data read (only) into unsourced R scripts\n/source: .R scripts to be called in an early chunk of your .qmd, e.g., stylistic preferences, functions, minor data wrangling\n/images: exported figures and any image files to read-in to your R Markdown manuscript\n/_extensions: auto-generated or installed Quarto extensions, like apaquarto\n\n\n\nTop-level files\n\nREADME.md: project overview, repo structure, to-do list, etc.\n.gitignore: starting from the R .gitignore template\nproject-manuscript.qmd: the home of your eventual publication\nbibliography.bib: a plain-text file containing all the BibTeX entries cited in your manuscript\nyourCitationStyle.csl: the script used to format in-text and bibliography citations when knitting\n\n\n\n\n\nNot everything is needed for every project. For example, extensions like apaquarto will create and store a .csl file within the extension files; you won’t see it in your top-level directory.\nFor the kind of Quarto project we’re focusing on in this class, you will always have exactly 1 .qmd file, which is the manuscript itself. It lives in the top level directory alongside your readme and gitignore."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#repo-structure-example-2",
+    "href": "slides/Q1-W2_git-github.html#repo-structure-example-2",
+    "title": "Git & GitHub",
+    "section": "Repo Structure: Example 2",
+    "text": "Repo Structure: Example 2\nA simple, generic project:\nmy-research-project/\n├── README.md\n├── my-project.Rproj  \n├── .gitignore\n├── data/\n│   ├── raw/                # Original data (maybe not in Git)\n│   └── processed/          # Cleaned data  \n├── scripts/\n│   ├── 01_clean.R          # Numbered workflow\n│   ├── 02_analyze.R\n│   └── functions.R         # Reusable functions\n├── outputs/\n│   ├── plots/\n│   └── tables/\n└── docs/\n│   └── analysis.qmd        # Main report\n├── localonly/              # LISTED IN YOUR .GITIGNORE\n    └── protected-data/     # ONLY EXISTS ON YOUR COMPUTER, NOT GITHUB"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#hidden-files-and-directories",
+    "href": "slides/Q1-W2_git-github.html#hidden-files-and-directories",
+    "title": "Git & GitHub",
+    "section": "Hidden files and directories",
+    "text": "Hidden files and directories\nRepos and R Projects will also include some hidden files and directories\n\n.git/ - Git metadata, what makes Git work\n.Rproj.user/ - RStudio project settings\n.quarto/ - Quarto project settings\n\nYou won’t interact with these directories directly, and you won’t see them in RStudio or on GitHub.\nYou may also have other hidden files, for example:\n\n.Rproj\n.RData\n.Rhistory\n.DS_Store\n\nYou won’t interact with these either but they won’t always be fully hidden in every interface. You can add them to your .gitignore file so they don’t clutter up your repo."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#readme.md",
+    "href": "slides/Q1-W2_git-github.html#readme.md",
+    "title": "Git & GitHub",
+    "section": "README.md",
+    "text": "README.md\n\nA README.md file provides a project overview. It is typically the first thing someone sees when they visit your repository on GitHub.\n\nSimple markdown (.md) document\nWhat you see rendered on a repo’s GitHub page\nCan do lots of things, but should at a minimum describe:\n\nPurpose of the repo\nDataset(s)\nRepo structure\nAny relevant licensing, restrictions, or citations"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#gitignore-what",
+    "href": "slides/Q1-W2_git-github.html#gitignore-what",
+    "title": "Git & GitHub",
+    "section": ".gitignore: what",
+    "text": ".gitignore: what\n\n\n\nA .gitignore file tells Git which files and directories to ignore when comparing differences between versions.\n\nPlain text file w/out extension\nFiles & folders that should be excluded from all git processes\nMatched on strings in file/folder names, including wildcard characters and simplified regex\nView documentation"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#gitignore-why",
+    "href": "slides/Q1-W2_git-github.html#gitignore-why",
+    "title": "Git & GitHub",
+    "section": ".gitignore: why",
+    "text": ".gitignore: why\n\nNot everything belongs online.\n\n\nPRIVACY.\n\nDo not upload anything with sensitive or identifiable information.\nIt is your responsibility to follow your IRB.\n\nSecurity\n\npasswords, security keys, login tokens\n\nBloat\n\nGit is designed for text files\nLarge files push very slowly and can cause RStudio to hang\nSome files are regenerated automatically\n\nConflict\n\n“behind the scenes” files that actually interact with local, git, or R processes will conflict for baffling reasons (sort of a technological observer effect)"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#gitignore-how",
+    "href": "slides/Q1-W2_git-github.html#gitignore-how",
+    "title": "Git & GitHub",
+    "section": ".gitignore: how",
+    "text": ".gitignore: how\n\n\nOptionally start with a template then:\n\nUse informative # comments\nProtect private data in a localonly/ folder\n\nDedicated place for anything you need to keep offline that the .gitignore might not explicitly catch\nGood place to keep deanonymized datasets instead of trusting yourself to remember to add them to the .gitignore\n\nIgnore files/folders\n\nMatching the name: data/raw/sensitive_data.csv, topsecret/\nUsing wildcards: *.pdf, no-git_*\n\n\n\n\nIgnore large files\n\nMedia files: e.g, *.png, *.jpg, *.mp4\n\ntend to be very large, often contain sensitive info\n\nPresentation files: e.g., *.pptx, *.key\n\nnot necessary for reproducibility, often large\n\nSpecialized and raw files: e.g, *.bdl, *.ear, *.mgh\n\ndata needs to be tabular eventually anyway\n\n\n\n\nIgnore auto-generated files\n\nSystem files: e.g., *.DS_Store, *.RData, *.Rhistory\n\nplatform-specific, or not text-based\n\nProcess files: e.g., *.log, *.aux, *.out\n\nshould be deleted after success but can stick around if knitting fails\n\nCompiled files: e.g., *.pdf, *.docx, *.html\n\nrecreated every time you knit"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#summary",
+    "href": "slides/Q1-W2_git-github.html#summary",
+    "title": "Git & GitHub",
+    "section": "Summary",
+    "text": "Summary\n\nManage all projects with version control\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts:\n\nrepositories: folders tracked by Git\ncommits: snapshots of changes\nbranches: isolated lines of work\npulls: get changes from remote repos\npushes: send changes to remote repos\n\nYour repo needs:\n\nproject files\nmetadata files\na README.md\na .gitignore file\n\nPULL when you sit down to work. COMMIT frequently as you work. PUSH when you pause or finish.\n\n\n\nVersion control is essential for managing changes in your projects\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts include repositories, commits, branches, pulls, and pushes\nA well-structured repository includes project files, metadata, a README, and a . gitignore file\nUsing Git in RStudio provides a user-friendly interface for version control tasks\nRegularly committing and pushing changes helps maintain a clear project history"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#try-it-out",
+    "href": "slides/Q1-W2_git-github.html#try-it-out",
+    "title": "Git & GitHub",
+    "section": "Try it out",
+    "text": "Try it out\nThis guided tutorial walks through these steps:\n\nCreate a repo on GitHub.\nClone it in RStudio.\nMake a change in RStudio.\nCommit and push the change.\nCheck the change on GitHub.\nMake a change on GitHub (and commit).\nPull the change in RStudio.\nCreate a conflict by making and committing a change in RStudio and a different (conflicting) change on GitHub.\nResolve the conflict in RStudio."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#git-vocab-repo-level",
+    "href": "slides/Q1-W2_git-github.html#git-vocab-repo-level",
+    "title": "Git & GitHub",
+    "section": "Git Vocab: Repo-level",
+    "text": "Git Vocab: Repo-level\n\nRepository or repo\n\na project folder tracked by Git\n\ninit\n\ninitialize a new Git repository\n\nclone\n\ncreate your own personal copy of an existing repository\n\nfork\n\ncopy a repository keeping a connection to the original\n\nbranch\n\ncreate your own temporary line of work in a repo\n\ncheckout\n\nswitch between branches in a repo\n\n\n\nRepo: A directory (i.e., folder) the holds all documents and document edits associated with a project Init: Initializing a repo, making an existing directory ready to work with git (RStudio will do this for you) Clone: Copy an existing repository, creating a fully distinct and separate repo that you own and control Fork: Copy an existing repository, maintaining a connection to the original; you have full control over your fork, but not the original repo Branch: Create an isolated segment of a repo (that you own), so that you can make many changes before combining it back with the original (for collaboration) Checkout: Swap between different branches of a repo"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#git-vocabulary-file-level",
+    "href": "slides/Q1-W2_git-github.html#git-vocabulary-file-level",
+    "title": "Git & GitHub",
+    "section": "Git Vocabulary: File-level",
+    "text": "Git Vocabulary: File-level\n\ncommit\n\nsave a snapshot of changes with a descriptive message\n\nfetch\n\nget latest changes from remote repo without merging\n\nmerge\n\ncombine changes from different branches\n\npull \n\nget latest changes from remote repo (=fetch+merge)\n\npush\n\nsend your commits to remote repo\n\nmerge conflict\n\nconflicting changes that need manual resolution\n\n\n\nCommit: A snapshot of changes in the repo; documented with an informative note left for posterity called a commit message\nPull: Synchronizing your local repo with latest changes from a remote server (like Github)\nPush: Sending your commits (and the changed docs) from your local repo to the remote server\nDiff: The process run by git comparing and combining old and new files when you push changes\nMerge: The resulting process of a diff, where multiple versions of a file are intelligently combined\nMerge conflict: Error (recognized in the diff) where multiple changes to any single line of text can’t be automatically resolved and require user decisions"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#github-cardinal-rules",
+    "href": "slides/Q1-W2_git-github.html#github-cardinal-rules",
+    "title": "Git & GitHub",
+    "section": "Git(Hub) cardinal rules",
+    "text": "Git(Hub) cardinal rules\n\n\n\n\n\n\nYour workflow:\n\n\n\n\nCommit little & commit lots\n\n\n\nPull before you start editing\nCommit often as your work\nPush when you close your session\n\n\n\n\n\n\n\nThou shalt:\n\nUse frequent, informative commit messages\nUse a .gitignore to specify files and filetypes to keep local\nMaintain a README.md file documenting your repo’s structure and purpose\nBe intentional managing public and protected files\n\n\n\nRemember the whole point of GitHub is version control!\nEach assignment has a unique repo. Each repo is a unique files.\nNever create multiple copies of the same files!!!\n\n\n\n\n\nCommit little; commit often\n“little” as in the commits themselves are little changes\nUse a .gitignore to specify files and filetypes that should not be included in pulls or pushes Maintain a README.md file providing at least minimal documentation of the structure of your repo and purpose of the project Make purposeful and wise decisions about managing public, private, and protected data and files Use informative commit messages Pull before you start editing; commit as you work; push when you close your session\nRemember the whole point of github is version control!\nEach assignment has a unique repo. Each repo is a unique files.\nDo not create multiple copies of the same files!!!\nYour repos are the homes of your projects, not a random collection of notes and homework. Keep them organized, future-proof, and collaborator-friendly for contexts beyond this class.\n\n\nThis means you should have way more commits than pushes. Each commit is a snapshot of your project at a specific point in time. Pushing sends all your committed changes to GitHub."
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#git-in-the-command-line",
+    "href": "slides/Q1-W2_git-github.html#git-in-the-command-line",
+    "title": "Git & GitHub",
+    "section": "Git in the Command Line",
+    "text": "Git in the Command Line\nLocal git repos are managed through the command line (Terminal on Mac, Git Bash on Windows)\n\n\nStep 1: Set up your local workspace\n# navigate to local repo directory\ncd repos/d2m-r/slides\n\n# get latest changes from upstream repo\ngit pull origin main\n\n\nStep 2: Do stuff. Make changes, additions, whatever in the repo files\n\n\nStep 2.5: Commit your work frequently after every “nameable” change.\n# commit staged changes with \"m\"essage\ngit commit -m \"Create first draft for GitHub lecture\"\n\n\nStep 3: Send your committed changes back to the remote repo\n# send commits to upstream repo\ngit push origin main\n\n\nLocal git repos are managed through the command line (Terminal on Mac, Git Bash on Windows). The process of sitting down to work, pulling from an upstream repo, making a few changes, adding those edited files to the staging area, committing with a brief commit message, and then pushing to upstream at the end of your work session might look something like this."
   }
 ]

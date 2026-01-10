@@ -1,6 +1,8 @@
 console.log("Bubble fitter script loaded");
 
 
+// SPEECH BUBBLE OVERLAYS
+
 function fitBubblesToScreen() {
   const chain = document.querySelector('.bubble-chain');
   if (!chain) return;
@@ -51,3 +53,41 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  
+  
+
+// GROUPED LISTS
+
+function initGroupedLists() {
+  function processGroupedLists() {
+    document.querySelectorAll('.grouped').forEach(div => {
+      const lists = div.querySelectorAll(':scope > ul, :scope > ol');
+      lists.forEach(list => {
+        list.querySelectorAll('li').forEach(li => {
+          li.classList.remove('fragment');
+        });
+        Array.from(list.children).forEach(li => {
+          if (li.tagName === 'LI') {
+            li.classList.add('fragment');
+          }
+        });
+      });
+    });
+  }
+  
+  if (Reveal.isReady && Reveal.isReady()) {
+    processGroupedLists();
+  } else {
+    Reveal.on('ready', processGroupedLists);
+  }
+}
+
+function waitForReveal() {
+  if (typeof Reveal !== 'undefined') {
+    initGroupedLists();
+  } else {
+    setTimeout(waitForReveal, 100);
+  }
+}
+
+waitForReveal();

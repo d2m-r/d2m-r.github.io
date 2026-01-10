@@ -1,0 +1,908 @@
+---
+title: "Git & GitHub"
+subtitle: "version control, github, rstudio integration"
+date: "1/20/2026" # M/D/Y
+footer: "D2M-R I | Week 2" #  quarter, week, and class
+
+format: revealjs
+engine: knitr
+
+revealjs-plugins:
+  - codefocus
+
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source
+---
+
+
+<!-- 
+ASSETS NEEDED:
+- Git workflow diagram (commit, push, pull)
+- xckd/phdcomics/etc
+- Side-by-side renders
+    - README.md
+    - repo structure
+- Screenshots
+    - GitHub interface screenshots
+    - Merge conflict examples
+    - .gitignore file examples
+-->
+
+## Housekeeping
+
+-   **Accountability plans due YESTERDAY**
+-   Make sure you have GitHub account created
+-   RStudio + Git setup: [happygitwithr.com](https://happygitwithr.com/)
+
+# Why Version Control?
+
+## Final_NDrevisions-finalmarch22_FINALFINAL.docx
+
+![](../images/comics-memes/phd-comics-finaldoc.gif)
+
+::: credit
+
+PhD Comics: [notFinal.doc](https://phdcomics.com/comics/archive.php?comicid=1531)
+
+:::
+
+## Version Control Basics
+
+<!-- allow column grid to overlap vertically with the title space -->
+:::::::: {.container-fluid style="margin-top: -3em;"}
+::::::: row
+:::::: {.col-5 style="padding-top: 3em;"}
+
+-   **Minimally:**
+    -   **What changed?**
+        -   additions, deletions, modifications
+    -   **When?**
+        -   timestamp for each change
+    -   **Who changed what?**
+        -   track author contributions in collaborative work
+    -   **Revert changes!**
+        -   go back to any previous version instantly
+
+::::::
+:::::: {.col-7}
+
+![Google Doc version history](../images/screenshots/google-doc-version-history.png)
+
+::::::
+:::::::
+::::::::
+
+
+::: notes
+"version control" is basically a system for keeping track of changes to files over time. A very simple and user-friendly version control system is what you'll find in the "version history" of edits on a google doc.
+:::
+
+## Git Version Control
+
+::::: container-fluid
+
+:::: row
+
+::: col-7
+
+[Git]{.keyword} is a robust version control system designed for text-based files
+    
+::: overlap-box
+
+::: box-title
+What? When? Who? Revert! *plus*:
+:::
+
+::: {.box-content}
+
+::: {.nonincremental}
+
+::: {.tightlist .grouped}
+
+-   **Which change is this?** 
+    -   unique IDs for every revision
+-   **Why did it change?** 
+    -   commit messages explain purpose
+-   **Branch and merge** 
+    -   work on multiple features simultaneously
+-   **Backup** 
+    -   project (aka repository) history lives in multiple places
+-   **Asynchronous collaboration** 
+    -   identify and resolve conflicting changes
+-   **Integration** 
+    -   with IDEs (e.g., RStudio) and cloud services (e.g., GitHub)
+
+:::
+:::
+        
+:::
+:::
+
+:::
+
+::: col-5
+
+![Git commit history](../images/screenshots/github-commit-history.png){style="margin-top: -2em;"}
+
+:::
+
+::::
+
+:::::
+
+
+::: notes
+Version control is like having a complete backup of every version of your project, plus a detailed log of what changed and why. It's not just for programmers - anyone who works with files that change over time benefits.
+:::
+
+## Git Repositories
+
+
+A [repository]{.keyword} (or "repo") is a project folder tracked by Git. Everything Git does is centered around repos.
+
+Git repos can be local (on your computer) or remote (hosted on a server like GitHub).
+
+Any folder on your computer can be turned into a Git repository (i.e. "initialized"), but a well-organized repo typically includes a few key components:
+
+-   Project files (e.g., scripts, data, documents)
+-   Metadata files (hidden files and directories that Git uses to manage version control)
+-   Bespoke files like `README.md`, `.gitignore`, and `.yml` files (more on these later)
+
+
+
+
+## Git ≠ GitHub
+
+::::: {.container-fluid}
+
+:::: row
+::: {.col-12 .fragment}
+[GitHub]{.keyword}: a web-based platform for hosting public and private Git repositories. 
+
+GitHub and Git are related, but not the same thing.
+
+:::
+::::
+
+:::: row
+::: col-4
+
+::: {.card .fragment .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Git
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+-   **Version control system**
+-   Tracks changes in metadata files
+-   Your files + metadata files = project [repository]{.keywork} (aka "repo")
+-   Repos stored locally on your computer
+-   Works offline
+-   Free & open source
+-   *The* standard for version control
+
+:::
+:::
+
+:::
+
+::: col-4
+
+![](../images/misc/octocat.png)
+:::
+
+::: col-4
+
+::: {.card .fragment .card-alt1 .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+GitHub
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+-   **Web-based hosting service**
+-   Cloud storage for Git repositories
+-   All repo contents, full history, additional features
+-   User-friendly web interface for Git
+-   Collaboration tools
+-   Free and paid features
+-   *One* of many Git hosting services
+
+:::
+:::
+
+:::
+
+::::
+:::::
+
+::: notes
+
+Education users (anyone with a .edu address) can access premium features for free.
+
+GITHUB is designed to promote code sharing and collaboration, but very useful for individuals, too.
+
+**Analogy:** Git is like a local photo album, GitHub is like syncing to icloud or dropbox.
+
+Git does the version control work on your computer. GitHub is just one place to store and share your Git repositories online. There are alternatives like GitLab, Bitbucket, etc.
+
+:::
+
+
+## GitHub Features
+
+::::: {.container-fluid}
+:::: row
+::: {.col-5 .fragment}
+
+In this class we'll use GitHub to:
+
+-   Maintain all class materials
+-   Create and share your work
+-   Submit assignments using pull requests
+-   Collaborate on group projects
+
+:::
+
+::: {.col-7 .fragment}
+
+But GitHub offers many more features, including:
+
+-   GitHub Pages
+-   GitHub Copilot
+-   Actions
+-   Projects
+-   Codespaces
+-   Issues
+
+:::
+::::
+:::::
+
+::: notes
+
+Some of these extras you'll be able to play around with during this course, but they won't be explicitly part of the syllabus. Developing familiarity with these features can contribute to the engagement portion of your grade.
+
+
+-   **GitHub Pages** to host websites directly from a repository
+-   **GitHub Copilot** to assist with code generation and suggestions
+-   **Actions** to automate workflows
+-   **Projects** to organize and prioritize work
+-   **Codespaces** to provide cloud-based development environments
+-   **Issues** to track bugs and feature requests
+
+:::
+
+# Git Fundamentals
+
+## Git Vocab: Repo-level
+
+
+-   **[Repository]{.critical} or [repo]{.critical}** 
+    - **a project folder tracked by Git**
+-   [init]{.keyword} 
+    - initialize a new Git repository
+-   **[clone]{.critical}**
+    - **create your own personal copy of an existing repository**
+-   [fork]{.keyword} 
+    - copy a repository keeping a connection to the original
+-   [branch]{.keyword} 
+    - create your own temporary line of work in a repo
+-   [checkout]{.keyword} 
+    - switch between branches in a repo
+
+
+::: notes
+Repo: A directory (i.e., folder) the holds all documents and document edits associated with a project
+Init: Initializing a repo, making an existing directory ready to work with git (RStudio will do this for you)
+Clone: Copy an existing repository, creating a fully distinct and separate repo that you own and control
+Fork: Copy an existing repository, maintaining a connection to the original; you have full control over your fork, but not the original repo
+Branch: Create an isolated segment of a repo (that you own), so that you can make many changes before combining it back with the original (for collaboration) 
+Checkout: Swap between different branches of a repo
+
+
+:::
+
+## Git Vocabulary: File-level
+
+-   **[commit]{.critical}**
+    - **save a snapshot of changes with a descriptive message**
+-   [fetch]{.keyword}
+    - get latest changes from remote repo without merging
+-   [merge]{.keyword}
+    - combine changes from different branches
+-   **[pull]{.critical} **
+    - **get latest changes from remote repo (=fetch+merge)**
+-   **[push]{.critical}**
+    - **send your commits to remote repo**
+-   [merge conflict]{.keyword}
+    - conflicting changes that need manual resolution
+
+
+
+
+::: notes
+
+Commit: A snapshot of changes in the repo; documented with an informative note left for posterity called a commit message
+
+Pull: Synchronizing your local repo with latest changes from a remote server (like Github)
+
+Push: Sending your commits (and the changed docs) from your local repo to the remote server
+
+Diff: The process run by git comparing and combining old and new files when you push changes
+
+Merge: The resulting process of a diff, where multiple versions of a file are intelligently combined 
+
+Merge conflict: Error (recognized in the diff) where multiple changes to any single line of text can’t be automatically resolved and require user decisions
+
+:::
+
+## Commits: Snapshots in Time
+
+A [commit]{.keyword} is the metadata associated with a change.
+
+::::: container-fluid
+:::: row
+::: col-6
+
+``` bash
+commit UNIQUE ID HASH
+Author: YOUR NAME <YOUR@EMAIL.ADDRESS>
+Date: FULL DATE & TIMESTAMP
+    
+    ONE LINE SUMMARY OF CHANGE(S)
+    
+    - OPTIONAL
+    - DESCRIPTIVE
+    - DETAILS
+```
+:::
+
+::: col-6
+
+``` bash
+commit a3d2f1b
+Author: Natalie Dowling <ndowling@uchicago.edu>
+Date: Mon Jan 20 14:30:15 2026
+    
+    Add data cleaning script for survey responses
+    
+    - Remove duplicate entries
+    - Standardize column names  
+    - Handle missing values in age variable
+```
+
+:::
+::::
+:::::
+
+## Commit Messages: Best Practices
+
+::::: container-fluid
+:::: row
+::: {.col-6 .fragment}
+
+### Good commit messages:
+
+-   Describe *what* and *why*, not *how*
+-   Start with a present tense verb ("Add", "Fix", "Update")
+-   First line under 50 characters
+
+::: fragment
+```md
+Add data cleaning script for survey responses
+
+Move glms out of qmd into a separate script
+
+Start zero-drafting methods
+```
+:::
+
+:::
+
+::: {.col-6 .fragment}
+### Bad commit messages:
+-   Vague 
+-   Uninformative
+-   Cover way too many or unrelated changes
+
+::: fragment
+```md
+Updates to data
+
+Friday afternoon commit
+
+data cleaning script, move glms, start methods, fix typos, add bibliography
+```
+:::
+:::
+::::
+
+:::: row
+::: col-12
+::: {.callout-warning .fragment}
+
+### A shameful confession
+
+
+I am a total hypocrite and rarely follow these guidelines. Actual commits from my actual repos: `oops i broke the kid data but the adult glms work now`, `omg i can't anymore here are some broken plots fix this later or don't i don't care`, `i need a drink`. 
+
+I'm not proud, but what actually matters is that you 1) **commit often** and 2) write **messages that make sense** to anyone who has to read them (including, hopefully, future you).
+
+:::
+:::
+::::
+:::::
+
+::: notes
+
+I am a total hypocrite and rarely follow these "good" and "bad" guidelines. The longer I work, the more likely my commit messages devolve into `oops i broke the kid data but the adult glms work now` or `omg i can't anymore here are some broken plots fix this later or don't i don't care` or `i need a drink`. 
+
+These are actual commits from my actual repos. I'm not proud. Present-me is often pretty frustrated with past-me's choices, but I can't pretend that I don't also find it entertaining and humanizing. (You'd think I wouldn't need to humanize myself *to myself*, wouldn't you? You'd be wrong.)
+
+While I encourage you to do as I say, not as I do, what actually matters is that you 1) **commit often** and 2) write **messages that make sense** to anyone who has to read them (including, hopefully, future you).
+
+:::
+
+
+
+## Git(Hub) cardinal rules
+
+::: container-fluid
+
+::: {.row}
+
+::: {.col-4}
+
+::: {.card .fragment}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+Your workflow:
+:::
+:::
+
+::: card-body
+::: {style="text-align: center;"}
+Commit *[little]{style="font-size: .7em; font-weight: lighter;"}* & commit **[lots]{style="font-size: 1.3em; font-variant: small-caps;"}**
+:::
+
+![](../images/misc/git-workflow.png)
+
+1. Pull before you start editing
+2. Commit often as your work
+3. Push when you close your session
+:::
+
+:::
+:::
+
+::: {.col-8 .d-flex .align-content-between .flex-wrap}
+
+<div style="width: 100%"><!--setting this off with a literal div is the only way I can get the spacing to work for some reason-->
+
+[Thou shalt:]{.fragment style="font-size: 1.5em; font-weight: bold;"}
+
+- Use frequent, informative commit messages
+- Use a .gitignore to specify files and filetypes to keep local
+- Maintain a README.md file documenting your repo's structure and purpose
+- Be intentional managing public and protected files
+
+</div>
+
+::: {.alert .alert-warning .fragment .flex-grow-1}
+
+[**Remember the whole point of GitHub is version control!**]{style="font-size: 1.3em"}
+
+Each assignment has a *unique repo.* Each repo is a *unique files.*
+
+*Never* create multiple copies of the same files!!!
+:::
+:::
+:::
+
+:::
+
+
+::: notes
+
+Commit little; commit often
+
+"little" as in the commits themselves are little changes
+
+Use a .gitignore to specify files and filetypes that should not be included in pulls or pushes
+Maintain a README.md file providing at least minimal documentation of the structure of your repo and purpose of the project
+Make purposeful and wise decisions about managing public, private, and protected data and files 
+Use informative commit messages
+Pull before you start editing; commit as you work; push when you close your session
+
+Remember the whole point of github is version control!
+
+Each assignment has a *unique repo.* Each repo is a *unique files.*
+
+*Do not create multiple copies of the same files!!!*
+
+Your repos are the homes of your projects, not a random collection of notes and homework. Keep them organized, future-proof, and collaborator-friendly for contexts beyond this class.
+
+:::
+::: notes
+This means you should have way more commits than pushes. Each commit is a snapshot of your project at a specific point in time. Pushing sends all your committed changes to GitHub.
+:::
+
+## Merge Conflicts
+
+[merge conflict]{.keyword}: Git cannot automatically reconcile differences between two versions of a file
+
+Symbols like `<<<`, `===`, and `>>>` mark conflicting sections. 
+
+All you have to do is change the text and delete the markers.
+
+::::: {.container-fluid}
+:::: row
+::: {.col-6 .fragment}
+### What you'll see in a conflicted file:
+``` markdown
+<<<<<<< HEAD
+This is the original line in the file.
+=======
+This is the conflicting change made by another user.
+>>>>>>> feature-branch
+```
+:::
+::: {.col-6 .fragment}
+
+### You manually edit the file to resolve the conflict:
+``` markdown
+This is the original line in the file.
+This is the conflicting change made by another user.
+```
+:::
+::::
+:::::
+
+::: notes
+A [merge conflict]{.keyword} occurs when Git cannot automatically reconcile differences between two versions of a file. You'll see symbols like `<<<`, `===`, and `>>>` marking the conflicting sections. All you have to do is change the text and delete the markers.
+:::
+
+## Git in the Command Line
+
+Local git repos are managed through the command line (Terminal on Mac, Git Bash on Windows)
+
+<br>
+
+::: fragment
+**Step 1:** Set up your local workspace
+
+``` bash
+# navigate to local repo directory
+cd repos/d2m-r/slides
+
+# get latest changes from upstream repo
+git pull origin main
+```
+
+:::
+::: fragment
+
+**Step 2:** Do stuff. Make changes, additions, whatever in the repo files
+
+:::
+::: fragment
+
+**Step 2.5:** Commit your work frequently after every "nameable" change.
+
+``` bash
+# commit staged changes with "m"essage
+git commit -m "Create first draft for GitHub lecture"
+```
+:::
+::: fragment
+
+**Step 3:** Send your committed changes back to the remote repo
+
+```bash
+# send commits to upstream repo
+git push origin main
+```
+:::
+
+::: notes
+Local git repos are managed through the command line (Terminal on Mac, Git Bash on Windows). The process of sitting down to work, pulling from an upstream repo, making a few changes, adding those edited files to the staging area, committing with a brief commit message, and then pushing to upstream at the end of your work session might look something like this.
+:::
+
+## Git in RStudio
+
+In D2M-R, you'll interact with Git through RStudio rather than Terminal or Command Prompt. 
+
+
+
+::: notes
+
+In D2M-R, you'll interact with Git through RStudio rather than Terminal or Command Prompt. 
+
+You'll mostly use the Git pane, which gives you a pretty user-friendly interface for the same commands you would run in the terminal.
+
+But you can also use the Terminal tab in RStudio to run git commands directly, exactly as you would in a standalone terminal.
+
+You'll need this for more advanced tasks like resolving merge conflicts, but you can always opt to use it instead of the interface if you prefer.
+
+:::
+
+
+# Git Project Components
+
+What literally goes in your git repo?
+
+## Repository Structure
+
+A typical Git repository includes:
+
+-   **Project files**
+    -   The actual content of your project (e.g., scripts, data, documents), organized in a logical folder structure
+-   **Metadata files**
+    -   Hidden files and directories (like `.git/`) that Git uses to manage version control
+-   **README.md**
+    -   A markdown file that provides an overview of the project, instructions for use, and other relevant information
+-   **.gitignore**
+    -   A text file that specifies which files or directories Git should ignore
+-   **Configuration files** (as needed)
+    -  Things like `.yml` options, bibliography files, themes, etc.
+
+
+## Repo Structure: Example 1
+
+My preferred structure for a Quarto manuscript project:
+
+::::: {.container-fluid}
+:::: row
+::: {.col-6 .tightlist .fragment}
+
+### Project file directories
+
+1. `/localonly`: only present in your local R Project, listed in your .gitignore and never synced to github
+2. `/data`: .csv/tabular data files for all raw or intermediate datasets read into in your .qmd, optional `/raw` subfolder for raw data read (only) into unsourced R scripts
+3. `/source`: .R scripts to be called in an early chunk of your .qmd, e.g., stylistic preferences, functions, minor data wrangling
+4. `/images`: exported figures and any image files to read-in to your R Markdown manuscript
+5. `/_extensions`: auto-generated or installed Quarto extensions, like apaquarto
+
+:::
+
+::: {.col-6 .tightlist .fragment}
+
+### Top-level files
+
+1. `README.md`: project overview, repo structure, to-do list, etc.
+2. `.gitignore`: starting from the R .gitignore template
+3. `project-manuscript.qmd`: the home of your eventual publication 
+4. `bibliography.bib`: a plain-text file containing all the BibTeX entries cited in your manuscript
+5. `yourCitationStyle.csl`: the script used to format in-text and bibliography citations when knitting
+
+:::
+::::
+:::::
+
+
+::: notes
+
+Not everything is needed for every project. For example, extensions like apaquarto will create and store a .csl file within the extension files; you won't see it in your top-level directory.
+
+For the kind of Quarto project we're focusing on in this class, you will always have **exactly 1 .qmd** file, which is the manuscript itself. It lives in the top level directory alongside your readme and gitignore.
+
+:::
+
+## Repo Structure: Example 2
+
+A simple, generic project:
+
+```         
+my-research-project/
+├── README.md
+├── my-project.Rproj  
+├── .gitignore
+├── data/
+│   ├── raw/                # Original data (maybe not in Git)
+│   └── processed/          # Cleaned data  
+├── scripts/
+│   ├── 01_clean.R          # Numbered workflow
+│   ├── 02_analyze.R
+│   └── functions.R         # Reusable functions
+├── outputs/
+│   ├── plots/
+│   └── tables/
+└── docs/
+│   └── analysis.qmd        # Main report
+├── localonly/              # LISTED IN YOUR .GITIGNORE
+    └── protected-data/     # ONLY EXISTS ON YOUR COMPUTER, NOT GITHUB
+```
+
+## Hidden files and directories
+
+Repos and R Projects will also include some hidden files and directories
+
+- `.git/` - Git metadata, what makes Git work
+- `.Rproj.user/` - RStudio project settings
+- `.quarto/` - Quarto project settings
+
+You won't interact with these directories directly, and you won't see them in RStudio or on GitHub.
+
+You may also have other hidden files, for example:
+
+- `.Rproj`
+- `.RData`
+- `.Rhistory`
+- `.DS_Store`  
+
+You won't interact with these either but they won't always be fully hidden in every interface. You can add them to your `.gitignore` file so they don't clutter up your repo.
+
+
+## README.md
+
+::::: {.container-fluid style="max-width: 40%; margin-left: 0; margin-right: auto;"}
+
+A `README.md` file provides a project overview. It is typically the first thing someone sees when they visit your repository on GitHub.
+
+-   Simple markdown (`.md`) document
+-   What you see rendered on a repo's GitHub page
+-   Can do lots of things, but should at a minimum describe:
+    -   Purpose of the repo
+    -   Dataset(s)
+    -   Repo structure
+    -   Any relevant licensing, restrictions, or citations
+
+:::::
+
+<!-- right-aligned, stacked images -->
+::::: {.container-fluid style="position: absolute; width: 60%; right: -100px; top: -100px; bottom: -100px; margin: auto;"}
+
+![](../images/screenshots/readme-md.png){style="width: 100%"}
+
+![](../images/screenshots/readme-html.png){style="width: 100%"}
+:::::
+
+## .gitignore: what
+
+::::: container-fluid
+:::: row
+::: {.col-6 .fragment}
+
+A `.gitignore` file tells Git which files and directories to ignore when comparing differences between versions.
+
+-   Plain text file w/out extension
+-   Files & folders that should be excluded from all git processes
+-   Matched on strings in file/folder names, including wildcard characters and simplified regex
+-   [View documentation](https://git-scm.com/docs/gitignore)
+
+:::
+
+::: {.col-6}
+
+![](../images/screenshots/gitignore.png)
+
+:::
+::::
+:::::
+
+## .gitignore: why
+
+::: {.alert .alert-danger}
+
+**Not everything belongs online.**
+
+:::
+
+-   [**PRIVACY.**]{style="color: #A4343A;"}
+    -   **Do not upload anything with sensitive or identifiable information.**
+    -   It is your responsibility to follow your IRB.
+-   **Security**
+    - passwords, security keys, login tokens
+-   **Bloat**
+    -   Git is designed for text files
+    -   Large files push *very* slowly and can cause RStudio to hang
+    -   Some files are regenerated automatically
+-   **Conflict**
+    -   "behind the scenes" files that actually interact with local, git, or R processes will conflict for baffling reasons (sort of a technological observer effect)
+
+
+
+## .gitignore: how
+
+::: {.row .narrowlist}
+::: {.col-4 .fragment}
+
+**Optionally start with [a template](https://github.com/github/gitignore/blob/main/R.gitignore)** then:
+
+-   Use informative `# comments`
+-   Protect private data in a `localonly/` folder
+    -   Dedicated place for anything you need to keep offline that the .gitignore might not explicitly catch
+    -   Good place to keep deanonymized datasets instead of trusting yourself to remember to add them to the .gitignore
+-   Ignore files/folders 
+    - Matching the name: `data/raw/sensitive_data.csv`, `topsecret/`
+    -   Using wildcards: `*.pdf`, `no-git_*`
+
+::: 
+
+::: {.col-4 .fragment}
+
+**Ignore large files**
+
+-   Media files: e.g, `*.png`, `*.jpg`, `*.mp4`
+    -   tend to be very large, often contain sensitive info
+-   Presentation files: e.g., `*.pptx`, `*.key`
+    -   not necessary for reproducibility, often large
+-   Specialized and raw files: e.g, `*.bdl`, `*.ear`, `*.mgh`
+    -   data needs to be tabular eventually anyway
+
+:::
+
+::: {.col-4 .fragment}
+
+**Ignore auto-generated files**
+
+-   System files: e.g., `*.DS_Store`, `*.RData`, `*.Rhistory`
+    -   platform-specific, or not text-based
+-   Process files: e.g., `*.log`, `*.aux`, `*.out`
+    -   should be deleted after success but can stick around if knitting fails
+-   Compiled files: e.g., `*.pdf`, `*.docx`, `*.html`
+    -   recreated every time you knit
+
+:::
+:::
+
+
+
+## Summary
+
+-   Manage all projects with [version control]{.keyword}
+-   Git is a powerful version control system; GitHub is a platform for hosting Git repositories
+-   Key Git concepts:
+    -   [repositories]{.keyword}: folders tracked by Git
+    -   [commits]{.keyword}: snapshots of changes
+    -   [branches]{.keyword}: isolated lines of work
+    -   [pulls]{.keyword}: get changes from remote repos
+    -   [pushes]{.keyword}: send changes to remote repos
+-   Your repo needs:
+    -   project files
+    -   metadata files
+    -   a `README.md`
+    -   a `.gitignore` file
+-   **PULL when you sit down to work. COMMIT frequently as you work. PUSH when you pause or finish.**
+
+::: notes
+-   Version control is essential for managing changes in your projects
+-   Git is a powerful version control system; GitHub is a platform for hosting Git repositories
+-   Key Git concepts include repositories, commits, branches, pulls, and pushes
+-   A well-structured repository includes project files, metadata, a README, and a .
+gitignore file
+-   Using Git in RStudio provides a user-friendly interface for version control tasks
+-   Regularly committing and pushing changes helps maintain a clear project history
+:::
+
+
+## Try it out
+
+
+[This guided tutorial]() <!-- ADD LINK TO TEXTBOOK TUTORIAL WHEN PUBLISHED -->walks through these steps:
+
+1. Create a repo on GitHub.
+2. Clone it in RStudio.
+3. Make a change in RStudio.
+4. Commit and push the change.
+5. Check the change on GitHub.
+6. Make a change on GitHub (and commit).
+7. Pull the change in RStudio.
+8. Create a conflict by making and committing a change in RStudio and a different (conflicting) change on GitHub.
+9. Resolve the conflict in RStudio.
