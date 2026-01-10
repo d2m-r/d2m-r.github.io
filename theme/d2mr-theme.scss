@@ -883,6 +883,10 @@ $card-alt1-color: $accent1;
         font-size: 1.2em;
         color: mix($dark, $card-main-color, 30%);
     }
+    
+    > ul, ol {
+        margin-bottom: 0em !important;
+    }
 }
 
 .card-title,
@@ -908,8 +912,7 @@ $card-alt1-color: $accent1;
 .card-header,
 .reveal .card-header {
         
-    padding-top: 0em;
-    padding-bottom: 0em;
+    padding: 0em;
     margin-bottom: 0em;
     border-bottom-style: solid;
     border-bottom-width: 2px;
@@ -917,16 +920,29 @@ $card-alt1-color: $accent1;
     width: 100%;
     background-color: $card-main-color;
     
-    > h1, h2, h3 {
-        font-size: 2em;
-        color: $light;
-        padding-bottom: 0.2em;
-        border-bottom-style: double;
-        border-bottom-width: 4px;
-        border-bottom-color: mix($light-greystone, $card-main-color, 50%);
+    .card-title {
+        > h1, h2, h3, h4, p {
+            font-size: 1.5em;
+            color: $light;
+            padding-bottom: 0.2em;
+            border-bottom-style: double;
+            border-bottom-width: 4px;
+            border-bottom-color: mix($light-greystone, $card-main-color, 50%);
+        }
     }
 }
+
+
+.reveal .card-header {
+        
+    padding-top: 0em;
+    padding-bottom: 0em;
+    margin-bottom: 0em;
     
+    > h1, h2, h3 {
+        padding-bottom: 0.2em;
+    }
+}
     
 
 // Card color variations
@@ -959,8 +975,9 @@ $card-alt1-color: $accent1;
     border-bottom-color: mix($light-greystone, $card-alt1-color, 0%);
     background-color: $card-alt1-color;
     
-    > h1, h2, h3 {
+    > h1, h2, h3, h4, p {
         border-bottom-color: mix($light-greystone, $card-alt1-color, 50%);
+        color: $light;
     }
 }
 
@@ -1136,24 +1153,37 @@ pre > code.sourceCode > span {
 .reveal .slide ol li {
     margin-bottom: 0.2em;
     margin-top: 0.2em;
-    line-height: 1.4;
+    line-height: 1.2em;
 }
 
-
-.reveal .tightlist ul {
+.reveal .lessgap ul,
+.reveal .lessgap ol {
     margin-bottom: 0em !important;
     margin-top: 0em !important;
-    margin-left: 0px !important;
-    line-height: 1.2 !important;
+    margin-left: .5em !important;
+    padding-left: .5em !important;
     
 }
 
-.reveal .tightlist ul li {
+.reveal .lessgap ul li,
+.reveal .lessgap ol li {
+    margin-bottom: .2em !important;
+    margin-top: 0.2em !important;
+    
+}
+
+.reveal .tightlist ul,
+.reveal .tightlist ul li{
     margin-bottom: 0em !important;
     margin-top: 0em !important;
-    margin-left: 0px !important;
-    line-height: 1.2 !important;
+    margin-left: 0em !important;
     
+}
+
+.reveal .slides section .tightlist li li,
+.reveal .slides .tightlist ul li ul li,
+.reveal .slides .tightlist ol li ol li {
+  font-size: 0.85em !important;
 }
 
 .reveal .narrowlist ul,
