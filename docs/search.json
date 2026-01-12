@@ -2231,5 +2231,12 @@
     "title": "RStudio & Quarto",
     "section": "Follow along:",
     "text": "Follow along:\n\nCreate a new RStudio project\nView/change global options\nCreate & edit a markdown README.md file\nCreate & edit an .R script\nCreate & edit a Quarto .qmd document\n\nYAML\nChunk w/ source()\nChunk w/ inline code\nMarkdown text with inline R code\n\nRender the Quarto document to HTML"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#rstudio-quarto-walkthrough",
+    "href": "slides/Q1-W2_rstudio-quarto.html#rstudio-quarto-walkthrough",
+    "title": "RStudio & Quarto",
+    "section": "RStudio & Quarto Walkthrough",
+    "text": "RStudio & Quarto Walkthrough\n\nCreate a new RStudio project\nView/change global options\nCreate README.md markdown file and setup.R script\nCreate Quarto manuscript.qmd document with:\n\nYAML\nChunks w/ source() and inline code\nMarkdown text with inline R code\n\nRender the Quarto document to HTML"
   }
 ]

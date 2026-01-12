@@ -1058,15 +1058,13 @@ code` `` syntax
 
 # Demo
 
-## Follow along:
+## RStudio & Quarto Walkthrough {.bigger}
 
 1. Create a new RStudio project
 2. View/change global options
-3. Create & edit a markdown `README.md` file
-4. Create & edit an `.R` script
-5. Create & edit a Quarto `.qmd` document
+3. Create `README.md` markdown file and `setup.R` script
+4. Create Quarto `manuscript.qmd` document with:
     1. YAML
-    2. Chunk w/ `source()`
-    3. Chunk w/ inline code
-    4. Markdown text with inline R code
-6. Render the Quarto document to HTML
+    2. Chunks w/ `source()` and inline code
+    3. Markdown text with inline R code
+5. Render the Quarto document to HTML
