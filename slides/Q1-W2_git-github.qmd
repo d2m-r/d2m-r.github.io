@@ -1,7 +1,7 @@
 ---
 title: "Git & GitHub"
 subtitle: "version control, github, rstudio integration"
-date: "1/20/2026" # M/D/Y
+date: "1/13/2026" # M/D/Y
 footer: "D2M-R I | Week 2" #  quarter, week, and class
 
 format: revealjs
@@ -16,20 +16,6 @@ execute:
   message: false
 editor: source
 ---
-
-
-<!-- 
-ASSETS NEEDED:
-- Git workflow diagram (commit, push, pull)
-- xckd/phdcomics/etc
-- Side-by-side renders
-    - README.md
-    - repo structure
-- Screenshots
-    - GitHub interface screenshots
-    - Merge conflict examples
-    - .gitignore file examples
--->
 
 ## Housekeeping
 
@@ -319,6 +305,8 @@ Checkout: Swap between different branches of a repo
 
 ## Git Vocabulary: File-level
 
+-   [stage]{.keyword} 
+    - prepare changes for commit
 -   **[commit]{.critical}**
     - **save a snapshot of changes with a descriptive message**
 -   [fetch]{.keyword}
@@ -336,6 +324,8 @@ Checkout: Swap between different branches of a repo
 
 
 ::: notes
+
+Stage: The process of selecting which changed files to include in the next commit
 
 Commit: A snapshot of changes in the repo; documented with an informative note left for posterity called a commit message
 
@@ -624,11 +614,18 @@ git push origin main
 Local git repos are managed through the command line (Terminal on Mac, Git Bash on Windows). The process of sitting down to work, pulling from an upstream repo, making a few changes, adding those edited files to the staging area, committing with a brief commit message, and then pushing to upstream at the end of your work session might look something like this.
 :::
 
-## Git in RStudio
-
-In D2M-R, you'll interact with Git through RStudio rather than Terminal or Command Prompt. 
+## Git in RStudio: git pane
 
 
+![](../images/screenshots/git-pane.png){style="max-height: 10em;"}
+
+
+The [git pane]{.keyword} displays a list of all tracked files in your repo, along with their current status.
+
+1. **Pull**: get latest changes from remote repo
+2. **Stage**: select files to include in next commit
+3. **Commit**: save a snapshot of staged changes with a descriptive message
+4. **Push**: send your commits to remote repo
 
 ::: notes
 
@@ -640,8 +637,40 @@ But you can also use the Terminal tab in RStudio to run git commands directly, e
 
 You'll need this for more advanced tasks like resolving merge conflicts, but you can always opt to use it instead of the interface if you prefer.
 
+- Clicking the down arrow icon allows for pulling with "rebase"
+
+::: 
+
+## Git in RStudio: git window
+
+::: row
+
+::: col-7
+
+![](../images/screenshots/git-window.png)
 :::
 
+::: col-5
+
+The [git window]{.keyword} opens when you click commit, diff, or history. It includes everything from the pane, plus:
+
+-   **Diff viewer**: see line-by-line changes in selected files
+-   **Revert button**: reset local changes in selected files back to their last commit
+-   **Ignore button**: add selected files to your .gitignore and remove them from your staging area
+-   **Commit message box**: write descriptive messages for your commits
+-   **Commit history**: view past commits and their messages, where you can revert the whole repo
+
+:::
+
+:::
+
+::: notes
+
+When you click the commit button in the git pane, it opens the git window.
+
+You can make multiple commits at once by staging (checking off) only a subset of files that have related changes. Describe the changes and commit. You'll see leftover files in the git pane that you can stage and commit separately. This avoids overly broad commit messages that cover unrelated changes.
+
+:::
 
 # Git Project Components
 
@@ -650,6 +679,8 @@ What literally goes in your git repo?
 ## Repository Structure
 
 A typical Git repository includes:
+
+::: {.nonincremental .grouped}
 
 -   **Project files**
     -   The actual content of your project (e.g., scripts, data, documents), organized in a logical folder structure
@@ -662,92 +693,98 @@ A typical Git repository includes:
 -   **Configuration files** (as needed)
     -  Things like `.yml` options, bibliography files, themes, etc.
 
+:::
 
 ## Repo Structure: Example 1
 
-My preferred structure for a Quarto manuscript project:
-
-::::: {.container-fluid}
 :::: row
-::: {.col-6 .tightlist .fragment}
+
+::: {.col-6 .tightlist .fragment .nonincremental}
 
 ### Project file directories
 
-1. `/localonly`: only present in your local R Project, listed in your .gitignore and never synced to github
-2. `/data`: .csv/tabular data files for all raw or intermediate datasets read into in your .qmd, optional `/raw` subfolder for raw data read (only) into unsourced R scripts
+1. **`/localonly`: only present in your local R Project, listed in your .gitignore and never synced to github**
+2. **`/data`: .csv/tabular data files for all raw or intermediate datasets read into in your .qmd, optional `/raw` subfolder for raw data read (only) into unsourced R scripts**
 3. `/source`: .R scripts to be called in an early chunk of your .qmd, e.g., stylistic preferences, functions, minor data wrangling
 4. `/images`: exported figures and any image files to read-in to your R Markdown manuscript
 5. `/_extensions`: auto-generated or installed Quarto extensions, like apaquarto
 
 :::
 
-::: {.col-6 .tightlist .fragment}
+::: {.col-6 .tightlist .fragment .nonincremental}
 
 ### Top-level files
 
-1. `README.md`: project overview, repo structure, to-do list, etc.
-2. `.gitignore`: starting from the R .gitignore template
-3. `project-manuscript.qmd`: the home of your eventual publication 
+1. **`README.md`: project overview, repo structure, to-do list, etc.**
+2. **`.gitignore`: starting from the R .gitignore template**
+3. **`project-manuscript.qmd`: the home of your eventual publication **
 4. `bibliography.bib`: a plain-text file containing all the BibTeX entries cited in your manuscript
 5. `yourCitationStyle.csl`: the script used to format in-text and bibliography citations when knitting
 
 :::
+
 ::::
-:::::
 
 
-::: notes
-
-Not everything is needed for every project. For example, extensions like apaquarto will create and store a .csl file within the extension files; you won't see it in your top-level directory.
-
-For the kind of Quarto project we're focusing on in this class, you will always have **exactly 1 .qmd** file, which is the manuscript itself. It lives in the top level directory alongside your readme and gitignore.
-
-:::
 
 ## Repo Structure: Example 2
 
 A simple, generic project:
 
-```         
-my-research-project/
+
+```
+quarto-manuscript-project/
 ├── README.md
-├── my-project.Rproj  
 ├── .gitignore
+├── project-manuscript.qmd
+├── bibliography.bib
+├── yourCitationStyle.csl
+├── localonly/                 // ONLY ON YOUR COMPUTER, NOT GITHUB
 ├── data/
-│   ├── raw/                # Original data (maybe not in Git)
-│   └── processed/          # Cleaned data  
-├── scripts/
-│   ├── 01_clean.R          # Numbered workflow
-│   ├── 02_analyze.R
-│   └── functions.R         # Reusable functions
-├── outputs/
-│   ├── plots/
-│   └── tables/
-└── docs/
-│   └── analysis.qmd        # Main report
-├── localonly/              # LISTED IN YOUR .GITIGNORE
-    └── protected-data/     # ONLY EXISTS ON YOUR COMPUTER, NOT GITHUB
+│   ├── raw/                   // Raw data read into unsourced R scripts
+│   └── cleaned-data.csv       // Processed data read into your .qmd
+├── source/
+│   ├── style-preferences.R    // Styling/theming
+│   ├── custom-functions.R     // Reusable functions
+│   └── data-wrangling.R       // Minor data prep
+├── images/
+│   ├── figure1.png
+│   └── figure2.png
+└── _extensions/
+		└── apaquarto/             // Auto-generated extension files
 ```
 
-## Hidden files and directories
+## Hidden files and directories (non-exhaustive list)
+
+- `.git/` - Git metadata, what makes Git work
+- `.Rproj.user/` - RStudio project settings
+- `.quarto/` - Quarto project settings
+- `.Rproj`
+- `.RData`
+- `.Rhistory`
+- `.DS_Store`  
+
+
+::: notes
 
 Repos and R Projects will also include some hidden files and directories
 
 - `.git/` - Git metadata, what makes Git work
-- `.Rproj.user/` - RStudio project settings
+- `.Rproj` - RStudio project settings
 - `.quarto/` - Quarto project settings
 
 You won't interact with these directories directly, and you won't see them in RStudio or on GitHub.
 
 You may also have other hidden files, for example:
 
-- `.Rproj`
+- `.Rproj.user`
 - `.RData`
 - `.Rhistory`
 - `.DS_Store`  
 
 You won't interact with these either but they won't always be fully hidden in every interface. You can add them to your `.gitignore` file so they don't clutter up your repo.
 
+:::
 
 ## README.md
 
@@ -804,6 +841,8 @@ A `.gitignore` file tells Git which files and directories to ignore when compari
 
 :::
 
+::: {.nonincremental .grouped}
+
 -   [**PRIVACY.**]{style="color: #A4343A;"}
     -   **Do not upload anything with sensitive or identifiable information.**
     -   It is your responsibility to follow your IRB.
@@ -816,12 +855,69 @@ A `.gitignore` file tells Git which files and directories to ignore when compari
 -   **Conflict**
     -   "behind the scenes" files that actually interact with local, git, or R processes will conflict for baffling reasons (sort of a technological observer effect)
 
-
+:::
 
 ## .gitignore: how
 
+::: row
+::: {.col-12 .fragment}
+
+**Optionally start with [a template](https://github.com/github/gitignore/blob/main/R.gitignore)** then:
+
+-   Use informative `# comments`
+-   Protect private data in a `localonly/` folder
+-   Ignore files/folders with [matched text](https://git-scm.com/docs/gitignore#_pattern_format)
+
+:::
+:::
+
+::: row
+::: {.col-6 .fragment}
+
+::: {.overlap-box .overlap-box-blue .h-100}
+
+::: box-title
+
+Ignore large files
+
+:::
+
+::: box-content
+
+-   Media files: e.g, `*.png`, `*.jpg`, `*.mp4`
+-   Presentation files: e.g., `*.pptx`, `*.key`
+-   Specialized and raw files: e.g, `*.bdl`, `*.ear`, `*.mgh`
+
+:::
+:::
+:::
+
+::: {.col-6 .fragment}
+
+::: {.overlap-box .h-100}
+
+::: box-title
+
+Ignore auto-generated files
+
+:::
+
+::: box-content
+
+-   System files: e.g., `*.DS_Store`, `*.RData`, `*.Rhistory`
+-   Process files: e.g., `*.log`, `*.aux`, `*.out`
+-   Compiled files: e.g., `*.pdf`, `*.docx`, `*.html`
+
+:::
+:::
+
+:::
+:::
+
+## .gitignore: how (verbose)
+
 ::: {.row .narrowlist}
-::: {.col-4 .fragment}
+::: {.col-4 .nonincremental}
 
 **Optionally start with [a template](https://github.com/github/gitignore/blob/main/R.gitignore)** then:
 
@@ -835,7 +931,7 @@ A `.gitignore` file tells Git which files and directories to ignore when compari
 
 ::: 
 
-::: {.col-4 .fragment}
+::: {.col-4 .nonincremental}
 
 **Ignore large files**
 
@@ -848,7 +944,7 @@ A `.gitignore` file tells Git which files and directories to ignore when compari
 
 :::
 
-::: {.col-4 .fragment}
+::: {.col-4 .nonincremental}
 
 **Ignore auto-generated files**
 
@@ -871,7 +967,6 @@ A `.gitignore` file tells Git which files and directories to ignore when compari
 -   Key Git concepts:
     -   [repositories]{.keyword}: folders tracked by Git
     -   [commits]{.keyword}: snapshots of changes
-    -   [branches]{.keyword}: isolated lines of work
     -   [pulls]{.keyword}: get changes from remote repos
     -   [pushes]{.keyword}: send changes to remote repos
 -   Your repo needs:
@@ -890,19 +985,3 @@ gitignore file
 -   Using Git in RStudio provides a user-friendly interface for version control tasks
 -   Regularly committing and pushing changes helps maintain a clear project history
 :::
-
-
-## Try it out
-
-
-[This guided tutorial]() <!-- ADD LINK TO TEXTBOOK TUTORIAL WHEN PUBLISHED -->walks through these steps:
-
-1. Create a repo on GitHub.
-2. Clone it in RStudio.
-3. Make a change in RStudio.
-4. Commit and push the change.
-5. Check the change on GitHub.
-6. Make a change on GitHub (and commit).
-7. Pull the change in RStudio.
-8. Create a conflict by making and committing a change in RStudio and a different (conflicting) change on GitHub.
-9. Resolve the conflict in RStudio.

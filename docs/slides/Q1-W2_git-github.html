@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-213b55af01392fe150d2f058d760f8e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="dcterms.date" content="2026-01-20">
+  <meta name="dcterms.date" content="2026-01-13">
   <title>Data to Manuscript in R – Git &amp; GitHub</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -98,7 +98,7 @@
     code span.vs { color: #6a3d9a; } /* VerbatimString */
     code span.wa { color: #842222; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-871084abfc6d3a29707343a0740f7d39.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-ccf92b4c5ce228859fdeac2362825a3d.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -208,22 +208,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2026-01-20</p>
-</section>
-<section class="slide level2">
-
-<!-- 
-ASSETS NEEDED:
-- Git workflow diagram (commit, push, pull)
-- xckd/phdcomics/etc
-- Side-by-side renders
-    - README.md
-    - repo structure
-- Screenshots
-    - GitHub interface screenshots
-    - Merge conflict examples
-    - .gitignore file examples
--->
+  <p class="date">2026-01-13</p>
 </section>
 <section id="housekeeping" class="slide level2">
 <h2>Housekeeping</h2>
@@ -544,6 +529,10 @@ ASSETS NEEDED:
 <section id="git-vocabulary-file-level" class="slide level2">
 <h2>Git Vocabulary: File-level</h2>
 <ul>
+<li class="fragment"><span class="keyword">stage</span>
+<ul>
+<li class="fragment">prepare changes for commit</li>
+</ul></li>
 <li class="fragment"><strong><span class="critical">commit</span></strong>
 <ul>
 <li class="fragment"><strong>save a snapshot of changes with a descriptive message</strong></li>
@@ -570,6 +559,7 @@ ASSETS NEEDED:
 </ul></li>
 </ul>
 <aside class="notes">
+<p>Stage: The process of selecting which changed files to include in the next commit</p>
 <p>Commit: A snapshot of changes in the repo; documented with an informative note left for posterity called a commit message</p>
 <p>Pull: Synchronizing your local repo with latest changes from a remote server (like Github)</p>
 <p>Push: Sending your commits (and the changed docs) from your local repo to the remote server</p>
@@ -841,14 +831,56 @@ ASSETS NEEDED:
           display:block!important;
       }</style></aside>
 </section>
-<section id="git-in-rstudio" class="slide level2">
-<h2>Git in RStudio</h2>
-<p>In D2M-R, you’ll interact with Git through RStudio rather than Terminal or Command Prompt.</p>
+<section id="git-in-rstudio-git-pane" class="slide level2 scrollable">
+<h2>Git in RStudio: git pane</h2>
+<p><img data-src="../images/screenshots/git-pane.png" style="max-height: 10em;"></p>
+<p>The <span class="keyword">git pane</span> displays a list of all tracked files in your repo, along with their current status.</p>
+<ol type="1">
+<li class="fragment"><strong>Pull</strong>: get latest changes from remote repo</li>
+<li class="fragment"><strong>Stage</strong>: select files to include in next commit</li>
+<li class="fragment"><strong>Commit</strong>: save a snapshot of staged changes with a descriptive message</li>
+<li class="fragment"><strong>Push</strong>: send your commits to remote repo</li>
+</ol>
 <aside class="notes">
 <p>In D2M-R, you’ll interact with Git through RStudio rather than Terminal or Command Prompt.</p>
 <p>You’ll mostly use the Git pane, which gives you a pretty user-friendly interface for the same commands you would run in the terminal.</p>
 <p>But you can also use the Terminal tab in RStudio to run git commands directly, exactly as you would in a standalone terminal.</p>
 <p>You’ll need this for more advanced tasks like resolving merge conflicts, but you can always opt to use it instead of the interface if you prefer.</p>
+<ul>
+<li>Clicking the down arrow icon allows for pulling with “rebase”</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="git-in-rstudio-git-window" class="slide level2">
+<h2>Git in RStudio: git window</h2>
+<div class="row">
+<div class="col-7">
+<p><img data-src="../images/screenshots/git-window.png"></p>
+</div>
+<div class="col-5">
+<p>The <span class="keyword">git window</span> opens when you click commit, diff, or history. It includes everything from the pane, plus:</p>
+<ul>
+<li class="fragment"><strong>Diff viewer</strong>: see line-by-line changes in selected files</li>
+<li class="fragment"><strong>Revert button</strong>: reset local changes in selected files back to their last commit</li>
+<li class="fragment"><strong>Ignore button</strong>: add selected files to your .gitignore and remove them from your staging area</li>
+<li class="fragment"><strong>Commit message box</strong>: write descriptive messages for your commits</li>
+<li class="fragment"><strong>Commit history</strong>: view past commits and their messages, where you can revert the whole repo</li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>When you click the commit button in the git pane, it opens the git window.</p>
+<p>You can make multiple commits at once by staging (checking off) only a subset of files that have related changes. Describe the changes and commit. You’ll see leftover files in the git pane that you can stage and commit separately. This avoids overly broad commit messages that cover unrelated changes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -869,59 +901,106 @@ ASSETS NEEDED:
 <section id="repository-structure" class="slide level2">
 <h2>Repository Structure</h2>
 <p>A typical Git repository includes:</p>
+<div class="grouped">
 <ul>
-<li class="fragment"><strong>Project files</strong>
+<li><strong>Project files</strong>
 <ul>
-<li class="fragment">The actual content of your project (e.g., scripts, data, documents), organized in a logical folder structure</li>
+<li>The actual content of your project (e.g., scripts, data, documents), organized in a logical folder structure</li>
 </ul></li>
-<li class="fragment"><strong>Metadata files</strong>
+<li><strong>Metadata files</strong>
 <ul>
-<li class="fragment">Hidden files and directories (like <code>.git/</code>) that Git uses to manage version control</li>
+<li>Hidden files and directories (like <code>.git/</code>) that Git uses to manage version control</li>
 </ul></li>
-<li class="fragment"><strong>README.md</strong>
+<li><strong>README.md</strong>
 <ul>
-<li class="fragment">A markdown file that provides an overview of the project, instructions for use, and other relevant information</li>
+<li>A markdown file that provides an overview of the project, instructions for use, and other relevant information</li>
 </ul></li>
-<li class="fragment"><strong>.gitignore</strong>
+<li><strong>.gitignore</strong>
 <ul>
-<li class="fragment">A text file that specifies which files or directories Git should ignore</li>
+<li>A text file that specifies which files or directories Git should ignore</li>
 </ul></li>
-<li class="fragment"><strong>Configuration files</strong> (as needed)
+<li><strong>Configuration files</strong> (as needed)
 <ul>
-<li class="fragment">Things like <code>.yml</code> options, bibliography files, themes, etc.</li>
+<li>Things like <code>.yml</code> options, bibliography files, themes, etc.</li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="repo-structure-example-1" class="slide level2 scrollable">
 <h2>Repo Structure: Example 1</h2>
-<p>My preferred structure for a Quarto manuscript project:</p>
-<div class="container-fluid">
 <div class="row">
 <div class="col-6 tightlist fragment">
 <h3 id="project-file-directories">Project file directories</h3>
 <ol type="1">
-<li class="fragment"><code>/localonly</code>: only present in your local R Project, listed in your .gitignore and never synced to github</li>
-<li class="fragment"><code>/data</code>: .csv/tabular data files for all raw or intermediate datasets read into in your .qmd, optional <code>/raw</code> subfolder for raw data read (only) into unsourced R scripts</li>
-<li class="fragment"><code>/source</code>: .R scripts to be called in an early chunk of your .qmd, e.g., stylistic preferences, functions, minor data wrangling</li>
-<li class="fragment"><code>/images</code>: exported figures and any image files to read-in to your R Markdown manuscript</li>
-<li class="fragment"><code>/_extensions</code>: auto-generated or installed Quarto extensions, like apaquarto</li>
+<li><strong><code>/localonly</code>: only present in your local R Project, listed in your .gitignore and never synced to github</strong></li>
+<li><strong><code>/data</code>: .csv/tabular data files for all raw or intermediate datasets read into in your .qmd, optional <code>/raw</code> subfolder for raw data read (only) into unsourced R scripts</strong></li>
+<li><code>/source</code>: .R scripts to be called in an early chunk of your .qmd, e.g., stylistic preferences, functions, minor data wrangling</li>
+<li><code>/images</code>: exported figures and any image files to read-in to your R Markdown manuscript</li>
+<li><code>/_extensions</code>: auto-generated or installed Quarto extensions, like apaquarto</li>
 </ol>
 </div>
 <div class="col-6 tightlist fragment">
 <h3 id="top-level-files">Top-level files</h3>
 <ol type="1">
-<li class="fragment"><code>README.md</code>: project overview, repo structure, to-do list, etc.</li>
-<li class="fragment"><code>.gitignore</code>: starting from the R .gitignore template</li>
-<li class="fragment"><code>project-manuscript.qmd</code>: the home of your eventual publication</li>
-<li class="fragment"><code>bibliography.bib</code>: a plain-text file containing all the BibTeX entries cited in your manuscript</li>
-<li class="fragment"><code>yourCitationStyle.csl</code>: the script used to format in-text and bibliography citations when knitting</li>
+<li><strong><code>README.md</code>: project overview, repo structure, to-do list, etc.</strong></li>
+<li><strong><code>.gitignore</code>: starting from the R .gitignore template</strong></li>
+<li><strong><code>project-manuscript.qmd</code>: the home of your eventual publication </strong></li>
+<li><code>bibliography.bib</code>: a plain-text file containing all the BibTeX entries cited in your manuscript</li>
+<li><code>yourCitationStyle.csl</code>: the script used to format in-text and bibliography citations when knitting</li>
 </ol>
 </div>
 </div>
-</div>
+</section>
+<section id="repo-structure-example-2" class="slide level2">
+<h2>Repo Structure: Example 2</h2>
+<p>A simple, generic project:</p>
+<pre><code>quarto-manuscript-project/
+├── README.md
+├── .gitignore
+├── project-manuscript.qmd
+├── bibliography.bib
+├── yourCitationStyle.csl
+├── localonly/                 // ONLY ON YOUR COMPUTER, NOT GITHUB
+├── data/
+│   ├── raw/                   // Raw data read into unsourced R scripts
+│   └── cleaned-data.csv       // Processed data read into your .qmd
+├── source/
+│   ├── style-preferences.R    // Styling/theming
+│   ├── custom-functions.R     // Reusable functions
+│   └── data-wrangling.R       // Minor data prep
+├── images/
+│   ├── figure1.png
+│   └── figure2.png
+└── _extensions/
+        └── apaquarto/             // Auto-generated extension files</code></pre>
+</section>
+<section id="hidden-files-and-directories-non-exhaustive-list" class="slide level2">
+<h2>Hidden files and directories (non-exhaustive list)</h2>
+<ul>
+<li class="fragment"><code>.git/</code> - Git metadata, what makes Git work</li>
+<li class="fragment"><code>.Rproj.user/</code> - RStudio project settings</li>
+<li class="fragment"><code>.quarto/</code> - Quarto project settings</li>
+<li class="fragment"><code>.Rproj</code></li>
+<li class="fragment"><code>.RData</code></li>
+<li class="fragment"><code>.Rhistory</code></li>
+<li class="fragment"><code>.DS_Store</code></li>
+</ul>
 <aside class="notes">
-<p>Not everything is needed for every project. For example, extensions like apaquarto will create and store a .csl file within the extension files; you won’t see it in your top-level directory.</p>
-<p>For the kind of Quarto project we’re focusing on in this class, you will always have <strong>exactly 1 .qmd</strong> file, which is the manuscript itself. It lives in the top level directory alongside your readme and gitignore.</p>
+<p>Repos and R Projects will also include some hidden files and directories</p>
+<ul>
+<li><code>.git/</code> - Git metadata, what makes Git work</li>
+<li><code>.Rproj</code> - RStudio project settings</li>
+<li><code>.quarto/</code> - Quarto project settings</li>
+</ul>
+<p>You won’t interact with these directories directly, and you won’t see them in RStudio or on GitHub.</p>
+<p>You may also have other hidden files, for example:</p>
+<ul>
+<li><code>.Rproj.user</code></li>
+<li><code>.RData</code></li>
+<li><code>.Rhistory</code></li>
+<li><code>.DS_Store</code></li>
+</ul>
+<p>You won’t interact with these either but they won’t always be fully hidden in every interface. You can add them to your <code>.gitignore</code> file so they don’t clutter up your repo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -933,46 +1012,6 @@ ASSETS NEEDED:
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="repo-structure-example-2" class="slide level2">
-<h2>Repo Structure: Example 2</h2>
-<p>A simple, generic project:</p>
-<pre><code>my-research-project/
-├── README.md
-├── my-project.Rproj  
-├── .gitignore
-├── data/
-│   ├── raw/                # Original data (maybe not in Git)
-│   └── processed/          # Cleaned data  
-├── scripts/
-│   ├── 01_clean.R          # Numbered workflow
-│   ├── 02_analyze.R
-│   └── functions.R         # Reusable functions
-├── outputs/
-│   ├── plots/
-│   └── tables/
-└── docs/
-│   └── analysis.qmd        # Main report
-├── localonly/              # LISTED IN YOUR .GITIGNORE
-    └── protected-data/     # ONLY EXISTS ON YOUR COMPUTER, NOT GITHUB</code></pre>
-</section>
-<section id="hidden-files-and-directories" class="slide level2">
-<h2>Hidden files and directories</h2>
-<p>Repos and R Projects will also include some hidden files and directories</p>
-<ul>
-<li class="fragment"><code>.git/</code> - Git metadata, what makes Git work</li>
-<li class="fragment"><code>.Rproj.user/</code> - RStudio project settings</li>
-<li class="fragment"><code>.quarto/</code> - Quarto project settings</li>
-</ul>
-<p>You won’t interact with these directories directly, and you won’t see them in RStudio or on GitHub.</p>
-<p>You may also have other hidden files, for example:</p>
-<ul>
-<li class="fragment"><code>.Rproj</code></li>
-<li class="fragment"><code>.RData</code></li>
-<li class="fragment"><code>.Rhistory</code></li>
-<li class="fragment"><code>.DS_Store</code></li>
-</ul>
-<p>You won’t interact with these either but they won’t always be fully hidden in every interface. You can add them to your <code>.gitignore</code> file so they don’t clutter up your repo.</p>
 </section>
 <section id="readme.md" class="slide level2">
 <h2>README.md</h2>
@@ -1020,78 +1059,123 @@ ASSETS NEEDED:
 <div class="alert alert-danger">
 <p><strong>Not everything belongs online.</strong></p>
 </div>
+<div class="grouped">
 <ul>
-<li class="fragment"><span style="color: #A4343A;"><strong>PRIVACY.</strong></span>
+<li><span style="color: #A4343A;"><strong>PRIVACY.</strong></span>
 <ul>
-<li class="fragment"><strong>Do not upload anything with sensitive or identifiable information.</strong></li>
-<li class="fragment">It is your responsibility to follow your IRB.</li>
+<li><strong>Do not upload anything with sensitive or identifiable information.</strong></li>
+<li>It is your responsibility to follow your IRB.</li>
 </ul></li>
-<li class="fragment"><strong>Security</strong>
+<li><strong>Security</strong>
 <ul>
-<li class="fragment">passwords, security keys, login tokens</li>
+<li>passwords, security keys, login tokens</li>
 </ul></li>
-<li class="fragment"><strong>Bloat</strong>
+<li><strong>Bloat</strong>
 <ul>
-<li class="fragment">Git is designed for text files</li>
-<li class="fragment">Large files push <em>very</em> slowly and can cause RStudio to hang</li>
-<li class="fragment">Some files are regenerated automatically</li>
+<li>Git is designed for text files</li>
+<li>Large files push <em>very</em> slowly and can cause RStudio to hang</li>
+<li>Some files are regenerated automatically</li>
 </ul></li>
-<li class="fragment"><strong>Conflict</strong>
+<li><strong>Conflict</strong>
 <ul>
-<li class="fragment">“behind the scenes” files that actually interact with local, git, or R processes will conflict for baffling reasons (sort of a technological observer effect)</li>
+<li>“behind the scenes” files that actually interact with local, git, or R processes will conflict for baffling reasons (sort of a technological observer effect)</li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="gitignore-how" class="slide level2">
 <h2>.gitignore: how</h2>
-<div class="row narrowlist">
-<div class="col-4 fragment">
+<div class="row">
+<div class="col-12 fragment">
 <p><strong>Optionally start with <a href="https://github.com/github/gitignore/blob/main/R.gitignore">a template</a></strong> then:</p>
 <ul>
 <li class="fragment">Use informative <code># comments</code></li>
-<li class="fragment">Protect private data in a <code>localonly/</code> folder
+<li class="fragment">Protect private data in a <code>localonly/</code> folder</li>
+<li class="fragment">Ignore files/folders with <a href="https://git-scm.com/docs/gitignore#_pattern_format">matched text</a></li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col-6 fragment">
+<div class="overlap-box overlap-box-blue h-100">
+<div class="box-title">
+<p>Ignore large files</p>
+</div>
+<div class="box-content">
 <ul>
-<li class="fragment">Dedicated place for anything you need to keep offline that the .gitignore might not explicitly catch</li>
-<li class="fragment">Good place to keep deanonymized datasets instead of trusting yourself to remember to add them to the .gitignore</li>
+<li class="fragment">Media files: e.g, <code>*.png</code>, <code>*.jpg</code>, <code>*.mp4</code></li>
+<li class="fragment">Presentation files: e.g., <code>*.pptx</code>, <code>*.key</code></li>
+<li class="fragment">Specialized and raw files: e.g, <code>*.bdl</code>, <code>*.ear</code>, <code>*.mgh</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-6 fragment">
+<div class="overlap-box h-100">
+<div class="box-title">
+<p>Ignore auto-generated files</p>
+</div>
+<div class="box-content">
+<ul>
+<li class="fragment">System files: e.g., <code>*.DS_Store</code>, <code>*.RData</code>, <code>*.Rhistory</code></li>
+<li class="fragment">Process files: e.g., <code>*.log</code>, <code>*.aux</code>, <code>*.out</code></li>
+<li class="fragment">Compiled files: e.g., <code>*.pdf</code>, <code>*.docx</code>, <code>*.html</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="gitignore-how-verbose" class="slide level2">
+<h2>.gitignore: how (verbose)</h2>
+<div class="row narrowlist">
+<div class="col-4">
+<p><strong>Optionally start with <a href="https://github.com/github/gitignore/blob/main/R.gitignore">a template</a></strong> then:</p>
+<ul>
+<li>Use informative <code># comments</code></li>
+<li>Protect private data in a <code>localonly/</code> folder
+<ul>
+<li>Dedicated place for anything you need to keep offline that the .gitignore might not explicitly catch</li>
+<li>Good place to keep deanonymized datasets instead of trusting yourself to remember to add them to the .gitignore</li>
 </ul></li>
-<li class="fragment">Ignore files/folders
+<li>Ignore files/folders
 <ul>
-<li class="fragment">Matching the name: <code>data/raw/sensitive_data.csv</code>, <code>topsecret/</code></li>
-<li class="fragment">Using wildcards: <code>*.pdf</code>, <code>no-git_*</code></li>
+<li>Matching the name: <code>data/raw/sensitive_data.csv</code>, <code>topsecret/</code></li>
+<li>Using wildcards: <code>*.pdf</code>, <code>no-git_*</code></li>
 </ul></li>
 </ul>
 </div>
-<div class="col-4 fragment">
+<div class="col-4">
 <p><strong>Ignore large files</strong></p>
 <ul>
-<li class="fragment">Media files: e.g, <code>*.png</code>, <code>*.jpg</code>, <code>*.mp4</code>
+<li>Media files: e.g, <code>*.png</code>, <code>*.jpg</code>, <code>*.mp4</code>
 <ul>
-<li class="fragment">tend to be very large, often contain sensitive info</li>
+<li>tend to be very large, often contain sensitive info</li>
 </ul></li>
-<li class="fragment">Presentation files: e.g., <code>*.pptx</code>, <code>*.key</code>
+<li>Presentation files: e.g., <code>*.pptx</code>, <code>*.key</code>
 <ul>
-<li class="fragment">not necessary for reproducibility, often large</li>
+<li>not necessary for reproducibility, often large</li>
 </ul></li>
-<li class="fragment">Specialized and raw files: e.g, <code>*.bdl</code>, <code>*.ear</code>, <code>*.mgh</code>
+<li>Specialized and raw files: e.g, <code>*.bdl</code>, <code>*.ear</code>, <code>*.mgh</code>
 <ul>
-<li class="fragment">data needs to be tabular eventually anyway</li>
+<li>data needs to be tabular eventually anyway</li>
 </ul></li>
 </ul>
 </div>
-<div class="col-4 fragment">
+<div class="col-4">
 <p><strong>Ignore auto-generated files</strong></p>
 <ul>
-<li class="fragment">System files: e.g., <code>*.DS_Store</code>, <code>*.RData</code>, <code>*.Rhistory</code>
+<li>System files: e.g., <code>*.DS_Store</code>, <code>*.RData</code>, <code>*.Rhistory</code>
 <ul>
-<li class="fragment">platform-specific, or not text-based</li>
+<li>platform-specific, or not text-based</li>
 </ul></li>
-<li class="fragment">Process files: e.g., <code>*.log</code>, <code>*.aux</code>, <code>*.out</code>
+<li>Process files: e.g., <code>*.log</code>, <code>*.aux</code>, <code>*.out</code>
 <ul>
-<li class="fragment">should be deleted after success but can stick around if knitting fails</li>
+<li>should be deleted after success but can stick around if knitting fails</li>
 </ul></li>
-<li class="fragment">Compiled files: e.g., <code>*.pdf</code>, <code>*.docx</code>, <code>*.html</code>
+<li>Compiled files: e.g., <code>*.pdf</code>, <code>*.docx</code>, <code>*.html</code>
 <ul>
-<li class="fragment">recreated every time you knit</li>
+<li>recreated every time you knit</li>
 </ul></li>
 </ul>
 </div>
@@ -1106,7 +1190,6 @@ ASSETS NEEDED:
 <ul>
 <li class="fragment"><span class="keyword">repositories</span>: folders tracked by Git</li>
 <li class="fragment"><span class="keyword">commits</span>: snapshots of changes</li>
-<li class="fragment"><span class="keyword">branches</span>: isolated lines of work</li>
 <li class="fragment"><span class="keyword">pulls</span>: get changes from remote repos</li>
 <li class="fragment"><span class="keyword">pushes</span>: send changes to remote repos</li>
 </ul></li>
@@ -1139,21 +1222,6 @@ ASSETS NEEDED:
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="try-it-out" class="slide level2 scrollable">
-<h2>Try it out</h2>
-<p><a href="">This guided tutorial</a> <!-- ADD LINK TO TEXTBOOK TUTORIAL WHEN PUBLISHED -->walks through these steps:</p>
-<ol type="1">
-<li class="fragment">Create a repo on GitHub.</li>
-<li class="fragment">Clone it in RStudio.</li>
-<li class="fragment">Make a change in RStudio.</li>
-<li class="fragment">Commit and push the change.</li>
-<li class="fragment">Check the change on GitHub.</li>
-<li class="fragment">Make a change on GitHub (and commit).</li>
-<li class="fragment">Pull the change in RStudio.</li>
-<li class="fragment">Create a conflict by making and committing a change in RStudio and a different (conflicting) change on GitHub.</li>
-<li class="fragment">Resolve the conflict in RStudio.</li>
-</ol>
 
 
 </section></section>
