@@ -1,0 +1,1046 @@
+---
+title: "RStudio & Quarto"
+subtitle: "RStudio IDE, Quarto, markdown"
+date: "1/13/2026" # M/D/Y
+footer: "D2M-R I | Week 2" #  quarter, week, and class
+
+format: revealjs
+engine: knitr
+
+revealjs-plugins:
+  - codefocus
+
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source
+---
+
+
+# The Tools
+
+## Markdown
+
+::: {#markdown-logo style="position: absolute; top: -1em; right: 4em; height: 4em;"}
+
+![](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg){style="height: 2em;"}
+
+:::
+
+::: row
+
+::: col-5
+
+[Markdown]{.critical} is a lightweight markup language for creating formatted text using a plain-text editor.
+
+-   Easy to read, write, and convert to rich text formats
+-   Widely used in documentation, blogging, and collaborative platforms
+-   Comes in "flavors" building on each other
+
+::: {.nonincremental .fragment style="font-size: .9em; "}
+1. Standard Markdown
+    1. GitHub Flavored Markdown (used by READMEs on GitHub)
+    2. Pandoc Markdown
+        1. R Markdown
+        2. Quarto (aka R Markdown 2.0)
+        3. many more
+    3. [many, *many* more](https://benjaminhoegh.github.io/markdown-flavor-database/table)
+
+:::
+
+:::
+
+::: {.col-7}
+
+```{.markdown}
+# This is a header
+
+## This is a subheader
+
+-   This is a bullet point
+-   And another
+    -   **This one is bold.**
+    -   _This one is italicized._
+
+This text has a [link](https://pandoc.org/) and an image:
+![Image caption](https://pandoc.org/pandoc-cartoon.svgz)
+
+```
+
+![](../images/screenshots/markdown.png){style="position: absolute; right: 0; left: 0; top: 0; bottom: 0; height: 200%; margin-inline: auto; z-index: 99;" .fragment}
+
+:::
+
+:::
+
+
+## R 
+
+::: {#r-logo style="position: absolute; top: -1em; right: 4em; height: 4em;"}
+
+![](https://www.r-project.org/logo/Rlogo.png){style="height: 2em;"}
+
+:::
+
+::: row
+
+::: col-5
+
+[R]{.critical} is a programming language and computing environment.
+
+- Developed for statistics and data science
+- Open source and free
+- Can be run from command line or basic console
+
+:::
+
+::: {.col-7 style="margin-top: -3em;"}
+
+![](../images/screenshots/r-nostudio.png)
+:::
+:::
+
+## RStudio
+
+::: {#rstudio-logo style="position: absolute; top: -1em; right: 4em; height: 4em;"}
+
+![](../images/icons/RStudio-Logo-Flat.png){style="height: 2em;"}
+
+
+:::
+
+::: row
+
+::: col-5
+
+
+[RStudio]{.critical} is an Integrated Development Environment (IDE) for R.
+
+-   Provides a user-friendly interface
+-   Enhances productivity with:
+    - Syntax highlighting
+    - Code completion
+    - Project management
+    - Integrated help
+    - Plot viewing
+    - Package management
+    - Git integration
+
+
+:::
+
+::: {.col-7 style="margin-top: 0em;"}
+
+
+```{r}
+# Assign a string to a variable
+rstudio_is_cool <- paste("R", "and", "RStudio", "work", "together!")
+
+# Print the variable
+rstudio_is_cool
+```
+
+
+:::
+:::
+
+![](../images/screenshots/r-rstudio.png){style="position: absolute; right: 0; left: 0; top: 0; bottom: 0; margin-inline: auto; z-index: 99;" .fragment}
+
+::: notes
+R is the underlying programming language and statistical computing environment. You can run R from the command line or basic R console, but it's quite painful.
+
+RStudio is an IDE - an Integrated Development Environment - that makes working with R much more pleasant and productive. It provides:
+- Syntax highlighting
+- Code completion
+- Project management
+- Integrated help
+- Plot viewing
+- Package management
+- Git integration
+- And much more
+
+- Think of it like the difference between:
+  - A recipe (R) vs. a fully equipped kitchen (RStudio)
+  - A text file (R) vs. Microsoft Word (RStudio)
+  - Raw ingredients (R) vs. a meal prep service (RStudio)
+  
+RStudio is designed for R, with limited functionality for other languages.
+If you're already using another IDE for python or another language, there are IDEs that support R as well.
+R has a very different target audience (statisticians, data scientists) compared to general-purpose IDEs (software developers), so while these other IDEs can get the work done, they don't have the same level of integration and ease of use for R-specific tasks. 
+
+RSTUDIO IS THE DE FACTO STANDARD IDE FOR R PROGRAMMING. Even if you settle on an alternative preferred IDE, you should still be very familiar with RStudio.
+  
+:::
+
+
+## Quarto
+
+::: {#quarto-logo style="position: absolute; top: -1em; right: 4em; height: 4em;"}
+![](../images/icons/quarto.png){style="height: 2em;"}
+:::
+::: row
+::: col-5
+
+[Quarto]{.critical} is an open-source scientific and technical publishing system built on Pandoc.
+
+- Supports multiple programming languages (R, Python, Julia, etc.)
+- Enables creation of dynamic documents, presentations, websites, and reports
+- Integrates with RStudio IDE for seamless workflow
+
+:::
+
+::: col-7
+
+```{r}
+# Assign a string to a variable
+quarto_is_cool <- paste("Quarto", "is", "cool!")
+
+# Print the variable
+quarto_is_cool
+```
+
+
+
+![](../images/screenshots/quarto-rstudio.png){style="position: absolute; right: 0; left: 0; top: 0; bottom: 0; height: 200%; margin-inline: auto; z-index: 99;" .fragment}
+
+:::
+
+:::
+
+::: notes
+
+Created by Posit, makers of RStudio
+"next generation" of R Markdown
+Q can do anything Rmd can do, so all existing Rmd work can (theoretically) transfer to qmd notebooks and retain full functionality
+Works with R, python, Julia, and observable javascript
+Built on systems of complex and flexible YAML headers
+Publish documents (what we call manuscripts) and also:
+websites, manuscripts, interactive dashboards, presentations, and more
+Optionally uses extensions (like apaquarto) for additional customization and functionality
+
+:::
+
+
+# RStudio Interface
+
+## Pane Layout 
+
+:::: row
+::: col-4
+
+1. **Top Left**: Source pane (your scripts and documents)
+2. **Top Right**: Environment, History
+3. **Bottom Left**: Console, Terminal, Background Jobs
+4. **Bottom Right**: Files, Plots, Help, Viewer
+
+:::
+
+::: col-8
+
+![](https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.png)
+
+:::
+::::
+
+::: notes
+- The layout is customizable, but this default works well for most people
+- Each pane can contain multiple tabs
+- You can resize panes by dragging the borders
+- You can minimize/maximize panes
+- The layout will make more sense as we start using each component
+:::
+
+## Pane Layout: Custom
+
+:::: row
+::: col-4
+
+::: nonincremental
+
+1. **Top Left**: Source pane (your scripts and documents)
+2. **Top Right**: Plots, Help, View
+3. **Bottom Left**: Console, Terminal, Background Jobs
+4. **Bottom Right**: Environment, Files, Packages, Git
+
+:::
+
+::: callout-tip
+
+### Customize!
+
+I hate the default layout and always change it. You should figure out what works for you:
+
+Tools > Global Options > Pane Layout
+
+:::
+
+:::
+
+::: col-8
+
+![](../images/screenshots/r-rstudio.png)
+
+:::
+::::
+
+::: notes
+- The layout is customizable, but this default works well for most people
+- Each pane can contain multiple tabs
+- You can resize panes by dragging the borders
+- You can minimize/maximize panes
+- The layout will make more sense as we start using each component
+:::
+
+## Source Pane
+
+::: row
+
+::: col-4
+
+**View, write, edit text:**
+
+- View/edit text files (.R, .qmd, .Rmd)
+- View data objects (read-only)
+- Multiple files open as tabs
+- Pop out files with "show in new window"
+
+**Running code from source:**
+
+- `Cmd/Ctrl + Enter`: run selected code (or current line)
+- `Cmd/Ctrl + Shift + Enter`: run entire file
+
+:::
+
+::: col-8
+
+![](../images/screenshots/pane-source.png)
+
+:::
+
+:::
+
+
+## Console Pane: Three Tabs
+
+::::: container-fluid
+:::: row
+::: {.col-4 .nonincremental .fragment fragment-index="1"}
+**Console**
+
+- Execute R code
+- View output
+- Errors/warnings appear here
+:::
+
+::: {.col-4 .nonincremental .fragment fragment-index="2"}
+**Terminal**
+
+- Command line interface (bash/shell)
+- Git commands
+- Does NOT run R code
+:::
+
+::: {.col-4 .nonincremental .fragment fragment-index="3"}
+**Background Jobs**
+
+- Monitor rendering processes
+- Errors from Quarto rendering
+- Stop sign to force quit
+:::
+::::
+
+:::: row
+
+::: {.r-stack .fragment fragment-index="1"}
+![](../images/screenshots/pane-console.png){style="position: absolute; left: 0; bottom: 0; max-height: 50%;"}
+:::
+
+::: {.r-stack .fragment fragment-index="2"}
+![](../images/screenshots/pane-terminal.png){style="position: absolute; left: 0; right: 0; bottom: 0; margin-inline: auto; max-height: 50%;"}
+:::
+
+::: {.r-stack .fragment fragment-index="3"}
+![](../images/screenshots/pane-background-jobs.png){style="position: absolute; right: 0; bottom: 0; max-height: 50%;"}
+:::
+
+::::
+:::::
+
+
+## Console vs. Source Scripts
+
+R code can be run in both the console and source scripts, but they serve different purposes:
+
+. . .
+
+::: {style="margin-top: 2em;"}
+| Task | Source Script | Console |
+|------|--------------|----------|
+| Quick calculations | | ✓ |
+| Testing new functions | | ✓ |
+| Creating objects | ✓ | |
+| Data wrangling | ✓ | |
+| Publication plots | ✓ | |
+| Reproducible analyses | ✓ | |
+:::
+. . .
+
+::: {.alert .alert-info style="text-align: center; width: 60%; margin: auto; margin-top: 2em;"}
+
+If you might need it again, use a source script. 
+:::
+
+---
+
+## Environment Pane
+
+::::: container-fluid
+::: row
+
+::: col-5
+
+**Shows all objects loaded in your R session**
+
+- Dataframes, variables, functions
+- Click blue arrow to expand objects
+- Click name to view in source pane
+- Broom icon clears environment
+
+::: {.alert .alert-warning .fragment}
+
+Environment resets when R session restarts. Rerun code to recreate objects.
+
+:::
+
+:::
+
+::: col-7
+
+![](../images/screenshots/pane-environment.png){style="max-height: 50%"}
+
+:::
+
+:::
+
+:::::
+
+
+## Files Pane
+
+::::: container-fluid
+:::: row
+
+::: col-6
+**Directory navigator + working directory management**
+
+- Navigate folders like Finder/Explorer
+- Create, delete, rename files
+- **More → Set as Working Directory**
+
+**Working directory matters for file paths:**
+
+- ❌ Absolute: `"/Users/Natalie/Documents/repos/D2M-R/data/mydata.csv"`
+- ✓ Relative: `"data/mydata.csv"`
+
+*When working in RStudio projects, working directory = project root*
+
+:::
+
+::: col-6
+![](../images/screenshots/pane-files.png)
+:::
+::::
+:::::
+
+
+## Git Pane
+
+::::: container-fluid
+:::: row
+
+::: col-6
+
+**Perform basic git operations from RStudio**
+
+- View changed files since last commit
+- Stage files (checkbox)
+- Commit button opens detailed window
+- Pull/push to remote
+
+:::
+::: col-6
+
+![](../images/screenshots/pane-git.png)
+
+:::
+
+::::
+:::::
+
+
+## Other Important Panes
+
+:::: {.row .nonincremental}
+
+::: {.col-6}
+
+::: fragment
+**Packages pane:**
+
+- View installed/loaded packages
+- Update packages
+- Click name → documentation
+- *Don't install from pane, use `install.packages()` in code*
+:::
+
+::: fragment
+**Help pane:**
+
+- Function documentation
+- Search or use `?function_name` in console
+:::
+:::
+
+::: col-6
+::: fragment
+**Plots pane:**
+
+- Static visualizations from R scripts
+- Export, zoom, clear
+- Code: prefer `ggsave()` for reproducibility
+:::
+
+::: fragment
+**Viewer pane:**
+
+- Rendered HTML, Quarto documents
+- Shiny apps, interactive visualizations
+- "Open in Browser" to pop out
+:::
+:::
+::::
+
+
+## Key Takeaways
+
+1. **Source pane** for writing code you want to keep
+2. **Console** for quick tests (check your tab!)
+3. **Use relative file paths** and RStudio projects
+4. **Git pane** for standard workflow; terminal for problems
+
+::: {.callout-note .large .fragment}
+## Code vs. GUI
+
+Nearly all pane actions have code equivalents. 
+Only use GUI shortcuts for things you already know how to do in code!
+:::
+
+# RStudio Projects with Quarto
+
+## Project Makeup
+
+- RStudio Project file (`.Rproj`): manages project settings
+- R scripts (`.R`): contains (only) R code
+- Markdown files (`.md`): contains (only) formatted text
+- Quarto file (`.qmd`): contains combination of text, code, and formatting instructions
+
+::: {.callout-note .large .fragment}
+### R Markdown vs. Quarto
+
+R Markdown documents/notebooks (`.Rmd`) combine R code and markdown text to produce dynamic reports.
+
+`.Rmd = .R + .md`
+
+Quarto documents (`.qmd`) are the next generation of R Markdown notebooks, with more features and better multi-language support. 
+Quarto is backward compatible with R Markdown, so all R Markdown documents can be used as Quarto documents.
+
+`.qmd = .Rmd^2`
+
+:::
+
+## Quarto Documents
+
+Unify your workflow producing a scientific report[^quarto-more], reduce errors, and save time.
+
+[^quarto-more]: Among other things!
+
+Use one (1!) document to:
+
+1. Read in and prep data
+2. Make figures and tables
+3. Run statistical analyses
+4. Write report narrative text
+5. Cite papers
+6. Add in-line, dynamic results
+7. 1-click render to multiple formats (HTML, PDF, Word, slides, etc.)
+
+## Quarto Workflow
+
+::: {style="display: grid; grid-template-columns: 1fr 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr; grid-template-rows: auto 3em auto; gap: 8px;"}
+
+<!-- Row 1: Steps 1-4 -->
+
+::: {.flow-box style="grid-column: 1; grid-row: 1; background-color: #800000;" .fragment}
+
+Create your RStudio project & repo
+
+::: flow-icon-circle
+
+[]{.bi-github}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 2; grid-row: 1;" .fragment}
+
+[]{.bi-arrow-right-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 3; grid-row: 1; background-color: #6e0e10;" .fragment}
+
+Create your Quarto `.qmd` document
+
+::: flow-icon-circle
+
+[]{.bi-file-plus}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 4; grid-row: 1;" .fragment}
+
+[]{.bi-arrow-right-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 5; grid-row: 1; background-color: #5b1b21;" .fragment}
+
+Put code in "chunks" (inline `.R` scripts)
+
+::: flow-icon-circle
+
+[]{.bi-braces}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 6; grid-row: 1;" .fragment}
+
+[]{.bi-arrow-right-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 7; grid-row: 1; background-color: #492931;" .fragment}
+
+Write text with Quarto markdown
+
+::: flow-icon-circle
+
+[]{.bi-pen}
+
+:::
+
+:::
+
+<!-- Down arrow -->
+
+::: {.flow-arrow style="grid-column: 7; grid-row: 2;" .fragment}
+
+[]{.bi-arrow-down-circle-fill}
+
+:::
+
+<!-- Row 2: Steps 5-8 (in reverse order) -->
+
+::: {.flow-box style="grid-column: 7; grid-row: 3; background-color: #373642;" .fragment}
+
+Customize YAML header
+
+::: flow-icon-circle
+
+[]{.bi-card-heading}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 6; grid-row: 3;" .fragment}
+
+[]{.bi-arrow-left-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 5; grid-row: 3; background-color: #254452;" .fragment}
+
+Cite sources with BibTeX
+
+::: flow-icon-circle
+
+[]{.bi-chat-quote}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 4; grid-row: 3;" .fragment}
+
+[]{.bi-arrow-left-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 3; grid-row: 3; background-color: #125163;" .fragment}
+
+Set options for your output
+
+::: flow-icon-circle
+
+[]{.bi-sliders}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 2; grid-row: 3;" .fragment}
+
+[]{.bi-arrow-left-circle-fill}
+
+:::
+
+::: {.flow-box style="grid-column: 1; grid-row: 3; background-color: #005f73;" .fragment}
+
+Knit your document to desired format
+
+::: flow-icon-circle
+
+[]{.bi-file-pdf}
+
+:::
+
+:::
+
+:::
+
+
+::: notes
+
+1. Create your RStudio project & repo
+    -   Use RStudio to create a new project in a new directory
+    -   Keep all the standard git repo contents in it
+2. Create your Quarto `.qmd` document
+    -   any settings in creation are changeable later
+3. Put code in "chunks" (inline `.R` scripts)
+    -   data read-in, summary tables, figures, analysis...
+    -   anything you could write in a dedicated R script
+    -   can include chunk-specific YAML options
+4. Write text with Quarto markdown
+    -   headers, formatted text, footnotes, etc.
+5. Customize YAML header
+    -   title, author, date, output format(s)...
+6. Cite sources with BibTeX
+    -   create a `.bib` file with references
+    -   dynamically cite in text
+7. Set options for your output
+    -   figure sizes, code visibility, themes...
+8. Knit your document to desired format
+    -   HTML, PDF, Word, slides, etc.
+
+:::
+
+## Anatomy of a Quarto Document
+
+::: container-fluid
+
+::: {.row .d-flex }
+
+::: {.col-4 .d-flex }
+
+::: {.overlap-box .h-100 .w-100 .d-flex .flex-column}
+
+::: box-title
+YAML Header
+:::
+
+::: {.box-content .flex-grow-1}
+
+```{.yaml}
+---
+title: "Diamond sizes"
+date: 2016-08-25
+format:
+    html:
+        toc: true
+        code-fold: true
+---
+```
+
+:::
+:::
+
+:::
+
+
+::: {.col-8 .d-flex }
+
+::: {.overlap-box .h-100 .w-100 .d-flex .flex-column}
+::: box-title
+Code Chunks
+:::
+
+::: {.box-content .flex-grow-1}
+
+```{{r}}
+#| label: setup
+#| include: false
+library(ggplot2)
+library(dplyr)
+
+smaller <- diamonds %>% 
+  filter(carat <= 2.5)
+```
+
+
+:::
+:::
+
+:::
+
+::::
+
+:::: {.row style="margin-top: 2em;"}
+
+::: overlap-box
+::: box-title
+Markdown Text Content
+:::
+
+::: {.box-content .flex-grow-1}
+
+````{verbatim, lang = "markdown"}
+We have data about `r nrow(diamonds)` diamonds. Only `r nrow(diamonds) - nrow(smaller)` 
+are larger than 2.5 carats. The distribution of the remainder is shown below: 
+    <!-- See figure below -->
+````
+
+:::
+:::
+
+::::
+:::::
+
+
+## YAML
+
+::: columns
+
+::: {.column width="40%"}
+
+::: overlap-box
+
+::: box-title
+
+YAML Header
+
+:::
+
+::: box-content
+
+```{{yaml}}
+---
+title: "Diamond sizes"
+date: 2016-08-25
+format:
+    html:
+        toc: true
+        code-fold: true
+---
+```
+
+:::
+
+:::
+
+:::
+
+::: {.column width="60%"}
+
+### **Y**et **A**nother **M**arkup **L**anguage
+
+- Rhymes with 🐪
+- Interchangeably `.yaml` and `.yml`
+- Human-readable data serialization format
+- Always the very first thing in a Quarto document
+- Specifies document metadata and options
+- Fenced with `---` at top and bottom
+- Hierarchical structure using indentation
+    -   *Whitespace sensitive!*
+
+:::
+::::
+
+
+## Code Chunks
+
+:::: columns
+
+::: {.column width="40%"}
+
+::: overlap-box
+
+::: box-title
+
+Code Chunk
+
+:::
+
+::: box-content
+
+```{{r}}
+#| label: setup
+#| include: false
+library(ggplot2)
+library(dplyr)
+
+smaller <- diamonds %>% 
+  filter(carat <= 2.5)
+```
+
+:::
+
+:::
+
+:::
+
+::: {.column width="60%"}
+
+### R Script Containers
+
+- Fenced with triple backticks and `{r}`
+- Chunk options in YAML-like format
+    -   Learn about [chunk options](https://bookdown.org/yihui/rmarkdown/r-code.html)
+- Can (should) be named with unique `label` option
+- Contain R code and comments
+- Executed in order during rendering
+- Output (text, figures) inserted into final document
+
+:::
+
+::::
+
+::: notes
+
+- Fenced with triple backticks and `{r}`
+- Optional chunk options in YAML-like format
+    -   Use "comment syntax", e.g., `#| option: value`
+- Can (should) be named with `label` option
+    -   *Labels must be unique!*
+- Contain R code and comments
+- Executed in order during rendering
+    -   Objects created are available to later chunks
+    -   Chunks can be executed independently as you work (but not when you render)
+- Output (text, figures) inserted into final document
+    -   Unless options say otherwise
+
+:::
+
+
+## Code Chunks: Sourcing External R Scripts
+
+:::: columns
+
+::: {.column width="40%"}
+
+::: {.overlap-box .overlap-box-blue}
+
+::: box-title
+
+Source Scripts
+
+:::
+
+::: box-content
+
+```{{r}}
+#| label: source-data-cleaning
+
+source("scripts/data-cleaning.R")
+```
+
+:::
+
+:::
+
+:::
+
+::: {.column width="60%"}
+
+### Source `.R` Files
+
+-   Chunks should do *1 and only 1* easily nameable thing
+-   Use `source()` to "inject" code from other files
+-   Full contents of sourced script runs as if it were in the chunk
+    -   *Only works with R scripts (.R), not other file types*
+-   Common uses:
+    -   Setup tasks
+    -   Pre-processing scripts
+    -   Function definitions
+    -   Complex analysis
+
+:::
+
+::::
+
+
+::: notes
+
+-   Chunks should do *1 and only 1* easily nameable thing
+-   Longer scripts/functions should be in separate R scripts, then source them into the document
+-   Full contents of sourced script runs as if it were in the chunk
+    -   *Only works with R scripts (.R), not other file types*
+    -   If the contents of the file wouldn't run in a chunk, the file can't be sourced into a chunk
+
+    -   Setup tasks (define themes, load libraries, set default options)
+
+:::
+
+
+## Markdown Text Content
+
+::: overlap-box
+
+::: box-title
+
+Markdown Text Content
+
+:::
+
+::: box-content
+
+````{verbatim, lang = "markdown"}
+We have data about `r nrow(diamonds)` diamonds. Only `r nrow(diamonds) - nrow(smaller)` 
+are larger than 2.5 carats. The distribution of the remainder is shown below: 
+    <!-- See figure below -->
+````
+
+:::
+
+:::
+
+
+### Formatted Narrative Text
+
+<!-- The weird line break between r and code is needed to display verbatim -->
+
+- "Narrative" = lit review, methods, discussion, etc.
+- Anything outside YAML and chunks is treated as markdown
+- Optionally include HTML for advanced formatting
+    -   Uses HTML comment syntax: `<!-- comment -->`
+- Inline R code with `` `r
+code` `` syntax
+    -   Can reference sourced and chunk code
+- Can include figures, tables, citations, etc. as an alternative to rendering from code chunks
+
