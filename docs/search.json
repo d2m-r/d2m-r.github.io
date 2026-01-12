@@ -112,186 +112,340 @@
     "text": "Policies\n\nAI & Academic Integrity\nStudents in this course are expected to follow UChicago’s Academic Honesty & Plagiarism policy.\nIn this class, you may use AI tools for coding, but not for writing. This means you may use AI to generate and revise code without penalty.\nYou may not submit any AI-generated written work, including but not limited to:\n\nWritten responses to questions in assignments\nNarrative text of your data project\nProject reflections\nAI statements\n\n“AI-generated written work” includes using AI to generate text that you then revise or edit.\n\nPlagiarized written work, whether from human or AI creators, will receive a non-negotiable 0.\n\nRead more:\n\nAcademic Integrity Policy & AI Philosophy\n\n\n\nCommunication\n\nSlack: We will use Slack for most course communication. The Slack is moderated and only open to members of the class. You must use your UChicago email address to join.\nEmail: Use email for private communication with Dr. Dowling or your TA. You should expect a response within about 2 days. If you have not received a response within 3 days please send a follow-up email.\nOffice hours: Dr. Dowling and TAs will hold office hours each week. You can find the schedule on the course home page. You can also make an appointment to meet outside of office hours if needed.\n\nEmail is the best way to reach Dr. Dowling or TAs for private communication.\nRead more:\n\nCommunication Policy\n\n\n\nClimate & Inclusion\nI am committed to making this course accessible to students of all backgrounds, identities, and abilities. If there are circumstances that make aspects of this course difficult for you to access, please contact me so we can discuss how to accommodate your needs. This includes, but is not limited to, accommodations around the format of course materials, the use of Canvas and other digital resources, the classroom and other physical resources, and the structure of assignments.\nStudents needing accommodations through SDS should confirm that accommodation letters have been sent to me. Note that SDS does not automatically send letters for graduate students; you must request that they do so.\nAccommodations involving extended deadlines will be handled via your accountability plan.\nWe will commit as a class to creating a welcoming, respectful, and productive classroom. If a member of our community–including myself–is creating an unwelcome space for you, I hope you will bring this to my attention immediately.\nIf you would prefer to discuss the situation with someone outside our class, I encourage you to take advantage of the UChicago CARES reporting and conflict resolution processes. You do not need to discuss the situation with me or anyone else befor contacting UChicago Cares unless you wish to.\nRead more:\n\nClimate & Inclusion Policy"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#course",
-    "href": "slides/Q1-W1_introduction.html#course",
-    "title": "Introduction to D2M-R",
-    "section": "Course",
-    "text": "Course\nFrom Data to Manuscript in R - Quarter 1\n\nPSYC/MAPS/MACS/CHDV 30550\nCourse website: d2m-r.github.io\nTextbook: Data to Manuscript in R\n\nIn early development!!"
+    "objectID": "slides/Q1-W2_git-github.html#housekeeping",
+    "href": "slides/Q1-W2_git-github.html#housekeeping",
+    "title": "Git & GitHub",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nAccountability plans due YESTERDAY\nMake sure you have GitHub account created\nRStudio + Git setup: happygitwithr.com"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#people",
-    "href": "slides/Q1-W1_introduction.html#people",
-    "title": "Introduction to D2M-R",
-    "section": "People",
-    "text": "People\n\n\nProfessor: Dr. Natalie Dowling\n\nPreferred name: Natalie or Dr. Dowling\nPronouns: she/her\nEmail: ndowling@uchicago.edu\nGitHub: @nrdowling\nOffice hours:\n\n1155 E 60th St, Rm 181\nThursdays 2-4pm by appointment - book here\nEmail to set up an alternative meeting time\n\n\n\nTeaching Assistant: Qilong Bi\n\nPreferred name: Qilong\nPronouns: he/him\nEmail: bql20@uchicago.edu\nGitHub: @QilongBi\nOffice hours:\n\nlocation TBA\nTuesdays 2-3:30pm (open)\n\n\n\n\nI genuinely don’t care if you call me Natalie or Dr. Dowling. I’m perfectly happy with either, so do whatever feels comfortable for you."
+    "objectID": "slides/Q1-W2_git-github.html#final_ndrevisions-finalmarch22_finalfinal.docx",
+    "href": "slides/Q1-W2_git-github.html#final_ndrevisions-finalmarch22_finalfinal.docx",
+    "title": "Git & GitHub",
+    "section": "Final_NDrevisions-finalmarch22_FINALFINAL.docx",
+    "text": "Final_NDrevisions-finalmarch22_FINALFINAL.docx\n\n\nPhD Comics: notFinal.doc"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#expectations-course-goals",
-    "href": "slides/Q1-W1_introduction.html#expectations-course-goals",
-    "title": "Introduction to D2M-R",
-    "section": "Expectations & Course Goals",
-    "text": "Expectations & Course Goals\n\nDevelop a reproducible and transparent research workflow.\nPractice accountability & time management.\nEngage with your research communities.\nDevelop problem-solving and independent learning skills.\n\n\n\nDevelop a reproducible and transparent research workflow. Plan, execute, and document a data analysis project from start to finish including data acquisition, cleaning, analysis, visualization, and reporting.\nPractice accountability & time management. Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.\nEngage with your research communities. Collaborate effectively with peers, contribute to group learning, and seek help when needed.\nDevelop problem-solving and independent learning skills. Develop specific strategies for debugging code, troubleshooting errors, asking good questions, and learning new skills independently using the myriad resources available online from R and open-science communities.\n\nD2M-R will give you:\n\nA basic knowledge of how to use GitHub, R, RStudio, Quarto/RMarkdown, and the tidyverse packages\nStrategies for how to identify and resolve bugs in the data-to-manuscript process\nSupports for establishing and maintaining a workflow within your project\nTools to implement your own data analysis and visualization plans\n\nD2M-R will not give you:\n\nComprehensive expertise in any of the tools or packages or depth in packages outside the tidyverse\nInstructors or classmates who solve your technical problems for you\nAccountability hand-holding or objectively “correct” ways of working\nNew knowledge of statistics or research design practices"
+    "objectID": "slides/Q1-W2_git-github.html#version-control-basics",
+    "href": "slides/Q1-W2_git-github.html#version-control-basics",
+    "title": "Git & GitHub",
+    "section": "Version Control Basics",
+    "text": "Version Control Basics\n\n\n\n\n\nMinimally:\n\nWhat changed?\n\nadditions, deletions, modifications\n\nWhen?\n\ntimestamp for each change\n\nWho changed what?\n\ntrack author contributions in collaborative work\n\nRevert changes!\n\ngo back to any previous version instantly\n\n\n\n\n\n\n\n\nGoogle Doc version history\n\n\n\n\n\n\n“version control” is basically a system for keeping track of changes to files over time. A very simple and user-friendly version control system is what you’ll find in the “version history” of edits on a google doc."
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#course-philosophy",
-    "href": "slides/Q1-W1_introduction.html#course-philosophy",
-    "title": "Introduction to D2M-R",
-    "section": "Course Philosophy",
-    "text": "Course Philosophy\n\n\n\n\nThis class is for you.\n\n\n\nGain foundational skills that everything else is built on\nApply those skills designed around your individual priorities, interests, and goals\n\n\n\n\n\n\n\nFour key principles\n\n\n\nStandards-based grading\nMultiple pathways to demonstrate course objectives\nTiered credit for mastery levels\nIndividualized plans and pacing\n\n\n\n\n\n\nThis course uses a standards-based grading system designed to support your skill development while accommodating diverse backgrounds, interests, and paces of learning. The system is built around the following principles:\n\nStandards-based: Your grade reflects your progress on a set of clearly defined core technical skills, interchangeably referred to as “standards” and “core objectives.”\nMultiple pathways: For most standards, you may choose from more structured activities, less structured / group activities, and minimally structured or self-designed small projects. You will show your mastery in smaller assignments and an integrative data project, both of which can be tailored to your interests and developed over the quarter.\nTiered credit: Each standard is scored using a 4 / 5 / 6 point rubric. Higher scores reflect more independent and expansive use of the skill and allow you to reach your grade goals more quickly. Lower grades may be replaced by subsequent higher grades as you develop stronger command of the skills. All three levels represent success, and earning mostly 4s does not preclude getting an A in the class.\nIndividualized: Beyond mastering technical skills that form the foundation for data analysis in R, you will also earn points for accountability, community engagement, and optional enrichment activities, with many ways to earn credit in each of these categories. There are no top-down deadlines for completing assignments to meet core standards. This structure allows you to set your own priorities based on your individual interests and goals.\nNo fixed interim deadlines: You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).\nPlanning is part of the grade: The Accountability & Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.\nEarly completion is allowed: You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter."
+    "objectID": "slides/Q1-W2_git-github.html#git-version-control",
+    "href": "slides/Q1-W2_git-github.html#git-version-control",
+    "title": "Git & GitHub",
+    "section": "Git Version Control",
+    "text": "Git Version Control\n\n\n\nGit is a robust version control system designed for text-based files\n\n\nWhat? When? Who? Revert! plus:\n\n\n\n\nWhich change is this?\n\nunique IDs for every revision\n\nWhy did it change?\n\ncommit messages explain purpose\n\nBranch and merge\n\nwork on multiple features simultaneously\n\nBackup\n\nproject (aka repository) history lives in multiple places\n\nAsynchronous collaboration\n\nidentify and resolve conflicting changes\n\nIntegration\n\nwith IDEs (e.g., RStudio) and cloud services (e.g., GitHub)\n\n\n\n\n\n\n\n\n\n\nGit commit history\n\n\n\n\n\n\nVersion control is like having a complete backup of every version of your project, plus a detailed log of what changed and why. It’s not just for programmers - anyone who works with files that change over time benefits."
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#d2m-r-workflow",
-    "href": "slides/Q1-W1_introduction.html#d2m-r-workflow",
-    "title": "Introduction to D2M-R",
-    "section": "D2M-R Workflow",
-    "text": "D2M-R Workflow\n\nCreate and sync a GitHub repo and R project\nBegin a full manuscript in a Quarto notebook (.qmd)\nUse R scripts and chunks to read in, clean, and wrangle data\nSource .R scripts for “background” needs\nAnalyze and visualize your data within your Quarto notebook\nMaintain a BibTeX file with all manuscript citations\nCompose the manuscript narrative in your notebook\n1-click knit your manuscript to a publishable file format\nDynamically update and maintain your manuscript\n\n\n\nCreate a GitHub repo and corresponding R Project that are always synced\nCreate an Quarto notebook (.qmd) that will become your full, complete, and final manuscript\nUse .R scripts to wrangle and export data into intermediate datasets that you can then quickly read-in to your manuscript in a code chunk\nCreate and source .R scripts for “background” needs like functions and style\nAnalyze and visualize your data in code chunks within your Quarto notebook\nCreate and maintain a .bib file with all the material you may cite in your manuscript using BibTeX and R citation syntax\nWrite the narrative of your manuscript in your single, dedicated notebook file\nKnit your manuscript to a publishable file format using pre-defined formatting and citation style\nDynamically update and maintain your manuscript"
+    "objectID": "slides/Q1-W2_git-github.html#git-repositories",
+    "href": "slides/Q1-W2_git-github.html#git-repositories",
+    "title": "Git & GitHub",
+    "section": "Git Repositories",
+    "text": "Git Repositories\nA repository (or “repo”) is a project folder tracked by Git. Everything Git does is centered around repos.\nGit repos can be local (on your computer) or remote (hosted on a server like GitHub).\nAny folder on your computer can be turned into a Git repository (i.e. “initialized”), but a well-organized repo typically includes a few key components:\n\nProject files (e.g., scripts, data, documents)\nMetadata files (hidden files and directories that Git uses to manage version control)\nBespoke files like README.md, .gitignore, and .yml files (more on these later)"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#quarter-1",
-    "href": "slides/Q1-W1_introduction.html#quarter-1",
-    "title": "Introduction to D2M-R",
-    "section": "Quarter 1",
-    "text": "Quarter 1\n\nCreate and sync a GitHub repo and R project\nBegin a full manuscript in a Quarto notebook (.qmd)\nUse R scripts and chunks to read in, clean, and wrangle data\nSource .R scripts for “background” needs\nFirst steps: Analyze and visualize your data within your Quarto notebook \nMaintain a BibTeX file with all manuscript citations\nCompose the manuscript narrative in your notebook\n1-click knit your manuscript to a publishable file format\nDynamically update and maintain your manuscript"
+    "objectID": "slides/Q1-W2_git-github.html#git-github",
+    "href": "slides/Q1-W2_git-github.html#git-github",
+    "title": "Git & GitHub",
+    "section": "Git ≠ GitHub",
+    "text": "Git ≠ GitHub\n\n\n\nGitHub: a web-based platform for hosting public and private Git repositories.\nGitHub and Git are related, but not the same thing.\n\n\n\n\n\n\n\nGit\n\n\n\n\nVersion control system\nTracks changes in metadata files\nYour files + metadata files = project repository (aka “repo”)\nRepos stored locally on your computer\nWorks offline\nFree & open source\nThe standard for version control\n\n\n\n\n\n\n\n\n\n\n\nGitHub\n\n\n\n\nWeb-based hosting service\nCloud storage for Git repositories\nAll repo contents, full history, additional features\nUser-friendly web interface for Git\nCollaboration tools\nFree and paid features\nOne of many Git hosting services\n\n\n\n\n\n\n\nEducation users (anyone with a .edu address) can access premium features for free.\nGITHUB is designed to promote code sharing and collaboration, but very useful for individuals, too.\nAnalogy: Git is like a local photo album, GitHub is like syncing to icloud or dropbox.\nGit does the version control work on your computer. GitHub is just one place to store and share your Git repositories online. There are alternatives like GitLab, Bitbucket, etc."
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#communication-slack",
-    "href": "slides/Q1-W1_introduction.html#communication-slack",
-    "title": "Introduction to D2M-R",
-    "section": "Communication: Slack",
-    "text": "Communication: Slack\n\nSlack participation is required\n\nYour first stop for support\n\nUse the appropriate channels\nIntended for peer collaboration\n\nMinimal instructor involvement\nPeer support is part of your grade\n\nDirect messages:\n\nDo not direct message instructors (including TAs).\nDMing with other students is permitted but not required\n\n\n\n\nSlack participation is required\nLink to join our Slack channel is on Canvas\nTHE place outside of class to get help with nearly anything\nUse the appropriate channel to request help\n\nTake your best guess if you’re not sure where it goes\n\nIntended for peer collaboration\n\nInstructors will moderate and answer questions when needed, after students have responded\nCollaborative engagement is part of your grade; you are expected to both seek and offer support to your classmates\n\nYou can DM and/or start private channels with classmates, but you are not required/expected to participate in private messaging\nDo not direct message instructors (including TAs).\n\nEmail us.\nWe will not respond to Slack DMs."
+    "objectID": "slides/Q1-W2_git-github.html#github-features",
+    "href": "slides/Q1-W2_git-github.html#github-features",
+    "title": "Git & GitHub",
+    "section": "GitHub Features",
+    "text": "GitHub Features\n\n\n\nIn this class we’ll use GitHub to:\n\nMaintain all class materials\nCreate and share your work\nSubmit assignments using pull requests\nCollaborate on group projects\n\n\n\nBut GitHub offers many more features, including:\n\nGitHub Pages\nGitHub Copilot\nActions\nProjects\nCodespaces\nIssues\n\n\n\n\n\nSome of these extras you’ll be able to play around with during this course, but they won’t be explicitly part of the syllabus. Developing familiarity with these features can contribute to the engagement portion of your grade.\n\nGitHub Pages to host websites directly from a repository\nGitHub Copilot to assist with code generation and suggestions\nActions to automate workflows\nProjects to organize and prioritize work\nCodespaces to provide cloud-based development environments\nIssues to track bugs and feature requests"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#communication-email-vs.-slack",
-    "href": "slides/Q1-W1_introduction.html#communication-email-vs.-slack",
-    "title": "Introduction to D2M-R",
-    "section": "Communication: Email vs. Slack",
-    "text": "Communication: Email vs. Slack\n\n\nEmail\n\n\n\nPrivate communication with professor/TAs\nTopics that concern you and only you\nAccommodation requests\n\n\n\n\n\nSlack\n\n\n\nClass-wide communication with instructors and students\nTopics that may concern others, e.g.:\n\nQuestions about course content\nClarifications about grading policies\nRequests for support\n\n\n\n\n\nEmail:\n\nPrivate communication with professors or TAs\nUse for personal matters, scheduling, or other private issues\n\nTopics that concern you and only you\n\nRequests for accommodations\n\nSlack:\n\nClass-wide communication with instructors and students\nTopics that may concern others, e.g.:\n\nQuestions about course content\nClarifications about course policies\nRequests for troubleshooting and debugging support\nReally anything that might help another student if they saw it!\n\nOptionally: Private communication with other students\nDr. Dowling’s office hours are Thursdays 2-4pm by appointment\n\nAppointments are required\n\nTA office hours information\nCall me either Natalie or Dr/Professor Dowling\nYou do not need to let us know if you will be missing class\n\nBut you can reach out if you feel behind due to absences\n\nBe cautious about disclosing personal information over email/Slack\n\nRemember you never need to share details about your health!\n\nStressed about emails? The student toolkit has a guide to help you out\n\nSide note: We can tell when you use chatGPT. It really doesn’t look good. We’d rather get a kind of weird email from you than one of those “I kindly request” emails.\n\nPlease do not line up to ask questions at the end of class.\n\nThose “1-minute” questions add up\nThat’s what Slack is for"
+    "objectID": "slides/Q1-W2_git-github.html#git-vocab-repo-level",
+    "href": "slides/Q1-W2_git-github.html#git-vocab-repo-level",
+    "title": "Git & GitHub",
+    "section": "Git Vocab: Repo-level",
+    "text": "Git Vocab: Repo-level\n\nRepository or repo\n\na project folder tracked by Git\n\ninit\n\ninitialize a new Git repository\n\nclone\n\ncreate your own personal copy of an existing repository\n\nfork\n\ncopy a repository keeping a connection to the original\n\nbranch\n\ncreate your own temporary line of work in a repo\n\ncheckout\n\nswitch between branches in a repo\n\n\n\nRepo: A directory (i.e., folder) the holds all documents and document edits associated with a project Init: Initializing a repo, making an existing directory ready to work with git (RStudio will do this for you) Clone: Copy an existing repository, creating a fully distinct and separate repo that you own and control Fork: Copy an existing repository, maintaining a connection to the original; you have full control over your fork, but not the original repo Branch: Create an isolated segment of a repo (that you own), so that you can make many changes before combining it back with the original (for collaboration) Checkout: Swap between different branches of a repo"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#climate",
-    "href": "slides/Q1-W1_introduction.html#climate",
-    "title": "Introduction to D2M-R",
-    "section": "Climate",
-    "text": "Climate\n\nView the class climate policy here.\nBasically, just be cool, ok?\nIf you have problems with other students or the TA:\n\nContact me first\nEscalate to UChicago CARES\n\nIf you have a problem with me:\n\nDiscuss it with me directly if you feel comfortable doing so\nBring it to UChicago CARES\n\nYou can always go to CARES without going through me or anyone else first.\n\n\n\nView the class climate policy here.\nBut really just…be cool, ok?\nWe will all be kind, respectful, responsive, and supportive to one another in the classroom, on Slack, and all other interaction.\nIf you have problems with other students or the TA:\n\nContact me first (if possible)\nIf we can’t resolve it contact UChicago CARES\n\nIf you have a problem with me\n\nDiscuss it with me directly if and only if you feel comfortable doing so\n\nI never want to be the cause of discomfort for anyone! If you have feedback that can help me be a better instructor, I want to hear it.\n\nBring it to UChicago CARES\n\nYou can always go to CARES without going through anyone else first, but my goal is to create a classroom climate where you feel comfortable talking to me about ways to create a more welcoming and respectful environment."
+    "objectID": "slides/Q1-W2_git-github.html#git-vocabulary-file-level",
+    "href": "slides/Q1-W2_git-github.html#git-vocabulary-file-level",
+    "title": "Git & GitHub",
+    "section": "Git Vocabulary: File-level",
+    "text": "Git Vocabulary: File-level\n\nstage\n\nprepare changes for commit\n\ncommit\n\nsave a snapshot of changes with a descriptive message\n\nfetch\n\nget latest changes from remote repo without merging\n\nmerge\n\ncombine changes from different branches\n\npull \n\nget latest changes from remote repo (=fetch+merge)\n\npush\n\nsend your commits to remote repo\n\nmerge conflict\n\nconflicting changes that need manual resolution\n\n\n\nStage: The process of selecting which changed files to include in the next commit\nCommit: A snapshot of changes in the repo; documented with an informative note left for posterity called a commit message\nPull: Synchronizing your local repo with latest changes from a remote server (like Github)\nPush: Sending your commits (and the changed docs) from your local repo to the remote server\nDiff: The process run by git comparing and combining old and new files when you push changes\nMerge: The resulting process of a diff, where multiple versions of a file are intelligently combined\nMerge conflict: Error (recognized in the diff) where multiple changes to any single line of text can’t be automatically resolved and require user decisions"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#accessibility-accommodation",
-    "href": "slides/Q1-W1_introduction.html#accessibility-accommodation",
-    "title": "Introduction to D2M-R",
-    "section": "Accessibility & Accommodation",
-    "text": "Accessibility & Accommodation\n\nRequests for formal accommodations should go through Student Disability Services\n\nGraduate students need to request accommodation letters be sent to me\nYou never need to disclose personal details to me or anyone outside SDS\n\nMeet with me in office hours for informal accommodation requests\nYou will factor your own accommodations into your accountability plan\n\n\nNote: All arrangements must align with SDS policies for equity. Informal accommodations cannot disadvantage students with formal accommodations.\n\nRequests for formal accommodations should go through Student Disability Services\n\nSDS will send undergraduate accommodation letters to me automatically\nGraduate students need to ask SDS to send me a letter\nYou never need to disclose personal details to me or anyone outside SDS\n\nIf you have an informal request for an accommodation, with me in office hours\n\nWe can almost always work something out, but we need to follow SDS policies\n\nAfter sending your letter, schedule a meeting with me to make an accommodation plan\n\nIf you do need accommodations, you will factor your accommodation plan into your accountability plan (coming up in a couple slides)"
+    "objectID": "slides/Q1-W2_git-github.html#commits-snapshots-in-time",
+    "href": "slides/Q1-W2_git-github.html#commits-snapshots-in-time",
+    "title": "Git & GitHub",
+    "section": "Commits: Snapshots in Time",
+    "text": "Commits: Snapshots in Time\nA commit is the metadata associated with a change.\n\n\n\ncommit UNIQUE ID HASH\nAuthor: YOUR NAME &lt;YOUR@EMAIL.ADDRESS&gt;\nDate: FULL DATE & TIMESTAMP\n    \n    ONE LINE SUMMARY OF CHANGE(S)\n    \n    - OPTIONAL\n    - DESCRIPTIVE\n    - DETAILS\n\n\ncommit a3d2f1b\nAuthor: Natalie Dowling &lt;ndowling@uchicago.edu&gt;\nDate: Mon Jan 20 14:30:15 2026\n    \n    Add data cleaning script for survey responses\n    \n    - Remove duplicate entries\n    - Standardize column names  \n    - Handle missing values in age variable"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#disclosing-personal-information",
-    "href": "slides/Q1-W1_introduction.html#disclosing-personal-information",
-    "title": "Introduction to D2M-R",
-    "section": "Disclosing personal information",
-    "text": "Disclosing personal information\nYou are never required to disclose personal information to me or any instructors. These guidelines are for all classes at UChicago, not just this one.\nYou do not need to:\n\nShare details about your health, disability, or reasoning for accommodations\nGet a doctor’s note for absences\n\nYour instructor is not allowed to ask for one!\n\nDefend your need for accommodations\n\n\nYou are an adult with priorities and the capacity for cost/benefit decision-making. You can decide what you want to share and with whom. If you need to miss class because you have terrible period cramps, are having a panic attack, are recovering from a migraine, think your roommate might have COVID, need to cram for an exam for a different class, are shamefully hung over, or just really don’t wanna come to campus, you do not need to explain yourself to me or anyone else. Just take care of yourself, and take responsibility for effects on your learning and grades.\nThis doesn’t mean there are never consequences for missing class. You are responsible for keeping up with the material and assignments (per your accommodations, if applicable), and are subject to penalties defined by the syllabus."
+    "objectID": "slides/Q1-W2_git-github.html#commit-messages-best-practices",
+    "href": "slides/Q1-W2_git-github.html#commit-messages-best-practices",
+    "title": "Git & GitHub",
+    "section": "Commit Messages: Best Practices",
+    "text": "Commit Messages: Best Practices\n\n\n\nGood commit messages:\n\nDescribe what and why, not how\nStart with a present tense verb (“Add”, “Fix”, “Update”)\nFirst line under 50 characters\n\n\nAdd data cleaning script for survey responses\n\nMove glms out of qmd into a separate script\n\nStart zero-drafting methods\n\n\n\nBad commit messages:\n\nVague\nUninformative\nCover way too many or unrelated changes\n\n\nUpdates to data\n\nFriday afternoon commit\n\ndata cleaning script, move glms, start methods, fix typos, add bibliography\n\n\n\n\n\n\n\n\n\n\n\n\nA shameful confession\n\n\nI am a total hypocrite and rarely follow these guidelines. Actual commits from my actual repos: oops i broke the kid data but the adult glms work now, omg i can't anymore here are some broken plots fix this later or don't i don't care, i need a drink.\nI’m not proud, but what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you).\n\n\n\n\n\n\n\n\nI am a total hypocrite and rarely follow these “good” and “bad” guidelines. The longer I work, the more likely my commit messages devolve into oops i broke the kid data but the adult glms work now or omg i can't anymore here are some broken plots fix this later or don't i don't care or i need a drink.\nThese are actual commits from my actual repos. I’m not proud. Present-me is often pretty frustrated with past-me’s choices, but I can’t pretend that I don’t also find it entertaining and humanizing. (You’d think I wouldn’t need to humanize myself to myself, wouldn’t you? You’d be wrong.)\nWhile I encourage you to do as I say, not as I do, what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you)."
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#academic-integrity-overview",
-    "href": "slides/Q1-W1_introduction.html#academic-integrity-overview",
-    "title": "Introduction to D2M-R",
-    "section": "Academic Integrity: Overview",
-    "text": "Academic Integrity: Overview\n\n\nView the academic integrity policy here.\nPlagiarism is bad. Cheating is bad. Don’t do it.\n\nWhy are you even here?\n\nAll written/textual content in your submitted assignments must be fully produced by you\nCode may be produced with AI (or human) assistance with a full disclosure statement\nDisclosure statements are required for all submitted work"
+    "objectID": "slides/Q1-W2_git-github.html#github-cardinal-rules",
+    "href": "slides/Q1-W2_git-github.html#github-cardinal-rules",
+    "title": "Git & GitHub",
+    "section": "Git(Hub) cardinal rules",
+    "text": "Git(Hub) cardinal rules\n\n\n\n\n\n\nYour workflow:\n\n\n\n\nCommit little & commit lots\n\n\n\nPull before you start editing\nCommit often as your work\nPush when you close your session\n\n\n\n\n\n\n\nThou shalt:\n\nUse frequent, informative commit messages\nUse a .gitignore to specify files and filetypes to keep local\nMaintain a README.md file documenting your repo’s structure and purpose\nBe intentional managing public and protected files\n\n\n\nRemember the whole point of GitHub is version control!\nEach assignment has a unique repo. Each repo is a unique files.\nNever create multiple copies of the same files!!!\n\n\n\n\n\nCommit little; commit often\n“little” as in the commits themselves are little changes\nUse a .gitignore to specify files and filetypes that should not be included in pulls or pushes Maintain a README.md file providing at least minimal documentation of the structure of your repo and purpose of the project Make purposeful and wise decisions about managing public, private, and protected data and files Use informative commit messages Pull before you start editing; commit as you work; push when you close your session\nRemember the whole point of github is version control!\nEach assignment has a unique repo. Each repo is a unique files.\nDo not create multiple copies of the same files!!!\nYour repos are the homes of your projects, not a random collection of notes and homework. Keep them organized, future-proof, and collaborator-friendly for contexts beyond this class.\n\n\nThis means you should have way more commits than pushes. Each commit is a snapshot of your project at a specific point in time. Pushing sends all your committed changes to GitHub."
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#academic-integrity-grading-penalties",
-    "href": "slides/Q1-W1_introduction.html#academic-integrity-grading-penalties",
-    "title": "Introduction to D2M-R",
-    "section": "Academic Integrity: Grading Penalties",
-    "text": "Academic Integrity: Grading Penalties\n\n\n\n\nYou will not be penalized for (with disclosure):\n\n\n\nUsing AI to help you with code\nUsing code snippets from print or online resources\nCo-writing code with classmates/other humans\nUnintentionally crossing the line with AI if it is fully disclosed\n\nI will ask to you revise and resubmit without penalty\n\n\n\n\n\n\n\nYou will be penalized for:\n\n\n\nFailing to disclose any of the above\nUsing AI to generate text for ANY submitted work\nUsing text written by any human other than you, including classmates\n\nExceptions for some group projects may be granted, but must be requested in advance\n\n\n\n\n\n\n Submissions that do not follow these guidelines will receive a non-negotiable 0."
+    "objectID": "slides/Q1-W2_git-github.html#merge-conflicts",
+    "href": "slides/Q1-W2_git-github.html#merge-conflicts",
+    "title": "Git & GitHub",
+    "section": "Merge Conflicts",
+    "text": "Merge Conflicts\nmerge conflict: Git cannot automatically reconcile differences between two versions of a file\nSymbols like &lt;&lt;&lt;, ===, and &gt;&gt;&gt; mark conflicting sections.\nAll you have to do is change the text and delete the markers.\n\n\n\nWhat you’ll see in a conflicted file:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nThis is the original line in the file.\n=======\nThis is the conflicting change made by another user.\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-branch\n\n\nYou manually edit the file to resolve the conflict:\nThis is the original line in the file.\nThis is the conflicting change made by another user.\n\n\n\n\nA merge conflict occurs when Git cannot automatically reconcile differences between two versions of a file. You’ll see symbols like &lt;&lt;&lt;, ===, and &gt;&gt;&gt; marking the conflicting sections. All you have to do is change the text and delete the markers."
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#academic-integrity-you-ai",
-    "href": "slides/Q1-W1_introduction.html#academic-integrity-you-ai",
-    "title": "Introduction to D2M-R",
-    "section": "Academic Integrity: You & AI",
-    "text": "Academic Integrity: You & AI\n\n\n\n\n\nThe AIlephant in the room. This is DALL-E’s best attempt at “An elephant with the letters A and I on its ears.” Not very impressive, but I can’t blame it too much. It wasn’t a good pun to begin with.\n\n\n To see GPT’s coding skills in action, watch DougDoug force it to create Snake 2 (with mixed success).\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nIf you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nMy personal AI philosophy & Official Class Policy\n\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nHopefully you are using the class to make progress on a research project you are invested in. If you do not use AI wisely, you may not be “cheating” in a way that will hurt your grade, but you will be cheating yourself out of the reason you joined the class. If you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nYou can read my guide for what I personally believe are ethical and constructive uses of AI in higher education."
+    "objectID": "slides/Q1-W2_git-github.html#git-in-the-command-line",
+    "href": "slides/Q1-W2_git-github.html#git-in-the-command-line",
+    "title": "Git & GitHub",
+    "section": "Git in the Command Line",
+    "text": "Git in the Command Line\nLocal git repos are managed through the command line (Terminal on Mac, Git Bash on Windows)\n\n\nStep 1: Set up your local workspace\n# navigate to local repo directory\ncd repos/d2m-r/slides\n\n# get latest changes from upstream repo\ngit pull origin main\n\n\nStep 2: Do stuff. Make changes, additions, whatever in the repo files\n\n\nStep 2.5: Commit your work frequently after every “nameable” change.\n# commit staged changes with \"m\"essage\ngit commit -m \"Create first draft for GitHub lecture\"\n\n\nStep 3: Send your committed changes back to the remote repo\n# send commits to upstream repo\ngit push origin main\n\n\nLocal git repos are managed through the command line (Terminal on Mac, Git Bash on Windows). The process of sitting down to work, pulling from an upstream repo, making a few changes, adding those edited files to the staging area, committing with a brief commit message, and then pushing to upstream at the end of your work session might look something like this."
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#grading-overview",
-    "href": "slides/Q1-W1_introduction.html#grading-overview",
-    "title": "Introduction to D2M-R",
-    "section": "Grading Overview",
-    "text": "Grading Overview\nEarn up to 100 points across five categories:\n\n\n\nPoints\nCategory\nDescription\n\n\n\n\n10\nAccountability\nCreate and maintain a personalized accountability plan\n\n\n10\nCommunity Engagement\nParticipate actively in class and on Slack\n\n\n60\nCore Standards Mastery\nDemonstrate proficiency on 12 core technical skills (standards)\n\n\n20\nIntegrative Data Project\nComplete a comprehensive data analysis project demonstrating mastery of all core standards\n\n\n((10))\nEnrichment\nOptional activities to deepen learning and supplement core work\n\n\n\nBecause enrichment points are optional, it is possible to earn more than 100 raw points across categories. Final course grades are capped at 100.\n\nYou start at 0 points and work up to 100. You don’t start at 100 and lose points. Meeting minimum requirements means you will pass the class. Earning an A takes more than that."
+    "objectID": "slides/Q1-W2_git-github.html#git-in-rstudio-git-pane",
+    "href": "slides/Q1-W2_git-github.html#git-in-rstudio-git-pane",
+    "title": "Git & GitHub",
+    "section": "Git in RStudio: git pane",
+    "text": "Git in RStudio: git pane\n\nThe git pane displays a list of all tracked files in your repo, along with their current status.\n\nPull: get latest changes from remote repo\nStage: select files to include in next commit\nCommit: save a snapshot of staged changes with a descriptive message\nPush: send your commits to remote repo\n\n\nIn D2M-R, you’ll interact with Git through RStudio rather than Terminal or Command Prompt.\nYou’ll mostly use the Git pane, which gives you a pretty user-friendly interface for the same commands you would run in the terminal.\nBut you can also use the Terminal tab in RStudio to run git commands directly, exactly as you would in a standalone terminal.\nYou’ll need this for more advanced tasks like resolving merge conflicts, but you can always opt to use it instead of the interface if you prefer.\n\nClicking the down arrow icon allows for pulling with “rebase”"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#accountability-plan-10pt",
-    "href": "slides/Q1-W1_introduction.html#accountability-plan-10pt",
-    "title": "Introduction to D2M-R",
-    "section": "Accountability Plan (10pt)",
-    "text": "Accountability Plan (10pt)\n\n\nYou create an assignment schedule for yourself.\n\n\n\nDefining your own goals is part of the research workflow and an explicit learning objective and part of your grade\nSDS approved accommodations for extensions are built into your plan\nYou will create a personal timeline and accountability plan for the quarter\n\n\n\n\n\nAccountability is 10% of your final grade.\n\n\n\nMeeting the 3 checkpoint deadlines for the plan itself (meta-deadlines); Mondays of Weeks 2, 5, and 8\nMeeting the deadlines you set for yourself\nReflecting on your progress and making adjustments\nSuggesting a grade (of 10)\n\n\n\n\n\nNo fixed interim deadlines: You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).\nPlanning is part of the grade: The Accountability & Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.\nEarly completion is allowed: You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter.\nYou create an assignment schedule for yourself. With very few exceptions, there are no top-down deadlines in this class. Why?\n\nThis class is about developing and maintaining a research workflow\nA major part of that is learning how to set and meet your own deadlines\nMaking your own plan and sticking to it is part of the syllabus\n\nThis means that “reasonable accommodations” must not prevent you from reaching this objective\n\n\nYou will create a personal timeline and accountability plan for the quarter\n\nInitial plans are due by Monday of Week 2\nRevised plans and reflections are due by Monday of Week 5\nFinal reflections are due Monday of Week 8\n\nYou can base your plan on the suggested timeline in the assignment instructions\n\nUse the suggested plan without changes (great option of the idea of designing your own schedule feels overwhelming)\nStart with this plan and make adjustments\nStart from scratch!\n\nIf your SDS accommodations include extended deadlines, you will factor those into the plan\n\ni.e. We are using this plan to agree on extensions now. I will not grant extensions to the planned extensions as we go.\n\n10% of your final grade is based on your accountability plan, including:\n\nMeeting the actual deadlines that I have set for the plan itself\nMeeting the deadlines you set for yourself\nReflecting on your progress and making adjustments to your plan\nSuggesting a grade (of 10) for how well you think you followed your plan"
+    "objectID": "slides/Q1-W2_git-github.html#git-in-rstudio-git-window",
+    "href": "slides/Q1-W2_git-github.html#git-in-rstudio-git-window",
+    "title": "Git & GitHub",
+    "section": "Git in RStudio: git window",
+    "text": "Git in RStudio: git window\n\n\n\n\n\nThe git window opens when you click commit, diff, or history. It includes everything from the pane, plus:\n\nDiff viewer: see line-by-line changes in selected files\nRevert button: reset local changes in selected files back to their last commit\nIgnore button: add selected files to your .gitignore and remove them from your staging area\nCommit message box: write descriptive messages for your commits\nCommit history: view past commits and their messages, where you can revert the whole repo\n\n\n\n\nWhen you click the commit button in the git pane, it opens the git window.\nYou can make multiple commits at once by staging (checking off) only a subset of files that have related changes. Describe the changes and commit. You’ll see leftover files in the git pane that you can stage and commit separately. This avoids overly broad commit messages that cover unrelated changes."
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#community-engagement-10pt",
-    "href": "slides/Q1-W1_introduction.html#community-engagement-10pt",
-    "title": "Introduction to D2M-R",
-    "section": "Community Engagement (10pt)",
-    "text": "Community Engagement (10pt)\nAttending class and paying attention are basic expectations. Your engagement grade is based on how you show investment in the course and your peers, both in and out of class.\n\nIn-class:\n\nAsk and answer questions during lecture\nUse workshop time wisely and generously\nParticipate in group activities\n\nOutside the classroom:\n\nBe an active participant on Slack\nSeek support from peers and instructors when needed\nCollaborate with peers\nComplete collaborative assignments\n\n\n\nAside from the basic expectation that you’ll attend class and pay attention, this can look different for everyone. The community engagement grade is not about meeting the minimum requirement (e.g., attending class!). It’s about demonstrating a high level of investment in the course and your peers. This is not an attendance grade.\nHere’s a non-exhaustive list of things that can contribute to the community engagement grade:\n\nIn-classroom:\n\nMake active contributions in a large group setting by asking/answering questions during lecture\nUse workshop time wisely and generously, seeking and offering support from/to classmates with debugging and troubleshooting\nParticipating in group activities\nGenerally paying attention and staying focused during class time\n\nOutside the classroom:\n\nBe an active participant on the class Slack channel, both asking and answering questions\nGet support from classmates, TAs, and the professor\nTeam up with a partner or small group to meet for working groups outside of class\nTake on one or more of the optional collaborative assignments in the assessment menu"
+    "objectID": "slides/Q1-W2_git-github.html#repository-structure",
+    "href": "slides/Q1-W2_git-github.html#repository-structure",
+    "title": "Git & GitHub",
+    "section": "Repository Structure",
+    "text": "Repository Structure\nA typical Git repository includes:\n\n\nProject files\n\nThe actual content of your project (e.g., scripts, data, documents), organized in a logical folder structure\n\nMetadata files\n\nHidden files and directories (like .git/) that Git uses to manage version control\n\nREADME.md\n\nA markdown file that provides an overview of the project, instructions for use, and other relevant information\n\n.gitignore\n\nA text file that specifies which files or directories Git should ignore\n\nConfiguration files (as needed)\n\nThings like .yml options, bibliography files, themes, etc."
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt",
-    "href": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt",
-    "title": "Introduction to D2M-R",
-    "section": "Core Standards Mastery (60pt)",
-    "text": "Core Standards Mastery (60pt)\nDemonstrate proficiency on 12 core technical skills (standards) selecting from a project menu.\n\nStructured assignments that guide you through skills step-by-step\nSemi-structured assignments that provide a clear framework with room for creativity\nUnstructured assignments that give suggested approaches to meet objectives\nGroup assignments\n“Off-the-menu” Self-designed small projects"
+    "objectID": "slides/Q1-W2_git-github.html#repo-structure-example-1",
+    "href": "slides/Q1-W2_git-github.html#repo-structure-example-1",
+    "title": "Git & GitHub",
+    "section": "Repo Structure: Example 1",
+    "text": "Repo Structure: Example 1\n\n\nProject file directories\n\n/localonly: only present in your local R Project, listed in your .gitignore and never synced to github\n/data: .csv/tabular data files for all raw or intermediate datasets read into in your .qmd, optional /raw subfolder for raw data read (only) into unsourced R scripts\n/source: .R scripts to be called in an early chunk of your .qmd, e.g., stylistic preferences, functions, minor data wrangling\n/images: exported figures and any image files to read-in to your R Markdown manuscript\n/_extensions: auto-generated or installed Quarto extensions, like apaquarto\n\n\n\nTop-level files\n\nREADME.md: project overview, repo structure, to-do list, etc.\n.gitignore: starting from the R .gitignore template\nproject-manuscript.qmd: the home of your eventual publication \nbibliography.bib: a plain-text file containing all the BibTeX entries cited in your manuscript\nyourCitationStyle.csl: the script used to format in-text and bibliography citations when knitting"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt-1",
-    "href": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt-1",
-    "title": "Introduction to D2M-R",
-    "section": "Core Standards Mastery (60pt)",
-    "text": "Core Standards Mastery (60pt)\nThe 12 core skills for the first quarter are:\n\nRStudio + Quarto workflow\nGitHub repositories and version control\nBase R syntax and data structures\nControl flow (if/else, loops)\nDefining functions in Base R\nImporting data with tidyverse tools\nData manipulation with dplyr and pipelines\nTidy data structure\nReshaping data with tidyr\nCharacter strings with stringr\nFactors with forcats\nBasic reporting: plots and descriptives in Quarto\n\n\nYou earn points by demonstrating each of 12 specific learning objectives\n\nRStudio + Quarto workflow\n\nCreate an RStudio project for course work, use relative paths, and knit simple Quarto documents that combine code and narrative.\nAdditional guidelines for RStudio/Quarto Workflow objective\n\nGitHub repositories and version control\n\nCreate and maintain a GitHub repo with README, .gitignore, and a commit history that reflects real work over time.\nAdditional guidelines for GitHub/Version Control objective\n\nBase R syntax and data structures\n\nCreate, index, and manipulate vectors, lists, and data frames, including handling missing data.\n\nControl flow (if/else, loops)\n\nUse if/else and loops to branch logic and automate repetitive tasks in multiple contexts.\n\nDefining functions in Base R\n\nDefine and use functions with arguments and return values with reusable code logic in multiple contexts.\n\nImporting data with tidyverse tools\n\nImport datasets with readr and related packages, handling paths and basic options.\n\nData manipulation with dplyr and pipelines\n\nUse multiple dplyr verbs (filter, select, mutate, summarize, arrange, group_by) in chained pipelines.\n\nTidy data structure\n\nDiagnose untidy data and reshape to a tidy format, with explanation.\n\nReshaping data with tidyr\n\nUse multiple tidyr functions (pivot_longer/pivot_wider/separate/unite) to reshape data.\n\nCharacter strings with stringr\n\nUse stringr functions (e.g., str_detect, str_replace, str_extract) to solve text cleaning or extraction tasks.\n\nFactors with forcats\n\nRecode, reorder, and/or lump factor levels to prepare categorical variables for analysis or plotting.\n\nBasic reporting: plots and descriptives in Quarto\n\nCreate simple ggplot2 plots and compute/report basic descriptive statistics (means, medians, counts, proportions) in a Quarto document with clear captions and narrative."
+    "objectID": "slides/Q1-W2_git-github.html#repo-structure-example-2",
+    "href": "slides/Q1-W2_git-github.html#repo-structure-example-2",
+    "title": "Git & GitHub",
+    "section": "Repo Structure: Example 2",
+    "text": "Repo Structure: Example 2\nA simple, generic project:\nquarto-manuscript-project/\n├── README.md\n├── .gitignore\n├── project-manuscript.qmd\n├── bibliography.bib\n├── yourCitationStyle.csl\n├── localonly/                 // ONLY ON YOUR COMPUTER, NOT GITHUB\n├── data/\n│   ├── raw/                   // Raw data read into unsourced R scripts\n│   └── cleaned-data.csv       // Processed data read into your .qmd\n├── source/\n│   ├── style-preferences.R    // Styling/theming\n│   ├── custom-functions.R     // Reusable functions\n│   └── data-wrangling.R       // Minor data prep\n├── images/\n│   ├── figure1.png\n│   └── figure2.png\n└── _extensions/\n        └── apaquarto/             // Auto-generated extension files"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt-2",
-    "href": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt-2",
-    "title": "Introduction to D2M-R",
-    "section": "Core Standards Mastery (60pt)",
-    "text": "Core Standards Mastery (60pt)\nEach standard is scored on a 4 / 5 / 6 point scale based on the quality and independence of your demonstration of the skill.\n\n\n\n\n\n\n\n\nPoints\nLabel\nDescription\n\n\n\n\nNo grade\nNo demonstration\nYou have not yet demonstrated this skill.\n\n\n4\nMeets Expectations\nYou demonstrate the skill correctly in structured or familiar contexts.\n\n\n5\nExceeds Expectations\nYou apply the skill correctly and independently in a novel context.\n\n\n6\nOutstanding\nYou use the skill in an especially expansive way.\n\n\n\n\nEach standard is scored on a 4 / 5 / 6 point scale based on the quality and independence of your demonstration of the skill.\n\n\n\n\n\n\n\n\nPoints\nLabel\nDescription\n\n\n\n\nNo grade\nNo demonstration\nYou have not yet demonstrated this skill.\n\n\n4\nMeets Expectations\nYou demonstrate the skill correctly in structured or familiar contexts (for example, following a guided assignment or closely modeled example).\n\n\n5\nExceeds Expectations\nYou apply the skill correctly and independently in a novel context, with clear, well-chosen code that would generalize to new datasets or problems.\n\n\n6\nOutstanding\nYou use the skill in an especially expansive way: combining it with other skills, applying\n\n\nit to a complex or less-structured task, or going beyond the scope of in-class examples.\n\n\n\n\n\nAll three levels (4, 5, 6) are successful demonstrations. If you do not demonstrate a skill at least at the 4-point level, you will not earn credit for that standard.\nEarning an average of 5 points per standard will earn you all 60 points. An average lower than 5 points can still result in an ‘A’ grade for the class if you complete enrichment activities.\nEach assignment will receive a score for each standard it addresses based on this rubric. Individual assignments may not be resubmitted for a higher score, but you may improve your score for a standard by submitting new assignments that demonstrate that standard at a higher level.\nHigher scores always replace lower scores for core standards, so after earning a high score with an impressive assignment, subsequent assignments that use the skill at a more basic level won’t lower your score."
+    "objectID": "slides/Q1-W2_git-github.html#hidden-files-and-directories-non-exhaustive-list",
+    "href": "slides/Q1-W2_git-github.html#hidden-files-and-directories-non-exhaustive-list",
+    "title": "Git & GitHub",
+    "section": "Hidden files and directories (non-exhaustive list)",
+    "text": "Hidden files and directories (non-exhaustive list)\n\n.git/ - Git metadata, what makes Git work\n.Rproj.user/ - RStudio project settings\n.quarto/ - Quarto project settings\n.Rproj\n.RData\n.Rhistory\n.DS_Store\n\n\nRepos and R Projects will also include some hidden files and directories\n\n.git/ - Git metadata, what makes Git work\n.Rproj - RStudio project settings\n.quarto/ - Quarto project settings\n\nYou won’t interact with these directories directly, and you won’t see them in RStudio or on GitHub.\nYou may also have other hidden files, for example:\n\n.Rproj.user\n.RData\n.Rhistory\n.DS_Store\n\nYou won’t interact with these either but they won’t always be fully hidden in every interface. You can add them to your .gitignore file so they don’t clutter up your repo."
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#access-and-complete-core-projects",
-    "href": "slides/Q1-W1_introduction.html#access-and-complete-core-projects",
-    "title": "Introduction to D2M-R",
-    "section": "Access and Complete Core Projects",
-    "text": "Access and Complete Core Projects\n\nVisit the menu of core standards assignments here.\nSelect assignments that address the standards you want to demonstrate.\nUse the links on the menu to create a repo within the D2M-R GitHub organization by either:\n\nAccepting the GitHub classroom invitation (if available)\nCreating a private repo from scratch and adding in the associated files from the student hub repo\n\nComplete the assignment according to the instructions in the assignment’s README file or Quarto notebook.\nComplete the corresponding submission document (student-hub/templates)\nFinalize your assignment with a GitHub pull request.\nSubmit to the grading queue with the “Submit” form on the website.\n\nThere are extremely detailed instructions for how do do each step of this process in the student-hub repo, on each submission document, and on the website. Start here.\nWe’ll do a demo of what this looks like later."
+    "objectID": "slides/Q1-W2_git-github.html#readme.md",
+    "href": "slides/Q1-W2_git-github.html#readme.md",
+    "title": "Git & GitHub",
+    "section": "README.md",
+    "text": "README.md\n\nA README.md file provides a project overview. It is typically the first thing someone sees when they visit your repository on GitHub.\n\nSimple markdown (.md) document\nWhat you see rendered on a repo’s GitHub page\nCan do lots of things, but should at a minimum describe:\n\nPurpose of the repo\nDataset(s)\nRepo structure\nAny relevant licensing, restrictions, or citations"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#integrative-data-project-20pt",
-    "href": "slides/Q1-W1_introduction.html#integrative-data-project-20pt",
-    "title": "Introduction to D2M-R",
-    "section": "Integrative Data Project (20pt)",
-    "text": "Integrative Data Project (20pt)\n\n\n\nThe final project is a data analysis report created with RStudio and maintained in a GitHub repo that includes:\n\nData import\nData wrangling/cleaning\nBasic descriptive statistics\nSimple data visualization\nNarrative markdown text explaining your choices and findings"
+    "objectID": "slides/Q1-W2_git-github.html#gitignore-what",
+    "href": "slides/Q1-W2_git-github.html#gitignore-what",
+    "title": "Git & GitHub",
+    "section": ".gitignore: what",
+    "text": ".gitignore: what\n\n\n\nA .gitignore file tells Git which files and directories to ignore when comparing differences between versions.\n\nPlain text file w/out extension\nFiles & folders that should be excluded from all git processes\nMatched on strings in file/folder names, including wildcard characters and simplified regex\nView documentation"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#integrative-data-project-20pt-1",
-    "href": "slides/Q1-W1_introduction.html#integrative-data-project-20pt-1",
-    "title": "Introduction to D2M-R",
-    "section": "Integrative Data Project (20pt)",
-    "text": "Integrative Data Project (20pt)\nEarn up to 20 points on the data project:\n\n\n\n\n\n\n\n\nPoints\nComponent\nDescription\n\n\n\n\n12\nCore standards\nDemonstrate all 12 core standards at 4pt-level or above\n\n\n2\nReproducibility\nCode is fully reproducible, with no errors\n\n\n2\nDocumentation\nCode is clearly commented with explanatory Quarto narrative text\n\n\n2\nCohesion\nData wrangling, statistics, and plots are clearly connected with narrative text\n\n\n2\nPresentation\nQuarto document is well-formatted and knits without error\n\n\n\nSubmit your data project up to 3 times to get early feedback and/or complete the requirement early.\n\n“Above and beyond” demonstrations of core standards or exceptional quality may receive bonus points at the grader’s discretion, but the project cannot contribute more than 20 points to the final grade. In other words, outstanding use of one standard might earn you a point that compensates for weaker presentation or documentation, but not a point of extra credit.\nYou may submit the data project up to 3 times throughout the quarter. With each draft, you will also include a self-assessment, indicating which standards you believe you have demonstrated and how well you have met each of the grading components above. After scoring your work, your grader will provide feedback as a response to your self-assessment to help you improve your project for future submissions.\nYou are allowed – and encouraged! – to submit partial drafts of your project to confirm that you are on the right track before submitting a full draft. You aren’t expected to be able to demonstrate a skill before we cover it in class, so early submissions may only demonstrate a subset of the standards. That’s fine! Submitting a draft that shows only a few objectives will let you confirm that you are in fact meeting expectations for those objectives and will give you guidance on where to go next.\nGrades for resubmissions will replace previous scores. Your grade for the data project will be the score earned on your last submission before the end-of-quarter deadline."
+    "objectID": "slides/Q1-W2_git-github.html#gitignore-why",
+    "href": "slides/Q1-W2_git-github.html#gitignore-why",
+    "title": "Git & GitHub",
+    "section": ".gitignore: why",
+    "text": ".gitignore: why\n\nNot everything belongs online.\n\n\n\nPRIVACY.\n\nDo not upload anything with sensitive or identifiable information.\nIt is your responsibility to follow your IRB.\n\nSecurity\n\npasswords, security keys, login tokens\n\nBloat\n\nGit is designed for text files\nLarge files push very slowly and can cause RStudio to hang\nSome files are regenerated automatically\n\nConflict\n\n“behind the scenes” files that actually interact with local, git, or R processes will conflict for baffling reasons (sort of a technological observer effect)"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#enrichment-up-to-10pt",
-    "href": "slides/Q1-W1_introduction.html#enrichment-up-to-10pt",
-    "title": "Introduction to D2M-R",
-    "section": "Enrichment (up to 10pt)",
-    "text": "Enrichment (up to 10pt)\n10 optional points: customize your curriculum to your own interests\nYou can earn 100 points without any enrichment points.\nExamples include:\n\nDebugging journals that document how you worked through specific problems\nShort write‑ups teaching a peer how to do something (e.g., connecting RStudio and GitHub)\nReflections on responsible and productive use of AI tools in your workflow\nEvidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)\nContributions to open‑source R packages or communities (e.g., GitHub issues, Stack Overflow answers)\n\n\n\n\n\n\n\n\nWhere do I find them?\n\n\nFor the most part it’s up to you to design your own enrichment activities. Figuring out for yourself what would be most useful for your own learning is part of the point of this category. If you are totally lost as to where to start, there are a few unstructured activities available in the student-hub repo.\n\n\n\n\n\nEnrichment activities are not part of the base structure of the course grade. Instead, they give you a way to recover or add points if you choose a more structured path or if some standards land at the 4‑point level.\nThis is effectively up to 10 points of extra credit, but I don’t like thinking about these skills or these kinds of experiences as “extra.” I believe this category is as valuable as the core skills, but necessarily fuzzier and more open-ended. These 10 optional points are a way for you to customize your curriculum in this class to your own interests and goals.\nExamples include:\n\nDebugging journals that document how you worked through specific problems\nShort write‑ups teaching a peer how to do something (e.g., connecting RStudio and GitHub)\nSimple documentation for your own utility functions\nReflections on responsible and productive use of AI tools in your workflow\nEvidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)\nShort explorations of advanced R packages or techniques beyond the core curriculum\nIdentifying a need in your own research workflow and designing a solution using R\nDiscovering and effectively making use of specialized R packages for your specific needs\nMini‑projects that apply course skills to your own research questions (must be different from your final data project)\nContributions to open‑source R packages or communities (e.g., GitHub issues, Stack Overflow answers)\n\nThis is not a comprehensive list, and really the more creative and customized you approach this, the more useful it will be for your own learning (and the easier it will be to earn points). If you have an idea for an enrichment activity that isn’t listed here, send an email to Dr. Dowling to confirm that it is appropriate before you start working on it.\nYou may submit evidence for enrichment points up to 5 times during the quarter. Evidence may be in the form of a dedicated project (e.g., a debugging journal) or as a companion to another assignment (e.g., writing up how you used AI tools to help solve a problem in a core standards assignment). Points will be awarded based on overall quality and depth, which may look like creativity, independent learning, clear communication, thoughtful self-evaluation, or other dimensions depending on the nature of the activity. Your submission will include an opportunity for you to explain how the activity contributed to your learning and how many points you believe you have earned."
+    "objectID": "slides/Q1-W2_git-github.html#gitignore-how",
+    "href": "slides/Q1-W2_git-github.html#gitignore-how",
+    "title": "Git & GitHub",
+    "section": ".gitignore: how",
+    "text": ".gitignore: how\n\n\nOptionally start with a template then:\n\nUse informative # comments\nProtect private data in a localonly/ folder\nIgnore files/folders with matched text\n\n\n\n\n\n\n\nIgnore large files\n\n\n\nMedia files: e.g, *.png, *.jpg, *.mp4\nPresentation files: e.g., *.pptx, *.key\nSpecialized and raw files: e.g, *.bdl, *.ear, *.mgh\n\n\n\n\n\n\n\nIgnore auto-generated files\n\n\n\nSystem files: e.g., *.DS_Store, *.RData, *.Rhistory\nProcess files: e.g., *.log, *.aux, *.out\nCompiled files: e.g., *.pdf, *.docx, *.html"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#get-yourself-sorted",
-    "href": "slides/Q1-W1_introduction.html#get-yourself-sorted",
-    "title": "Introduction to D2M-R",
-    "section": "Get Yourself Sorted",
-    "text": "Get Yourself Sorted\nUse your common sense and the many resources on the course website to get the following done:\n\nMake your GitHub account, apply for the education account.\nInstall R and RStudio.\nConnect GitHub and RStudio using the guide on the course site."
+    "objectID": "slides/Q1-W2_git-github.html#gitignore-how-verbose",
+    "href": "slides/Q1-W2_git-github.html#gitignore-how-verbose",
+    "title": "Git & GitHub",
+    "section": ".gitignore: how (verbose)",
+    "text": ".gitignore: how (verbose)\n\n\nOptionally start with a template then:\n\nUse informative # comments\nProtect private data in a localonly/ folder\n\nDedicated place for anything you need to keep offline that the .gitignore might not explicitly catch\nGood place to keep deanonymized datasets instead of trusting yourself to remember to add them to the .gitignore\n\nIgnore files/folders\n\nMatching the name: data/raw/sensitive_data.csv, topsecret/\nUsing wildcards: *.pdf, no-git_*\n\n\n\n\nIgnore large files\n\nMedia files: e.g, *.png, *.jpg, *.mp4\n\ntend to be very large, often contain sensitive info\n\nPresentation files: e.g., *.pptx, *.key\n\nnot necessary for reproducibility, often large\n\nSpecialized and raw files: e.g, *.bdl, *.ear, *.mgh\n\ndata needs to be tabular eventually anyway\n\n\n\n\nIgnore auto-generated files\n\nSystem files: e.g., *.DS_Store, *.RData, *.Rhistory\n\nplatform-specific, or not text-based\n\nProcess files: e.g., *.log, *.aux, *.out\n\nshould be deleted after success but can stick around if knitting fails\n\nCompiled files: e.g., *.pdf, *.docx, *.html\n\nrecreated every time you knit"
   },
   {
-    "objectID": "slides/Q1-W1_introduction.html#example-assignment",
-    "href": "slides/Q1-W1_introduction.html#example-assignment",
-    "title": "Introduction to D2M-R",
-    "section": "Example Assignment",
-    "text": "Example Assignment\nIn the meantime, while you figure yourself out, I’m going to demo the workflow of an example assignment.\nFollow along if you’re ready to go, otherwise just watch me and do it on your own later.\n\nGo to the assignment menu and click the GitHub classroom invite for the example assignment.\nAccept the assignment and create your GitHub repo.\nClone the repo to your computer using RStudio.\nOpen the example R script in RStudio and follow the instructions to complete the assignment.\n\nEven if you don’t have the github/RStudio thing sorted yet, you should open RStudio at this point and try out the interface.\n\nSubmit the assignment for (fake) grading with a pull request and the class submission form.\n\n\n\n\n\n\n\n\nIf you’re not sure how to do something, figure it out!\n\n\nThat’s the point. Practice finding resources and solving problems on your own. If you get stuck, ask for help on Slack. Thursday we’ll talk about specific problem-solving and debugging strategies."
+    "objectID": "slides/Q1-W2_git-github.html#summary",
+    "href": "slides/Q1-W2_git-github.html#summary",
+    "title": "Git & GitHub",
+    "section": "Summary",
+    "text": "Summary\n\nManage all projects with version control\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts:\n\nrepositories: folders tracked by Git\ncommits: snapshots of changes\npulls: get changes from remote repos\npushes: send changes to remote repos\n\nYour repo needs:\n\nproject files\nmetadata files\na README.md\na .gitignore file\n\nPULL when you sit down to work. COMMIT frequently as you work. PUSH when you pause or finish.\n\n\n\nVersion control is essential for managing changes in your projects\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts include repositories, commits, branches, pulls, and pushes\nA well-structured repository includes project files, metadata, a README, and a . gitignore file\nUsing Git in RStudio provides a user-friendly interface for version control tasks\nRegularly committing and pushing changes helps maintain a clear project history"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#markdown",
+    "href": "slides/Q1-W2_rstudio-quarto.html#markdown",
+    "title": "RStudio & Quarto",
+    "section": "Markdown",
+    "text": "Markdown\n\n\n\n\n\nMarkdown is a lightweight markup language for creating formatted text using a plain-text editor.\n\nEasy to read, write, and convert to rich text formats\nWidely used in documentation, blogging, and collaborative platforms\nComes in “flavors” building on each other\n\n\n\nStandard Markdown\n\nGitHub Flavored Markdown (used by READMEs on GitHub)\nPandoc Markdown\n\nR Markdown\nQuarto (aka R Markdown 2.0)\nmany more\n\nmany, many more\n\n\n\n\n\n# This is a header\n\n## This is a subheader\n\n-   This is a bullet point\n-   And another\n    -   **This one is bold.**\n    -   _This one is italicized._\n\nThis text has a [link](https://pandoc.org/) and an image:\n![Image caption](https://pandoc.org/pandoc-cartoon.svgz)"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#r",
+    "href": "slides/Q1-W2_rstudio-quarto.html#r",
+    "title": "RStudio & Quarto",
+    "section": "R",
+    "text": "R\n\n\n\n\n\nR is a programming language and computing environment.\n\nDeveloped for statistics and data science\nOpen source and free\nCan be run from command line or basic console"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#rstudio",
+    "href": "slides/Q1-W2_rstudio-quarto.html#rstudio",
+    "title": "RStudio & Quarto",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\n\n\nRStudio is an Integrated Development Environment (IDE) for R.\n\nProvides a user-friendly interface\nEnhances productivity with:\n\nSyntax highlighting\nCode completion\nProject management\nIntegrated help\nPlot viewing\nPackage management\nGit integration\n\n\n\n\n\n# Assign a string to a variable\nrstudio_is_cool &lt;- paste(\"R\", \"and\", \"RStudio\", \"work\", \"together!\")\n\n# Print the variable\nrstudio_is_cool\n\n[1] \"R and RStudio work together!\"\n\n\n\n\n\n\nR is the underlying programming language and statistical computing environment. You can run R from the command line or basic R console, but it’s quite painful.\nRStudio is an IDE - an Integrated Development Environment - that makes working with R much more pleasant and productive. It provides: - Syntax highlighting - Code completion - Project management - Integrated help - Plot viewing - Package management - Git integration - And much more\n\nThink of it like the difference between:\n\nA recipe (R) vs. a fully equipped kitchen (RStudio)\nA text file (R) vs. Microsoft Word (RStudio)\nRaw ingredients (R) vs. a meal prep service (RStudio)\n\n\nRStudio is designed for R, with limited functionality for other languages. If you’re already using another IDE for python or another language, there are IDEs that support R as well. R has a very different target audience (statisticians, data scientists) compared to general-purpose IDEs (software developers), so while these other IDEs can get the work done, they don’t have the same level of integration and ease of use for R-specific tasks.\nRSTUDIO IS THE DE FACTO STANDARD IDE FOR R PROGRAMMING. Even if you settle on an alternative preferred IDE, you should still be very familiar with RStudio."
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#quarto",
+    "href": "slides/Q1-W2_rstudio-quarto.html#quarto",
+    "title": "RStudio & Quarto",
+    "section": "Quarto",
+    "text": "Quarto\n\n\n\n\n\nQuarto is an open-source scientific and technical publishing system built on Pandoc.\n\nSupports multiple programming languages (R, Python, Julia, etc.)\nEnables creation of dynamic documents, presentations, websites, and reports\nIntegrates with RStudio IDE for seamless workflow\n\n\n\n\n# Assign a string to a variable\nquarto_is_cool &lt;- paste(\"Quarto\", \"is\", \"cool!\")\n\n# Print the variable\nquarto_is_cool\n\n[1] \"Quarto is cool!\"\n\n\n\n\n\n\nCreated by Posit, makers of RStudio “next generation” of R Markdown Q can do anything Rmd can do, so all existing Rmd work can (theoretically) transfer to qmd notebooks and retain full functionality Works with R, python, Julia, and observable javascript Built on systems of complex and flexible YAML headers Publish documents (what we call manuscripts) and also: websites, manuscripts, interactive dashboards, presentations, and more Optionally uses extensions (like apaquarto) for additional customization and functionality"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#pane-layout",
+    "href": "slides/Q1-W2_rstudio-quarto.html#pane-layout",
+    "title": "RStudio & Quarto",
+    "section": "Pane Layout",
+    "text": "Pane Layout\n\n\n\nTop Left: Source pane (your scripts and documents)\nTop Right: Environment, History\nBottom Left: Console, Terminal, Background Jobs\nBottom Right: Files, Plots, Help, Viewer\n\n\n\n\n\n\n\n\nThe layout is customizable, but this default works well for most people\nEach pane can contain multiple tabs\nYou can resize panes by dragging the borders\nYou can minimize/maximize panes\nThe layout will make more sense as we start using each component"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#pane-layout-custom",
+    "href": "slides/Q1-W2_rstudio-quarto.html#pane-layout-custom",
+    "title": "RStudio & Quarto",
+    "section": "Pane Layout: Custom",
+    "text": "Pane Layout: Custom\n\n\n\nTop Left: Source pane (your scripts and documents)\nTop Right: Plots, Help, View\nBottom Left: Console, Terminal, Background Jobs\nBottom Right: Environment, Files, Packages, Git\n\n\n\n\n\n\n\nCustomize!\n\n\nI hate the default layout and always change it. You should figure out what works for you:\nTools &gt; Global Options &gt; Pane Layout\n\n\n\n\n\n\n\n\n\n\nThe layout is customizable, but this default works well for most people\nEach pane can contain multiple tabs\nYou can resize panes by dragging the borders\nYou can minimize/maximize panes\nThe layout will make more sense as we start using each component"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#source-pane",
+    "href": "slides/Q1-W2_rstudio-quarto.html#source-pane",
+    "title": "RStudio & Quarto",
+    "section": "Source Pane",
+    "text": "Source Pane\n\n\nView, write, edit text:\n\nView/edit text files (.R, .qmd, .Rmd)\nView data objects (read-only)\nMultiple files open as tabs\nPop out files with “show in new window”\n\nRunning code from source:\n\nCmd/Ctrl + Enter: run selected code (or current line)\nCmd/Ctrl + Shift + Enter: run entire file"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#console-pane-three-tabs",
+    "href": "slides/Q1-W2_rstudio-quarto.html#console-pane-three-tabs",
+    "title": "RStudio & Quarto",
+    "section": "Console Pane: Three Tabs",
+    "text": "Console Pane: Three Tabs\n\n\n\nConsole\n\nExecute R code\nView output\nErrors/warnings appear here\n\n\n\nTerminal\n\nCommand line interface (bash/shell)\nGit commands\nDoes NOT run R code\n\n\n\nBackground Jobs\n\nMonitor rendering processes\nErrors from Quarto rendering\nStop sign to force quit"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#console-vs.-source-scripts",
+    "href": "slides/Q1-W2_rstudio-quarto.html#console-vs.-source-scripts",
+    "title": "RStudio & Quarto",
+    "section": "Console vs. Source Scripts",
+    "text": "Console vs. Source Scripts\nR code can be run in both the console and source scripts, but they serve different purposes:\n\n\n\n\n\nTask\nSource Script\nConsole\n\n\n\n\nQuick calculations\n\n✓\n\n\nTesting new functions\n\n✓\n\n\nCreating objects\n✓\n\n\n\nData wrangling\n✓\n\n\n\nPublication plots\n✓\n\n\n\nReproducible analyses\n✓\n\n\n\n\n\n\n\n\nIf you might need it again, use a source script."
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#environment-pane",
+    "href": "slides/Q1-W2_rstudio-quarto.html#environment-pane",
+    "title": "RStudio & Quarto",
+    "section": "Environment Pane",
+    "text": "Environment Pane\n\n\n\nShows all objects loaded in your R session\n\nDataframes, variables, functions\nClick blue arrow to expand objects\nClick name to view in source pane\nBroom icon clears environment\n\n\nEnvironment resets when R session restarts. Rerun code to recreate objects."
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#files-pane",
+    "href": "slides/Q1-W2_rstudio-quarto.html#files-pane",
+    "title": "RStudio & Quarto",
+    "section": "Files Pane",
+    "text": "Files Pane\n\n\n\nDirectory navigator + working directory management\n\nNavigate folders like Finder/Explorer\nCreate, delete, rename files\nMore → Set as Working Directory\n\nWorking directory matters for file paths:\n\n❌ Absolute: \"/Users/Natalie/Documents/repos/D2M-R/data/mydata.csv\"\n✓ Relative: \"data/mydata.csv\"\n\nWhen working in RStudio projects, working directory = project root"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#git-pane",
+    "href": "slides/Q1-W2_rstudio-quarto.html#git-pane",
+    "title": "RStudio & Quarto",
+    "section": "Git Pane",
+    "text": "Git Pane\n\n\n\nPerform basic git operations from RStudio\n\nView changed files since last commit\nStage files (checkbox)\nCommit button opens detailed window\nPull/push to remote"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#other-important-panes",
+    "href": "slides/Q1-W2_rstudio-quarto.html#other-important-panes",
+    "title": "RStudio & Quarto",
+    "section": "Other Important Panes",
+    "text": "Other Important Panes\n\n\n\nPackages pane:\n\nView installed/loaded packages\nUpdate packages\nClick name → documentation\nDon’t install from pane, use install.packages() in code\n\n\n\nHelp pane:\n\nFunction documentation\nSearch or use ?function_name in console\n\n\n\n\n\nPlots pane:\n\nStatic visualizations from R scripts\nExport, zoom, clear\nCode: prefer ggsave() for reproducibility\n\n\n\nViewer pane:\n\nRendered HTML, Quarto documents\nShiny apps, interactive visualizations\n“Open in Browser” to pop out"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#key-takeaways",
+    "href": "slides/Q1-W2_rstudio-quarto.html#key-takeaways",
+    "title": "RStudio & Quarto",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nSource pane for writing code you want to keep\nConsole for quick tests (check your tab!)\nUse relative file paths and RStudio projects\nGit pane for standard workflow; terminal for problems\n\n\n\n\n\n\n\n\nCode vs. GUI\n\n\nNearly all pane actions have code equivalents. Only use GUI shortcuts for things you already know how to do in code!"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#project-makeup",
+    "href": "slides/Q1-W2_rstudio-quarto.html#project-makeup",
+    "title": "RStudio & Quarto",
+    "section": "Project Makeup",
+    "text": "Project Makeup\n\nRStudio Project file (.Rproj): manages project settings\nR scripts (.R): contains (only) R code\nMarkdown files (.md): contains (only) formatted text\nQuarto file (.qmd): contains combination of text, code, and formatting instructions\n\n\n\n\n\n\n\n\nR Markdown vs. Quarto\n\n\nR Markdown documents/notebooks (.Rmd) combine R code and markdown text to produce dynamic reports.\n.Rmd = .R + .md\nQuarto documents (.qmd) are the next generation of R Markdown notebooks, with more features and better multi-language support. Quarto is backward compatible with R Markdown, so all R Markdown documents can be used as Quarto documents.\n.qmd = .Rmd^2"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#quarto-documents",
+    "href": "slides/Q1-W2_rstudio-quarto.html#quarto-documents",
+    "title": "RStudio & Quarto",
+    "section": "Quarto Documents",
+    "text": "Quarto Documents\nUnify your workflow producing a scientific report1, reduce errors, and save time.\nUse one (1!) document to:\n\nRead in and prep data\nMake figures and tables\nRun statistical analyses\nWrite report narrative text\nCite papers\nAdd in-line, dynamic results\n1-click render to multiple formats (HTML, PDF, Word, slides, etc.)\n\nAmong other things!"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#quarto-workflow",
+    "href": "slides/Q1-W2_rstudio-quarto.html#quarto-workflow",
+    "title": "RStudio & Quarto",
+    "section": "Quarto Workflow",
+    "text": "Quarto Workflow\n\n\n\nCreate your RStudio project & repo\n\n\n\n\n\n\n\n\nCreate your Quarto .qmd document\n\n\n\n\n\n\n\n\nPut code in “chunks” (inline .R scripts)\n\n\n\n\n\n\n\n\nWrite text with Quarto markdown\n\n\n\n\n\n\n\n\n\n\nCustomize YAML header\n\n\n\n\n\n\n\n\nCite sources with BibTeX\n\n\n\n\n\n\n\n\nSet options for your output\n\n\n\n\n\n\n\n\nKnit your document to desired format\n\n\n\n\n\n\n\nCreate your RStudio project & repo\n\nUse RStudio to create a new project in a new directory\nKeep all the standard git repo contents in it\n\nCreate your Quarto .qmd document\n\nany settings in creation are changeable later\n\nPut code in “chunks” (inline .R scripts)\n\ndata read-in, summary tables, figures, analysis…\nanything you could write in a dedicated R script\ncan include chunk-specific YAML options\n\nWrite text with Quarto markdown\n\nheaders, formatted text, footnotes, etc.\n\nCustomize YAML header\n\ntitle, author, date, output format(s)…\n\nCite sources with BibTeX\n\ncreate a .bib file with references\ndynamically cite in text\n\nSet options for your output\n\nfigure sizes, code visibility, themes…\n\nKnit your document to desired format\n\nHTML, PDF, Word, slides, etc."
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#anatomy-of-a-quarto-document",
+    "href": "slides/Q1-W2_rstudio-quarto.html#anatomy-of-a-quarto-document",
+    "title": "RStudio & Quarto",
+    "section": "Anatomy of a Quarto Document",
+    "text": "Anatomy of a Quarto Document\n\n\n\n\n\nYAML Header\n\n\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat:\n    html:\n        toc: true\n        code-fold: true\n---\n\n\n\n\n\n\nCode Chunks\n\n\n```{r}\n#| label: setup\n#| include: false\u000b\nlibrary(ggplot2)\nlibrary(dplyr)\n\nsmaller &lt;- diamonds %&gt;% \n  filter(carat &lt;= 2.5)\n```\n\n\n\n\n\n\n\nMarkdown Text Content\n\n\nWe have data about `r nrow(diamonds)` diamonds. Only `r nrow(diamonds) - nrow(smaller)` \nare larger than 2.5 carats. The distribution of the remainder is shown below: \n    &lt;!-- See figure below --&gt;"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#yaml",
+    "href": "slides/Q1-W2_rstudio-quarto.html#yaml",
+    "title": "RStudio & Quarto",
+    "section": "YAML",
+    "text": "YAML\n\n\n\n\nYAML Header\n\n\n```{yaml}\n---\ntitle: \"Diamond sizes\"\ndate: 2016-08-25\nformat:\n    html:\n        toc: true\n        code-fold: true\n---\n```\n\n\n\nYet Another Markup Language\n\nRhymes with 🐪\nInterchangeably .yaml and .yml\nHuman-readable data serialization format\nAlways the very first thing in a Quarto document\nSpecifies document metadata and options\nFenced with --- at top and bottom\nHierarchical structure using indentation\n\nWhitespace sensitive!"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#code-chunks",
+    "href": "slides/Q1-W2_rstudio-quarto.html#code-chunks",
+    "title": "RStudio & Quarto",
+    "section": "Code Chunks",
+    "text": "Code Chunks\n\n\n\n\nCode Chunk\n\n\n```{r}\n#| label: setup\n#| include: false\u000b\nlibrary(ggplot2)\nlibrary(dplyr)\n\nsmaller &lt;- diamonds %&gt;% \n  filter(carat &lt;= 2.5)\n```\n\n\n\nR Script Containers\n\nFenced with triple backticks and {r}\nChunk options in YAML-like format\n\nLearn about chunk options\n\nCan (should) be named with unique label option\nContain R code and comments\nExecuted in order during rendering\nOutput (text, figures) inserted into final document\n\n\n\n\nFenced with triple backticks and {r}\nOptional chunk options in YAML-like format\n\nUse “comment syntax”, e.g., #| option: value\n\nCan (should) be named with label option\n\nLabels must be unique!\n\nContain R code and comments\nExecuted in order during rendering\n\nObjects created are available to later chunks\nChunks can be executed independently as you work (but not when you render)\n\nOutput (text, figures) inserted into final document\n\nUnless options say otherwise"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#code-chunks-sourcing-external-r-scripts",
+    "href": "slides/Q1-W2_rstudio-quarto.html#code-chunks-sourcing-external-r-scripts",
+    "title": "RStudio & Quarto",
+    "section": "Code Chunks: Sourcing External R Scripts",
+    "text": "Code Chunks: Sourcing External R Scripts\n\n\n\n\nSource Scripts\n\n\n```{r}\n#| label: source-data-cleaning\n\nsource(\"scripts/data-cleaning.R\")\n```\n\n\n\nSource .R Files\n\nChunks should do 1 and only 1 easily nameable thing\nUse source() to “inject” code from other files\nFull contents of sourced script runs as if it were in the chunk\n\nOnly works with R scripts (.R), not other file types\n\nCommon uses:\n\nSetup tasks\nPre-processing scripts\nFunction definitions\nComplex analysis\n\n\n\n\n\nChunks should do 1 and only 1 easily nameable thing\nLonger scripts/functions should be in separate R scripts, then source them into the document\nFull contents of sourced script runs as if it were in the chunk\n\nOnly works with R scripts (.R), not other file types\nIf the contents of the file wouldn’t run in a chunk, the file can’t be sourced into a chunk\nSetup tasks (define themes, load libraries, set default options)"
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#markdown-text-content",
+    "href": "slides/Q1-W2_rstudio-quarto.html#markdown-text-content",
+    "title": "RStudio & Quarto",
+    "section": "Markdown Text Content",
+    "text": "Markdown Text Content\n\n\nMarkdown Text Content\n\n\nWe have data about `r nrow(diamonds)` diamonds. Only `r nrow(diamonds) - nrow(smaller)` \nare larger than 2.5 carats. The distribution of the remainder is shown below: \n    &lt;!-- See figure below --&gt;\n\n\nFormatted Narrative Text\n\n\n“Narrative” = lit review, methods, discussion, etc.\nAnything outside YAML and chunks is treated as markdown\nOptionally include HTML for advanced formatting\n\nUses HTML comment syntax: &lt;!-- comment --&gt;\n\nInline R code with `r code` syntax\n\nCan reference sourced and chunk code\n\nCan include figures, tables, citations, etc. as an alternative to rendering from code chunks"
   },
   {
     "objectID": "assessment/accountability.html",
@@ -1169,6 +1323,188 @@
     "text": "Unit 3: Data Wrangling & Reporting\n\n\n\n\n\n\nWeek 6 | Tidyverse Data Wrangling, part 1\n\n\n\n\nFeb-10; Feb-12\n\n\n\n\n\nOverview\n\n\n\n\nClass plans:\nPrimary learning objectives:\n\n\n\n\n\n\nMaterials & Resources\n\n\n\n\nClass Materials:\n\nSlides\nTextbook Chapter\n\n\nAdditional Resources:\n\nreadings\ncheat-sheets\ntutorials\n\n\n\n\n\n\n\nAssignments & To-Do\n\n\n\n\nGraded Submissions:\nRecommended Exercises:\n\n\n\n\n\n\nHousekeeping\n\n\n\n\nAnnouncements:\nReminders:\n\n\n\n\n\n\n\n\n\n\nWeek 7 | Tidyverse Data Wrangling, part 2\n\n\n\n\nFeb-17; Feb-19\n\n\n\n\n\nOverview\n\n\n\n\nClass plans:\nPrimary learning objectives:\n\n\n\n\n\n\nMaterials & Resources\n\n\n\n\nClass Materials:\n\nSlides\nTextbook Chapter\n\n\nAdditional Resources:\n\nreadings\ncheat-sheets\ntutorials\n\n\n\n\n\n\n\nAssignments & To-Do\n\n\n\n\nGraded Submissions:\nRecommended Exercises:\n\n\n\n\n\n\nHousekeeping\n\n\n\n\nAnnouncements:\nReminders:\n\n\n\n\n\n\n\n\n\n\nWeek 8 | Data Reporting Essentials\n\n\n\n\nFeb-24; Feb-26\n\n\n\n\n\nOverview\n\n\n\n\nClass plans:\nPrimary learning objectives:\n\n\n\n\n\n\nMaterials & Resources\n\n\n\n\nClass Materials:\n\nSlides\nTextbook Chapter\n\n\nAdditional Resources:\n\nreadings\ncheat-sheets\ntutorials\n\n\n\n\n\n\n\nAssignments & To-Do\n\n\n\n\nGraded Submissions:\nRecommended Exercises:\n\n\n\n\n\n\nHousekeeping\n\n\n\n\nAnnouncements:\nReminders:\n\n\n\n\n\n\n\n\n\n\nWeek 9 | Data Wrangling & Reporting Workshops\n\n\n\n\nMar-3; Mar-5\n\n\n\n\n\nOverview\n\n\n\n\nClass plans:\nPrimary learning objectives:\n\n\n\n\n\n\nMaterials & Resources\n\n\n\n\nClass Materials:\n\nSlides\nTextbook Chapter\n\n\nAdditional Resources:\n\nreadings\ncheat-sheets\ntutorials\n\n\n\n\n\n\n\nAssignments & To-Do\n\n\n\n\nGraded Submissions:\nRecommended Exercises:\n\n\n\n\n\n\nHousekeeping\n\n\n\n\nAnnouncements:\nReminders:"
   },
   {
+    "objectID": "slides/Q1-W1_introduction.html#course",
+    "href": "slides/Q1-W1_introduction.html#course",
+    "title": "Introduction to D2M-R",
+    "section": "Course",
+    "text": "Course\nFrom Data to Manuscript in R - Quarter 1\n\nPSYC/MAPS/MACS/CHDV 30550\nCourse website: d2m-r.github.io\nTextbook: Data to Manuscript in R\n\nIn early development!!"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#people",
+    "href": "slides/Q1-W1_introduction.html#people",
+    "title": "Introduction to D2M-R",
+    "section": "People",
+    "text": "People\n\n\nProfessor: Dr. Natalie Dowling\n\nPreferred name: Natalie or Dr. Dowling\nPronouns: she/her\nEmail: ndowling@uchicago.edu\nGitHub: @nrdowling\nOffice hours:\n\n1155 E 60th St, Rm 181\nThursdays 2-4pm by appointment - book here\nEmail to set up an alternative meeting time\n\n\n\nTeaching Assistant: Qilong Bi\n\nPreferred name: Qilong\nPronouns: he/him\nEmail: bql20@uchicago.edu\nGitHub: @QilongBi\nOffice hours:\n\nlocation TBA\nTuesdays 2-3:30pm (open)\n\n\n\n\nI genuinely don’t care if you call me Natalie or Dr. Dowling. I’m perfectly happy with either, so do whatever feels comfortable for you."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#expectations-course-goals",
+    "href": "slides/Q1-W1_introduction.html#expectations-course-goals",
+    "title": "Introduction to D2M-R",
+    "section": "Expectations & Course Goals",
+    "text": "Expectations & Course Goals\n\nDevelop a reproducible and transparent research workflow.\nPractice accountability & time management.\nEngage with your research communities.\nDevelop problem-solving and independent learning skills.\n\n\n\nDevelop a reproducible and transparent research workflow. Plan, execute, and document a data analysis project from start to finish including data acquisition, cleaning, analysis, visualization, and reporting.\nPractice accountability & time management. Set realistic goals, create a plan to achieve them, monitor your progress, and adjust as needed.\nEngage with your research communities. Collaborate effectively with peers, contribute to group learning, and seek help when needed.\nDevelop problem-solving and independent learning skills. Develop specific strategies for debugging code, troubleshooting errors, asking good questions, and learning new skills independently using the myriad resources available online from R and open-science communities.\n\nD2M-R will give you:\n\nA basic knowledge of how to use GitHub, R, RStudio, Quarto/RMarkdown, and the tidyverse packages\nStrategies for how to identify and resolve bugs in the data-to-manuscript process\nSupports for establishing and maintaining a workflow within your project\nTools to implement your own data analysis and visualization plans\n\nD2M-R will not give you:\n\nComprehensive expertise in any of the tools or packages or depth in packages outside the tidyverse\nInstructors or classmates who solve your technical problems for you\nAccountability hand-holding or objectively “correct” ways of working\nNew knowledge of statistics or research design practices"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#course-philosophy",
+    "href": "slides/Q1-W1_introduction.html#course-philosophy",
+    "title": "Introduction to D2M-R",
+    "section": "Course Philosophy",
+    "text": "Course Philosophy\n\n\n\n\nThis class is for you.\n\n\n\nGain foundational skills that everything else is built on\nApply those skills designed around your individual priorities, interests, and goals\n\n\n\n\n\n\n\nFour key principles\n\n\n\nStandards-based grading\nMultiple pathways to demonstrate course objectives\nTiered credit for mastery levels\nIndividualized plans and pacing\n\n\n\n\n\n\nThis course uses a standards-based grading system designed to support your skill development while accommodating diverse backgrounds, interests, and paces of learning. The system is built around the following principles:\n\nStandards-based: Your grade reflects your progress on a set of clearly defined core technical skills, interchangeably referred to as “standards” and “core objectives.”\nMultiple pathways: For most standards, you may choose from more structured activities, less structured / group activities, and minimally structured or self-designed small projects. You will show your mastery in smaller assignments and an integrative data project, both of which can be tailored to your interests and developed over the quarter.\nTiered credit: Each standard is scored using a 4 / 5 / 6 point rubric. Higher scores reflect more independent and expansive use of the skill and allow you to reach your grade goals more quickly. Lower grades may be replaced by subsequent higher grades as you develop stronger command of the skills. All three levels represent success, and earning mostly 4s does not preclude getting an A in the class.\nIndividualized: Beyond mastering technical skills that form the foundation for data analysis in R, you will also earn points for accountability, community engagement, and optional enrichment activities, with many ways to earn credit in each of these categories. There are no top-down deadlines for completing assignments to meet core standards. This structure allows you to set your own priorities based on your individual interests and goals.\nNo fixed interim deadlines: You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).\nPlanning is part of the grade: The Accountability & Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.\nEarly completion is allowed: You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#d2m-r-workflow",
+    "href": "slides/Q1-W1_introduction.html#d2m-r-workflow",
+    "title": "Introduction to D2M-R",
+    "section": "D2M-R Workflow",
+    "text": "D2M-R Workflow\n\nCreate and sync a GitHub repo and R project\nBegin a full manuscript in a Quarto notebook (.qmd)\nUse R scripts and chunks to read in, clean, and wrangle data\nSource .R scripts for “background” needs\nAnalyze and visualize your data within your Quarto notebook\nMaintain a BibTeX file with all manuscript citations\nCompose the manuscript narrative in your notebook\n1-click knit your manuscript to a publishable file format\nDynamically update and maintain your manuscript\n\n\n\nCreate a GitHub repo and corresponding R Project that are always synced\nCreate an Quarto notebook (.qmd) that will become your full, complete, and final manuscript\nUse .R scripts to wrangle and export data into intermediate datasets that you can then quickly read-in to your manuscript in a code chunk\nCreate and source .R scripts for “background” needs like functions and style\nAnalyze and visualize your data in code chunks within your Quarto notebook\nCreate and maintain a .bib file with all the material you may cite in your manuscript using BibTeX and R citation syntax\nWrite the narrative of your manuscript in your single, dedicated notebook file\nKnit your manuscript to a publishable file format using pre-defined formatting and citation style\nDynamically update and maintain your manuscript"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#quarter-1",
+    "href": "slides/Q1-W1_introduction.html#quarter-1",
+    "title": "Introduction to D2M-R",
+    "section": "Quarter 1",
+    "text": "Quarter 1\n\nCreate and sync a GitHub repo and R project\nBegin a full manuscript in a Quarto notebook (.qmd)\nUse R scripts and chunks to read in, clean, and wrangle data\nSource .R scripts for “background” needs\nFirst steps: Analyze and visualize your data within your Quarto notebook \nMaintain a BibTeX file with all manuscript citations\nCompose the manuscript narrative in your notebook\n1-click knit your manuscript to a publishable file format\nDynamically update and maintain your manuscript"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#communication-slack",
+    "href": "slides/Q1-W1_introduction.html#communication-slack",
+    "title": "Introduction to D2M-R",
+    "section": "Communication: Slack",
+    "text": "Communication: Slack\n\nSlack participation is required\n\nYour first stop for support\n\nUse the appropriate channels\nIntended for peer collaboration\n\nMinimal instructor involvement\nPeer support is part of your grade\n\nDirect messages:\n\nDo not direct message instructors (including TAs).\nDMing with other students is permitted but not required\n\n\n\n\nSlack participation is required\nLink to join our Slack channel is on Canvas\nTHE place outside of class to get help with nearly anything\nUse the appropriate channel to request help\n\nTake your best guess if you’re not sure where it goes\n\nIntended for peer collaboration\n\nInstructors will moderate and answer questions when needed, after students have responded\nCollaborative engagement is part of your grade; you are expected to both seek and offer support to your classmates\n\nYou can DM and/or start private channels with classmates, but you are not required/expected to participate in private messaging\nDo not direct message instructors (including TAs).\n\nEmail us.\nWe will not respond to Slack DMs."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#communication-email-vs.-slack",
+    "href": "slides/Q1-W1_introduction.html#communication-email-vs.-slack",
+    "title": "Introduction to D2M-R",
+    "section": "Communication: Email vs. Slack",
+    "text": "Communication: Email vs. Slack\n\n\nEmail\n\n\n\nPrivate communication with professor/TAs\nTopics that concern you and only you\nAccommodation requests\n\n\n\n\n\nSlack\n\n\n\nClass-wide communication with instructors and students\nTopics that may concern others, e.g.:\n\nQuestions about course content\nClarifications about grading policies\nRequests for support\n\n\n\n\n\nEmail:\n\nPrivate communication with professors or TAs\nUse for personal matters, scheduling, or other private issues\n\nTopics that concern you and only you\n\nRequests for accommodations\n\nSlack:\n\nClass-wide communication with instructors and students\nTopics that may concern others, e.g.:\n\nQuestions about course content\nClarifications about course policies\nRequests for troubleshooting and debugging support\nReally anything that might help another student if they saw it!\n\nOptionally: Private communication with other students\nDr. Dowling’s office hours are Thursdays 2-4pm by appointment\n\nAppointments are required\n\nTA office hours information\nCall me either Natalie or Dr/Professor Dowling\nYou do not need to let us know if you will be missing class\n\nBut you can reach out if you feel behind due to absences\n\nBe cautious about disclosing personal information over email/Slack\n\nRemember you never need to share details about your health!\n\nStressed about emails? The student toolkit has a guide to help you out\n\nSide note: We can tell when you use chatGPT. It really doesn’t look good. We’d rather get a kind of weird email from you than one of those “I kindly request” emails.\n\nPlease do not line up to ask questions at the end of class.\n\nThose “1-minute” questions add up\nThat’s what Slack is for"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#climate",
+    "href": "slides/Q1-W1_introduction.html#climate",
+    "title": "Introduction to D2M-R",
+    "section": "Climate",
+    "text": "Climate\n\nView the class climate policy here.\nBasically, just be cool, ok?\nIf you have problems with other students or the TA:\n\nContact me first\nEscalate to UChicago CARES\n\nIf you have a problem with me:\n\nDiscuss it with me directly if you feel comfortable doing so\nBring it to UChicago CARES\n\nYou can always go to CARES without going through me or anyone else first.\n\n\n\nView the class climate policy here.\nBut really just…be cool, ok?\nWe will all be kind, respectful, responsive, and supportive to one another in the classroom, on Slack, and all other interaction.\nIf you have problems with other students or the TA:\n\nContact me first (if possible)\nIf we can’t resolve it contact UChicago CARES\n\nIf you have a problem with me\n\nDiscuss it with me directly if and only if you feel comfortable doing so\n\nI never want to be the cause of discomfort for anyone! If you have feedback that can help me be a better instructor, I want to hear it.\n\nBring it to UChicago CARES\n\nYou can always go to CARES without going through anyone else first, but my goal is to create a classroom climate where you feel comfortable talking to me about ways to create a more welcoming and respectful environment."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#accessibility-accommodation",
+    "href": "slides/Q1-W1_introduction.html#accessibility-accommodation",
+    "title": "Introduction to D2M-R",
+    "section": "Accessibility & Accommodation",
+    "text": "Accessibility & Accommodation\n\nRequests for formal accommodations should go through Student Disability Services\n\nGraduate students need to request accommodation letters be sent to me\nYou never need to disclose personal details to me or anyone outside SDS\n\nMeet with me in office hours for informal accommodation requests\nYou will factor your own accommodations into your accountability plan\n\n\nNote: All arrangements must align with SDS policies for equity. Informal accommodations cannot disadvantage students with formal accommodations.\n\nRequests for formal accommodations should go through Student Disability Services\n\nSDS will send undergraduate accommodation letters to me automatically\nGraduate students need to ask SDS to send me a letter\nYou never need to disclose personal details to me or anyone outside SDS\n\nIf you have an informal request for an accommodation, with me in office hours\n\nWe can almost always work something out, but we need to follow SDS policies\n\nAfter sending your letter, schedule a meeting with me to make an accommodation plan\n\nIf you do need accommodations, you will factor your accommodation plan into your accountability plan (coming up in a couple slides)"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#disclosing-personal-information",
+    "href": "slides/Q1-W1_introduction.html#disclosing-personal-information",
+    "title": "Introduction to D2M-R",
+    "section": "Disclosing personal information",
+    "text": "Disclosing personal information\nYou are never required to disclose personal information to me or any instructors. These guidelines are for all classes at UChicago, not just this one.\nYou do not need to:\n\nShare details about your health, disability, or reasoning for accommodations\nGet a doctor’s note for absences\n\nYour instructor is not allowed to ask for one!\n\nDefend your need for accommodations\n\n\nYou are an adult with priorities and the capacity for cost/benefit decision-making. You can decide what you want to share and with whom. If you need to miss class because you have terrible period cramps, are having a panic attack, are recovering from a migraine, think your roommate might have COVID, need to cram for an exam for a different class, are shamefully hung over, or just really don’t wanna come to campus, you do not need to explain yourself to me or anyone else. Just take care of yourself, and take responsibility for effects on your learning and grades.\nThis doesn’t mean there are never consequences for missing class. You are responsible for keeping up with the material and assignments (per your accommodations, if applicable), and are subject to penalties defined by the syllabus."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#academic-integrity-overview",
+    "href": "slides/Q1-W1_introduction.html#academic-integrity-overview",
+    "title": "Introduction to D2M-R",
+    "section": "Academic Integrity: Overview",
+    "text": "Academic Integrity: Overview\n\n\nView the academic integrity policy here.\nPlagiarism is bad. Cheating is bad. Don’t do it.\n\nWhy are you even here?\n\nAll written/textual content in your submitted assignments must be fully produced by you\nCode may be produced with AI (or human) assistance with a full disclosure statement\nDisclosure statements are required for all submitted work"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#academic-integrity-grading-penalties",
+    "href": "slides/Q1-W1_introduction.html#academic-integrity-grading-penalties",
+    "title": "Introduction to D2M-R",
+    "section": "Academic Integrity: Grading Penalties",
+    "text": "Academic Integrity: Grading Penalties\n\n\n\n\nYou will not be penalized for (with disclosure):\n\n\n\nUsing AI to help you with code\nUsing code snippets from print or online resources\nCo-writing code with classmates/other humans\nUnintentionally crossing the line with AI if it is fully disclosed\n\nI will ask to you revise and resubmit without penalty\n\n\n\n\n\n\n\nYou will be penalized for:\n\n\n\nFailing to disclose any of the above\nUsing AI to generate text for ANY submitted work\nUsing text written by any human other than you, including classmates\n\nExceptions for some group projects may be granted, but must be requested in advance\n\n\n\n\n\n\n Submissions that do not follow these guidelines will receive a non-negotiable 0."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#academic-integrity-you-ai",
+    "href": "slides/Q1-W1_introduction.html#academic-integrity-you-ai",
+    "title": "Introduction to D2M-R",
+    "section": "Academic Integrity: You & AI",
+    "text": "Academic Integrity: You & AI\n\n\n\n\n\nThe AIlephant in the room. This is DALL-E’s best attempt at “An elephant with the letters A and I on its ears.” Not very impressive, but I can’t blame it too much. It wasn’t a good pun to begin with.\n\n\n To see GPT’s coding skills in action, watch DougDoug force it to create Snake 2 (with mixed success).\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nIf you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nMy personal AI philosophy & Official Class Policy\n\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nHopefully you are using the class to make progress on a research project you are invested in. If you do not use AI wisely, you may not be “cheating” in a way that will hurt your grade, but you will be cheating yourself out of the reason you joined the class. If you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nYou can read my guide for what I personally believe are ethical and constructive uses of AI in higher education."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#grading-overview",
+    "href": "slides/Q1-W1_introduction.html#grading-overview",
+    "title": "Introduction to D2M-R",
+    "section": "Grading Overview",
+    "text": "Grading Overview\nEarn up to 100 points across five categories:\n\n\n\nPoints\nCategory\nDescription\n\n\n\n\n10\nAccountability\nCreate and maintain a personalized accountability plan\n\n\n10\nCommunity Engagement\nParticipate actively in class and on Slack\n\n\n60\nCore Standards Mastery\nDemonstrate proficiency on 12 core technical skills (standards)\n\n\n20\nIntegrative Data Project\nComplete a comprehensive data analysis project demonstrating mastery of all core standards\n\n\n((10))\nEnrichment\nOptional activities to deepen learning and supplement core work\n\n\n\nBecause enrichment points are optional, it is possible to earn more than 100 raw points across categories. Final course grades are capped at 100.\n\nYou start at 0 points and work up to 100. You don’t start at 100 and lose points. Meeting minimum requirements means you will pass the class. Earning an A takes more than that."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#accountability-plan-10pt",
+    "href": "slides/Q1-W1_introduction.html#accountability-plan-10pt",
+    "title": "Introduction to D2M-R",
+    "section": "Accountability Plan (10pt)",
+    "text": "Accountability Plan (10pt)\n\n\nYou create an assignment schedule for yourself.\n\n\n\nDefining your own goals is part of the research workflow and an explicit learning objective and part of your grade\nSDS approved accommodations for extensions are built into your plan\nYou will create a personal timeline and accountability plan for the quarter\n\n\n\n\n\nAccountability is 10% of your final grade.\n\n\n\nMeeting the 3 checkpoint deadlines for the plan itself (meta-deadlines); Mondays of Weeks 2, 5, and 8\nMeeting the deadlines you set for yourself\nReflecting on your progress and making adjustments\nSuggesting a grade (of 10)\n\n\n\n\n\nNo fixed interim deadlines: You may complete assignments on your own schedule within the quarter, with are some exceptions. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).\nPlanning is part of the grade: The Accountability & Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.\nEarly completion is allowed: You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter.\nYou create an assignment schedule for yourself. With very few exceptions, there are no top-down deadlines in this class. Why?\n\nThis class is about developing and maintaining a research workflow\nA major part of that is learning how to set and meet your own deadlines\nMaking your own plan and sticking to it is part of the syllabus\n\nThis means that “reasonable accommodations” must not prevent you from reaching this objective\n\n\nYou will create a personal timeline and accountability plan for the quarter\n\nInitial plans are due by Monday of Week 2\nRevised plans and reflections are due by Monday of Week 5\nFinal reflections are due Monday of Week 8\n\nYou can base your plan on the suggested timeline in the assignment instructions\n\nUse the suggested plan without changes (great option of the idea of designing your own schedule feels overwhelming)\nStart with this plan and make adjustments\nStart from scratch!\n\nIf your SDS accommodations include extended deadlines, you will factor those into the plan\n\ni.e. We are using this plan to agree on extensions now. I will not grant extensions to the planned extensions as we go.\n\n10% of your final grade is based on your accountability plan, including:\n\nMeeting the actual deadlines that I have set for the plan itself\nMeeting the deadlines you set for yourself\nReflecting on your progress and making adjustments to your plan\nSuggesting a grade (of 10) for how well you think you followed your plan"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#community-engagement-10pt",
+    "href": "slides/Q1-W1_introduction.html#community-engagement-10pt",
+    "title": "Introduction to D2M-R",
+    "section": "Community Engagement (10pt)",
+    "text": "Community Engagement (10pt)\nAttending class and paying attention are basic expectations. Your engagement grade is based on how you show investment in the course and your peers, both in and out of class.\n\nIn-class:\n\nAsk and answer questions during lecture\nUse workshop time wisely and generously\nParticipate in group activities\n\nOutside the classroom:\n\nBe an active participant on Slack\nSeek support from peers and instructors when needed\nCollaborate with peers\nComplete collaborative assignments\n\n\n\nAside from the basic expectation that you’ll attend class and pay attention, this can look different for everyone. The community engagement grade is not about meeting the minimum requirement (e.g., attending class!). It’s about demonstrating a high level of investment in the course and your peers. This is not an attendance grade.\nHere’s a non-exhaustive list of things that can contribute to the community engagement grade:\n\nIn-classroom:\n\nMake active contributions in a large group setting by asking/answering questions during lecture\nUse workshop time wisely and generously, seeking and offering support from/to classmates with debugging and troubleshooting\nParticipating in group activities\nGenerally paying attention and staying focused during class time\n\nOutside the classroom:\n\nBe an active participant on the class Slack channel, both asking and answering questions\nGet support from classmates, TAs, and the professor\nTeam up with a partner or small group to meet for working groups outside of class\nTake on one or more of the optional collaborative assignments in the assessment menu"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt",
+    "href": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt",
+    "title": "Introduction to D2M-R",
+    "section": "Core Standards Mastery (60pt)",
+    "text": "Core Standards Mastery (60pt)\nDemonstrate proficiency on 12 core technical skills (standards) selecting from a project menu.\n\nStructured assignments that guide you through skills step-by-step\nSemi-structured assignments that provide a clear framework with room for creativity\nUnstructured assignments that give suggested approaches to meet objectives\nGroup assignments\n“Off-the-menu” Self-designed small projects"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt-1",
+    "href": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt-1",
+    "title": "Introduction to D2M-R",
+    "section": "Core Standards Mastery (60pt)",
+    "text": "Core Standards Mastery (60pt)\nThe 12 core skills for the first quarter are:\n\nRStudio + Quarto workflow\nGitHub repositories and version control\nBase R syntax and data structures\nControl flow (if/else, loops)\nDefining functions in Base R\nImporting data with tidyverse tools\nData manipulation with dplyr and pipelines\nTidy data structure\nReshaping data with tidyr\nCharacter strings with stringr\nFactors with forcats\nBasic reporting: plots and descriptives in Quarto\n\n\nYou earn points by demonstrating each of 12 specific learning objectives\n\nRStudio + Quarto workflow\n\nCreate an RStudio project for course work, use relative paths, and knit simple Quarto documents that combine code and narrative.\nAdditional guidelines for RStudio/Quarto Workflow objective\n\nGitHub repositories and version control\n\nCreate and maintain a GitHub repo with README, .gitignore, and a commit history that reflects real work over time.\nAdditional guidelines for GitHub/Version Control objective\n\nBase R syntax and data structures\n\nCreate, index, and manipulate vectors, lists, and data frames, including handling missing data.\n\nControl flow (if/else, loops)\n\nUse if/else and loops to branch logic and automate repetitive tasks in multiple contexts.\n\nDefining functions in Base R\n\nDefine and use functions with arguments and return values with reusable code logic in multiple contexts.\n\nImporting data with tidyverse tools\n\nImport datasets with readr and related packages, handling paths and basic options.\n\nData manipulation with dplyr and pipelines\n\nUse multiple dplyr verbs (filter, select, mutate, summarize, arrange, group_by) in chained pipelines.\n\nTidy data structure\n\nDiagnose untidy data and reshape to a tidy format, with explanation.\n\nReshaping data with tidyr\n\nUse multiple tidyr functions (pivot_longer/pivot_wider/separate/unite) to reshape data.\n\nCharacter strings with stringr\n\nUse stringr functions (e.g., str_detect, str_replace, str_extract) to solve text cleaning or extraction tasks.\n\nFactors with forcats\n\nRecode, reorder, and/or lump factor levels to prepare categorical variables for analysis or plotting.\n\nBasic reporting: plots and descriptives in Quarto\n\nCreate simple ggplot2 plots and compute/report basic descriptive statistics (means, medians, counts, proportions) in a Quarto document with clear captions and narrative."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt-2",
+    "href": "slides/Q1-W1_introduction.html#core-standards-mastery-60pt-2",
+    "title": "Introduction to D2M-R",
+    "section": "Core Standards Mastery (60pt)",
+    "text": "Core Standards Mastery (60pt)\nEach standard is scored on a 4 / 5 / 6 point scale based on the quality and independence of your demonstration of the skill.\n\n\n\n\n\n\n\n\nPoints\nLabel\nDescription\n\n\n\n\nNo grade\nNo demonstration\nYou have not yet demonstrated this skill.\n\n\n4\nMeets Expectations\nYou demonstrate the skill correctly in structured or familiar contexts.\n\n\n5\nExceeds Expectations\nYou apply the skill correctly and independently in a novel context.\n\n\n6\nOutstanding\nYou use the skill in an especially expansive way.\n\n\n\n\nEach standard is scored on a 4 / 5 / 6 point scale based on the quality and independence of your demonstration of the skill.\n\n\n\n\n\n\n\n\nPoints\nLabel\nDescription\n\n\n\n\nNo grade\nNo demonstration\nYou have not yet demonstrated this skill.\n\n\n4\nMeets Expectations\nYou demonstrate the skill correctly in structured or familiar contexts (for example, following a guided assignment or closely modeled example).\n\n\n5\nExceeds Expectations\nYou apply the skill correctly and independently in a novel context, with clear, well-chosen code that would generalize to new datasets or problems.\n\n\n6\nOutstanding\nYou use the skill in an especially expansive way: combining it with other skills, applying\n\n\nit to a complex or less-structured task, or going beyond the scope of in-class examples.\n\n\n\n\n\nAll three levels (4, 5, 6) are successful demonstrations. If you do not demonstrate a skill at least at the 4-point level, you will not earn credit for that standard.\nEarning an average of 5 points per standard will earn you all 60 points. An average lower than 5 points can still result in an ‘A’ grade for the class if you complete enrichment activities.\nEach assignment will receive a score for each standard it addresses based on this rubric. Individual assignments may not be resubmitted for a higher score, but you may improve your score for a standard by submitting new assignments that demonstrate that standard at a higher level.\nHigher scores always replace lower scores for core standards, so after earning a high score with an impressive assignment, subsequent assignments that use the skill at a more basic level won’t lower your score."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#access-and-complete-core-projects",
+    "href": "slides/Q1-W1_introduction.html#access-and-complete-core-projects",
+    "title": "Introduction to D2M-R",
+    "section": "Access and Complete Core Projects",
+    "text": "Access and Complete Core Projects\n\nVisit the menu of core standards assignments here.\nSelect assignments that address the standards you want to demonstrate.\nUse the links on the menu to create a repo within the D2M-R GitHub organization by either:\n\nAccepting the GitHub classroom invitation (if available)\nCreating a private repo from scratch and adding in the associated files from the student hub repo\n\nComplete the assignment according to the instructions in the assignment’s README file or Quarto notebook.\nComplete the corresponding submission document (student-hub/templates)\nFinalize your assignment with a GitHub pull request.\nSubmit to the grading queue with the “Submit” form on the website.\n\nThere are extremely detailed instructions for how do do each step of this process in the student-hub repo, on each submission document, and on the website. Start here.\nWe’ll do a demo of what this looks like later."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#integrative-data-project-20pt",
+    "href": "slides/Q1-W1_introduction.html#integrative-data-project-20pt",
+    "title": "Introduction to D2M-R",
+    "section": "Integrative Data Project (20pt)",
+    "text": "Integrative Data Project (20pt)\n\n\n\nThe final project is a data analysis report created with RStudio and maintained in a GitHub repo that includes:\n\nData import\nData wrangling/cleaning\nBasic descriptive statistics\nSimple data visualization\nNarrative markdown text explaining your choices and findings"
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#integrative-data-project-20pt-1",
+    "href": "slides/Q1-W1_introduction.html#integrative-data-project-20pt-1",
+    "title": "Introduction to D2M-R",
+    "section": "Integrative Data Project (20pt)",
+    "text": "Integrative Data Project (20pt)\nEarn up to 20 points on the data project:\n\n\n\n\n\n\n\n\nPoints\nComponent\nDescription\n\n\n\n\n12\nCore standards\nDemonstrate all 12 core standards at 4pt-level or above\n\n\n2\nReproducibility\nCode is fully reproducible, with no errors\n\n\n2\nDocumentation\nCode is clearly commented with explanatory Quarto narrative text\n\n\n2\nCohesion\nData wrangling, statistics, and plots are clearly connected with narrative text\n\n\n2\nPresentation\nQuarto document is well-formatted and knits without error\n\n\n\nSubmit your data project up to 3 times to get early feedback and/or complete the requirement early.\n\n“Above and beyond” demonstrations of core standards or exceptional quality may receive bonus points at the grader’s discretion, but the project cannot contribute more than 20 points to the final grade. In other words, outstanding use of one standard might earn you a point that compensates for weaker presentation or documentation, but not a point of extra credit.\nYou may submit the data project up to 3 times throughout the quarter. With each draft, you will also include a self-assessment, indicating which standards you believe you have demonstrated and how well you have met each of the grading components above. After scoring your work, your grader will provide feedback as a response to your self-assessment to help you improve your project for future submissions.\nYou are allowed – and encouraged! – to submit partial drafts of your project to confirm that you are on the right track before submitting a full draft. You aren’t expected to be able to demonstrate a skill before we cover it in class, so early submissions may only demonstrate a subset of the standards. That’s fine! Submitting a draft that shows only a few objectives will let you confirm that you are in fact meeting expectations for those objectives and will give you guidance on where to go next.\nGrades for resubmissions will replace previous scores. Your grade for the data project will be the score earned on your last submission before the end-of-quarter deadline."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#enrichment-up-to-10pt",
+    "href": "slides/Q1-W1_introduction.html#enrichment-up-to-10pt",
+    "title": "Introduction to D2M-R",
+    "section": "Enrichment (up to 10pt)",
+    "text": "Enrichment (up to 10pt)\n10 optional points: customize your curriculum to your own interests\nYou can earn 100 points without any enrichment points.\nExamples include:\n\nDebugging journals that document how you worked through specific problems\nShort write‑ups teaching a peer how to do something (e.g., connecting RStudio and GitHub)\nReflections on responsible and productive use of AI tools in your workflow\nEvidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)\nContributions to open‑source R packages or communities (e.g., GitHub issues, Stack Overflow answers)\n\n\n\n\n\n\n\n\nWhere do I find them?\n\n\nFor the most part it’s up to you to design your own enrichment activities. Figuring out for yourself what would be most useful for your own learning is part of the point of this category. If you are totally lost as to where to start, there are a few unstructured activities available in the student-hub repo.\n\n\n\n\n\nEnrichment activities are not part of the base structure of the course grade. Instead, they give you a way to recover or add points if you choose a more structured path or if some standards land at the 4‑point level.\nThis is effectively up to 10 points of extra credit, but I don’t like thinking about these skills or these kinds of experiences as “extra.” I believe this category is as valuable as the core skills, but necessarily fuzzier and more open-ended. These 10 optional points are a way for you to customize your curriculum in this class to your own interests and goals.\nExamples include:\n\nDebugging journals that document how you worked through specific problems\nShort write‑ups teaching a peer how to do something (e.g., connecting RStudio and GitHub)\nSimple documentation for your own utility functions\nReflections on responsible and productive use of AI tools in your workflow\nEvidence of sustained collaboration on GitHub (e.g., issues, pull requests, code review)\nShort explorations of advanced R packages or techniques beyond the core curriculum\nIdentifying a need in your own research workflow and designing a solution using R\nDiscovering and effectively making use of specialized R packages for your specific needs\nMini‑projects that apply course skills to your own research questions (must be different from your final data project)\nContributions to open‑source R packages or communities (e.g., GitHub issues, Stack Overflow answers)\n\nThis is not a comprehensive list, and really the more creative and customized you approach this, the more useful it will be for your own learning (and the easier it will be to earn points). If you have an idea for an enrichment activity that isn’t listed here, send an email to Dr. Dowling to confirm that it is appropriate before you start working on it.\nYou may submit evidence for enrichment points up to 5 times during the quarter. Evidence may be in the form of a dedicated project (e.g., a debugging journal) or as a companion to another assignment (e.g., writing up how you used AI tools to help solve a problem in a core standards assignment). Points will be awarded based on overall quality and depth, which may look like creativity, independent learning, clear communication, thoughtful self-evaluation, or other dimensions depending on the nature of the activity. Your submission will include an opportunity for you to explain how the activity contributed to your learning and how many points you believe you have earned."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#get-yourself-sorted",
+    "href": "slides/Q1-W1_introduction.html#get-yourself-sorted",
+    "title": "Introduction to D2M-R",
+    "section": "Get Yourself Sorted",
+    "text": "Get Yourself Sorted\nUse your common sense and the many resources on the course website to get the following done:\n\nMake your GitHub account, apply for the education account.\nInstall R and RStudio.\nConnect GitHub and RStudio using the guide on the course site."
+  },
+  {
+    "objectID": "slides/Q1-W1_introduction.html#example-assignment",
+    "href": "slides/Q1-W1_introduction.html#example-assignment",
+    "title": "Introduction to D2M-R",
+    "section": "Example Assignment",
+    "text": "Example Assignment\nIn the meantime, while you figure yourself out, I’m going to demo the workflow of an example assignment.\nFollow along if you’re ready to go, otherwise just watch me and do it on your own later.\n\nGo to the assignment menu and click the GitHub classroom invite for the example assignment.\nAccept the assignment and create your GitHub repo.\nClone the repo to your computer using RStudio.\nOpen the example R script in RStudio and follow the instructions to complete the assignment.\n\nEven if you don’t have the github/RStudio thing sorted yet, you should open RStudio at this point and try out the interface.\n\nSubmit the assignment for (fake) grading with a pull request and the class submission form.\n\n\n\n\n\n\n\n\nIf you’re not sure how to do something, figure it out!\n\n\nThat’s the point. Practice finding resources and solving problems on your own. If you get stuck, ask for help on Slack. Thursday we’ll talk about specific problem-solving and debugging strategies."
+  },
+  {
     "objectID": "slides/Q1-W1_problem-solving.html#a-preface",
     "href": "slides/Q1-W1_problem-solving.html#a-preface",
     "title": "Preventing & Solving Problems",
@@ -1489,201 +1825,5 @@
     "title": "Course Structure",
     "section": "",
     "text": "You’ll need to bring a laptop to class every day with RStudio installed. Class sessions blend lecture, live coding demonstrations, and hands-on workshops. Students should have R, RStudio, Git, and GitHub configured by the end of Week 1.\nRequired software (all free):\n\nR (latest version)\nRStudio Desktop\nGit\nGitHub account\nSlack\nRecommended: GitHub Desktop for repository management when RStudio freaks out\n\nSetup guides and troubleshooting resources are available on the course website."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#housekeeping",
-    "href": "slides/Q1-W2_git-github.html#housekeeping",
-    "title": "Git & GitHub",
-    "section": "Housekeeping",
-    "text": "Housekeeping\n\nAccountability plans due YESTERDAY\nMake sure you have GitHub account created\nRStudio + Git setup: happygitwithr.com"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#final_ndrevisions-finalmarch22_finalfinal.docx",
-    "href": "slides/Q1-W2_git-github.html#final_ndrevisions-finalmarch22_finalfinal.docx",
-    "title": "Git & GitHub",
-    "section": "Final_NDrevisions-finalmarch22_FINALFINAL.docx",
-    "text": "Final_NDrevisions-finalmarch22_FINALFINAL.docx\n\n\nPhD Comics: notFinal.doc"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#version-control-basics",
-    "href": "slides/Q1-W2_git-github.html#version-control-basics",
-    "title": "Git & GitHub",
-    "section": "Version Control Basics",
-    "text": "Version Control Basics\n\n\n\n\n\nMinimally:\n\nWhat changed?\n\nadditions, deletions, modifications\n\nWhen?\n\ntimestamp for each change\n\nWho changed what?\n\ntrack author contributions in collaborative work\n\nRevert changes!\n\ngo back to any previous version instantly\n\n\n\n\n\n\n\n\nGoogle Doc version history\n\n\n\n\n\n\n“version control” is basically a system for keeping track of changes to files over time. A very simple and user-friendly version control system is what you’ll find in the “version history” of edits on a google doc."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#git-version-control",
-    "href": "slides/Q1-W2_git-github.html#git-version-control",
-    "title": "Git & GitHub",
-    "section": "Git Version Control",
-    "text": "Git Version Control\n\n\n\nGit is a robust version control system designed for text-based files\n\n\nWhat? When? Who? Revert! plus:\n\n\n\n\nWhich change is this?\n\nunique IDs for every revision\n\nWhy did it change?\n\ncommit messages explain purpose\n\nBranch and merge\n\nwork on multiple features simultaneously\n\nBackup\n\nproject (aka repository) history lives in multiple places\n\nAsynchronous collaboration\n\nidentify and resolve conflicting changes\n\nIntegration\n\nwith IDEs (e.g., RStudio) and cloud services (e.g., GitHub)\n\n\n\n\n\n\n\n\n\n\nGit commit history\n\n\n\n\n\n\nVersion control is like having a complete backup of every version of your project, plus a detailed log of what changed and why. It’s not just for programmers - anyone who works with files that change over time benefits."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#git-repositories",
-    "href": "slides/Q1-W2_git-github.html#git-repositories",
-    "title": "Git & GitHub",
-    "section": "Git Repositories",
-    "text": "Git Repositories\nA repository (or “repo”) is a project folder tracked by Git. Everything Git does is centered around repos.\nGit repos can be local (on your computer) or remote (hosted on a server like GitHub).\nAny folder on your computer can be turned into a Git repository (i.e. “initialized”), but a well-organized repo typically includes a few key components:\n\nProject files (e.g., scripts, data, documents)\nMetadata files (hidden files and directories that Git uses to manage version control)\nBespoke files like README.md, .gitignore, and .yml files (more on these later)"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#git-github",
-    "href": "slides/Q1-W2_git-github.html#git-github",
-    "title": "Git & GitHub",
-    "section": "Git ≠ GitHub",
-    "text": "Git ≠ GitHub\n\n\n\nGitHub: a web-based platform for hosting public and private Git repositories.\nGitHub and Git are related, but not the same thing.\n\n\n\n\n\n\n\nGit\n\n\n\n\nVersion control system\nTracks changes in metadata files\nYour files + metadata files = project repository (aka “repo”)\nRepos stored locally on your computer\nWorks offline\nFree & open source\nThe standard for version control\n\n\n\n\n\n\n\n\n\n\n\nGitHub\n\n\n\n\nWeb-based hosting service\nCloud storage for Git repositories\nAll repo contents, full history, additional features\nUser-friendly web interface for Git\nCollaboration tools\nFree and paid features\nOne of many Git hosting services\n\n\n\n\n\n\n\nEducation users (anyone with a .edu address) can access premium features for free.\nGITHUB is designed to promote code sharing and collaboration, but very useful for individuals, too.\nAnalogy: Git is like a local photo album, GitHub is like syncing to icloud or dropbox.\nGit does the version control work on your computer. GitHub is just one place to store and share your Git repositories online. There are alternatives like GitLab, Bitbucket, etc."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#github-features",
-    "href": "slides/Q1-W2_git-github.html#github-features",
-    "title": "Git & GitHub",
-    "section": "GitHub Features",
-    "text": "GitHub Features\n\n\n\nIn this class we’ll use GitHub to:\n\nMaintain all class materials\nCreate and share your work\nSubmit assignments using pull requests\nCollaborate on group projects\n\n\n\nBut GitHub offers many more features, including:\n\nGitHub Pages\nGitHub Copilot\nActions\nProjects\nCodespaces\nIssues\n\n\n\n\n\nSome of these extras you’ll be able to play around with during this course, but they won’t be explicitly part of the syllabus. Developing familiarity with these features can contribute to the engagement portion of your grade.\n\nGitHub Pages to host websites directly from a repository\nGitHub Copilot to assist with code generation and suggestions\nActions to automate workflows\nProjects to organize and prioritize work\nCodespaces to provide cloud-based development environments\nIssues to track bugs and feature requests"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#git-vocabulary",
-    "href": "slides/Q1-W2_git-github.html#git-vocabulary",
-    "title": "Git & GitHub",
-    "section": "Git Vocabulary",
-    "text": "Git Vocabulary\nNot all of these are essential at the start, but you should quickly get comfortable with the ones highlighted in red.\n\n\n\nRepo-level\n\nRepository or repo\n\na project folder tracked by Git\n\ninit\n\ninitialize a new Git repository\n\nclone\n\ncreate your own personal copy of an existing repository\n\nfork\n\ncopy a repository keeping a connection to the original\n\nbranch\n\ncreate your own temporary line of work in a repo\n\ncheckout\n\nswitch between branches in a repo\n\n\n\n\nFile-level\n\ncommit\n\nsave a snapshot of changes with a descriptive message\n\nfetch\n\nget latest changes from remote repo without merging\n\nmerge\n\ncombine changes from different branches\n\npull \n\nget latest changes from remote repo (=fetch+merge)\n\npush\n\nsend your commits to remote repo\n\nmerge conflict\n\nconflicting changes that need manual resolution\n\n\n\n\n\n\n\n\n\n\n\n\n\nMore to look for on your own\n\n\ndiff, stash, rebase, tag, cherry-pick, revert, reset, HEAD, remote, origin, upstream\n\n\n\n\n\n\n\n\nRepo: A directory (i.e., folder) the holds all documents and document edits associated with a project Init: Initializing a repo, making an existing directory ready to work with git (RStudio will do this for you) Clone: Copy an existing repository, creating a fully distinct and separate repo that you own and control Fork: Copy an existing repository, maintaining a connection to the original; you have full control over your fork, but not the original repo Branch: Create an isolated segment of a repo (that you own), so that you can make many changes before combining it back with the original (for collaboration) Checkout: Swap between different branches of a repo\nCommit: A snapshot of changes in the repo; documented with an informative note left for posterity called a commit message\nPull: Synchronizing your local repo with latest changes from a remote server (like Github)\nPush: Sending your commits (and the changed docs) from your local repo to the remote server\nDiff: The process run by git comparing and combining old and new files when you push changes\nMerge: The resulting process of a diff, where multiple versions of a file are intelligently combined\nMerge conflict: Error (recognized in the diff) where multiple changes to any single line of text can’t be automatically resolved and require user decisions"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#commits-snapshots-in-time",
-    "href": "slides/Q1-W2_git-github.html#commits-snapshots-in-time",
-    "title": "Git & GitHub",
-    "section": "Commits: Snapshots in Time",
-    "text": "Commits: Snapshots in Time\nA commit is the metadata associated with a change.\n\n\n\ncommit UNIQUE ID HASH\nAuthor: YOUR NAME &lt;YOUR@EMAIL.ADDRESS&gt;\nDate: FULL DATE & TIMESTAMP\n    \n    ONE LINE SUMMARY OF CHANGE(S)\n    \n    - OPTIONAL\n    - DESCRIPTIVE\n    - DETAILS\n\n\ncommit a3d2f1b\nAuthor: Natalie Dowling &lt;ndowling@uchicago.edu&gt;\nDate: Mon Jan 20 14:30:15 2026\n    \n    Add data cleaning script for survey responses\n    \n    - Remove duplicate entries\n    - Standardize column names  \n    - Handle missing values in age variable"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#commit-messages-best-practices",
-    "href": "slides/Q1-W2_git-github.html#commit-messages-best-practices",
-    "title": "Git & GitHub",
-    "section": "Commit Messages: Best Practices",
-    "text": "Commit Messages: Best Practices\n\n\n\nGood commit messages:\n\nDescribe what and why, not how\nStart with a present tense verb (“Add”, “Fix”, “Update”)\nFirst line under 50 characters\n\n\nAdd data cleaning script for survey responses\n\nMove glms out of qmd into a separate script\n\nStart zero-drafting methods\n\n\n\nBad commit messages:\n\nVague\nUninformative\nCover way too many or unrelated changes\n\n\nUpdates to data\n\nFriday afternoon commit\n\ndata cleaning script, move glms, start methods, fix typos, add bibliography\n\n\n\n\n\n\n\n\n\n\n\n\nA shameful confession\n\n\nI am a total hypocrite and rarely follow these guidelines. Actual commits from my actual repos: oops i broke the kid data but the adult glms work now, omg i can't anymore here are some broken plots fix this later or don't i don't care, i need a drink.\nI’m not proud, but what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you).\n\n\n\n\n\n\n\n\nI am a total hypocrite and rarely follow these “good” and “bad” guidelines. The longer I work, the more likely my commit messages devolve into oops i broke the kid data but the adult glms work now or omg i can't anymore here are some broken plots fix this later or don't i don't care or i need a drink.\nThese are actual commits from my actual repos. I’m not proud. Present-me is often pretty frustrated with past-me’s choices, but I can’t pretend that I don’t also find it entertaining and humanizing. (You’d think I wouldn’t need to humanize myself to myself, wouldn’t you? You’d be wrong.)\nWhile I encourage you to do as I say, not as I do, what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you)."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#the-basic-github-workflow",
-    "href": "slides/Q1-W2_git-github.html#the-basic-github-workflow",
-    "title": "Git & GitHub",
-    "section": "The Basic Git(Hub) Workflow",
-    "text": "The Basic Git(Hub) Workflow\n\nPull changes\n\nEvery time you sit down to work, before doing anything else\n\nCommit changes\n\nVery frequently!\nAny time you’ve made a “nameable” change\nUse brief, informative commit messages\n\nPush changes\n\nDon’t forget to commit first\nEvery time you pause or complete a work session\n\n\n\n\nThis means you should have way more commits than pushes. Each commit is a snapshot of your project at a specific point in time. Pushing sends all your committed changes to GitHub."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#merge-conflicts",
-    "href": "slides/Q1-W2_git-github.html#merge-conflicts",
-    "title": "Git & GitHub",
-    "section": "Merge Conflicts",
-    "text": "Merge Conflicts\nmerge conflict: Git cannot automatically reconcile differences between two versions of a file\nSymbols like &lt;&lt;&lt;, ===, and &gt;&gt;&gt; mark conflicting sections.\nAll you have to do is change the text and delete the markers.\n\n\n\nWhat you’ll see in a conflicted file:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nThis is the original line in the file.\n=======\nThis is the conflicting change made by another user.\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-branch\n\n\nYou manually edit the file to resolve the conflict:\nThis is the original line in the file.\nThis is the conflicting change made by another user.\n\n\n\n\nA merge conflict occurs when Git cannot automatically reconcile differences between two versions of a file. You’ll see symbols like &lt;&lt;&lt;, ===, and &gt;&gt;&gt; marking the conflicting sections. All you have to do is change the text and delete the markers."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#git-in-the-command-line-terminal",
-    "href": "slides/Q1-W2_git-github.html#git-in-the-command-line-terminal",
-    "title": "Git & GitHub",
-    "section": "Git in the Command Line / Terminal",
-    "text": "Git in the Command Line / Terminal\nLocal git repos are managed through the command line (Terminal on Mac, Git Bash on Windows)\n\n\nStep 1: Set up your local workspace\n# navigate to local repo directory\ncd repos/d2m-r/slides\n\n# get latest changes from upstream repo\ngit pull origin main\n\n\nStep 2: Do stuff. Make changes, additions, whatever in the repo files\n\n\nStep 2.5: Commit your work frequently after every “nameable” change.\n# commit staged changes with \"m\"essage\ngit commit -m \"Create first draft for GitHub lecture\"\n\n\nStep 3: Send your committed changes back to the remote repo\n# send commits to upstream repo\ngit push origin main\n\n\nLocal git repos are managed through the command line (Terminal on Mac, Git Bash on Windows). The process of sitting down to work, pulling from an upstream repo, making a few changes, adding those edited files to the staging area, committing with a brief commit message, and then pushing to upstream at the end of your work session might look something like this."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#git-in-rstudio",
-    "href": "slides/Q1-W2_git-github.html#git-in-rstudio",
-    "title": "Git & GitHub",
-    "section": "Git in RStudio",
-    "text": "Git in RStudio\nIn D2M-R, you’ll interact with Git through RStudio rather than Terminal or Command Prompt.\n\nIn D2M-R, you’ll interact with Git through RStudio rather than Terminal or Command Prompt.\nYou’ll mostly use the Git pane, which gives you a pretty user-friendly interface for the same commands you would run in the terminal.\nBut you can also use the Terminal tab in RStudio to run git commands directly, exactly as you would in a standalone terminal.\nYou’ll need this for more advanced tasks like resolving merge conflicts, but you can always opt to use it instead of the interface if you prefer."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#repository-structure",
-    "href": "slides/Q1-W2_git-github.html#repository-structure",
-    "title": "Git & GitHub",
-    "section": "Repository Structure",
-    "text": "Repository Structure\nA typical Git repository includes:\n\nProject files\n\nThe actual content of your project (e.g., scripts, data, documents), organized in a logical folder structure\n\nMetadata files\n\nHidden files and directories (like .git/) that Git uses to manage version control\n\nREADME.md\n\nA markdown file that provides an overview of the project, instructions for use, and other relevant information\n\n.gitignore\n\nA text file that specifies which files or directories Git should ignore\n\nConfiguration files (as needed)\n\nThings like .yml options, bibliography files, themes, etc."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#repo-structure-example-1",
-    "href": "slides/Q1-W2_git-github.html#repo-structure-example-1",
-    "title": "Git & GitHub",
-    "section": "Repo Structure: Example 1",
-    "text": "Repo Structure: Example 1\nMy preferred structure for a Quarto manuscript project:\n\n\n\nProject file directories\n\n/localonly: only present in your local R Project, listed in your .gitignore and never synced to github\n/data: .csv/tabular data files for all raw or intermediate datasets read into in your .qmd, optional /raw subfolder for raw data read (only) into unsourced R scripts\n/source: .R scripts to be called in an early chunk of your .qmd, e.g., stylistic preferences, functions, minor data wrangling\n/images: exported figures and any image files to read-in to your R Markdown manuscript\n/_extensions: auto-generated or installed Quarto extensions, like apaquarto\n\n\n\nTop-level files\n\nREADME.md: project overview, repo structure, to-do list, etc.\n.gitignore: starting from the R .gitignore template\nproject-manuscript.qmd: the home of your eventual publication\nbibliography.bib: a plain-text file containing all the BibTeX entries cited in your manuscript\nyourCitationStyle.csl: the script used to format in-text and bibliography citations when knitting\n\n\n\n\n\nNot everything is needed for every project. For example, extensions like apaquarto will create and store a .csl file within the extension files; you won’t see it in your top-level directory.\nFor the kind of Quarto project we’re focusing on in this class, you will always have exactly 1 .qmd file, which is the manuscript itself. It lives in the top level directory alongside your readme and gitignore."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#repo-structure-example-2",
-    "href": "slides/Q1-W2_git-github.html#repo-structure-example-2",
-    "title": "Git & GitHub",
-    "section": "Repo Structure: Example 2",
-    "text": "Repo Structure: Example 2\nA simple, generic project:\nmy-research-project/\n├── README.md\n├── my-project.Rproj  \n├── .gitignore\n├── data/\n│   ├── raw/                # Original data (maybe not in Git)\n│   └── processed/          # Cleaned data  \n├── scripts/\n│   ├── 01_clean.R          # Numbered workflow\n│   ├── 02_analyze.R\n│   └── functions.R         # Reusable functions\n├── outputs/\n│   ├── plots/\n│   └── tables/\n└── docs/\n│   └── analysis.qmd        # Main report\n├── localonly/              # LISTED IN YOUR .GITIGNORE\n    └── protected-data/     # ONLY EXISTS ON YOUR COMPUTER, NOT GITHUB"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#hidden-files-and-directories",
-    "href": "slides/Q1-W2_git-github.html#hidden-files-and-directories",
-    "title": "Git & GitHub",
-    "section": "Hidden files and directories",
-    "text": "Hidden files and directories\nRepos and R Projects will also include some hidden files and directories\n\n.git/ - Git metadata, what makes Git work\n.Rproj.user/ - RStudio project settings\n.quarto/ - Quarto project settings\n\nYou won’t interact with these directories directly, and you won’t see them in RStudio or on GitHub.\nYou may also have other hidden files, for example:\n\n.Rproj\n.RData\n.Rhistory\n.DS_Store\n\nYou won’t interact with these either but they won’t always be fully hidden in every interface. You can add them to your .gitignore file so they don’t clutter up your repo."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#readme.md",
-    "href": "slides/Q1-W2_git-github.html#readme.md",
-    "title": "Git & GitHub",
-    "section": "README.md",
-    "text": "README.md\n\nA README.md file provides a project overview. It is typically the first thing someone sees when they visit your repository on GitHub.\n\nSimple markdown (.md) document\nWhat you see rendered on a repo’s GitHub page\nCan do lots of things, but should at a minimum describe:\n\nPurpose of the repo\nDataset(s)\nRepo structure\nAny relevant licensing, restrictions, or citations"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#gitignore-what",
-    "href": "slides/Q1-W2_git-github.html#gitignore-what",
-    "title": "Git & GitHub",
-    "section": ".gitignore: what",
-    "text": ".gitignore: what\n\n\n\nA .gitignore file tells Git which files and directories to ignore when comparing differences between versions.\n\nPlain text file w/out extension\nFiles & folders that should be excluded from all git processes\nMatched on strings in file/folder names, including wildcard characters and simplified regex\nView documentation"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#gitignore-why",
-    "href": "slides/Q1-W2_git-github.html#gitignore-why",
-    "title": "Git & GitHub",
-    "section": ".gitignore: why",
-    "text": ".gitignore: why\n\nNot everything belongs online.\n\n\nPRIVACY.\n\nDo not upload anything with sensitive or identifiable information.\nIt is your responsibility to follow your IRB.\n\nSecurity\n\npasswords, security keys, login tokens\n\nBloat\n\nGit is designed for text files\nLarge files push very slowly and can cause RStudio to hang\nSome files are regenerated automatically\n\nConflict\n\n“behind the scenes” files that actually interact with local, git, or R processes will conflict for baffling reasons (sort of a technological observer effect)"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#gitignore-how",
-    "href": "slides/Q1-W2_git-github.html#gitignore-how",
-    "title": "Git & GitHub",
-    "section": ".gitignore: how",
-    "text": ".gitignore: how\n\n\nOptionally start with a template then:\n\nUse informative # comments\nProtect private data in a localonly/ folder\n\nDedicated place for anything you need to keep offline that the .gitignore might not explicitly catch\nGood place to keep deanonymized datasets instead of trusting yourself to remember to add them to the .gitignore\n\nIgnore files/folders\n\nMatching the name: data/raw/sensitive_data.csv, topsecret/\nUsing wildcards: *.pdf, no-git_*\n\n\n\n\nIgnore large files\n\nMedia files: e.g, *.png, *.jpg, *.mp4\n\ntend to be very large, often contain sensitive info\n\nPresentation files: e.g., *.pptx, *.key\n\nnot necessary for reproducibility, often large\n\nSpecialized and raw files: e.g, *.bdl, *.ear, *.mgh\n\ndata needs to be tabular eventually anyway\n\n\n\n\nIgnore auto-generated files\n\nSystem files: e.g., *.DS_Store, *.RData, *.Rhistory\n\nplatform-specific, or not text-based\n\nProcess files: e.g., *.log, *.aux, *.out\n\nshould be deleted after success but can stick around if knitting fails\n\nCompiled files: e.g., *.pdf, *.docx, *.html\n\nrecreated every time you knit"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#summary",
-    "href": "slides/Q1-W2_git-github.html#summary",
-    "title": "Git & GitHub",
-    "section": "Summary",
-    "text": "Summary\n\nManage all projects with version control\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts:\n\nrepositories: folders tracked by Git\ncommits: snapshots of changes\nbranches: isolated lines of work\npulls: get changes from remote repos\npushes: send changes to remote repos\n\nYour repo needs:\n\nproject files\nmetadata files\na README.md\na .gitignore file\n\nPULL when you sit down to work. COMMIT frequently as you work. PUSH when you pause or finish.\n\n\n\nVersion control is essential for managing changes in your projects\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts include repositories, commits, branches, pulls, and pushes\nA well-structured repository includes project files, metadata, a README, and a . gitignore file\nUsing Git in RStudio provides a user-friendly interface for version control tasks\nRegularly committing and pushing changes helps maintain a clear project history"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#try-it-out",
-    "href": "slides/Q1-W2_git-github.html#try-it-out",
-    "title": "Git & GitHub",
-    "section": "Try it out",
-    "text": "Try it out\nThis guided tutorial walks through these steps:\n\nCreate a repo on GitHub.\nClone it in RStudio.\nMake a change in RStudio.\nCommit and push the change.\nCheck the change on GitHub.\nMake a change on GitHub (and commit).\nPull the change in RStudio.\nCreate a conflict by making and committing a change in RStudio and a different (conflicting) change on GitHub.\nResolve the conflict in RStudio."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#git-vocab-repo-level",
-    "href": "slides/Q1-W2_git-github.html#git-vocab-repo-level",
-    "title": "Git & GitHub",
-    "section": "Git Vocab: Repo-level",
-    "text": "Git Vocab: Repo-level\n\nRepository or repo\n\na project folder tracked by Git\n\ninit\n\ninitialize a new Git repository\n\nclone\n\ncreate your own personal copy of an existing repository\n\nfork\n\ncopy a repository keeping a connection to the original\n\nbranch\n\ncreate your own temporary line of work in a repo\n\ncheckout\n\nswitch between branches in a repo\n\n\n\nRepo: A directory (i.e., folder) the holds all documents and document edits associated with a project Init: Initializing a repo, making an existing directory ready to work with git (RStudio will do this for you) Clone: Copy an existing repository, creating a fully distinct and separate repo that you own and control Fork: Copy an existing repository, maintaining a connection to the original; you have full control over your fork, but not the original repo Branch: Create an isolated segment of a repo (that you own), so that you can make many changes before combining it back with the original (for collaboration) Checkout: Swap between different branches of a repo"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#git-vocabulary-file-level",
-    "href": "slides/Q1-W2_git-github.html#git-vocabulary-file-level",
-    "title": "Git & GitHub",
-    "section": "Git Vocabulary: File-level",
-    "text": "Git Vocabulary: File-level\n\nstage\n\nprepare changes for commit\n\ncommit\n\nsave a snapshot of changes with a descriptive message\n\nfetch\n\nget latest changes from remote repo without merging\n\nmerge\n\ncombine changes from different branches\n\npull \n\nget latest changes from remote repo (=fetch+merge)\n\npush\n\nsend your commits to remote repo\n\nmerge conflict\n\nconflicting changes that need manual resolution\n\n\n\nCommit: A snapshot of changes in the repo; documented with an informative note left for posterity called a commit message\nPull: Synchronizing your local repo with latest changes from a remote server (like Github)\nPush: Sending your commits (and the changed docs) from your local repo to the remote server\nDiff: The process run by git comparing and combining old and new files when you push changes\nMerge: The resulting process of a diff, where multiple versions of a file are intelligently combined\nMerge conflict: Error (recognized in the diff) where multiple changes to any single line of text can’t be automatically resolved and require user decisions"
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#github-cardinal-rules",
-    "href": "slides/Q1-W2_git-github.html#github-cardinal-rules",
-    "title": "Git & GitHub",
-    "section": "Git(Hub) cardinal rules",
-    "text": "Git(Hub) cardinal rules\n\n\n\n\n\n\nYour workflow:\n\n\n\n\nCommit little & commit lots\n\n\n\nPull before you start editing\nCommit often as your work\nPush when you close your session\n\n\n\n\n\n\n\nThou shalt:\n\nUse frequent, informative commit messages\nUse a .gitignore to specify files and filetypes to keep local\nMaintain a README.md file documenting your repo’s structure and purpose\nBe intentional managing public and protected files\n\n\n\nRemember the whole point of GitHub is version control!\nEach assignment has a unique repo. Each repo is a unique files.\nNever create multiple copies of the same files!!!\n\n\n\n\n\nCommit little; commit often\n“little” as in the commits themselves are little changes\nUse a .gitignore to specify files and filetypes that should not be included in pulls or pushes Maintain a README.md file providing at least minimal documentation of the structure of your repo and purpose of the project Make purposeful and wise decisions about managing public, private, and protected data and files Use informative commit messages Pull before you start editing; commit as you work; push when you close your session\nRemember the whole point of github is version control!\nEach assignment has a unique repo. Each repo is a unique files.\nDo not create multiple copies of the same files!!!\nYour repos are the homes of your projects, not a random collection of notes and homework. Keep them organized, future-proof, and collaborator-friendly for contexts beyond this class.\n\n\nThis means you should have way more commits than pushes. Each commit is a snapshot of your project at a specific point in time. Pushing sends all your committed changes to GitHub."
-  },
-  {
-    "objectID": "slides/Q1-W2_git-github.html#git-in-the-command-line",
-    "href": "slides/Q1-W2_git-github.html#git-in-the-command-line",
-    "title": "Git & GitHub",
-    "section": "Git in the Command Line",
-    "text": "Git in the Command Line\nLocal git repos are managed through the command line (Terminal on Mac, Git Bash on Windows)\n\n\nStep 1: Set up your local workspace\n# navigate to local repo directory\ncd repos/d2m-r/slides\n\n# get latest changes from upstream repo\ngit pull origin main\n\n\nStep 2: Do stuff. Make changes, additions, whatever in the repo files\n\n\nStep 2.5: Commit your work frequently after every “nameable” change.\n# commit staged changes with \"m\"essage\ngit commit -m \"Create first draft for GitHub lecture\"\n\n\nStep 3: Send your committed changes back to the remote repo\n# send commits to upstream repo\ngit push origin main\n\n\nLocal git repos are managed through the command line (Terminal on Mac, Git Bash on Windows). The process of sitting down to work, pulling from an upstream repo, making a few changes, adding those edited files to the staging area, committing with a brief commit message, and then pushing to upstream at the end of your work session might look something like this."
   }
 ]
