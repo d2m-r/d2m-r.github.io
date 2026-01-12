@@ -429,9 +429,11 @@ data cleaning script, move glms, start methods, fix typos, add bibliography
 ### A shameful confession
 
 
-I am a total hypocrite and rarely follow these guidelines. Actual commits from my actual repos: `oops i broke the kid data but the adult glms work now`, `omg i can't anymore here are some broken plots fix this later or don't i don't care`, `i need a drink`. 
+I am a total hypocrite and rarely follow these guidelines. Actual commits from my actual repos:
 
-I'm not proud, but what actually matters is that you 1) **commit often** and 2) write **messages that make sense** to anyone who has to read them (including, hopefully, future you).
+`oops i broke the kid data but the adult glms work now`; `omg i can't anymore here are some broken plots fix this later or don't i don't care`; `i need a drink`
+
+I'm not proud, but what matters is that you 1) **commit often** and 2) write **messages that make sense** to anyone who has to read them (including, hopefully, future you).
 
 :::
 :::
@@ -545,13 +547,15 @@ All you have to do is change the text and delete the markers.
 :::: row
 ::: {.col-6 .fragment}
 ### What you'll see in a conflicted file:
-``` markdown
+
+```{.markdown}
 <<<<<<< HEAD
 This is the original line in the file.
 =======
 This is the conflicting change made by another user.
 >>>>>>> feature-branch
 ```
+
 :::
 ::: {.col-6 .fragment}
 
@@ -756,6 +760,8 @@ quarto-manuscript-project/
 
 ## Hidden files and directories (non-exhaustive list)
 
+::: nonincremental
+
 - `.git/` - Git metadata, what makes Git work
 - `.Rproj.user/` - RStudio project settings
 - `.quarto/` - Quarto project settings
@@ -763,6 +769,8 @@ quarto-manuscript-project/
 - `.RData`
 - `.Rhistory`
 - `.DS_Store`  
+
+:::
 
 
 ::: notes
@@ -794,7 +802,7 @@ A `README.md` file provides a project overview. It is typically the first thing 
 
 -   Simple markdown (`.md`) document
 -   What you see rendered on a repo's GitHub page
--   Can do lots of things, but should at a minimum describe:
+-   Minimally describe:
     -   Purpose of the repo
     -   Dataset(s)
     -   Repo structure
@@ -819,8 +827,8 @@ A `README.md` file provides a project overview. It is typically the first thing 
 A `.gitignore` file tells Git which files and directories to ignore when comparing differences between versions.
 
 -   Plain text file w/out extension
--   Files & folders that should be excluded from all git processes
--   Matched on strings in file/folder names, including wildcard characters and simplified regex
+-   Files & folders excluded from all git processes
+-   Matched on strings, including wildcard characters and simplified regex
 -   [View documentation](https://git-scm.com/docs/gitignore)
 
 :::
@@ -960,7 +968,7 @@ Ignore auto-generated files
 
 
 
-## Summary
+## Key Takeaways
 
 -   Manage all projects with [version control]{.keyword}
 -   Git is a powerful version control system; GitHub is a platform for hosting Git repositories

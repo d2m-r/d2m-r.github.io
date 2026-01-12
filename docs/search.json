@@ -186,7 +186,7 @@
     "href": "slides/Q1-W2_git-github.html#commit-messages-best-practices",
     "title": "Git & GitHub",
     "section": "Commit Messages: Best Practices",
-    "text": "Commit Messages: Best Practices\n\n\n\nGood commit messages:\n\nDescribe what and why, not how\nStart with a present tense verb (“Add”, “Fix”, “Update”)\nFirst line under 50 characters\n\n\nAdd data cleaning script for survey responses\n\nMove glms out of qmd into a separate script\n\nStart zero-drafting methods\n\n\n\nBad commit messages:\n\nVague\nUninformative\nCover way too many or unrelated changes\n\n\nUpdates to data\n\nFriday afternoon commit\n\ndata cleaning script, move glms, start methods, fix typos, add bibliography\n\n\n\n\n\n\n\n\n\n\n\n\nA shameful confession\n\n\nI am a total hypocrite and rarely follow these guidelines. Actual commits from my actual repos: oops i broke the kid data but the adult glms work now, omg i can't anymore here are some broken plots fix this later or don't i don't care, i need a drink.\nI’m not proud, but what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you).\n\n\n\n\n\n\n\n\nI am a total hypocrite and rarely follow these “good” and “bad” guidelines. The longer I work, the more likely my commit messages devolve into oops i broke the kid data but the adult glms work now or omg i can't anymore here are some broken plots fix this later or don't i don't care or i need a drink.\nThese are actual commits from my actual repos. I’m not proud. Present-me is often pretty frustrated with past-me’s choices, but I can’t pretend that I don’t also find it entertaining and humanizing. (You’d think I wouldn’t need to humanize myself to myself, wouldn’t you? You’d be wrong.)\nWhile I encourage you to do as I say, not as I do, what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you)."
+    "text": "Commit Messages: Best Practices\n\n\n\nGood commit messages:\n\nDescribe what and why, not how\nStart with a present tense verb (“Add”, “Fix”, “Update”)\nFirst line under 50 characters\n\n\nAdd data cleaning script for survey responses\n\nMove glms out of qmd into a separate script\n\nStart zero-drafting methods\n\n\n\nBad commit messages:\n\nVague\nUninformative\nCover way too many or unrelated changes\n\n\nUpdates to data\n\nFriday afternoon commit\n\ndata cleaning script, move glms, start methods, fix typos, add bibliography\n\n\n\n\n\n\n\n\n\n\n\n\nA shameful confession\n\n\nI am a total hypocrite and rarely follow these guidelines. Actual commits from my actual repos:\noops i broke the kid data but the adult glms work now; omg i can't anymore here are some broken plots fix this later or don't i don't care; i need a drink\nI’m not proud, but what matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you).\n\n\n\n\n\n\n\n\nI am a total hypocrite and rarely follow these “good” and “bad” guidelines. The longer I work, the more likely my commit messages devolve into oops i broke the kid data but the adult glms work now or omg i can't anymore here are some broken plots fix this later or don't i don't care or i need a drink.\nThese are actual commits from my actual repos. I’m not proud. Present-me is often pretty frustrated with past-me’s choices, but I can’t pretend that I don’t also find it entertaining and humanizing. (You’d think I wouldn’t need to humanize myself to myself, wouldn’t you? You’d be wrong.)\nWhile I encourage you to do as I say, not as I do, what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you)."
   },
   {
     "objectID": "slides/Q1-W2_git-github.html#github-cardinal-rules",
@@ -256,14 +256,14 @@
     "href": "slides/Q1-W2_git-github.html#readme.md",
     "title": "Git & GitHub",
     "section": "README.md",
-    "text": "README.md\n\nA README.md file provides a project overview. It is typically the first thing someone sees when they visit your repository on GitHub.\n\nSimple markdown (.md) document\nWhat you see rendered on a repo’s GitHub page\nCan do lots of things, but should at a minimum describe:\n\nPurpose of the repo\nDataset(s)\nRepo structure\nAny relevant licensing, restrictions, or citations"
+    "text": "README.md\n\nA README.md file provides a project overview. It is typically the first thing someone sees when they visit your repository on GitHub.\n\nSimple markdown (.md) document\nWhat you see rendered on a repo’s GitHub page\nMinimally describe:\n\nPurpose of the repo\nDataset(s)\nRepo structure\nAny relevant licensing, restrictions, or citations"
   },
   {
     "objectID": "slides/Q1-W2_git-github.html#gitignore-what",
     "href": "slides/Q1-W2_git-github.html#gitignore-what",
     "title": "Git & GitHub",
     "section": ".gitignore: what",
-    "text": ".gitignore: what\n\n\n\nA .gitignore file tells Git which files and directories to ignore when comparing differences between versions.\n\nPlain text file w/out extension\nFiles & folders that should be excluded from all git processes\nMatched on strings in file/folder names, including wildcard characters and simplified regex\nView documentation"
+    "text": ".gitignore: what\n\n\n\nA .gitignore file tells Git which files and directories to ignore when comparing differences between versions.\n\nPlain text file w/out extension\nFiles & folders excluded from all git processes\nMatched on strings, including wildcard characters and simplified regex\nView documentation"
   },
   {
     "objectID": "slides/Q1-W2_git-github.html#gitignore-why",
@@ -2238,5 +2238,12 @@
     "title": "RStudio & Quarto",
     "section": "RStudio & Quarto Walkthrough",
     "text": "RStudio & Quarto Walkthrough\n\nCreate a new RStudio project\nView/change global options\nCreate README.md markdown file and setup.R script\nCreate Quarto manuscript.qmd document with:\n\nYAML\nChunks w/ source() and inline code\nMarkdown text with inline R code\n\nRender the Quarto document to HTML"
+  },
+  {
+    "objectID": "slides/Q1-W2_git-github.html#key-takeaways",
+    "href": "slides/Q1-W2_git-github.html#key-takeaways",
+    "title": "Git & GitHub",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nManage all projects with version control\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts:\n\nrepositories: folders tracked by Git\ncommits: snapshots of changes\npulls: get changes from remote repos\npushes: send changes to remote repos\n\nYour repo needs:\n\nproject files\nmetadata files\na README.md\na .gitignore file\n\nPULL when you sit down to work. COMMIT frequently as you work. PUSH when you pause or finish.\n\n\n\nVersion control is essential for managing changes in your projects\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts include repositories, commits, branches, pulls, and pushes\nA well-structured repository includes project files, metadata, a README, and a . gitignore file\nUsing Git in RStudio provides a user-friendly interface for version control tasks\nRegularly committing and pushing changes helps maintain a clear project history"
   }
 ]
