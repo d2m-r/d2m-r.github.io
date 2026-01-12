@@ -1300,7 +1300,7 @@ There are lots of excellent, high-quality, well-maintained packages that aren't 
     -   [Hands-On Programming with R](https://rstudio-education.github.io/hopr/index.html)
     -   [D2M-R Textbook](https://d2m-r.github.io/book/)
         -   *very much still in early development!* 
-        -   Contribute to the textbook as a course project through the [repo](github.com/d2m-r/book)
+        -   Contribute to the textbook as a course project through the [repo](http://github.com/d2m-r/book)
 - D2M-R Course site:
     -   [List of external resources](../materials/resources.qmd)
     -   [Miscellaneous materials and course guides](../materials/course-resources.qmd)
@@ -1685,7 +1685,7 @@ How do I get someone to answer?
 
 -   In-class workshops and lectures
     -   *You have to actually ask a question to get an answer!*
--   [D2M-R Slack](d2m-r.slack.com)
+-   [D2M-R Slack](http://d2m-r.slack.com)
 -   Study groups
 -   Office hours
 
