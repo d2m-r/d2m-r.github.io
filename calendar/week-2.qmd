@@ -52,7 +52,8 @@ Jan-13; Jan-15
 -   Thursday: Finish slides if needed + hands-on practice with Git & GitHub
     -   Create a repository, make changes, commit, push, pull, etc.
     -   Q&A/demo as needed for RStudio and GitHub
--   Time permitting, a brief diversion into Quarto and markdown
+-   *Depending on need/interest, we can use Tuesday or Thursday to do a more involved RStudio and Quarto introduction.*
+    -   That would make it a very dense week for slides trying to fit all of Git/GitHub into 1 day, but it's doable.
 
 **Primary learning objectives:**
 
@@ -75,14 +76,17 @@ Jan-13; Jan-15
 
 **Class Materials:**
 
--   [Git & GitHub Slides]()
+-   [Git & GitHub Slides](../slides/Q1-W2_git-github.html)
+-   [RStudio & Quarto Slides](../slides/Q1-W2_rstudio-quarto.html)
 -   Course guides:
     -   [Using GitHub with RStudio](../materials/guides/rstudio-github.html)
     -   [Guided Exercise: Create and Sync a GitHub Repo with RStudio](../materials/guides/walkthrough-github-rstudio.html)
 -   Textbook
     -   **Reminder:** The textbook is in its infancy! I hope you'll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources.
+    -   [Ch3: RStudio Essentials](https://d2m-r.com/book/chapters/rstudio.html)
+        - Chapter status (Jan 2025): ~75% first draft
     -   [Ch4: Git and GitHub](https://d2m-r.github.io/book/chapters/git-github.html)
-        - Chapter status (Jan 2025): primarily outline, includes some content and speaker notes from slides
+        - Chapter status (Jan 2025): primarily just outline, includes some content and speaker notes from slides
 
 <!-- software, tools, datasets, etc -->
 
