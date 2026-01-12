@@ -1,0 +1,1177 @@
+---
+title: "R Programming Language"
+subtitle: "r fundamentals, packages, programming"
+date: "1/27/2026" # M/D/Y
+footer: "D2M-R I | Week 3" #  quarter, week, and class
+
+format: revealjs
+engine: knitr
+
+revealjs-plugins:
+  - codefocus
+
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source
+---
+
+<!-- ## Lecture planning -->
+
+<!-- 5.  R Language Essentials -->
+<!--     1.  Introduction -->
+<!--         1.  What is R and why use it? -->
+<!--         2.  Object-oriented programming -->
+<!--     2.  R syntax -->
+<!--         1.  Variables -->
+<!--         2.  Functions -->
+<!--         3.  Data types -->
+<!--         4.  Operators -->
+<!--     3.  R data structures -->
+<!--         1.  Vectors -->
+<!--         2.  Lists -->
+<!--         3.  Matrices -->
+<!--         4.  Data frames -->
+<!--         5.  Tibbles -->
+<!--     4.  R packages -->
+<!--         1.  What are packages? -->
+<!--         2.  Installing and loading packages -->
+<!--         3.  Same function, different packages, oh no! -->
+<!--             1.  Functions with different names in different packages that all do the same thing -->
+<!--             2.  Functions with the same name in different packages that do different things -->
+<!--         4.  Commonly used packages in D2MR -->
+<!-- 6.  R Programming -->
+<!--     1.  Essential concepts in base R -->
+<!--         1.  Object assignment -->
+<!--             1.  Creating dummy variables and dataframes -->
+<!--         2.  Indexing and subsetting with \[\] & \$ -->
+<!--         3.  (more base R essentials) -->
+<!--     2.  Iteration -->
+<!--         1.  Conditional statements -->
+<!--             1.  if else -->
+<!--             2.  case_when -->
+<!--         2.  Loops -->
+<!--             1.  for loops -->
+<!--             2.  while loops -->
+<!--     3.  Functions in R -->
+<!--         1.  Writing functions -->
+<!--         2.  Function arguments and return values -->
+<!--         3.  Scope and environments -->
+<!--     4.  Regular expressions -->
+<!--         1.  What is regex? What's the point? -->
+<!--         2.  Basic syntax -->
+<!--         3.  Common use cases -->
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+```
+
+
+# Welcome to R
+
+<!-- How much I think I know about R cartoon -->
+
+## R Programming Language
+
+-   Built to efficiently store and manipulate data
+-   Open-source, free, and flexible alternative to other statistical analysis software
+-   Large, active community of users and contributors
+-   Packages shared and stored on the open index CRAN (Comprehensive R Archive Network)
+
+
+::: notes
+R is a programming language ("environment") built to efficiently store and manipulate data, particularly matrices and arrays, based on another language called S
+- Widely used among statisticians, researchers, and data miners for developing statistical software and data analysis (vs general programming languages like python)
+Open-source, free, and flexible alternative to other statistical analysis software like Stata and SPSS
+Has a large and active community contributing packages that facilitate a wide variety of analysis types, graphical options, and more. Many contributors store their packages on CRAN (Comprehensive R Archive Network)
+:::
+
+## R: OOP
+
+-   R is an [object-oriented programming language (OOP)]{.keyword}
+    -   [Objects]{.keyword}: contain a value and have an identifier
+    -   [Classes]{.keyword}: templates for objects and their contained data type
+    -   [Structures]{.keyword}: classes containing multiple objects
+-   R manipulates data (objects)
+    -   [Environments]{.keyword}: collections of manipulable objects
+    -   [Functions]{.keyword}: procedures for creating or changing code
+    -   [Arguments]{.keyword}: inputs to functions that specify procedure
+
+
+::: notes
+-   OBJECTS contain a value and have a name/identifier
+-   CLASSES are templates for objects and the "type" of data contained within
+-   STRUCTURES are classes for objects that comprise multiple objects
+-   ENVIRONMENTS are collections of objects that can be manipulated
+-   FUNCTIONS are procedures for creating or changing data
+-   ARGUMENTS are passed to functions to specify the procedure in context
+
+NOTE: you might hear objects and classes referred to by other terms. this is because all OOP langs have slightly different differentiation (if they have them at all!) between things like classes and "structures" for example. for our purposes the precise language isn't critical, just the concepts. but it's worth keeping in mind if you're going to go deeper into heavy programming with R or other OOPs like python
+:::
+
+## R Scripts
+
+-   R scripts include:
+    -   Series of functions (code) to carry out in order
+    -   Plain text comments (non-code) that are ignored by R
+-   R code is written in:
+    -   R script files (.R)
+    -   "Code chunks" within other file types (e.g., .Rmd & .qmd notebooks)
+-   [Sourcing]{.keyword} scripts allows code in one file to "talk to" code in other files
+
+::: bubble-chain
+  <p class="bubble-left fragment">What's the difference between .R and .Rmd files?</p>
+  <p class="bubble-right fragment">.R files are scripts, containing only R code and comments. .Rmd files (aka "R notebooks") are a special type of markdown (.md) file that can contain and execute R code within a broader context of text, images, and other media. .Rmd = .R + .md</p>
+:::
+
+
+::: notes
+R scripts:
+Dictate a series of functions (code) to carry out in order
+Include plain text comments (non-code) that are ignored by R
+R code is usually written in R script files with the .R extension
+R code can also be included in "code chunks" within other file types (e.g., .Rmd & .qmd notebooks)
+Some functions allow R scripts to "talk to" R code in other files
+So an R project typically has multiple .R files in addition to the .Rmd
+
+.R scripts are just that: scripts. .Rmd files are "R Notebooks", combining .R : magical files that process many kinds of code and non-code to produce a coherent, human-friendly presentation of data. 
+
+:::
+
+# R Syntax
+
+## Comments
+
+-   [Comments]{.keyword} are plain text notes within code that are ignored by R
+-   Created using the `#` symbol
+    -   Everything that follows *on that line* will be ignored
+-   Used to:
+    -   Explain code functionality
+    -   Provide context or instructions
+    -   Temporarily disable code during testing/debugging
+    
+```r
+# This comment spans multiple lines. The `#` symbol must be used at the start 
+# of each line. Alternatively, start the comment mid-line like below:
+
+x <- 42  # Assign the value 42 to the variable x
+```
+    
+::: notes
+More on comments in the introduction and best practices lecture (Week 1).
+:::
+
+## Variables
+
+-   [Variables]{.keyword} store data values with *unique* identifiers
+-   Created using the assignment operator `<-`
+    -   Example: `class_name <- "D2M-R"`
+-   Variable names:
+    -   Are case-sensitive
+        -   e.g., `Class_Name`, `class_name`, and `CLASS_NAME` are different variables
+    -   MUST start with a letter or dot, not a number
+        -   e.g., `student1`, `.temp_value` are valid; `1student`, `_value` are not
+    -   MUST contain (only) letters, numbers, dots, or underscores
+        -   e.g., `total.score`, `data_frame_1` are valid; `total-score`, `data frame` are not
+    -   SHOULD be descriptive and meaningful
+        -   e.g., `student_age`, `is_enrolled`, `total_score`
+    -   SHOULD follow consistent naming conventions
+        -   e.g., `camelCase`, `snake_case`, or `dot.notation`
+        -   Use a style guide like the [Tidyverse style guide](https://style.tidyverse.org/syntax.html)
+
+
+::: notes
+
+Variables are assigned values with an assignment operator. The standard assignment operator in R is `<-`, where the variable name is on the left and the value to be assigned is on the right.
+Alternatively you can use `=` for assignment in the same way, but `<-` is preferred for variable assignment. `=` is used for assigning values to function arguments.
+You can also use `->` to assign values in reverse, but this is very rarely used.
+
+:::
+
+
+## Main Data Types
+
+Data you can work with in R takes one of 6[^1] forms, most commonly: 
+
+| Data type | Description | Example |
+|------------------------|----------------------------|--------------------|
+| [Numeric]{.keyword} | Decimal numbers, including whole numbers | `3.14`, `42.0`, `-1.5` |
+| [Integer]{.keyword} | Whole numbers (exclusively), represented with an `L` suffix | `42L`, `-1L`, `1000L` |
+| [Logical]{.keyword} | Boolean values, either `TRUE` or `FALSE` | `TRUE`, `FALSE` or `T`, `F` |
+| [Character]{.keyword} | Text strings, enclosed in quotes | `"hello"`, `'123'`, `"R is great!"` |
+
+[^1]: Also [complex]{.keyword} numbers and [raw]{.keyword} vectors, rarely used in practice.
+
+::: notes
+The main data types you'll encounter in R are Numeric, Integer, Logical, and Character.
+Numeric data type represents decimal numbers, including whole numbers (e.g., 3.14, 42.0, -1.5)
+Integer data type represents *only* whole numbers, indicated by an L suffix (e.g., 42L, -1L, 1000L)
+Logical data type represents boolean values, either TRUE or FALSE (e.g., TRUE, FALSE)
+Character data type represents text strings, enclosed in quotes (e.g., "hello", '123', "R is great!")
+
+The other 2 are [Complex]{.keyword} numbers (e.g., `1 + 2i`) and [Raw]{.keyword} vectors (used to store raw bytes of data, e.g., images or binary files). You're won't run into these in this class.
+:::
+
+
+
+## Data Types(+)
+
+There are also a few "honorary" data types:
+
+| Data type | Description | Example |
+|------------------------|----------------------------|--------------------|
+| [Factor]{.keyword} | Leveled categorical data, stored as integers with labels | `factor(c("low", "medium", "high"))` |
+| [Date]{.keyword} | Dates, stored as a special class of object | `as.Date("2025-01-31")` |
+| [POSIXct]{.keyword} | Date-time objects, which include both date and time | `as.POSIXct("1776-07-04 12:01:59")` |
+| [empty]{.keyword} | Not a data type, but the *absence* of data | `NA` |
+
+
+::: notes
+
+Factors are used to represent categorical data with a fixed number of levels. They are stored as integers with associated labels (e.g., factor(c("low", "medium", "high")))
+Dates are stored as a special class of object in R, allowing for date-specific operations (e.g., as.Date("2025-01-31"))
+POSIXct represents date-time objects, which include both date and time information (e.g., as.POSIXct("1776-07-04 12:01:59"))
+NA represents missing or undefined data in R. It is not a data type itself, but rather the absence of data. There are other ways to represent missing data (e.g., NULL, NaN), but NA is the most common.
+-   `NA` is not the same as the numeric/integer `0` or the empty string `""`. Those are both values!!
+
+:::
+
+## Data Structures
+
+R organizes data into structures to for manipulation and analysis. The main data structures are:
+
+| Data structure | Description                  | Example                       |
+|----------------|------------------------------|-------------------------------|
+| [Scalar]{.keyword} | Single data value of any data type | `42`, `"hello"`, `TRUE` |
+| [Vector]{.keyword} | One-dimensional array of elements of the same data type | `c(1, 2, 3, 4, 5)` |
+| [List]{.keyword} | Ordered collection of elements that can be of different data types | `list(name = "Alice", age = 30, scores = c(90, 85, 88))` |
+| [Matrix]{.keyword} | Two-dimensional array of elements of the same data type | `matrix(1:6, nrow = 2, ncol = 3)` |
+| [Data Frame]{.keyword} | Two-dimensional, tabular data structure with columns of potentially different data types | `data.frame(name = c("Alice", "Bob"), age = c(30, 25))` |
+| [Tibbles]{.keyword} | Alternative data frames with enhanced features | `tibble::tibble(name = c("Alice", "Bob"), age = c(30, 25))` |
+
+## Data Structures: Data Frames and Tibbles
+
+-   [Data frames]{.keyword} are 2-dimensional, tabular data structures
+    -   dfs are the heart `<3` of R
+    -   Special type of list
+        -   Each vector in the list is a column
+        -   All of equal length (e.g. same number of rows)
+        -   Can be different data types *across* vectors
+        -   Must be the same data type *within* a vector
+-   [Tibbles]{.keyword} are alternatives to data frames
+    -   Special type of data frame
+    -   Used in the tidyverse ecosystem
+    -   Have some enhanced features (e.g., better printing, stricter subsetting rules)
+    -   Functionally equivalent to data frames (for our purposes)
+    
+::: notes
+
+Data frames are the heart of R. They are lists of vectors, where each vector is a column in the data frame. All vectors must be of equal length (i.e., same number of rows), but they can be different data types across vectors (e.g., one column can be numeric, another character, etc.). Within a single vector (column), all elements must be of the same data type.
+
+Tibbles are the tidyverse's alternative to data frames. Tibbles are *also* data frames. It's just another class applied to the same object. There are several important technical advantages to tibbles, but for our applied purposes all that you need to know is that tidyverse functions generally expect tibbles as inputs and return tibbles as outputs. So when working in the tidyverse, you'll mostly be using tibbles. Conceptually, they're going to be interchangeable with data frames.
+:::
+
+
+## Operators
+
+[Operators]{.keyword} are symbols that perform operations on variables and values. The main types of operators in R are:
+
+| Operator type | Description | Example |
+|------------------------|----------------------------|--------------------|
+| [Arithmetic]{.keyword} | Perform mathematical calculations | `+`, `-`, `*`, `/`, `^` |
+| [Relational]{.keyword} | Compare values and return logical results | `==`, `!=`, `<`, `>`, `<=`, `>=` |
+| [Logical]{.keyword} | Combine or negate logical values | `&`, `|`, `!` |
+| [Assignment]{.keyword} | Assign values to variables | `<-`, `=`, `->` |
+
+
+::: notes
+Relational aka comparison
+:::
+
+## Operators: Arithmetic
+
+[Arithmetic]{.keyword} do math. 
+
+-   Input: numeric data
+-   Output: numeric data
+
+| Operator | Description                    | Example   | Output      |
+|----------|--------------------------------|-----------|-------------|
+| `+`      | Addition                       | `3 + 5`   | `r 3 + 5`   |
+| `-`      | Subtraction                    | `10 - 4`  |             |
+| `*`      | Multiplication                 | `6 * 7`   | `r 6 * 7`   |
+| `/`      | Division                       | `20 / 4`  | `r 20 / 4`  |
+| `^`      | Exponentiation (power)         | `2 ^ 3`   | `r 2 ^ 3`   |
+| `%%`     | Modulo (remainder of division) | `10 %% 3` | `r 10 %% 3` |
+
+
+## Operators: Relational
+
+[Relational]{.keyword} or *comparison* operators compare objects and return a logical value (`TRUE` or `FALSE`). They are a special kind of logical operator.
+
+-   Input: numeric, character, or logical data
+-   Output: logical data
+
+| Operator | Description              | Example  | Output     |
+|----------|--------------------------|----------|------------|
+| `==`     | Equal to                 | `5 == 5` | `r 5 == 5` |
+| `!=`     | Not equal to ("≠")       | `5 != 3` | `r 5 != 3` |
+| `>`      | Greater than             | `7 > 4`  | `r 7 > 4`  |
+| `<`      | Less than                | `3 < 8`  | `r 3 < 8`  |
+| `>=`     | Greater than or equal to | `6 >= 6` | `r 6 >= 6` |
+| `<=`     | Less than or equal to    | `2 <= 5` | `r 2 <= 5` |
+
+::: callout-warning
+### Warning: `'==' != '='`
+
+The `==` operator checks for equality, while `=` is an (argument) assignment operator.
+:::
+
+## Operators: Logical
+
+[Logical]{.keyword} operators combine and modify boolean values (`TRUE` or `FALSE`).
+
+-   Input: logical data
+-   Output: logical data
+
+| Operator | Description | Example | Output |
+|-----------------|----------------------|-----------------|-----------------|
+| `&` | "and": both sides of the operators evaluate to `TRUE` | `TRUE & FALSE` | `r TRUE & FALSE` |
+| `|` | "or": at least one side of the operator evaluates to `TRUE` | `TRUE | FALSE` | `r TRUE | FALSE` |
+| `!` | "not": the opposite of something's logical evaluation | `!TRUE` | `r !TRUE` |
+
+::: notes
+
+It helps to think of the `!` as the word "not": `!=` is "not equal to".
+`!TRUE` is `FALSE`.
+`is.na(x)` means "is x missing?" (true or false), and `!is.na(x)` means "is x *not* missing?" (true or false, the opposite of `is.na(x)`).
+
+The `&` and `|` operators come in two flavors: single or (`&` and `|`) and double (`&&` and `||`).
+[Dig into this difference](https://rpubs.com/nturaga/single-v-double-logical-operators-R) if you want or need to, but for most purposes, you can just use the single operators (`&` and `|`).
+:::
+
+## Operators: Other
+
+| Operator | Description | Example | Output |
+|-----------------|----------------------|-----------------|-----------------|
+| `<-` | *Variable* assignment operator | `x <- 5` | Assigns the value `5` to the variable `x` |
+| `=` | *Argument* assignment operator | `round(3.14159, digits = 2)` | Assigns the value `2` to the `digits` argument of the `round()` function |
+| `:` | Create a sequence of integers | `1:5` | `c(1, 2, 3, 4, 5)` |
+| `[ ]` | Subset elements of a vector, list, or data frame by position or name | `list(first = 1, second = 2)[2]` | `> $second > [1] 2` |
+| `[[ ]]` | Extract a single element from a list by position or name | `list(first = 1, second = 2)[[2]]` | `2` |
+| `$` | Extract a single element from a list or data frame by name | `list(first = 1, second = 2)$second` | `2` |
+| `|>` or `%>%` | Pipe operator to pass the output of one function as the input to another | `data |> filter(condition)` | Passes `data` as the first argument to `filter()` |
+
+::: notes
+
+The assignment operators `<-` and `=` can both be used to assign values to variables, but `<-` is preferred for variable assignment. `=` is primarily used for assigning values to function arguments or within functions.
+
+:::
+
+## Functions
+
+-   Basic syntax: `function_name(argument1, argument2, ...)`
+    -   Example: `paste("Hello", class_name)`
+-   [Functions]{.keyword}: pre-defined procedures that perform specific tasks
+    -   Take 0 or more arguments as inputs
+    -   Return 1 output
+-   [Arguments]{.keyword}: inputs to functions that specify procedure
+    -   Can be required or optional
+    -   Assigned with `=` operator *or* by position following default order
+        -   `round(3.14159)` is the same as `round(x = 3.14159)`
+        -   `round(2, 3.14159)` is *not* the same as `round(digits = 2, x = 3.14159)`.
+-   View all possible arguments in a function's documentation with `?functionname` or `??functionname`.
+
+::: callout-note
+### More to come!
+
+Much more on functions coming up in the second half of this lecture.
+::: 
+
+::: notes
+Functions are pre-defined procedures that perform specific tasks. They take arguments as inputs and return outputs.
+Basic syntax for calling a function is the function name followed by parentheses, containing required and optional arguments: function_name(argument1, argument2, ...)
+:::
+
+## Reference: Useful Base R Functions (1)
+
+| Function | Description | Example | Output |
+|-----------------|----------------------|-----------------|-----------------|
+| `c()` | Combine values into a vector | `c(1, 2, 3)` | `c(1, 2, 3)` |
+| `paste()` | Concatenate strings together | `paste("Hello", "world!")` |  |
+| `data.frame()` | Create a data frame from vectors | `data.frame(x = 1:3, y = c("a", "b", "c"))` | A data frame with 3 rows and 2 columns named `x` and `y` |
+| `class()` | Check the data type of an object | `class(3.14)` | `"numeric"` |
+| `str()` | Display the structure of an object | `str(mtcars)` | A summary of the `mtcars` data frame |
+| `length()` | Get the length of a vector | `length(c(1, 2, 3, 4, 5))` | `5` |
+| `head()` | View the first few rows of a data frame or vector | `head(mtcars)` | The first 6 (default) rows of the `mtcars` data frame |
+| `summary()` | Get a summary of a data frame or vector | `summary(mtcars)` | Summary statistics for each column in the `mtcars` data frame |
+
+## Reference: Useful Base R Functions (2)
+
+
+```{r}
+#| eval: true
+number_list <- c(11, 37, 42, 101, 202, 1000, 2025, -3)
+```
+
+| Function | Description | Example | Output |
+|-----------------|----------------------|-----------------|-----------------|
+| `round()` | Round a numeric value to a specified number of decimal places | `round(67.1988, 2)` | `r round(67.1988, 2)` |
+| `sum()` | Calculate the sum of a numeric vector | `sum(number_list)` | `r sum(number_list)` |
+| `min()` | Find the minimum value in a numeric vector | `min(number_list)` | `r min(number_list)` |
+| `max()` | Find the maximum value in a numeric vector | `max(number_list)` | `r max(number_list)` |
+
+
+## Reference: Useful Base R Functions (3)
+
+
+```{r}
+#| eval: true
+number_list <- c(11, 37, 42, 101, 202, 1000, 2025, -3)
+```
+
+| Function | Description | Example | Output |
+|-----------------|----------------------|-----------------|-----------------|
+| `mean()` | Calculate the mean of a numeric vector | `mean(number_list)` | `r mean(number_list)` |
+| `median()` | Calculate the median of a numeric vector | `median(number_list)` | `r median(number_list)` |
+| `sd()` | Calculate the standard deviation of a numeric vector | `sd(number_list)` | `r sd(number_list)` |
+| `cor()` | Calculate the correlation between two numeric vectors | `cor(number_list[1:4], number_list[5:8])` | `r cor(number_list[1:4], number_list[5:8])` |
+
+
+
+## Packages
+
+Consider two very useful functions:
+
+:::: row
+::: col-6
+
+```{r}
+#| echo: true
+# function add.two accepts numeric value `x` 
+# and returns numeric x+2
+
+add.two <- function(x) {
+    return(x + 2)
+    }
+```
+
+:::
+
+::: col-6
+```{r}
+#| echo: true
+# function add.two2 accepts any scalar value `x`, 
+# coerces to x to a string, then prints the string 
+# followed by the string " two"
+
+add.two2 <- function(x) {
+    return(paste(as.character(x), "two"))
+    }
+
+```
+:::
+::::
+
+
+Someone out there really needs to add two to things in multiple ways. Tragically, base R just doesn't have the essential tools needed for all the two-adding tasks. This two-adding user would benefit from accessing both these functions together for:
+
+-   Reusability: use in multiple projects without redefining
+-   Organization: group related functions together
+-   Sharing: bundle and share functions with others with similar needs
+-   Documentation: add explanation for consistent use and development
+
+
+::: notes
+
+Packages are collections of many user-created functions, usually designed to work toward a specific use-case or goal.
+
+Why combine these two functions into a package? Consider the user.
+Whoever is doing this is a person who needs to add two a lot and in multiple ways. If we assume they have good reason to do so, then packaging these functions together provides several benefits:
+
+-   Reusability: The user can easily reuse these functions across multiple projects without having to rewrite them each time.
+-   Organization: Grouping related functions together in a package helps keep code organized and easier to maintain.
+-   Sharing: The user can share the package with others who may also need to add two in their work.
+-   Documentation: Packages often include documentation that explains how to use the functions, making it easier for others (and the user themselves) to understand and utilize the functions effectively.
+
+
+:::
+
+## Packages
+
+::::: row
+
+:::: col-4
+
+-   [Packages]{.keyword} or *libraries* are collections of functions
+    -   Centered on a specific use case, goal, or domain
+    -   User-developed and shared
+-   You need to know:
+    -   Why packages are useful
+    -   How to find them
+    -   How to access and understand documentation
+    -   How to install and load them
+    -   The basics of common problem points
+    
+::::
+
+:::: col-8
+
+::: stretch-code 
+```r
+run_chatter_pipeline <- function(
+  tbl, tbltype, target.ptcp, addressee.tags, cliptier, nearonly,
+  lxonly = default.lxonly,
+  allowed.gap = default.max.gap, allowed.overlap = default.max.overlap,
+  min.utt.dur = default.min.utt.dur, interactants = default.interactants,
+  mode = default.mode, output = default.output, n.runs = default.n.runs) {
+  # step 1. read in the file
+  spchtbl <- read_spchtbl(filepath = tbl, tbltype = tbltype,
+                          cliptier = cliptier,
+                          lxonly = lxonly, nearonly = nearonly)
+  # step 2. run the speech annotations through the tt behavior detection pipeline
+  ttinfotbls <- fetch_chattr_tttbl(
+    spchtbl = spchtbl, target.ptcp = target.ptcp,
+    cliptier = cliptier, lxonly = lxonly,
+    allowed.gap = allowed.gap, allowed.overlap = allowed.overlap,
+    min.utt.dur = min.utt.dur, interactants = interactants,
+    addressee.tags = addressee.tags,
+    mode = mode, output = output, n.runs = n.runs)
+  # step 3. create a summary of the tt behavior by clip and overall, 
+  # incl. the random baseline
+  ttinfotbls$tt.summary <- summarize_chattr(ttinfotbls)
+  return(ttinfotbls)
+}
+```
+:::
+
+::: contained-aside
+[View the `chattr` package on GitHub.](https://github.com/marisacasillas/chattr-basic) 
+:::
+ 
+:::: 
+::::: 
+ 
+
+
+::: notes
+This is the code for 1 function in the chattr package created by Marisa Casillas. Take a look at the github repo's documentation and files for a great example of how the need for a package arises & what it looks like to create that package and meet that need.
+
+https://github.com/marisacasillas/chattr-basic
+
+:::
+
+## Packages: Install & Load
+
+To use functions from a package, you must first:
+
+1.  Install the package on your local machine
+    -   `install.packages("packagename")`
+    -   Install a package **once** (on each machine)
+2.  Load (aka *attach*) it into your R session
+    -   `library(packagename)`
+        -   or `require(packagename)`
+    -   Load a package **each time** you start a new R session
+        -   and in each R script where you want to use it   
+
+::: callout-note
+
+### Loading vs attaching
+
+Calling `library()` on a package makes its functions available for use as though they were built into R itself. We usually call this *loading* the package, but technically it's *attaching* it.
+
+Once a package is *installed* on your machine, you can *load* functions directly without attaching the whole package with `library()`. Do so by prefixing the function with the name of the package and two colors: `packagename::functionname()`.
+
+:::
+
+::: notes
+install.package("tidyverse") – install a package on your local machine
+library(tidyverse) – load an existing package
+Require("tidyverse") - require a package
+Try this one out and see what happens...
+Not working? try typing ??Require into the console (note the 2 question marks) and see if you can figure out what's going on and how to fix it.
+Installing/loading some packages will also install/load dependencies
+e.g., library(tidyverse) will load the included readr package
+readr will also load dependencies DBI, haven, readxl, and others
+
+Having trouble? Review the troubleshooting strategies from first week!
+Most packages have full documentation on CRAN
+Alternatively on the package's GitHub repo or developer site
+See documentation for functions within RStudio by typing ?thefunctioname into the console
+:::
+
+
+## Packages: Dependencies
+
+Functions in packages are often defined using functions from other packages. The former package *depends on* the latter, its [dependency]{.keyword}.
+
+:::: row
+::: col-7
+
+A package's CRAN documentation will list its dependencies in three categories:
+
+1.  **Depends:** Packages that must be *installed and attached* for the package to work
+2.  **Imports:** Packages that must be *installed* (but not attached) for the package to work
+3.  **Suggests:** Packages that are not required for the package to work, but are recommended for full functionality
+
+:::
+
+::: col-5
+::: callout-note
+### In practice...
+
+When you install or load a package, R will automatically install or load its *Depends* and *Imports* dependencies for you. Usually this will just happen without you needing to even notice, but occasionally you may be prompted by the console to approve the installation/loading of dependencies. Rarely, you may need to manually install or load a dependency.
+
+:::
+:::
+::::
+
+::: notes
+
+The same way that package functions are built using base R functions, packages also frequently (usually) build on functions from other packages. 
+When a package uses functions from another package, that other package is its *dependency.*
+
+There are two big categories of dependencies, *hard* and *soft* dependencies. 
+Hard dependencies are required. 
+Functions in the package simply won't work without them. 
+Soft dependencies are recommended to get the most out of the package, but not strictly necessary. 
+We've got three flavors of dependencies in R:
+
+1.  **Depends:** Packages that must be *installed and attached* for the package to work
+2.  **Imports:** Packages that must be *installed* (but not attached) for the package to work
+3.  **Suggests:** Packages that are not required for the package to work, but are recommended for full functionality
+
+:::
+
+## Reference: D2M-R *Required* Packages
+
+
+| Package Name       | Description                   |
+|--------------------|-------------------------------|
+| [`tidyverse`](https://www.tidyverse.org/)   | Ecosystem of packages for data manipulation, visualization, and analysis; includes core tidyverse packages[^2]    |
+| [`bibtex`](https://cran.r-project.org/package=bibtex)      | BibTeX tools for R (bibliography management)        |
+| [`citr`](https://github.com/crsh/citr)          | RStudio add-in to insert citations                  |
+| [`DescTools`](https://cran.r-project.org/package=DescTools) | Tools for descriptive statistics                      |
+| [`gt`](https://gt.rstudio.com/)                | Easily create presentation-ready tables               |
+| [`knitr`](https://yihui.org/knitr/)              | Dynamic report generation in R                        |
+| [`lme4`](https://cran.r-project.org/package=lme4)        | Linear and generalized linear mixed-effects models    |
+| [`psych`](https://cran.r-project.org/package=psych)       | Procedures for psychological, psychometric, and personality research |
+| [`quarto`](https://quarto.org/)                | Tools for working with the Quarto markdown publishing system      |
+| [`rmarkdown`](https://rmarkdown.rstudio.com/)       | Authoring dynamic documents with R Markdown           |
+| [`usethis`](https://usethis.r-lib.org/)         | Automate package and project setup tasks              |
+
+[^2]: Core tidyverse packages include: `ggplot2`, `dplyr`, `tidyr`, `readr`, `purrr`, `tibble`, `stringr`, `lubridate`, and `forcats`.
+
+
+## Reference: D2M-R *Suggested* Packages
+
+
+| Package Name       | Description                   |
+|--------------------|-------------------------------|
+| [`broom`](https://broom.tidymodels.org/)             | Convert statistical analysis objects into tidy tibbles            | 
+| [`data.table`](https://rdatatable.io/)        | Fast data manipulation and aggregation                            |
+| [`flextable`](https://davidgohel.github.io/flextable/)  | Functions for reporting tabular results in R Markdown and Word    |
+| [`haven`](https://haven.tidyverse.org/)             | Import and export of SPSS, Stata, and SAS files                   |
+| [`janitor`](https://sfirke.github.io/janitor/)           | Simple tools for examining and cleaning dirty data                |
+| [`kableExtra`](https://haozhu233.github.io/kableExtra/)        | Construct complex tables in R Markdown                            |
+| [`papaja`](https://crsh.github.io/papaja/)            | APA style manuscript preparation with R Markdown                  |
+| [`pwr`](https://cran.r-project.org/package=pwr)               | Power analysis for general linear models                          |
+| [`RColorBrewer`](https://cran.r-project.org/package=RColorBrewer)      | Color palettes for maps and figures                               |
+| [`patchwork`](https://patchwork.data-imaginist.com/)                 | Combine separate ggplot2 plots into the same graphic   |
+| [`vcd`](https://cran.r-project.org/package=vcd)               | Visualizing categorical data                                      |
+| [`ggsci`](https://nanx.me/ggsci/)               | Scientific journal and sci-fi movie color palettes for ggplot2 |
+
+
+
+# R Programming
+
+## Indexing & Subsetting
+
+**Indexing** and **subsetting** are ways to select specific elements from data structures like vectors, lists, data frames, and matrices.
+
+[Indexing]{.keyword}: Identifying the position of an element within a data structure (or position*s* within sub-structures) using numeric position or name.
+
+[Subsetting]{.keyword}: Extracting a portion of a data structure based on specific criteria (e.g., selecting certain rows or columns from a data frame), including indexing.
+
+## Reference: Indexing & Subsetting
+
+Create a vector of integers beginning with one number and ending with another using `:`:
+
+```{r}
+#| output-location: fragment
+ 
+3:7
+```
+
+```{r}
+#| output-location: fragment
+ 
+1:5 == c(1, 2, 3, 4, 5)
+```
+
+## Reference: Indexing & Subsetting
+
+Select elements of a vector by position or name with `[ ]`:
+
+```{r}
+#| output-location: fragment
+
+my_vector <- c(1, 10, 3, fourth = 1000, fifth = 2)
+my_vector[3] # select 4th element of a vector, return the named or unnamed element
+```
+
+```{r}
+#| output-location: fragment
+
+my_vector["fourth"] # select element named 'fourth' from a vector, return the named element
+```
+
+## Reference: Indexing & Subsetting
+
+Select elements of a list by position or name with `[ ]` and `[[ ]]`:
+
+```{r}
+#| output-location: fragment
+
+my_list <- list(first = 1, second = 2)
+my_list[2] # select 2nd element of a list, returned as a list
+```
+```{r}
+#| output-location: fragment
+
+my_list[[2]] # select 2nd element of a list, returned as the element itself
+```
+
+```{r}
+#| output-location: fragment
+
+
+my_list[["second"]] # select element named 'second' from a list, returned as the element itself
+```
+
+## Reference: Indexing & Subsetting
+
+Select elements of a data frame or matrix by position or name with `[ ]` and `[[ ]]`, using `,` to separate row and column indices:
+
+```{r}
+#| output-location: fragment
+
+mtcars[1, ]  # first row
+```
+
+```{r}
+#| output-location: fragment
+
+mtcars[, 1]  # first column
+```
+
+```{r}
+#| output-location: fragment
+
+mtcars[1, "mpg"] # value in the first row and first column (named "mpg")
+```
+
+## Reference: Indexing & Subsetting
+
+Select a list or data frame element by name with `$`:
+
+```{r}
+#| output-location: fragment
+
+my_list <- list(first = 1, second = 2)
+my_list$second # returns `2`
+```
+
+```{r}
+#| output-location: fragment
+
+mtcars$mpg # 'mpg' column of mtcars 
+```
+
+# Control Flow 
+
+## What is "control flow"?
+
+Control flow refers to the order in which individual statements, instructions, or function calls are executed or evaluated within a program. In R, control flow is managed using conditional statements and loops, allowing for dynamic decision-making and repetitive tasks based on specific conditions.
+
+## Conditional Statements
+
+[Conditional statements]{.keyword} allow you to execute different blocks of code based on whether certain conditions are met.
+
+:::: row
+
+::: col-6
+
+| Statement | Description |
+|------------------------|----------------------------|
+| `if` | Execute a block of code if a specified condition is `TRUE` |
+| `if...else` | Execute one block of code if a condition is `TRUE`,
+| `if...else if...else` | Execute different blocks of code based on multiple conditions |
+
+:::
+
+::: col-6
+
+```{r}
+#| output-location: fragment
+
+# if statement
+
+x <- 3
+
+if (x > 0) {
+    print("x is positive")
+}
+
+# if...else statement
+y <- 10
+
+if (y > 5) {
+    print("y is greater than 5")
+} else {
+    print("y is not greater than 5")
+}
+```
+
+:::
+
+::::
+
+## Conditional Statements: Example
+
+
+```{r class="stretch-code"}
+#| output-location: fragment
+
+# Example of if...else if...else statement
+
+z <- 0 # change this value to test different outcomes
+
+# Check if z is a number
+# if it is, do the checks inside the {}
+# if it isn't, go to the else statement
+if (is.numeric(z)) {
+    if (z > 0) {      # is it positive?
+        print("z is positive")  # if it is, say so and then STOP
+    # if not, is it negative?
+    } else if (z < 0) {     # if not, is it negative?
+        # if it is, say so and then STOP
+        print("z is negative")  # if it is, say so and then STOP
+    # if not positive and not negative, it must be zero
+    } else {
+        print("z is zero") # say so and then STOP
+    }
+# if it isn't a number, say so and then STOP
+} else {
+    print("z is not a number")
+}
+
+```
+
+## Conditional Functions
+
+[R's conditional functions]{.keyword} provide a way to perform conditional operations in a more functional, condensed style.
+
+| Function | Package | Description |
+|------------------------|----------------------------|
+| `ifelse()` | base | returns values based on a condition |
+| `if_else()` | dplyr | Same, with stricter data type consistency |
+| `case_when()` | dplyr | allows for multiple conditions and corresponding values |
+
+
+The examples above can be written more concisely using `case_when()`:
+
+```{r class="stretch-code"}
+#| output-location: fragment
+
+y <- 10
+
+ifelse(y > 5, "y is greater than 5", "y is not greater than 5")
+
+```
+
+```{r class="stretch-code"}
+#| output-location: fragment
+
+z <- 0 # change this value to test different outcomes
+
+print(case_when(
+    !is.numeric(z) ~ "z is not a number",
+    z > 0 ~ "z is positive",
+    z < 0 ~ "z is negative",
+    TRUE ~ "z is zero"
+))
+```
+
+
+::: notes
+
+What's the difference between `ifelse()` and `if_else()`?
+
+- The `ifelse()` function is a base R function that is vectorized, meaning it can handle vectors of conditions and return corresponding values for each element. It is generally faster for large datasets but can be less strict about data types.
+- The `if_else()` function is part of the `dplyr` package in the tidyverse. It is also vectorized but is stricter about data types, ensuring that the output type matches the input type. This can help prevent unexpected results when working with different data types.
+
+:::
+
+## Iteration
+
+[Iteration]{.keyword}, or looping, allows you to repeat a block of code multiple times, either a fixed number of times or while a certain condition is met.
+
+| Loop Type | Description |
+|------------------------|----------------------------|
+| `for` | Repeats a block of code for each item in a sequence or vector |
+| `while` | Repeats a block of code as long as a specified condition is `TRUE` |
+
+## Loops Conceptually
+
+::: {.d-flex .nonincremental style="gap: 1em;"}
+::: {.contained-box style="flex: 1;" .fragment}
+::: {.box-icon}
+
+![](../images/icons/do-next.png)
+
+:::
+::: {.box-title}
+{{< bi 1-circle >}}  When I say go
+:::
+:::
+
+::: {.contained-box style="flex: 1;" .fragment}
+::: {.box-icon}
+
+![](../images/icons/creativity.png)
+:::
+::: {.box-title}
+{{< bi 2-circle >}}  Do this thing
+:::
+:::
+
+::: {.contained-box style="flex: 1;" .fragment}
+::: {.box-icon}
+
+![](../images/icons/consistency.png)
+:::
+::: {.box-title}
+{{< bi 3-circle >}}  And keep doing it
+:::
+:::
+
+::: {.contained-box style="flex: 1;" .fragment}
+::: {.box-icon}
+
+![](../images/icons/priority.png)
+:::
+::: {.box-title}
+{{< bi 4-circle >}}  Until I say stop
+:::
+:::
+:::
+
+
+
+## `for` Loops
+
+::: {.d-flex .nonincremental style="gap: 1em;"}
+::: {.contained-box style="flex: 1;"}
+::: {.box-title}
+{{< bi 1-circle >}}  When I say go 
+:::
+
+::: {.box-content .fragment}
+`i = my_list[1]`
+:::
+:::
+
+::: {.contained-box style="flex: 1;"}
+::: {.box-title}
+{{< bi 2-circle >}}  Do this thing 
+:::
+::: {.box-content .fragment}
+`print(i)`
+:::
+:::
+
+::: {.contained-box style="flex: 1;"}
+::: {.box-title}
+{{< bi 3-circle >}}  And keep doing it 
+:::
+::: {.box-content .fragment}
+`i = my_list[2]` <br> `i = my_list[3]...`
+:::
+:::
+
+::: {.contained-box style="flex: 1;"}
+::: {.box-title}
+{{< bi 4-circle >}}  Until I say stop 
+:::
+::: {.box-content .fragment}
+`my_list[6] > length(my_list)`
+:::
+:::
+:::
+
+```{r style="margin-top: 1em;"}
+#| output-location: column
+
+# Create a finite sequence of numbers
+my_list <- c(1, 3, 5, 7, 9)
+
+# for each value i in the sequence num_list
+for (i in my_list) {
+    # print the value of i to the console
+    print(i)
+# iterate to the next value in the sequence 
+    # until there are no values left
+}
+```
+
+## `while` Loops
+
+::: {.d-flex .nonincremental style="gap: 1em;"}
+::: {.contained-box style="flex: 1;"}
+::: {.box-title}
+{{< bi 1-circle >}}  When I say go 
+:::
+
+::: {.box-content .fragment}
+`i = 1`
+:::
+:::
+
+::: {.contained-box style="flex: 1;"}
+::: {.box-title}
+{{< bi 2-circle >}}  Do this thing 
+:::
+::: {.box-content .fragment}
+`print(i)` <br>
+`i <- i + 1`
+:::
+:::
+
+::: {.contained-box style="flex: 1;"}
+::: {.box-title}
+{{< bi 3-circle >}}  And keep doing it 
+:::
+::: {.box-content .fragment}
+`print(i + 1)` <br>
+`print(i + 2)...`
+:::
+:::
+
+::: {.contained-box style="flex: 1;"}
+::: {.box-title}
+{{< bi 4-circle >}}  Until I say stop 
+:::
+::: {.box-content .fragment}
+`i >= 6`
+:::
+:::
+:::
+
+```{r style="margin-top: 1em;"}
+#| output-location: column
+
+# Initialize counter variable i to 1
+i <- 1 
+
+# while (if) i=1, then i=2...til i=6
+while (i < 6) {
+    # print the value of i to the console
+    print(i)
+    i <- i + 1 # Increment i by 1
+# check whether "while" condition still holds
+    # repeat if TRUE
+    # stop if FALSE
+}
+```
+
+## `for` vs `while`
+
+:::: row
+::: col-7
+
+::: {.card style="margin: 1em;"}
+
+::: card-header
+::: card-title
+`for`
+:::
+:::
+
+::: {.card-body .tightlist}
+
+-   Known, finite sequence
+-   Repeats for each item in sequence
+-   Does not require an explicit counter variable
+-   Iteration happens automatically
+
+:::
+
+:::
+
+::: {.card .card-alt1 style="margin: 1em;"}
+
+::: card-header
+::: card-title
+`while`
+:::
+:::
+
+::: {.card-body .tightlist}
+
+-   Unknown, potentially infinite sequence
+-   Repeats while condition is `TRUE`
+-   Requires an explicit counter variable
+-   Iteration controlled by defined condition
+
+:::
+
+:::
+
+:::
+
+::: col-5
+
+::: {.alert .alert-danger .nonincremental .fragment}
+
+<h3 style="text-align: center;">
+![](../images/icons/priority.png){style="height: 1em"}
+**Warning: Infinite loops**
+![](../images/icons/priority.png){style="height: 1em"}
+</h3>
+
+Use `while` for potentially **but not actually infinite** sequences.
+Your code must eventually lead to a `FALSE` evaluation:
+
+1. Define the iteration mechanism:
+    -   `i <- i+1`
+2. Ensure the `while` condition will eventually be `FALSE` when iterated using that mechanism 
+    -   `i < 6`
+
+:::
+
+:::
+
+::::
+
+::: notes
+
+-   Use a `for` loop when you know in advance how many times you want to iterate (i.e., finite sequence).
+-   Use a `while` loop when you want to continue iterating until a certain condition is met, and you may not know in advance how many iterations that will take (i.e., potentially infinite sequence).
+    -   But not *actually* infinite! Always ensure that the condition will eventually become `FALSE` to avoid infinite loops.
+
+:::
+
+
+## Writing and Using Functions
+
+
+
+## Regular Expressions
+
+
+

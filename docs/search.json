@@ -1663,14 +1663,14 @@
     "href": "slides/Q1-W1_problem-solving.html#function-documentation-inner_join",
     "title": "Preventing & Solving Problems",
     "section": "Function Documentation: inner_join()",
-    "text": "Function Documentation: inner_join()\n\n\n\n\nLooking up documentation for any of the *_join() functions in dplyr brings you to a shared page for all of them.\nFunction name: here inner_join()\nRequired arguments: here file. listed first; no assigned default value; omitting results in an error message\nOptional arguments: here col_names = TRUE, col_types = NULL ... show_col_types = TRUE ; listed after required arguments; omitting will use the assigned default value\nOther parameters: always ... ; accepts extra arguments not explicitly listed\nRelated reference: here, ?read_delim ; functions that share a basic structure and may have helpful documentation\n\n\n\nMutating joins\n\nDescription\nMutating joins add columns from y to x, matching observations based on the keys. There are four mutating joins: the inner join, and the three outer joins.\nInner join An inner_join() only keeps observations from x that have a matching key in y.\n…text omitted…\nUsage\ninner_join(\n  x,\n  y,\n  by = NULL,\n  copy = FALSE,\n  suffix = c(\".x\", \".y\"),\n  ...,\n  keep = NULL\n)\n\nleft_join(\n  x,\n  y,\n  by = NULL,\n  copy = FALSE,\n  suffix = c(\".x\", \".y\"),\n  ...,\n  keep = NULL\n)"
+    "text": "Function Documentation: inner_join()\n\n\n\n\nLooking up documentation for any of the *_join() functions in dplyr brings you to a shared page for all of them.\nFunction name: here inner_join()\nRequired arguments: here x and y; listed first; no assigned default value; omitting results in an error message\nOptional arguments: here by = NULL, copy = FALSE, suffix = c(\".x\", \".y\"), keep = NULL; listed after required arguments; omitting will use the assigned default value\nOther parameters: always ...; accepts extra arguments not explicitly listed\nRelated reference: here left_join() ; functions that share a basic structure and may have helpful documentation\n\n\n\nMutating joins\n\nDescription\nMutating joins add columns from y to x, matching observations based on the keys. There are four mutating joins: the inner join, and the three outer joins.\nInner join An inner_join() only keeps observations from x that have a matching key in y.\n…text omitted…\nUsage\ninner_join(\n  x,\n  y,\n  by = NULL,\n  copy = FALSE,\n  suffix = c(\".x\", \".y\"),\n  ...,\n  keep = NULL\n)\n\nleft_join(\n  x,\n  y,\n  by = NULL,\n  copy = FALSE,\n  suffix = c(\".x\", \".y\"),\n  ...,\n  keep = NULL\n)"
   },
   {
     "objectID": "slides/Q1-W1_problem-solving.html#package-documentation-ggplot2",
     "href": "slides/Q1-W1_problem-solving.html#package-documentation-ggplot2",
     "title": "Preventing & Solving Problems",
     "section": "Package Documentation: ggplot2",
-    "text": "Package Documentation: ggplot2\n\n\n\n\n\n\nCRAN\n\n\n\n\nComprehensive R Archive Network\nmeta-info about the package, developer, license, etc.\nlinks to READMEs, manuals, repos, and other function-level documentation\n\n\n\n\n\n\n\n\nReference Manual (PDF)\n\n\n\n\npackages on CRAN typically include a pdf manual in a uniform format\nfunction-level, granular info\nvignettes\n\n\n\n\n\n\n\n\nDeveloper website\n\n\n\n\npopular & complex packages\ntutorials, examples, FAQs, cheatsheets, etc.\n\n\n\n\n\n\n\n\nGitHub Repo\n\n\n\n\naccess the scripts that define the functions within the package\nREADME usually includes general documentation and links to granular documentation\nlinks to direct/binary install if not accessible through CRAN\n\n\n\n\n\n\n\nWe’ll talk about “packages” more comprehensively when we get to R programming fundamentals – but the idea is that they are collections of functions that work together nicely toward similar programming goals. There are “base R” functions that are built in, but the vast majority of function you’ll use come from packages you need to install and load.\nPackages must meet certain requirements to be accessible through CRAN, including being fully 100% compatible with current versions of R. There are lots of excellent, high-quality, well-maintained packages that aren’t in the CRAN list!"
+    "text": "Package Documentation: ggplot2\n\n\n\n\n\n\nCRAN\n\n\n\n\nComprehensive R Archive Network\nmeta-info about the package, developer, license, etc.\nlinks to READMEs, manuals, repos, and other function-level documentation\n\n\n\n\n\n\n\n\nReference Manual\n\n\n\n\npackages on CRAN typically include a pdf manual in a uniform format\nfunction-level, granular info\nvignettes\n\n\n\n\n\n\n\n\nDeveloper website\n\n\n\n\npopular & complex packages\ntutorials, examples, FAQs, cheatsheets, etc.\n\n\n\n\n\n\n\n\nGitHub Repo\n\n\n\n\naccess the scripts that define the functions within the package\nREADME usually includes general documentation and links to granular documentation\nlinks to direct/binary install if not accessible through CRAN\n\n\n\n\n\n\n\nWe’ll talk about “packages” more comprehensively when we get to R programming fundamentals – but the idea is that they are collections of functions that work together nicely toward similar programming goals. There are “base R” functions that are built in, but the vast majority of function you’ll use come from packages you need to install and load.\nPackages must meet certain requirements to be accessible through CRAN, including being fully 100% compatible with current versions of R. There are lots of excellent, high-quality, well-maintained packages that aren’t in the CRAN list!"
   },
   {
     "objectID": "slides/Q1-W1_problem-solving.html#resources",
@@ -1825,5 +1825,397 @@
     "title": "Course Structure",
     "section": "",
     "text": "You’ll need to bring a laptop to class every day with RStudio installed. Class sessions blend lecture, live coding demonstrations, and hands-on workshops. Students should have R, RStudio, Git, and GitHub configured by the end of Week 1.\nRequired software (all free):\n\nR (latest version)\nRStudio Desktop\nGit\nGitHub account\nSlack\nRecommended: GitHub Desktop for repository management when RStudio freaks out\n\nSetup guides and troubleshooting resources are available on the course website."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#welcome-to-r",
+    "href": "slides/Q1-W3_r-programming.html#welcome-to-r",
+    "title": "R Programming Language",
+    "section": "Welcome to R",
+    "text": "Welcome to R"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#r-programming-language",
+    "href": "slides/Q1-W3_r-programming.html#r-programming-language",
+    "title": "R Programming Language",
+    "section": "R Programming Language",
+    "text": "R Programming Language\n\nBuilt to efficiently store and manipulate data\nOpen-source, free, and flexible alternative to other statistical analysis software\nLarge, active community of users and contributors\nPackages shared and stored on the open index CRAN (Comprehensive R Archive Network)\n\n\nR is a programming language (“environment”) built to efficiently store and manipulate data, particularly matrices and arrays, based on another language called S - Widely used among statisticians, researchers, and data miners for developing statistical software and data analysis (vs general programming languages like python) Open-source, free, and flexible alternative to other statistical analysis software like Stata and SPSS Has a large and active community contributing packages that facilitate a wide variety of analysis types, graphical options, and more. Many contributors store their packages on CRAN (Comprehensive R Archive Network)"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#r-oop",
+    "href": "slides/Q1-W3_r-programming.html#r-oop",
+    "title": "R Programming Language",
+    "section": "R: OOP",
+    "text": "R: OOP\n\nR is an object-oriented programming language (OOP)\n\nObjects: contain a value and have an identifier\nClasses: templates for objects and their contained data type\nStructures: classes containing multiple objects\n\nR manipulates data (objects)\n\nEnvironments: collections of manipulable objects\nFunctions: procedures for creating or changing code\nArguments: inputs to functions that specify procedure\n\n\n\n\nOBJECTS contain a value and have a name/identifier\nCLASSES are templates for objects and the “type” of data contained within\nSTRUCTURES are classes for objects that comprise multiple objects\nENVIRONMENTS are collections of objects that can be manipulated\nFUNCTIONS are procedures for creating or changing data\nARGUMENTS are passed to functions to specify the procedure in context\n\nNOTE: you might hear objects and classes referred to by other terms. this is because all OOP langs have slightly different differentiation (if they have them at all!) between things like classes and “structures” for example. for our purposes the precise language isn’t critical, just the concepts. but it’s worth keeping in mind if you’re going to go deeper into heavy programming with R or other OOPs like python"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#r-scripts",
+    "href": "slides/Q1-W3_r-programming.html#r-scripts",
+    "title": "R Programming Language",
+    "section": "R Scripts",
+    "text": "R Scripts\n\nR scripts include:\n\nSeries of functions (code) to carry out in order\nPlain text comments (non-code) that are ignored by R\n\nR code is written in:\n\nR script files (.R)\n“Code chunks” within other file types (e.g., .Rmd & .qmd notebooks)\n\nSourcing scripts allows code in one file to “talk to” code in other files\n\n\n\nWhat’s the difference between .R and .Rmd files?\n\n\n.R files are scripts, containing only R code and comments. .Rmd files (aka “R notebooks”) are a special type of markdown (.md) file that can contain and execute R code within a broader context of text, images, and other media. .Rmd = .R + .md\n\n\n\nR scripts: Dictate a series of functions (code) to carry out in order Include plain text comments (non-code) that are ignored by R R code is usually written in R script files with the .R extension R code can also be included in “code chunks” within other file types (e.g., .Rmd & .qmd notebooks) Some functions allow R scripts to “talk to” R code in other files So an R project typically has multiple .R files in addition to the .Rmd\n.R scripts are just that: scripts. .Rmd files are “R Notebooks”, combining .R : magical files that process many kinds of code and non-code to produce a coherent, human-friendly presentation of data."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#comments",
+    "href": "slides/Q1-W3_r-programming.html#comments",
+    "title": "R Programming Language",
+    "section": "Comments",
+    "text": "Comments\n\nComments are plain text notes within code that are ignored by R\nCreated using the # symbol\n\nEverything that follows on that line will be ignored\n\nUsed to:\n\nExplain code functionality\nProvide context or instructions\nTemporarily disable code during testing/debugging\n\n\n# This comment spans multiple lines. The `#` symbol must be used at the start \n# of each line. Alternatively, start the comment mid-line like below:\n\nx &lt;- 42  # Assign the value 42 to the variable x\n\nMore on comments in the introduction and best practices lecture (Week 1)."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#variables",
+    "href": "slides/Q1-W3_r-programming.html#variables",
+    "title": "R Programming Language",
+    "section": "Variables",
+    "text": "Variables\n\nVariables store data values with unique identifiers\nCreated using the assignment operator &lt;-\n\nExample: class_name &lt;- \"D2M-R\"\n\nVariable names:\n\nAre case-sensitive\n\ne.g., Class_Name, class_name, and CLASS_NAME are different variables\n\nMUST start with a letter or dot, not a number\n\ne.g., student1, .temp_value are valid; 1student, _value are not\n\nMUST contain (only) letters, numbers, dots, or underscores\n\ne.g., total.score, data_frame_1 are valid; total-score, data frame are not\n\nSHOULD be descriptive and meaningful\n\ne.g., student_age, is_enrolled, total_score\n\nSHOULD follow consistent naming conventions\n\ne.g., camelCase, snake_case, or dot.notation\nUse a style guide like the Tidyverse style guide\n\n\n\n\nVariables are assigned values with an assignment operator. The standard assignment operator in R is &lt;-, where the variable name is on the left and the value to be assigned is on the right. Alternatively you can use = for assignment in the same way, but &lt;- is preferred for variable assignment. = is used for assigning values to function arguments. You can also use -&gt; to assign values in reverse, but this is very rarely used."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#main-data-types",
+    "href": "slides/Q1-W3_r-programming.html#main-data-types",
+    "title": "R Programming Language",
+    "section": "Main Data Types",
+    "text": "Main Data Types\nData you can work with in R takes one of 61 forms, most commonly:\n\n\n\n\n\n\n\n\nData type\nDescription\nExample\n\n\n\n\nNumeric\nDecimal numbers, including whole numbers\n3.14, 42.0, -1.5\n\n\nInteger\nWhole numbers (exclusively), represented with an L suffix\n42L, -1L, 1000L\n\n\nLogical\nBoolean values, either TRUE or FALSE\nTRUE, FALSE or T, F\n\n\nCharacter\nText strings, enclosed in quotes\n\"hello\", '123', \"R is great!\"\n\n\n\n\nThe main data types you’ll encounter in R are Numeric, Integer, Logical, and Character. Numeric data type represents decimal numbers, including whole numbers (e.g., 3.14, 42.0, -1.5) Integer data type represents only whole numbers, indicated by an L suffix (e.g., 42L, -1L, 1000L) Logical data type represents boolean values, either TRUE or FALSE (e.g., TRUE, FALSE) Character data type represents text strings, enclosed in quotes (e.g., “hello”, ‘123’, “R is great!”)\nThe other 2 are Complex numbers (e.g., 1 + 2i) and Raw vectors (used to store raw bytes of data, e.g., images or binary files). You’re won’t run into these in this class.\n\nAlso complex numbers and raw vectors, rarely used in practice."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#data-types",
+    "href": "slides/Q1-W3_r-programming.html#data-types",
+    "title": "R Programming Language",
+    "section": "Data Types(+)",
+    "text": "Data Types(+)\nThere are also a few “honorary” data types:\n\n\n\n\n\n\n\n\nData type\nDescription\nExample\n\n\n\n\nFactor\nLeveled categorical data, stored as integers with labels\nfactor(c(\"low\", \"medium\", \"high\"))\n\n\nDate\nDates, stored as a special class of object\nas.Date(\"2025-01-31\")\n\n\nPOSIXct\nDate-time objects, which include both date and time\nas.POSIXct(\"1776-07-04 12:01:59\")\n\n\nempty\nNot a data type, but the absence of data\nNA\n\n\n\n\nFactors are used to represent categorical data with a fixed number of levels. They are stored as integers with associated labels (e.g., factor(c(“low”, “medium”, “high”))) Dates are stored as a special class of object in R, allowing for date-specific operations (e.g., as.Date(“2025-01-31”)) POSIXct represents date-time objects, which include both date and time information (e.g., as.POSIXct(“1776-07-04 12:01:59”)) NA represents missing or undefined data in R. It is not a data type itself, but rather the absence of data. There are other ways to represent missing data (e.g., NULL, NaN), but NA is the most common. - NA is not the same as the numeric/integer 0 or the empty string \"\". Those are both values!!"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#data-structures",
+    "href": "slides/Q1-W3_r-programming.html#data-structures",
+    "title": "R Programming Language",
+    "section": "Data Structures",
+    "text": "Data Structures\nR organizes data into structures to for manipulation and analysis. The main data structures are:\n\n\n\n\n\n\n\n\nData structure\nDescription\nExample\n\n\n\n\nScalar\nSingle data value of any data type\n42, \"hello\", TRUE\n\n\nVector\nOne-dimensional array of elements of the same data type\nc(1, 2, 3, 4, 5)\n\n\nList\nOrdered collection of elements that can be of different data types\nlist(name = \"Alice\", age = 30, scores = c(90, 85, 88))\n\n\nMatrix\nTwo-dimensional array of elements of the same data type\nmatrix(1:6, nrow = 2, ncol = 3)\n\n\nData Frame\nTwo-dimensional, tabular data structure with columns of potentially different data types\ndata.frame(name = c(\"Alice\", \"Bob\"), age = c(30, 25))\n\n\nTibbles\nAlternative data frames with enhanced features\ntibble::tibble(name = c(\"Alice\", \"Bob\"), age = c(30, 25))"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#data-structures-data-frames-and-tibbles",
+    "href": "slides/Q1-W3_r-programming.html#data-structures-data-frames-and-tibbles",
+    "title": "R Programming Language",
+    "section": "Data Structures: Data Frames and Tibbles",
+    "text": "Data Structures: Data Frames and Tibbles\n\nData frames are 2-dimensional, tabular data structures\n\ndfs are the heart &lt;3 of R\nSpecial type of list\n\nEach vector in the list is a column\nAll of equal length (e.g. same number of rows)\nCan be different data types across vectors\nMust be the same data type within a vector\n\n\nTibbles are alternatives to data frames\n\nSpecial type of data frame\nUsed in the tidyverse ecosystem\nHave some enhanced features (e.g., better printing, stricter subsetting rules)\nFunctionally equivalent to data frames (for our purposes)\n\n\n\nData frames are the heart of R. They are lists of vectors, where each vector is a column in the data frame. All vectors must be of equal length (i.e., same number of rows), but they can be different data types across vectors (e.g., one column can be numeric, another character, etc.). Within a single vector (column), all elements must be of the same data type.\nTibbles are the tidyverse’s alternative to data frames. Tibbles are also data frames. It’s just another class applied to the same object. There are several important technical advantages to tibbles, but for our applied purposes all that you need to know is that tidyverse functions generally expect tibbles as inputs and return tibbles as outputs. So when working in the tidyverse, you’ll mostly be using tibbles. Conceptually, they’re going to be interchangeable with data frames."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#operators",
+    "href": "slides/Q1-W3_r-programming.html#operators",
+    "title": "R Programming Language",
+    "section": "Operators",
+    "text": "Operators\nOperators are symbols that perform operations on variables and values. The main types of operators in R are:\n\n\n\n\n\n\n\n\nOperator type\nDescription\nExample\n\n\n\n\nArithmetic\nPerform mathematical calculations\n+, -, *, /, ^\n\n\nRelational\nCompare values and return logical results\n==, !=, &lt;, &gt;, &lt;=, &gt;=\n\n\nLogical\nCombine or negate logical values\n&, |, !\n\n\nAssignment\nAssign values to variables\n&lt;-, =, -&gt;\n\n\n\n\nRelational aka comparison"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#operators-arithmetic",
+    "href": "slides/Q1-W3_r-programming.html#operators-arithmetic",
+    "title": "R Programming Language",
+    "section": "Operators: Arithmetic",
+    "text": "Operators: Arithmetic\nArithmetic do math.\n\nInput: numeric data\nOutput: numeric data\n\n\n\n\nOperator\nDescription\nExample\nOutput\n\n\n\n\n+\nAddition\n3 + 5\n8\n\n\n-\nSubtraction\n10 - 4\n\n\n\n*\nMultiplication\n6 * 7\n42\n\n\n/\nDivision\n20 / 4\n5\n\n\n^\nExponentiation (power)\n2 ^ 3\n8\n\n\n%%\nModulo (remainder of division)\n10 %% 3\n1"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#operators-relational",
+    "href": "slides/Q1-W3_r-programming.html#operators-relational",
+    "title": "R Programming Language",
+    "section": "Operators: Relational",
+    "text": "Operators: Relational\nRelational or comparison operators compare objects and return a logical value (TRUE or FALSE). They are a special kind of logical operator.\n\nInput: numeric, character, or logical data\nOutput: logical data\n\n\n\n\nOperator\nDescription\nExample\nOutput\n\n\n\n\n==\nEqual to\n5 == 5\nTRUE\n\n\n!=\nNot equal to (“≠”)\n5 != 3\nTRUE\n\n\n&gt;\nGreater than\n7 &gt; 4\nTRUE\n\n\n&lt;\nLess than\n3 &lt; 8\nTRUE\n\n\n&gt;=\nGreater than or equal to\n6 &gt;= 6\nTRUE\n\n\n&lt;=\nLess than or equal to\n2 &lt;= 5\nTRUE\n\n\n\n\n\n\n\n\n\nWarning: '==' != '='\n\n\nThe == operator checks for equality, while = is an (argument) assignment operator."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#operators-logical",
+    "href": "slides/Q1-W3_r-programming.html#operators-logical",
+    "title": "R Programming Language",
+    "section": "Operators: Logical",
+    "text": "Operators: Logical\nLogical operators combine and modify boolean values (TRUE or FALSE).\n\nInput: logical data\nOutput: logical data\n\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nOutput\n\n\n\n\n&\n“and”: both sides of the operators evaluate to TRUE\nTRUE & FALSE\nFALSE\n\n\n|\n“or”: at least one side of the operator evaluates to TRUE\nTRUE | FALSE\nTRUE\n\n\n!\n“not”: the opposite of something’s logical evaluation\n!TRUE\nFALSE\n\n\n\n\nIt helps to think of the ! as the word “not”: != is “not equal to”. !TRUE is FALSE. is.na(x) means “is x missing?” (true or false), and !is.na(x) means “is x not missing?” (true or false, the opposite of is.na(x)).\nThe & and | operators come in two flavors: single or (& and |) and double (&& and ||). Dig into this difference if you want or need to, but for most purposes, you can just use the single operators (& and |)."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#operators-other",
+    "href": "slides/Q1-W3_r-programming.html#operators-other",
+    "title": "R Programming Language",
+    "section": "Operators: Other",
+    "text": "Operators: Other\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nOutput\n\n\n\n\n&lt;-\nVariable assignment operator\nx &lt;- 5\nAssigns the value 5 to the variable x\n\n\n=\nArgument assignment operator\nround(3.14159, digits = 2)\nAssigns the value 2 to the digits argument of the round() function\n\n\n:\nCreate a sequence of integers\n1:5\nc(1, 2, 3, 4, 5)\n\n\n[ ]\nSubset elements of a vector, list, or data frame by position or name\nlist(first = 1, second = 2)[2]\n&gt; $second &gt; [1] 2\n\n\n[[ ]]\nExtract a single element from a list by position or name\nlist(first = 1, second = 2)[[2]]\n2\n\n\n$\nExtract a single element from a list or data frame by name\nlist(first = 1, second = 2)$second\n2\n\n\n|&gt; or %&gt;%\nPipe operator to pass the output of one function as the input to another\ndata |&gt; filter(condition)\nPasses data as the first argument to filter()\n\n\n\n\nThe assignment operators &lt;- and = can both be used to assign values to variables, but &lt;- is preferred for variable assignment. = is primarily used for assigning values to function arguments or within functions."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#functions",
+    "href": "slides/Q1-W3_r-programming.html#functions",
+    "title": "R Programming Language",
+    "section": "Functions",
+    "text": "Functions\n\nBasic syntax: function_name(argument1, argument2, ...)\n\nExample: paste(\"Hello\", class_name)\n\nFunctions: pre-defined procedures that perform specific tasks\n\nTake 0 or more arguments as inputs\nReturn 1 output\n\nArguments: inputs to functions that specify procedure\n\nCan be required or optional\nAssigned with = operator or by position following default order\n\nround(3.14159) is the same as round(x = 3.14159)\nround(2, 3.14159) is not the same as round(digits = 2, x = 3.14159).\n\n\nView all possible arguments in a function’s documentation with ?functionname or ??functionname.\n\n\n\n\n\n\n\nMore to come!\n\n\nMuch more on functions coming up in the second half of this lecture.\n\n\n\n\nFunctions are pre-defined procedures that perform specific tasks. They take arguments as inputs and return outputs. Basic syntax for calling a function is the function name followed by parentheses, containing required and optional arguments: function_name(argument1, argument2, …)"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#reference-useful-base-r-functions-1",
+    "href": "slides/Q1-W3_r-programming.html#reference-useful-base-r-functions-1",
+    "title": "R Programming Language",
+    "section": "Reference: Useful Base R Functions (1)",
+    "text": "Reference: Useful Base R Functions (1)\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nExample\nOutput\n\n\n\n\nc()\nCombine values into a vector\nc(1, 2, 3)\nc(1, 2, 3)\n\n\npaste()\nConcatenate strings together\npaste(\"Hello\", \"world!\")\n\n\n\ndata.frame()\nCreate a data frame from vectors\ndata.frame(x = 1:3, y = c(\"a\", \"b\", \"c\"))\nA data frame with 3 rows and 2 columns named x and y\n\n\nclass()\nCheck the data type of an object\nclass(3.14)\n\"numeric\"\n\n\nstr()\nDisplay the structure of an object\nstr(mtcars)\nA summary of the mtcars data frame\n\n\nlength()\nGet the length of a vector\nlength(c(1, 2, 3, 4, 5))\n5\n\n\nhead()\nView the first few rows of a data frame or vector\nhead(mtcars)\nThe first 6 (default) rows of the mtcars data frame\n\n\nsummary()\nGet a summary of a data frame or vector\nsummary(mtcars)\nSummary statistics for each column in the mtcars data frame"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#reference-useful-base-r-functions-2",
+    "href": "slides/Q1-W3_r-programming.html#reference-useful-base-r-functions-2",
+    "title": "R Programming Language",
+    "section": "Reference: Useful Base R Functions (2)",
+    "text": "Reference: Useful Base R Functions (2)\n\nnumber_list &lt;- c(11, 37, 42, 101, 202, 1000, 2025, -3)\n\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nExample\nOutput\n\n\n\n\nround()\nRound a numeric value to a specified number of decimal places\nround(67.1988, 2)\n67.2\n\n\nsum()\nCalculate the sum of a numeric vector\nsum(number_list)\n3415\n\n\nmin()\nFind the minimum value in a numeric vector\nmin(number_list)\n-3\n\n\nmax()\nFind the maximum value in a numeric vector\nmax(number_list)\n2025"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#reference-useful-base-r-functions-3",
+    "href": "slides/Q1-W3_r-programming.html#reference-useful-base-r-functions-3",
+    "title": "R Programming Language",
+    "section": "Reference: Useful Base R Functions (3)",
+    "text": "Reference: Useful Base R Functions (3)\n\nnumber_list &lt;- c(11, 37, 42, 101, 202, 1000, 2025, -3)\n\n\n\n\n\n\n\n\n\n\nFunction\nDescription\nExample\nOutput\n\n\n\n\nmean()\nCalculate the mean of a numeric vector\nmean(number_list)\n426.875\n\n\nmedian()\nCalculate the median of a numeric vector\nmedian(number_list)\n71.5\n\n\nsd()\nCalculate the standard deviation of a numeric vector\nsd(number_list)\n726.7456693\n\n\ncor()\nCalculate the correlation between two numeric vectors\ncor(number_list[1:4], number_list[5:8])\n-0.2855236"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#packages",
+    "href": "slides/Q1-W3_r-programming.html#packages",
+    "title": "R Programming Language",
+    "section": "Packages",
+    "text": "Packages\nConsider two very useful functions:\n\n\n\n# function add.two accepts numeric value `x` \n# and returns numeric x+2\n\nadd.two &lt;- function(x) {\n    return(x + 2)\n    }\n\n\n\n\n# function add.two2 accepts any scalar value `x`, \n# coerces to x to a string, then prints the string \n# followed by the string \" two\"\n\nadd.two2 &lt;- function(x) {\n    return(paste(as.character(x), \"two\"))\n    }\n\n\n\nSomeone out there really needs to add two to things in multiple ways. Tragically, base R just doesn’t have the essential tools needed for all the two-adding tasks. This two-adding user would benefit from accessing both these functions together for:\n\nReusability: use in multiple projects without redefining\nOrganization: group related functions together\nSharing: bundle and share functions with others with similar needs\nDocumentation: add explanation for consistent use and development\n\n\nPackages are collections of many user-created functions, usually designed to work toward a specific use-case or goal.\nWhy combine these two functions into a package? Consider the user. Whoever is doing this is a person who needs to add two a lot and in multiple ways. If we assume they have good reason to do so, then packaging these functions together provides several benefits:\n\nReusability: The user can easily reuse these functions across multiple projects without having to rewrite them each time.\nOrganization: Grouping related functions together in a package helps keep code organized and easier to maintain.\nSharing: The user can share the package with others who may also need to add two in their work.\nDocumentation: Packages often include documentation that explains how to use the functions, making it easier for others (and the user themselves) to understand and utilize the functions effectively."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#packages-1",
+    "href": "slides/Q1-W3_r-programming.html#packages-1",
+    "title": "R Programming Language",
+    "section": "Packages",
+    "text": "Packages\n\n\n\nPackages or libraries are collections of functions\n\nCentered on a specific use case, goal, or domain\nUser-developed and shared\n\nYou need to know:\n\nWhy packages are useful\nHow to find them\nHow to access and understand documentation\nHow to install and load them\nThe basics of common problem points\n\n\n\n\n\nrun_chatter_pipeline &lt;- function(\n  tbl, tbltype, target.ptcp, addressee.tags, cliptier, nearonly,\n  lxonly = default.lxonly,\n  allowed.gap = default.max.gap, allowed.overlap = default.max.overlap,\n  min.utt.dur = default.min.utt.dur, interactants = default.interactants,\n  mode = default.mode, output = default.output, n.runs = default.n.runs) {\n  # step 1. read in the file\n  spchtbl &lt;- read_spchtbl(filepath = tbl, tbltype = tbltype,\n                          cliptier = cliptier,\n                          lxonly = lxonly, nearonly = nearonly)\n  # step 2. run the speech annotations through the tt behavior detection pipeline\n  ttinfotbls &lt;- fetch_chattr_tttbl(\n    spchtbl = spchtbl, target.ptcp = target.ptcp,\n    cliptier = cliptier, lxonly = lxonly,\n    allowed.gap = allowed.gap, allowed.overlap = allowed.overlap,\n    min.utt.dur = min.utt.dur, interactants = interactants,\n    addressee.tags = addressee.tags,\n    mode = mode, output = output, n.runs = n.runs)\n  # step 3. create a summary of the tt behavior by clip and overall, \n  # incl. the random baseline\n  ttinfotbls$tt.summary &lt;- summarize_chattr(ttinfotbls)\n  return(ttinfotbls)\n}\n\n\nView the chattr package on GitHub.\n\n\n\n\nThis is the code for 1 function in the chattr package created by Marisa Casillas. Take a look at the github repo’s documentation and files for a great example of how the need for a package arises & what it looks like to create that package and meet that need.\nhttps://github.com/marisacasillas/chattr-basic"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#packages-install-load",
+    "href": "slides/Q1-W3_r-programming.html#packages-install-load",
+    "title": "R Programming Language",
+    "section": "Packages: Install & Load",
+    "text": "Packages: Install & Load\nTo use functions from a package, you must first:\n\nInstall the package on your local machine\n\ninstall.packages(\"packagename\")\nInstall a package once (on each machine)\n\nLoad (aka attach) it into your R session\n\nlibrary(packagename)\n\nor require(packagename)\n\nLoad a package each time you start a new R session\n\nand in each R script where you want to use it\n\n\n\n\n\n\n\n\n\nLoading vs attaching\n\n\nCalling library() on a package makes its functions available for use as though they were built into R itself. We usually call this loading the package, but technically it’s attaching it.\nOnce a package is installed on your machine, you can load functions directly without attaching the whole package with library(). Do so by prefixing the function with the name of the package and two colors: packagename::functionname().\n\n\n\n\ninstall.package(“tidyverse”) – install a package on your local machine library(tidyverse) – load an existing package Require(“tidyverse”) - require a package Try this one out and see what happens… Not working? try typing ??Require into the console (note the 2 question marks) and see if you can figure out what’s going on and how to fix it. Installing/loading some packages will also install/load dependencies e.g., library(tidyverse) will load the included readr package readr will also load dependencies DBI, haven, readxl, and others\nHaving trouble? Review the troubleshooting strategies from first week! Most packages have full documentation on CRAN Alternatively on the package’s GitHub repo or developer site See documentation for functions within RStudio by typing ?thefunctioname into the console"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#packages-dependencies",
+    "href": "slides/Q1-W3_r-programming.html#packages-dependencies",
+    "title": "R Programming Language",
+    "section": "Packages: Dependencies",
+    "text": "Packages: Dependencies\nFunctions in packages are often defined using functions from other packages. The former package depends on the latter, its dependency.\n\n\nA package’s CRAN documentation will list its dependencies in three categories:\n\nDepends: Packages that must be installed and attached for the package to work\nImports: Packages that must be installed (but not attached) for the package to work\nSuggests: Packages that are not required for the package to work, but are recommended for full functionality\n\n\n\n\n\n\n\n\n\nIn practice…\n\n\nWhen you install or load a package, R will automatically install or load its Depends and Imports dependencies for you. Usually this will just happen without you needing to even notice, but occasionally you may be prompted by the console to approve the installation/loading of dependencies. Rarely, you may need to manually install or load a dependency.\n\n\n\n\n\n\nThe same way that package functions are built using base R functions, packages also frequently (usually) build on functions from other packages. When a package uses functions from another package, that other package is its dependency.\nThere are two big categories of dependencies, hard and soft dependencies. Hard dependencies are required. Functions in the package simply won’t work without them. Soft dependencies are recommended to get the most out of the package, but not strictly necessary. We’ve got three flavors of dependencies in R:\n\nDepends: Packages that must be installed and attached for the package to work\nImports: Packages that must be installed (but not attached) for the package to work\nSuggests: Packages that are not required for the package to work, but are recommended for full functionality"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#reference-d2m-r-required-packages",
+    "href": "slides/Q1-W3_r-programming.html#reference-d2m-r-required-packages",
+    "title": "R Programming Language",
+    "section": "Reference: D2M-R Required Packages",
+    "text": "Reference: D2M-R Required Packages\n\n\n\nPackage Name\nDescription\n\n\n\n\ntidyverse\nEcosystem of packages for data manipulation, visualization, and analysis; includes core tidyverse packages1\n\n\nbibtex\nBibTeX tools for R (bibliography management)\n\n\ncitr\nRStudio add-in to insert citations\n\n\nDescTools\nTools for descriptive statistics\n\n\ngt\nEasily create presentation-ready tables\n\n\nknitr\nDynamic report generation in R\n\n\nlme4\nLinear and generalized linear mixed-effects models\n\n\npsych\nProcedures for psychological, psychometric, and personality research\n\n\nquarto\nTools for working with the Quarto markdown publishing system\n\n\nrmarkdown\nAuthoring dynamic documents with R Markdown\n\n\nusethis\nAutomate package and project setup tasks\n\n\n\nCore tidyverse packages include: ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr, lubridate, and forcats."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#reference-d2m-r-suggested-packages",
+    "href": "slides/Q1-W3_r-programming.html#reference-d2m-r-suggested-packages",
+    "title": "R Programming Language",
+    "section": "Reference: D2M-R Suggested Packages",
+    "text": "Reference: D2M-R Suggested Packages\n\n\n\nPackage Name\nDescription\n\n\n\n\nbroom\nConvert statistical analysis objects into tidy tibbles\n\n\ndata.table\nFast data manipulation and aggregation\n\n\nflextable\nFunctions for reporting tabular results in R Markdown and Word\n\n\nhaven\nImport and export of SPSS, Stata, and SAS files\n\n\njanitor\nSimple tools for examining and cleaning dirty data\n\n\nkableExtra\nConstruct complex tables in R Markdown\n\n\npapaja\nAPA style manuscript preparation with R Markdown\n\n\npwr\nPower analysis for general linear models\n\n\nRColorBrewer\nColor palettes for maps and figures\n\n\npatchwork\nCombine separate ggplot2 plots into the same graphic\n\n\nvcd\nVisualizing categorical data\n\n\nggsci\nScientific journal and sci-fi movie color palettes for ggplot2"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#indexing-subsetting",
+    "href": "slides/Q1-W3_r-programming.html#indexing-subsetting",
+    "title": "R Programming Language",
+    "section": "Indexing & Subsetting",
+    "text": "Indexing & Subsetting\nIndexing and subsetting are ways to select specific elements from data structures like vectors, lists, data frames, and matrices.\nIndexing: Identifying the position of an element within a data structure (or positions within sub-structures) using numeric position or name.\nSubsetting: Extracting a portion of a data structure based on specific criteria (e.g., selecting certain rows or columns from a data frame), including indexing."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#indexing-subsetting-1",
+    "href": "slides/Q1-W3_r-programming.html#indexing-subsetting-1",
+    "title": "R Programming Language",
+    "section": "Indexing & Subsetting",
+    "text": "Indexing & Subsetting\nSelect elements of a vector by position or name with [ ]:\n\nmy_vector &lt;- c(1, 10, 3, fourth = 1000, fifth = 2)\nmy_vector[3] # select 4th element of a vector, return the named or unnamed element\n\n\n\n  \n3 \n\n\n\nmy_vector[\"fourth\"] # select element named 'fourth' from a vector, return the named element\n\n\n\nfourth \n  1000"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#indexing-subsetting-2",
+    "href": "slides/Q1-W3_r-programming.html#indexing-subsetting-2",
+    "title": "R Programming Language",
+    "section": "Indexing & Subsetting",
+    "text": "Indexing & Subsetting\nSelect elements of a list by position or name with [ ] and [[ ]]:\n\nmy_list &lt;- list(first = 1, second = 2)\nmy_list[2] # select 2nd element of a list, returned as a list\n\n\n\n$second\n[1] 2\n\n\n\nmy_list[[2]] # select 2nd element of a list, returned as the element itself\n\n\n\n[1] 2\n\n\n\nmy_list[[\"second\"]] # select element named 'second' from a list, returned as the element itself\n\n\n\n[1] 2"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#indexing-subsetting-3",
+    "href": "slides/Q1-W3_r-programming.html#indexing-subsetting-3",
+    "title": "R Programming Language",
+    "section": "Indexing & Subsetting",
+    "text": "Indexing & Subsetting\nSelect elements of a data frame or matrix by position or name with [ ] and [[ ]], using , to separate row and column indices:\n\nmtcars[1, ]  # first row\n\n\n\n          mpg cyl disp  hp drat   wt  qsec vs am gear carb\nMazda RX4  21   6  160 110  3.9 2.62 16.46  0  1    4    4\n\n\n\nmtcars[, 1]  # first column\n\n\n\n [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4\n[16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7\n[31] 15.0 21.4\n\n\n\nmtcars[1, \"mpg\"] # value in the first row and first column (named \"mpg\")\n\n\n\n[1] 21"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#indexing-subsetting-4",
+    "href": "slides/Q1-W3_r-programming.html#indexing-subsetting-4",
+    "title": "R Programming Language",
+    "section": "Indexing & Subsetting",
+    "text": "Indexing & Subsetting\nSelect a list or data frame element by name with $:\n\nmy_list &lt;- list(first = 1, second = 2)\nmy_list$second # returns `2`\n\n\n\n[1] 2\n\n\n\nmtcars$mpg # 'mpg' column of mtcars \n\n\n\n [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4\n[16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7\n[31] 15.0 21.4"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#iteration",
+    "href": "slides/Q1-W3_r-programming.html#iteration",
+    "title": "R Programming Language",
+    "section": "Iteration",
+    "text": "Iteration\nIteration, or looping, allows you to repeat a block of code multiple times, either a fixed number of times or while a certain condition is met.\n\n\n\n\n\n\n\nLoop Type\nDescription\n\n\n\n\nfor\nRepeats a block of code for each item in a sequence or vector\n\n\nwhile\nRepeats a block of code as long as a specified condition is TRUE"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#writing-and-using-functions",
+    "href": "slides/Q1-W3_r-programming.html#writing-and-using-functions",
+    "title": "R Programming Language",
+    "section": "Writing and Using Functions",
+    "text": "Writing and Using Functions"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#regular-expressions",
+    "href": "slides/Q1-W3_r-programming.html#regular-expressions",
+    "title": "R Programming Language",
+    "section": "Regular Expressions",
+    "text": "Regular Expressions"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#housekeeping",
+    "href": "slides/Q1-W3_r-programming.html#housekeeping",
+    "title": "R Programming Language",
+    "section": "Housekeeping",
+    "text": "Housekeeping\nThis slide has smaller text\n\nHousekeeping\nand\nannouncements\nwithout\nanimation"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#housekeeping-1",
+    "href": "slides/Q1-W3_r-programming.html#housekeeping-1",
+    "title": "R Programming Language",
+    "section": "Housekeeping",
+    "text": "Housekeeping\nThis slide has bigger text\n\nat least\nI hope so"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#simple-bulleted-slide",
+    "href": "slides/Q1-W3_r-programming.html#simple-bulleted-slide",
+    "title": "R Programming Language",
+    "section": "Simple Bulleted Slide",
+    "text": "Simple Bulleted Slide\n\nA top-level line that will be dimmed at first.\n\nWith a link.\nA Third Level Heading\n\nFirst level point\nSecond level point - Third level point - Third level point 2\nFirst level point 2"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#code-slide",
+    "href": "slides/Q1-W3_r-programming.html#code-slide",
+    "title": "R Programming Language",
+    "section": "Code Slide",
+    "text": "Code Slide\nIntroductory content:\n\n# Define class name\nclass_name &lt;- \"D2M-R\"\n\n# Print a message with the variable\npaste(\"Hello\", class_name)\n\nMore information about the code above."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#bubbles-from-the-bottom",
+    "href": "slides/Q1-W3_r-programming.html#bubbles-from-the-bottom",
+    "title": "R Programming Language",
+    "section": "Bubbles from the bottom",
+    "text": "Bubbles from the bottom\n\n\nStudents ask? Students ask?Students ask?Students ask?Students ask? Students ask? Students ask? Students ask? Students ask?Students ask?\n\n\nAnd I respond!\n\n\nThis slide has speech bubbles that pop in after all content has been covered.\nThe container is anchored at the bottom of the page, and the tails point downward.\n\nLeft bubbles, in blue, are things I hear commonly from students\nRight bubbles, in red, are my responses"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#bubbles-from-the-top",
+    "href": "slides/Q1-W3_r-programming.html#bubbles-from-the-top",
+    "title": "R Programming Language",
+    "section": "Bubbles from the top",
+    "text": "Bubbles from the top\nOn this slide, things are a little different:\n\nThe container is anchored to the top of the content section.\nBubbles are mirrored vertically with tails pointing up.\n\n\n\nStudents ask - UP TOP?\n\n\nAnd I respond, also up top!"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#callouts",
+    "href": "slides/Q1-W3_r-programming.html#callouts",
+    "title": "R Programming Language",
+    "section": "Callouts",
+    "text": "Callouts\n\n\n\nCall-outs can be used without additional class features.\n\n\n\n\n\n\n\n\n\nTip\n\n\nTip: Use call-outs to highlight important information.\n\n\n\n\n\n\n\n\n\nYou can change the callout header from the default\n\n\nNote: These are examples of call-outs.\n\n\n\n\n\n\n\n\n\nImportant\n\n\nImportant: Don’t forget to use call-outs!\n\n\n\n\n\n\n\n\n\nWarning\n\n\nWarning: You have used too many callouts"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#columns",
+    "href": "slides/Q1-W3_r-programming.html#columns",
+    "title": "R Programming Language",
+    "section": "Columns",
+    "text": "Columns\n\n\ntibble\nreimagine the dataframe!\n\nreadr\neasily import and export tabular data\n\ndplyr\na grammar of data manipulation\n\ntidyr\ntidy your messy data\n\nggplot2\na grammar of graphics\n\n\n\npurrr\nenhancements for R’s functional programming\n\nstringr\nsimplify working with strings\n\nforcats\nsimplify working with factors"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#inline-styling",
+    "href": "slides/Q1-W3_r-programming.html#inline-styling",
+    "title": "R Programming Language",
+    "section": "Inline Styling",
+    "text": "Inline Styling\nYou can style things like:\n\nbold text\nitalic text\nstrikethrough text\nlinks\ninline code\nfunction_names\npackage_names\nkeyword"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#reference-indexing-subsetting",
+    "href": "slides/Q1-W3_r-programming.html#reference-indexing-subsetting",
+    "title": "R Programming Language",
+    "section": "Reference: Indexing & Subsetting",
+    "text": "Reference: Indexing & Subsetting\nCreate a vector of integers beginning with one number and ending with another using ::\n\n3:7\n\n\n\n[1] 3 4 5 6 7\n\n\n\n1:5 == c(1, 2, 3, 4, 5)\n\n\n\n[1] TRUE TRUE TRUE TRUE TRUE"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#reference-indexing-subsetting-1",
+    "href": "slides/Q1-W3_r-programming.html#reference-indexing-subsetting-1",
+    "title": "R Programming Language",
+    "section": "Reference: Indexing & Subsetting",
+    "text": "Reference: Indexing & Subsetting\nSelect elements of a vector by position or name with [ ]:\n\nmy_vector &lt;- c(1, 10, 3, fourth = 1000, fifth = 2)\nmy_vector[3] # select 4th element of a vector, return the named or unnamed element\n\n\n\n  \n3 \n\n\n\nmy_vector[\"fourth\"] # select element named 'fourth' from a vector, return the named element\n\n\n\nfourth \n  1000"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#reference-indexing-subsetting-2",
+    "href": "slides/Q1-W3_r-programming.html#reference-indexing-subsetting-2",
+    "title": "R Programming Language",
+    "section": "Reference: Indexing & Subsetting",
+    "text": "Reference: Indexing & Subsetting\nSelect elements of a list by position or name with [ ] and [[ ]]:\n\nmy_list &lt;- list(first = 1, second = 2)\nmy_list[2] # select 2nd element of a list, returned as a list\n\n\n\n$second\n[1] 2\n\n\n\nmy_list[[2]] # select 2nd element of a list, returned as the element itself\n\n\n\n[1] 2\n\n\n\nmy_list[[\"second\"]] # select element named 'second' from a list, returned as the element itself\n\n\n\n[1] 2"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#reference-indexing-subsetting-3",
+    "href": "slides/Q1-W3_r-programming.html#reference-indexing-subsetting-3",
+    "title": "R Programming Language",
+    "section": "Reference: Indexing & Subsetting",
+    "text": "Reference: Indexing & Subsetting\nSelect elements of a data frame or matrix by position or name with [ ] and [[ ]], using , to separate row and column indices:\n\nmtcars[1, ]  # first row\n\n\n\n          mpg cyl disp  hp drat   wt  qsec vs am gear carb\nMazda RX4  21   6  160 110  3.9 2.62 16.46  0  1    4    4\n\n\n\nmtcars[, 1]  # first column\n\n\n\n [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4\n[16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7\n[31] 15.0 21.4\n\n\n\nmtcars[1, \"mpg\"] # value in the first row and first column (named \"mpg\")\n\n\n\n[1] 21"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#reference-indexing-subsetting-4",
+    "href": "slides/Q1-W3_r-programming.html#reference-indexing-subsetting-4",
+    "title": "R Programming Language",
+    "section": "Reference: Indexing & Subsetting",
+    "text": "Reference: Indexing & Subsetting\nSelect a list or data frame element by name with $:\n\nmy_list &lt;- list(first = 1, second = 2)\nmy_list$second # returns `2`\n\n\n\n[1] 2\n\n\n\nmtcars$mpg # 'mpg' column of mtcars \n\n\n\n [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4\n[16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7\n[31] 15.0 21.4"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#what-is-control-flow",
+    "href": "slides/Q1-W3_r-programming.html#what-is-control-flow",
+    "title": "R Programming Language",
+    "section": "What is “control flow”?",
+    "text": "What is “control flow”?\nControl flow refers to the order in which individual statements, instructions, or function calls are executed or evaluated within a program. In R, control flow is managed using conditional statements and loops, allowing for dynamic decision-making and repetitive tasks based on specific conditions."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#conditional-statements",
+    "href": "slides/Q1-W3_r-programming.html#conditional-statements",
+    "title": "R Programming Language",
+    "section": "Conditional Statements",
+    "text": "Conditional Statements\nConditional statements allow you to execute different blocks of code based on whether certain conditions are met.\n\n\n\n\n\n\n\n\n\nStatement\nDescription\n\n\n\n\nif\nExecute a block of code if a specified condition is TRUE\n\n\nif...else\nExecute one block of code if a condition is TRUE,\n\n\nif...else if...else\nExecute different blocks of code based on multiple conditions\n\n\n\n\n\n\n# if statement\n\nx &lt;- 3\n\nif (x &gt; 0) {\n    print(\"x is positive\")\n}\n\n\n\n[1] \"x is positive\"\n\n# if...else statement\ny &lt;- 10\n\nif (y &gt; 5) {\n    print(\"y is greater than 5\")\n} else {\n    print(\"y is not greater than 5\")\n}\n\n[1] \"y is greater than 5\""
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#conditional-functions",
+    "href": "slides/Q1-W3_r-programming.html#conditional-functions",
+    "title": "R Programming Language",
+    "section": "Conditional Functions",
+    "text": "Conditional Functions\nR’s conditional functions provide a way to perform conditional operations in a more functional, condensed style.\n\n\n\nFunction\nPackage\n\n\n\n\nifelse()\nbase\n\n\nif_else()\ndplyr\n\n\ncase_when()\ndplyr\n\n\n\nThe examples above can be written more concisely using case_when():\n\ny &lt;- 10\n\nifelse(y &gt; 5, \"y is greater than 5\", \"y is not greater than 5\")\n\n\n\n[1] \"y is greater than 5\"\n\n\n\nz &lt;- 0 # change this value to test different outcomes\n\nprint(case_when(\n    !is.numeric(z) ~ \"z is not a number\",\n    z &gt; 0 ~ \"z is positive\",\n    z &lt; 0 ~ \"z is negative\",\n    TRUE ~ \"z is zero\"\n))\n\n\n\n[1] \"z is zero\"\n\n\n\nWhat’s the difference between ifelse() and if_else()?\n\nThe ifelse() function is a base R function that is vectorized, meaning it can handle vectors of conditions and return corresponding values for each element. It is generally faster for large datasets but can be less strict about data types.\nThe if_else() function is part of the dplyr package in the tidyverse. It is also vectorized but is stricter about data types, ensuring that the output type matches the input type. This can help prevent unexpected results when working with different data types."
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#iteration-loops",
+    "href": "slides/Q1-W3_r-programming.html#iteration-loops",
+    "title": "R Programming Language",
+    "section": "Iteration (loops)",
+    "text": "Iteration (loops)"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#conditional-statements-example",
+    "href": "slides/Q1-W3_r-programming.html#conditional-statements-example",
+    "title": "R Programming Language",
+    "section": "Conditional Statements: Example",
+    "text": "Conditional Statements: Example\n\n# Example of if...else if...else statement\n\nz &lt;- 0 # change this value to test different outcomes\n\n# Check if z is a number\n# if it is, do the checks inside the {}\n# if it isn't, go to the else statement\nif (is.numeric(z)) {\n    if (z &gt; 0) {      # is it positive?\n        print(\"z is positive\")  # if it is, say so and then STOP\n    # if not, is it negative?\n    } else if (z &lt; 0) {     # if not, is it negative?\n        # if it is, say so and then STOP\n        print(\"z is negative\")  # if it is, say so and then STOP\n    # if not positive and not negative, it must be zero\n    } else {\n        print(\"z is zero\") # say so and then STOP\n    }\n# if it isn't a number, say so and then STOP\n} else {\n    print(\"z is not a number\")\n}\n\n\n\n[1] \"z is zero\""
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#loops-conceptually",
+    "href": "slides/Q1-W3_r-programming.html#loops-conceptually",
+    "title": "R Programming Language",
+    "section": "Loops Conceptually",
+    "text": "Loops Conceptually\n\n\n\n\n\n\n When I say go\n\n\n\n\n\n\n\n Do this thing\n\n\n\n\n\n\n\n And keep doing it\n\n\n\n\n\n\n\n Until I say stop"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#for-loops",
+    "href": "slides/Q1-W3_r-programming.html#for-loops",
+    "title": "R Programming Language",
+    "section": "for Loops",
+    "text": "for Loops\n\n\n\n When I say go\n\n\ni = my_list[1]\n\n\n\n\n Do this thing\n\n\nprint(i)\n\n\n\n\n And keep doing it\n\n\ni = my_list[2]  i = my_list[3]...\n\n\n\n\n Until I say stop\n\n\nmy_list[6] &gt; length(my_list)\n\n\n\n\n\n# Create a finite sequence of numbers\nmy_list &lt;- c(1, 3, 5, 7, 9)\n\n# for each value i in the sequence num_list\nfor (i in my_list) {\n    # print the value of i to the console\n    print(i)\n# iterate to the next value in the sequence \n    # until there are no values left\n}\n\n\n[1] 1\n[1] 3\n[1] 5\n[1] 7\n[1] 9"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#while-loops",
+    "href": "slides/Q1-W3_r-programming.html#while-loops",
+    "title": "R Programming Language",
+    "section": "while Loops",
+    "text": "while Loops\n\n\n\n When I say go\n\n\ni = 1\n\n\n\n\n Do this thing\n\n\nprint(i)  i &lt;- i + 1\n\n\n\n\n And keep doing it\n\n\nprint(i + 1)  print(i + 2)...\n\n\n\n\n Until I say stop\n\n\ni &gt;= 6\n\n\n\n\n\n# Initialize counter variable i to 1\ni &lt;- 1 \n\n# while (if) i=1, then i=2...til i=6\nwhile (i &lt; 6) {\n    # print the value of i to the console\n    print(i)\n    i &lt;- i + 1 # Increment i by 1\n# check whether \"while\" condition still holds\n    # repeat if TRUE\n    # stop if FALSE\n}\n\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5"
+  },
+  {
+    "objectID": "slides/Q1-W3_r-programming.html#for-vs-while",
+    "href": "slides/Q1-W3_r-programming.html#for-vs-while",
+    "title": "R Programming Language",
+    "section": "for vs while",
+    "text": "for vs while\n\n\n\n\n\nfor\n\n\n\n\nKnown, finite sequence\nRepeats for each item in sequence\nDoes not require an explicit counter variable\nIteration happens automatically\n\n\n\n\n\n\nwhile\n\n\n\n\nUnknown, potentially infinite sequence\nRepeats while condition is TRUE\nRequires an explicit counter variable\nIteration controlled by defined condition\n\n\n\n\n\n\n\n Warning: Infinite loops \n\nUse while for potentially but not actually infinite sequences. Your code must eventually lead to a FALSE evaluation:\n\nDefine the iteration mechanism:\n\ni &lt;- i+1\n\nEnsure the while condition will eventually be FALSE when iterated using that mechanism\n\ni &lt; 6\n\n\n\n\n\n\n\nUse a for loop when you know in advance how many times you want to iterate (i.e., finite sequence).\nUse a while loop when you want to continue iterating until a certain condition is met, and you may not know in advance how many iterations that will take (i.e., potentially infinite sequence).\n\nBut not actually infinite! Always ensure that the condition will eventually become FALSE to avoid infinite loops."
   }
 ]
