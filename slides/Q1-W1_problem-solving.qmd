@@ -1123,13 +1123,13 @@ Looking up documentation for any of the `*_join()` functions in dplyr brings you
 
 [[Function name]{.custom-keyword style="background-color: #2ac8fe80; color: #000;"}: here `inner_join()`]{.fragment data-code-focus="1,9" style="display: block; margin-top: 2em; margin-bottom: 1em;"}
 
-[[Required arguments]{.custom-keyword style="background-color: #da6d7180; color: #000;"}: here `file`. listed first; no assigned default value; omitting results in an error message]{.fragment data-code-focus="2,3" style="display: block; margin-bottom: 1em;"}
+[[Required arguments]{.custom-keyword style="background-color: #da6d7180; color: #000;"}: here `x` and `y`; listed first; no assigned default value; omitting results in an error message]{.fragment data-code-focus="2,3" style="display: block; margin-bottom: 1em;"}
 
-[[Optional arguments]{.custom-keyword style="background-color: #f1f56c80; color: #000;"}: here `col_names = TRUE, col_types = NULL ... show_col_types = TRUE` ; listed after required arguments; omitting will use the assigned default value]{.fragment data-code-focus="4-6,8" style="display: block; margin-bottom: 1em;"}
+[[Optional arguments]{.custom-keyword style="background-color: #f1f56c80; color: #000;"}: here `by = NULL, copy = FALSE, suffix = c(".x", ".y"), keep = NULL`; listed after required arguments; omitting will use the assigned default value]{.fragment data-code-focus="4-6,8" style="display: block; margin-bottom: 1em;"}
 
-[[Other parameters]{.custom-keyword style="background-color: #39eef280; color: #000;"}: always `...` ; accepts extra arguments not explicitly listed]{.fragment data-code-focus="7" style="display: block; margin-bottom: 1em;"}
+[[Other parameters]{.custom-keyword style="background-color: #39eef280; color: #000;"}: always `...`; accepts extra arguments not explicitly listed]{.fragment data-code-focus="7" style="display: block; margin-bottom: 1em;"}
 
-[[Related reference]{.custom-keyword style="background-color: #f5c36c80; color: #000;"}: here, `?read_delim` ; functions that share a basic structure and may have helpful documentation]{.fragment data-code-focus="11" style="display: block;"}
+[[Related reference]{.custom-keyword style="background-color: #f5c36c80; color: #000;"}: here `left_join()` ; functions that share a basic structure and may have helpful documentation]{.fragment data-code-focus="11" style="display: block;"}
 
 :::
 
@@ -1213,7 +1213,7 @@ left_join(
 ::: card-header
 ::: {.card-title style="color: #fff"}
 
-[Reference Manual (PDF)](https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf){style="color: #fff"}
+[Reference Manual](https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf){style="color: #fff"}
 
 :::
 :::
