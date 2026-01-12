@@ -17,6 +17,17 @@ execute:
 editor: source
 ---
 
+# I Talk, You Do
+
+## Follow Along {.bigger}
+
+These slides are only useful if you can match them to your computer.
+
+-   Open the example assignment project (or something else) in RStudio
+-   Open the main Quarto notebook `.qmd` and the markdown `README.md`
+-   When I talk about an RStudio feature, find and use in your RStudio interface
+-   When I talk about a Quarto feature, find it in the example notebook and try it out
+-   **If you can't directly connect what I'm talking about to what you're seeing, <span style="color: red;">_STOP ME_</span>.**
 
 # The Tools
 
@@ -238,7 +249,7 @@ Optionally uses extensions (like apaquarto) for additional customization and fun
 
 ::: col-8
 
-![](https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.png)
+![](https://docs.posit.co/ide/user/ide/guide/ui/images/rstudio-panes-labeled.png){style="margin-top: -2em;"}
 
 :::
 ::::
@@ -330,22 +341,22 @@ Tools > Global Options > Pane Layout
 
 - Execute R code
 - View output
-- Errors/warnings appear here
+- Shows errors, warnings, and messages from R
 :::
 
 ::: {.col-4 .nonincremental .fragment fragment-index="2"}
 **Terminal**
 
-- Command line interface (bash/shell)
-- Git commands
-- Does NOT run R code
+- Bash/shell command line interface
+- Git, Quarto, system commands
+- Does *NOT* run R code
 :::
 
 ::: {.col-4 .nonincremental .fragment fragment-index="3"}
 **Background Jobs**
 
 - Monitor rendering processes
-- Errors from Quarto rendering
+- Errors from Quarto or knitr rendering
 - Stop sign to force quit
 :::
 ::::
@@ -465,8 +476,8 @@ Environment resets when R session restarts. Rerun code to recreate objects.
 
 - View changed files since last commit
 - Stage files (checkbox)
-- Commit button opens detailed window
-- Pull/push to remote
+- Commit and history buttons open detailed window
+- Pull from and push to remote
 
 :::
 ::: col-6
@@ -506,8 +517,8 @@ Environment resets when R session restarts. Rerun code to recreate objects.
 ::: fragment
 **Plots pane:**
 
-- Static visualizations from R scripts
-- Export, zoom, clear
+- Visualizations from R scripts
+- Export, zoom, clear, save image
 - Code: prefer `ggsave()` for reproducibility
 :::
 
@@ -1044,3 +1055,18 @@ code` `` syntax
     -   Can reference sourced and chunk code
 - Can include figures, tables, citations, etc. as an alternative to rendering from code chunks
 
+
+# Demo
+
+## Follow along:
+
+1. Create a new RStudio project
+2. View/change global options
+3. Create & edit a markdown `README.md` file
+4. Create & edit an `.R` script
+5. Create & edit a Quarto `.qmd` document
+    1. YAML
+    2. Chunk w/ `source()`
+    3. Chunk w/ inline code
+    4. Markdown text with inline R code
+6. Render the Quarto document to HTML

@@ -347,7 +347,7 @@
     "href": "slides/Q1-W2_rstudio-quarto.html#console-pane-three-tabs",
     "title": "RStudio & Quarto",
     "section": "Console Pane: Three Tabs",
-    "text": "Console Pane: Three Tabs\n\n\n\nConsole\n\nExecute R code\nView output\nErrors/warnings appear here\n\n\n\nTerminal\n\nCommand line interface (bash/shell)\nGit commands\nDoes NOT run R code\n\n\n\nBackground Jobs\n\nMonitor rendering processes\nErrors from Quarto rendering\nStop sign to force quit"
+    "text": "Console Pane: Three Tabs\n\n\n\nConsole\n\nExecute R code\nView output\nShows errors, warnings, and messages from R\n\n\n\nTerminal\n\nBash/shell command line interface\nGit, Quarto, system commands\nDoes NOT run R code\n\n\n\nBackground Jobs\n\nMonitor rendering processes\nErrors from Quarto or knitr rendering\nStop sign to force quit"
   },
   {
     "objectID": "slides/Q1-W2_rstudio-quarto.html#console-vs.-source-scripts",
@@ -375,14 +375,14 @@
     "href": "slides/Q1-W2_rstudio-quarto.html#git-pane",
     "title": "RStudio & Quarto",
     "section": "Git Pane",
-    "text": "Git Pane\n\n\n\nPerform basic git operations from RStudio\n\nView changed files since last commit\nStage files (checkbox)\nCommit button opens detailed window\nPull/push to remote"
+    "text": "Git Pane\n\n\n\nPerform basic git operations from RStudio\n\nView changed files since last commit\nStage files (checkbox)\nCommit and history buttons open detailed window\nPull from and push to remote"
   },
   {
     "objectID": "slides/Q1-W2_rstudio-quarto.html#other-important-panes",
     "href": "slides/Q1-W2_rstudio-quarto.html#other-important-panes",
     "title": "RStudio & Quarto",
     "section": "Other Important Panes",
-    "text": "Other Important Panes\n\n\n\nPackages pane:\n\nView installed/loaded packages\nUpdate packages\nClick name → documentation\nDon’t install from pane, use install.packages() in code\n\n\n\nHelp pane:\n\nFunction documentation\nSearch or use ?function_name in console\n\n\n\n\n\nPlots pane:\n\nStatic visualizations from R scripts\nExport, zoom, clear\nCode: prefer ggsave() for reproducibility\n\n\n\nViewer pane:\n\nRendered HTML, Quarto documents\nShiny apps, interactive visualizations\n“Open in Browser” to pop out"
+    "text": "Other Important Panes\n\n\n\nPackages pane:\n\nView installed/loaded packages\nUpdate packages\nClick name → documentation\nDon’t install from pane, use install.packages() in code\n\n\n\nHelp pane:\n\nFunction documentation\nSearch or use ?function_name in console\n\n\n\n\n\nPlots pane:\n\nVisualizations from R scripts\nExport, zoom, clear, save image\nCode: prefer ggsave() for reproducibility\n\n\n\nViewer pane:\n\nRendered HTML, Quarto documents\nShiny apps, interactive visualizations\n“Open in Browser” to pop out"
   },
   {
     "objectID": "slides/Q1-W2_rstudio-quarto.html#key-takeaways",
@@ -2217,5 +2217,19 @@
     "title": "R Programming Language",
     "section": "for vs while",
     "text": "for vs while\n\n\n\n\n\nfor\n\n\n\n\nKnown, finite sequence\nRepeats for each item in sequence\nDoes not require an explicit counter variable\nIteration happens automatically\n\n\n\n\n\n\nwhile\n\n\n\n\nUnknown, potentially infinite sequence\nRepeats while condition is TRUE\nRequires an explicit counter variable\nIteration controlled by defined condition\n\n\n\n\n\n\n\n Warning: Infinite loops \n\nUse while for potentially but not actually infinite sequences. Your code must eventually lead to a FALSE evaluation:\n\nDefine the iteration mechanism:\n\ni &lt;- i+1\n\nEnsure the while condition will eventually be FALSE when iterated using that mechanism\n\ni &lt; 6\n\n\n\n\n\n\n\nUse a for loop when you know in advance how many times you want to iterate (i.e., finite sequence).\nUse a while loop when you want to continue iterating until a certain condition is met, and you may not know in advance how many iterations that will take (i.e., potentially infinite sequence).\n\nBut not actually infinite! Always ensure that the condition will eventually become FALSE to avoid infinite loops."
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#follow-along",
+    "href": "slides/Q1-W2_rstudio-quarto.html#follow-along",
+    "title": "RStudio & Quarto",
+    "section": "Follow Along",
+    "text": "Follow Along\nThese slides are only useful if you can match them to your computer.\n\nOpen the example assignment project (or something else) in RStudio\nOpen the main Quarto notebook .qmd and the markdown README.md\nWhen I talk about an RStudio feature, find and use in your RStudio interface\nWhen I talk about a Quarto feature, find it in the example notebook and try it out\nIf you can’t directly connect what I’m talking about to what you’re seeing, STOP ME."
+  },
+  {
+    "objectID": "slides/Q1-W2_rstudio-quarto.html#follow-along-1",
+    "href": "slides/Q1-W2_rstudio-quarto.html#follow-along-1",
+    "title": "RStudio & Quarto",
+    "section": "Follow along:",
+    "text": "Follow along:\n\nCreate a new RStudio project\nView/change global options\nCreate & edit a markdown README.md file\nCreate & edit an .R script\nCreate & edit a Quarto .qmd document\n\nYAML\nChunk w/ source()\nChunk w/ inline code\nMarkdown text with inline R code\n\nRender the Quarto document to HTML"
   }
 ]
