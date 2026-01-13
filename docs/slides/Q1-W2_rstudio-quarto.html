@@ -210,6 +210,65 @@
 
   <p class="date">2026-01-13</p>
 </section>
+<section id="housekeeping" class="slide level2">
+<h2>Housekeeping</h2>
+<ul>
+<li class="fragment">Office Hours
+<ul>
+<li class="fragment">Dr.&nbsp;Dowling: Thurs 2-4pm, 1155 Bld. Room 181
+<ul>
+<li class="fragment"><a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ26_g2R1YwSJ3UpjZetF6c7jfKXO8zrfwiT4Wo=">Appointment required</a></li>
+</ul></li>
+<li class="fragment">Qilong Bi: Tues 2-3:30pm, 1155 Bld. Room 222
+<ul>
+<li class="fragment">Open/drop-in</li>
+</ul></li>
+</ul></li>
+<li class="fragment">Accountability plans past-due</li>
+<li class="fragment">Accept the GitHub D2M-R organization invite</li>
+<li class="fragment">RStudio + Git setup: <a href="https://happygitwithr.com/">happygitwithr.com</a></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Office Hours
+<ul>
+<li>Dr.&nbsp;Dowling: Thurs 2-4pm, 1155 Bld. Room 181
+<ul>
+<li><a href="https://calendar.google.com/calendar/u/0/appointments/AcZssZ26_g2R1YwSJ3UpjZetF6c7jfKXO8zrfwiT4Wo=">Appointment required</a></li>
+</ul></li>
+<li>Qilong Bi: Tues 2-3:30pm, 1155 Bld. Room 222
+<ul>
+<li>Open/drop-in</li>
+</ul></li>
+</ul></li>
+<li><strong>Accountability plans due YESTERDAY</strong>
+<ul>
+<li>I’m going to actually scan through them before I mark them complete, which could take a minute. So don’t stress if it doesn’t get “graded” for a while. It’s for my own tracking, not your grade.</li>
+<li>If you have SDS accommodations, you should have them built into your plan. Still send me an email to flag it for me so I don’t miss it. With the alternative assessment structure it can be easy for me to overlook</li>
+</ul></li>
+<li>GitHub D2M-R
+<ul>
+<li><em>Education account is not required. It’s just free and nice.</em></li>
+<li><em>A handful of people aren’t accepting the D2M-R org invite. Please do so ASAP!</em></li>
+<li>Set up your GitHub account</li>
+<li>Accept invite to a GH Classroom assignment</li>
+<li>Wait for my invite to the organization</li>
+<li><strong>Accept org invite</strong></li>
+</ul></li>
+<li>RStudio + Git setup: <a href="https://happygitwithr.com/">happygitwithr.com</a></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section>
 <section id="i-talk-you-do" class="title-slide slide level1 center">
 <h1>I Talk, You Do</h1>
@@ -631,25 +690,48 @@
 <h2>Files Pane</h2>
 <div class="container-fluid">
 <div class="row">
-<div class="col-6">
+<div class="col-8">
 <p><strong>Directory navigator + working directory management</strong></p>
 <ul>
 <li class="fragment">Navigate folders like Finder/Explorer</li>
 <li class="fragment">Create, delete, rename files</li>
 <li class="fragment"><strong>More → Set as Working Directory</strong></li>
 </ul>
-<p><strong>Working directory matters for file paths:</strong></p>
+<p><strong>Working directory matters for file paths</strong></p>
 <ul>
 <li class="fragment">❌ Absolute: <code>"/Users/Natalie/Documents/repos/D2M-R/data/mydata.csv"</code></li>
 <li class="fragment">✓ Relative: <code>"data/mydata.csv"</code></li>
 </ul>
-<p><em>When working in RStudio projects, working directory = project root</em></p>
+<p><strong>RStudio projects</strong></p>
+<ul>
+<li class="fragment">Project file (<code>.Rproj</code>) sets working directory as project root</li>
+<li class="fragment">1 Project = 1 Repo</li>
+<li class="fragment">Open projects in different sessions</li>
+</ul>
 </div>
-<div class="col-6">
-<p><img data-src="../images/screenshots/pane-files.png"></p>
+<div class="col-4" style="margin-top: -2em;">
+<p><img data-src="../images/screenshots/pane-files.png" style="max-height: 50%"> <img data-src="../images/screenshots/new-project.png" class="fragment" style="max-height: 10em;"></p>
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>Keep project files connected to their projects ONLY. Don’t open files from one project while working in another, because relative paths won’t work–and you need relative paths! Top right of RStudio window shows current project name. Click to switch projects. Click the pop-out icon to open the project in a new session.</p>
+<ul>
+<li>Project file (<code>.Rproj</code>) sets working directory as project root</li>
+<li>1 Project = 1 Repo</li>
+<li>Open projects in different sessions</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="git-pane" class="slide level2">
 <h2>Git Pane</h2>

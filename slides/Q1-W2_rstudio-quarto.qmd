@@ -17,6 +17,39 @@ execute:
 editor: source
 ---
 
+## Housekeeping
+
+-   Office Hours
+    - Dr. Dowling: Thurs 2-4pm, 1155 Bld. Room 181
+        -   [Appointment required](https://calendar.google.com/calendar/u/0/appointments/AcZssZ26_g2R1YwSJ3UpjZetF6c7jfKXO8zrfwiT4Wo=)
+    - Qilong Bi: Tues 2-3:30pm, 1155 Bld. Room 222
+        -   Open/drop-in
+-   Accountability plans past-due
+-   Accept the GitHub D2M-R organization invite
+-   RStudio + Git setup: [happygitwithr.com](https://happygitwithr.com/)
+
+::: notes
+
+-   Office Hours
+    - Dr. Dowling: Thurs 2-4pm, 1155 Bld. Room 181
+        -   [Appointment required](https://calendar.google.com/calendar/u/0/appointments/AcZssZ26_g2R1YwSJ3UpjZetF6c7jfKXO8zrfwiT4Wo=)
+    - Qilong Bi: Tues 2-3:30pm, 1155 Bld. Room 222
+        -   Open/drop-in
+-   **Accountability plans due YESTERDAY**
+    -   I'm going to actually scan through them before I mark them complete, which could take a minute. So don't stress if it doesn't get "graded" for a while. It's for my own tracking, not your grade.
+    -   If you have SDS accommodations, you should have them built into your plan. Still send me an email to flag it for me so I don't miss it. With the alternative assessment structure it can be easy for me to overlook
+-   GitHub D2M-R
+    -   *Education account is not required. It's just free and nice.*
+    -   *A handful of people aren't accepting the D2M-R org invite. Please do so ASAP!*
+    -   Set up your GitHub account
+    -   Accept invite to a GH Classroom assignment
+    -   Wait for my invite to the organization
+    -   **Accept org invite**
+-   RStudio + Git setup: [happygitwithr.com](https://happygitwithr.com/)
+
+:::
+
+
 # I Talk, You Do
 
 ## Follow Along {.bigger}
@@ -442,27 +475,44 @@ Environment resets when R session restarts. Rerun code to recreate objects.
 ::::: container-fluid
 :::: row
 
-::: col-6
+::: col-8
 **Directory navigator + working directory management**
 
 - Navigate folders like Finder/Explorer
 - Create, delete, rename files
 - **More → Set as Working Directory**
 
-**Working directory matters for file paths:**
+**Working directory matters for file paths**
 
 - ❌ Absolute: `"/Users/Natalie/Documents/repos/D2M-R/data/mydata.csv"`
 - ✓ Relative: `"data/mydata.csv"`
 
-*When working in RStudio projects, working directory = project root*
+**RStudio projects**
+
+-   Project file (`.Rproj`) sets working directory as project root
+-   1 Project = 1 Repo
+-   Open projects in different sessions
 
 :::
 
-::: col-6
-![](../images/screenshots/pane-files.png)
+::: {.col-4 style="margin-top: -2em;"}
+![](../images/screenshots/pane-files.png){style="max-height: 50%"}
+![](../images/screenshots/new-project.png){style="max-height: 10em;" .fragment}
+
 :::
 ::::
 :::::
+
+::: notes
+
+Keep project files connected to their projects ONLY.
+Don't open files from one project while working in another, because relative paths won't work--and you need relative paths!
+Top right of RStudio window shows current project name. Click to switch projects. Click the pop-out icon to open the project in a new session.
+
+-   Project file (`.Rproj`) sets working directory as project root
+-   1 Project = 1 Repo
+-   Open projects in different sessions
+:::
 
 
 ## Git Pane

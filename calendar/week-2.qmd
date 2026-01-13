@@ -157,9 +157,19 @@ Jan-13; Jan-15
 :::: {#misc-week-2 .accordion-collapse .collapse data-bs-parent="#week-2"}
 ::: accordion-body
 
-**Announcements:**
+**Office Hours:**
 
+- Dr. Dowling: Thurs 2-4pm, 1155 Bld. Room 181
+    -   [Appointment required](https://calendar.google.com/calendar/u/0/appointments/AcZssZ26_g2R1YwSJ3UpjZetF6c7jfKXO8zrfwiT4Wo=)
+- Qilong Bi: Tues 2-3:30pm, 1155 Bld. Room 222
+    -   Open/drop-in
+    
 **Reminders:**
+
+-   Accountability plans past-due
+-   Accept the GitHub D2M-R organization invite
+    -   Requires accepting any GH classroom invite first
+-   RStudio + Git setup: [happygitwithr.com](https://happygitwithr.com/)
 
 :::
 ::::
