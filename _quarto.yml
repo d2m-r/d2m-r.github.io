@@ -48,6 +48,8 @@ website:
               href: materials/resources.qmd
             - text: Finding Data
               href: materials/finding-data.qmd
+      - text: Submit
+        href: https://d2m-r.github.io/submit.html
       - text: FAQ
         href: d2m-r.github.io
   
