@@ -47,7 +47,20 @@ Jan-20; Jan-22
 
 **Class plans:**
 
+-   Lecture: Fundamentals of R Programming Language
+    -   R syntax and structure
+    -   Functions and packages
+    -   Control flow - conditionals and loops
+-   Exercises/demos:
+    -   Programmer's Groceries
+    -   `hello_world()` example
+    -   Packages and Dependencies
+
 **Primary learning objectives:**
+
+- (3) Base R syntax and data structures
+- (4) Control flow (if/else, loops)
+- (5) Defining functions in Base R
 
 :::
 ::::
@@ -65,16 +78,35 @@ Jan-20; Jan-22
 
 **Class Materials:**
 
-- [Slides]()
-- [Textbook Chapter]()
-
-<!-- software, tools, datasets, etc -->
+-   R Fundamentals Slides
+-   Demos and Exercises
+    -   [Programmer's Groceries Exercise](https://github.com/d2m-r/student-hub/blob/main/demos/groceries.qmd)
+    -   [hello_world() Function Example 1](https://github.com/d2m-r/student-hub/blob/main/project-documents/r-programming/hello-world/examples/example-1.R)
+    -   [hello_world() Function Example 2](https://github.com/d2m-r/student-hub/blob/main/project-documents/r-programming/hello-world/examples/example-2.R)
+    -   [Using Packages in R Demo](https://github.com/d2m-r/student-hub/blob/main/demos/packages-exercise.qmd)
+-   Textbook
+    -   **Reminder:** The textbook is in its infancy! I hope you'll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources. Remember you can always contribute to incomplete chapters for core objectives and enrichment credit.
+    -   [Ch5: R Language Basics](https://d2m-r.github.io/book/chapters/r-language-basics.html)
+        - Chapter status (Jan 2025): ~90% first draft
+    -   [Ch6: Packages](https://d2m-r.github.io/book/chapters/packages.html)
+        - Chapter status (Jan 2025): ~90% first draft
+    -   [Ch7: Intro to Programming in R](https://d2m-r.github.io/book/chapters/r-programming.html)
+        - Chapter status (Jan 2025): ~40% first draft
 
 **Additional Resources:**
 
-- readings
-- cheat-sheets
-- tutorials
+-   STAT545
+    -   [**Chapter 17 - R objects and indexing**](https://stat545.com/r-objects.html)
+    -   [Chapter 18 - Writing your own R functions, part 1**](https://stat545.com/functions-part1.html)
+-   Hands-On Programming with R
+    -   [**Chapter 2 - The Very Basics**](https://rstudio-education.github.io/hopr/basics.html)
+    -   [Chapter 5 - R Objects](https://rstudio-education.github.io/hopr/r-objects.html)
+    -   [**Chapter 6 - R Notation**](https://rstudio-education.github.io/hopr/r-notation.html)
+-   R for Data Science (2e)
+    -   [Chapter 25 - Functions](https://r4ds.hadley.nz/functions.html)
+    -   [**Chapter 27 - A Field Guide to Base R**](https://r4ds.hadley.nz/base-R.html)
+
+**Note:** This week's resources (both textbook and additional) include a lot of overlap of material. This is intentional. This content is probably the most essential of the whole course, so I want to offer multiple approaches and perspectives to teaching it. I've bolded the chapters I think are likely to be the most useful, but I suggest skimming through all of them to see which ones resonate best with you.
 
 :::
 ::::
@@ -91,9 +123,16 @@ Jan-20; Jan-22
 :::: {#todo-week-3 .accordion-collapse .collapse data-bs-parent="#week-3"}
 ::: accordion-body
 
-**Graded Submissions:**
+**Next Steps:**
 
-**Recommended Exercises:**
+1.  **If you haven't already,** make a repo and linked RStudio project for your integrated data project.
+    -   This is a *private repo* in your *private account.* Do not create the repo within the D2M-R organization. Add prof+TA as collaborators before submitting your first draft.
+    -   Take a look at the to-do from last week for tips to get started.
+2.  Explore the R Programming core projects. You can view them in the [student hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/r-programming) or accept any as GH Classroom assignments via links on the [menu](assessment/menu.html). 
+    -   `adoption-day` is a good one to start with if you want a guided introduction to writing functions in R.
+    -   `hello-world` is a version of the classic exercise to get you familiar with R syntax and function structure. It has clear and simple goals but less step-by-step instruction.
+    -   `wrangling-function` is more advanced, and it better suited to students who have some familiarity with base R and dplyr already. For most students, it will be better to come back to this one in Week 5 or later.
+3.  Review the newly added suggestions for enrichment activities in the [student hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/enrichment). Most can be begun at any time, and several are best suited to continuing across at least a few weeks or the whole quarter.
 
 :::
 ::::
@@ -110,9 +149,9 @@ Jan-20; Jan-22
 :::: {#misc-week-3 .accordion-collapse .collapse data-bs-parent="#week-3"}
 ::: accordion-body
 
-**Announcements:**
-
 **Reminders:**
+
+1. Keep track of your accountability plan! You won't have a formal check-in with it until week 5, but it's only useful if you actually use it between check-ins.
 
 :::
 ::::
