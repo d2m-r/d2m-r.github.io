@@ -123,11 +123,6 @@ NOTE: you might hear objects and classes referred to by other terms. this is bec
     -   "Code chunks" within other file types (e.g., .Rmd & .qmd notebooks)
 -   [Sourcing]{.keyword} scripts allows code in one file to "talk to" code in other files
 
-::: bubble-chain
-  <p class="bubble-left fragment">What's the difference between .R and .Rmd files?</p>
-  <p class="bubble-right fragment">.R files are scripts, containing only R code and comments. .Rmd files (aka "R notebooks") are a special type of markdown (.md) file that can contain and execute R code within a broader context of text, images, and other media. .Rmd = .R + .md</p>
-:::
-
 
 ::: notes
 R scripts:
@@ -158,7 +153,8 @@ So an R project typically has multiple .R files in addition to the .Rmd
 # This comment spans multiple lines. The `#` symbol must be used at the start 
 # of each line. Alternatively, start the comment mid-line like below:
 
-x <- 42  # Assign the value 42 to the variable x
+x <- 42  # The rest of this line is comment
+# y <- x + 10  Treat this line as comment, not code
 ```
     
 ::: notes
@@ -177,7 +173,7 @@ More on comments in the introduction and best practices lecture (Week 1).
         -   e.g., `student1`, `.temp_value` are valid; `1student`, `_value` are not
     -   MUST contain (only) letters, numbers, dots, or underscores
         -   e.g., `total.score`, `data_frame_1` are valid; `total-score`, `data frame` are not
-    -   SHOULD be descriptive and meaningful
+    -   SHOULD be descriptive, meaningful, and pronounceable
         -   e.g., `student_age`, `is_enrolled`, `total_score`
     -   SHOULD follow consistent naming conventions
         -   e.g., `camelCase`, `snake_case`, or `dot.notation`
@@ -198,11 +194,11 @@ You can also use `->` to assign values in reverse, but this is very rarely used.
 Data you can work with in R takes one of 6[^1] forms, most commonly: 
 
 | Data type | Description | Example |
-|------------------------|----------------------------|--------------------|
-| [Numeric]{.keyword} | Decimal numbers, including whole numbers | `3.14`, `42.0`, `-1.5` |
-| [Integer]{.keyword} | Whole numbers (exclusively), represented with an `L` suffix | `42L`, `-1L`, `1000L` |
-| [Logical]{.keyword} | Boolean values, either `TRUE` or `FALSE` | `TRUE`, `FALSE` or `T`, `F` |
-| [Character]{.keyword} | Text strings, enclosed in quotes | `"hello"`, `'123'`, `"R is great!"` |
+|-----------------|----------------------------|--------------------|
+| [Numeric]{.keyword .fragment fragment-index="1"} | [Decimal numbers, including whole numbers]{.fragment fragment-index="1"} | [`3.14`, `42.0`, `-1.5`]{.fragment fragment-index="1"} |
+| [Integer]{.keyword .fragment fragment-index="2"} | [Whole numbers (exclusively), represented with an `L` suffix]{.fragment fragment-index="2"} | [`42L`, `-1L`, `1000L`]{.fragment fragment-index="2"} |
+| [Logical]{.keyword .fragment fragment-index="3"} | [Boolean values, either `TRUE` or `FALSE`]{.fragment fragment-index="3"} | [`TRUE`, `FALSE` or `T`, `F`]{.fragment fragment-index="3"} |
+| [Character]{.keyword .fragment fragment-index="4"} | [Text strings, enclosed in quotes]{.fragment fragment-index="4"} | [`"hello"`, `'123'`, `"R is great!"`]{.fragment fragment-index="4"} |
 
 [^1]: Also [complex]{.keyword} numbers and [raw]{.keyword} vectors, rarely used in practice.
 
@@ -224,10 +220,10 @@ There are also a few "honorary" data types:
 
 | Data type | Description | Example |
 |------------------------|----------------------------|--------------------|
-| [Factor]{.keyword} | Leveled categorical data, stored as integers with labels | `factor(c("low", "medium", "high"))` |
-| [Date]{.keyword} | Dates, stored as a special class of object | `as.Date("2025-01-31")` |
-| [POSIXct]{.keyword} | Date-time objects, which include both date and time | `as.POSIXct("1776-07-04 12:01:59")` |
-| [empty]{.keyword} | Not a data type, but the *absence* of data | `NA` |
+| [Factor]{.keyword .fragment fragment-index="1"} | [Leveled categorical data, stored as integers with labels]{.fragment fragment-index="1"} | [`factor(c("low", "medium", "high"))`]{.fragment fragment-index="1"} |
+| [Date]{.keyword .fragment fragment-index="2"} | [Dates, stored as a special class of object]{.fragment fragment-index="2"} | [`as.Date("2025-01-31")`]{.fragment fragment-index="2"} |
+| [POSIXct]{.keyword .fragment fragment-index="3"} | [Date-time objects, which include both date and time]{.fragment fragment-index="3"} | [`as.POSIXct("1776-07-04 12:01:59")`]{.fragment fragment-index="3"} |
+| [empty]{.keyword .fragment fragment-index="4"} | [Not a data type, but the *absence* of data]{.fragment fragment-index="4"} | [`NA`]{.fragment fragment-index="4"} |
 
 
 ::: notes
@@ -246,12 +242,12 @@ R organizes data into structures to for manipulation and analysis. The main data
 
 | Data structure | Description                  | Example                       |
 |----------------|------------------------------|-------------------------------|
-| [Scalar]{.keyword} | Single data value of any data type | `42`, `"hello"`, `TRUE` |
-| [Vector]{.keyword} | One-dimensional array of elements of the same data type | `c(1, 2, 3, 4, 5)` |
-| [List]{.keyword} | Ordered collection of elements that can be of different data types | `list(name = "Alice", age = 30, scores = c(90, 85, 88))` |
-| [Matrix]{.keyword} | Two-dimensional array of elements of the same data type | `matrix(1:6, nrow = 2, ncol = 3)` |
-| [Data Frame]{.keyword} | Two-dimensional, tabular data structure with columns of potentially different data types | `data.frame(name = c("Alice", "Bob"), age = c(30, 25))` |
-| [Tibbles]{.keyword} | Alternative data frames with enhanced features | `tibble::tibble(name = c("Alice", "Bob"), age = c(30, 25))` |
+| [Scalar]{.keyword .fragment fragment-index="1"} | [Single data value of any data type]{.fragment fragment-index="1"} | [`42`, `"hello"`, `TRUE`]{.fragment fragment-index="1"} |
+| [Vector]{.keyword .fragment fragment-index="2"} | [One-dimensional array of elements of the same data type]{.fragment fragment-index="2"} | [`c(1, 2, 3, 4, 5)`]{.fragment fragment-index="2"} |
+| [List]{.keyword .fragment fragment-index="3"} | [Ordered collection of elements that can be of different data types]{.fragment fragment-index="3"} | [`list(name = "Alice", age = 30, scores = c(90, 85, 88))`]{.fragment fragment-index="3"} |
+| [Matrix]{.keyword .fragment fragment-index="4"} | [Two-dimensional array of elements of the same data type]{.fragment fragment-index="4"} | [`matrix(1:6, nrow = 2, ncol = 3)`]{.fragment fragment-index="4"} |
+| [Data Frame]{.keyword .fragment fragment-index="5"} | [Two-dimensional, tabular data structure with columns of potentially different data types]{.fragment fragment-index="5"} | [`data.frame(name = c("Alice", "Bob"), age = c(30, 25))`]{.fragment fragment-index="5"} |
+| [Tibbles]{.keyword .fragment fragment-index="6"} | [Alternative data frames with enhanced features]{.fragment fragment-index="6"} | [`tibble::tibble(name = c("Alice", "Bob"), age = c(30, 25))`]{.fragment fragment-index="6"} |
 
 ## Data Structures: Data Frames and Tibbles
 
@@ -282,22 +278,37 @@ Tibbles are the tidyverse's alternative to data frames. Tibbles are *also* data 
 
 | Operator type | Description | Example |
 |------------------------|----------------------------|--------------------|
-| [Arithmetic]{.keyword} | Perform mathematical calculations | `+`, `-`, `*`, `/`, `^` |
-| [Relational]{.keyword} | Compare values and return logical results | `==`, `!=`, `<`, `>`, `<=`, `>=` |
-| [Logical]{.keyword} | Combine or negate logical values | `&`, `|`, `!` |
-| [Assignment]{.keyword} | Assign values to variables | `<-`, `=`, `->` |
-
+| [Arithmetic]{.keyword .fragment fragment-index="1"} | [Perform mathematical calculations]{.fragment fragment-index="1"} | [`+`, `-`, `*`, `/`, `^`]{.fragment fragment-index="1"} |
+| [Relational]{.keyword .fragment fragment-index="2"} | [Compare values and return logical results]{.fragment fragment-index="2"} | [`==`, `!=`, `<`, `>`, `<=`, `>=`]{.fragment fragment-index="2"} |
+| [Logical]{.keyword .fragment fragment-index="3"} | [Combine or negate logical values]{.fragment fragment-index="3"} | [`&`, `|`, `!`]{.fragment fragment-index="3"} |
+| [Assignment]{.keyword .fragment fragment-index="4"} | [Assign values to variables]{.fragment fragment-index="4"} | [`<-`, `=`, `->`]{.fragment fragment-index="4"} |
 
 ::: notes
 Relational aka comparison
+
+ASSIGNMENT: By convention, use the left arrow to assign values to variables. Use the equals sign to assign values to function arguments. Don't use the right arrow.
 :::
 
 ## Operators: Arithmetic
 
 [Arithmetic]{.keyword} do math. 
 
+:::: row
+
+::: col-3
+
+::: nonincremental
+
 -   Input: numeric data
 -   Output: numeric data
+
+:::
+
+:::
+
+::: col-9
+
+::: fragment
 
 | Operator | Description                    | Example   | Output      |
 |----------|--------------------------------|-----------|-------------|
@@ -308,13 +319,30 @@ Relational aka comparison
 | `^`      | Exponentiation (power)         | `2 ^ 3`   | `r 2 ^ 3`   |
 | `%%`     | Modulo (remainder of division) | `10 %% 3` | `r 10 %% 3` |
 
+:::
+:::
+::::
 
 ## Operators: Relational
 
 [Relational]{.keyword} or *comparison* operators compare objects and return a logical value (`TRUE` or `FALSE`). They are a special kind of logical operator.
 
+:::: row
+
+::: col-3
+
+::: nonincremental
+
 -   Input: numeric, character, or logical data
 -   Output: logical data
+
+:::
+
+:::
+
+::: col-9
+
+::: fragment
 
 | Operator | Description              | Example  | Output     |
 |----------|--------------------------|----------|------------|
@@ -325,7 +353,13 @@ Relational aka comparison
 | `>=`     | Greater than or equal to | `6 >= 6` | `r 6 >= 6` |
 | `<=`     | Less than or equal to    | `2 <= 5` | `r 2 <= 5` |
 
-::: callout-warning
+:::
+
+:::
+
+::::
+
+::: {.callout-warning .fragment .large}
 ### Warning: `'==' != '='`
 
 The `==` operator checks for equality, while `=` is an (argument) assignment operator.
@@ -335,14 +369,28 @@ The `==` operator checks for equality, while `=` is an (argument) assignment ope
 
 [Logical]{.keyword} operators combine and modify boolean values (`TRUE` or `FALSE`).
 
+:::: row
+::: col-3
+::: nonincremental
+
 -   Input: logical data
 -   Output: logical data
 
+:::
+:::
+
+::: col-9
+::: fragment
+
 | Operator | Description | Example | Output |
-|-----------------|----------------------|-----------------|-----------------|
+|----------|----------------------|-----------------|-----------------|
 | `&` | "and": both sides of the operators evaluate to `TRUE` | `TRUE & FALSE` | `r TRUE & FALSE` |
 | `|` | "or": at least one side of the operator evaluates to `TRUE` | `TRUE | FALSE` | `r TRUE | FALSE` |
 | `!` | "not": the opposite of something's logical evaluation | `!TRUE` | `r !TRUE` |
+
+:::
+:::
+::::
 
 ::: notes
 
@@ -357,14 +405,14 @@ The `&` and `|` operators come in two flavors: single or (`&` and `|`) and doubl
 ## Operators: Other
 
 | Operator | Description | Example | Output |
-|-----------------|----------------------|-----------------|-----------------|
-| `<-` | *Variable* assignment operator | `x <- 5` | Assigns the value `5` to the variable `x` |
-| `=` | *Argument* assignment operator | `round(3.14159, digits = 2)` | Assigns the value `2` to the `digits` argument of the `round()` function |
-| `:` | Create a sequence of integers | `1:5` | `c(1, 2, 3, 4, 5)` |
-| `[ ]` | Subset elements of a vector, list, or data frame by position or name | `list(first = 1, second = 2)[2]` | `> $second > [1] 2` |
-| `[[ ]]` | Extract a single element from a list by position or name | `list(first = 1, second = 2)[[2]]` | `2` |
-| `$` | Extract a single element from a list or data frame by name | `list(first = 1, second = 2)$second` | `2` |
-| `|>` or `%>%` | Pipe operator to pass the output of one function as the input to another | `data |> filter(condition)` | Passes `data` as the first argument to `filter()` |
+|---------|--------------------|-------------|-------------------|
+| [`<-`]{.fragment fragment-index="1"} | [*Variable* assignment operator]{.fragment fragment-index="1"} | [`x <- 5`]{.fragment fragment-index="1"} | [Assigns the value `5` to the variable `x`]{.fragment fragment-index="1"} |
+| [`=`]{.fragment fragment-index="2"} | [*Argument* assignment operator]{.fragment fragment-index="2"} | [`round(3.14159, digits = 2)`]{.fragment fragment-index="2"} | [Assigns the value `2` to the `digits` argument of the `round()` function]{.fragment fragment-index="2"} |
+| [`:`]{.fragment fragment-index="3"} | [Create a sequence of integers]{.fragment fragment-index="3"} | [`1:5`]{.fragment fragment-index="3"} | [`c(1, 2, 3, 4, 5)`]{.fragment fragment-index="3"} |
+| [`[ ]`]{.fragment fragment-index="4"} | [ Subset elements of a vector, list, or data frame by position or name]{.fragment fragment-index="4"} | [`list(first = 1, second = 2)[2]`]{.fragment fragment-index="4"} | [`> $second > [1] 2`]{.fragment fragment-index="4"} |
+| [`[[ ]]`]{.fragment fragment-index="5"} | [Extract a single element from a list by position or name]{.fragment fragment-index="5"} | [`list(first = 1, second = 2)[[2]]`]{.fragment fragment-index="5"} | [`2`]{.fragment fragment-index="5"} |
+| [`$`]{.fragment fragment-index="6"} | [Extract a single element from a list or data frame by name]{.fragment fragment-index="6"} | [`list(first = 1, second = 2)$second`]{.fragment fragment-index="6"} | [`2`]{.fragment fragment-index="6"} |
+| [`|>` or `%>%`]{.fragment fragment-index="7"} | [Pipe operator to pass the output of one function as the input to another]{.fragment fragment-index="7"} | [`data |> filter(condition)`]{.fragment fragment-index="7"} | [Passes `data` as the first argument to `filter()`]{.fragment fragment-index="7"} |
 
 ::: notes
 
@@ -373,6 +421,8 @@ The assignment operators `<-` and `=` can both be used to assign values to varia
 :::
 
 ## Functions
+
+::: {.nonincremental .grouped}
 
 -   Basic syntax: `function_name(argument1, argument2, ...)`
     -   Example: `paste("Hello", class_name)`
@@ -386,15 +436,189 @@ The assignment operators `<-` and `=` can both be used to assign values to varia
         -   `round(2, 3.14159)` is *not* the same as `round(digits = 2, x = 3.14159)`.
 -   View all possible arguments in a function's documentation with `?functionname` or `??functionname`.
 
-::: callout-note
-### More to come!
-
-Much more on functions coming up in the second half of this lecture.
-::: 
+:::
 
 ::: notes
 Functions are pre-defined procedures that perform specific tasks. They take arguments as inputs and return outputs.
 Basic syntax for calling a function is the function name followed by parentheses, containing required and optional arguments: function_name(argument1, argument2, ...)
+:::
+
+## Function Definition
+
+All functions have:
+
+1.  Name
+2.  Zero or more arguments (inputs)
+3.  Procedure body (code)
+4.  Return value (output)
+
+```{r}
+#| label: define-example-function
+#| include: false
+
+# Example function definition
+example.function <- function(arg1, arg2) {
+    # Procedure body
+    # add two numeric arguments and store as `result`
+    result <- arg1 + arg2
+    # Return value
+    # print result to console
+    return(result)
+}
+
+```
+
+::: fragment
+```{r}
+#| echo: true
+# See the elements of a function by running the name of 
+# the function without parentheses in the console
+
+example.function
+
+```
+:::
+
+## Defining Functions
+
+Use the [function()]{.func} function to define your own functions:
+
+:::: row
+
+::: col-6
+
+```{.r}
+function_name <- function(arguments) {
+    # Informative comments
+    the code for your function
+    return(value)
+}
+```
+
+:::
+
+::: col-6
+
+```{r}
+helloworld <- function(name, punctuation = "!") {
+    # Prints greeting with name and punctuation
+    greeting <- paste0("Hello ", name, punctuation)
+    return(greeting)
+}
+```
+
+:::
+
+::::
+
+:::: row
+
+::: col-4
+::: fragment
+```{r}
+# Specify both arguments in order 
+# No argument names
+helloworld("D2M-R", "!?")
+```
+:::
+:::
+
+::: col-4
+::: fragment
+```{r}
+# Specify arguments out of order 
+# Use argument names
+helloworld(
+    punctuation = "...", 
+    name = "class"
+)
+```
+:::
+:::
+
+::: col-4
+::: fragment
+```{r}
+# Specify required argument only
+# Use default for optional
+helloworld("everyone")
+```
+:::
+:::
+
+::::
+
+
+## Notes on Function Definition: Names, Arguments
+
+::: overlap-box
+
+::: box-title
+Names
+:::
+
+::: box-content
+
+-   Descriptive, pronounceable, consistently styled
+-   Unique within your R environment
+
+:::
+
+:::
+
+::: {.overlap-box .overlap-box-blue}
+
+::: box-title
+Arguments
+:::
+
+::: box-content
+
+-   Typically limited to specific data types (e.g., numeric, character)
+    -   Data constraints can be *explicitly* checked with code or *implicitly* based on function body requirements
+-   Can have default values assigned, making them optional
+-   Specify arguments without naming them by following documented order: `function_name(value1, value2)`
+-   Specify arguments out of order by naming them: `function_name(arg2 = value2, arg1 = value1)`
+
+:::
+
+:::
+
+## Notes on Function Definition: Body, Return
+
+::: overlap-box
+
+::: box-title
+Procedure Body
+:::
+
+::: box-content
+-   Can include multiple lines of code and comments
+-   Scoped environment: variables created inside are not accessible outside
+:::
+
+:::
+
+::: {.overlap-box .overlap-box-blue}
+
+::: box-title
+Return Value
+:::
+
+::: box-content
+
+::: {.nonincremental .grouped}
+
+-   If specified with `return()`, that value is printed to console
+    -   `return(arg1 + arg2)` returns sum of `arg1` and `arg2`
+-   If no `return()` is used, the last evaluated expression is returned by default
+    -   `arg1 + arg2` returns sum of `arg1` and `arg2`
+-   Functions have to evaluate without object assignment to return a value to the console
+    -   `result <- arg1 + arg2` does not return anything
+
+:::
+:::
+
 :::
 
 ## Reference: Useful Base R Functions (1)
@@ -480,10 +704,10 @@ add.two2 <- function(x) {
 
 Someone out there really needs to add two to things in multiple ways. Tragically, base R just doesn't have the essential tools needed for all the two-adding tasks. This two-adding user would benefit from accessing both these functions together for:
 
--   Reusability: use in multiple projects without redefining
--   Organization: group related functions together
--   Sharing: bundle and share functions with others with similar needs
--   Documentation: add explanation for consistent use and development
+-   **Reusability**: use in multiple projects without redefining
+-   **Organization**: group related functions together
+-   **Sharing**: bundle and share functions with others with similar needs
+-   **Documentation**: add explanation for consistent use and development
 
 
 ::: notes
@@ -567,18 +791,24 @@ https://github.com/marisacasillas/chattr-basic
 
 ## Packages: Install & Load
 
+:::: row
+
+::: col-6
+
 To use functions from a package, you must first:
 
-1.  Install the package on your local machine
+1.  **Install** the package on your local machine
     -   `install.packages("packagename")`
     -   Install a package **once** (on each machine)
-2.  Load (aka *attach*) it into your R session
-    -   `library(packagename)`
-        -   or `require(packagename)`
+2.  **Load** (aka **attach**) it into your R session
+    -   `library(packagename)` or `require(packagename)`
     -   Load a package **each time** you start a new R session
-        -   and in each R script where you want to use it   
+        
+:::
 
-::: callout-note
+::: col-6
+
+::: {.callout-note .fragment .large}
 
 ### Loading vs attaching
 
@@ -587,12 +817,21 @@ Calling `library()` on a package makes its functions available for use as though
 Once a package is *installed* on your machine, you can *load* functions directly without attaching the whole package with `library()`. Do so by prefixing the function with the name of the package and two colors: `packagename::functionname()`.
 
 :::
+:::
+::::
+
 
 ::: notes
-install.package("tidyverse") – install a package on your local machine
-library(tidyverse) – load an existing package
-Require("tidyverse") - require a package
-Try this one out and see what happens...
+
+Also: 
+1. use library() in scripts; require() is more for using in functions
+2. in addition to loading packages with each new session, good practice to also load packages at the start of each script that uses them
+3. package loading order matters! loading a package with a function that has the same name as a function in an already loaded package will override the definition of that function (but you can still call the old one with `packagename::functionname()`)
+
+`install.package("tidyverse")` – install a package on your local machine
+`library(tidyverse)` – load an existing package
+`require(tidyverse)` and `Require("tidyverse")` - require a package
+Try those requires out and compare...
 Not working? try typing ??Require into the console (note the 2 question marks) and see if you can figure out what's going on and how to fix it.
 Installing/loading some packages will also install/load dependencies
 e.g., library(tidyverse) will load the included readr package
@@ -610,7 +849,7 @@ See documentation for functions within RStudio by typing ?thefunctioname into th
 Functions in packages are often defined using functions from other packages. The former package *depends on* the latter, its [dependency]{.keyword}.
 
 :::: row
-::: col-7
+::: col-6
 
 A package's CRAN documentation will list its dependencies in three categories:
 
@@ -620,8 +859,8 @@ A package's CRAN documentation will list its dependencies in three categories:
 
 :::
 
-::: col-5
-::: callout-note
+::: col-6
+::: {.callout-note .fragment .large}
 ### In practice...
 
 When you install or load a package, R will automatically install or load its *Depends* and *Imports* dependencies for you. Usually this will just happen without you needing to even notice, but occasionally you may be prompted by the console to approve the installation/loading of dependencies. Rarely, you may need to manually install or load a dependency.
@@ -792,11 +1031,30 @@ my_list$second # returns `2`
 mtcars$mpg # 'mpg' column of mtcars 
 ```
 
-# Control Flow 
+## Environments
 
-## What is "control flow"?
+[Environments]{.keyword}: data structures that store variable bindings (associations between variable names and their values) in R.
 
-Control flow refers to the order in which individual statements, instructions, or function calls are executed or evaluated within a program. In R, control flow is managed using conditional statements and loops, allowing for dynamic decision-making and repetitive tasks based on specific conditions.
+-   **Global environment**: the main workspace where user-defined variables and functions are stored during an R session. Default view in the Environment pane.
+-   **Local environments**: created when functions are called; variables defined within a function are stored in its local environment and are not accessible outside the function unless explicitly returned.
+
+::: {.callout-caution .large .fragment}
+
+### Scope
+
+Environments are *scoped*, meaning that variables defined within an environment are only accessible within that environment and its child environments. 
+
+*Global* environment variables are accessible from its local environment children, but *local* environment variables are not accessible from the parent global environment.
+
+:::
+
+## Control Flow 
+
+[Control flow]{.keyword}: the order in which individual statements, instructions, or function calls are executed or evaluated within a program. 
+
+In R, control flow is managed using [conditional statements]{.keyword} and [loops]{.keyword}.
+
+![](../images/comics-memes/monster-parade-loop.png){alt="Illustrated for loop example. Input vector is a parade of monsters, including monsters that are circles, triangles, and squares. The for loop they enter has an if-else statement: if the monster is a triangle, it gets sunglasses. Otherwise, it gets a hat. The output is the parade of monsters where the same input parade of monsters shows up, now wearing either sunglasses (if triangular) or a hat (if any other shape)."}
 
 ## Conditional Statements
 
@@ -874,7 +1132,11 @@ if (is.numeric(z)) {
 
 ## Conditional Functions
 
-[R's conditional functions]{.keyword} provide a way to perform conditional operations in a more functional, condensed style.
+**R's conditional functions** provide a way to perform conditional operations in a more functional, condensed style.
+
+:::: {.row .gap-3}
+
+::: {.col-3 .fragment}
 
 | Function | Package | Description |
 |------------------------|----------------------------|
@@ -882,8 +1144,13 @@ if (is.numeric(z)) {
 | `if_else()` | dplyr | Same, with stricter data type consistency |
 | `case_when()` | dplyr | allows for multiple conditions and corresponding values |
 
+:::
 
-The examples above can be written more concisely using `case_when()`:
+::: {.col-8 .fragment}
+
+The examples from the previous slide can be written more concisely:
+
+::: fragment
 
 ```{r class="stretch-code"}
 #| output-location: fragment
@@ -893,6 +1160,10 @@ y <- 10
 ifelse(y > 5, "y is greater than 5", "y is not greater than 5")
 
 ```
+
+:::
+
+::: fragment
 
 ```{r class="stretch-code"}
 #| output-location: fragment
@@ -907,6 +1178,9 @@ print(case_when(
 ))
 ```
 
+:::
+:::
+::::
 
 ::: notes
 
@@ -922,7 +1196,7 @@ What's the difference between `ifelse()` and `if_else()`?
 [Iteration]{.keyword}, or looping, allows you to repeat a block of code multiple times, either a fixed number of times or while a certain condition is met.
 
 | Loop Type | Description |
-|------------------------|----------------------------|
+|----------|----------------------------|
 | `for` | Repeats a block of code for each item in a sequence or vector |
 | `while` | Repeats a block of code as long as a specified condition is `TRUE` |
 
@@ -1167,11 +1441,237 @@ Your code must eventually lead to a `FALSE` evaluation:
 :::
 
 
-## Writing and Using Functions
-
-
 
 ## Regular Expressions
 
+![](../images/comics-memes/xkcd-regex.png){alt="xkcd comic strip about regular expressions. Two people are lamenting having to find text formatted as an email address. A third character swoops in on a rope saying 'Everybody stand back. I know regular expressions.', types something, and swoops away."}
+
+## What are Regular Expressions?
+
+[Regular expressions (regex or regexp)]{.keyword}: sequences of characters that form a search pattern, primarily used for string matching and manipulation.
+
+::: fragment
+Examples of regex syntax:
+
+::: nonincremental
+-   `^Hello`: matches any string that starts with "Hello"
+-   `[aeiou]`: matches any single vowel character (a, e, i, o, u)
+-   `\d{3}-\d{2}-\d{4}`: matches a pattern like a US Social Security number (e.g., "123-45-6789")
+    -   or with R's escaping: `\\d{3}-\\d{2}-\\d{4}`
+
+:::
+:::
+    
+::: {.callout-tip .fragment .large}
+
+Use tools like [regex101](https://regex101.com/) or [RegExr](https://regexr.com/) to test and visualize regex patterns interactively. Just be careful about escaping rules when using R! (More info below.)
+
+:::
+
+::: notes
+Regular expressions (regex or regexp) are sequences of characters that form a search pattern. They are primarily used for string matching and manipulation, allowing you to search, match, and manipulate text based on specific patterns.
+:::
+
+## Basic Regex Syntax: Essentials
+
+| Symbol | Description | Example |
+|--------|----------------------|----------------------|
+| `.` | Matches any single character except newline | `a.b` matches "acb", "a1b", "a b" |
+| `^` | Matches the start of a string | `^Hello` matches "Hello world" |
+| `$` | Matches the end of a string | `world$` matches "Hello world" |
+| `*` | Matches 0 or more occurrences of the preceding element | `ab*` matches "a", "ab", "abb", "abbb" |
+| `+` | Matches 1 or more occurrences of the preceding element | `ab+` matches "ab", "abb", "abbb" but not "a" |
+| `?` | Matches 0 or 1 occurrence of the preceding element | `ab?` matches "a" and "ab" |
+| `[]` | Matches any one character within the brackets | `[aeiou]` matches "a", "e", "i", "o", or "u" |
+| `|` | Logical OR operator | `cat|dog` matches "cat" or "dog" |
+| `()` | Groups expressions | `(ab)+` matches "ab", "abab", "ababab" |
+
+::: notes
+
+What about a logical AND operator? 
+There isn't one! The whole regex pattern is treated as a sequence of elements that must *all* be matched in order. "and" is built-in.
+
+:::
 
 
+## Basic Regex Syntax: Other Useful Matches
+
+| Symbol | Description | Example |
+|--------|----------------------|----------------------|
+| `\d` | Matches any digit (0-9) | `\d` matches "0", "1", ..., "9" |
+| `\w` | Matches any word character (alphanumeric + underscore) | `\w` matches "a", "b", ..., "z", "A", "B", ..., "Z", "0", "1", ..., "9", "_" |
+| `\s` | Matches any whitespace character (space, tab, newline) | `\s` matches " ", "\t", "\n" |
+| `{n}` | Matches exactly n occurrences of the preceding element | `a{3}` matches "aaa" |
+| `{n,}` | Matches n or more occurrences of the preceding element | `a{2,}` matches "aa", "aaa", "aaaa", ... |
+| `{n,m}` | Matches between n and m occurrences of the preceding element | `a{2,4}` matches "aa", "aaa", or "aaaa" |
+
+## Escaping
+
+Characters that have assigned functions will perform that function unless they are escaped.
+
+[Escape]{.keyword} a special character to refer to its literal meaning.
+
+-   **R** uses a backslash (`\`) as the escape character.
+-   **Regex** *also* uses a backslash (`\`) as the escape character.
+-   When using regex in R, you need to use double backslashes (`\\`) to escape special characters because the backslash itself is an escape character in R strings.
+
+::: {.alert .alert-warning .nonincremental .fragment}
+
+TELL ME WHY.
+
+:::
+
+::: notes
+
+Why? Imagine R is humming along, reading your string. It sees a backslash. Aha! A special character is coming up! So R uses the backslash to escape the special character, and the special character is interpreted literally.
+But wait! The special character is supposed to be part of a regex pattern, and regex also uses backslashes to escape special characters. Whatever follows the backslash is going to be interpreted literally. When the string is passed to the regex engine, it sees a backslash followed by a special character. It does not see the backslash as part of the regex pattern, because R has already used it to escape the special character,
+
+So now, to get the regex engine to see the backslash as part of the regex pattern, you need to escape the backslash itself in R. Hence, you use double backslashes (`\\`) in R strings to represent a single backslash in the regex pattern. The first backslash escapes the second backslash in R, and the regex engine sees a single backslash followed by the special character, allowing it to interpret the special character according to regex rules.
+
+:::
+
+## Using Regex in R (with `base`)
+
+Base R uses "grep" functions for regex operations.
+
+-   grep = **g**lobal **r**egular **e**xpression **p**rint.
+-   Semi-consistent argument order: `function_name(pattern_to_find, string_to_search, other_args)`
+
+::: {.overlap-box .fragment}
+
+::: box-title
+Common grep functions:
+:::
+
+::: {.box-content .nonincremental}
+
+-   `grep()`: Search for patterns in strings and return indices of matches
+-   `grepl()`: Search for patterns and return logical vector indicating matches
+-   `gsub()`: Replace occurrences of a pattern with a specified replacement
+
+::: 
+
+:::
+
+
+## Using Regex in R (with `base`): Examples
+
+```{r}
+# Example strings
+text <- "The rain in Spain stays mainly in the plain."
+title <- "My Fair Lady"
+```
+
+
+
+```{r class="fragment"}
+#| output-location: column
+# Find which list elements contain "ain"
+grep("ain", c(title, text))
+```
+
+```{r class="fragment"}
+#| output-location: column
+# Replace "ain" with "XXX"
+gsub("ain", "XXX", text)
+```
+
+```{r class="fragment"}
+#| output-location: column
+# Check if the string starts with "The"
+grepl("^The", text)
+```
+
+## Using Regex in R (with `stringr`)
+
+The [stringr]{.pkg} package (part of the tidyverse) provides an alternative set of string manipulation functions, using consistent syntax and behavior across nearly all `stringr` functions
+
+-   Naming: `str_` + descriptive function name
+-   Argument order: `str_func(string_to_search, pattern_to_find, other_args)`
+    -   *Note:* this flips the order of the first two arguments compared to base R's grep functions
+-   Accepts regex patterns plus some user-friendlier, tidyvers-ier enhancements
+
+::: {.overlap-box .overlap-box-blue .fragment}
+
+::: box-title
+Common stringr functions:
+:::
+
+::: {.box-content .nonincremental}
+
+-   `str_which()`: Search for patterns in strings and return indices of matches
+-   `str_detect()`: Search for patterns and return logical vector indicating matches
+-   `str_replace_all()`: Replace occurrences of a pattern with a specified replacement
+
+::: 
+
+:::
+
+::: aside
+[stringr cheat sheet](https://rstudio.github.io/cheatsheets/html/strings.html)
+:::
+
+::: notes
+
+stringr has a good reason to flip the order. When using pipes (`%>%`), the data being operated on is passed as the first argument to the function. More when we talk tidyverse
+
+:::
+
+## Using Regex in R (with `stringr`): Examples
+
+```{r}
+# Load stringr package for string manipulation
+library(stringr)
+
+# Example strings
+text <- "The rain in Spain stays mainly in the plain."
+title <- "My Fair Lady"
+```
+
+```{r class="fragment"}
+#| output-location: column
+# Find which list elements contain "ain"
+str_which(c(title, text), "ain")
+```
+
+```{r class="fragment"}
+#| output-location: column
+# Replace "ain" with "XXX"
+str_replace_all(text, "ain", "XXX")
+```
+
+```{r class="fragment"}
+#| output-location: column
+# Check if the string starts with "The"
+str_detect(text, "^The")
+```
+
+# Summary
+
+## R Language
+
+-   R is an **object-oriented programming language** for statistical computing and graphics
+-   R syntax includes:
+    -   **Variables**: store data values
+    -   **Data Types**: numeric, character, logical, etc.
+    -   **Data Structures**: vectors, lists, data frames, matrices
+    -   **Functions**: reusable blocks of code that perform specific tasks
+    -   **Comments**: annotate code with `#`, ignored by R
+-   Case-sensitive but whitespace insensitive
+-   Functions are called using parentheses, with arguments passed inside
+-   Install and load packages to extend R's functionality with additional functions and tools
+
+
+## R Programming
+
+-   **Indexing** and **Subsetting**: selecting specific elements from data structures using position or name
+-   **Environments**: data structures that store *scoped* variable bindings, including global and local environments
+-   **Control Flow**: managing the order of code execution using
+    -   Conditional statements (`if`, `if...else`)
+    -   Conditional functions (`ifelse()`, `case_when()`)
+    -   `for` loops: iterate over a known, finite sequence
+    -   `while` loops: iterate while a condition is `TRUE`
+-   **Regular Expressions (regex)**: sequences of characters forming search patterns for string matching and manipulation
+    -   Basic syntax includes symbols like `.`, `^`, `$`, `*`, `+`, `?`, `[]`, `|`, `()`
+    -   Escaping special characters with backslashes (`\`), using double backslashes (`\\`) in R strings
+    -   Use regex in R with base `grep`-style functions or stringr `str_`-style functions

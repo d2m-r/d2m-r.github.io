@@ -50,3 +50,5 @@ rsconnect/
 
 # Ignore exceptions
 /.quarto/
+
+**/*.quarto_ipynb

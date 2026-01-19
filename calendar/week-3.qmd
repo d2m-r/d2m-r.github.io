@@ -78,7 +78,7 @@ Jan-20; Jan-22
 
 **Class Materials:**
 
--   R Fundamentals Slides
+-   [R Language Fundamentals Slides](../slides/Q1-W3_r-programming.html)
 -   Demos and Exercises
     -   [Programmer's Groceries Exercise](https://github.com/d2m-r/student-hub/blob/main/demos/groceries.qmd)
     -   [hello_world() Function Example 1](https://github.com/d2m-r/student-hub/blob/main/project-documents/r-programming/hello-world/examples/example-1.R)
