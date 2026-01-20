@@ -247,12 +247,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#integrative-data-projects-repos-in-your-own-account" id="toc-integrative-data-projects-repos-in-your-own-account" class="nav-link" data-scroll-target="#integrative-data-projects-repos-in-your-own-account">Integrative Data Projects (repos in your own account)</a></li>
   <li><a href="#privacy-and-visibility" id="toc-privacy-and-visibility" class="nav-link" data-scroll-target="#privacy-and-visibility">Privacy and visibility</a></li>
   </ul></li>
-  <li><a href="#preparing-your-project-for-submission" id="toc-preparing-your-project-for-submission" class="nav-link" data-scroll-target="#preparing-your-project-for-submission">Preparing your project for submission</a></li>
   <li><a href="#create-a-feedback-branch" id="toc-create-a-feedback-branch" class="nav-link" data-scroll-target="#create-a-feedback-branch">Create a <code>feedback</code> branch</a>
   <ul class="collapse">
   <li><a href="#feedback-n-branches-integrative-data-projects" id="toc-feedback-n-branches-integrative-data-projects" class="nav-link" data-scroll-target="#feedback-n-branches-integrative-data-projects"><code>feedback-N</code> branches (Integrative Data Projects)</a></li>
   </ul></li>
-  <li><a href="#open-the-pull-request-from-main-to-feedback" id="toc-open-the-pull-request-from-main-to-feedback" class="nav-link" data-scroll-target="#open-the-pull-request-from-main-to-feedback">Open the pull request from <code>main</code> to <code>feedback</code></a>
+  <li><a href="#preparing-your-project-for-submission" id="toc-preparing-your-project-for-submission" class="nav-link" data-scroll-target="#preparing-your-project-for-submission">Preparing your project for submission</a></li>
+  <li><a href="#open-the-pull-request-to-feedback-from-main" id="toc-open-the-pull-request-to-feedback-from-main" class="nav-link" data-scroll-target="#open-the-pull-request-to-feedback-from-main">Open the pull request to <code>feedback</code> from <code>main</code></a>
   <ul class="collapse">
   <li><a href="#add-a-pr-description" id="toc-add-a-pr-description" class="nav-link" data-scroll-target="#add-a-pr-description">Add a PR description</a></li>
   </ul></li>
@@ -262,6 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#revisions-for-core-standards-and-enrichment-projects" id="toc-revisions-for-core-standards-and-enrichment-projects" class="nav-link" data-scroll-target="#revisions-for-core-standards-and-enrichment-projects">Revisions for Core Standards and Enrichment projects</a></li>
   <li><a href="#revisions-for-integrative-data-projects" id="toc-revisions-for-integrative-data-projects" class="nav-link" data-scroll-target="#revisions-for-integrative-data-projects">Revisions for Integrative Data Projects</a></li>
+  <li><a href="#not-merging-branches" id="toc-not-merging-branches" class="nav-link" data-scroll-target="#not-merging-branches">(Not) Merging branches</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -299,8 +300,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In both cases:</p>
 <ul>
 <li>Your graded work lives on the <code>main</code> branch.</li>
-<li>A pull request from <code>main</code> to a <code>feedback</code> branch is the space where feedback is left.</li>
-<li>You must complete a <code>submission.qmd</code> document with self-evaluation and AI disclosure.</li>
+<li>A pull request to a <code>feedback</code> branch to <code>main</code> is the space where feedback is left.</li>
+<li>You must complete a <code>submission.md</code> document with self-evaluation and AI disclosure.</li>
 <li>Only you, the instructors, and (for group assignments) your designated group members can see your repo, your pull request, and your feedback. Other students cannot.</li>
 <li>Your work is not “submitted” until you submit the <a href="d2m-r.github.io/submit.html">Project Submission Form</a>.</li>
 </ul>
@@ -364,14 +365,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Integrative Data Projects:</strong> You create a private repo in your personal GitHub account. You add the instructor and TA(s) as collaborators with Write (or higher) access. You have full ownership of the repo and retain control after the course ends.</li>
 </ul>
 <p>In these cases, the submission workflow is effectively mimicking what you’d get from GH Classrooms:</p>
-<ul>
-<li>Make sure your graded work is on <code>main</code>.</li>
+<ol type="1">
 <li>Create a <code>feedback</code> branch.</li>
-<li>Open a PR from <code>main</code> to that feedback branch with a standard title and description.</li>
+<li>Make sure your graded work is on <code>main</code>.</li>
+<li>Open a PR to <code>feedback</code> from <code>main</code> branch with a standard title and description.</li>
 <li>Submit the PR link via the Project Submission Form.</li>
 <li>Watch the PR for feedback and, if invited, make revisions.</li>
-</ul>
+</ol>
 <p>The sections below spell out these steps in more detail.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Timing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Initialize the repo</li>
+<li>Create <code>feedback</code> branch</li>
+<li>Work in <code>main</code></li>
+<li>Open PR to <code>feedback</code> from <code>main</code></li>
+</ol>
+<p><strong>Create your feedback branch at the same time you create your repo, before you do any work on <code>main</code>.</strong></p>
+<p>This ensures that the branches are identical at the start, making it easier to manage later. It also ensure they are <em>not</em> identical at the end, which would result in nothing to compare for pull and grading.</p>
+<blockquote class="blockquote">
+<p>I already started working without a feedback branch!</p>
+</blockquote>
+<p>Not ideal, but not the end of the world–create it <em>right now.</em></p>
+<p>If you’ve made it all the way to the end and are creating it at the same time you submit, you won’t be able to open a PR immediately because there will be no differences between branches. Go back to your main branch and make any kind of edit at all (even adding a space somewhere), commit, and push. That will create a difference that allows the PR to be opened.</p>
+<p>If you are creating the feedback branch <em>at any point</em> after working in main, your grader won’t see all your changes in the PR. They will only see changes made <em>after</em> the feedback branch was created. <strong>Add a message to your grader in the description of your pull request</strong> explaining that all work prior to the branch creation is on <code>main</code>.</p>
+<blockquote class="blockquote">
+<p>What about the pull request?</p>
+</blockquote>
+<p>You can open the PR at any time after creating the <code>feedback</code> branch. The PR compares the <em>current state</em> of both branches (including commits made after the PR is opened), so as as you’ve done all your work in commits to <code>main</code> it doesn’t matter when you open it.</p>
+<p>GitHub Classroom assignments create the PR automatically, immediately after repo creation. You can do the same, but remember there has to be <em>some</em> difference between branches to open the PR. You can add an arbitrary edit to <code>main</code> if needed to create that difference.</p>
+<p>Alternatively, create the pull request at the time of submission. If you created <code>feedback</code> at the repo’s initiation and did all work in <code>main</code>, you won’t need the extra edit step.</p>
+</div>
+</div>
 <section id="setting-up-your-own-repo-and-access" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-your-own-repo-and-access">Setting up your own repo and access</h2>
 <section id="core-standards-and-enrichment-projects-repos-in-d2m-r" class="level3">
@@ -401,20 +434,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To add collaborators: 1. Go to your repo on GitHub. 2. Open <strong>Settings → Collaborators and teams</strong> (or <strong>Manage access</strong>). 3. Click <strong>Add people</strong> and add the GitHub usernames. (View course site for instructor/TA info.)</p>
 </section>
 </section>
-<section id="preparing-your-project-for-submission" class="level2">
-<h2 class="anchored" data-anchor-id="preparing-your-project-for-submission">Preparing your project for submission</h2>
-<p>Before you create the feedback branch and pull request, make sure that your work on <code>main</code> reflects what you want graded.</p>
-<p>By the time you submit, everything you want graded must be pushed to the <code>main</code> branch.</p>
-<p>In RStudio, you should see the name of the current branch in the Git pane. Use the pane to stage files, commit with a final informative message (e.g., <code>Final submission for pet adoption assignment</code> or <code>Integrative data project draft -- submission 2</code>), and push to GitHub.</p>
-<p>Command line equivalent:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Final submission for pet adoption assignment"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 <section id="create-a-feedback-branch" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-feedback-branch">Create a <code>feedback</code> branch</h2>
 <p>The <code>feedback</code> branch exists so we can open a PR and leave feedback in a dedicated space, similar to GitHub Classroom’s <code>feedback</code> branch.</p>
-<p><strong><em>Reminder: If you are working in a GH Classrooms assignment, the <code>feedback</code> branch is created for you. Do not try to create it yourself or terrible merge disasters may happen!</em></strong></p>
+<p><strong>Reminder:</strong> If you are working in a GH Classrooms assignment, the <code>feedback</code> branch is created for you. Do not try to create it yourself or terrible merge disasters may happen!</p>
 <p>In RStudio:</p>
 <ol type="1">
 <li>Make sure you are on the <code>main</code> branch. In the Git pane, use the branch dropdown to check that <code>main</code> is selected.</li>
@@ -423,10 +446,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Click <strong>Push</strong> so that the <code>feedback</code> branch exists on GitHub.</li>
 </ol>
 <p>Command line equivalent:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feedback</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin feedback</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feedback</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin feedback</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>After this, you should see two branches in your repo on GitHub: <code>main</code> and <code>feedback</code>. At this point, they should be identical.</p>
 <p><strong>Reminder: The <code>feedback</code> branch is for comparison and feedback only. All the work you complete must happen in the <code>main</code> branch.</strong> This means if you continue working on the project after creating the feedback branch, you will need to switch back to <code>main</code>.</p>
 <section id="feedback-n-branches-integrative-data-projects" class="level3">
@@ -439,9 +462,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
-<section id="open-the-pull-request-from-main-to-feedback" class="level2">
-<h2 class="anchored" data-anchor-id="open-the-pull-request-from-main-to-feedback">Open the pull request from <code>main</code> to <code>feedback</code></h2>
-<p>Once your <code>feedback</code> branch exists and matches <code>main</code>, you will open a PR where grading and feedback will happen.</p>
+<section id="preparing-your-project-for-submission" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-your-project-for-submission">Preparing your project for submission</h2>
+<p>Before you create the feedback branch and pull request, make sure that your work on <code>main</code> reflects what you want graded.</p>
+<p>By the time you submit, everything you want graded must be pushed to the <code>main</code> branch.</p>
+<p>In RStudio, you should see the name of the current branch in the Git pane. Use the pane to stage files, commit with a final informative message (e.g., <code>Final submission for pet adoption assignment</code> or <code>Integrative data project draft -- submission 2</code>), and push to GitHub.</p>
+<p>Command line equivalent:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Final submission for pet adoption assignment"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="open-the-pull-request-to-feedback-from-main" class="level2">
+<h2 class="anchored" data-anchor-id="open-the-pull-request-to-feedback-from-main">Open the pull request to <code>feedback</code> from <code>main</code></h2>
+<p>Once your <code>feedback</code> (or <code>feedback-N</code>) branch exists and matches <code>main</code>, you will open a PR where grading and feedback will happen.</p>
 <p>Pull requests are created through the GitHub web interface, not RStudio or the command line.</p>
 <p>On GitHub, go to your project repo and open the Pull requests tab. Click New pull request.</p>
 <p>Set the base branch to <code>feedback</code> and compare branch to <code>main</code>.</p>
@@ -510,13 +543,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Each submission attempt will typically use a separate numbered feedback branch and PR:
 <ul>
-<li>First attempt: PR from <code>main</code> to <code>feedback-1</code></li>
-<li>Second attempt: PR from <code>main</code> to <code>feedback-2</code></li>
-<li>Third attempt: PR from <code>main</code> to <code>feedback-3</code></li>
+<li>First attempt: PR to <code>feedback-1</code> from <code>main</code></li>
+<li>Second attempt: PR to <code>feedback-2</code> from <code>main</code></li>
+<li>Third attempt: PR to <code>feedback-3</code> from <code>main</code></li>
 </ul></li>
 <li>Each submission will be graded separately.</li>
 </ul>
 <p>Using separate branches and PRs keeps each submission’s feedback and standards clearly organized and easy to review over time.</p>
+</section>
+<section id="not-merging-branches" class="level2">
+<h2 class="anchored" data-anchor-id="not-merging-branches">(Not) Merging branches</h2>
+<p>The point of pull requests is usually to merge changes from one branch into another. You’ll see a big green box with a “Merge pull request” button at the bottom of the PR page.</p>
+<p>For our purposes, the PR is just a mechanism for comparison and feedback. That feedback is left on the PR itself, and the PR <em>stays open.</em> In other words:</p>
+<ol type="1">
+<li>Don’t click “Merge pull request.”</li>
+<li>Don’t expect a merge from your grader to “close out” the assignment.</li>
+</ol>
 
 
 </section>

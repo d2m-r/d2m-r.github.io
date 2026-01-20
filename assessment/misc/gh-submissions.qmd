@@ -16,8 +16,8 @@ There are two main ways your repos are created:
 In both cases:
 
 - Your graded work lives on the `main` branch.
-- A pull request from `main` to a `feedback` branch is the space where feedback is left.
-- You must complete a `submission.qmd` document with self-evaluation and AI disclosure.
+- A pull request to a `feedback` branch to `main` is the space where feedback is left.
+- You must complete a `submission.md` document with self-evaluation and AI disclosure.
 - Only you, the instructors, and (for group assignments) your designated group members can see your repo, your pull request, and your feedback. Other students cannot.
 - Your work is not "submitted" until you submit the [Project Submission Form](d2m-r.github.io/submit.html).
 
@@ -97,13 +97,46 @@ In these cases, you create a private repo in the `d2m-r` organization for the pr
 
 In these cases, the submission workflow is effectively mimicking what you'd get from GH Classrooms:
 
-- Make sure your graded work is on `main`.
-- Create a `feedback` branch.
-- Open a PR from `main` to that feedback branch with a standard title and description.
-- Submit the PR link via the Project Submission Form.
-- Watch the PR for feedback and, if invited, make revisions.
+1. Create a `feedback` branch.
+2. Make sure your graded work is on `main`.
+3. Open a PR to `feedback` from `main` branch with a standard title and description.
+4. Submit the PR link via the Project Submission Form.
+5. Watch the PR for feedback and, if invited, make revisions.
 
 The sections below spell out these steps in more detail.
+
+::: callout-tip
+### Timing
+
+1. Initialize the repo
+2. Create `feedback` branch
+3. Work in `main`
+4. Open PR to `feedback` from `main`
+
+**Create your feedback branch at the same time you create your repo, before you do any work on `main`.**
+
+This ensures that the branches are identical at the start, making it easier to manage later. It also ensure they are *not* identical at the end, which would result in nothing to compare for pull and grading.
+
+> I already started working without a feedback branch!
+
+Not ideal, but not the end of the world--create it *right now.*
+
+If you've made it all the way to the end and are creating it at the same time you submit, you won't be able to open a PR immediately because there will be no differences between branches. Go back to your main branch and make any kind of edit at all (even adding a space somewhere), commit, and push. That will create a difference that allows the PR to be opened.
+
+If you are creating the feedback branch *at any point* after working in main, your grader won't see all your changes in the PR. They will only see changes made *after* the feedback branch was created. **Add a message to your grader in the description of your pull request** explaining that all work prior to the branch creation is on `main`. 
+
+> What about the pull request?
+
+You can open the PR at any time after creating the `feedback` branch.
+The PR compares the *current state* of both branches (including commits made after the PR is opened), so as as you've done all your work in commits to `main` it doesn't matter when you open it.
+
+GitHub Classroom assignments create the PR automatically, immediately after repo creation.
+You can do the same, but remember there has to be *some* difference between branches to open the PR. You can add an arbitrary edit to `main` if needed to create that difference.
+
+Alternatively, create the pull request at the time of submission.
+If you created `feedback` at the repo's initiation and did all work in `main`, you won't need the extra edit step.
+
+:::
 
 ## Setting up your own repo and access
 
@@ -135,27 +168,11 @@ To add collaborators:
     2. Open **Settings → Collaborators and teams** (or **Manage access**).
     3. Click **Add people** and add the GitHub usernames. (View course site for instructor/TA info.)
 
-## Preparing your project for submission
-
-Before you create the feedback branch and pull request, make sure that your work on `main` reflects what you want graded.
-
-By the time you submit, everything you want graded must be pushed to the `main` branch.
-
-In RStudio, you should see the name of the current branch in the Git pane. Use the pane to stage files, commit with a final informative message (e.g., `Final submission for pet adoption assignment` or `Integrative data project draft -- submission 2`), and push to GitHub.
-
-Command line equivalent:
-
-```bash
-git add .
-git commit -m "Final submission for pet adoption assignment"
-git push origin main
-```
-
 ## Create a `feedback` branch 
 
 The `feedback` branch exists so we can open a PR and leave feedback in a dedicated space, similar to GitHub Classroom's `feedback` branch.
 
-***Reminder: If you are working in a GH Classrooms assignment, the `feedback` branch is created for you. Do not try to create it yourself or terrible merge disasters may happen!***
+**Reminder:** If you are working in a GH Classrooms assignment, the `feedback` branch is created for you. Do not try to create it yourself or terrible merge disasters may happen!
 
 In RStudio:
 
@@ -185,9 +202,26 @@ Integrative Data Projects may be submitted up to 3 times during the quarter. In 
 - Second submission: branch `feedback-2`
 - Third submission: branch `feedback-3`
 
-## Open the pull request from `main` to `feedback`
+## Preparing your project for submission
 
-Once your `feedback` branch exists and matches `main`, you will open a PR where grading and feedback will happen.
+Before you create the feedback branch and pull request, make sure that your work on `main` reflects what you want graded.
+
+By the time you submit, everything you want graded must be pushed to the `main` branch.
+
+In RStudio, you should see the name of the current branch in the Git pane. Use the pane to stage files, commit with a final informative message (e.g., `Final submission for pet adoption assignment` or `Integrative data project draft -- submission 2`), and push to GitHub.
+
+Command line equivalent:
+
+```bash
+git add .
+git commit -m "Final submission for pet adoption assignment"
+git push origin main
+```
+
+
+## Open the pull request to `feedback` from `main`
+
+Once your `feedback` (or `feedback-N`) branch exists and matches `main`, you will open a PR where grading and feedback will happen.
 
 Pull requests are created through the GitHub web interface, not RStudio or the command line.
 
@@ -274,13 +308,21 @@ You *may not* use the PR (or any other communication) to request resubmission or
 The Integrative Data Project allows up to 3 submissions:
 
 - Each submission attempt will typically use a separate numbered feedback branch and PR:
-    - First attempt: PR from `main` to `feedback-1`
-    - Second attempt: PR from `main` to `feedback-2`
-    - Third attempt: PR from `main` to `feedback-3`
+    - First attempt: PR to `feedback-1` from `main`
+    - Second attempt: PR to `feedback-2` from `main`
+    - Third attempt: PR to `feedback-3` from `main`
 - Each submission will be graded separately.
 
 Using separate branches and PRs keeps each submission's feedback and standards clearly organized and easy to review over time.
 
+## (Not) Merging branches
 
+The point of pull requests is usually to merge changes from one branch into another. You'll see a big green box with a "Merge pull request" button at the bottom of the PR page.
 
+For our purposes, the PR is just a mechanism for comparison and feedback. 
+That feedback is left on the PR itself, and the PR *stays open.*
+In other words:
+
+1. Don't click "Merge pull request."
+2. Don't expect a merge from your grader to "close out" the assignment.
 
