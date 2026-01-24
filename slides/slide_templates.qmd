@@ -1,0 +1,1213 @@
+---
+title: "Slide Templates"
+subtitle: "formatted slides for reuse"
+date: "1/1/2026"
+footer: "D2M-R I & II" #  quarter, week, and class
+
+format: revealjs
+engine: knitr
+
+revealjs-plugins:
+  - codefocus
+
+execute:
+  #echo: true
+  warning: false
+  message: false
+editor: source
+---
+
+
+# Basic Layouts
+
+## Grouped Lists
+
+::: {.nonincremental}
+::: {.tightlist .grouped} 
+
+-   1st level bullet
+    -   2nd level will appear with top level
+-   Another 1st level bullet
+    -   Another 2nd level bullet
+
+:::
+:::
+
+::: notes
+
+This slide template uses grouped lists to show multiple levels of bullet points at once.
+
+Depends on javascript in the bubbles.js theme file.
+
+List must be wrapped in a non-incremental div.
+
+:::
+
+
+# Standard Column and Box Arrangements
+
+## Two Overlap Boxes, Vertically Stacked
+
+::: overlap-box
+
+::: box-title
+
+Top Red Box
+
+:::
+
+::: box-content
+
+- Content for the top red box
+- More content for the top red box
+
+:::
+
+:::
+
+::: {.overlap-box .overlap-box-blue}
+
+::: box-title
+
+Bottom Blue Box
+
+:::
+
+::: box-content
+
+-   Content for the bottom blue box
+-   More content for the bottom blue box
+
+:::
+
+:::
+
+::: notes
+
+This slide template uses two overlap boxes, one stacked on top of the other. The top box is red, and the bottom box is blue.
+    
+:::
+
+## Single Overlap Box with Image, Columns
+
+::::: container-fluid
+
+:::: row
+
+::: col-7
+
+::: overlap-box
+
+::: box-title
+
+Left Column, Red Overlap Box
+
+:::
+
+::: box-content
+
+-   Content for the left red box
+-   More content for the left red box
+
+:::
+        
+:::
+
+:::
+
+::: col-5
+
+![Image caption](../images/file.png){style="margin-top: -2em;"}
+
+:::
+
+::::
+
+:::::
+
+
+::: notes
+
+This slide template uses a single overlap box in the left column, with an image in the right column.
+
+The image is shifted up slightly using a negative top margin to allow for more vertical space, overlapping with title area.
+
+:::
+
+
+## Three Cards in a Horizontal Row
+
+::::: container-fluid
+
+:::: row
+
+::: {.col-12 .fragment}
+
+Content to appear above the columns/cards.
+
+:::
+
+::::
+
+:::: row
+
+::: col-4
+
+::: {.card .fragment .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Left Card Title
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+-   Body of left card
+-   Incremental list
+-   Tight margins
+
+:::
+:::
+
+:::
+
+::: col-4
+
+<!-- Content of center column -->
+
+![](../images/file.png)
+
+:::
+
+::: col-4
+
+::: {.card .fragment .card-alt1 .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Right Card Title
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+-   Body of right card
+-   Incremental list
+-   Tight margins
+
+:::
+:::
+
+:::
+
+::::
+
+:::::
+
+::: notes
+
+The .h-100 class makes the cards equal height.
+
+The .lessgap class reduces the padding inside the card body.
+
+Headings need to be recolored with white text for readability on dark backgrounds.
+This is an artifact of using Bootstrap cards for both website and revealjs.
+Can be corrected with additional css at some point.
+
+Left card (default) is red. Right card uses .card-alt1 class for blue background.
+
+:::
+
+
+## Columns with Callout-Style Boxes
+
+
+::::: container-fluid
+
+:::: {.row .equal-height style="height: 50vh;"}
+
+::: col-6
+
+::: {.callout-note .large icon=false style="font-size: 1.1em;"}
+
+### [⬅︎ Left Box]{style="padding-left:1em;"}
+
+-   Note style box is blue
+-   Default icon hidden; custom text "icon" added
+
+:::
+:::
+
+::: col-6
+::: {.callout-tip .large icon=false style="font-size: 1.1em;"}
+
+### [➡︎ Right Box]{style="padding-left:1em;"}
+
+-   Tip style box is green
+-   Default icon hidden; custom text "icon" added
+
+:::
+:::
+
+::::
+
+:::::
+
+
+## Mixed Layout: Card, List, Alert
+
+::: container-fluid
+
+::: {.row}
+
+::: {.col-4}
+
+::: {.card .fragment}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+Card Title
+:::
+:::
+
+::: card-body
+
+-   Card body
+-   Incremental list
+
+:::
+
+:::
+:::
+
+::: {.col-8 .d-flex .align-content-between .flex-wrap}
+
+<div style="width: 100%">
+
+[Mock Heading]{.fragment style="font-size: 1.5em; font-weight: bold;"}
+
+-   Content
+
+</div>
+
+::: {.alert .alert-warning .fragment .flex-grow-1}
+
+[**Alert Mock Heading**]{style="font-size: 1.3em"}
+
+This text is in a yellow (warning) alert box.
+
+:::
+:::
+:::
+
+:::
+
+
+::: notes
+
+This layout includes two columns.
+
+Left: Red card, full height
+
+Right: Heading and list at top, yellow alert box at bottom
+
+Setting off the list with a literal div (not fence) is the only way I can get the spacing to work for some reason.
+
+:::
+
+## Content with Slide-Height Stacked Images
+
+::::: {.container-fluid style="max-width: 40%; margin-left: 0; margin-right: auto;"}
+
+Content in the left column.
+
+- Approximately half the slide width
+    -   Allowing for some margin between content and images
+
+:::::
+
+::::: {.container-fluid style="position: absolute; width: 60%; right: -100px; top: -100px; bottom: -100px; margin: auto;"}
+
+![](../images/top.png){style="width: 100%"}
+
+![](../images/bottom.png){style="width: 100%"}
+
+:::::
+
+::: notes
+
+This layout includes content in the left column, and two stacked images on the right side of the slide.
+
+The images are absolutely positioned to fill the right side of the slide, with negative offsets to extend beyond the slide content box vertically and horizontally, approximately to edges of the slide.
+
+:::
+
+## Centered Content w/ Images over Boxes
+
+
+::::: {.container-fluid style="margin-top: -1em"}
+
+:::: row
+
+::: col-2
+![](../images/icons/icon.png){style="max-height: 6em; margin-top: 1em"}
+:::
+
+::: {.col-8 style="text-align: center;"}
+
+::: {.callout-tip style="font-size: 1.2em; text-align: center;" icon=false}
+### Centered title
+
+Callout box content.
+
+Tip callout is green.
+
+:::
+
+:::
+
+::: {.col-2 style="text-align: right;"}
+
+![](../images/icons/icon.png){style="max-height: 6em; margin-top: 1em;"}
+:::
+
+::::
+
+:::: row
+::: col-6
+
+::: {.card .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+Left box title
+:::
+:::
+
+::: card-body
+
+-   Content of
+-   the left
+-   red box.
+
+:::
+:::
+:::
+
+
+::: col-6
+::: {.card .card-alt1 .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+Right box title
+:::
+:::
+
+::: card-body
+
+-   Content of
+-   the right
+-   blue box.
+
+:::
+
+:::
+
+:::
+
+::::
+
+:::::
+
+# Organized Series of Related Slides
+
+<!-- Example: Best Practices Slides with standardized, intelligible, maintainable, contextualized content -->
+
+
+## Introduction Slide
+
+
+::: {.d-flex .nonincremental style="gap: 1em;"}
+
+::: {.contained-box style="flex: 1;" .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-1.png)
+
+:::
+
+::: {.box-title}
+Box 1 Title
+:::
+
+::: {.box-content}
+
+- Box 1
+- Content
+
+:::
+:::
+
+::: {.contained-box style="flex: 1;" .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-2.png)
+
+:::
+
+::: {.box-title}
+Box 2 Title
+:::
+
+::: {.box-content}
+
+- Box 2
+- Content
+
+:::
+:::
+
+::: {.contained-box style="flex: 1;" .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-3.png)
+
+:::
+
+::: {.box-title}
+Box 3 Title
+:::
+
+::: {.box-content}
+
+- Box 3
+- Content
+
+:::
+:::
+
+::: {.contained-box style="flex: 1;" .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-4.png)
+
+:::
+::: {.box-title}
+Box 4 Title
+:::
+
+::: {.box-content}
+
+- Box 4
+- Content
+
+:::
+:::
+
+:::
+
+::: notes
+
+Four side-by-side boxes of equal height and width using flexbox.
+
+Each has a large icon, filled box with title, and unfilled box with content.
+
+Box components are wrapped as classes for easier modification.
+
+:::
+
+
+
+## ![](../images/icons/icon-1.png){style="height: 1em; vertical-align: middle; margin-right: 0.4em;"} Sub-content Slide with Overlap Boxes
+
+::: {.d-flex style="gap: 0.4em; margin-bottom: 2em; margin-top: -1em; font-size: 0.7em;"}
+
+[**Active Topic**]{style="background-color: #8B1A1A; color: white; padding: 0.2em 0.6em; border-radius: 3px;"}
+[Inactive Topic]{style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;"}
+[Inactive Topic]{style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;"}
+[Inactive Topic]{style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;"}
+
+:::
+
+::::: container-fluid
+
+:::: row
+
+::: col-6
+
+::: {.overlap-box .fragment}
+
+::: box-title
+
+Box 1 Title
+
+:::
+
+::: {.box-content .nonincremental}
+
+-   Top left
+-   Text and box appear together
+    - Non-incremental list
+
+:::
+
+:::
+
+::: {.overlap-box .fragment}
+
+::: box-title
+
+Box 2 Title
+
+:::
+
+::: {.box-content .nonincremental}
+
+-   Bottom left
+-   Text and box appear together
+    - Non-incremental list
+
+:::
+
+:::
+
+:::
+
+::: col-6
+
+::: {.overlap-box .overlap-box-blue .fragment}
+
+::: box-title
+
+Box 3 Title
+
+:::
+
+::: {.box-content .nonincremental}
+
+-   Right (full column)
+-   Text and box appear together
+    - Non-incremental list
+-   Blue box
+
+:::
+:::
+
+:::
+
+::::
+
+:::::
+
+::: notes
+
+This slide template is part of a series of related slides.
+
+It includes a header with an icon and topic indicators.
+
+The main content area has two columns with overlap boxes.
+
+The left column has two stacked boxes, and the right column has a single box.
+
+The boxes use non-incremental lists to show all content at once.
+
+:::
+
+
+## ![](../images/icons/icon-2.png){style="height: 1em; vertical-align: middle; margin-right: 0.4em;"} Complex Layout
+
+::: {.d-flex style="gap: 0.4em; margin-bottom: 2em; margin-top: -1em; font-size: 0.7em;"}
+
+[Inactive Topic]{style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;"}
+[**Active Topic**]{style="background-color: #8B1A1A; color: white; padding: 0.2em 0.6em; border-radius: 3px;"}
+[Inactive Topic]{style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;"}
+[Inactive Topic]{style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;"}
+
+:::
+
+<!-- Important Note Card w/ text and surrounding"!!!" icons -->
+
+::: {.card style="font-size: 1.1em; font-weight: bolder; text-align: center; margin-top: -5em; float: right; width: 35%; border-width:8px; border-color: #c00; flex: 1 1 100%; background-color: #ffeaa9;" }
+::: {.card-body style="display: flex; align-items: center; justify-content: center; gap: .1em;"}
+
+![](../images/icons/priority.png){style="max-height: 3em;"}
+
+Priority box text, surrounded by "!!!" icons for emphasis.
+
+![](../images/icons/priority.png){style="max-height: 3em;"}
+
+:::
+:::
+
+::: row
+
+::: col-6
+
+> Blockquote
+>
+> *— Name*
+
+-   List content
+-   Immediately
+-   Under
+-   the blockquote
+    -   Not a different container
+
+:::
+
+::: col-6
+![](../images/file.png){style="float: right; margin-top:0px"}
+:::
+
+:::
+
+::: {.credit style="bottom: 30px;"}
+Right aligned image credit text
+:::
+
+::: notes
+
+This slide template is part of a series of related slides.
+
+It includes a header with an icon and topic indicators.
+
+The main content area has two columns.
+
+The left column has a blockquote and list as one block of content.
+
+The right column has a right-aligned image.
+
+The slide also includes a highlighted card at the top right for important notes, outside the columns container. The card is nudged upward to overlap with the title area.
+
+This priority box can be used as an asset elsewhere.
+
+:::
+
+# Tables
+
+## Incremental Table With Images
+
+<table class="compact" style="width: 80%;">
+<tr style="font-size: 1.2em;">
+  <th>Column 1</th>
+  <th>Column 2</th>
+</tr>
+<tr class="fragment">
+  <td style="width: 40%; vertical-align: middle;"><img src="../images/icon.svg" alt="Icon Alt Text" style="height: 2em;" ></td>
+  <td>
+    <ul>
+      <li>List</li>
+      <li>Items</li>
+      <li>Here</li>
+    </ul>
+  </td>
+</tr>
+<tr class="fragment">
+  <td style="vertical-align: middle;"><img src="../images/icon.svg" alt="Icon Alt Text" style="height: 2em;" ></td>
+  <td>
+    <ul>
+      <li>List</li>
+      <li>Items</li>
+      <li>Here</li>
+    </ul>
+  </td>
+</tr>
+<tr class="fragment">
+  <td style="vertical-align: middle;"><img src="../images/icon.svg" alt="Icon Alt Text" style="height: 2em;" ></td>
+  <td>
+    <ul>
+      <li>List</li>
+      <li>Items</li>
+      <li>Here</li>
+    </ul>
+  </td>
+</tr>
+<tr class="fragment">
+  <td style="vertical-align: middle;"><img src="../images/icon.svg" alt="Icon Alt Text" style="height: 2em;" ></td>
+  <td>
+    <ul>
+      <li>List</li>
+      <li>Items</li>
+      <li>Here</li>
+    </ul>
+  </td>
+</tr>
+</table>
+
+::: notes
+
+Only first content row needs width styling.
+
+Each row is a fragment for incremental reveal. All content for each row appears at once.
+
+:::
+
+
+# Code Blocks
+
+## Simple Animated Block (Non-executable)
+
+```{.r code-line-numbers="|1-2|4-5|7-8"}
+# Fragment 1
+fragment 1 <- "example code"
+
+# Fragment 2
+fragment 2 <- "example code"
+
+# Fragment 3
+fragment 3 <- "example code"
+
+```
+
+::: notes
+
+Non-executable code block.
+
+All text visible initially, then fragments revealed in three steps.
+
+:::
+
+
+
+## Matched Fragments
+
+<!-- The codefocus plugin is required for correct animations on this slide. https://github.com/reuning/codefocus/tree/main/_extensions/codefocus -->
+
+::::: container-fluid
+
+:::: row
+
+::: {.col-4 style="font-size: .8em"}
+
+Slide has two columns, complex styling in each, and animated fragments of code matched to animated fragments of lists in the other column.
+
+::: {.fragment data-code-focus="1,9" style="display: block; margin-top: 2em; margin-bottom: 1em;"}
+[Styled blue]{.custom-keyword style="background-color: #2ac8fe80; color: #000;"}: unstyled text
+:::
+
+::: {.fragment data-code-focus="2,3" style="display: block; margin-bottom: 1em;"}
+[Styled red]{.custom-keyword style="background-color: #da6d7180; color: #000;"}: unstyled text
+:::
+
+::: {.fragment data-code-focus="4-6,8" style="display: block; margin-bottom: 1em;"}
+[Styled yellow]{.custom-keyword style="background-color: #f1f56c80; color: #000;"}: unstyled text
+:::
+
+::: {.fragment data-code-focus="7" style="display: block; margin-bottom: 1em;"}
+[Styled cyan]{.custom-keyword style="background-color: #39eef280; color: #000;"}: unstyled text
+:::
+
+::: {.fragment data-code-focus="11" style="display: block;"}
+[Styled orange]{.custom-keyword style="background-color: #f5c36c80; color: #000;"}: unstyled text
+:::
+
+:::
+
+::: {.col-8 style="border-width:6px !important; border-style: solid !important; border-color: #ccc !important; border-radius: 8px; padding: 10px; background-color: #f9f9f9; font-size: .8em;"}
+
+<!-- This div mimics non-revealjs styling to recreate documentation + code -->
+
+### Title of the bordered box {style="margin-top:0em"}
+
+#### Heading 4 uses fences
+
+Text looks the same as outside this div.
+
+*[...grayed out text...]{style="color: #999"}*
+
+#### Example non-executable code for animation
+
+Everything begins grayed out.
+
+```{.r}
+inner_join(
+  x,
+  y,
+  by = NULL,
+  copy = FALSE,
+  suffix = c(".x", ".y"),
+  ...,
+  keep = NULL
+)
+
+left_join(
+  x,
+  y,
+  by = NULL,
+  copy = FALSE,
+  suffix = c(".x", ".y"),
+  ...,
+  keep = NULL
+)
+```
+
+:::
+
+::::
+
+:::::
+
+::: notes
+
+This slide template uses the codefocus plugin to highlight specific lines of code in sync with corresponding list items.
+
+Each list item is a fragment that highlights specific lines in the code block when revealed.
+
+The code block is styled with a border and background color to distinguish it from the rest of the slide content.
+
+:::
+
+
+# Animation
+
+
+## Callouts with stacked images
+
+::::: container-fluid
+
+:::: row
+
+::: col-5
+
+::: {.callout-warning .fragment fragment-index="1"}
+
+### Warning callout
+
+Warning callout is red, with a yield sign.
+
+:::
+
+::: {.callout-caution .fragment fragment-index="2"}
+
+### Caution callout
+
+Caution callout is orange with a pylon.
+
+:::
+
+::: {.callout-tip .fragment fragment-index="3"}
+
+### Tip callout
+
+Tip callout is green with a light bulb.
+
+:::
+
+:::
+
+::: col-7
+
+::: {.r-stack}
+
+![](../images/warning-match.png){.fragment fragment-index="1"}
+
+
+![](../images/caution-match.png){.fragment fragment-index="2"}
+
+
+![](../images/tip-match.png){.fragment fragment-index="3"}
+
+:::
+
+:::
+
+::::
+
+:::::
+
+
+::: notes
+
+This slide template uses callout boxes with matching stacked images.
+
+The callouts and images are revealed in sync as fragments.
+
+Callouts appear vertically in a left column.
+
+Images layer on top of each other in a right column.
+
+:::
+
+
+
+## Column text; overlapping images
+
+::::: container-fluid
+
+:::: row
+
+::: {.col-4 .nonincremental .fragment fragment-index="1"}
+
+**Column 1**
+
+-   Content
+-   here
+
+:::
+
+::: {.col-4 .nonincremental .fragment fragment-index="2"}
+
+**Column 2**
+
+-   Content
+-   here
+
+:::
+
+::: {.col-4 .nonincremental .fragment fragment-index="3"}
+
+**Column 3**
+
+-   Content
+-   here
+
+:::
+::::
+
+:::: row
+
+::: {.r-stack .fragment fragment-index="1"}
+
+![](../images/stack-1.png){style="position: absolute; left: 0; bottom: 0; max-height: 50%;"}
+:::
+
+::: {.r-stack .fragment fragment-index="2"}
+
+![](../images/stack-2.png){style="position: absolute; left: 0; right: 0; bottom: 0; margin-inline: auto; max-height: 50%;"}
+:::
+
+::: {.r-stack .fragment fragment-index="3"}
+
+![](../images/stack-3.png){style="position: absolute; right: 0; bottom: 0; max-height: 50%;"}
+:::
+
+::::
+
+:::::
+
+::: notes
+
+This slide template uses three columns of text that appear incrementally.
+
+Each column corresponds to an image fragment. Images are stacked for partial overlap to allow for larger images that don't require sustained focus.
+
+:::
+
+
+
+
+## Process/flow with icons
+
+::: {style="display: grid; grid-template-columns: 1fr 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr; grid-template-rows: auto 3em auto; gap: 8px;"}
+
+<!-- Row 1: Steps 1-4 -->
+
+::: {.flow-box style="grid-column: 1; grid-row: 1; background-color: #800000;" .fragment}
+
+Text for box 1
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 2; grid-row: 1;" .fragment}
+
+{{< bi arrow-right-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 3; grid-row: 1; background-color: #6e0e10;" .fragment}
+
+Text for box 2
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 4; grid-row: 1;" .fragment}
+
+{{< bi arrow-right-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 5; grid-row: 1; background-color: #5b1b21;" .fragment}
+
+Text for box 3
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 6; grid-row: 1;" .fragment}
+
+{{< bi arrow-right-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 7; grid-row: 1; background-color: #492931;" .fragment}
+
+Text for box 4
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+<!-- Down arrow -->
+
+::: {.flow-arrow style="grid-column: 7; grid-row: 2;" .fragment}
+
+{{< bi arrow-down-circle-fill >}}
+
+:::
+
+<!-- Row 2: Steps 5-8 (in reverse order) -->
+
+::: {.flow-box style="grid-column: 7; grid-row: 3; background-color: #373642;" .fragment}
+
+Text for box 5
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 6; grid-row: 3;" .fragment}
+
+{{< bi arrow-left-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 5; grid-row: 3; background-color: #254452;" .fragment}
+
+Text for box 6
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 4; grid-row: 3;" .fragment}
+
+{{< bi arrow-left-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 3; grid-row: 3; background-color: #125163;" .fragment}
+
+Text for box 7
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 2; grid-row: 3;" .fragment}
+
+{{< bi arrow-left-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 1; grid-row: 3; background-color: #005f73;" .fragment}
+
+Text for box 8
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+:::
+
+
+## Popover Centered Image
+
+::: {#top-right-image style="position: absolute; top: -1em; right: 4em; height: 4em;"}
+
+<!-- for logos, icons, small images -->
+
+![](../images/file.png){style="height: 2em;"}
+
+
+:::
+
+:::: row
+
+::: col-5
+
+Column content
+
+-   With
+-   a
+-   list
+
+:::
+
+::: {.col-7 style="margin-top: 0em;"}
+
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+# Code that will execute
+rstudio_is_cool <- paste("R", "and", "RStudio", "work", "together!")
+
+# Output will appear as a fragment beneath code block
+rstudio_is_cool
+```
+
+
+:::
+
+::::
+
+<!-- centered large image, covering slide content -->
+
+![](../images/popover-image.png){style="position: absolute; right: 0; left: 0; top: 0; bottom: 0; margin-inline: auto; z-index: 99;" .fragment}
+
+::: notes
+
+This slide template uses a popover image that appears centered over the slide content.
+
+The code block in the right column executes and reveals output as a fragment.
+
+:::
+
