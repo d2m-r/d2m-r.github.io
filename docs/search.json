@@ -137,7 +137,7 @@
     "href": "slides/Q1-W2_git-github.html#git-version-control",
     "title": "Git & GitHub",
     "section": "Git Version Control",
-    "text": "Git Version Control\n\n\n\nGit is a robust version control system designed for text-based files\n\n\nWhat? When? Who? Revert! plus:\n\n\n\n\n\nWhich change is this?\n\nunique IDs for every revision\n\nWhy did it change?\n\ncommit messages explain purpose\n\nBranch and merge\n\nwork on multiple features simultaneously\n\nBackup\n\nproject (aka repository) history lives in multiple places\n\nAsynchronous collaboration\n\nidentify and resolve conflicting changes\n\nIntegration\n\nwith IDEs (e.g., RStudio) and cloud services (e.g., GitHub)\n\n\n\n\n\n\n\n\n\n\n\nGit commit history\n\n\n\n\n\n\nVersion control is like having a complete backup of every version of your project, plus a detailed log of what changed and why. It’s not just for programmers - anyone who works with files that change over time benefits."
+    "text": "Git Version Control\n\n\n\nGit is a robust version control system designed for text-based files\n\n\nWhat? When? Who? Revert! plus:\n\n\n\n\nWhich change is this?\n\nunique IDs for every revision\n\nWhy did it change?\n\ncommit messages explain purpose\n\nBranch and merge\n\nwork on multiple features simultaneously\n\nBackup\n\nproject (aka repository) history lives in multiple places\n\nAsynchronous collaboration\n\nidentify and resolve conflicting changes\n\nIntegration\n\nwith IDEs (e.g., RStudio) and cloud services (e.g., GitHub)\n\n\n\n\n\n\n\n\n\n\nGit commit history\n\n\n\n\n\n\nVersion control is like having a complete backup of every version of your project, plus a detailed log of what changed and why. It’s not just for programmers - anyone who works with files that change over time benefits."
   },
   {
     "objectID": "slides/Q1-W2_git-github.html#git-repositories",
@@ -186,7 +186,7 @@
     "href": "slides/Q1-W2_git-github.html#commit-messages-best-practices",
     "title": "Git & GitHub",
     "section": "Commit Messages: Best Practices",
-    "text": "Commit Messages: Best Practices\n\n\n\n\nGood commit messages:\n\nDescribe what and why, not how\nStart with a present tense verb (“Add”, “Fix”, “Update”)\nFirst line under 50 characters\n\n\nAdd data cleaning script for survey responses\n\nMove glms out of qmd into a separate script\n\nStart zero-drafting methods\n\n\n\n\nBad commit messages:\n\nVague\nUninformative\nCover way too many or unrelated changes\n\n\nUpdates to data\n\nFriday afternoon commit\n\ndata cleaning script, move glms, start methods, fix typos, add bibliography\n\n\n\n\n\n\n\n\n\n\n\n\nA shameful confession\n\n\nI am a total hypocrite and rarely follow these guidelines. Actual commits from my actual repos:\noops i broke the kid data but the adult glms work now; omg i can't anymore here are some broken plots fix this later or don't i don't care; i need a drink\nI’m not proud, but what matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you).\n\n\n\n\n\n\n\n\nI am a total hypocrite and rarely follow these “good” and “bad” guidelines. The longer I work, the more likely my commit messages devolve into oops i broke the kid data but the adult glms work now or omg i can't anymore here are some broken plots fix this later or don't i don't care or i need a drink.\nThese are actual commits from my actual repos. I’m not proud. Present-me is often pretty frustrated with past-me’s choices, but I can’t pretend that I don’t also find it entertaining and humanizing. (You’d think I wouldn’t need to humanize myself to myself, wouldn’t you? You’d be wrong.)\nWhile I encourage you to do as I say, not as I do, what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you)."
+    "text": "Commit Messages: Best Practices\n\n\n\nGood commit messages:\n\nDescribe what and why, not how\nStart with a present tense verb (“Add”, “Fix”, “Update”)\nFirst line under 50 characters\n\n\nAdd data cleaning script for survey responses\n\nMove glms out of qmd into a separate script\n\nStart zero-drafting methods\n\n\n\nBad commit messages:\n\nVague\nUninformative\nCover way too many or unrelated changes\n\n\nUpdates to data\n\nFriday afternoon commit\n\ndata cleaning script, move glms, start methods, fix typos, add bibliography\n\n\n\n\n\n\n\n\n\n\n\n\nA shameful confession\n\n\nI am a total hypocrite and rarely follow these guidelines. Actual commits from my actual repos:\noops i broke the kid data but the adult glms work now; omg i can't anymore here are some broken plots fix this later or don't i don't care; i need a drink\nI’m not proud, but what matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you).\n\n\n\n\n\n\n\n\nI am a total hypocrite and rarely follow these “good” and “bad” guidelines. The longer I work, the more likely my commit messages devolve into oops i broke the kid data but the adult glms work now or omg i can't anymore here are some broken plots fix this later or don't i don't care or i need a drink.\nThese are actual commits from my actual repos. I’m not proud. Present-me is often pretty frustrated with past-me’s choices, but I can’t pretend that I don’t also find it entertaining and humanizing. (You’d think I wouldn’t need to humanize myself to myself, wouldn’t you? You’d be wrong.)\nWhile I encourage you to do as I say, not as I do, what actually matters is that you 1) commit often and 2) write messages that make sense to anyone who has to read them (including, hopefully, future you)."
   },
   {
     "objectID": "slides/Q1-W2_git-github.html#github-cardinal-rules",
@@ -200,7 +200,7 @@
     "href": "slides/Q1-W2_git-github.html#merge-conflicts",
     "title": "Git & GitHub",
     "section": "Merge Conflicts",
-    "text": "Merge Conflicts\nmerge conflict: Git cannot automatically reconcile differences between two versions of a file\nSymbols like &lt;&lt;&lt;, ===, and &gt;&gt;&gt; mark conflicting sections.\nAll you have to do is change the text and delete the markers.\n\n\n\n\nWhat you’ll see in a conflicted file:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nThis is the original line in the file.\n=======\nThis is the conflicting change made by another user.\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-branch\n\n\n\nYou manually edit the file to resolve the conflict:\nThis is the original line in the file.\nThis is the conflicting change made by another user.\n\n\n\n\nA merge conflict occurs when Git cannot automatically reconcile differences between two versions of a file. You’ll see symbols like &lt;&lt;&lt;, ===, and &gt;&gt;&gt; marking the conflicting sections. All you have to do is change the text and delete the markers."
+    "text": "Merge Conflicts\nmerge conflict: Git cannot automatically reconcile differences between two versions of a file\nSymbols like &lt;&lt;&lt;, ===, and &gt;&gt;&gt; mark conflicting sections.\nAll you have to do is change the text and delete the markers.\n\n\n\nWhat you’ll see in a conflicted file:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nThis is the original line in the file.\n=======\nThis is the conflicting change made by another user.\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-branch\n\n\nYou manually edit the file to resolve the conflict:\nThis is the original line in the file.\nThis is the conflicting change made by another user.\n\n\n\n\nA merge conflict occurs when Git cannot automatically reconcile differences between two versions of a file. You’ll see symbols like &lt;&lt;&lt;, ===, and &gt;&gt;&gt; marking the conflicting sections. All you have to do is change the text and delete the markers."
   },
   {
     "objectID": "slides/Q1-W2_git-github.html#git-in-the-command-line",
@@ -235,7 +235,7 @@
     "href": "slides/Q1-W2_git-github.html#repo-structure-example-1",
     "title": "Git & GitHub",
     "section": "Repo Structure: Example 1",
-    "text": "Repo Structure: Example 1\n\n\n\nProject file directories\n\n/localonly: only present in your local R Project, listed in your .gitignore and never synced to github\n/data: .csv/tabular data files for all raw or intermediate datasets read into in your .qmd, optional /raw subfolder for raw data read (only) into unsourced R scripts\n/source: .R scripts to be called in an early chunk of your .qmd, e.g., stylistic preferences, functions, minor data wrangling\n/images: exported figures and any image files to read-in to your R Markdown manuscript\n/_extensions: auto-generated or installed Quarto extensions, like apaquarto\n\n\n\n\nTop-level files\n\nREADME.md: project overview, repo structure, to-do list, etc.\n.gitignore: starting from the R .gitignore template\nproject-manuscript.qmd: the home of your eventual publication \nbibliography.bib: a plain-text file containing all the BibTeX entries cited in your manuscript\nyourCitationStyle.csl: the script used to format in-text and bibliography citations when knitting"
+    "text": "Repo Structure: Example 1\n\n\nProject file directories\n\n/localonly: only present in your local R Project, listed in your .gitignore and never synced to github\n/data: .csv/tabular data files for all raw or intermediate datasets read into in your .qmd, optional /raw subfolder for raw data read (only) into unsourced R scripts\n/source: .R scripts to be called in an early chunk of your .qmd, e.g., stylistic preferences, functions, minor data wrangling\n/images: exported figures and any image files to read-in to your R Markdown manuscript\n/_extensions: auto-generated or installed Quarto extensions, like apaquarto\n\n\n\nTop-level files\n\nREADME.md: project overview, repo structure, to-do list, etc.\n.gitignore: starting from the R .gitignore template\nproject-manuscript.qmd: the home of your eventual publication \nbibliography.bib: a plain-text file containing all the BibTeX entries cited in your manuscript\nyourCitationStyle.csl: the script used to format in-text and bibliography citations when knitting"
   },
   {
     "objectID": "slides/Q1-W2_git-github.html#repo-structure-example-2",
@@ -249,7 +249,7 @@
     "href": "slides/Q1-W2_git-github.html#hidden-files-and-directories-non-exhaustive-list",
     "title": "Git & GitHub",
     "section": "Hidden files and directories (non-exhaustive list)",
-    "text": "Hidden files and directories (non-exhaustive list)\n\n\n.git/ - Git metadata, what makes Git work\n.Rproj.user/ - RStudio project settings\n.quarto/ - Quarto project settings\n.Rproj\n.RData\n.Rhistory\n.DS_Store\n\n\n\nRepos and R Projects will also include some hidden files and directories\n\n.git/ - Git metadata, what makes Git work\n.Rproj - RStudio project settings\n.quarto/ - Quarto project settings\n\nYou won’t interact with these directories directly, and you won’t see them in RStudio or on GitHub.\nYou may also have other hidden files, for example:\n\n.Rproj.user\n.RData\n.Rhistory\n.DS_Store\n\nYou won’t interact with these either but they won’t always be fully hidden in every interface. You can add them to your .gitignore file so they don’t clutter up your repo."
+    "text": "Hidden files and directories (non-exhaustive list)\n\n.git/ - Git metadata, what makes Git work\n.Rproj.user/ - RStudio project settings\n.quarto/ - Quarto project settings\n.Rproj\n.RData\n.Rhistory\n.DS_Store\n\n\nRepos and R Projects will also include some hidden files and directories\n\n.git/ - Git metadata, what makes Git work\n.Rproj - RStudio project settings\n.quarto/ - Quarto project settings\n\nYou won’t interact with these directories directly, and you won’t see them in RStudio or on GitHub.\nYou may also have other hidden files, for example:\n\n.Rproj.user\n.RData\n.Rhistory\n.DS_Store\n\nYou won’t interact with these either but they won’t always be fully hidden in every interface. You can add them to your .gitignore file so they don’t clutter up your repo."
   },
   {
     "objectID": "slides/Q1-W2_git-github.html#readme.md",
@@ -291,7 +291,7 @@
     "href": "slides/Q1-W2_git-github.html#key-takeaways",
     "title": "Git & GitHub",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nManage all projects with version control\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts:\n\nrepositories: folders tracked by Git\ncommits: snapshots of changes\npulls: get changes from remote repos\npushes: send changes to remote repos\n\nYour repo needs:\n\nproject files\nmetadata files\na README.md\na .gitignore file\n\nPULL when you sit down to work. COMMIT frequently as you work. PUSH when you pause or finish.\n\n\n\nVersion control is essential for managing changes in your projects\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts include repositories, commits, branches, pulls, and pushes\nA well-structured repository includes project files, metadata, a README, and a . gitignore file\nUsing Git in RStudio provides a user-friendly interface for version control tasks\nRegularly committing and pushing changes helps maintain a clear project history\n\n\n\n\n\nD2M-R I | Week 2"
+    "text": "Key Takeaways\n\nManage all projects with version control\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts:\n\nrepositories: folders tracked by Git\ncommits: snapshots of changes\npulls: get changes from remote repos\npushes: send changes to remote repos\n\nYour repo needs:\n\nproject files\nmetadata files\na README.md\na .gitignore file\n\nPULL when you sit down to work. COMMIT frequently as you work. PUSH when you pause or finish.\n\n\n\nVersion control is essential for managing changes in your projects\nGit is a powerful version control system; GitHub is a platform for hosting Git repositories\nKey Git concepts include repositories, commits, branches, pulls, and pushes\nA well-structured repository includes project files, metadata, a README, and a . gitignore file\nUsing Git in RStudio provides a user-friendly interface for version control tasks\nRegularly committing and pushing changes helps maintain a clear project history"
   },
   {
     "objectID": "slides/Q1-W2_rstudio-quarto.html#housekeeping",
@@ -347,7 +347,7 @@
     "href": "slides/Q1-W2_rstudio-quarto.html#pane-layout-custom",
     "title": "RStudio & Quarto",
     "section": "Pane Layout: Custom",
-    "text": "Pane Layout: Custom\n\n\n\n\nTop Left: Source pane (your scripts and documents)\nTop Right: Plots, Help, View\nBottom Left: Console, Terminal, Background Jobs\nBottom Right: Environment, Files, Packages, Git\n\n\n\n\n\n\n\n\nCustomize!\n\n\nI hate the default layout and always change it. You should figure out what works for you:\nTools &gt; Global Options &gt; Pane Layout\n\n\n\n\n\n\n\n\n\n\nThe layout is customizable, but this default works well for most people\nEach pane can contain multiple tabs\nYou can resize panes by dragging the borders\nYou can minimize/maximize panes\nThe layout will make more sense as we start using each component"
+    "text": "Pane Layout: Custom\n\n\n\nTop Left: Source pane (your scripts and documents)\nTop Right: Plots, Help, View\nBottom Left: Console, Terminal, Background Jobs\nBottom Right: Environment, Files, Packages, Git\n\n\n\n\n\n\n\nCustomize!\n\n\nI hate the default layout and always change it. You should figure out what works for you:\nTools &gt; Global Options &gt; Pane Layout\n\n\n\n\n\n\n\n\n\n\nThe layout is customizable, but this default works well for most people\nEach pane can contain multiple tabs\nYou can resize panes by dragging the borders\nYou can minimize/maximize panes\nThe layout will make more sense as we start using each component"
   },
   {
     "objectID": "slides/Q1-W2_rstudio-quarto.html#source-pane",
@@ -445,14 +445,14 @@
     "href": "slides/Q1-W2_rstudio-quarto.html#code-chunks",
     "title": "RStudio & Quarto",
     "section": "Code Chunks",
-    "text": "Code Chunks\n\n\n\n\nCode Chunk\n\n\n```{r}\n#| label: setup\n#| include: false\u000b\nlibrary(ggplot2)\nlibrary(dplyr)\n\nsmaller &lt;- diamonds %&gt;% \n  filter(carat &lt;= 2.5)\n```\n\n\n\nR Script Containers\n\nFenced with triple backticks and {r}\nChunk options in YAML-like format\n\nLearn about chunk options\n\nCan (should) be named with unique label option\nContain R code and comments\nExecuted in order during rendering\nOutput (text, figures) inserted into final document\n\n\n\n\n\nFenced with triple backticks and {r}\nOptional chunk options in YAML-like format\n\nUse “comment syntax”, e.g., #| option: value\n\nCan (should) be named with label option\n\nLabels must be unique!\n\nContain R code and comments\nExecuted in order during rendering\n\nObjects created are available to later chunks\nChunks can be executed independently as you work (but not when you render)\n\nOutput (text, figures) inserted into final document\n\nUnless options say otherwise"
+    "text": "Code Chunks\n\n\n\n\nCode Chunk\n\n\n```{r}\n#| label: setup\n#| include: false\u000b\nlibrary(ggplot2)\nlibrary(dplyr)\n\nsmaller &lt;- diamonds %&gt;% \n  filter(carat &lt;= 2.5)\n```\n\n\n\nR Script Containers\n\nFenced with triple backticks and {r}\nChunk options in YAML-like format\n\nLearn about chunk options\n\nCan (should) be named with unique label option\nContain R code and comments\nExecuted in order during rendering\nOutput (text, figures) inserted into final document\n\n\n\n\nFenced with triple backticks and {r}\nOptional chunk options in YAML-like format\n\nUse “comment syntax”, e.g., #| option: value\n\nCan (should) be named with label option\n\nLabels must be unique!\n\nContain R code and comments\nExecuted in order during rendering\n\nObjects created are available to later chunks\nChunks can be executed independently as you work (but not when you render)\n\nOutput (text, figures) inserted into final document\n\nUnless options say otherwise"
   },
   {
     "objectID": "slides/Q1-W2_rstudio-quarto.html#code-chunks-sourcing-external-r-scripts",
     "href": "slides/Q1-W2_rstudio-quarto.html#code-chunks-sourcing-external-r-scripts",
     "title": "RStudio & Quarto",
     "section": "Code Chunks: Sourcing External R Scripts",
-    "text": "Code Chunks: Sourcing External R Scripts\n\n\n\n\nSource Scripts\n\n\n```{r}\n#| label: source-data-cleaning\n\nsource(\"scripts/data-cleaning.R\")\n```\n\n\n\nSource .R Files\n\nChunks should do 1 and only 1 easily nameable thing\nUse source() to “inject” code from other files\nFull contents of sourced script runs as if it were in the chunk\n\nOnly works with R scripts (.R), not other file types\n\nCommon uses:\n\nSetup tasks\nPre-processing scripts\nFunction definitions\nComplex analysis\n\n\n\n\n\n\nChunks should do 1 and only 1 easily nameable thing\nLonger scripts/functions should be in separate R scripts, then source them into the document\nFull contents of sourced script runs as if it were in the chunk\n\nOnly works with R scripts (.R), not other file types\nIf the contents of the file wouldn’t run in a chunk, the file can’t be sourced into a chunk\nSetup tasks (define themes, load libraries, set default options)"
+    "text": "Code Chunks: Sourcing External R Scripts\n\n\n\n\nSource Scripts\n\n\n```{r}\n#| label: source-data-cleaning\n\nsource(\"scripts/data-cleaning.R\")\n```\n\n\n\nSource .R Files\n\nChunks should do 1 and only 1 easily nameable thing\nUse source() to “inject” code from other files\nFull contents of sourced script runs as if it were in the chunk\n\nOnly works with R scripts (.R), not other file types\n\nCommon uses:\n\nSetup tasks\nPre-processing scripts\nFunction definitions\nComplex analysis\n\n\n\n\n\nChunks should do 1 and only 1 easily nameable thing\nLonger scripts/functions should be in separate R scripts, then source them into the document\nFull contents of sourced script runs as if it were in the chunk\n\nOnly works with R scripts (.R), not other file types\nIf the contents of the file wouldn’t run in a chunk, the file can’t be sourced into a chunk\nSetup tasks (define themes, load libraries, set default options)"
   },
   {
     "objectID": "slides/Q1-W2_rstudio-quarto.html#markdown-text-content",
@@ -466,7 +466,7 @@
     "href": "slides/Q1-W2_rstudio-quarto.html#rstudio-quarto-walkthrough",
     "title": "RStudio & Quarto",
     "section": "RStudio & Quarto Walkthrough",
-    "text": "RStudio & Quarto Walkthrough\n\nCreate a new RStudio project\nView/change global options\nCreate README.md markdown file and setup.R script\nCreate Quarto manuscript.qmd document with:\n\nYAML\nChunks w/ source() and inline code\nMarkdown text with inline R code\n\nRender the Quarto document to HTML\n\n\n\n\nD2M-R I | Week 2"
+    "text": "RStudio & Quarto Walkthrough\n\nCreate a new RStudio project\nView/change global options\nCreate README.md markdown file and setup.R script\nCreate Quarto manuscript.qmd document with:\n\nYAML\nChunks w/ source() and inline code\nMarkdown text with inline R code\n\nRender the Quarto document to HTML"
   },
   {
     "objectID": "index.html",
@@ -1418,21 +1418,21 @@
     "href": "slides/Q1-W3_r-programming.html#operators-arithmetic",
     "title": "R Programming Language",
     "section": "Operators: Arithmetic",
-    "text": "Operators: Arithmetic\nArithmetic do math.\n\n\n\n\nInput: numeric data\nOutput: numeric data\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nOutput\n\n\n\n\n+\nAddition\n3 + 5\n8\n\n\n-\nSubtraction\n10 - 4\n\n\n\n*\nMultiplication\n6 * 7\n42\n\n\n/\nDivision\n20 / 4\n5\n\n\n^\nExponentiation (power)\n2 ^ 3\n8\n\n\n%%\nModulo (remainder of division)\n10 %% 3\n1"
+    "text": "Operators: Arithmetic\nArithmetic do math.\n\n\n\nInput: numeric data\nOutput: numeric data\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nOutput\n\n\n\n\n+\nAddition\n3 + 5\n8\n\n\n-\nSubtraction\n10 - 4\n\n\n\n*\nMultiplication\n6 * 7\n42\n\n\n/\nDivision\n20 / 4\n5\n\n\n^\nExponentiation (power)\n2 ^ 3\n8\n\n\n%%\nModulo (remainder of division)\n10 %% 3\n1"
   },
   {
     "objectID": "slides/Q1-W3_r-programming.html#operators-relational",
     "href": "slides/Q1-W3_r-programming.html#operators-relational",
     "title": "R Programming Language",
     "section": "Operators: Relational",
-    "text": "Operators: Relational\nRelational or comparison operators compare objects and return a logical value (TRUE or FALSE). They are a special kind of logical operator.\n\n\n\n\nInput: numeric, character, or logical data\nOutput: logical data\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nOutput\n\n\n\n\n==\nEqual to\n5 == 5\nTRUE\n\n\n!=\nNot equal to (“≠”)\n5 != 3\nTRUE\n\n\n&gt;\nGreater than\n7 &gt; 4\nTRUE\n\n\n&lt;\nLess than\n3 &lt; 8\nTRUE\n\n\n&gt;=\nGreater than or equal to\n6 &gt;= 6\nTRUE\n\n\n&lt;=\nLess than or equal to\n2 &lt;= 5\nTRUE\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning: '==' != '='\n\n\nThe == operator checks for equality, while = is an (argument) assignment operator."
+    "text": "Operators: Relational\nRelational or comparison operators compare objects and return a logical value (TRUE or FALSE). They are a special kind of logical operator.\n\n\n\nInput: numeric, character, or logical data\nOutput: logical data\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nOutput\n\n\n\n\n==\nEqual to\n5 == 5\nTRUE\n\n\n!=\nNot equal to (“≠”)\n5 != 3\nTRUE\n\n\n&gt;\nGreater than\n7 &gt; 4\nTRUE\n\n\n&lt;\nLess than\n3 &lt; 8\nTRUE\n\n\n&gt;=\nGreater than or equal to\n6 &gt;= 6\nTRUE\n\n\n&lt;=\nLess than or equal to\n2 &lt;= 5\nTRUE\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning: '==' != '='\n\n\nThe == operator checks for equality, while = is an (argument) assignment operator."
   },
   {
     "objectID": "slides/Q1-W3_r-programming.html#operators-logical",
     "href": "slides/Q1-W3_r-programming.html#operators-logical",
     "title": "R Programming Language",
     "section": "Operators: Logical",
-    "text": "Operators: Logical\nLogical operators combine and modify boolean values (TRUE or FALSE).\n\n\n\n\nInput: logical data\nOutput: logical data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nOutput\n\n\n\n\n&\n“and”: both sides of the operators evaluate to TRUE\nTRUE & FALSE\nFALSE\n\n\n|\n“or”: at least one side of the operator evaluates to TRUE\nTRUE | FALSE\nTRUE\n\n\n!\n“not”: the opposite of something’s logical evaluation\n!TRUE\nFALSE\n\n\n\n\n\n\n\nIt helps to think of the ! as the word “not”: != is “not equal to”. !TRUE is FALSE. is.na(x) means “is x missing?” (true or false), and !is.na(x) means “is x not missing?” (true or false, the opposite of is.na(x)).\nThe & and | operators come in two flavors: single or (& and |) and double (&& and ||). Dig into this difference if you want or need to, but for most purposes, you can just use the single operators (& and |)."
+    "text": "Operators: Logical\nLogical operators combine and modify boolean values (TRUE or FALSE).\n\n\n\nInput: logical data\nOutput: logical data\n\n\n\n\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nOutput\n\n\n\n\n&\n“and”: both sides of the operators evaluate to TRUE\nTRUE & FALSE\nFALSE\n\n\n|\n“or”: at least one side of the operator evaluates to TRUE\nTRUE | FALSE\nTRUE\n\n\n!\n“not”: the opposite of something’s logical evaluation\n!TRUE\nFALSE\n\n\n\n\n\n\n\nIt helps to think of the ! as the word “not”: != is “not equal to”. !TRUE is FALSE. is.na(x) means “is x missing?” (true or false), and !is.na(x) means “is x not missing?” (true or false, the opposite of is.na(x)).\nThe & and | operators come in two flavors: single or (& and |) and double (&& and ||). Dig into this difference if you want or need to, but for most purposes, you can just use the single operators (& and |)."
   },
   {
     "objectID": "slides/Q1-W3_r-programming.html#operators-other",
@@ -1635,14 +1635,14 @@
     "href": "slides/Q1-W1_introduction.html#course",
     "title": "Introduction to D2M-R",
     "section": "Course",
-    "text": "Course\nFrom Data to Manuscript in R - Quarter 1\n\n\nPSYC/MAPS/MACS/CHDV 30550\nCourse website: d2m-r.github.io\nTextbook: Data to Manuscript in R\n\nIn early development!!"
+    "text": "Course\nFrom Data to Manuscript in R - Quarter 1\n\nPSYC/MAPS/MACS/CHDV 30550\nCourse website: d2m-r.github.io\nTextbook: Data to Manuscript in R\n\nIn early development!!"
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#people",
     "href": "slides/Q1-W1_introduction.html#people",
     "title": "Introduction to D2M-R",
     "section": "People",
-    "text": "People\n\n\n\nProfessor: Dr. Natalie Dowling\n\n\nPreferred name: Natalie or Dr. Dowling\nPronouns: she/her\nEmail: ndowling@uchicago.edu\nGitHub: @nrdowling\nOffice hours:\n\n1155 E 60th St, Rm 181\nThursdays 2-4pm by appointment - book here\nEmail to set up an alternative meeting time\n\n\n\n\n\nTeaching Assistant: Qilong Bi\n\n\nPreferred name: Qilong\nPronouns: he/him\nEmail: bql20@uchicago.edu\nGitHub: @QilongBi\nOffice hours:\n\nlocation TBA\nTuesdays 2-3:30pm (open)\n\n\n\n\n\n\nI genuinely don’t care if you call me Natalie or Dr. Dowling. I’m perfectly happy with either, so do whatever feels comfortable for you."
+    "text": "People\n\n\nProfessor: Dr. Natalie Dowling\n\nPreferred name: Natalie or Dr. Dowling\nPronouns: she/her\nEmail: ndowling@uchicago.edu\nGitHub: @nrdowling\nOffice hours:\n\n1155 E 60th St, Rm 181\nThursdays 2-4pm by appointment - book here\nEmail to set up an alternative meeting time\n\n\n\nTeaching Assistant: Qilong Bi\n\nPreferred name: Qilong\nPronouns: he/him\nEmail: bql20@uchicago.edu\nGitHub: @QilongBi\nOffice hours:\n\nlocation TBA\nTuesdays 2-3:30pm (open)\n\n\n\n\nI genuinely don’t care if you call me Natalie or Dr. Dowling. I’m perfectly happy with either, so do whatever feels comfortable for you."
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#expectations-course-goals",
@@ -1670,7 +1670,7 @@
     "href": "slides/Q1-W1_introduction.html#quarter-1",
     "title": "Introduction to D2M-R",
     "section": "Quarter 1",
-    "text": "Quarter 1\n\n\nCreate and sync a GitHub repo and R project\nBegin a full manuscript in a Quarto notebook (.qmd)\nUse R scripts and chunks to read in, clean, and wrangle data\nSource .R scripts for “background” needs\nFirst steps: Analyze and visualize your data within your Quarto notebook \nMaintain a BibTeX file with all manuscript citations\nCompose the manuscript narrative in your notebook\n1-click knit your manuscript to a publishable file format\nDynamically update and maintain your manuscript"
+    "text": "Quarter 1\n\nCreate and sync a GitHub repo and R project\nBegin a full manuscript in a Quarto notebook (.qmd)\nUse R scripts and chunks to read in, clean, and wrangle data\nSource .R scripts for “background” needs\nFirst steps: Analyze and visualize your data within your Quarto notebook \nMaintain a BibTeX file with all manuscript citations\nCompose the manuscript narrative in your notebook\n1-click knit your manuscript to a publishable file format\nDynamically update and maintain your manuscript"
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#communication-slack",
@@ -1719,14 +1719,14 @@
     "href": "slides/Q1-W1_introduction.html#academic-integrity-grading-penalties",
     "title": "Introduction to D2M-R",
     "section": "Academic Integrity: Grading Penalties",
-    "text": "Academic Integrity: Grading Penalties\n\n\n\n\nYou will not be penalized for (with disclosure):\n\n\n\nUsing AI to help you with code\nUsing code snippets from print or online resources\nCo-writing code with classmates/other humans\nUnintentionally crossing the line with AI if it is fully disclosed\n\nI will ask to you revise and resubmit without penalty\n\n\n\n\n\n\n\nYou will be penalized for:\n\n\n\nFailing to disclose any of the above\nUsing AI to generate text for ANY submitted work\nUsing text written by any human other than you, including classmates\n\nExceptions for some group projects may be granted, but must be requested in advance\n\n\n\n\n\n\n\n Submissions that do not follow these guidelines will receive a non-negotiable 0."
+    "text": "Academic Integrity: Grading Penalties\n\n\n\n\nYou will not be penalized for (with disclosure):\n\n\n\nUsing AI to help you with code\nUsing code snippets from print or online resources\nCo-writing code with classmates/other humans\nUnintentionally crossing the line with AI if it is fully disclosed\n\nI will ask to you revise and resubmit without penalty\n\n\n\n\n\n\n\nYou will be penalized for:\n\n\n\nFailing to disclose any of the above\nUsing AI to generate text for ANY submitted work\nUsing text written by any human other than you, including classmates\n\nExceptions for some group projects may be granted, but must be requested in advance\n\n\n\n\n\n\n Submissions that do not follow these guidelines will receive a non-negotiable 0."
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#academic-integrity-you-ai",
     "href": "slides/Q1-W1_introduction.html#academic-integrity-you-ai",
     "title": "Introduction to D2M-R",
     "section": "Academic Integrity: You & AI",
-    "text": "Academic Integrity: You & AI\n\n\n\n\n\nThe AIlephant in the room. This is DALL-E’s best attempt at “An elephant with the letters A and I on its ears.” Not very impressive, but I can’t blame it too much. It wasn’t a good pun to begin with.\n\n\n To see GPT’s coding skills in action, watch DougDoug force it to create Snake 2 (with mixed success).\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nIf you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nMy personal AI philosophy & Official Class Policy\n\n\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nHopefully you are using the class to make progress on a research project you are invested in. If you do not use AI wisely, you may not be “cheating” in a way that will hurt your grade, but you will be cheating yourself out of the reason you joined the class. If you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nYou can read my guide for what I personally believe are ethical and constructive uses of AI in higher education."
+    "text": "Academic Integrity: You & AI\n\n\n\n\n\nThe AIlephant in the room. This is DALL-E’s best attempt at “An elephant with the letters A and I on its ears.” Not very impressive, but I can’t blame it too much. It wasn’t a good pun to begin with.\n\n\n To see GPT’s coding skills in action, watch DougDoug force it to create Snake 2 (with mixed success).\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nIf you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nMy personal AI philosophy & Official Class Policy\n\n\nYou should only be taking this class if you want to gain practical skills that will be useful to you outside of the class.\nHopefully you are using the class to make progress on a research project you are invested in. If you do not use AI wisely, you may not be “cheating” in a way that will hurt your grade, but you will be cheating yourself out of the reason you joined the class. If you don’t care enough to actually learn the material yourself, this probably isn’t the right class for you.\nYou can read my guide for what I personally believe are ethical and constructive uses of AI in higher education."
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#grading-overview",
@@ -1775,7 +1775,7 @@
     "href": "slides/Q1-W1_introduction.html#access-and-complete-core-projects",
     "title": "Introduction to D2M-R",
     "section": "Access and Complete Core Projects",
-    "text": "Access and Complete Core Projects\n\n\nVisit the menu of core standards assignments here.\nSelect assignments that address the standards you want to demonstrate.\nUse the links on the menu to create a repo within the D2M-R GitHub organization by either:\n\nAccepting the GitHub classroom invitation (if available)\nCreating a private repo from scratch and adding in the associated files from the student hub repo\n\nComplete the assignment according to the instructions in the assignment’s README file or Quarto notebook.\nComplete the corresponding submission document (student-hub/templates)\nFinalize your assignment with a GitHub pull request.\nSubmit to the grading queue with the “Submit” form on the website.\n\n\nThere are extremely detailed instructions for how do do each step of this process in the student-hub repo, on each submission document, and on the website. Start here.\nWe’ll do a demo of what this looks like later."
+    "text": "Access and Complete Core Projects\n\nVisit the menu of core standards assignments here.\nSelect assignments that address the standards you want to demonstrate.\nUse the links on the menu to create a repo within the D2M-R GitHub organization by either:\n\nAccepting the GitHub classroom invitation (if available)\nCreating a private repo from scratch and adding in the associated files from the student hub repo\n\nComplete the assignment according to the instructions in the assignment’s README file or Quarto notebook.\nComplete the corresponding submission document (student-hub/templates)\nFinalize your assignment with a GitHub pull request.\nSubmit to the grading queue with the “Submit” form on the website.\n\nThere are extremely detailed instructions for how do do each step of this process in the student-hub repo, on each submission document, and on the website. Start here.\nWe’ll do a demo of what this looks like later."
   },
   {
     "objectID": "slides/Q1-W1_introduction.html#integrative-data-project-20pt",
@@ -1810,7 +1810,7 @@
     "href": "slides/Q1-W1_introduction.html#example-assignment",
     "title": "Introduction to D2M-R",
     "section": "Example Assignment",
-    "text": "Example Assignment\nIn the meantime, while you figure yourself out, I’m going to demo the workflow of an example assignment.\nFollow along if you’re ready to go, otherwise just watch me and do it on your own later.\n\nGo to the assignment menu and click the GitHub classroom invite for the example assignment.\nAccept the assignment and create your GitHub repo.\nClone the repo to your computer using RStudio.\nOpen the example R script in RStudio and follow the instructions to complete the assignment.\n\nEven if you don’t have the github/RStudio thing sorted yet, you should open RStudio at this point and try out the interface.\n\nSubmit the assignment for (fake) grading with a pull request and the class submission form.\n\n\n\n\n\n\n\n\nIf you’re not sure how to do something, figure it out!\n\n\nThat’s the point. Practice finding resources and solving problems on your own. If you get stuck, ask for help on Slack. Thursday we’ll talk about specific problem-solving and debugging strategies.\n\n\n\n\n\n\n\nD2M-R I | Week 1"
+    "text": "Example Assignment\nIn the meantime, while you figure yourself out, I’m going to demo the workflow of an example assignment.\nFollow along if you’re ready to go, otherwise just watch me and do it on your own later.\n\nGo to the assignment menu and click the GitHub classroom invite for the example assignment.\nAccept the assignment and create your GitHub repo.\nClone the repo to your computer using RStudio.\nOpen the example R script in RStudio and follow the instructions to complete the assignment.\n\nEven if you don’t have the github/RStudio thing sorted yet, you should open RStudio at this point and try out the interface.\n\nSubmit the assignment for (fake) grading with a pull request and the class submission form.\n\n\n\n\n\n\n\n\nIf you’re not sure how to do something, figure it out!\n\n\nThat’s the point. Practice finding resources and solving problems on your own. If you get stuck, ask for help on Slack. Thursday we’ll talk about specific problem-solving and debugging strategies."
   },
   {
     "objectID": "slides/Q1-W1_problem-solving.html#a-preface",
@@ -2034,7 +2034,7 @@
     "href": "slides/Q1-W1_problem-solving.html#minimally-reproducible-examples",
     "title": "Preventing & Solving Problems",
     "section": "Minimally Reproducible Examples",
-    "text": "Minimally Reproducible Examples\n\nMinimal: only the code necessary to reproduce the problem\nReproducible: includes any data or package dependencies\nExample: illustrates the problem clearly\n\n\n\n\n\n\n\n\nMRE Ingredients\n\n\nStackOverflow\n\n\nThe minimal and sufficient dataset used (usually not your actual data! better to use built-in data like iris or cars; run data() for more).\nMinimal and sufficient runnable code\nNecessary session and OS info, including loaded libraries and seed if used."
+    "text": "Minimally Reproducible Examples\n\nMinimal: only the code necessary to reproduce the problem\nReproducible: includes any data or package dependencies\nExample: illustrates the problem clearly\n\n\n\n\n\n\n\n\nMRE Ingredients\n\n\nStackOverflow\n\nThe minimal and sufficient dataset used (usually not your actual data! better to use built-in data like iris or cars; run data() for more).\nMinimal and sufficient runnable code\nNecessary session and OS info, including loaded libraries and seed if used."
   },
   {
     "objectID": "slides/Q1-W1_problem-solving.html#ask-the-internet",
@@ -2069,7 +2069,7 @@
     "href": "slides/Q1-W1_problem-solving.html#your-d2m-r-troubleshooting-path",
     "title": "Preventing & Solving Problems",
     "section": "YOUR D2M-R TROUBLESHOOTING PATH",
-    "text": "YOUR D2M-R TROUBLESHOOTING PATH\n\n\n\nRead relevant documentation.\n\n\n\n\n\n\n\n\nIdentify any error messages or warnings and attempt to resolve them. ️\n\n\n\n\n\n\n\n\nConfirm that your data and code are playing together.\n\n\n\n\n\n\n\n\nReview your code at a granular level (line-by-line, rubber ducking).\n\n\n\n\n\n\n\n\n\n\nIdentify as specific issues and generate specific questions.\n\n\n\n\n\n\n\n\nUse community resources (e.g., Slack, StackOverflow, Reddit) to find answers.\n\n\n\n\n\n\n\n\nEmail your TA. ️\n\n\n\n\n\n\n\n\nEmail your professor. ️\n\n\n\n\n\n\n\n\nD2M-R I | Week 1"
+    "text": "YOUR D2M-R TROUBLESHOOTING PATH\n\n\n\nRead relevant documentation.\n\n\n\n\n\n\n\n\nIdentify any error messages or warnings and attempt to resolve them. ️\n\n\n\n\n\n\n\n\nConfirm that your data and code are playing together.\n\n\n\n\n\n\n\n\nReview your code at a granular level (line-by-line, rubber ducking).\n\n\n\n\n\n\n\n\n\n\nIdentify as specific issues and generate specific questions.\n\n\n\n\n\n\n\n\nUse community resources (e.g., Slack, StackOverflow, Reddit) to find answers.\n\n\n\n\n\n\n\n\nEmail your TA. ️\n\n\n\n\n\n\n\n\nEmail your professor. ️"
   },
   {
     "objectID": "syllabus/climate.html",
@@ -2139,7 +2139,7 @@
     "href": "slides/Q1-W3_r-programming.html#function-definition",
     "title": "R Programming Language",
     "section": "Function Definition",
-    "text": "Function Definition\nAll functions have:\n\nName\nZero or more arguments (inputs)\nProcedure body (code)\nReturn value (output)\n\n\n\n# See the elements of a function by running the name of \n# the function without parentheses in the console\n\nexample.function\n\n&lt;srcref: file \"\" chars 2:21 to 9:1&gt;"
+    "text": "Function Definition\nAll functions have:\n\nName\nZero or more arguments (inputs)\nProcedure body (code)\nReturn value (output)\n\n\n\n# See the elements of a function by running the name of \n# the function without parentheses in the console\n\nexample.function\n\nfunction (arg1, arg2) \n{\n    result &lt;- arg1 + arg2\n    return(result)\n}"
   },
   {
     "objectID": "slides/Q1-W3_r-programming.html#defining-functions",
@@ -2181,7 +2181,7 @@
     "href": "slides/Q1-W3_r-programming.html#what-are-regular-expressions",
     "title": "R Programming Language",
     "section": "What are Regular Expressions?",
-    "text": "What are Regular Expressions?\nRegular expressions (regex or regexp): sequences of characters that form a search pattern, primarily used for string matching and manipulation.\n\nExamples of regex syntax:\n\n\n^Hello: matches any string that starts with “Hello”\n[aeiou]: matches any single vowel character (a, e, i, o, u)\n\\d{3}-\\d{2}-\\d{4}: matches a pattern like a US Social Security number (e.g., “123-45-6789”)\n\nor with R’s escaping: \\\\d{3}-\\\\d{2}-\\\\d{4}\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nUse tools like regex101 or RegExr to test and visualize regex patterns interactively. Just be careful about escaping rules when using R! (More info below.)\n\n\n\n\n\nRegular expressions (regex or regexp) are sequences of characters that form a search pattern. They are primarily used for string matching and manipulation, allowing you to search, match, and manipulate text based on specific patterns."
+    "text": "What are Regular Expressions?\nRegular expressions (regex or regexp): sequences of characters that form a search pattern, primarily used for string matching and manipulation.\n\nExamples of regex syntax:\n\n^Hello: matches any string that starts with “Hello”\n[aeiou]: matches any single vowel character (a, e, i, o, u)\n\\d{3}-\\d{2}-\\d{4}: matches a pattern like a US Social Security number (e.g., “123-45-6789”)\n\nor with R’s escaping: \\\\d{3}-\\\\d{2}-\\\\d{4}\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nUse tools like regex101 or RegExr to test and visualize regex patterns interactively. Just be careful about escaping rules when using R! (More info below.)\n\n\n\n\n\nRegular expressions (regex or regexp) are sequences of characters that form a search pattern. They are primarily used for string matching and manipulation, allowing you to search, match, and manipulate text based on specific patterns."
   },
   {
     "objectID": "slides/Q1-W3_r-programming.html#basic-regex-syntax",
@@ -2237,14 +2237,14 @@
     "href": "slides/Q1-W3_r-programming.html#using-regex-in-r-with-base-examples",
     "title": "R Programming Language",
     "section": "Using Regex in R (with base): Examples",
-    "text": "Using Regex in R (with base): Examples\n\n# Example strings\ntext &lt;- \"The rain in Spain stays mainly in the plain.\"\ntitle &lt;- \"My Fair Lady\"\n\n\n\n# Find which list elements contain \"ain\"\ngrep(\"ain\", c(title, text))\n\n\n[1] 2\n\n\n\n\n\n# Replace \"ain\" with \"XXX\"\ngsub(\"ain\", \"XXX\", text)\n\n\n[1] \"The rXXX in SpXXX stays mXXXly in the plXXX.\"\n\n\n\n\n\n# Check if the string starts with \"The\"\ngrepl(\"^The\", text)\n\n\n[1] TRUE"
+    "text": "Using Regex in R (with base): Examples\n\n# Example strings\ntext &lt;- \"The rain in Spain stays mainly in the plain.\"\ntitle &lt;- \"My Fair Lady\"\n\n\n\n# Find which list elements contain \"ain\"\ngrep(\"ain\", c(title, text))\n\n\n[1] 2\n\n\n\n\n# Replace \"ain\" with \"XXX\"\ngsub(\"ain\", \"XXX\", text)\n\n\n[1] \"The rXXX in SpXXX stays mXXXly in the plXXX.\"\n\n\n\n\n# Check if the string starts with \"The\"\ngrepl(\"^The\", text)\n\n\n[1] TRUE"
   },
   {
     "objectID": "slides/Q1-W3_r-programming.html#using-regex-in-r-with-stringr-examples",
     "href": "slides/Q1-W3_r-programming.html#using-regex-in-r-with-stringr-examples",
     "title": "R Programming Language",
     "section": "Using Regex in R (with stringr): Examples",
-    "text": "Using Regex in R (with stringr): Examples\n\n# Load stringr package for string manipulation\nlibrary(stringr)\n\n# Example strings\ntext &lt;- \"The rain in Spain stays mainly in the plain.\"\ntitle &lt;- \"My Fair Lady\"\n\n\n\n# Find which list elements contain \"ain\"\nstr_which(c(title, text), \"ain\")\n\n\n[1] 2\n\n\n\n\n\n# Replace \"ain\" with \"XXX\"\nstr_replace_all(text, \"ain\", \"XXX\")\n\n\n[1] \"The rXXX in SpXXX stays mXXXly in the plXXX.\"\n\n\n\n\n\n# Check if the string starts with \"The\"\nstr_detect(text, \"^The\")\n\n\n[1] TRUE"
+    "text": "Using Regex in R (with stringr): Examples\n\n# Load stringr package for string manipulation\nlibrary(stringr)\n\n# Example strings\ntext &lt;- \"The rain in Spain stays mainly in the plain.\"\ntitle &lt;- \"My Fair Lady\"\n\n\n\n# Find which list elements contain \"ain\"\nstr_which(c(title, text), \"ain\")\n\n\n[1] 2\n\n\n\n\n# Replace \"ain\" with \"XXX\"\nstr_replace_all(text, \"ain\", \"XXX\")\n\n\n[1] \"The rXXX in SpXXX stays mXXXly in the plXXX.\"\n\n\n\n\n# Check if the string starts with \"The\"\nstr_detect(text, \"^The\")\n\n\n[1] TRUE"
   },
   {
     "objectID": "slides/Q1-W3_r-programming.html#control-flow",
@@ -2265,7 +2265,7 @@
     "href": "slides/Q1-W3_r-programming.html#r-programming-1",
     "title": "R Programming Language",
     "section": "R Programming",
-    "text": "R Programming\n\nIndexing and Subsetting: selecting specific elements from data structures using position or name\nEnvironments: data structures that store scoped variable bindings, including global and local environments\nControl Flow: managing the order of code execution using\n\nConditional statements (if, if...else)\nConditional functions (ifelse(), case_when())\nfor loops: iterate over a known, finite sequence\nwhile loops: iterate while a condition is TRUE\n\nRegular Expressions (regex): sequences of characters forming search patterns for string matching and manipulation\n\nBasic syntax includes symbols like ., ^, $, *, +, ?, [], |, ()\nEscaping special characters with backslashes (\\), using double backslashes (\\\\) in R strings\nUse regex in R with base grep-style functions or stringr str_-style functions\n\n\n\n\n\nD2M-R I | Week 3"
+    "text": "R Programming\n\nIndexing and Subsetting: selecting specific elements from data structures using position or name\nEnvironments: data structures that store scoped variable bindings, including global and local environments\nControl Flow: managing the order of code execution using\n\nConditional statements (if, if...else)\nConditional functions (ifelse(), case_when())\nfor loops: iterate over a known, finite sequence\nwhile loops: iterate while a condition is TRUE\n\nRegular Expressions (regex): sequences of characters forming search patterns for string matching and manipulation\n\nBasic syntax includes symbols like ., ^, $, *, +, ?, [], |, ()\nEscaping special characters with backslashes (\\), using double backslashes (\\\\) in R strings\nUse regex in R with base grep-style functions or stringr str_-style functions"
   },
   {
     "objectID": "slides/Q1-W3_r-programming.html#environments",
@@ -2308,5 +2308,516 @@
     "title": "R Programming Language",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nAlso complex numbers and raw vectors, rarely used in practice.↩︎\nCore tidyverse packages include: ggplot2, dplyr, tidyr, readr, purrr, tibble, stringr, lubridate, and forcats.↩︎"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#lecture-planning",
+    "href": "slides/Q1-W4_tidyverse-1.html#lecture-planning",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Lecture Planning",
+    "text": "Lecture Planning\n\nWelcome to the Tidyverse!\n\nIntroduction to the Tidyverse & tidy data\n\nOverview of the tidy ecosystem\nTidy data principles\nCore packages in the Tidyverse and general functions\nTerminology\n\nImporting and exporting with readr\n\nOverview\n\nTabular data - what counts?\n\nFile types\nR objects, including tibbles\n\nReading, writing, rereading (intermediate datasets)\n\nReading data with read_* functions\nWriting data with write_* functions\nOther packages\n\nreadxl for Excel files\nhaven for SPSS, SAS, and Stata files\ngooglesheets4 for Google Sheets\njsonlite for JSON files\nDBI and dbplyr for databases\n\nHandling common import/export issues\n\nData manipulation with dplyr\n\nIntroduction to dplyr\n\nthe points of pipelines (highly readable, but verbose)\nThe pipe operator (%&gt;%) and magrittr\nChaining operations with pipes\n\nSelecting data\n\nselect, rename\nfilter\narrange\n\nManipulating data\n\nmutate\nsummarize\ngroup_by\ndistinct\ncount\n\ndplyr practice\n\nData tidying with tidyr\n\nWhat counts as “tidying” data?\n\nRemember what “tidy” means in the tidyverse\nTidying is reshaping and systematically cleaning data\n\nReshape data\n\npivot_longer\npivot_wider\ncast, melt, gather, spread, etc.\n\nCombine and split cells\n\nunite\nseparate functions\n\nExpand tables\n\nexpand\ncomplete\n\nHandle missing values\n\ndrop_na\nfill\nreplace_na\n\nAdvanced: Nested data\n\nWhat is nested data and why might you use it?\nWe’re not going to cover this in D2MR, but tidyr has functions for creating, reshaping, and transforming nested data"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#what-makes-data-tidy",
+    "href": "slides/Q1-W4_tidyverse-1.html#what-makes-data-tidy",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "What Makes Data “Tidy”?",
+    "text": "What Makes Data “Tidy”?\n\n\n\n\n\n\n\n\n\nIllustrations from the Openscapes blog Tidy Data for reproducibility, efficiency, and collaboration by Julia Lowndes and Allison Horst"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#messy-vs.-tidy-example",
+    "href": "slides/Q1-W4_tidyverse-1.html#messy-vs.-tidy-example",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Messy vs. Tidy: Example",
+    "text": "Messy vs. Tidy: Example\n\n\n\n\n\n\n\n\n\n\n\n\n\nThese tables hold exactly the same data!\n\n\nWhat are the differences? What are the advantages of each?\n\n\n\n\n\n\n\n\n\nmm.raw\n\n# A tibble: 30 × 8\n     Bag   Red Green  Blue Orange Yellow Brown Weight\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1     1    15     9     3      3      9    19   49.8\n 2     2     9    17    19      3      3     8   49.0\n 3     3    14     8     6      8     19     4   50.4\n 4     4    15     7     3      8     16     8   49.2\n 5     5    10     3     7      9     22     4   47.6\n 6     6    12     7     6      5     17    11   49.8\n 7     7     6     7     3      6     26    10   50.2\n 8     8    14    11     4      1     14    17   51.7\n 9     9     4     2    10      6     18    18   48.4\n10    10     9     9     3      9      8    15   46.2\n# ℹ 20 more rows\n\n\n\n\n\nmm.tidy\n\n# A tibble: 180 × 4\n     Bag Color  Number Bag_Weight\n   &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;      &lt;dbl&gt;\n 1     1 Red        15       49.8\n 2     1 Green       9       49.8\n 3     1 Blue        3       49.8\n 4     1 Orange      3       49.8\n 5     1 Yellow      9       49.8\n 6     1 Brown      19       49.8\n 7     2 Red         9       49.0\n 8     2 Green      17       49.0\n 9     2 Blue       19       49.0\n10     2 Orange      3       49.0\n# ℹ 170 more rows\n\n\n\n\n\n\n\nThat messy data looks pretty clean to me…\n\n\nIt is clean! It’s just not tidy."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#messy-data-clarification",
+    "href": "slides/Q1-W4_tidyverse-1.html#messy-data-clarification",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "“Messy” Data Clarification",
+    "text": "“Messy” Data Clarification\n\n“Messy” data: any alternative, conventional way of organizing information\nmessy ≠ bad (except in the tidyverse context)\n\nData wrangling starts with reading your data, then prepping it for visualization & analysis\nTo use tidyverse packages, this prepping includes tidying messy data\nThis can be shockingly complicated and time-consuming!"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#messy-clean-tidy",
+    "href": "slides/Q1-W4_tidyverse-1.html#messy-clean-tidy",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Messy, Clean, Tidy",
+    "text": "Messy, Clean, Tidy\n\n\n\n\n\n\nMessy data:\n\n\n\n\nmm.raw\n\n# A tibble: 30 × 8\n     Bag   Red Green  Blue Orange Yellow Brown Weight\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1     1    15     9     3      3      9    19   49.8\n 2     2     9    17    19      3      3     8   49.0\n 3     3    14     8     6      8     19     4   50.4\n 4     4    15     7     3      8     16     8   49.2\n 5     5    10     3     7      9     22     4   47.6\n 6     6    12     7     6      5     17    11   49.8\n 7     7     6     7     3      6     26    10   50.2\n 8     8    14    11     4      1     14    17   51.7\n 9     9     4     2    10      6     18    18   48.4\n10    10     9     9     3      9      8    15   46.2\n# ℹ 20 more rows\n\n\n\n\n\n\n\n\n\nAlso messy data:\n\n\n\n\nmm.messy\n\n# A tibble: 39 × 8\n   ID    RED   X     GREEN WT.OZ    Blue  Orannge Ylw. \n   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;\n 1 \"1 \"  \"15\"  \"19 \" \"9 \"  \"49.79 \" \"3 \"  \"3 \"    \"9 \" \n 2 \"1 \"  \"15\"  \"19 \" \"9 \"  \"49.79 \" \"3 \"  \"3 \"    \"9 \" \n 3 \"2 \"  \"9\"   \"8 \"  \"17 \" \"48.98 \" \"19 \" &lt;NA&gt;    \"3 \" \n 4 \"3 \"   &lt;NA&gt; \"4 \"  \"8 \"  \"50.4 \"  \"6 \"  \"8 \"    \"19 \"\n 5 \"4 \"  \"15 \" \"8 \"  \"7 \"  \"49.16 \"  &lt;NA&gt; \"8 \"    \"16 \"\n 6 \"5\"   \"10 \" \"4 \"  \"3 \"  \"47.61 \" \"7 \"  &lt;NA&gt;     &lt;NA&gt;\n 7 \"6 \"  \"12 \" \"11 \" \"7 \"  \"49.8\"   \"6 \"  \"5 \"    \"17 \"\n 8 \"7 \"  \"6 \"  \"10 \" \"7 \"  \"50.23 \" \"3 \"  \"6 \"    \"26 \"\n 9 \"8 \"  \"14 \" \"17 \" \"11 \" \"51.68 \" \"4 \"  &lt;NA&gt;    \"14 \"\n10 \"8 \"   &lt;NA&gt; \"17 \" \"11 \" \"51.68 \" \"4 \"  \"1 \"    \"14 \"\n# ℹ 29 more rows\n\n\n\n\n\n\n\n\nmessy ≠ bad (except in the tidyverse context)\n\nData wrangling starts with reading your data, then prepping it for visualization & analysis\nTo use tidyverse packages, this prepping includes tidying messy data\nThis can be shockingly complicated and time-consuming!"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#data-preparation-terms",
+    "href": "slides/Q1-W4_tidyverse-1.html#data-preparation-terms",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Data Preparation Terms",
+    "text": "Data Preparation Terms\n\n\n\n\n\n\n\n\n\n\n\nProcess\nStart State\nGoal\nEnd State\nExamples\n\n\n\n\nData Cleaning:  Error correction\nRaw data\nAccuracy, consistency, legibility\nClean data, not yet specialized\nRemoving duplicate dataCorrecting syntax errorsFixing typosHandling missing valuesChange data types\n\n\nData Wrangling:  Data preparation\nClean data\nUsability for medium-scope purpose\nInterpretable and specialized data, not yet analyzable\nPreparing for narrow use casesGrouping and summarizingTransforming variables or values\n\n\nData Transformation:  Data restructuring\nInterpretable data\nUsability for narrow-scope tasks\nAnalyzable and visualizable data\nReshaping long ↔︎ wideGenerating new data-based variablesMerging datasetsEliminating unnecessary data\n\n\n\n\n\n\nYou use them differently in the core project instructions!\n\n\nThose are the same thing!\n\n\nThat’s not what I learned!\n\n\nOK FINE. Yes. You’re all correct. You’re also all incorrect. Honestly it doesn’t really matter. Just mess with your data until they are usable. Call it what you want as long as it works."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#terminology-confusion",
+    "href": "slides/Q1-W4_tidyverse-1.html#terminology-confusion",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Terminology Confusion",
+    "text": "Terminology Confusion\n\n“You put cleaning/wrangling tasks in the opposite wrangling/cleaning mini-projects!”\n\n\n“Those are the same thing.”\n\n\n“That’s not what I learned.”\n\n\nOK FINE. Yes. You’re all correct.\nYou’re also all incorrect.\nHonestly it doesn’t really matter.\nJust mess with your data until they are usable. Call it what you want as long as it works."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#core-tidyverse-packages",
+    "href": "slides/Q1-W4_tidyverse-1.html#core-tidyverse-packages",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Core Tidyverse Packages",
+    "text": "Core Tidyverse Packages\n\n\ntibble\nreimagine the dataframe!\n\nreadr\neasily import and export tabular data\n\ndplyr\na grammar of data manipulation\n\ntidyr\ntidy your messy data\n\nggplot2\na grammar of graphics\n\n\n\npurrr\nenhancements for R’s functional programming\n\nstringr\nsimplify working with strings\n\nforcats\nsimplify working with factors"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#core-tidyverse-packages-week-3-focus",
+    "href": "slides/Q1-W4_tidyverse-1.html#core-tidyverse-packages-week-3-focus",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Core Tidyverse Packages: Week 3 Focus",
+    "text": "Core Tidyverse Packages: Week 3 Focus\n\n\ntibble ✅\nreimagine the dataframe!\n\nreadr ✅\neasily import and export tabular data\n\ndplyr ✅\na grammar of data manipulation\n\ntidyr\ntidy your messy data\n\nggplot2\na grammar of graphics"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#tibbles",
+    "href": "slides/Q1-W4_tidyverse-1.html#tibbles",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Tibbles",
+    "text": "Tibbles\n\nLike base R’s data.frame structure but better\nTibbles are also data.frames\nTidyverse package(s) work with tibbles, not base data.frames"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#readr-import-tibbles",
+    "href": "slides/Q1-W4_tidyverse-1.html#readr-import-tibbles",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "readr: Import Tibbles",
+    "text": "readr: Import Tibbles\nFigure out which import function you need for your data:\n\nField separators?\nNon-tabular data?\nMultiple sheets?\nCheck that your data file is in a sensible directory and note the path to your file\n\n\n\n\n\n\n\nFile Organization Best Practices\n\n\n\nALL data in your repo\nRaw, protected data in a localonly/ dir\nWrangled or sourced data in git-managed directory"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#read_-functions",
+    "href": "slides/Q1-W4_tidyverse-1.html#read_-functions",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "read_* Functions",
+    "text": "read_* Functions\n# Common readr functions\nread_csv()    # Comma separated values\nread_tsv()    # Tab separated values\nread_delim()  # Any delimiter\nread_fwf()    # Fixed width files\nread_table()  # Whitespace separated\n\n\n\n\n\n\n\nChoose your decimal: read_csv vs read_csv2\n\n\n\nMost English-speaking countries and countries in Asia use the period as decimal mark (csv)\nMost non-English European countries use a comma instead (csv2)"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#bonus-readxl-googlesheets4",
+    "href": "slides/Q1-W4_tidyverse-1.html#bonus-readxl-googlesheets4",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "BONUS: readxl & googlesheets4",
+    "text": "BONUS: readxl & googlesheets4\n\n\n\n\n\n\nNote\n\n\nComplementary packages to readr\n\n\n\n\nMimic readr’s read_* functions\nNot tidyverse packages\nInstall and load them separately\n\n# readxl for Excel files\nlibrary(readxl)\nread_excel(\"data.xlsx\")\n\n# googlesheets4 for Google Sheets\nlibrary(googlesheets4)\nread_sheet(\"spreadsheet_url\")"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#importing-with-readr",
+    "href": "slides/Q1-W4_tidyverse-1.html#importing-with-readr",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Importing with readr",
+    "text": "Importing with readr\n# Default behavior - guesses all data types\nread_*(file.csv, col_types = NULL)\n\n# Specify columns with cols()\nread_*(file.csv, col_types = cols(\n  my_factor = col_factor(),\n  your_string = col_character()\n))\n\n# String shortcut - needs character for each col in order\nread_*(file.csv, col_types = \"fc\")\n# Use \"?\" for columns to guess\n\n\n\n\n\n\nTip\n\n\nThe adult-data.csv dataset is in the repo for you to explore and/or use for mini-projects."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#exporting-with-readr",
+    "href": "slides/Q1-W4_tidyverse-1.html#exporting-with-readr",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "EXPORTING with readr",
+    "text": "EXPORTING with readr\nWrite intermediate datasets after:\n\nDe-identifying data\nComplex wrangling\nDropping unneeded data\nManaging empty data\n\n# readr read_*() functions have matching write_*()\nwrite_delim()\nwrite_csv()\nwrite_csv2()\nwrite_excel_csv()\nwrite_excel_csv2()\nwrite_tsv()"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#workflow-example",
+    "href": "slides/Q1-W4_tidyverse-1.html#workflow-example",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Workflow Example",
+    "text": "Workflow Example\n# Start with messy data\nmessy_df &lt;- read_xlsx(\"localpath/messy.xlsx\", \n                     sheet=\"my sheet\")\n\n# Process in R: tidy, clean, transform...\n\n# Export clean version\nclean_df &lt;- # ... your cleaning steps\nwrite_csv(clean_df, \"localpath/clean.csv\")\n\n# Later, read the clean version\nclean_df &lt;- read_csv(\"localpath/clean.csv\")"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#practice-read-write",
+    "href": "slides/Q1-W4_tidyverse-1.html#practice-read-write",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Practice: Read & Write",
+    "text": "Practice: Read & Write\n\n\n\n\n\n\nImportant\n\n\nIn-class Exercise\n\n\n\n\nPull the most recent commit of the d2mr-assessment repo\nFind the Excel spreadsheet: in-class-materials/data/MM data.xlsx\nLoad the readxl library\nUse the read_excel() function to assign the data to a tibble called mmdata\nExamine your data in the console to see if it looks correct\n\n\nOh no! Thank goodness you are smarter than a computer."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#troubleshooting",
+    "href": "slides/Q1-W4_tidyverse-1.html#troubleshooting",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\n\n\n\n\n\n\nWarning\n\n\nCommon Issues - “That folder doesn’t exist!” (and/or) “It doesn’t read/write/both where I want it to.” - Relative paths can be handled differently by read_* and write_*\n\n\n\nYour Task: - Open MM data.xlsx in Excel and examine it with your human eyeballs - What about this file creates problems when you read-in? - How would you fix the issue in Excel? (just think; don’t do it!) - Review the ?read_excel documentation - What arguments can you pass to fix the issue on read-in?"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#the-pipe-operator",
+    "href": "slides/Q1-W4_tidyverse-1.html#the-pipe-operator",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "The Pipe Operator",
+    "text": "The Pipe Operator\n\n\n\n\n\n\nNote\n\n\nmagrittr: dependency tidyverse package with one purpose – the pipe operator: %&gt;%\n\n\n\nThe %&gt;% allows you to:\n\ncreate some data %&gt;%\n\nchange it with function X %&gt;%\nchange it with function Y %&gt;%\nas much as you like\n\n\n\nHuman-readable alternative to multiple embedded functions: as much as you like(change it with function Y(change it with function X(create some data)))"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#keyboard-shortcut",
+    "href": "slides/Q1-W4_tidyverse-1.html#keyboard-shortcut",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Keyboard Shortcut",
+    "text": "Keyboard Shortcut\n\n“That’s annoying. It’s also annoying to type %&gt;% all the time.”\n\n\nFair! Fortunately, RStudio has a built-in shortcut:\nshift + cmd/ctrl + m"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#pipe-example",
+    "href": "slides/Q1-W4_tidyverse-1.html#pipe-example",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Pipe Example",
+    "text": "Pipe Example\n# Assign everything to mmdata.long\n# Using the mmdata tbl...\nmmdata.long &lt;- mmdata %&gt;%\n  # ...select three columns...\n  select(Red, Green, Blue) %&gt;%\n  # ...then make that 3 col tbl long...\n  pivot_longer(cols = c(\"Red\", \"Green\",\"Blue\"),\n               names_to = \"Color\",\n               values_to = \"Number\") %&gt;%\n  # ...then sort that tbl by new Number column...\n  arrange(Number)\n# Pipeline is over, so everything assigned to mmdata.long"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#alternative-pipe",
+    "href": "slides/Q1-W4_tidyverse-1.html#alternative-pipe",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Alternative Pipe: |>",
+    "text": "Alternative Pipe: |&gt;\n\n“I thought this was the pipe: |”\n\n\nYeah…it is. This is another one. The OR operator pipe | looks like a pipe. The tidyverse pipe %&gt;% acts like a pipe."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#dplyr-tidy-transformation",
+    "href": "slides/Q1-W4_tidyverse-1.html#dplyr-tidy-transformation",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "dplyr: Tidy Transformation",
+    "text": "dplyr: Tidy Transformation\nUse the magrittr %&gt;% pipe to make data flow smoothly through these core dplyr functions:\n\n\nfilter() - subset/sort rows\nselect() - subset/sort columns\nmutate() - create new column\n\ngroup_by() & summarize() - compute summary values\narrange() - perform operations on subgroups of data"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#filter-create-a-subset",
+    "href": "slides/Q1-W4_tidyverse-1.html#filter-create-a-subset",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "filter(): Create a Subset",
+    "text": "filter(): Create a Subset\nfilter(tbl, cond1, cond2, ...)\n\nEvaluates on observations (rows)\nConditions are logical evaluations of values\n\nspecified by column\nlogical operators: &gt;, &gt;=, &lt;, &lt;=, !=, ==\n\nReturns a tbl made up of all rows that meet all conditions\n\nExamples:\n# Condition examples\ntransport == \"bicycle\"\nhas.handlebars(transport) | transport == \"boat\"\n(has.handlebars(transport) & n.wheels(transport) &lt; 3) | \n  (requires.gas(transport) & n.wheels(transport) &gt; 3)"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#filter-under-the-hood",
+    "href": "slides/Q1-W4_tidyverse-1.html#filter-under-the-hood",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "filter(): Under the Hood",
+    "text": "filter(): Under the Hood\n# Basically 2 embedded 'for' loops\n# FOR each row in tbl\n#   FOR each conditional argument\n#     Evaluate logic\n#     IF true, return tbl (continue loop to next arg.)\n#     ELSE (if false), remove row, return tbl (continue loop)\n#   when no conditional arg. remain, move to next row\n# When no rows remain, return tbl and end loop\n\n“Can’t I just know how to use it without this explanation?”\n\n\nSure! But there’s going to be an exercise and mini-project posted next class directly related to this kind of thing, so you may want to keep it in mind."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#arrange-sort-your-rows",
+    "href": "slides/Q1-W4_tidyverse-1.html#arrange-sort-your-rows",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "arrange(): Sort Your Rows",
+    "text": "arrange(): Sort Your Rows\narrange(tbl, col1, col2, ...)\n\nSort rows\nIf 2+ variables, sorts in order given\nDefaults to ascending order\nUse desc() or - for descending order\n\n\n\n# Sort trial order within subject\narrange(data, subject, trial)\n&gt; subject  trial\n&gt; A        1\n&gt; A        2  \n&gt; B        1\n&gt; B        2\n\n# Reverse trial order\narrange(data, subject, desc(trial))\narrange(data, subject, -trial)\n&gt; subject  trial\n&gt; A        2\n&gt; A        1\n&gt; B        2\n&gt; B        1"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#select-subset-sort-rename-columns",
+    "href": "slides/Q1-W4_tidyverse-1.html#select-subset-sort-rename-columns",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "select(): Subset, Sort, & Rename Columns",
+    "text": "select(): Subset, Sort, & Rename Columns\nselect(tbl, col1, col2, ...)\nBasic Examples:\n# From tibble `data` with columns: colA, colB, colC, colD\n# Return a tibble with only colA and colB\nselect(data, colA, colB)\nselect(data, -c(colC, colD))\n\n# Rename/reorder while selecting\nselect(data, colC, column_A = colA, colB)\n\n# Select ranges\nselect(data, colA:colC)    # inclusive range between named columns\nselect(data, 1:3)          # inclusive range based on column number\nselect(data, -ends_with(\"D\"))  # use \"tidy-select\" functions"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#select-advanced-features",
+    "href": "slides/Q1-W4_tidyverse-1.html#select-advanced-features",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "select(): Advanced Features",
+    "text": "select(): Advanced Features\n\nOperates on variables (columns)\nReturns tibble that includes:\n\nargument columns\nin arg order\noptionally renamed\n\nUse hyphen to exclude columns\n\nIncludes everything else\n\n\nRelated function: rename()\n# Change column names with similar syntax\n# but don't change tibble structure\nrename(column_B = colB)  # new columns: colA, column_B, colC, colD"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#mutate-create-new-variable",
+    "href": "slides/Q1-W4_tidyverse-1.html#mutate-create-new-variable",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "mutate(): Create New Variable",
+    "text": "mutate(): Create New Variable\nmutate(tbl, newvar1 = ...)\nExamples:\n# All obs. in new column 'hello' have the same value\nmutate(data, hello = \"hey there!\")\n\n# Obs. in new column are computed by row\nmutate(data, col1_plus_col2 = col1 + col2)\nmutate(data, round_col1_div_col2 = round(col1/col2, 2))\n\n# Multiple operations in sequence\nmutate(data,\n  sum_cols = col1 + col2,\n  prop_col1 = round(col1/sum_cols, 2))\n  \n# Change values in an existing column conditionally\nmutate(data, colA = ifelse(colA == 0, NA, colA))"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#group_by-summarize-compute-summary-values",
+    "href": "slides/Q1-W4_tidyverse-1.html#group_by-summarize-compute-summary-values",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "group_by() & summarize(): Compute Summary Values",
+    "text": "group_by() & summarize(): Compute Summary Values\ngroup_by(tbl, col1, col2, ...)\nsummarize(tbl, newcol = fun(col), ...)\n\n\nWithout Grouping:\n# Average all values in score column\nsummarize(data, mean_score = mean(score))\n&gt; mean_score\n&gt; 20\n\nWith Grouping:\n# Average score for each subject\ngroup_by(data, subject) %&gt;%\n  summarize(sub_mean_score = mean(score),\n           sub_first_score = first(score))\n&gt; subject  sub_mean_score  sub_first_score\n&gt; A        18              17\n&gt; B        22              20"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#advanced-grouping",
+    "href": "slides/Q1-W4_tidyverse-1.html#advanced-grouping",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Advanced Grouping",
+    "text": "Advanced Grouping\n# Grouping by multiple columns creates summary for each \n# unique combination of values\ngroup_by(data, subject, condition) %&gt;%\n  summarize(sc_mean_score = mean(score))\n&gt; subject  condition  sub_mean_score\n&gt; A        1          17\n&gt; A        2          19\n&gt; B        1          24\n&gt; B        2          20\n\n\n\n\n\n\nNote\n\n\n\nsummarize() computes across obs. in a variable\nSummarizing without grouping computes across all data\ngroup_by() breaks observations into subsets\nReturns tbl with only new summary columns and any grouping columns\n\nFYI: summarize() == summarise()"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#just-a-preview",
+    "href": "slides/Q1-W4_tidyverse-1.html#just-a-preview",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Just a Preview…",
+    "text": "Just a Preview…\nThe binding/merging/joining functions in the tidyverse are part of dplyr, so I’m adding reference slides here.\nThey make more sense to talk about together with the tidyr functions next class, so we’ll skip these for now and come back to them."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#bind-rows",
+    "href": "slides/Q1-W4_tidyverse-1.html#bind-rows",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Bind Rows",
+    "text": "Bind Rows\nAppend rows of one dataframe after the last row of another\n\n\nbase::rbind() - dataframes must have exactly the same columns in the same order\n\ndplyr::bind_rows() - dataframes can have different column structures, missing values will be treated as NA\n\n\n\n\n\n\n\nTip\n\n\nWhat’s with the base:: and dplyr:: bits?\nIt’s a shortcut to specify what package the function comes from. Usually not necessary in your actual code, but it can come in handy when: 1) you don’t have that package loaded and you just need that single specific function or 2) you have multiple packages loaded that define that function and you want to specify which of them to use."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#bind-columns",
+    "href": "slides/Q1-W4_tidyverse-1.html#bind-columns",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Bind Columns",
+    "text": "Bind Columns\nAppend columns of one dataframe after the last column of another\n\n\nbase::cbind() - dataframes must have the same number of rows\n\ndplyr::bind_cols() - dataframes must have the same number of rows\n\n\n“If they work the same way, which should I use?”\n\n\nNeither! Use joins instead."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#merge-data-with-_join-functions",
+    "href": "slides/Q1-W4_tidyverse-1.html#merge-data-with-_join-functions",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Merge Data with *_join() Functions",
+    "text": "Merge Data with *_join() Functions\n\n\nleft_join() - includes all the rows of x and only the rows of y that have matches in x\nright_join() - includes all the rows of y and only the rows of x that have matches in y\n\ninner_join() - includes only rows present in both x and y\nfull_join() - includes all rows present in either x or y, matched where possible\n\n\n\n\n\n\n\nTip\n\n\nSee r4ds Chapter 19: Joins for more explanation"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#join-syntax",
+    "href": "slides/Q1-W4_tidyverse-1.html#join-syntax",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "*_join() Syntax",
+    "text": "*_join() Syntax\n*_join(left.tbl, right.tbl, by = ...)\n# replace * with left, right, inner, or full\nExamples:\n# These are all identical\nleft_join(band_members, band_instruments)\n\nleft_join(band_members, band_instruments, \n         by = join_by(name))\n\nleft_join(band_members, band_instruments, \n         by = \"name\")\n\n# Specify to match columns with different names:\nby = join_by(name == artist)\n\n# Specify multiple columns to match:\njoin_by(a, c == d)"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#try-it-out",
+    "href": "slides/Q1-W4_tidyverse-1.html#try-it-out",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "💻 Try It Out",
+    "text": "💻 Try It Out\nUsing the mmdata tibble you created earlier, experiment with:\n\nfilter() - Create subsets based on conditions\nselect() - Choose specific columns\nmutate() - Create new variables\narrange() - Sort your data\ngroup_by() & summarize() - Calculate group statistics"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#w3c2-readwrite-practice-1-of-2",
+    "href": "slides/Q1-W4_tidyverse-1.html#w3c2-readwrite-practice-1-of-2",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "💻 W3C2: Read/Write Practice (1 of 2)",
+    "text": "💻 W3C2: Read/Write Practice (1 of 2)\nIn the first code chunk of a new notebook (R/quarto):\n\nUse readr functions to read in a simple tabular dataset (.csv/.tsv) using a relative path and assign to a new object\nUse tidyverse functions to transform the data in some way (can be very simple as long as it creates recognizable changes)\nUse readr functions to write your transformed data to a .csv file in the same location as your original data file (give it a unique file name)\nExamine the assigned objects and written files; use one of the objects in a second code chunk\nMake necessary changes if it does not work as expected\n\nReplicate the script above in a new .R script in the same directory as your notebook\nIn a new chunk, source the .R script, again examine objects/files and make changes so things work as expected\n\n\n\n\n\n\nNote\n\n\nAssessed: 9, 10, 22; Unassessed: 2, 4, 10"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#w3c2-readwrite-practice-2-of-2",
+    "href": "slides/Q1-W4_tidyverse-1.html#w3c2-readwrite-practice-2-of-2",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "💻 W3C2: Read/Write Practice (2 of 2)",
+    "text": "💻 W3C2: Read/Write Practice (2 of 2)\nFind or create a variety of datasets to repeat the process:\n\nDifferent file types: .csv, google sheets, .xlsx, .sav, etc.\nDifferent “extra” stuff: multiple tabs, rich formatting, non-data text, header(s), etc.\nDifferent combinations of file locations: notebook and script in root folder, one in root folder and one in a subdirectory, both in two different subdirectories, writing/reading files in a lower-level subdirectory, writing/reading files in a higher-level subdirectory, etc.\n\nPay attention to: - Which packages are necessary to run which functions - Which functions include which arguments (and the default argument values) - Differences in relative paths depending on function and file locations"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#w3c2-data-cleaning",
+    "href": "slides/Q1-W4_tidyverse-1.html#w3c2-data-cleaning",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "💻 W3C2: Data Cleaning",
+    "text": "💻 W3C2: Data Cleaning\n\n\n\n\n\n\nImportant\n\n\nImportant: These exercises include functions from tidyverse packages we will cover next class. Look ahead with the resources for next class or do what you can now and finish it next week.\n\n\n\nFind three data cleaning exercises (1 walkthrough example; 2 structured assignments) in the d2mr-assessment repo. Complete the mini-projects directly in the existing .qmd like a digital workbook.\n\nData cleaning walkthrough: Clean the iris Dataset (example, not a mini-project to complete/submit)\nLevel 1 Data Cleaning: Clean the mtcars Dataset - Work with a simple dataset, focus on basic data cleaning tasks\nLevel 2 Data Cleaning: Clean the midwest Dataset - Work with a more complex dataset, perform more involved cleaning tasks\n\n\n\n\n\n\n\nNote\n\n\nAssessed: 5, 6, 8, 9, 10, 11, 12; Unassessed: 1, 2, 9, 12, 13"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#w3c2-group-uncleaning",
+    "href": "slides/Q1-W4_tidyverse-1.html#w3c2-group-uncleaning",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "💻 W3C2: Group “Uncleaning”",
+    "text": "💻 W3C2: Group “Uncleaning”\nWork together with a classmate to each “unclean” a dataset for the other(s) to clean. This will work best in pairs so that you can swap datasets but you can adjust things to do in a small group if you prefer.\n\nEach partner chooses a publicly available dataset (recommend the built-in ones)\nIn a script or notebook, transform your df to make it messy and save to a .csv\nSwap your new messy data files\nIn a (different) script or notebook, clean your partner’s messy data\nDiscuss the process with your partner/group\n\nAssociated mini-project: d2mr-assessment/01_data-cleaning/03_group-unclean\n\n\n\n\n\n\nNote\n\n\nAssessed: 5, 6, 8, 9, 10, 11, 12; Unassessed: 1, 2, 5, 9, 14, 22"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#todays-class",
+    "href": "slides/Q1-W4_tidyverse-1.html#todays-class",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Today’s Class",
+    "text": "Today’s Class\ntidyverse.org: https://www.tidyverse.org/\nreadr: - documentation & cheatsheet - r4ds: 7 – Data import\ntibble: - documentation & r4ds: tibbles\ndplyr: - documentation & cheatsheet - r4ds: 3 – Data transformation"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#next-class",
+    "href": "slides/Q1-W4_tidyverse-1.html#next-class",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Next Class",
+    "text": "Next Class\ntidyr: - documentation & cheatsheet - tidyverse guide to tidy data - r4ds: 5 – Data tidying*\nstringr: - documentation & cheatsheet - r4ds: 14 – Strings* - r4ds: 15 – Regular expressions"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#more-resources",
+    "href": "slides/Q1-W4_tidyverse-1.html#more-resources",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "More Resources",
+    "text": "More Resources\nforcats: - documentation & cheatsheet - r4ds: 16 – Factors*\npurrr (advanced, low priority for d2mr): - documentation & cheatsheet\nQuick Help:\n?paste\n?paste0\n?filter\n?read_csv\n??read_csv  # search for functions"
+  },
+  {
+    "objectID": "slides/slide_templates.html#grouped-lists",
+    "href": "slides/slide_templates.html#grouped-lists",
+    "title": "Slide Templates",
+    "section": "Grouped Lists",
+    "text": "Grouped Lists\n\n\n1st level bullet\n\n2nd level will appear with top level\n\nAnother 1st level bullet\n\nAnother 2nd level bullet\n\n\n\n\nThis slide template uses grouped lists to show multiple levels of bullet points at once.\nDepends on javascript in the bubbles.js theme file.\nList must be wrapped in a non-incremental div."
+  },
+  {
+    "objectID": "slides/slide_templates.html#two-overlap-boxes-vertically-stacked",
+    "href": "slides/slide_templates.html#two-overlap-boxes-vertically-stacked",
+    "title": "Slide Templates",
+    "section": "Two Overlap Boxes, Vertically Stacked",
+    "text": "Two Overlap Boxes, Vertically Stacked\n\n\nTop Red Box\n\n\n\nContent for the top red box\nMore content for the top red box\n\n\n\n\n\nBottom Blue Box\n\n\n\nContent for the bottom blue box\nMore content for the bottom blue box\n\n\n\n\nThis slide template uses two overlap boxes, one stacked on top of the other. The top box is red, and the bottom box is blue."
+  },
+  {
+    "objectID": "slides/slide_templates.html#single-overlap-box-with-image-columns",
+    "href": "slides/slide_templates.html#single-overlap-box-with-image-columns",
+    "title": "Slide Templates",
+    "section": "Single Overlap Box with Image, Columns",
+    "text": "Single Overlap Box with Image, Columns\n\n\n\n\n\nLeft Column, Red Overlap Box\n\n\n\nContent for the left red box\nMore content for the left red box\n\n\n\n\n\n\n\n\nImage caption\n\n\n\n\n\n\nThis slide template uses a single overlap box in the left column, with an image in the right column.\nThe image is shifted up slightly using a negative top margin to allow for more vertical space, overlapping with title area."
+  },
+  {
+    "objectID": "slides/slide_templates.html#three-cards-in-a-horizontal-row",
+    "href": "slides/slide_templates.html#three-cards-in-a-horizontal-row",
+    "title": "Slide Templates",
+    "section": "Three Cards in a Horizontal Row",
+    "text": "Three Cards in a Horizontal Row\n\n\n\nContent to appear above the columns/cards.\n\n\n\n\n\n\n\nLeft Card Title\n\n\n\n\nBody of left card\nIncremental list\nTight margins\n\n\n\n\n\n\n\n\n\n\n\n\nRight Card Title\n\n\n\n\nBody of right card\nIncremental list\nTight margins\n\n\n\n\n\n\n\nThe .h-100 class makes the cards equal height.\nThe .lessgap class reduces the padding inside the card body.\nHeadings need to be recolored with white text for readability on dark backgrounds. This is an artifact of using Bootstrap cards for both website and revealjs. Can be corrected with additional css at some point.\nLeft card (default) is red. Right card uses .card-alt1 class for blue background."
+  },
+  {
+    "objectID": "slides/slide_templates.html#columns-with-callout-style-boxes",
+    "href": "slides/slide_templates.html#columns-with-callout-style-boxes",
+    "title": "Slide Templates",
+    "section": "Columns with Callout-Style Boxes",
+    "text": "Columns with Callout-Style Boxes\n\n\n\n\n\n\n\n⬅︎ Left Box\n\n\n\nNote style box is blue\nDefault icon hidden; custom text “icon” added\n\n\n\n\n\n\n\n\n\n\n\n➡︎ Right Box\n\n\n\nTip style box is green\nDefault icon hidden; custom text “icon” added"
+  },
+  {
+    "objectID": "slides/slide_templates.html#mixed-layout-card-list-alert",
+    "href": "slides/slide_templates.html#mixed-layout-card-list-alert",
+    "title": "Slide Templates",
+    "section": "Mixed Layout: Card, List, Alert",
+    "text": "Mixed Layout: Card, List, Alert\n\n\n\n\n\n\nCard Title\n\n\n\n\nCard body\nIncremental list\n\n\n\n\n\n\nMock Heading\n\nContent\n\n\n\nAlert Mock Heading\nThis text is in a yellow (warning) alert box.\n\n\n\n\n\nThis layout includes two columns.\nLeft: Red card, full height\nRight: Heading and list at top, yellow alert box at bottom\nSetting off the list with a literal div (not fence) is the only way I can get the spacing to work for some reason."
+  },
+  {
+    "objectID": "slides/slide_templates.html#content-with-slide-height-stacked-images",
+    "href": "slides/slide_templates.html#content-with-slide-height-stacked-images",
+    "title": "Slide Templates",
+    "section": "Content with Slide-Height Stacked Images",
+    "text": "Content with Slide-Height Stacked Images\n\nContent in the left column.\n\nApproximately half the slide width\n\nAllowing for some margin between content and images\n\n\n\n\n\n\n\n\nThis layout includes content in the left column, and two stacked images on the right side of the slide.\nThe images are absolutely positioned to fill the right side of the slide, with negative offsets to extend beyond the slide content box vertically and horizontally, approximately to edges of the slide."
+  },
+  {
+    "objectID": "slides/slide_templates.html#introduction-slide",
+    "href": "slides/slide_templates.html#introduction-slide",
+    "title": "Slide Templates",
+    "section": "Introduction Slide",
+    "text": "Introduction Slide\n\n\n\n\n\n\nBox 1 Title\n\n\n\nBox 1\nContent\n\n\n\n\n\n\n\n\nBox 2 Title\n\n\n\nBox 2\nContent\n\n\n\n\n\n\n\n\nBox 3 Title\n\n\n\nBox 3\nContent\n\n\n\n\n\n\n\n\nBox 4 Title\n\n\n\nBox 4\nContent\n\n\n\n\n\nFour side-by-side boxes of equal height and width using flexbox.\nEach has a large icon, filled box with title, and unfilled box with content.\nBox components are wrapped as classes for easier modification."
+  },
+  {
+    "objectID": "slides/slide_templates.html#sub-content-slide-with-overlap-boxes",
+    "href": "slides/slide_templates.html#sub-content-slide-with-overlap-boxes",
+    "title": "Slide Templates",
+    "section": " Sub-content Slide with Overlap Boxes",
+    "text": "Sub-content Slide with Overlap Boxes\n\nActive Topic Inactive Topic Inactive Topic Inactive Topic\n\n\n\n\n\n\nBox 1 Title\n\n\n\nTop left\nText and box appear together\n\nNon-incremental list\n\n\n\n\n\n\nBox 2 Title\n\n\n\nBottom left\nText and box appear together\n\nNon-incremental list\n\n\n\n\n\n\n\n\nBox 3 Title\n\n\n\nRight (full column)\nText and box appear together\n\nNon-incremental list\n\nBlue box\n\n\n\n\n\n\n\nThis slide template is part of a series of related slides.\nIt includes a header with an icon and topic indicators.\nThe main content area has two columns with overlap boxes.\nThe left column has two stacked boxes, and the right column has a single box.\nThe boxes use non-incremental lists to show all content at once."
+  },
+  {
+    "objectID": "slides/slide_templates.html#complex-layout",
+    "href": "slides/slide_templates.html#complex-layout",
+    "title": "Slide Templates",
+    "section": " Complex Layout",
+    "text": "Complex Layout\n\nInactive Topic Active Topic Inactive Topic Inactive Topic\n\n\n\n\n\nPriority box text, surrounded by “!!!” icons for emphasis.\n\n\n\n\n\n\nBlockquote\n— Name\n\n\nList content\nImmediately\nUnder\nthe blockquote\n\nNot a different container\n\n\n\n\n\n\n\n\nRight aligned image credit text\n\n\nThis slide template is part of a series of related slides.\nIt includes a header with an icon and topic indicators.\nThe main content area has two columns.\nThe left column has a blockquote and list as one block of content.\nThe right column has a right-aligned image.\nThe slide also includes a highlighted card at the top right for important notes, outside the columns container. The card is nudged upward to overlap with the title area.\nThis priority box can be used as an asset elsewhere."
+  },
+  {
+    "objectID": "slides/slide_templates.html#table-with-images",
+    "href": "slides/slide_templates.html#table-with-images",
+    "title": "Slide Templates",
+    "section": "Table With Images",
+    "text": "Table With Images\n\n\n\nColumn 1\n\n\nColumn 2\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\nOnly first content row needs width styling.\nEach row is a fragment for incremental reveal. All content for each row appears at once."
+  },
+  {
+    "objectID": "slides/slide_templates.html#centered-content-w-images-over-boxes",
+    "href": "slides/slide_templates.html#centered-content-w-images-over-boxes",
+    "title": "Slide Templates",
+    "section": "Centered Content w/ Images over Boxes",
+    "text": "Centered Content w/ Images over Boxes\n\n\n\n\n\n\n\n\n\n\nCentered title\n\n\nCallout box content.\nTip callout is green.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLeft box title\n\n\n\n\nContent of\nthe left\nred box.\n\n\n\n\n\n\n\n\nRight box title\n\n\n\n\nContent of\nthe right\nblue box."
+  },
+  {
+    "objectID": "slides/slide_templates.html#incremental-table-with-images",
+    "href": "slides/slide_templates.html#incremental-table-with-images",
+    "title": "Slide Templates",
+    "section": "Incremental Table With Images",
+    "text": "Incremental Table With Images\n\n\n\nColumn 1\n\n\nColumn 2\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\nOnly first content row needs width styling.\nEach row is a fragment for incremental reveal. All content for each row appears at once."
+  },
+  {
+    "objectID": "slides/slide_templates.html#simple-animated-block-non-executable",
+    "href": "slides/slide_templates.html#simple-animated-block-non-executable",
+    "title": "Slide Templates",
+    "section": "Simple Animated Block (Non-executable)",
+    "text": "Simple Animated Block (Non-executable)\n# Fragment 1\nfragment 1 &lt;- \"example code\"\n\n# Fragment 2\nfragment 2 &lt;- \"example code\"\n\n# Fragment 3\nfragment 3 &lt;- \"example code\"\n\nNon-executable code block.\nAll text visible initially, then fragments revealed in three steps."
+  },
+  {
+    "objectID": "slides/slide_templates.html#example",
+    "href": "slides/slide_templates.html#example",
+    "title": "Slide Templates",
+    "section": "Example",
+    "text": "Example\n\n\n\n\nThe quality of output of any system is determined by the quality of the input.\n\n\nImmaculate code can’t make up for horrendous data.\nNeither code nor data can fix terrible human decisions."
+  },
+  {
+    "objectID": "slides/slide_templates.html#matched-fragments",
+    "href": "slides/slide_templates.html#matched-fragments",
+    "title": "Slide Templates",
+    "section": "Matched Fragments",
+    "text": "Matched Fragments\n\n\n\n\nSlide has two columns, complex styling in each, and animated fragments of code matched to animated fragments of lists in the other column.\n\nStyled blue: unstyled text\n\n\nStyled red: unstyled text\n\n\nStyled yellow: unstyled text\n\n\nStyled cyan: unstyled text\n\n\nStyled orange: unstyled text\n\n\n\n\nTitle of the bordered box\nHeading 4 uses fences\nText looks the same as outside this div.\n…grayed out text…\nExample non-executable code for animation\nEverything begins grayed out.\ninner_join(\n  x,\n  y,\n  by = NULL,\n  copy = FALSE,\n  suffix = c(\".x\", \".y\"),\n  ...,\n  keep = NULL\n)\n\nleft_join(\n  x,\n  y,\n  by = NULL,\n  copy = FALSE,\n  suffix = c(\".x\", \".y\"),\n  ...,\n  keep = NULL\n)\n\n\n\n\nThis slide template uses the codefocus plugin to highlight specific lines of code in sync with corresponding list items.\nEach list item is a fragment that highlights specific lines in the code block when revealed.\nThe code block is styled with a border and background color to distinguish it from the rest of the slide content."
+  },
+  {
+    "objectID": "slides/slide_templates.html#function-documentation-inner_join",
+    "href": "slides/slide_templates.html#function-documentation-inner_join",
+    "title": "Slide Templates",
+    "section": "Function Documentation: inner_join()",
+    "text": "Function Documentation: inner_join()\n\n\n\n\nSlide has two columns, complex styling in each, and animated fragments of code matched to animated fragments of lists in the other column.\nStyled blue: unstyled text\nStyled red: unstyled text\nStyled yellow: unstyled text\nStyled cyan: unstyled text\nStyled orange: unstyled text\n\n\n\n\nHeading 3 Uses Tags\n\nHeading 4 uses fences\nText looks the same as outside this div.\n…grayed out text…\nExample non-executable code for animation\ninner_join(\n  x,\n  y,\n  by = NULL,\n  copy = FALSE,\n  suffix = c(\".x\", \".y\"),\n  ...,\n  keep = NULL\n)\n\nleft_join(\n  x,\n  y,\n  by = NULL,\n  copy = FALSE,\n  suffix = c(\".x\", \".y\"),\n  ...,\n  keep = NULL\n)"
+  },
+  {
+    "objectID": "slides/slide_templates.html#text-w-overlapping-image-fragments",
+    "href": "slides/slide_templates.html#text-w-overlapping-image-fragments",
+    "title": "Slide Templates",
+    "section": "Text w/ overlapping image fragments",
+    "text": "Text w/ overlapping image fragments\n\n\n\n\n\n\n\n\n\n\nErrors must be addressed\n\n\nR says: “Something has gone wrong. I cannot and will not move forward.”\n\n\n\n\n\n\n\n\n\n\n\nWarnings should usually be addressed\n\n\nR says: “This doesn’t look right but I’m just a robot what do I know.”\n\n\n\n\n\n\n\n\n\n\n\nMessages are informational only\n\n\nR says: “No problem, done! But just FYI…”\nNot all alarming words and big red Xs are problems.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe object subjects doesn’t exist. The object’s name is subject.\nThe string \"NA\" doesn’t look like a numeral, but that’s ok because it’s not supposed to become a numeral.\nThe functions filter() and lag() were already defined when the stats package was loaded so loading dplyr now overrides them. If we want the stats versions of these, we need to load that package after dplyr."
+  },
+  {
+    "objectID": "slides/slide_templates.html#callouts-with-stacked-images",
+    "href": "slides/slide_templates.html#callouts-with-stacked-images",
+    "title": "Slide Templates",
+    "section": "Callouts with stacked images",
+    "text": "Callouts with stacked images\n\n\n\n\n\n\n\n\n\n\nWarning callout\n\n\nWarning callout is red, with a yield sign.\n\n\n\n\n\n\n\n\n\n\n\nCaution callout\n\n\nCaution callout is orange with a pylon.\n\n\n\n\n\n\n\n\n\n\n\nTip callout\n\n\nTip callout is green with a light bulb.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis slide template uses callout boxes with matching stacked images.\nThe callouts and images are revealed in sync as fragments.\nCallouts appear vertically in a left column.\nImages layer on top of each other in a right column."
+  },
+  {
+    "objectID": "slides/slide_templates.html#column-text-overlapping-images",
+    "href": "slides/slide_templates.html#column-text-overlapping-images",
+    "title": "Slide Templates",
+    "section": "Column text; overlapping images",
+    "text": "Column text; overlapping images\n\n\n\nColumn 1\n\nContent\nhere\n\n\n\nColumn 2\n\nContent\nhere\n\n\n\nColumn 3\n\nContent\nhere\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis slide template uses three columns of text that appear incrementally.\nEach column corresponds to an image fragment. Images are stacked for partial overlap to allow for larger images that don’t require sustained focus."
+  },
+  {
+    "objectID": "slides/slide_templates.html#processflow-with-icons",
+    "href": "slides/slide_templates.html#processflow-with-icons",
+    "title": "Slide Templates",
+    "section": "Process/flow with icons",
+    "text": "Process/flow with icons\n\n\n\nText for box 1\n\n\n\n\n\n\n\n\nText for box 2\n\n\n\n\n\n\n\n\nText for box 3\n\n\n\n\n\n\n\n\nText for box 4\n\n\n\n\n\n\n\n\n\n\nText for box 5\n\n\n\n\n\n\n\n\nText for box 6\n\n\n\n\n\n\n\n\nText for box 7\n\n\n\n\n\n\n\n\nText for box 8"
+  },
+  {
+    "objectID": "slides/slide_templates.html#popover-centered-image",
+    "href": "slides/slide_templates.html#popover-centered-image",
+    "title": "Slide Templates",
+    "section": "Popover Centered Image",
+    "text": "Popover Centered Image\n\n\n\n\n\n\nColumn content\n\nWith\na\nlist\n\n\n\n\n# Code that will execute\nrstudio_is_cool &lt;- paste(\"R\", \"and\", \"RStudio\", \"work\", \"together!\")\n\n# Output will appear as a fragment beneath code block\nrstudio_is_cool\n\n\n\n[1] \"R and RStudio work together!\"\n\n\n\n\n\n\n\nThis slide template uses a popover image that appears centered over the slide content.\nThe code block in the right column executes and reveals output as a fragment."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#messy-data",
+    "href": "slides/Q1-W4_tidyverse-1.html#messy-data",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "“Messy” Data",
+    "text": "“Messy” Data\n\n\n\n\n\n\nMessy data:\n\n\n\n\nmm.raw\n\n# A tibble: 30 × 8\n     Bag   Red Green  Blue Orange Yellow Brown Weight\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1     1    15     9     3      3      9    19   49.8\n 2     2     9    17    19      3      3     8   49.0\n 3     3    14     8     6      8     19     4   50.4\n 4     4    15     7     3      8     16     8   49.2\n 5     5    10     3     7      9     22     4   47.6\n 6     6    12     7     6      5     17    11   49.8\n 7     7     6     7     3      6     26    10   50.2\n 8     8    14    11     4      1     14    17   51.7\n 9     9     4     2    10      6     18    18   48.4\n10    10     9     9     3      9      8    15   46.2\n# ℹ 20 more rows\n\n\n\n\n\n\n\n\n\nAlso messy data:\n\n\n\n\nmm.messy\n\n# A tibble: 39 × 8\n   ID    RED   X     GREEN WT.OZ    Blue  Orannge Ylw. \n   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;\n 1 \"1 \"  \"15\"  \"19 \" \"9 \"  \"49.79 \" \"3 \"  \"3 \"    \"9 \" \n 2 \"1 \"  \"15\"  \"19 \" \"9 \"  \"49.79 \" \"3 \"  \"3 \"    \"9 \" \n 3 \"2 \"  \"9\"   \"8 \"  \"17 \" \"48.98 \" \"19 \" &lt;NA&gt;    \"3 \" \n 4 \"3 \"   &lt;NA&gt; \"4 \"  \"8 \"  \"50.4 \"  \"6 \"  \"8 \"    \"19 \"\n 5 \"4 \"  \"15 \" \"8 \"  \"7 \"  \"49.16 \"  &lt;NA&gt; \"8 \"    \"16 \"\n 6 \"5\"   \"10 \" \"4 \"  \"3 \"  \"47.61 \" \"7 \"  &lt;NA&gt;     &lt;NA&gt;\n 7 \"6 \"  \"12 \" \"11 \" \"7 \"  \"49.8\"   \"6 \"  \"5 \"    \"17 \"\n 8 \"7 \"  \"6 \"  \"10 \" \"7 \"  \"50.23 \" \"3 \"  \"6 \"    \"26 \"\n 9 \"8 \"  \"14 \" \"17 \" \"11 \" \"51.68 \" \"4 \"  &lt;NA&gt;    \"14 \"\n10 \"8 \"   &lt;NA&gt; \"17 \" \"11 \" \"51.68 \" \"4 \"  \"1 \"    \"14 \"\n# ℹ 29 more rows\n\n\n\n\n\n\n\n\nmessy ≠ bad (except in the tidyverse context)\n\nData wrangling starts with reading your data, then prepping it for visualization & analysis\nTo use tidyverse packages, this prepping includes tidying messy data\nThis can be shockingly complicated and time-consuming!"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#terminology-detour",
+    "href": "slides/Q1-W4_tidyverse-1.html#terminology-detour",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Terminology Detour",
+    "text": "Terminology Detour\n\n\n\n\n\n\nMessy data:\n\n\n\n\nmm.raw\n\n# A tibble: 30 × 8\n     Bag   Red Green  Blue Orange Yellow Brown Weight\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n 1     1    15     9     3      3      9    19   49.8\n 2     2     9    17    19      3      3     8   49.0\n 3     3    14     8     6      8     19     4   50.4\n 4     4    15     7     3      8     16     8   49.2\n 5     5    10     3     7      9     22     4   47.6\n 6     6    12     7     6      5     17    11   49.8\n 7     7     6     7     3      6     26    10   50.2\n 8     8    14    11     4      1     14    17   51.7\n 9     9     4     2    10      6     18    18   48.4\n10    10     9     9     3      9      8    15   46.2\n# ℹ 20 more rows\n\n\n\n\n\n\n\n\n\nAlso messy data:\n\n\n\n\nmm.messy\n\n# A tibble: 39 × 8\n   ID    RED   X     GREEN WT.OZ    Blue  Orannge Ylw. \n   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;\n 1 \"1 \"  \"15\"  \"19 \" \"9 \"  \"49.79 \" \"3 \"  \"3 \"    \"9 \" \n 2 \"1 \"  \"15\"  \"19 \" \"9 \"  \"49.79 \" \"3 \"  \"3 \"    \"9 \" \n 3 \"2 \"  \"9\"   \"8 \"  \"17 \" \"48.98 \" \"19 \" &lt;NA&gt;    \"3 \" \n 4 \"3 \"   &lt;NA&gt; \"4 \"  \"8 \"  \"50.4 \"  \"6 \"  \"8 \"    \"19 \"\n 5 \"4 \"  \"15 \" \"8 \"  \"7 \"  \"49.16 \"  &lt;NA&gt; \"8 \"    \"16 \"\n 6 \"5\"   \"10 \" \"4 \"  \"3 \"  \"47.61 \" \"7 \"  &lt;NA&gt;     &lt;NA&gt;\n 7 \"6 \"  \"12 \" \"11 \" \"7 \"  \"49.8\"   \"6 \"  \"5 \"    \"17 \"\n 8 \"7 \"  \"6 \"  \"10 \" \"7 \"  \"50.23 \" \"3 \"  \"6 \"    \"26 \"\n 9 \"8 \"  \"14 \" \"17 \" \"11 \" \"51.68 \" \"4 \"  &lt;NA&gt;    \"14 \"\n10 \"8 \"   &lt;NA&gt; \"17 \" \"11 \" \"51.68 \" \"4 \"  \"1 \"    \"14 \"\n# ℹ 29 more rows\n\n\n\n\n\n\n\n\nmessy ≠ bad (except in the tidyverse context)\n\nData wrangling starts with reading your data, then prepping it for visualization & analysis\nTo use tidyverse packages, this prepping includes tidying messy data\nThis can be shockingly complicated and time-consuming!"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#messy-is-messy",
+    "href": "slides/Q1-W4_tidyverse-1.html#messy-is-messy",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "“Messy” is messy",
+    "text": "“Messy” is messy\nMessy can either mean “not clean” or “not tidy”\n\nAlways bad: unclean + untidy (= messy)\nSometimes good: clean + untidy (= messy)\nUsually good: clean + tidy (= tidy)\n\n\n\nIt would make more sense to call it “untidy.”\n\n\nYou are not wrong."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#is-it-tidy",
+    "href": "slides/Q1-W4_tidyverse-1.html#is-it-tidy",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Is it tidy?",
+    "text": "Is it tidy?\nThe iris dataset is classically used as an example of tidy data.\n\niris\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species\n1            5.1         3.5          1.4         0.2     setosa\n2            4.9         3.0          1.4         0.2     setosa\n3            4.7         3.2          1.3         0.2     setosa\n4            4.6         3.1          1.5         0.2     setosa\n5            5.0         3.6          1.4         0.2     setosa\n6            5.4         3.9          1.7         0.4     setosa\n7            4.6         3.4          1.4         0.3     setosa\n8            5.0         3.4          1.5         0.2     setosa\n9            4.4         2.9          1.4         0.2     setosa\n10           4.9         3.1          1.5         0.1     setosa\n11           5.4         3.7          1.5         0.2     setosa\n12           4.8         3.4          1.6         0.2     setosa\n13           4.8         3.0          1.4         0.1     setosa\n14           4.3         3.0          1.1         0.1     setosa\n15           5.8         4.0          1.2         0.2     setosa\n16           5.7         4.4          1.5         0.4     setosa\n17           5.4         3.9          1.3         0.4     setosa\n18           5.1         3.5          1.4         0.3     setosa\n19           5.7         3.8          1.7         0.3     setosa\n20           5.1         3.8          1.5         0.3     setosa\n21           5.4         3.4          1.7         0.2     setosa\n22           5.1         3.7          1.5         0.4     setosa\n23           4.6         3.6          1.0         0.2     setosa\n24           5.1         3.3          1.7         0.5     setosa\n25           4.8         3.4          1.9         0.2     setosa\n26           5.0         3.0          1.6         0.2     setosa\n27           5.0         3.4          1.6         0.4     setosa\n28           5.2         3.5          1.5         0.2     setosa\n29           5.2         3.4          1.4         0.2     setosa\n30           4.7         3.2          1.6         0.2     setosa\n31           4.8         3.1          1.6         0.2     setosa\n32           5.4         3.4          1.5         0.4     setosa\n33           5.2         4.1          1.5         0.1     setosa\n34           5.5         4.2          1.4         0.2     setosa\n35           4.9         3.1          1.5         0.2     setosa\n36           5.0         3.2          1.2         0.2     setosa\n37           5.5         3.5          1.3         0.2     setosa\n38           4.9         3.6          1.4         0.1     setosa\n39           4.4         3.0          1.3         0.2     setosa\n40           5.1         3.4          1.5         0.2     setosa\n41           5.0         3.5          1.3         0.3     setosa\n42           4.5         2.3          1.3         0.3     setosa\n43           4.4         3.2          1.3         0.2     setosa\n44           5.0         3.5          1.6         0.6     setosa\n45           5.1         3.8          1.9         0.4     setosa\n46           4.8         3.0          1.4         0.3     setosa\n47           5.1         3.8          1.6         0.2     setosa\n48           4.6         3.2          1.4         0.2     setosa\n49           5.3         3.7          1.5         0.2     setosa\n50           5.0         3.3          1.4         0.2     setosa\n51           7.0         3.2          4.7         1.4 versicolor\n52           6.4         3.2          4.5         1.5 versicolor\n53           6.9         3.1          4.9         1.5 versicolor\n54           5.5         2.3          4.0         1.3 versicolor\n55           6.5         2.8          4.6         1.5 versicolor\n56           5.7         2.8          4.5         1.3 versicolor\n57           6.3         3.3          4.7         1.6 versicolor\n58           4.9         2.4          3.3         1.0 versicolor\n59           6.6         2.9          4.6         1.3 versicolor\n60           5.2         2.7          3.9         1.4 versicolor\n61           5.0         2.0          3.5         1.0 versicolor\n62           5.9         3.0          4.2         1.5 versicolor\n63           6.0         2.2          4.0         1.0 versicolor\n64           6.1         2.9          4.7         1.4 versicolor\n65           5.6         2.9          3.6         1.3 versicolor\n66           6.7         3.1          4.4         1.4 versicolor\n67           5.6         3.0          4.5         1.5 versicolor\n68           5.8         2.7          4.1         1.0 versicolor\n69           6.2         2.2          4.5         1.5 versicolor\n70           5.6         2.5          3.9         1.1 versicolor\n71           5.9         3.2          4.8         1.8 versicolor\n72           6.1         2.8          4.0         1.3 versicolor\n73           6.3         2.5          4.9         1.5 versicolor\n74           6.1         2.8          4.7         1.2 versicolor\n75           6.4         2.9          4.3         1.3 versicolor\n76           6.6         3.0          4.4         1.4 versicolor\n77           6.8         2.8          4.8         1.4 versicolor\n78           6.7         3.0          5.0         1.7 versicolor\n79           6.0         2.9          4.5         1.5 versicolor\n80           5.7         2.6          3.5         1.0 versicolor\n81           5.5         2.4          3.8         1.1 versicolor\n82           5.5         2.4          3.7         1.0 versicolor\n83           5.8         2.7          3.9         1.2 versicolor\n84           6.0         2.7          5.1         1.6 versicolor\n85           5.4         3.0          4.5         1.5 versicolor\n86           6.0         3.4          4.5         1.6 versicolor\n87           6.7         3.1          4.7         1.5 versicolor\n88           6.3         2.3          4.4         1.3 versicolor\n89           5.6         3.0          4.1         1.3 versicolor\n90           5.5         2.5          4.0         1.3 versicolor\n91           5.5         2.6          4.4         1.2 versicolor\n92           6.1         3.0          4.6         1.4 versicolor\n93           5.8         2.6          4.0         1.2 versicolor\n94           5.0         2.3          3.3         1.0 versicolor\n95           5.6         2.7          4.2         1.3 versicolor\n96           5.7         3.0          4.2         1.2 versicolor\n97           5.7         2.9          4.2         1.3 versicolor\n98           6.2         2.9          4.3         1.3 versicolor\n99           5.1         2.5          3.0         1.1 versicolor\n100          5.7         2.8          4.1         1.3 versicolor\n101          6.3         3.3          6.0         2.5  virginica\n102          5.8         2.7          5.1         1.9  virginica\n103          7.1         3.0          5.9         2.1  virginica\n104          6.3         2.9          5.6         1.8  virginica\n105          6.5         3.0          5.8         2.2  virginica\n106          7.6         3.0          6.6         2.1  virginica\n107          4.9         2.5          4.5         1.7  virginica\n108          7.3         2.9          6.3         1.8  virginica\n109          6.7         2.5          5.8         1.8  virginica\n110          7.2         3.6          6.1         2.5  virginica\n111          6.5         3.2          5.1         2.0  virginica\n112          6.4         2.7          5.3         1.9  virginica\n113          6.8         3.0          5.5         2.1  virginica\n114          5.7         2.5          5.0         2.0  virginica\n115          5.8         2.8          5.1         2.4  virginica\n116          6.4         3.2          5.3         2.3  virginica\n117          6.5         3.0          5.5         1.8  virginica\n118          7.7         3.8          6.7         2.2  virginica\n119          7.7         2.6          6.9         2.3  virginica\n120          6.0         2.2          5.0         1.5  virginica\n121          6.9         3.2          5.7         2.3  virginica\n122          5.6         2.8          4.9         2.0  virginica\n123          7.7         2.8          6.7         2.0  virginica\n124          6.3         2.7          4.9         1.8  virginica\n125          6.7         3.3          5.7         2.1  virginica\n126          7.2         3.2          6.0         1.8  virginica\n127          6.2         2.8          4.8         1.8  virginica\n128          6.1         3.0          4.9         1.8  virginica\n129          6.4         2.8          5.6         2.1  virginica\n130          7.2         3.0          5.8         1.6  virginica\n131          7.4         2.8          6.1         1.9  virginica\n132          7.9         3.8          6.4         2.0  virginica\n133          6.4         2.8          5.6         2.2  virginica\n134          6.3         2.8          5.1         1.5  virginica\n135          6.1         2.6          5.6         1.4  virginica\n136          7.7         3.0          6.1         2.3  virginica\n137          6.3         3.4          5.6         2.4  virginica\n138          6.4         3.1          5.5         1.8  virginica\n139          6.0         3.0          4.8         1.8  virginica\n140          6.9         3.1          5.4         2.1  virginica\n141          6.7         3.1          5.6         2.4  virginica\n142          6.9         3.1          5.1         2.3  virginica\n143          5.8         2.7          5.1         1.9  virginica\n144          6.8         3.2          5.9         2.3  virginica\n145          6.7         3.3          5.7         2.5  virginica\n146          6.7         3.0          5.2         2.3  virginica\n147          6.3         2.5          5.0         1.9  virginica\n148          6.5         3.0          5.2         2.0  virginica\n149          6.2         3.4          5.4         2.3  virginica\n150          5.9         3.0          5.1         1.8  virginica\n\n\n\nConsider iris—each row is one flower with four morphological measurements (sepal length, sepal width, petal length, petal width). This is tidy for the question: “What morphological features distinguish these species?”\nCould you pivot iris longer with columns for flower_part (sepal/petal) and measurement_type (length/width)? Yes. Would it be tidy? Also yes—but for a different question: “What determines the size of flower parts in general?”\nThe key distinction: Are your columns measuring different variables or different levels of the same variable?\n\nDifferent variables → Keep separate columns\nDifferent levels → Pivot longer\n\nTidiness isn’t absolute. It’s defined by your analytical question. The same dataset can be tidy in multiple forms depending on what you’re studying."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#tidy-data-iris",
+    "href": "slides/Q1-W4_tidyverse-1.html#tidy-data-iris",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Tidy Data: Iris",
+    "text": "Tidy Data: Iris\n\n\n\nThe iris dataset is a classic example of tidy data.\nWhich of these two versions of iris is tidy?\n\n\n\n\nIn tidy data:\n\n\n\n\nEach variable is one column.\n\n\nEach observation is one row.\n\n\nEach measurement is one cell.\n\n\nEach unit depends on the research question.\n\n\n\n\n\n\n\n\n\niris_1\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           5.1         3.5          1.4         0.2  setosa\n2           4.9         3.0          1.4         0.2  setosa\n3           4.7         3.2          1.3         0.2  setosa\n4           4.6         3.1          1.5         0.2  setosa\n5           5.0         3.6          1.4         0.2  setosa\n6           5.4         3.9          1.7         0.4  setosa\n7           4.6         3.4          1.4         0.3  setosa\n8           5.0         3.4          1.5         0.2  setosa\n9           4.4         2.9          1.4         0.2  setosa\n10          4.9         3.1          1.5         0.1  setosa\n\n\n\n\n\niris_2\n\n# A tibble: 10 × 4\n   Species Flower_Part Measurement_Type value\n   &lt;fct&gt;   &lt;chr&gt;       &lt;chr&gt;            &lt;dbl&gt;\n 1 setosa  Sepal       Length             5.1\n 2 setosa  Sepal       Width              3.5\n 3 setosa  Petal       Length             1.4\n 4 setosa  Petal       Width              0.2\n 5 setosa  Sepal       Length             4.9\n 6 setosa  Sepal       Width              3  \n 7 setosa  Petal       Length             1.4\n 8 setosa  Petal       Width              0.2\n 9 setosa  Sepal       Length             4.7\n10 setosa  Sepal       Width              3.2\n\n\n\n\n\n\nConsider iris—each row is one flower with four morphological measurements (sepal length, sepal width, petal length, petal width). This is tidy for the question: “What morphological features distinguish these species?”\nCould you pivot iris longer with columns for flower_part (sepal/petal) and measurement_type (length/width)? Yes. Would it be tidy? Also yes—but for a different question: “What determines the size of flower parts in general?”\nThe key distinction: Are your columns measuring different variables or different levels of the same variable?\n\nDifferent variables → Keep separate columns\nDifferent levels → Pivot longer\n\nTidiness isn’t absolute. It’s defined by your analytical question. The same dataset can be tidy in multiple forms depending on what you’re studying."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#observations",
+    "href": "slides/Q1-W4_tidyverse-1.html#observations",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "“Observations”",
+    "text": "“Observations”\n1 row = 1 observation, but what is an observation?\nWhat counts as an observation depends on your research question!"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#core-tidyverse-packages-week-4-focus",
+    "href": "slides/Q1-W4_tidyverse-1.html#core-tidyverse-packages-week-4-focus",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Core Tidyverse Packages: Week 4 Focus",
+    "text": "Core Tidyverse Packages: Week 4 Focus\n\n\ntibble ✅\nreimagine the dataframe!\n\nreadr ✅\neasily import and export tabular data\n\ndplyr ✅\na grammar of data manipulation\n\ntidyr ✅ tidy your messy data\n\nggplot2\na grammar of graphics"
   }
 ]
