@@ -1184,6 +1184,7 @@ pre > code.sourceCode > span {
 .reveal .slides .tightlist ul li ul li,
 .reveal .slides .tightlist ol li ol li {
   font-size: 0.85em !important;
+    font-color: #f00 !important;
 }
 
 .reveal .narrowlist ul,
@@ -1326,7 +1327,6 @@ pre > code.sourceCode > span {
     li, p {
         margin-top: 0em !important;
         margin-bottom: 0em !important;
-        color: #f00;
     }
 }
     
@@ -1579,6 +1579,11 @@ pre > code.sourceCode > span {
 
 div.large.no-icon .callout-title {
   padding-left: 0 !important;
+}
+
+.callout-title p {
+  width: 100%;
+  margin: 0;
 }
 
 
