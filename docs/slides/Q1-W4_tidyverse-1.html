@@ -99,7 +99,7 @@
     code span.vs { color: #6a3d9a; } /* VerbatimString */
     code span.wa { color: #842222; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-559cb14f7338b279a6c167941f805063.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-edb02793229734f165297d83609a3e13.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -211,69 +211,6 @@
 
   <p class="date">2026-01-27</p>
 </section>
-<section class="slide level2">
-
-<!-- ## Lecture Planning -->
-<!-- 7. Welcome to the Tidyverse! -->
-<!--     1. Introduction to the Tidyverse & tidy data -->
-<!--         1. Overview of the tidy ecosystem -->
-<!--         2. Tidy data principles -->
-<!--         3. Core packages in the Tidyverse and general functions -->
-<!--         4. Terminology -->
-<!--     2. Importing and exporting with readr -->
-<!--         1. Overview  -->
-<!--             1. Tabular data - what counts? -->
-<!--                 1. File types -->
-<!--                 2. R objects, including tibbles -->
-<!--             2. Reading, writing, rereading (intermediate datasets) -->
-<!--         2. Reading data with read_* functions -->
-<!--         3. Writing data with write_* functions -->
-<!--         4. Other packages -->
-<!--             1. readxl for Excel files -->
-<!--             2. haven for SPSS, SAS, and Stata files -->
-<!--             3. googlesheets4 for Google Sheets -->
-<!--             4. jsonlite for JSON files -->
-<!--             5. DBI and dbplyr for databases -->
-<!--         5. Handling common import/export issues -->
-<!--     3. Data manipulation with dplyr -->
-<!--         1. Introduction to dplyr -->
-<!--             1. the points of pipelines (highly readable, but verbose) -->
-<!--             2. The pipe operator (%>%) and magrittr -->
-<!--             3. Chaining operations with pipes -->
-<!--         2. Selecting data -->
-<!--             1. select, rename -->
-<!--             2. filter -->
-<!--             3. arrange -->
-<!--         3. Manipulating data -->
-<!--             1. mutate -->
-<!--             2. summarize -->
-<!--             3. group_by -->
-<!--             4. distinct -->
-<!--             5. count -->
-<!--         6. dplyr practice -->
-<!--     4. Data tidying with tidyr -->
-<!--         1. What counts as "tidying" data?  -->
-<!--             1. Remember what "tidy" means in the tidyverse -->
-<!--             2. Tidying is reshaping and systematically cleaning data  -->
-<!--         2. Reshape data -->
-<!--             1. pivot_longer -->
-<!--             2. pivot_wider -->
-<!--             3. cast, melt, gather, spread, etc. -->
-<!--         3. Combine and split cells -->
-<!--             1. unite -->
-<!--             2. separate functions -->
-<!--         4. Expand tables -->
-<!--             1. expand -->
-<!--             2. complete -->
-<!--         5. Handle missing values -->
-<!--             1. drop_na -->
-<!--             2. fill -->
-<!--             3. replace_na -->
-<!--         6. Advanced: Nested data -->
-<!--             1. What is nested data and why might you use it? -->
-<!--             2. We're not going to cover this in D2MR, but tidyr has functions for creating,  -->
-<!--             reshaping, and transforming nested data -->
-</section>
 <section>
 <section id="tidy-data" class="title-slide slide level1 center">
 <h1>Tidy Data</h1>
@@ -307,7 +244,7 @@ Illustrations from the <a href="https://www.openscapes.org/">Openscapes</a> blog
 <p><img data-src="../images/tidyverse/tidy-data-workshop-frag2.jpg" class="fragment" height="800"></p>
 </div></div>
 </section>
-<section id="messy-vs.-tidy-example" class="slide level2" data-background-image="../images/mms.jpg" data-background-opacity="0.1">
+<section id="messy-vs.-tidy-example" class="slide level2" data-background-image="../images/misc/mms.jpg" data-background-opacity="0.1">
 <h2>Messy vs.&nbsp;Tidy: Example</h2>
 <div class="container-fluid" style="margin-top: -150px;">
 <div class="row" style="margin-bottom: 50px;">
@@ -396,7 +333,7 @@ It <em>is</em> clean! It’s just not <strong>tidy</strong>.
 <div class="container-fluid">
 <div class="row">
 <div class="col-6">
-<div class="card fragment h-100">
+<div class="card fragment h-100" style="font-size: .8em">
 <div class="card-header">
 <div class="card-title" style="color: #fff">
 <p>Messy data:</p>
@@ -426,7 +363,7 @@ It <em>is</em> clean! It’s just not <strong>tidy</strong>.
 </div>
 </div>
 <div class="col-6">
-<div class="card fragment card-alt1 h-100">
+<div class="card card-alt1 fragment h-100" style="font-size: .8em">
 <div class="card-header">
 <div class="card-title" style="color: #fff">
 <p>Also messy data:</p>
@@ -437,7 +374,7 @@ It <em>is</em> clean! It’s just not <strong>tidy</strong>.
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mm.messy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 39 × 8
-   ID    RED   X     GREEN WT.OZ    Blue  Orannge Ylw. 
+   ID    RED   X     GREEN WT.GRAM  Blue  Orannge Ylw. 
    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;
  1 "1 "  "15"  "19 " "9 "  "49.79 " "3 "  "3 "    "9 " 
  2 "1 "  "15"  "19 " "9 "  "49.79 " "3 "  "3 "    "9 " 
@@ -610,24 +547,24 @@ Each measurement is one cell.
 <tbody>
 <tr class="odd">
 <td><strong>Data Cleaning:</strong> <br> Error correction</td>
-<td>Raw data</td>
-<td>Accuracy, consistency, legibility</td>
-<td>Clean data, not yet specialized</td>
-<td>Removing duplicate data<br>Correcting syntax errors<br>Fixing typos<br>Handling missing values<br>Change data types</td>
+<td><span class="fragment" data-fragment-index="1">Raw data</span></td>
+<td><span class="fragment" data-fragment-index="2">Accuracy, consistency, legibility</span></td>
+<td><span class="fragment" data-fragment-index="3">Clean data, not yet specialized</span></td>
+<td><span class="fragment" data-fragment-index="4">Removing duplicate data<br>Correcting syntax errors<br>Fixing typos<br>Handling missing values<br>Change data types</span></td>
 </tr>
 <tr class="even">
 <td><strong>Data Wrangling:</strong> <br> Data preparation</td>
-<td>Clean data</td>
-<td>Usability for medium-scope purpose</td>
-<td>Interpretable and specialized data, not yet analyzable</td>
-<td>Preparing for narrow use cases<br>Grouping and summarizing<br>Transforming variables or values</td>
+<td><span class="fragment" data-fragment-index="5">Clean data</span></td>
+<td><span class="fragment" data-fragment-index="6">Usability for medium-scope purpose</span></td>
+<td><span class="fragment" data-fragment-index="7">Interpretable and specialized data, not yet analyzable</span></td>
+<td><span class="fragment" data-fragment-index="8">Preparing for narrow use cases<br>Grouping and summarizing<br>Transforming variables or values</span></td>
 </tr>
 <tr class="odd">
 <td><strong>Data Transformation:</strong> <br> Data restructuring</td>
-<td>Interpretable data</td>
-<td>Usability for narrow-scope tasks</td>
-<td>Analyzable and visualizable data</td>
-<td>Reshaping long ↔︎ wide<br>Generating new data-based variables<br>Merging datasets<br>Eliminating unnecessary data</td>
+<td><span class="fragment" data-fragment-index="9">Interpretable data</span></td>
+<td><span class="fragment" data-fragment-index="10">Usability for narrow-scope tasks</span></td>
+<td><span class="fragment" data-fragment-index="11">Analyzable and visualizable data</span></td>
+<td><span class="fragment" data-fragment-index="12">Reshaping long ↔︎ wide<br>Generating new data-based variables<br>Merging datasets<br>Eliminating unnecessary data</span></td>
 </tr>
 </tbody>
 </table>
@@ -649,8 +586,8 @@ That’s not what I learned!
 </section></section>
 <section id="tidyverse-packages" class="title-slide slide level1 center">
 <h1>Tidyverse Packages</h1>
-<div class="r-stretch" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em;">
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="r-stretch" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em; padding-bottom: 1em;">
+<div class="contained-box accent1 fragment" style="display: flex; flex-direction: column; align-items: center;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><img data-src="../images/icons/tv-icons/tibble.png" style="max-height: 2em;"></p>
 </div>
@@ -663,7 +600,7 @@ That’s not what I learned!
 <p>Reimagine the dataframe</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box accent1 fragment" style="display: flex; flex-direction: column; align-items: center;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><img data-src="../images/icons/tv-icons/readr.png" style="max-height: 2em;"></p>
 </div>
@@ -676,7 +613,7 @@ That’s not what I learned!
 <p>import and export tabular data</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box accent1 fragment" style="display: flex; flex-direction: column; align-items: center;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><img data-src="../images/icons/tv-icons/dplyr.png" style="max-height: 2em;"></p>
 </div>
@@ -685,11 +622,11 @@ That’s not what I learned!
 <p><span class="pkg">dplyr</span></p>
 </div>
 </div>
-<div class="box-content" style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;">
+<div class="box-content" style="text-align: center;">
 <p>a grammar of data manipulation</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box accent1 fragment" style="display: flex; flex-direction: column; align-items: center;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><img data-src="../images/icons/tv-icons/tidyr.png" style="max-height: 2em;"></p>
 </div>
@@ -698,11 +635,11 @@ That’s not what I learned!
 <p><span class="pkg">tidyr</span></p>
 </div>
 </div>
-<div class="box-content" style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;">
+<div class="box-content" style="text-align: center;">
 <p>tidy your messy data</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><img data-src="../images/icons/tv-icons/purrr.png" style="max-height: 2em;"></p>
 </div>
@@ -715,7 +652,7 @@ That’s not what I learned!
 <p>enhance R’s functional programming</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><img data-src="../images/icons/tv-icons/stringr.png" style="max-height: 2em;"></p>
 </div>
@@ -728,7 +665,7 @@ That’s not what I learned!
 <p>simplify working with strings</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><img data-src="../images/icons/tv-icons/forcats.png" style="max-height: 2em;"></p>
 </div>
@@ -741,117 +678,7 @@ That’s not what I learned!
 <p>simplify working with factors</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
-<div class="box-icon" style="margin-bottom: 0.1em;">
-<p><img data-src="../images/icons/tv-icons/ggplot2.png" style="max-height: 2em;"></p>
-</div>
-<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
-<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
-<p><span class="pkg">ggplot2</span></p>
-</div>
-</div>
-<div class="box-content" style="text-align: center;">
-<p>a grammar of graphics</p>
-</div>
-</div>
-</div>
-</section>
-
-<section id="tidyverse-packages-week-4" class="title-slide slide level1 center">
-<h1>Tidyverse Packages: Week 4</h1>
-<div class="r-stretch" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em;">
-<div class="contained-box accent1" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
-<div class="box-icon" style="margin-bottom: 0.1em;">
-<p><img data-src="../images/icons/tv-icons/tibble.png" style="max-height: 2em;"></p>
-</div>
-<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
-<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
-<p><span class="pkg">tibble</span></p>
-</div>
-</div>
-<div class="box-content" style="text-align: center;">
-<p>Reimagine the dataframe</p>
-</div>
-</div>
-<div class="contained-box accent1" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
-<div class="box-icon" style="margin-bottom: 0.1em;">
-<p><img data-src="../images/icons/tv-icons/readr.png" style="max-height: 2em;"></p>
-</div>
-<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
-<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
-<p><span class="pkg">readr</span></p>
-</div>
-</div>
-<div class="box-content" style="text-align: center;">
-<p>import and export tabular data</p>
-</div>
-</div>
-<div class="contained-box accent1" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
-<div class="box-icon" style="margin-bottom: 0.1em;">
-<p><img data-src="../images/icons/tv-icons/dplyr.png" style="max-height: 2em;"></p>
-</div>
-<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
-<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
-<p><span class="pkg">dplyr</span></p>
-</div>
-</div>
-<div class="box-content" style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;">
-<p>a grammar of data manipulation</p>
-</div>
-</div>
-<div class="contained-box accent1" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
-<div class="box-icon" style="margin-bottom: 0.1em;">
-<p><img data-src="../images/icons/tv-icons/tidyr.png" style="max-height: 2em;"></p>
-</div>
-<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
-<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
-<p><span class="pkg">tidyr</span></p>
-</div>
-</div>
-<div class="box-content" style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;">
-<p>tidy your messy data</p>
-</div>
-</div>
-<div class="contained-box" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
-<div class="box-icon" style="margin-bottom: 0.1em;">
-<p><img data-src="../images/icons/tv-icons/purrr.png" style="max-height: 2em;"></p>
-</div>
-<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
-<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
-<p><span class="pkg">purrr</span></p>
-</div>
-</div>
-<div class="box-content" style="text-align: center;">
-<p>enhance R’s functional programming</p>
-</div>
-</div>
-<div class="contained-box" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
-<div class="box-icon" style="margin-bottom: 0.1em;">
-<p><img data-src="../images/icons/tv-icons/stringr.png" style="max-height: 2em;"></p>
-</div>
-<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
-<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
-<p><span class="pkg">stringr</span></p>
-</div>
-</div>
-<div class="box-content" style="text-align: center;">
-<p>simplify working with strings</p>
-</div>
-</div>
-<div class="contained-box" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
-<div class="box-icon" style="margin-bottom: 0.1em;">
-<p><img data-src="../images/icons/tv-icons/forcats.png" style="max-height: 2em;"></p>
-</div>
-<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
-<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
-<p><span class="pkg">forcats</span></p>
-</div>
-</div>
-<div class="box-content" style="text-align: center;">
-<p>simplify working with factors</p>
-</div>
-</div>
-<div class="contained-box" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><img data-src="../images/icons/tv-icons/ggplot2.png" style="max-height: 2em;"></p>
 </div>
@@ -873,12 +700,13 @@ That’s not what I learned!
 
 </section>
 <section id="tibble-better-data-frames" class="slide level2 left-sidebar-slide" data-fullscreen="true">
-<h2>tibble: Better Data Frames</h2>
+<h2><code>tibble</code>: Better Data Frames</h2>
 <p><img data-src="../images/icons/tv-icons/tibble.png" class="absolute" style="top: 1em; right: 1em; height: 4em;; ">)</p>
 <div class="sidebar-column">
 <div class="sidebar-title">
 <p><span class="pkg">tibble</span>: <br>Better Data Frames</p>
 </div>
+<div class="sidebar-content" style="font-size: .8em">
 <ul>
 <li class="fragment">Adaptation of base R’s <code>data.frame</code></li>
 <li class="fragment">Tibbles are <em>also</em> data.frames
@@ -891,6 +719,7 @@ That’s not what I learned!
 </ul></li>
 <li class="fragment">Functionally equivalent</li>
 </ul>
+</div>
 </div>
 <div class="main-content">
 <div class="r-stack">
@@ -912,6 +741,58 @@ That’s not what I learned!
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="tibble-implicit-data" class="slide level2">
+<h2><code>tibble</code>: implicit <code>data</code></h2>
+<p><img data-src="../images/icons/tv-icons/tibble.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<ul>
+<li class="fragment">Most Tidyverse functions <em>take</em> and <em>return</em> tibbles
+<ul>
+<li class="fragment">Notably <code>dplyr</code>, <code>tidyr</code>, and <code>ggplot2</code></li>
+<li class="fragment">Tibble is the required first argument (i.e., <code>data</code>)</li>
+</ul></li>
+<li class="fragment">As standalone functions, these require an explicit tibble argument:
+<ul>
+<li class="fragment">1st arg: <code>function(my_tbl, arg1, arg2)</code></li>
+<li class="fragment">Anywhere: <code>function(arg1, arg2, data = my_tbl)</code></li>
+</ul></li>
+<li class="fragment">In <em>pipelines</em> using (<code>%&gt;%</code> or <code>|&gt;</code>), the tibble is implicit (omitted)
+<ul>
+<li class="fragment">Tibble output from <code>function1()</code> pipes <code>|&gt;</code> to tibble input for <code>function2()</code></li>
+<li class="fragment"><code>function1(data, arg1, arg2) %&gt;% function2(arg1, arg2)</code></li>
+</ul></li>
+</ul>
+<div class="large fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>More on pipes later</strong></p>
+</div>
+<div class="callout-content">
+<p>More on the pipe operator and pipelines later. For now, know that when these slides show non-executed examples as <code>function(arg1, arg2)</code> as shorthand for <code>function(data, arg1, arg2)</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>The first argument for most tidyverse functions is <code>data</code>, the <code>tbl</code> passed to the function.</p>
+<p>When running a tidyverse function on its own, you must include the tibble explicitly as a required argument either unnamed in the first position (<code>function(my_tbl, arg1, arg2)</code>) or anywhere by name (<code>function(arg1, arg2, data = my_tbl)</code>).</p>
+<p>However, tidyverse functions are often used in a <em>pipeline</em> where the tibble is passed from one function to the next using a pipe operator (<code>%&gt;%</code> or <code>|&gt;</code>). Since tidyverse functions both <em>take</em> and <em>return</em> a tibble, the pipe automatically passes the output of one function as the first argument (<code>data</code>) of the next function in the chain, letting you omit it.</p>
+<p>More on the pipe later. For now, know that when these slides show non-executed examples as <code>function(arg1, arg2)</code> as shorthand for <code>function(data, arg1, arg2)</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="readr" class="title-slide slide level1 center">
@@ -919,13 +800,13 @@ That’s not what I learned!
 
 </section>
 <section id="readr-read-write-tibbles" class="slide level2 left-sidebar-slide" data-fullscreen="true">
-<h2><span class="pkg">readr</span>: Read &amp; Write Tibbles</h2>
+<h2><code>readr</code>: Read &amp; Write Tibbles</h2>
 <p><img data-src="../images/icons/tv-icons/readr.png" class="absolute" style="top: 1em; right: 1em; height: 4em;; ">)</p>
 <div class="sidebar-column">
 <div class="sidebar-title">
 <p><span class="pkg">readr</span>: <br> Read &amp; Write Tibbles</p>
 </div>
-<div class="sidebar-content">
+<div class="sidebar-content" style="font-size: .8em">
 <ul>
 <li class="fragment">Import/export tabular data as tibbles</li>
 <li class="fragment">Functions start with <code>read_*()</code> and <code>write_*()</code></li>
@@ -935,7 +816,7 @@ That’s not what I learned!
 </div>
 </div>
 <div class="main-content">
-<p><img data-src="../images/screenshots/readr-specify.png"></p>
+<p><img data-src="../images/screenshots/readr-specify.png" style="position: absolute; width: 80%; top: 50%; left: 50%; transform: translate(-50%, -50%);"></p>
 </div>
 </section>
 <section id="what-where" class="slide level2">
@@ -1026,19 +907,20 @@ That’s not what I learned!
 <span id="cb13-6"><a></a><span class="fu">read_delim</span>()  <span class="co"># Any delimiter</span></span>
 <span id="cb13-7"><a></a><span class="fu">read_fwf</span>()    <span class="co"># Fixed width files</span></span>
 <span id="cb13-8"><a></a><span class="fu">read_table</span>()  <span class="co"># Whitespace separated</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># Default behavior - guesses all data types</span></span>
-<span id="cb14-2"><a></a>my_tbl <span class="ot">&lt;-</span> read_<span class="sc">*</span>(file.csv, <span class="at">col_types =</span> <span class="cn">NULL</span>)</span>
-<span id="cb14-3"><a></a></span>
-<span id="cb14-4"><a></a><span class="co"># Specify columns with cols()</span></span>
-<span id="cb14-5"><a></a>my_cols <span class="ot">&lt;-</span> read_<span class="sc">*</span>(file.csv, <span class="at">col_types =</span> <span class="fu">cols</span>(</span>
-<span id="cb14-6"><a></a>  <span class="at">my_factor =</span> <span class="fu">col_factor</span>(),</span>
-<span id="cb14-7"><a></a>  <span class="at">your_string =</span> <span class="fu">col_character</span>()</span>
-<span id="cb14-8"><a></a>))</span>
-<span id="cb14-9"><a></a></span>
-<span id="cb14-10"><a></a><span class="co"># String shortcut:</span></span>
-<span id="cb14-11"><a></a><span class="co"># needs character for each col in order</span></span>
-<span id="cb14-12"><a></a><span class="co"># Use "?" for columns to guess</span></span>
-<span id="cb14-13"><a></a>my_shortcut <span class="ot">&lt;-</span> read_<span class="sc">*</span>(file.csv, <span class="at">col_types =</span> <span class="st">"fc"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-code-line-numbers="1|2-3|5-9|11-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a></span>
+<span id="cb14-2"><a></a><span class="co"># Default behavior - guesses all data types</span></span>
+<span id="cb14-3"><a></a>my_tbl <span class="ot">&lt;-</span> read_<span class="sc">*</span>(file.csv, <span class="at">col_types =</span> <span class="cn">NULL</span>)</span>
+<span id="cb14-4"><a></a></span>
+<span id="cb14-5"><a></a><span class="co"># Specify columns with cols()</span></span>
+<span id="cb14-6"><a></a>my_cols <span class="ot">&lt;-</span> read_<span class="sc">*</span>(file.csv, <span class="at">col_types =</span> <span class="fu">cols</span>(</span>
+<span id="cb14-7"><a></a>  <span class="at">my_factor =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb14-8"><a></a>  <span class="at">your_string =</span> <span class="fu">col_character</span>()</span>
+<span id="cb14-9"><a></a>))</span>
+<span id="cb14-10"><a></a></span>
+<span id="cb14-11"><a></a><span class="co"># String shortcut:</span></span>
+<span id="cb14-12"><a></a><span class="co"># needs character for each col in order</span></span>
+<span id="cb14-13"><a></a><span class="co"># Use "?" for columns to guess</span></span>
+<span id="cb14-14"><a></a>my_shortcut <span class="ot">&lt;-</span> read_<span class="sc">*</span>(file.csv, <span class="at">col_types =</span> <span class="st">"fc"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="exporting-with-readr" class="slide level2 left-sidebar-slide" data-fullscreen="true">
@@ -1050,20 +932,18 @@ That’s not what I learned!
 </div>
 <div class="sidebar-content">
 <div class="tightlist">
-<div class="grouped">
 <ul>
-<li><code>read_*()</code> functions have matched <code>write_*()</code> counterparts</li>
-<li>Save tibbles to tabular files</li>
-<li>Write <em>intermediate datasets</em> after:
+<li class="fragment"><code>read_*()</code> functions have matched <code>write_*()</code> counterparts</li>
+<li class="fragment">Save tibbles to tabular files</li>
+<li class="fragment">Write <em>intermediate datasets</em> after:
 <ul>
-<li>De-identifying data</li>
-<li>Complex wrangling</li>
-<li>Dropping unneeded data</li>
-<li>Managing empty data</li>
+<li class="fragment">De-identifying data</li>
+<li class="fragment">Complex wrangling</li>
+<li class="fragment">Dropping unneeded data</li>
+<li class="fragment">Managing empty data</li>
 </ul></li>
-<li>Run from script or console, no object assignment</li>
+<li class="fragment">Run from script or console, no object assignment</li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -1076,18 +956,19 @@ That’s not what I learned!
 <span id="cb15-6"><a></a><span class="fu">write_excel_csv</span>()</span>
 <span id="cb15-7"><a></a><span class="fu">write_excel_csv2</span>()</span>
 <span id="cb15-8"><a></a><span class="fu">write_tsv</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># Start with messy data</span></span>
-<span id="cb16-2"><a></a>messy_df <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"localpath/messy.xlsx"</span>, </span>
-<span id="cb16-3"><a></a>                     <span class="at">sheet=</span><span class="st">"my sheet"</span>)</span>
-<span id="cb16-4"><a></a></span>
-<span id="cb16-5"><a></a><span class="co"># Process in R: tidy, clean, transform...</span></span>
-<span id="cb16-6"><a></a></span>
-<span id="cb16-7"><a></a><span class="co"># Export clean version</span></span>
-<span id="cb16-8"><a></a>clean_df <span class="ot">&lt;-</span> <span class="co"># ... your cleaning steps</span></span>
-<span id="cb16-9"><a></a><span class="fu">write_csv</span>(clean_df, <span class="st">"localpath/clean.csv"</span>)</span>
-<span id="cb16-10"><a></a></span>
-<span id="cb16-11"><a></a><span class="co"># Later, read the clean version</span></span>
-<span id="cb16-12"><a></a>clean_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"localpath/clean.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-code-line-numbers="1|2-4|6|8-11|12,13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a></span>
+<span id="cb16-2"><a></a><span class="co"># Start with messy data</span></span>
+<span id="cb16-3"><a></a>messy_df <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"localpath/messy.xlsx"</span>, </span>
+<span id="cb16-4"><a></a>                     <span class="at">sheet=</span><span class="st">"my sheet"</span>)</span>
+<span id="cb16-5"><a></a></span>
+<span id="cb16-6"><a></a><span class="co"># Process in R: tidy, clean, transform...</span></span>
+<span id="cb16-7"><a></a></span>
+<span id="cb16-8"><a></a><span class="co"># Export clean version</span></span>
+<span id="cb16-9"><a></a>clean_df <span class="ot">&lt;-</span> <span class="co"># ... your cleaning steps</span></span>
+<span id="cb16-10"><a></a><span class="fu">write_csv</span>(clean_df, <span class="st">"localpath/clean.csv"</span>)</span>
+<span id="cb16-11"><a></a></span>
+<span id="cb16-12"><a></a><span class="co"># Later, read the clean version</span></span>
+<span id="cb16-13"><a></a>clean_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"localpath/clean.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <aside class="notes">
 <p>Export tibbles to create intermediate datasets between initial import and final analysis Easily produce de-identified datasets to share with others Save computational time by skipping costly read-in and wrangling steps (e.g., big files, many files, complex transformations) readr can also export tibbles to tabular files with similar syntax to how it imports</p>
@@ -1103,10 +984,10 @@ That’s not what I learned!
           display:block!important;
       }</style></aside>
 </section>
-<section id="workflow" class="slide level2 left-sidebar-slide" data-fullscreen="true">
-<h2>Workflow</h2>
-<div class="container-fluid" style="width: 80vw;">
-<div class="row" style="margin-top: 1em">
+<section id="section" class="slide level2" data-fullscreen="true">
+<h2></h2>
+<div class="container-fluid" style="position: absolute; width: 95vw; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+<div class="row">
 <div class="col-3 fragment" data-fragment-index="1">
 <p><img data-src="../images/screenshots/process-messy-file.png" style="max-width: 120% !important; margin-top: 0em" alt="Messy Data File"></p>
 </div>
@@ -1374,7 +1255,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 
 </section>
 <section id="dplyr-data-transformation" class="slide level2 left-sidebar-slide" data-fullscreen="true">
-<h2><span class="pkg">dplyr</span>: Data Transformation</h2>
+<h2><code>dplyr</code>: Data Transformation</h2>
 <p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: 1em; right: 1em; height: 4em;; ">)</p>
 <div class="sidebar-column">
 <div class="sidebar-title">
@@ -1384,13 +1265,13 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <ul>
 <li class="fragment">Core tidyverse package for data transformation</li>
 <li class="fragment">Works with tibbles (and data.frames)</li>
-<li class="fragment">Build linear pipelines for human-friendly data wrangling</li>
+<li class="fragment">First argument always <code>data</code> (the tibble to transform)</li>
 </ul>
 </div>
 </div>
 <div class="main-content">
 <div class="r-stretch" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em; margin-top: 3em;">
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><i class="bi-check2-square " style="" role="img" aria-hidden="true"></i></p>
 </div>
@@ -1403,7 +1284,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <p>subset &amp; sort columns</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><i class="bi-funnel " style="" role="img" aria-hidden="true"></i></p>
 </div>
@@ -1416,7 +1297,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <p>subset rows</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><i class="bi-layer-backward " style="" role="img" aria-hidden="true"></i></p>
 </div>
@@ -1429,7 +1310,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <p>sort rows</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><i class="bi-node-plus-fill " style="" role="img" aria-hidden="true"></i></p>
 </div>
@@ -1442,7 +1323,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <p>create and modify columns</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><i class="bi-calculator " style="" role="img" aria-hidden="true"></i></p>
 </div>
@@ -1455,7 +1336,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <p>compute with multiple rows</p>
 </div>
 </div>
-<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><i class="bi-collection " style="" role="img" aria-hidden="true"></i></p>
 </div>
@@ -1471,529 +1352,1359 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 </div>
 </section>
-<section id="select" class="slide level2">
-<h2><code>select</code></h2>
+<section id="select-subset-columns" class="slide level2" style="font-size: .8em">
+<h2><code>select</code>: Subset columns</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-6">
+<div class="overlap-box">
+<div class="box-title">
+<p>Include/exclude syntax:</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">select</span>(tbl, col1, col2, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>Column names are objects, not strings
+<ul>
+<li><code>select(mm.sample, Bag, Red)</code></li>
+<li><em>not</em> <code>select(mm.sample, "Bag", "Red")</code></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>Include (default):
+<ul>
+<li><code>select(col1, col2)</code></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>Exclude with <code>-</code>:
+<ul>
+<li><code>select(-col3, -col4)</code></li>
+<li><code>select(-c(col3, col4))</code></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li>Use ranges:
+<ul>
+<li>Name: <code>select(colA:colC)</code></li>
+<li>Position: <code>select(1:3)</code></li>
+<li>Exclude: <code>select(-(4:6))</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-6" style="margin-top: 1em">
+<div class="fragment" data-fragment-index="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># Include specific columns </span></span>
+<span id="cb22-2"><a></a><span class="fu">select</span>(mm.sample, Bag, Red, Green, Blue)</span>
+<span id="cb22-3"><a></a></span>
+<span id="cb22-4"><a></a><span class="co"># Exclude specific columns</span></span>
+<span id="cb22-5"><a></a><span class="fu">select</span>(mm.sample, <span class="sc">-</span>Orange, <span class="sc">-</span>Yellow, <span class="sc">-</span>Brown, <span class="sc">-</span>Weight)</span>
+<span id="cb22-6"><a></a></span>
+<span id="cb22-7"><a></a><span class="co"># Exclude list of columns</span></span>
+<span id="cb22-8"><a></a><span class="fu">select</span>(mm.sample, <span class="sc">-</span><span class="fu">c</span>(Orange, Yellow, Brown, Weight))</span>
+<span id="cb22-9"><a></a></span>
+<span id="cb22-10"><a></a><span class="co"># Include columns by name range</span></span>
+<span id="cb22-11"><a></a><span class="fu">select</span>(mm.sample, Bag<span class="sc">:</span>Blue)</span>
+<span id="cb22-12"><a></a></span>
+<span id="cb22-13"><a></a><span class="co"># Exclude columns by position range</span></span>
+<span id="cb22-14"><a></a><span class="do">## `-` requires range in `()`</span></span>
+<span id="cb22-15"><a></a><span class="fu">select</span>(mm.sample, <span class="sc">-</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment" data-fragment-index="6" style="margin-top: 1em;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+    Bag   Red Green  Blue
+  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     1    15     9     3
+2     2     9    17    19
+3     3    14     8     6
+4     4    15     7     3
+5     5    10     3     7</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="filter" class="slide level2">
-<h2><code>filter</code></h2>
+<section id="select-rename-reorder-columns" class="slide level2" style="font-size: .8em">
+<h2><code>select</code>: Rename &amp; reorder columns</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-4">
+<div class="overlap-box">
+<div class="box-title">
+<p>Rename &amp; order:</p>
+</div>
+<div class="box-content">
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>Select &amp; reorder:
+<ul>
+<li><code>select(col3, col1, col2)</code></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>Select &amp; rename:
+<ul>
+<li><code>select(new_name = old_name)</code></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>Backticks for special characters:
+<ul>
+<li><code>select(`col 2 (two)` = col2)</code></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li>Related function: <a href="https://dplyr.tidyverse.org/reference/rename.html" class="func">rename()</a>
+<ul>
+<li>Rename some or all columns</li>
+<li>Retain <em>all</em> columns <em>in original order</em></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="5">
+<ul>
+<li>Related function: <a href="https://dplyr.tidyverse.org/reference/relocate.html" class="func">relocate()</a>
+<ul>
+<li>Move columns to relative positions</li>
+<li><code>relocate(col3, .before = col1)</code></li>
+<li>Retain <em>all</em> columns <em>in original order</em></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div class="fragment" style="margin-top: .2em;" data-fragment-index="1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># Select and reorder</span></span>
+<span id="cb24-2"><a></a><span class="fu">select</span>(mm.sample, </span>
+<span id="cb24-3"><a></a>       Green, Blue, Bag, Red)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  Green  Blue   Bag   Red
+  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
+1     9     3     1    15
+2    17    19     2     9
+3     8     6     3    14
+4     7     3     4    15
+5     3     7     5    10</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment" style="margin-top: .2em;" data-fragment-index="2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># Select and rename</span></span>
+<span id="cb26-2"><a></a><span class="fu">select</span>(mm.sample, </span>
+<span id="cb26-3"><a></a>       Bag, <span class="at">rojo =</span> Red, </span>
+<span id="cb26-4"><a></a>       <span class="at">vert =</span> Green, </span>
+<span id="cb26-5"><a></a>       <span class="st">`</span><span class="at">aoi 青</span><span class="st">`</span> <span class="ot">=</span> Blue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+    Bag  rojo  vert `aoi 青`
+  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+1     1    15     9        3
+2     2     9    17       19
+3     3    14     8        6
+4     4    15     7        3
+5     5    10     3        7</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="col-5">
+<div class="fragment" style="margin-top: .2em;" data-fragment-index="3">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="co"># Select, reorder, rename</span></span>
+<span id="cb28-2"><a></a><span class="fu">select</span>(mm.sample, </span>
+<span id="cb28-3"><a></a>       <span class="at">vert =</span> Green, </span>
+<span id="cb28-4"><a></a>       <span class="at">rojo =</span> Red, </span>
+<span id="cb28-5"><a></a>       <span class="st">`</span><span class="at">aoi 青</span><span class="st">`</span> <span class="ot">=</span> Blue, </span>
+<span id="cb28-6"><a></a>       Bag)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+   vert  rojo `aoi 青`   Bag
+  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;
+1     9    15        3     1
+2    17     9       19     2
+3     8    14        6     3
+4     7    15        3     4
+5     3    10        7     5</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment" style="margin-top: .2em;" data-fragment-index="4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="co"># Rename w/out select or reorder</span></span>
+<span id="cb30-2"><a></a><span class="fu">rename</span>(mm.sample, </span>
+<span id="cb30-3"><a></a>       <span class="at">vert =</span> Green, </span>
+<span id="cb30-4"><a></a>       <span class="at">rojo =</span> Red, </span>
+<span id="cb30-5"><a></a>       <span class="st">`</span><span class="at">aoi 青</span><span class="st">`</span> <span class="ot">=</span> Blue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 8
+    Bag  rojo  vert `aoi 青` Orange Yellow Brown Weight
+  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1     1    15     9        3      3      9    19   49.8
+2     2     9    17       19      3      3     8   49.0
+3     3    14     8        6      8     19     4   50.4
+4     4    15     7        3      8     16     8   49.2
+5     5    10     3        7      9     22     4   47.6</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="arrange" class="slide level2">
-<h2><code>arrange</code></h2>
+<section id="select-helpers" class="slide level2">
+<h2><code>select</code> Helpers</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-4">
+<div class="overlap-box">
+<div class="box-title">
+<p><a href="https://tidyselect.r-lib.org/reference/index.html" style="color: #F8FdFE">tidy-select</a></p>
+</div>
+<div class="box-content">
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li><code>starts_with("prefix")</code></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li><code>ends_with("suffix")</code></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li><code>contains("text")</code></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li><code>matches("regex")</code></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="5">
+<ul>
+<li><code>num_range("x", 1:5)</code></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="6">
+<ul>
+<li><code>everything()</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-4" style="margin-top: -2em">
+<div class="fragment" style="margin-top: .2em;" data-fragment-index="1">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># Select by first character(s)</span></span>
+<span id="cb32-2"><a></a><span class="fu">select</span>(mm.sample, </span>
+<span id="cb32-3"><a></a>       <span class="fu">starts_with</span>(<span class="st">"B"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+    Bag  Blue Brown
+  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     1     3    19
+2     2    19     8
+3     3     6     4
+4     4     3     8
+5     5     7     4</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment" style="margin-top: .2em;" data-fragment-index="2">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># Select by last character(s)</span></span>
+<span id="cb34-2"><a></a><span class="fu">select</span>(mm.sample, </span>
+<span id="cb34-3"><a></a>       <span class="fu">ends_with</span>(<span class="st">"n"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  Green Brown
+  &lt;dbl&gt; &lt;dbl&gt;
+1     9    19
+2    17     8
+3     8     4
+4     7     8
+5     3     4</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="col-4" style="margin-top: -2em">
+<div class="fragment" style="margin-top: .2em;" data-fragment-index="3">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="co"># Select with regex</span></span>
+<span id="cb36-2"><a></a><span class="fu">select</span>(mm.sample, </span>
+<span id="cb36-3"><a></a>       <span class="fu">contains</span>(<span class="st">"ow"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  Yellow Brown
+   &lt;dbl&gt; &lt;dbl&gt;
+1      9    19
+2      3     8
+3     19     4
+4     16     8
+5     22     4</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment" style="margin-top: .2em;" data-fragment-index="4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="co"># Select with regex</span></span>
+<span id="cb38-2"><a></a><span class="fu">select</span>(mm.sample, </span>
+<span id="cb38-3"><a></a>       <span class="fu">matches</span>(<span class="st">"^B|n$"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+    Bag Green  Blue Brown
+  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     1     9     3    19
+2     2    17    19     8
+3     3     8     6     4
+4     4     7     3     8
+5     5     3     7     4</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Operates on columns/variables (not observations/rows) Returns a tibble with only the given columns in the order given renamed if provided Remove columns with the hyphen Includes everything not explicitly mentioned Rename as you select with new_name = old_name</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="mutate" class="slide level2">
-<h2><code>mutate</code></h2>
+<section id="filter-subset-rows" class="slide level2">
+<h2><code>filter</code>: Subset rows</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<!-- begin container -->
+<div class="container-fluid">
+<!-- begin main row -->
+<div class="row">
+<!-- begin left column -->
+<div class="col-5">
+<div class="overlap-box accent1">
+<div class="box-title">
+<p>Filter syntax &amp; logic:</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">filter</span>(tbl, cond1, cond2, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li class="fragment">Operates on rows (observations)</li>
+<li class="fragment">Conditional evaluation:
+<ul>
+<li class="fragment">Comparison operators (e.g., <code>&gt;</code>, <code>!=</code>, <code>==</code>)</li>
+<li class="fragment">Logical operators (e.g., <code>&amp;</code>, <code>|</code>, <code>!</code>)</li>
+<li class="fragment">Boolean values (<code>TRUE</code>, <code>FALSE</code>)</li>
+</ul></li>
+<li class="fragment">Returns tibble with rows that meet <em>all</em> conditions</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- End left column -->
+<!-- Begin right column -->
+<div class="col-7" style="margin-top: -3em; font-size: .8em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="co"># Vehicle dataframe (1 column called `transport`)</span></span>
+<span id="cb41-2"><a></a>vehicles <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb41-3"><a></a>    <span class="at">transport =</span> <span class="fu">c</span>(<span class="st">"walking"</span>, <span class="st">"bus"</span>, <span class="st">"bicycle"</span>, <span class="st">"car"</span>, <span class="st">"atv"</span>,</span>
+<span id="cb41-4"><a></a>                   <span class="st">"motorcycle"</span>, <span class="st">"razor scooter"</span>, <span class="st">"the el"</span>, </span>
+<span id="cb41-5"><a></a>                   <span class="st">"jet ski"</span>, <span class="st">"sailboat"</span>, <span class="st">"tricycle"</span>, <span class="st">"chariot"</span>))</span>
+<span id="cb41-6"><a></a></span>
+<span id="cb41-7"><a></a><span class="co"># Condition 1</span></span>
+<span id="cb41-8"><a></a><span class="fu">filter</span>(vehicles, transport <span class="sc">==</span> <span class="st">"bicycle"</span>)</span>
+<span id="cb41-9"><a></a></span>
+<span id="cb41-10"><a></a><span class="co"># Condition 2</span></span>
+<span id="cb41-11"><a></a><span class="fu">filter</span>(vehicles, </span>
+<span id="cb41-12"><a></a>       <span class="fu">has.handlebars</span>(transport) <span class="sc">|</span> transport <span class="sc">==</span> <span class="st">"boat"</span>)</span>
+<span id="cb41-13"><a></a></span>
+<span id="cb41-14"><a></a><span class="co"># Condition 3</span></span>
+<span id="cb41-15"><a></a><span class="fu">filter</span>(vehicles, </span>
+<span id="cb41-16"><a></a>       <span class="fu">has.handlebars</span>(transport), transport <span class="sc">==</span> <span class="st">"boat"</span>)</span>
+<span id="cb41-17"><a></a></span>
+<span id="cb41-18"><a></a><span class="co"># Condition 3</span></span>
+<span id="cb41-19"><a></a><span class="fu">filter</span>(vehicles, </span>
+<span id="cb41-20"><a></a>       (<span class="fu">has.handlebars</span>(transport) <span class="sc">&amp;</span> <span class="fu">n.wheels</span>(transport) <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="sc">|</span></span>
+<span id="cb41-21"><a></a>           (<span class="fu">requires.gas</span>(transport) <span class="sc">&amp;</span> <span class="fu">n.wheels</span>(transport) <span class="sc">&gt;</span> <span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<!-- Begin conditional results row -->
+<div class="row">
+<div class="col-3 fragment">
+<p>Condition 1:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  transport
+1   bicycle</code></pre>
+</div>
+</div>
+</div>
+<div class="col-3 fragment">
+<p>Condition 2:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>      transport
+1       bicycle
+2           atv
+3    motorcycle
+4 razor scooter
+5       jet ski</code></pre>
+</div>
+</div>
+</div>
+<div class="col-3 fragment">
+<p>Condition 3:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] transport
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
+</div>
+</div>
+</div>
+<div class="col-3 fragment">
+<p>Condition 4:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>      transport
+1           bus
+2       bicycle
+3           car
+4    motorcycle
+5 razor scooter
+6       jet ski</code></pre>
+</div>
+</div>
+</div>
+</div>
+<!-- End conditional results row -->
+</div>
+<!-- End right column -->
+</div>
+<!-- end main row -->
+</div>
+<!-- end container -->
+<aside class="notes">
+<p>Operates on observations/rows (not columns!) Conditions are logical evaluations using: &gt;, &gt;=, &lt;, &lt;=, != (“not equal to”), and == (“equal to”) If the condition evaluates to TRUE, it stays and is returned or passed to the next line of the pipe If FALSE, it’s filtered out</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="summarize" class="slide level2">
-<h2><code>summarize</code></h2>
+<section id="filter-subset-rows-1" class="slide level2">
+<h2><code>filter</code>: Subset rows</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<!-- begin container -->
+<div class="container-fluid">
+<!-- begin main row -->
+<div class="row">
+<!-- begin left column -->
+<div class="col-5">
+<div class="overlap-box accent1">
+<div class="box-title">
+<p>Filter example:</p>
+</div>
+<div class="box-content">
+<div class="cell" style="font-size: .9em">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="co"># Condition 1</span></span>
+<span id="cb46-2"><a></a><span class="fu">filter</span>(mm.tidy, Bag_Weight <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
+<span id="cb46-3"><a></a></span>
+<span id="cb46-4"><a></a><span class="co"># Condition 2</span></span>
+<span id="cb46-5"><a></a><span class="fu">filter</span>(mm.tidy, </span>
+<span id="cb46-6"><a></a>       Color <span class="sc">==</span> <span class="st">"Red"</span> <span class="sc">|</span> Number <span class="sc">&gt;=</span> <span class="dv">15</span>)</span>
+<span id="cb46-7"><a></a></span>
+<span id="cb46-8"><a></a><span class="co"># Condition 3</span></span>
+<span id="cb46-9"><a></a><span class="fu">filter</span>(mm.tidy, </span>
+<span id="cb46-10"><a></a>       Color <span class="sc">==</span> <span class="st">"Red"</span>, Number <span class="sc">&gt;=</span> <span class="dv">15</span>)</span>
+<span id="cb46-11"><a></a></span>
+<span id="cb46-12"><a></a><span class="co"># Condition 4</span></span>
+<span id="cb46-13"><a></a><span class="fu">filter</span>(mm.tidy, </span>
+<span id="cb46-14"><a></a>       (Color <span class="sc">==</span> <span class="st">"Blue"</span> <span class="sc">&amp;</span> Number <span class="sc">&gt;=</span> <span class="dv">5</span>) <span class="sc">|</span></span>
+<span id="cb46-15"><a></a>           (Bag_Weight <span class="sc">&gt;</span> <span class="fl">50.5</span> <span class="sc">|</span> Bag_Weight <span class="sc">&lt;</span> <span class="dv">47</span>),</span>
+<span id="cb46-16"><a></a>       Bag <span class="sc">!=</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<!-- End left column -->
+<!-- Begin right column -->
+<div class="col-7" style="margin-top: -3em; font-size: .8em;">
+<!-- Begin conditional results row 1 -->
+<div class="row">
+<div class="col-6 fragment">
+<p>Condition 1:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 54 × 4
+     Bag Color  Number Bag_Weight
+   &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;      &lt;dbl&gt;
+ 1     3 Red        14       50.4
+ 2     3 Green       8       50.4
+ 3     3 Blue        6       50.4
+ 4     3 Orange      8       50.4
+ 5     3 Yellow     19       50.4
+ 6     3 Brown       4       50.4
+ 7     7 Red         6       50.2
+ 8     7 Green       7       50.2
+ 9     7 Blue        3       50.2
+10     7 Orange      6       50.2
+# ℹ 44 more rows</code></pre>
+</div>
+</div>
+</div>
+<div class="col-6 fragment">
+<p>Condition 2:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 58 × 4
+     Bag Color  Number Bag_Weight
+   &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;      &lt;dbl&gt;
+ 1     1 Red        15       49.8
+ 2     1 Brown      19       49.8
+ 3     2 Red         9       49.0
+ 4     2 Green      17       49.0
+ 5     2 Blue       19       49.0
+ 6     3 Red        14       50.4
+ 7     3 Yellow     19       50.4
+ 8     4 Red        15       49.2
+ 9     4 Yellow     16       49.2
+10     5 Red        10       47.6
+# ℹ 48 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+<!-- End conditional results row 1
+
+<!-- Begin conditional results row 2 -->
+<div class="row">
+<div class="col-6 fragment">
+<p>Condition 3:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+    Bag Color Number Bag_Weight
+  &lt;int&gt; &lt;chr&gt;  &lt;dbl&gt;      &lt;dbl&gt;
+1     1 Red       15       49.8
+2     4 Red       15       49.2
+3    23 Red       20       50.0
+4    29 Red       15       49.4</code></pre>
+</div>
+</div>
+</div>
+<div class="col-6 fragment">
+<p>Condition 4:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 62 × 4
+     Bag Color  Number Bag_Weight
+   &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;      &lt;dbl&gt;
+ 1     2 Blue       19       49.0
+ 2     3 Blue        6       50.4
+ 3     5 Blue        7       47.6
+ 4     8 Red        14       51.7
+ 5     8 Green      11       51.7
+ 6     8 Blue        4       51.7
+ 7     8 Orange      1       51.7
+ 8     8 Yellow     14       51.7
+ 9     8 Brown      17       51.7
+10     9 Blue       10       48.4
+# ℹ 52 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+<!-- End conditional results row 2 -->
+</div>
+<!-- End right column -->
+</div>
+<!-- end main row -->
+</div>
+<!-- end container -->
+<aside class="notes">
+<p>Operates on observations/rows (not columns!) Conditions are logical evaluations using: &gt;, &gt;=, &lt;, &lt;=, !=, == If the condition evaluates to TRUE, it stays and is returned or passed to the next line of the pipe If FALSE, it’s filtered out</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="group_by" class="slide level2">
-<h2><code>group_by</code></h2>
+<section id="arrange-sort-rows" class="slide level2">
+<h2><code>arrange</code>: Sort rows</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-4">
+<div class="overlap-box">
+<div class="box-title">
+<p>Arrange syntax:</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="fu">arrange</span>(tbl, col1, col2, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li class="fragment">Sort rows by column values</li>
+<li class="fragment">If 2+ variables, sorts in order given</li>
+<li class="fragment">Strings sorted alphabetically</li>
+<li class="fragment">Ascending order (default)</li>
+<li class="fragment">Descending order:
+<ul>
+<li class="fragment"><code>arrange(desc(col1))</code></li>
+<li class="fragment"><code>arrange(-col1)</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-4" style="font-size: .8em;">
+<div class="fragment" style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a><span class="co"># Sort by (ascending) bag weight</span></span>
+<span id="cb52-2"><a></a><span class="fu">arrange</span>(mm.tidy, Bag_Weight)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 180 × 4
+     Bag Color  Number Bag_Weight
+   &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;      &lt;dbl&gt;
+ 1    10 Red         9       46.2
+ 2    10 Green       9       46.2
+ 3    10 Blue        3       46.2
+ 4    10 Orange      9       46.2
+ 5    10 Yellow      8       46.2
+ 6    10 Brown      15       46.2
+ 7    26 Red         4       46.7
+ 8    26 Green       6       46.7
+ 9    26 Blue        7       46.7
+10    26 Orange      6       46.7
+# ℹ 170 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="col-4" style="font-size: .8em;">
+<div class="fragment" style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="co"># Sort by color -&gt; desc number -&gt; desc bag</span></span>
+<span id="cb54-2"><a></a><span class="fu">arrange</span>(mm.tidy, Color, <span class="sc">-</span>Number, <span class="fu">desc</span>(Bag))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 180 × 4
+     Bag Color Number Bag_Weight
+   &lt;int&gt; &lt;chr&gt;  &lt;dbl&gt;      &lt;dbl&gt;
+ 1     2 Blue      19       49.0
+ 2    19 Blue      16       49.0
+ 3    20 Blue      13       51.7
+ 4    13 Blue      13       46.9
+ 5    11 Blue      13       50.4
+ 6    27 Blue      11       47.7
+ 7    17 Blue      11       48.7
+ 8     9 Blue      10       48.4
+ 9    16 Blue       9       48.3
+10    30 Blue       7       52.1
+# ℹ 170 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Sort rows of your tibble in the order of col1, then col2, etc. Defaults to ascending order, but you can wrap the column name in the desc() function to use descending order The hyphen - is shorthand for desc()</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mutate-create-modify-columns" class="slide level2" style="font-size: .8em">
+<h2><code>mutate</code>: Create &amp; modify columns</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-3">
+<div class="overlap-box accent1">
+<div class="box-title" style="font-size: .9em">
+<p>Create &amp; modify:</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="fu">mutate</span>(tbl, </span>
+<span id="cb56-2"><a></a>    <span class="at">new_col1 =</span> ..., </span>
+<span id="cb56-3"><a></a>    <span class="at">new_col2 =</span> ..., </span>
+<span id="cb56-4"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li class="fragment">Add named new column</li>
+<li class="fragment">Assign values with <code>=</code></li>
+<li class="fragment">Compute values by row</li>
+<li class="fragment">Columns created in order
+<ul>
+<li class="fragment">Reference a newly created column in subsequent columns</li>
+</ul></li>
+<li class="fragment">Modify an existing column by creating a new column with the same name</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-4" style="font-size: .8em, margin-top: -2em">
+<div class="fragment" style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="co"># Create new column: Weight_Oz</span></span>
+<span id="cb57-2"><a></a><span class="co"># then pipe to select cols</span></span>
+<span id="cb57-3"><a></a><span class="fu">mutate</span>(mm.sample,</span>
+<span id="cb57-4"><a></a>    <span class="at">Type =</span> <span class="st">"Chocolate"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb57-5"><a></a>    <span class="fu">select</span>(Bag, Weight, Type) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+    Bag Weight Type     
+  &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;    
+1     1   49.8 Chocolate
+2     2   49.0 Chocolate
+3     3   50.4 Chocolate
+4     4   49.2 Chocolate
+5     5   47.6 Chocolate</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment" style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a><span class="co"># Create new column: Weight_Oz</span></span>
+<span id="cb59-2"><a></a><span class="fu">mutate</span>(mm.sample,</span>
+<span id="cb59-3"><a></a>    <span class="at">Weight_Oz =</span> Weight <span class="sc">/</span> <span class="fl">28.34952</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb59-4"><a></a>    <span class="fu">select</span>(Bag, Weight, Weight_Oz)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+    Bag Weight Weight_Oz
+  &lt;int&gt;  &lt;dbl&gt;     &lt;dbl&gt;
+1     1   49.8      1.76
+2     2   49.0      1.73
+3     3   50.4      1.78
+4     4   49.2      1.73
+5     5   47.6      1.68</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="col-5" style="margin-top: -4.5em">
+<div class="fragment" style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="co"># Create new column (total M&amp;Ms per bag)</span></span>
+<span id="cb61-2"><a></a><span class="co"># Then another new column (proportion of red M&amp;Ms)</span></span>
+<span id="cb61-3"><a></a><span class="co"># using the first new column</span></span>
+<span id="cb61-4"><a></a><span class="fu">mutate</span>(mm.sample,</span>
+<span id="cb61-5"><a></a>    <span class="at">Total_MMs =</span> Red <span class="sc">+</span> Green <span class="sc">+</span> Blue <span class="sc">+</span> </span>
+<span id="cb61-6"><a></a>        Brown <span class="sc">+</span> Yellow <span class="sc">+</span> Orange,</span>
+<span id="cb61-7"><a></a>        <span class="at">Prop_Red =</span> Red <span class="sc">/</span> Total_MMs) <span class="sc">|&gt;</span> </span>
+<span id="cb61-8"><a></a>    <span class="fu">select</span>(Bag, Red, Total_MMs, Prop_Red)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+    Bag   Red Total_MMs Prop_Red
+  &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1     1    15        58    0.259
+2     2     9        59    0.153
+3     3    14        59    0.237
+4     4    15        57    0.263
+5     5    10        55    0.182</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment" style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="co"># Change values in existing column by overwriting</span></span>
+<span id="cb63-2"><a></a><span class="fu">mutate</span>(mm.sample,</span>
+<span id="cb63-3"><a></a>        <span class="at">Weight =</span> <span class="fu">case_when</span>(</span>
+<span id="cb63-4"><a></a>        Weight <span class="sc">&lt;</span> <span class="dv">48</span> <span class="sc">~</span> <span class="st">"Light"</span>,</span>
+<span id="cb63-5"><a></a>        Weight <span class="sc">&gt;</span> <span class="dv">50</span> <span class="sc">~</span> <span class="st">"Heavy"</span>,</span>
+<span id="cb63-6"><a></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Medium"</span> <span class="co"># anything left after</span></span>
+<span id="cb63-7"><a></a>        )) <span class="sc">|&gt;</span> </span>
+<span id="cb63-8"><a></a><span class="fu">select</span>(Bag, Red, Weight)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+    Bag   Red Weight
+  &lt;int&gt; &lt;dbl&gt; &lt;chr&gt; 
+1     1    15 Medium
+2     2     9 Medium
+3     3    14 Heavy 
+4     4    15 Medium
+5     5    10 Light </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Adds new column(s) with names and values that you define Use the single equals sign to assign new values Use double equal signs to mean “equals” within a conditional statement *Use mutate to effectively change data in an existing variable by creating a new variable with the same name that will overwrite it</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="summarize-group_by-compute-summary-values" class="slide level2" style="font-size: .8em">
+<h2><code>summarize</code> &amp; <code>group_by</code>: Compute summary values</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-4">
+<div class="overlap-box">
+<div class="box-title">
+<p>Group &amp; summarize:</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">group_by</span>(tbl, col1, col2, ...)  <span class="sc">|&gt;</span> </span>
+<span id="cb65-2"><a></a><span class="fu">summarize</span>(</span>
+<span id="cb65-3"><a></a>    <span class="at">summary_col1 =</span> <span class="fu">summary_func</span>(colA),</span>
+<span id="cb65-4"><a></a>    <span class="at">summary_col2 =</span> <span class="fu">summary_func</span>(colB),</span>
+<span id="cb65-5"><a></a>...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li class="fragment"><code>group_by()</code> creates subgroups based on unique values across 1+ columns
+<ul>
+<li class="fragment">Tidy <code>group</code>ing needs tidy data</li>
+</ul></li>
+<li class="fragment"><code>summarize()</code> computes summary functions across those groups
+<ul>
+<li class="fragment">e.g., <code>mean()</code>, <code>max()</code>, <code>last()</code>, <code>n()</code></li>
+</ul></li>
+<li class="fragment">Output tibble includes:
+<ul>
+<li class="fragment">Grouping column(s)</li>
+<li class="fragment">New summary column(s)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="co"># Compute mean weight of all bags</span></span>
+<span id="cb66-2"><a></a><span class="fu">summarize</span>(mm.tidy, </span>
+<span id="cb66-3"><a></a>          <span class="at">Mean_Weight =</span> <span class="fu">mean</span>(Bag_Weight))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  Mean_Weight
+        &lt;dbl&gt;
+1        49.2</code></pre>
+</div>
+</div>
+<div class="cell" style="margin-top: .1em">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a><span class="co"># Group by color</span></span>
+<span id="cb68-2"><a></a><span class="fu">group_by</span>(mm.tidy, Color) <span class="sc">|&gt;</span>  </span>
+<span id="cb68-3"><a></a><span class="co"># pipe grouped data to next function</span></span>
+<span id="cb68-4"><a></a><span class="co"># Compute total count and mean weight *per color*</span></span>
+<span id="cb68-5"><a></a><span class="fu">summarize</span>(<span class="at">Mean_Weight =</span> <span class="fu">mean</span>(Bag_Weight),</span>
+<span id="cb68-6"><a></a>          <span class="at">Total_Number =</span> <span class="fu">sum</span>(Number))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" style="margin-top: .1em">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  Color  Mean_Weight Total_Number
+  &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+1 Blue          49.2          217
+2 Brown         49.2          374
+3 Green         49.2          222
+4 Orange        49.2          199
+5 Red           49.2          288
+6 Yellow        49.2          413</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a><span class="co"># `mm.tidy.weights` includes a Weight_Class column</span></span>
+<span id="cb70-2"><a></a><span class="co"># Grouping by multiple columns creates a summary value for each </span></span>
+<span id="cb70-3"><a></a><span class="co"># unique combination of values in those columns</span></span>
+<span id="cb70-4"><a></a><span class="fu">group_by</span>(mm.tidy.weights, Color, Weight_Class) <span class="sc">|&gt;</span> </span>
+<span id="cb70-5"><a></a><span class="fu">summarize</span>(<span class="at">Mean_Weight =</span> <span class="fu">mean</span>(Bag_Weight),</span>
+<span id="cb70-6"><a></a>          <span class="at">Total_Number =</span> <span class="fu">sum</span>(Number))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 4
+# Groups:   Color [6]
+   Color  Weight_Class Mean_Weight Total_Number
+   &lt;chr&gt;  &lt;chr&gt;              &lt;dbl&gt;        &lt;dbl&gt;
+ 1 Blue   Heavy               51.0           63
+ 2 Blue   Light               47.3           50
+ 3 Blue   Medium              49.0          104
+ 4 Brown  Heavy               51.0          108
+ 5 Brown  Light               47.3           81
+ 6 Brown  Medium              49.0          185
+ 7 Green  Heavy               51.0           69
+ 8 Green  Light               47.3           50
+ 9 Green  Medium              49.0          103
+10 Orange Heavy               51.0           57
+11 Orange Light               47.3           43
+12 Orange Medium              49.0           99
+13 Red    Heavy               51.0           99
+14 Red    Light               47.3           59
+15 Red    Medium              49.0          130
+16 Yellow Heavy               51.0          136
+17 Yellow Light               47.3           97
+18 Yellow Medium              49.0          180</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>summarize() will compute a summary function (e.g., mean, maximum, last) across a variable grouping your data first lets you summarize based on subsets within 1 or more columns group_by() a categorical variable then pipe it into a summarize() the resulting tibble will ONLY have the columns you created in the summarize()</p>
+<p>In the example with both mean weight and total number of M&amp;Ms, both summary values are computed for each color subgroup. Mean weight is identical for all colors; total number is not. Figure out why.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="magrittr-pipes" class="title-slide slide level1 center">
+<h1><code>magrittr</code> &amp; pipes</h1>
+
+<img data-src="../images/comics-memes/une-pipe.png" class="r-stretch"></section>
+<section id="the-pipe-operators" class="slide level2">
+<h2>The Pipe Operator(s)</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 4em; height: 4em;; "> <img data-src="../images/icons/tv-icons/magrittr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<p><span class="keyword">Pipes</span> create <span class="keyword">pipelines</span>, human-readable alternative to multiple embedded functions.</p>
+<div class="container-fluid">
+<div class="row">
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a>as much as you <span class="fu">like</span>(change it with <span class="cf">function</span> <span class="fu">Y</span>(change it with <span class="cf">function</span> <span class="fu">X</span>(create some data)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="row" style="margin-top: 1em;">
+<div class="col-6 fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a>create some data <span class="sc">|&gt;</span> </span>
+<span id="cb73-2"><a></a>    change it with <span class="cf">function</span> X <span class="sc">|&gt;</span> </span>
+<span id="cb73-3"><a></a>    change it with <span class="cf">function</span> Y <span class="sc">|&gt;</span> </span>
+<span id="cb73-4"><a></a>    as much as you like</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="col-6 fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a>mm.tidy <span class="sc">|&gt;</span> </span>
+<span id="cb74-2"><a></a>    <span class="fu">group_by</span>(Color) <span class="sc">|&gt;</span> </span>
+<span id="cb74-3"><a></a>    <span class="fu">summarize</span>(<span class="at">Mean_Number =</span> <span class="fu">mean</span>(Number)) <span class="sc">|&gt;</span> </span>
+<span id="cb74-4"><a></a>    <span class="fu">filter</span>(Mean_Number <span class="sc">&lt;</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="row">
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><code>|&gt;</code> vs.&nbsp;<code>%&gt;%</code></strong></p>
+</div>
+<div class="callout-content">
+<p><span class="pkg">base</span> R has a native <code>|&gt;</code> pipe. <span class="pkg">magrittr</span> adds the <code>%&gt;%</code> pipe for tidyverse use.</p>
+<p>The <code>%&gt;%</code> pipe was the standard for many years in the tidyverse. It is usable, maintained, and popular, but no longer necessary.</p>
+<p>As of R 1.4.0, <code>|&gt;</code> is the <a href="https://r4ds.hadley.nz/data-transform.html#sec-the-pipe">recommend pipe</a> for most uses. Now that it plays nicely with tidyverse pipelines, you can consistently just use <code>|&gt;</code> whether you’re working in the tidyverse or not. Updated D2M-R materials will use the <code>|&gt;</code> pipe going forward, but older materials may still use <code>%&gt;%</code>.</p>
+<p><strong>Either works.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pipe-example-18" class="slide level2" style="font-size: .8em">
+<h2>Pipe Example (1/8)</h2>
+<div class="longer-code">
+<div class="cell columns column-output-location" style="font-size: 1.1em;">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<span id="cb75-2"><a></a>mm.tidy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 180 × 4
+     Bag Color  Number Bag_Weight
+   &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;      &lt;dbl&gt;
+ 1     1 Red        15       49.8
+ 2     1 Green       9       49.8
+ 3     1 Blue        3       49.8
+ 4     1 Orange      3       49.8
+ 5     1 Yellow      9       49.8
+ 6     1 Brown      19       49.8
+ 7     2 Red         9       49.0
+ 8     2 Green      17       49.0
+ 9     2 Blue       19       49.0
+10     2 Orange      3       49.0
+# ℹ 170 more rows</code></pre>
+</div>
+</div></div>
+</div>
+</section>
+<section id="pipe-example-28" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
+<h2>Pipe Example (2/8)</h2>
+<div class="longer-code">
+<div class="cell columns column-output-location" style="font-size: 1.1em;">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<span id="cb77-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
+<span id="cb77-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
+<span id="cb77-4"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb77-5"><a></a>        <span class="at">Color_Type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb77-6"><a></a>            Color <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>) <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
+<span id="cb77-7"><a></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Secondary"</span>),    </span>
+<span id="cb77-8"><a></a>        )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 180 × 5
+     Bag Color  Number Bag_Weight Color_Type
+   &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;     
+ 1     1 Red        15       49.8 Primary   
+ 2     1 Green       9       49.8 Secondary 
+ 3     1 Blue        3       49.8 Primary   
+ 4     1 Orange      3       49.8 Secondary 
+ 5     1 Yellow      9       49.8 Primary   
+ 6     1 Brown      19       49.8 Secondary 
+ 7     2 Red         9       49.0 Primary   
+ 8     2 Green      17       49.0 Secondary 
+ 9     2 Blue       19       49.0 Primary   
+10     2 Orange      3       49.0 Secondary 
+# ℹ 170 more rows</code></pre>
+</div>
+</div></div>
+</div>
+</section>
+<section id="pipe-example-38" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
+<h2>Pipe Example (3/8)</h2>
+<div class="longer-code">
+<div class="cell columns column-output-location" style="font-size: 1.1em;">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<span id="cb79-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
+<span id="cb79-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
+<span id="cb79-4"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb79-5"><a></a>        <span class="at">Color_Type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb79-6"><a></a>            Color <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>) <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
+<span id="cb79-7"><a></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Secondary"</span>),    </span>
+<span id="cb79-8"><a></a>        ) <span class="sc">|&gt;</span> </span>
+<span id="cb79-9"><a></a>    <span class="co"># Group by color type &amp; bag</span></span>
+<span id="cb79-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 180 × 5
+# Groups:   Color_Type, Bag [60]
+     Bag Color  Number Bag_Weight Color_Type
+   &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;     
+ 1     1 Red        15       49.8 Primary   
+ 2     1 Green       9       49.8 Secondary 
+ 3     1 Blue        3       49.8 Primary   
+ 4     1 Orange      3       49.8 Secondary 
+ 5     1 Yellow      9       49.8 Primary   
+ 6     1 Brown      19       49.8 Secondary 
+ 7     2 Red         9       49.0 Primary   
+ 8     2 Green      17       49.0 Secondary 
+ 9     2 Blue       19       49.0 Primary   
+10     2 Orange      3       49.0 Secondary 
+# ℹ 170 more rows</code></pre>
+</div>
+</div></div>
+</div>
+</section>
+<section id="pipe-example-48" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
+<h2>Pipe Example (4/8)</h2>
+<div class="longer-code">
+<div class="cell columns column-output-location" style="font-size: 1.1em;">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<span id="cb81-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
+<span id="cb81-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
+<span id="cb81-4"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb81-5"><a></a>        <span class="at">Color_Type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb81-6"><a></a>            Color <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>) <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
+<span id="cb81-7"><a></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Secondary"</span>),    </span>
+<span id="cb81-8"><a></a>        ) <span class="sc">|&gt;</span> </span>
+<span id="cb81-9"><a></a>    <span class="co"># Group by color type &amp; bag</span></span>
+<span id="cb81-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag) <span class="sc">|&gt;</span></span>
+<span id="cb81-11"><a></a>    <span class="co"># Summarize total M&amp;Ms per group</span></span>
+<span id="cb81-12"><a></a>    <span class="fu">summarize</span>(<span class="at">Total_Number =</span> <span class="fu">sum</span>(Number))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 60 × 3
+# Groups:   Color_Type [2]
+   Color_Type   Bag Total_Number
+   &lt;chr&gt;      &lt;int&gt;        &lt;dbl&gt;
+ 1 Primary        1           27
+ 2 Primary        2           31
+ 3 Primary        3           39
+ 4 Primary        4           34
+ 5 Primary        5           39
+ 6 Primary        6           35
+ 7 Primary        7           35
+ 8 Primary        8           32
+ 9 Primary        9           32
+10 Primary       10           20
+# ℹ 50 more rows</code></pre>
+</div>
+</div></div>
+</div>
+</section>
+<section id="pipe-example-58" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
+<h2>Pipe Example (5/8)</h2>
+<div class="longer-code">
+<div class="cell columns column-output-location" style="font-size: 1.1em;">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<span id="cb83-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
+<span id="cb83-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
+<span id="cb83-4"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb83-5"><a></a>        <span class="at">Color_Type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb83-6"><a></a>            Color <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>) <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
+<span id="cb83-7"><a></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Secondary"</span>),    </span>
+<span id="cb83-8"><a></a>        ) <span class="sc">|&gt;</span> </span>
+<span id="cb83-9"><a></a>    <span class="co"># Group by color type &amp; bag</span></span>
+<span id="cb83-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag) <span class="sc">|&gt;</span></span>
+<span id="cb83-11"><a></a>    <span class="co"># Summarize total M&amp;Ms per group</span></span>
+<span id="cb83-12"><a></a>    <span class="fu">summarize</span>(<span class="at">Total_Number =</span> <span class="fu">sum</span>(Number)) <span class="sc">|&gt;</span></span>
+<span id="cb83-13"><a></a>    <span class="co"># Arrange by bag then color_type</span></span>
+<span id="cb83-14"><a></a>    <span class="fu">arrange</span>(Bag, Color_Type)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 60 × 3
+# Groups:   Color_Type [2]
+   Color_Type   Bag Total_Number
+   &lt;chr&gt;      &lt;int&gt;        &lt;dbl&gt;
+ 1 Primary        1           27
+ 2 Secondary      1           31
+ 3 Primary        2           31
+ 4 Secondary      2           28
+ 5 Primary        3           39
+ 6 Secondary      3           20
+ 7 Primary        4           34
+ 8 Secondary      4           23
+ 9 Primary        5           39
+10 Secondary      5           16
+# ℹ 50 more rows</code></pre>
+</div>
+</div></div>
+</div>
+</section>
+<section id="pipe-example-68" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
+<h2>Pipe Example (6/8)</h2>
+<div class="longer-code">
+<div class="cell columns column-output-location" style="font-size: 1.1em;">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<span id="cb85-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
+<span id="cb85-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
+<span id="cb85-4"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb85-5"><a></a>        <span class="at">Color_Type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb85-6"><a></a>            Color <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>) <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
+<span id="cb85-7"><a></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Secondary"</span>),    </span>
+<span id="cb85-8"><a></a>        ) <span class="sc">|&gt;</span> </span>
+<span id="cb85-9"><a></a>    <span class="co"># Group by color type &amp; bag</span></span>
+<span id="cb85-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag) <span class="sc">|&gt;</span></span>
+<span id="cb85-11"><a></a>    <span class="co"># Summarize total M&amp;Ms per group</span></span>
+<span id="cb85-12"><a></a>    <span class="fu">summarize</span>(<span class="at">Total_Number =</span> <span class="fu">sum</span>(Number)) <span class="sc">|&gt;</span></span>
+<span id="cb85-13"><a></a>    <span class="co"># Arrange by bag then color_type</span></span>
+<span id="cb85-14"><a></a>    <span class="fu">arrange</span>(Bag, Color_Type) <span class="sc">|&gt;</span> </span>
+<span id="cb85-15"><a></a>    <span class="co"># Pivot wider: one row per bag</span></span>
+<span id="cb85-16"><a></a>    <span class="fu">pivot_wider</span>(</span>
+<span id="cb85-17"><a></a>        <span class="at">names_from =</span> Color_Type,</span>
+<span id="cb85-18"><a></a>        <span class="at">values_from =</span> Total_Number</span>
+<span id="cb85-19"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 30 × 3
+     Bag Primary Secondary
+   &lt;int&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+ 1     1      27        31
+ 2     2      31        28
+ 3     3      39        20
+ 4     4      34        23
+ 5     5      39        16
+ 6     6      35        23
+ 7     7      35        23
+ 8     8      32        29
+ 9     9      32        26
+10    10      20        33
+# ℹ 20 more rows</code></pre>
+</div>
+</div></div>
+</div>
+<aside class="notes">
+<p>We haven’t talked about pivot wider yet but it’s coming up next!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="pipe-example-78" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
+<h2>Pipe Example (7/8)</h2>
+<div class="longer-code">
+<div class="cell columns column-output-location" style="font-size: 1.1em;">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<span id="cb87-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
+<span id="cb87-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
+<span id="cb87-4"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb87-5"><a></a>        <span class="at">Color_Type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb87-6"><a></a>            Color <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>) <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
+<span id="cb87-7"><a></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Secondary"</span>),    </span>
+<span id="cb87-8"><a></a>        ) <span class="sc">|&gt;</span> </span>
+<span id="cb87-9"><a></a>    <span class="co"># Group by color type &amp; bag</span></span>
+<span id="cb87-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag) <span class="sc">|&gt;</span></span>
+<span id="cb87-11"><a></a>    <span class="co"># Summarize total M&amp;Ms per group</span></span>
+<span id="cb87-12"><a></a>    <span class="fu">summarize</span>(<span class="at">Total_Number =</span> <span class="fu">sum</span>(Number)) <span class="sc">|&gt;</span></span>
+<span id="cb87-13"><a></a>    <span class="co"># Arrange by bag then color_type</span></span>
+<span id="cb87-14"><a></a>    <span class="fu">arrange</span>(Bag, Color_Type) <span class="sc">|&gt;</span> </span>
+<span id="cb87-15"><a></a>    <span class="co"># Pivot wider: one row per bag</span></span>
+<span id="cb87-16"><a></a>    <span class="fu">pivot_wider</span>(</span>
+<span id="cb87-17"><a></a>        <span class="at">names_from =</span> Color_Type,</span>
+<span id="cb87-18"><a></a>        <span class="at">values_from =</span> Total_Number</span>
+<span id="cb87-19"><a></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb87-20"><a></a>    <span class="co"># Add column determining which color type is more prevalent</span></span>
+<span id="cb87-21"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb87-22"><a></a>        <span class="at">More_Prevalent =</span> </span>
+<span id="cb87-23"><a></a>            <span class="fu">case_when</span>(</span>
+<span id="cb87-24"><a></a>                Primary <span class="sc">&gt;</span> Secondary <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
+<span id="cb87-25"><a></a>                Primary <span class="sc">&lt;</span> Secondary <span class="sc">~</span> <span class="st">"Secondary"</span>,</span>
+<span id="cb87-26"><a></a>                <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Equal"</span></span>
+<span id="cb87-27"><a></a>            )</span>
+<span id="cb87-28"><a></a>    ) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 30 × 4
+     Bag Primary Secondary More_Prevalent
+   &lt;int&gt;   &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;         
+ 1     1      27        31 Secondary     
+ 2     2      31        28 Primary       
+ 3     3      39        20 Primary       
+ 4     4      34        23 Primary       
+ 5     5      39        16 Primary       
+ 6     6      35        23 Primary       
+ 7     7      35        23 Primary       
+ 8     8      32        29 Primary       
+ 9     9      32        26 Primary       
+10    10      20        33 Secondary     
+# ℹ 20 more rows</code></pre>
+</div>
+</div></div>
+</div>
+</section>
+<section id="pipe-example-88" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
+<h2>Pipe Example (8/8)</h2>
+<div class="longer-code">
+<div class="cell columns column-output-location" style="font-size: 1.1em;">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<span id="cb89-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
+<span id="cb89-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
+<span id="cb89-4"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb89-5"><a></a>        <span class="at">Color_Type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb89-6"><a></a>            Color <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>) <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
+<span id="cb89-7"><a></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Secondary"</span>),    </span>
+<span id="cb89-8"><a></a>        ) <span class="sc">|&gt;</span> </span>
+<span id="cb89-9"><a></a>    <span class="co"># Group by color type &amp; bag</span></span>
+<span id="cb89-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag) <span class="sc">|&gt;</span></span>
+<span id="cb89-11"><a></a>    <span class="co"># Summarize total M&amp;Ms per group</span></span>
+<span id="cb89-12"><a></a>    <span class="fu">summarize</span>(<span class="at">Total_Number =</span> <span class="fu">sum</span>(Number)) <span class="sc">|&gt;</span></span>
+<span id="cb89-13"><a></a>    <span class="co"># Arrange by bag then color_type</span></span>
+<span id="cb89-14"><a></a>    <span class="fu">arrange</span>(Bag, Color_Type) <span class="sc">|&gt;</span> </span>
+<span id="cb89-15"><a></a>    <span class="co"># Pivot wider: one row per bag</span></span>
+<span id="cb89-16"><a></a>    <span class="fu">pivot_wider</span>(</span>
+<span id="cb89-17"><a></a>        <span class="at">names_from =</span> Color_Type,</span>
+<span id="cb89-18"><a></a>        <span class="at">values_from =</span> Total_Number</span>
+<span id="cb89-19"><a></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb89-20"><a></a>    <span class="co"># Add column determining which color type is more prevalent</span></span>
+<span id="cb89-21"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb89-22"><a></a>        <span class="at">More_Prevalent =</span> </span>
+<span id="cb89-23"><a></a>            <span class="fu">case_when</span>(</span>
+<span id="cb89-24"><a></a>                Primary <span class="sc">&gt;</span> Secondary <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
+<span id="cb89-25"><a></a>                Primary <span class="sc">&lt;</span> Secondary <span class="sc">~</span> <span class="st">"Secondary"</span>,</span>
+<span id="cb89-26"><a></a>                <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Equal"</span></span>
+<span id="cb89-27"><a></a>            )</span>
+<span id="cb89-28"><a></a>    ) <span class="sc">|&gt;</span> </span>
+<span id="cb89-29"><a></a>    <span class="co"># Filter to only bags where primary and secondary are equal</span></span>
+<span id="cb89-30"><a></a>    <span class="fu">filter</span>(More_Prevalent <span class="sc">==</span> <span class="st">"Equal"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+    Bag Primary Secondary More_Prevalent
+  &lt;int&gt;   &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;         
+1    11      29        29 Equal         </code></pre>
+</div>
+</div></div>
+</div>
 </section></section>
 <section id="tidyr" class="title-slide slide level1 center">
 <h1><code>tidyr</code></h1>
-
-</section>
-
-<section>
-<section id="magrittr-the-pipe" class="title-slide slide level1 center">
-<h1>magrittr: THE PIPE %&gt;%</h1>
-
-</section>
-<section id="the-pipe-operator" class="slide level2">
-<h2>The Pipe Operator</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>magrittr</strong>: dependency tidyverse package with one purpose – <strong>the pipe operator: %&gt;%</strong></p>
-</div>
-</div>
-</div>
-<p>The <strong>%&gt;%</strong> allows you to:</p>
-<ul>
-<li class="fragment">create some data %&gt;%
-<ul>
-<li class="fragment">change it with function X %&gt;%</li>
-<li class="fragment">change it with function Y %&gt;%</li>
-<li class="fragment">as much as you like</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<p><strong>Human-readable alternative to multiple embedded functions:</strong> <code>as much as you like(change it with function Y(change it with function X(create some data)))</code></p>
-</div>
-</section>
-<section id="keyboard-shortcut" class="slide level2">
-<h2>Keyboard Shortcut</h2>
-<div class="fragment highlight-red">
-<p>“That’s annoying. It’s also annoying to type %&gt;% all the time.”</p>
-</div>
-<div class="fragment">
-<p><strong>Fair! Fortunately, RStudio has a built-in shortcut:</strong></p>
-<p><strong>shift + cmd/ctrl + m</strong></p>
-</div>
-</section>
-<section id="pipe-example" class="slide level2">
-<h2>Pipe Example</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># Assign everything to mmdata.long</span></span>
-<span id="cb21-2"><a></a><span class="co"># Using the mmdata tbl...</span></span>
-<span id="cb21-3"><a></a>mmdata.long <span class="ot">&lt;-</span> mmdata <span class="sc">%&gt;%</span></span>
-<span id="cb21-4"><a></a>  <span class="co"># ...select three columns...</span></span>
-<span id="cb21-5"><a></a>  <span class="fu">select</span>(Red, Green, Blue) <span class="sc">%&gt;%</span></span>
-<span id="cb21-6"><a></a>  <span class="co"># ...then make that 3 col tbl long...</span></span>
-<span id="cb21-7"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Green"</span>,<span class="st">"Blue"</span>),</span>
-<span id="cb21-8"><a></a>               <span class="at">names_to =</span> <span class="st">"Color"</span>,</span>
-<span id="cb21-9"><a></a>               <span class="at">values_to =</span> <span class="st">"Number"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb21-10"><a></a>  <span class="co"># ...then sort that tbl by new Number column...</span></span>
-<span id="cb21-11"><a></a>  <span class="fu">arrange</span>(Number)</span>
-<span id="cb21-12"><a></a><span class="co"># Pipeline is over, so everything assigned to mmdata.long</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="alternative-pipe" class="slide level2">
-<h2>Alternative Pipe: |&gt;</h2>
-<div class="fragment">
-<p>“I thought this was the pipe: |”</p>
-</div>
-<div class="fragment">
-<p>Yeah…it is. This is another one. The OR operator pipe <code>|</code> looks like a pipe. The tidyverse pipe <code>%&gt;%</code> acts like a pipe.</p>
-</div>
-</section></section>
-<section>
-<section id="dplyr-1" class="title-slide slide level1 center">
-<h1>dplyr</h1>
-
-</section>
-<section id="dplyr-tidy-transformation" class="slide level2">
-<h2>dplyr: Tidy Transformation</h2>
-<p>Use the magrittr <strong>%&gt;%</strong> pipe to make data flow smoothly through these core dplyr functions:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong><span class="func">filter()</span></strong> - subset/sort rows</p>
-<p><strong><span class="func">select()</span></strong> - subset/sort columns</p>
-<p><strong><span class="func">mutate()</span></strong> - create new column</p>
-</div><div class="column" style="width:50%;">
-<p><strong><span class="func">group_by()</span></strong> &amp; <strong><span class="func">summarize()</span></strong> - compute summary values</p>
-<p><strong><span class="func">arrange()</span></strong> - perform operations on subgroups of data</p>
-</div></div>
-</section>
-<section id="filter-create-a-subset" class="slide level2">
-<h2>filter(): Create a Subset</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">filter</span>(tbl, cond1, cond2, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li class="fragment">Evaluates on <strong>observations</strong> (rows)</li>
-<li class="fragment"><strong>Conditions</strong> are logical evaluations of <strong>values</strong>
-<ul>
-<li class="fragment">specified by column</li>
-<li class="fragment">logical operators: <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>!=</code>, <code>==</code></li>
-</ul></li>
-<li class="fragment"><strong>Returns a tbl</strong> made up of all rows that meet all conditions</li>
-</ul>
-<p><strong>Examples:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="co"># Condition examples</span></span>
-<span id="cb23-2"><a></a>transport <span class="sc">==</span> <span class="st">"bicycle"</span></span>
-<span id="cb23-3"><a></a><span class="fu">has.handlebars</span>(transport) <span class="sc">|</span> transport <span class="sc">==</span> <span class="st">"boat"</span></span>
-<span id="cb23-4"><a></a>(<span class="fu">has.handlebars</span>(transport) <span class="sc">&amp;</span> <span class="fu">n.wheels</span>(transport) <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="sc">|</span> </span>
-<span id="cb23-5"><a></a>  (<span class="fu">requires.gas</span>(transport) <span class="sc">&amp;</span> <span class="fu">n.wheels</span>(transport) <span class="sc">&gt;</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="filter-under-the-hood" class="slide level2">
-<h2>filter(): Under the Hood</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># Basically 2 embedded 'for' loops</span></span>
-<span id="cb24-2"><a></a><span class="co"># FOR each row in tbl</span></span>
-<span id="cb24-3"><a></a><span class="co">#   FOR each conditional argument</span></span>
-<span id="cb24-4"><a></a><span class="co">#     Evaluate logic</span></span>
-<span id="cb24-5"><a></a><span class="co">#     IF true, return tbl (continue loop to next arg.)</span></span>
-<span id="cb24-6"><a></a><span class="co">#     ELSE (if false), remove row, return tbl (continue loop)</span></span>
-<span id="cb24-7"><a></a><span class="co">#   when no conditional arg. remain, move to next row</span></span>
-<span id="cb24-8"><a></a><span class="co"># When no rows remain, return tbl and end loop</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="fragment">
-<p>“Can’t I just know how to use it without this explanation?”</p>
-</div>
-<div class="fragment">
-<p>Sure! <em>But</em> there’s going to be an exercise and mini-project posted next class directly related to this kind of thing, so you may want to keep it in mind.</p>
-</div>
-</section>
-<section id="arrange-sort-your-rows" class="slide level2">
-<h2>arrange(): Sort Your Rows</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">arrange</span>(tbl, col1, col2, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li class="fragment">Sort rows</li>
-<li class="fragment">If 2+ variables, sorts in order given</li>
-<li class="fragment">Defaults to ascending order</li>
-<li class="fragment">Use <span class="func">desc()</span> or <code>-</code> for descending order</li>
-</ul>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># Sort trial order within subject</span></span>
-<span id="cb26-2"><a></a><span class="fu">arrange</span>(data, subject, trial)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>&gt; subject  trial
-&gt; A        1
-&gt; A        2  
-&gt; B        1
-&gt; B        2</code></pre>
-</div><div class="column" style="width:50%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="co"># Reverse trial order</span></span>
-<span id="cb28-2"><a></a><span class="fu">arrange</span>(data, subject, <span class="fu">desc</span>(trial))</span>
-<span id="cb28-3"><a></a><span class="fu">arrange</span>(data, subject, <span class="sc">-</span>trial)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>&gt; subject  trial
-&gt; A        2
-&gt; A        1
-&gt; B        2
-&gt; B        1</code></pre>
-</div></div>
-</section>
-<section id="select-subset-sort-rename-columns" class="slide level2">
-<h2>select(): Subset, Sort, &amp; Rename Columns</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">select</span>(tbl, col1, col2, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Basic Examples:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="co"># From tibble `data` with columns: colA, colB, colC, colD</span></span>
-<span id="cb31-2"><a></a><span class="co"># Return a tibble with only colA and colB</span></span>
-<span id="cb31-3"><a></a><span class="fu">select</span>(data, colA, colB)</span>
-<span id="cb31-4"><a></a><span class="fu">select</span>(data, <span class="sc">-</span><span class="fu">c</span>(colC, colD))</span>
-<span id="cb31-5"><a></a></span>
-<span id="cb31-6"><a></a><span class="co"># Rename/reorder while selecting</span></span>
-<span id="cb31-7"><a></a><span class="fu">select</span>(data, colC, <span class="at">column_A =</span> colA, colB)</span>
-<span id="cb31-8"><a></a></span>
-<span id="cb31-9"><a></a><span class="co"># Select ranges</span></span>
-<span id="cb31-10"><a></a><span class="fu">select</span>(data, colA<span class="sc">:</span>colC)    <span class="co"># inclusive range between named columns</span></span>
-<span id="cb31-11"><a></a><span class="fu">select</span>(data, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)          <span class="co"># inclusive range based on column number</span></span>
-<span id="cb31-12"><a></a><span class="fu">select</span>(data, <span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"D"</span>))  <span class="co"># use "tidy-select" functions</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="select-advanced-features" class="slide level2">
-<h2>select(): Advanced Features</h2>
-<ul>
-<li class="fragment">Operates on <strong>variables</strong> (columns)</li>
-<li class="fragment">Returns tibble that <strong>includes:</strong>
-<ul>
-<li class="fragment">argument columns</li>
-<li class="fragment">in arg order</li>
-<li class="fragment">optionally renamed</li>
-</ul></li>
-<li class="fragment">Use hyphen to <strong>exclude</strong> columns
-<ul>
-<li class="fragment">Includes everything else</li>
-</ul></li>
-</ul>
-<p><strong>Related function:</strong> <span class="func">rename()</span></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># Change column names with similar syntax</span></span>
-<span id="cb32-2"><a></a><span class="co"># but don't change tibble structure</span></span>
-<span id="cb32-3"><a></a><span class="fu">rename</span>(<span class="at">column_B =</span> colB)  <span class="co"># new columns: colA, column_B, colC, colD</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="mutate-create-new-variable" class="slide level2">
-<h2>mutate(): Create New Variable</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">mutate</span>(tbl, <span class="at">newvar1 =</span> ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Examples:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># All obs. in new column 'hello' have the same value</span></span>
-<span id="cb34-2"><a></a><span class="fu">mutate</span>(data, <span class="at">hello =</span> <span class="st">"hey there!"</span>)</span>
-<span id="cb34-3"><a></a></span>
-<span id="cb34-4"><a></a><span class="co"># Obs. in new column are computed by row</span></span>
-<span id="cb34-5"><a></a><span class="fu">mutate</span>(data, <span class="at">col1_plus_col2 =</span> col1 <span class="sc">+</span> col2)</span>
-<span id="cb34-6"><a></a><span class="fu">mutate</span>(data, <span class="at">round_col1_div_col2 =</span> <span class="fu">round</span>(col1<span class="sc">/</span>col2, <span class="dv">2</span>))</span>
-<span id="cb34-7"><a></a></span>
-<span id="cb34-8"><a></a><span class="co"># Multiple operations in sequence</span></span>
-<span id="cb34-9"><a></a><span class="fu">mutate</span>(data,</span>
-<span id="cb34-10"><a></a>  <span class="at">sum_cols =</span> col1 <span class="sc">+</span> col2,</span>
-<span id="cb34-11"><a></a>  <span class="at">prop_col1 =</span> <span class="fu">round</span>(col1<span class="sc">/</span>sum_cols, <span class="dv">2</span>))</span>
-<span id="cb34-12"><a></a>  </span>
-<span id="cb34-13"><a></a><span class="co"># Change values in an existing column conditionally</span></span>
-<span id="cb34-14"><a></a><span class="fu">mutate</span>(data, <span class="at">colA =</span> <span class="fu">ifelse</span>(colA <span class="sc">==</span> <span class="dv">0</span>, <span class="cn">NA</span>, colA))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="group_by-summarize-compute-summary-values" class="slide level2">
-<h2>group_by() &amp; summarize(): Compute Summary Values</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">group_by</span>(tbl, col1, col2, ...)</span>
-<span id="cb35-2"><a></a><span class="fu">summarize</span>(tbl, <span class="at">newcol =</span> <span class="fu">fun</span>(col), ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Without Grouping:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="co"># Average all values in score column</span></span>
-<span id="cb36-2"><a></a><span class="fu">summarize</span>(data, <span class="at">mean_score =</span> <span class="fu">mean</span>(score))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>&gt; mean_score
-&gt; 20</code></pre>
-</div><div class="column" style="width:50%;">
-<p><strong>With Grouping:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="co"># Average score for each subject</span></span>
-<span id="cb38-2"><a></a><span class="fu">group_by</span>(data, subject) <span class="sc">%&gt;%</span></span>
-<span id="cb38-3"><a></a>  <span class="fu">summarize</span>(<span class="at">sub_mean_score =</span> <span class="fu">mean</span>(score),</span>
-<span id="cb38-4"><a></a>           <span class="at">sub_first_score =</span> <span class="fu">first</span>(score))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>&gt; subject  sub_mean_score  sub_first_score
-&gt; A        18              17
-&gt; B        22              20</code></pre>
-</div></div>
-</section>
-<section id="advanced-grouping" class="slide level2">
-<h2>Advanced Grouping</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="co"># Grouping by multiple columns creates summary for each </span></span>
-<span id="cb40-2"><a></a><span class="co"># unique combination of values</span></span>
-<span id="cb40-3"><a></a><span class="fu">group_by</span>(data, subject, condition) <span class="sc">%&gt;%</span></span>
-<span id="cb40-4"><a></a>  <span class="fu">summarize</span>(<span class="at">sc_mean_score =</span> <span class="fu">mean</span>(score))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>&gt; subject  condition  sub_mean_score
-&gt; A        1          17
-&gt; A        2          19
-&gt; B        1          24
-&gt; B        2          20</code></pre>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment"><strong><span class="func">summarize()</span></strong> computes across obs. in a variable</li>
-<li class="fragment">Summarizing without grouping computes across all data</li>
-<li class="fragment"><strong><span class="func">group_by()</span></strong> breaks observations into subsets</li>
-<li class="fragment">Returns tbl with <em>only</em> new summary columns and any grouping columns</li>
-</ul>
-<p><strong>FYI:</strong> <code>summarize()</code> == <code>summarise()</code></p>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="combining-data-preview" class="title-slide slide level1 center">
-<h1>Combining Data (Preview)</h1>
-
-</section>
-<section id="just-a-preview" class="slide level2">
-<h2>Just a Preview…</h2>
-<p>The binding/merging/joining functions in the tidyverse are part of <span class="pkg">dplyr</span>, so I’m adding reference slides here.</p>
-<p>They make more sense to talk about together with the <span class="pkg">tidyr</span> functions next class, so we’ll skip these for now and come back to them.</p>
-</section>
-<section id="bind-rows" class="slide level2">
-<h2>Bind Rows</h2>
-<p><strong>Append <em>rows</em> of one dataframe after the last row of another</strong></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>base::<span class="func">rbind()</span></strong> - dataframes must have exactly the same columns in the same order</p>
-</div><div class="column" style="width:50%;">
-<p><strong>dplyr::<span class="func">bind_rows()</span></strong> - dataframes can have different column structures, missing values will be treated as <em>NA</em></p>
-</div></div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>What’s with the base:: and dplyr:: bits?</strong></p>
-<p>It’s a shortcut to specify what package the function comes from. Usually not necessary in your actual code, but it can come in handy when: 1) you don’t have that package loaded and you just need that single specific function or 2) you have multiple packages loaded that define that function and you want to specify which of them to use.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="bind-columns" class="slide level2">
-<h2>Bind Columns</h2>
-<p><strong>Append <em>columns</em> of one dataframe after the last column of another</strong></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>base::<span class="func">cbind()</span></strong> - dataframes must have the same number of rows</p>
-</div><div class="column" style="width:50%;">
-<p><strong>dplyr::<span class="func">bind_cols()</span></strong> - dataframes must have the same number of rows</p>
-</div></div>
-<div class="fragment">
-<p>“If they work the same way, which should I use?”</p>
-</div>
-<div class="fragment">
-<p><strong>Neither! Use joins instead.</strong></p>
-</div>
-</section>
-<section id="merge-data-with-_join-functions" class="slide level2">
-<h2>Merge Data with *_join() Functions</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong><span class="func">left_join()</span></strong> - includes all the rows of x and only the rows of y that have matches in x</p>
-<p><strong><span class="func">right_join()</span></strong> - includes all the rows of y and only the rows of x that have matches in y</p>
-</div><div class="column" style="width:50%;">
-<p><strong><span class="func">inner_join()</span></strong> - includes only rows present in both x and y</p>
-<p><strong><span class="func">full_join()</span></strong> - includes all rows present in either x or y, matched where possible</p>
-</div></div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>See r4ds <a href="https://r4ds.hadley.nz/joins.html">Chapter 19: Joins</a> for more explanation</p>
-</div>
-</div>
-</div>
-</section>
-<section id="join-syntax" class="slide level2">
-<h2>*_join() Syntax</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="sc">*</span><span class="fu">_join</span>(left.tbl, right.tbl, <span class="at">by =</span> ...)</span>
-<span id="cb42-2"><a></a><span class="co"># replace * with left, right, inner, or full</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Examples:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="co"># These are all identical</span></span>
-<span id="cb43-2"><a></a><span class="fu">left_join</span>(band_members, band_instruments)</span>
-<span id="cb43-3"><a></a></span>
-<span id="cb43-4"><a></a><span class="fu">left_join</span>(band_members, band_instruments, </span>
-<span id="cb43-5"><a></a>         <span class="at">by =</span> <span class="fu">join_by</span>(name))</span>
-<span id="cb43-6"><a></a></span>
-<span id="cb43-7"><a></a><span class="fu">left_join</span>(band_members, band_instruments, </span>
-<span id="cb43-8"><a></a>         <span class="at">by =</span> <span class="st">"name"</span>)</span>
-<span id="cb43-9"><a></a></span>
-<span id="cb43-10"><a></a><span class="co"># Specify to match columns with different names:</span></span>
-<span id="cb43-11"><a></a>by <span class="ot">=</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist)</span>
-<span id="cb43-12"><a></a></span>
-<span id="cb43-13"><a></a><span class="co"># Specify multiple columns to match:</span></span>
-<span id="cb43-14"><a></a><span class="fu">join_by</span>(a, c <span class="sc">==</span> d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section></section>
-<section>
-<section id="practice-dplyr" class="title-slide slide level1 center">
-<h1>Practice: dplyr</h1>
-
-</section>
-<section id="try-it-out" class="slide level2">
-<h2>💻 Try It Out</h2>
-<p><strong>Using the mmdata tibble you created earlier, experiment with:</strong></p>
-<ul>
-<li class="fragment"><strong><span class="func">filter()</span></strong> - Create subsets based on conditions</li>
-<li class="fragment"><strong><span class="func">select()</span></strong> - Choose specific columns</li>
-<li class="fragment"><strong><span class="func">mutate()</span></strong> - Create new variables</li>
-<li class="fragment"><strong><span class="func">arrange()</span></strong> - Sort your data</li>
-<li class="fragment"><strong><span class="func">group_by()</span></strong> &amp; <strong><span class="func">summarize()</span></strong> - Calculate group statistics</li>
-</ul>
-</section></section>
-<section>
-<section id="exercises" class="title-slide slide level1 center">
-<h1>Exercises</h1>
-
-</section>
-<section id="w3c2-readwrite-practice-1-of-2" class="slide level2">
-<h2>💻 W3C2: Read/Write Practice (1 of 2)</h2>
-<p><strong>In the first code chunk of a new notebook (R/quarto):</strong></p>
-<ul>
-<li class="fragment">Use readr functions to read in a simple tabular dataset (.csv/.tsv) using a relative path and assign to a new object</li>
-<li class="fragment">Use tidyverse functions to transform the data in some way (can be very simple as long as it creates recognizable changes)</li>
-<li class="fragment">Use readr functions to write your transformed data to a .csv file in the same location as your original data file (give it a unique file name)</li>
-<li class="fragment">Examine the assigned objects and written files; use one of the objects in a second code chunk</li>
-<li class="fragment">Make necessary changes if it does not work as expected</li>
-</ul>
-<p><strong>Replicate</strong> the script above in a new .R script in the same directory as your notebook</p>
-<p><strong>In a new chunk,</strong> <em>source</em> the .R script, again examine objects/files and make changes so things work as expected</p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Assessed:</strong> 9, 10, 22; <strong>Unassessed:</strong> 2, 4, 10</p>
-</div>
-</div>
-</div>
-</section>
-<section id="w3c2-readwrite-practice-2-of-2" class="slide level2">
-<h2>💻 W3C2: Read/Write Practice (2 of 2)</h2>
-<p><strong>Find or create a variety of datasets to repeat the process:</strong></p>
-<ul>
-<li class="fragment"><strong>Different file types:</strong> .csv, google sheets, .xlsx, .sav, etc.</li>
-<li class="fragment"><strong>Different “extra” stuff:</strong> multiple tabs, rich formatting, non-data text, header(s), etc.</li>
-<li class="fragment"><strong>Different combinations of file locations:</strong> notebook and script in root folder, one in root folder and one in a subdirectory, both in two different subdirectories, writing/reading files in a lower-level subdirectory, writing/reading files in a higher-level subdirectory, etc.</li>
-</ul>
-<p><strong>Pay attention to:</strong> - Which packages are necessary to run which functions - Which functions include which arguments (and the default argument values) - Differences in relative paths depending on function and file locations</p>
-</section>
-<section id="w3c2-data-cleaning" class="slide level2">
-<h2>💻 W3C2: Data Cleaning</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Important:</strong> These exercises include functions from tidyverse packages we will cover next class. Look ahead with the resources for next class or do what you can now and finish it next week.</p>
-</div>
-</div>
-</div>
-<p><strong>Find three data cleaning exercises (1 walkthrough example; 2 structured assignments) in the d2mr-assessment repo.</strong> Complete the mini-projects directly in the existing .qmd like a digital workbook.</p>
-<ul>
-<li class="fragment"><strong>Data cleaning walkthrough:</strong> Clean the iris Dataset (example, not a mini-project to complete/submit)</li>
-<li class="fragment"><strong>Level 1 Data Cleaning:</strong> Clean the mtcars Dataset - Work with a simple dataset, focus on basic data cleaning tasks</li>
-<li class="fragment"><strong>Level 2 Data Cleaning:</strong> Clean the midwest Dataset - Work with a more complex dataset, perform more involved cleaning tasks</li>
-</ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Assessed:</strong> 5, 6, 8, 9, 10, 11, 12; <strong>Unassessed:</strong> 1, 2, 9, 12, 13</p>
-</div>
-</div>
-</div>
-</section>
-<section id="w3c2-group-uncleaning" class="slide level2 scrollable">
-<h2>💻 W3C2: Group “Uncleaning”</h2>
-<p><strong>Work together with a classmate to each “unclean” a dataset for the other(s) to clean.</strong> This will work best in pairs so that you can swap datasets but you can adjust things to do in a small group if you prefer.</p>
-<ol type="1">
-<li class="fragment">Each partner chooses a publicly available dataset (recommend the built-in ones)</li>
-<li class="fragment">In a script or notebook, transform your df to make it messy and save to a .csv</li>
-<li class="fragment">Swap your new messy data files</li>
-<li class="fragment">In a (different) script or notebook, clean your partner’s messy data</li>
-<li class="fragment">Discuss the process with your partner/group</li>
-</ol>
-<p><strong>Associated mini-project:</strong> <code>d2mr-assessment/01_data-cleaning/03_group-unclean</code></p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Assessed:</strong> 5, 6, 8, 9, 10, 11, 12; <strong>Unassessed:</strong> 1, 2, 5, 9, 14, 22</p>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="resources" class="title-slide slide level1 center">
-<h1>Resources 🗃️</h1>
-
-</section>
-<section id="todays-class" class="slide level2">
-<h2>Today’s Class</h2>
-<p><strong>tidyverse.org:</strong> <a href="https://www.tidyverse.org/">https://www.tidyverse.org/</a></p>
-<p><strong>readr:</strong> - <a href="https://readr.tidyverse.org/">documentation</a> &amp; <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf">cheatsheet</a> - <a href="https://r4ds.hadley.nz/data-import">r4ds: 7 – Data import</a></p>
-<p><strong>tibble:</strong> - <a href="https://tibble.tidyverse.org/">documentation</a> &amp; <a href="https://r4ds.had.co.nz/tibbles.html">r4ds: tibbles</a></p>
-<p><strong>dplyr:</strong> - <a href="https://dplyr.tidyverse.org/">documentation</a> &amp; <a href="https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf">cheatsheet</a> - <a href="https://r4ds.hadley.nz/data-transform">r4ds: 3 – Data transformation</a></p>
-</section>
-<section id="next-class" class="slide level2">
-<h2>Next Class</h2>
-<p><strong>tidyr:</strong> - <a href="https://tidyr.tidyverse.org/">documentation</a> &amp; <a href="https://rstudio.github.io/cheatsheets/html/tidyr.html">cheatsheet</a> - <a href="https://tidyr.tidyverse.org/articles/tidy-data.html">tidyverse guide to tidy data</a> - <a href="https://r4ds.hadley.nz/data-tidy">r4ds: 5 – Data tidying</a>*</p>
-<p><strong>stringr:</strong> - <a href="https://stringr.tidyverse.org/">documentation</a> &amp; <a href="https://github.com/rstudio/cheatsheets/blob/main/strings.pdf">cheatsheet</a> - <a href="https://r4ds.hadley.nz/strings">r4ds: 14 – Strings</a>* - <a href="https://r4ds.hadley.nz/regexps">r4ds: 15 – Regular expressions</a></p>
-</section>
-<section id="more-resources" class="slide level2">
-<h2>More Resources</h2>
-<p><strong>forcats:</strong> - <a href="https://forcats.tidyverse.org/">documentation</a> &amp; <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf">cheatsheet</a> - <a href="https://r4ds.hadley.nz/factors">r4ds: 16 – Factors</a>*</p>
-<p><strong>purrr</strong> <em>(advanced, low priority for d2mr)</em>: - <a href="https://purrr.tidyverse.org/">documentation</a> &amp; <a href="https://github.com/rstudio/cheatsheets/blob/main/purrr.pdf">cheatsheet</a></p>
-<p><strong>Quick Help:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>?paste</span>
-<span id="cb44-2"><a></a>?paste0</span>
-<span id="cb44-3"><a></a>?filter</span>
-<span id="cb44-4"><a></a>?read_csv</span>
-<span id="cb44-5"><a></a>??read_csv  <span class="co"># search for functions</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Coming Thursday!</p>
 
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

@@ -1804,7 +1804,7 @@ div.large.no-icon .callout-title {
     width: 33.33%;
     background-color: $primary; // Change to $primary or $accent1 in production
     color: $warm-white;
-    padding: 3em 2em;
+    padding: 2em 2em 3em 2em;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1823,7 +1823,7 @@ div.large.no-icon .callout-title {
       background-color: $warm-white;
       color: mix($warm-dark, $primary, 80%);
       text-align: center;
-      padding: .8em;
+      padding: .2em;
       margin-bottom: 1em;
       border: solid 4px mix($warm-dark, $primary, 80%);
       border-radius: 8px;
@@ -1860,6 +1860,13 @@ div.large.no-icon .callout-title {
     }
   }
 
+}
+
+.longer-code {
+  .reveal pre.sourceCode code,
+  pre.sourceCode code {
+    max-height: 100vh !important;
+  }
 }
 
 
