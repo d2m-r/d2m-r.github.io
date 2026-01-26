@@ -3,6 +3,11 @@
 @import 'color-theme';
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
+// TODO:
+// - Make the class names of primary and accent versions of assets consistently named
+//   - anything with "blue" or "alt1" should be "accent1"
+// - Figure out a tree diagram that works
+
 
 // Default the theme name
 $theme-name: if(variable-exists(theme), $theme, "gris");
@@ -23,7 +28,7 @@ $link-color:        $lake !default;      // Default link color for websites
 // Font/Text
 
 /// Headings
-$headings-color:              $maroon !default;
+$headings-color:              $primary !default;
 $mid-headings-color:          $mid-lake !default;
 $low-headings-color:          $secondary !default;
 $accordion-heading-size:      1.4rem !default;
@@ -47,7 +52,7 @@ $table-border-color:          $dark-greystone !default;
 
 // Navbar
 /// Avoid triggering bootstrap overrides
-$navbar-bg:                   $maroon;
+$navbar-bg:                   $primary;
 $navbar-link-color:           $warm-white;
 $navbar-hl:                   $warm-white;
 $navbar-brand:                lighten($navbar-bg, 70%);
@@ -865,15 +870,12 @@ div.large.no-icon .callout-icon-container {
 // Which has a lot of extra stuff not relevant here but included for now
 // until I have time to trim properly
 
-$card-main-color: $primary;
-$card-alt1-color: $accent1;
-
 .card,
 .reveal .card {
     border-radius: 10px;
     border-width: 2px;
-    border-color: mix($dark, $card-main-color, 90%);
-    background-color: mix($light, $card-main-color, 90%);
+    border-color: mix($dark, $primary, 90%);
+    background-color: mix($light, $primary, 90%);
 
 }
 
@@ -881,7 +883,7 @@ $card-alt1-color: $accent1;
 .reveal .card-body {
     > h1, h2, h3, h4 {
         font-size: 1.2em;
-        color: mix($dark, $card-main-color, 30%);
+        color: mix($dark, $primary, 30%);
     }
     
     > ul, ol {
@@ -899,13 +901,13 @@ $card-alt1-color: $accent1;
     margin-bottom: 0em;
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    border-bottom-color: mix($light-greystone, $card-main-color, 70%);
+    border-bottom-color: mix($light-greystone, $primary, 70%);
     width: 100%;
 
     > h1, h2, h3 {
         font-size: 1.5em;
         margin-top: .5em;
-        color: mix($dark, $card-main-color, 30%);
+        color: mix($dark, $primary, 30%);
     }
 }
 
@@ -916,9 +918,9 @@ $card-alt1-color: $accent1;
     margin-bottom: 0em;
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    border-bottom-color: mix($light-greystone, $card-main-color, 0%);
+    border-bottom-color: mix($light-greystone, $primary, 0%);
     width: 100%;
-    background-color: $card-main-color;
+    background-color: $primary;
     
     .card-title {
         > h1, h2, h3, h4, p {
@@ -927,7 +929,7 @@ $card-alt1-color: $accent1;
             padding-bottom: 0.2em;
             border-bottom-style: double;
             border-bottom-width: 4px;
-            border-bottom-color: mix($light-greystone, $card-main-color, 50%);
+            border-bottom-color: mix($light-greystone, $primary, 50%);
         }
     }
 }
@@ -948,35 +950,43 @@ $card-alt1-color: $accent1;
 // Card color variations
 
 .card-alt1,
-.reveal .card-alt1 {
+.reveal .card-alt1,
+.card-accent1,
+.reveal .card-accent1 {
     background-color: $accent1;
-    border-color: mix($dark, $card-alt1-color, 90%);
-    background-color: mix($light, $card-alt1-color, 90%);
+    border-color: mix($dark, $accent1, 90%);
+    background-color: mix($light, $accent1, 90%);
 }
 
 .card-alt1 .card-body,
-.reveal .card-alt1 .card-body {
+.reveal .card-alt1 .card-body,
+.card-accent1 .card-body,
+.reveal .card-accent1 .card-body{
     > h1, h2, h3, h4 {
-        font-size: 1.2em;  color: mix($dark, $card-alt1-color, 30%);
+        font-size: 1.2em;  color: mix($dark, $accent1, 30%);
     }
 }
 
 .card-alt1 .card-title,
-.reveal .card-alt1 .card-title {
-    border-bottom-color: mix($light-greystone, $card-alt1-color, 70%);
+.reveal .card-alt1 .card-title,
+.card-accent1 .card-title,
+.reveal .card-accent1 .card-title{
+    border-bottom-color: mix($light-greystone, $accent1, 70%);
     
     > h1, h2, h3, h4 {
-        color: mix($dark, $card-alt1-color, 30%);
+        color: mix($dark, $accent1, 30%);
     }
 }
 
 .card-alt1 .card-header,
-.reveal .card-alt1 .card-header {
-    border-bottom-color: mix($light-greystone, $card-alt1-color, 0%);
-    background-color: $card-alt1-color;
+.reveal .card-alt1 .card-header,
+.card-accent1 .card-header,
+.reveal .card-accent1 .card-header {
+    border-bottom-color: mix($light-greystone, $accent1, 0%);
+    background-color: $accent1;
     
     > h1, h2, h3, h4, p {
-        border-bottom-color: mix($light-greystone, $card-alt1-color, 50%);
+        border-bottom-color: mix($light-greystone, $accent1, 50%);
         color: $light;
     }
 }
@@ -1383,9 +1393,13 @@ pre > code.sourceCode > span {
         font-family: "Fira Code", Menlo, "Courier New", monospace;
     }
 
+
+// TODO: See if removing this broke anything
+// Not sure why it existed to begin with, since it just causes inconsistency
+// between fragments and non-fragments
 /* Better spacing for slide content */
     .reveal .slides section .fragment {
-        margin-bottom: 0.5em;
+        //margin-bottom: 0.5em; 
     }
 
 /* Speaker notes (hidden in presentation mode) */
@@ -1490,7 +1504,7 @@ pre > code.sourceCode > span {
     top: 0;
     left: 10%;
     //transform: translateX(-50%); // to position by center
-    background-color: $maroon; // 
+    background-color: $primary; // 
     color: $warm-white;
     padding: 0em 2em; // contained text has its own v-padding
     border-style: solid;
@@ -1511,7 +1525,7 @@ pre > code.sourceCode > span {
   }
   
   .box-content {
-    background-color: mix($warm-white, $maroon, 80%); // Warm-white
+    background-color: mix($warm-white, $primary, 80%); // Warm-white
     padding: 1.5em .8em .3em .8em; // Extra top padding for overlap
     min-height: 2em;
     border-style: solid;
@@ -1551,14 +1565,14 @@ pre > code.sourceCode > span {
     padding-top: 2em !important;
 }
 
-.overlap-box-blue {
+.overlap-box-blue, // TODO: Change instances of overlap-box-blue class to .alt1 in existing slides
+.overlap-box.accent1 {
   
   .box-title {
     background-color: $mid-lake; // $mid-lake
     color: $warm-white;
   }
  
-  
   .box-content {
     background-color: mix($warm-white, $mid-lake, 80%); // Warm-white mix
   }
@@ -1644,7 +1658,7 @@ div.large.no-icon .callout-title {
 // more containers
 
 .contained-box {
-  background-color: mix($warm-white, $maroon, 80%);
+  background-color: mix($warm-white, $primary, 80%);
   border-style: solid;
   border-radius: 8px;
   border-width: 6px;
@@ -1653,7 +1667,7 @@ div.large.no-icon .callout-title {
   
   .box-icon {
     font-size: 2em;
-    color: $maroon;
+    color: $primary;
     text-align: center;
     margin-bottom: 0.4em;
     img {
@@ -1666,7 +1680,7 @@ div.large.no-icon .callout-title {
   }
   
   .box-title {
-    background-color: $maroon;
+    background-color: $primary;
     color: $warm-white;
     padding: 0.3em 0.8em;
     border-radius: 5px;
@@ -1680,8 +1694,26 @@ div.large.no-icon .callout-title {
   }
 }
 
+.contained-box.alt1,
+.contained-box.accent1 {
+  background-color: mix($warm-white, $accent1, 80%);
+  
+  .box-icon {
+    color: $accent1;
+  }
+  
+  .box-title {
+    background-color: $accent1;
+  }
+}
+
+
 
 // Tree diagrams
+
+/// THIS DOES NOT WORK AT ALL
+/// But I want to come back to this later
+/// to make a version that does
 
 .tree-diagram {
   padding: 2em;
@@ -1758,9 +1790,77 @@ div.large.no-icon .callout-title {
 
 
 
+// ALTERNATIVE SLIDE layouts
 
 
+// Left sidebar slide layout
+.left-sidebar-slide {
+  
+  .sidebar-column {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 33.33%;
+    background-color: $primary; // Change to $primary or $accent1 in production
+    color: $warm-white;
+    padding: 3em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    ul li::marker {
+        color: darken($warm-white, 20%);
+    }
+    
+    ul {
+      //margin-bottom: 0.4em !important;  // Vertical spacing between items
+      line-height: 1.1em !important;  // Tighten line spacing within items
+      margin-left: 0em !important;
+    }
+    
+    .sidebar-title {
+      background-color: $warm-white;
+      color: mix($warm-dark, $primary, 80%);
+      text-align: center;
+      padding: .8em;
+      margin-bottom: 1em;
+      border: solid 4px mix($warm-dark, $primary, 80%);
+      border-radius: 8px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+  
+  .main-content {
+    position: absolute;
+    left: 33.33%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 3em;
+    //overflow-y: auto;
+  }
+  
+  // Hide the default slide title
+  h2 {
+    display: none;
+  }
+}
 
+// Left sidebar slide layout
+.left-sidebar-slide.accent1 {
+  
+  .sidebar-column {
+    background-color: $accent1; // Change to $primary or $accent1 in production
+    
+    .sidebar-title {
+      color: mix($warm-dark, $accent1, 80%);
+      border: solid 4px mix($warm-dark, $accent1, 80%);
+    }
+  }
+
+}
 
 
 

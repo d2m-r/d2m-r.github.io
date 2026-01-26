@@ -2384,35 +2384,35 @@
     "href": "slides/Q1-W4_tidyverse-1.html#readr-import-tibbles",
     "title": "Data Wrangling in the Tidyverse",
     "section": "readr: Import Tibbles",
-    "text": "readr: Import Tibbles\nFigure out which import function you need for your data:\n\nField separators?\nNon-tabular data?\nMultiple sheets?\nCheck that your data file is in a sensible directory and note the path to your file\n\n\n\n\n\n\n\nFile Organization Best Practices\n\n\n\nALL data in your repo\nRaw, protected data in a localonly/ dir\nWrangled or sourced data in git-managed directory"
+    "text": "readr: Import Tibbles\n)\n\n\n\n\n\nDetermine import function:\n\n\n\nFile extension?\nField separators?\nColumn names?\nNon-tabular content?\nMultiple sheets?\n\n\n\n\n\n\n\nDetermine file path:\n\n\n\nLocated in your repo\nProtected data\n\nAdd to .gitignore or localonly\nOnly call in your local R scripts\n\nShared data\n\nIn git-managed directory\nCallable by any/all scripts\n\nUse relative paths\n\n\n\n\n\n\nFigure out which import function you need for your data:\n\nField separators?\nNon-tabular data?\nMultiple sheets?\nCheck that your data file is in a sensible directory and note the path to your file\n\n\n\n\n\n\n\nFile Organization Best Practices\n\n\n\nALL data in your repo\nRaw, protected data in a localonly/ dir\nWrangled or sourced data in git-managed directory"
   },
   {
     "objectID": "slides/Q1-W4_tidyverse-1.html#read_-functions",
     "href": "slides/Q1-W4_tidyverse-1.html#read_-functions",
     "title": "Data Wrangling in the Tidyverse",
     "section": "read_* Functions",
-    "text": "read_* Functions\n# Common readr functions\nread_csv()    # Comma separated values\nread_tsv()    # Tab separated values\nread_delim()  # Any delimiter\nread_fwf()    # Fixed width files\nread_table()  # Whitespace separated\n\n\n\n\n\n\n\nChoose your decimal: read_csv vs read_csv2\n\n\n\nMost English-speaking countries and countries in Asia use the period as decimal mark (csv)\nMost non-English European countries use a comma instead (csv2)"
+    "text": "read_* Functions\n\n# Common readr functions\nread_csv()    # Comma separated values\nread_tsv()    # Tab separated values\nread_delim()  # Any delimiter\nread_fwf()    # Fixed width files\nread_table()  # Whitespace separated\n\n\n\n\n\n\n\nChoose your decimal: read_csv vs read_csv2\n\n\n\nMost English-speaking countries and countries in Asia use the period as decimal mark (csv)\nMost non-English European countries use a comma instead (csv2)\n\n\n\n\n\n\n\nreadr cheatsheet"
   },
   {
     "objectID": "slides/Q1-W4_tidyverse-1.html#bonus-readxl-googlesheets4",
     "href": "slides/Q1-W4_tidyverse-1.html#bonus-readxl-googlesheets4",
     "title": "Data Wrangling in the Tidyverse",
-    "section": "BONUS: readxl & googlesheets4",
-    "text": "BONUS: readxl & googlesheets4\n\n\n\n\n\n\nNote\n\n\nComplementary packages to readr\n\n\n\n\nMimic readr’s read_* functions\nNot tidyverse packages\nInstall and load them separately\n\n# readxl for Excel files\nlibrary(readxl)\nread_excel(\"data.xlsx\")\n\n# googlesheets4 for Google Sheets\nlibrary(googlesheets4)\nread_sheet(\"spreadsheet_url\")"
+    "section": "Bonus: readxl & googlesheets4",
+    "text": "Bonus: readxl & googlesheets4\n \n\n\n\n\n\n\n\nComplementary packages to readr\n\n\n\nMimic readr’s read_* functions\n\nsame cheatsheet\n\nSpecification for converting “complex” documents into a tbl-compatible format\nNot tidyverse packages\n\nInstall and load them separately!\n\n\n\n\n\n\n\n# readxl for Excel files\nlibrary(readxl)\nread_excel(\"data.xlsx\")\n\n# googlesheets4 for Google Sheets\nlibrary(googlesheets4)\nread_sheet(\"spreadsheet_url\")"
   },
   {
     "objectID": "slides/Q1-W4_tidyverse-1.html#importing-with-readr",
     "href": "slides/Q1-W4_tidyverse-1.html#importing-with-readr",
     "title": "Data Wrangling in the Tidyverse",
     "section": "Importing with readr",
-    "text": "Importing with readr\n# Default behavior - guesses all data types\nread_*(file.csv, col_types = NULL)\n\n# Specify columns with cols()\nread_*(file.csv, col_types = cols(\n  my_factor = col_factor(),\n  your_string = col_character()\n))\n\n# String shortcut - needs character for each col in order\nread_*(file.csv, col_types = \"fc\")\n# Use \"?\" for columns to guess\n\n\n\n\n\n\nTip\n\n\nThe adult-data.csv dataset is in the repo for you to explore and/or use for mini-projects."
+    "text": "Importing with readr\n)\n\n\nImporting with readr: read_*()\n\n\n\nread_*() import tabular data as tibbles\nOptional col_types & col_names arguments:\nAssign to object to save imported data\n\n\n\n\n# Common read functions\n\nread_csv()    # Comma separated values\nread_csv2()   # Semicolon separator (comma = decimal)\nread_tsv()    # Tab separated values\nread_delim()  # Any delimiter\nread_fwf()    # Fixed width files\nread_table()  # Whitespace separated\n# Default behavior - guesses all data types\nmy_tbl &lt;- read_*(file.csv, col_types = NULL)\n\n# Specify columns with cols()\nmy_cols &lt;- read_*(file.csv, col_types = cols(\n  my_factor = col_factor(),\n  your_string = col_character()\n))\n\n# String shortcut:\n# needs character for each col in order\n# Use \"?\" for columns to guess\nmy_shortcut &lt;- read_*(file.csv, col_types = \"fc\")"
   },
   {
     "objectID": "slides/Q1-W4_tidyverse-1.html#exporting-with-readr",
     "href": "slides/Q1-W4_tidyverse-1.html#exporting-with-readr",
     "title": "Data Wrangling in the Tidyverse",
-    "section": "EXPORTING with readr",
-    "text": "EXPORTING with readr\nWrite intermediate datasets after:\n\nDe-identifying data\nComplex wrangling\nDropping unneeded data\nManaging empty data\n\n# readr read_*() functions have matching write_*()\nwrite_delim()\nwrite_csv()\nwrite_csv2()\nwrite_excel_csv()\nwrite_excel_csv2()\nwrite_tsv()"
+    "section": "Exporting with readr",
+    "text": "Exporting with readr\n)\n\n\nExporting with readr: write_*()\n\n\n\n\n\nread_*() functions have matched write_*() counterparts\nSave tibbles to tabular files\nWrite intermediate datasets after:\n\nDe-identifying data\nComplex wrangling\nDropping unneeded data\nManaging empty data\n\nRun from script or console, no object assignment\n\n\n\n\n\n\n# Common write_*() functions\n\nwrite_delim()\nwrite_csv()\nwrite_csv2()\nwrite_excel_csv()\nwrite_excel_csv2()\nwrite_tsv()\n# Start with messy data\nmessy_df &lt;- read_xlsx(\"localpath/messy.xlsx\", \n                     sheet=\"my sheet\")\n\n# Process in R: tidy, clean, transform...\n\n# Export clean version\nclean_df &lt;- # ... your cleaning steps\nwrite_csv(clean_df, \"localpath/clean.csv\")\n\n# Later, read the clean version\nclean_df &lt;- read_csv(\"localpath/clean.csv\")\n\n\nExport tibbles to create intermediate datasets between initial import and final analysis Easily produce de-identified datasets to share with others Save computational time by skipping costly read-in and wrangling steps (e.g., big files, many files, complex transformations) readr can also export tibbles to tabular files with similar syntax to how it imports"
   },
   {
     "objectID": "slides/Q1-W4_tidyverse-1.html#workflow-example",
@@ -2819,5 +2819,131 @@
     "title": "Data Wrangling in the Tidyverse",
     "section": "Core Tidyverse Packages: Week 4 Focus",
     "text": "Core Tidyverse Packages: Week 4 Focus\n\n\ntibble ✅\nreimagine the dataframe!\n\nreadr ✅\neasily import and export tabular data\n\ndplyr ✅\na grammar of data manipulation\n\ntidyr ✅ tidy your messy data\n\nggplot2\na grammar of graphics"
+  },
+  {
+    "objectID": "slides/slide_templates.html#row-grid",
+    "href": "slides/slide_templates.html#row-grid",
+    "title": "Slide Templates",
+    "section": "2-Row Grid",
+    "text": "2-Row Grid\n\n\n\n\n\n\nBox 1 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 2 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 3 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 4 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 5 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 6 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 7 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 8 Title\n\n\n\nContent\nhere\n\n\n\n\n\n4x2 grid of rounded rectangles with icons and heading text\nMix between the process/flowchart slide and the intro slide for the slide sequence"
+  },
+  {
+    "objectID": "slides/slide_templates.html#left-sidebar-slide",
+    "href": "slides/slide_templates.html#left-sidebar-slide",
+    "title": "Slide Templates",
+    "section": "Left Sidebar Slide",
+    "text": "Left Sidebar Slide\n\n\nSlide Title Here\n\nOptional text in the left sidebar with light contrasting text.\n\n\nMain content area goes here.\n\nCan include text\nLists\nImages\nCode blocks\nWhatever you need"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#tibble-better-data-frames",
+    "href": "slides/Q1-W4_tidyverse-1.html#tibble-better-data-frames",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "tibble: Better Data Frames",
+    "text": "tibble: Better Data Frames\n)\n\n\ntibble: Better Data Frames\n\n\nAdaptation of base R’s data.frame\nTibbles are also data.frames\n\nCheck with class() or str()\n\nTidyverse functions work with tibbles\n\nusually add the tibble class automatically\n\nFunctionally equivalent\n\n\n\n\n\n\n\n\n\n\nAdaptation of base R’s data.frame structure that makes a lot of things easier Tibbles are also data.frames (check the class() or str() functions) Tidyverse package(s) work with tibbles, not base data.frames Load the tidyverse library to use tibble-related functions"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#readr-read-write-tibbles",
+    "href": "slides/Q1-W4_tidyverse-1.html#readr-read-write-tibbles",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "readr: Read & Write Tibbles",
+    "text": "readr: Read & Write Tibbles\n)\n\n\nreadr:  Read & Write Tibbles\n\n\n\nImport/export tabular data as tibbles\nFunctions start with read_*() and write_*()\nHandle common file types: CSV, TSV, delimited, fixed-width\nOther packages for Excel, SPSS, Google Sheets, JSON, databases"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#relative-relativity",
+    "href": "slides/Q1-W4_tidyverse-1.html#relative-relativity",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Relative relativity",
+    "text": "Relative relativity\n\n\n\nQuarto documents handle relative paths differently than R scripts.\n\n\n\nIn scripts, relative paths are relative to the working directory, your repo or project’s top-level. In Quarto docs, relative paths are relative to the location of the Quarto file itself.\nIf you work in a single .qmd in the top-level of your repo, these are equivalent. Read from: repo_name/data/file.csv\nIf your .qmd is in any subfolder, you’ll need to adjust. To read the same file from a code chunk in repo_name/quarto/document.qmd, use: ../data/file.csv\nThis is for all file operations, not just readr functions.\n\n\nreadr cheatsheet"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#workflow",
+    "href": "slides/Q1-W4_tidyverse-1.html#workflow",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Workflow",
+    "text": "Workflow\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Read in messy data\nmessy_df &lt;- read_xlsx(\n    \"localpath/messy.xlsx\",\n    sheet=\"my sheet\"\n    )\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n.\n\n\n\n\n\n\n\n\n\n\nMy tidy data file:\n\n\n\n\nData needed for future R scripts and nothing else\nMinimal, tabular (.csv)\nNo protected data\nAdded variables from initial wrangling\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Write out clean version\nwrite_csv(clean_df, \n          \"localpath/clean.csv\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Read in clean version\nclean_df &lt;- read_csv(\n    \"localpath/clean.csv\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nclean_df:\n\n\n\n\nClean & tidy tibble\nData needed for analysis and nothing else"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#practice-read-write-1",
+    "href": "slides/Q1-W4_tidyverse-1.html#practice-read-write-1",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Practice: Read & Write (1)",
+    "text": "Practice: Read & Write (1)\n\n\n\n\n\nRead in M&M data:\n\n\n\nPull the student-hub repo (or find files on GitHub)\nFind the Excel spreadsheet: data/MM data.xlsx\nInstall and load the readxl library\nUse the read_excel() function to assign the data to a tibble called mmdata\nExamine your data in the console to see if it matches the image\n\n\n\n\n\n\n\n\n\n\n\nIt doesn’t!\n\n\nOh no! Thank heavens you are smarter than a computer."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#single-overlap-box-with-image-columns",
+    "href": "slides/Q1-W4_tidyverse-1.html#single-overlap-box-with-image-columns",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Single Overlap Box with Image, Columns",
+    "text": "Single Overlap Box with Image, Columns\n\n\n\n\n\nRead in M&M data:\n\n\n\nPull the student-hub repo (or find files on GitHub)\nFind the Excel spreadsheet: data/MM data.xlsx\nInstall and load the readxl library\nUse the read_excel() function to assign the data to a tibble called mmdata\nExamine your data in the console to see if it matches the image\n\n\n\n\n\n\n\n\n\n\nThis slide template uses a single overlap box in the left column, with an image in the right column.\nThe image is shifted up slightly using a negative top margin to allow for more vertical space, overlapping with title area."
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#practice-read-write-2",
+    "href": "slides/Q1-W4_tidyverse-1.html#practice-read-write-2",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "Practice: Read & Write (2)",
+    "text": "Practice: Read & Write (2)\n\n\n\n\n\nFix, read, write:\n\n\n\nOpen MM data.xlsx in Excel (or similar) and examine it with your human eyeballs\n\nWhat about this file creates problems when you read-in?\nHow might you fix the issue here in the Excel document?\n\nReview the ?read_excel documentation\n\nWhat arguments can you pass to read_excel() to fix the issue on read-in?\n\nUse read_excel() to assign the data to a tibble called mmdata that looks like the image\nUse write_csv() to save mmdata to an intermediate dataset at the location student-hub/data/mmdata.csv\n\nUse an appropriate relative path!\n\n\n\n\n\n\n\n\n\n\n\n\nIt says that folder doesn’t exist!  (and/or)  It doesn’t read/write/both where I want it to!\n\n\nRemember relative relativity. Are you reading and writing from a script, Quarto doc, or the console?\n\n\n\nOpen MM data.xlsx in Excel (or similar) and examine it with your human eyeballs What about this file creates problems when you read-in? How would you fix the issue here in the Excel document? (just think; don’t do it!) Review the ?read_excel documentation What arguments can you pass to read_excel() to fix the issue on read-in? Use the read_excel() function to assign the data to a tibble called mmdata that looks like the image Use write_csv() to save mmdata to an intermediate dataset: in-class-materials/data/mmdata.csv"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#readr-read-write-tibbles-1",
+    "href": "slides/Q1-W4_tidyverse-1.html#readr-read-write-tibbles-1",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "readr: Read & Write Tibbles",
+    "text": "readr: Read & Write Tibbles\n\n\n\n\n\n\nDetermine import function:\n\n\n\nFile extension?\nField separators?\nColumn names?\nNon-tabular content?\nMultiple sheets?\n\n\n\n\n\n\n\nDetermine file path:\n\n\n\nLocated in your repo\nProtected data\n\nAdd to .gitignore or localonly\nOnly call in your local R scripts\n\nShared data\n\nIn git-managed directory\nCallable by any/all scripts\n\nUse relative paths"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#what-where",
+    "href": "slides/Q1-W4_tidyverse-1.html#what-where",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "What & Where",
+    "text": "What & Where\n\n\n\n\n\n\nDetermine import function:\n\n\n\nFile extension?\nField separators?\nColumn names?\nNon-tabular content?\nMultiple sheets?\n\n\n\n\n\n\n\nDetermine file path:\n\n\n\nLocated in your repo\nProtected data\n\nAdd to .gitignore or localonly\nOnly call in your local R scripts\n\nShared data\n\nIn git-managed directory\nCallable by any/all scripts\n\nUse relative paths"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#dplyr-data-transformation",
+    "href": "slides/Q1-W4_tidyverse-1.html#dplyr-data-transformation",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "dplyr: Data Transformation",
+    "text": "dplyr: Data Transformation\n)\n\n\ndplyr:  Grammar of Data Manipulation\n\n\n\nCore tidyverse package for data transformation\nWorks with tibbles (and data.frames)\nBuild linear pipelines for human-friendly data wrangling\n\n\n\n\n\n\n\n\n\n\n\nselect\n\n\n\nsubset & sort columns\n\n\n\n\n\n\n\n\nfilter\n\n\n\nsubset rows\n\n\n\n\n\n\n\n\narrange\n\n\n\nsort rows\n\n\n\n\n\n\n\n\nmutate\n\n\n\ncreate and modify columns\n\n\n\n\n\n\n\n\nsummarize\n\n\n\ncompute with multiple rows\n\n\n\n\n\n\n\n\ngroup_by\n\n\n\nperform operations on subgroups"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#select",
+    "href": "slides/Q1-W4_tidyverse-1.html#select",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "select",
+    "text": "select"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#filter",
+    "href": "slides/Q1-W4_tidyverse-1.html#filter",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "filter",
+    "text": "filter"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#arrange",
+    "href": "slides/Q1-W4_tidyverse-1.html#arrange",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "arrange",
+    "text": "arrange"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#mutate",
+    "href": "slides/Q1-W4_tidyverse-1.html#mutate",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "mutate",
+    "text": "mutate"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#summarize",
+    "href": "slides/Q1-W4_tidyverse-1.html#summarize",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "summarize",
+    "text": "summarize"
+  },
+  {
+    "objectID": "slides/Q1-W4_tidyverse-1.html#group_by",
+    "href": "slides/Q1-W4_tidyverse-1.html#group_by",
+    "title": "Data Wrangling in the Tidyverse",
+    "section": "group_by",
+    "text": "group_by"
   }
 ]

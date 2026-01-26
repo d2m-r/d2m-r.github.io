@@ -1,0 +1,2304 @@
+---
+title: "Data Wrangling in the Tidyverse"
+subtitle: "ecosystem, read-in/-out, data manipulation"
+date: "1/27/2026" # M/D/Y
+footer: "D2M-R I | Week 4" #  quarter, week, and class
+
+format: revealjs
+engine: knitr
+
+revealjs-plugins:
+  - codefocus
+  - fullscreen
+
+fullscreen: false
+
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+```
+
+
+<!-- ## Lecture Planning -->
+
+<!-- 7. Welcome to the Tidyverse! -->
+<!--     1. Introduction to the Tidyverse & tidy data -->
+<!--         1. Overview of the tidy ecosystem -->
+<!--         2. Tidy data principles -->
+<!--         3. Core packages in the Tidyverse and general functions -->
+<!--         4. Terminology -->
+<!--     2. Importing and exporting with readr -->
+<!--         1. Overview  -->
+<!--             1. Tabular data - what counts? -->
+<!--                 1. File types -->
+<!--                 2. R objects, including tibbles -->
+<!--             2. Reading, writing, rereading (intermediate datasets) -->
+<!--         2. Reading data with read_* functions -->
+<!--         3. Writing data with write_* functions -->
+<!--         4. Other packages -->
+<!--             1. readxl for Excel files -->
+<!--             2. haven for SPSS, SAS, and Stata files -->
+<!--             3. googlesheets4 for Google Sheets -->
+<!--             4. jsonlite for JSON files -->
+<!--             5. DBI and dbplyr for databases -->
+<!--         5. Handling common import/export issues -->
+<!--     3. Data manipulation with dplyr -->
+<!--         1. Introduction to dplyr -->
+<!--             1. the points of pipelines (highly readable, but verbose) -->
+<!--             2. The pipe operator (%>%) and magrittr -->
+<!--             3. Chaining operations with pipes -->
+<!--         2. Selecting data -->
+<!--             1. select, rename -->
+<!--             2. filter -->
+<!--             3. arrange -->
+<!--         3. Manipulating data -->
+<!--             1. mutate -->
+<!--             2. summarize -->
+<!--             3. group_by -->
+<!--             4. distinct -->
+<!--             5. count -->
+<!--         6. dplyr practice -->
+<!--     4. Data tidying with tidyr -->
+<!--         1. What counts as "tidying" data?  -->
+<!--             1. Remember what "tidy" means in the tidyverse -->
+<!--             2. Tidying is reshaping and systematically cleaning data  -->
+<!--         2. Reshape data -->
+<!--             1. pivot_longer -->
+<!--             2. pivot_wider -->
+<!--             3. cast, melt, gather, spread, etc. -->
+<!--         3. Combine and split cells -->
+<!--             1. unite -->
+<!--             2. separate functions -->
+<!--         4. Expand tables -->
+<!--             1. expand -->
+<!--             2. complete -->
+<!--         5. Handle missing values -->
+<!--             1. drop_na -->
+<!--             2. fill -->
+<!--             3. replace_na -->
+<!--         6. Advanced: Nested data -->
+<!--             1. What is nested data and why might you use it? -->
+<!--             2. We're not going to cover this in D2MR, but tidyr has functions for creating,  -->
+<!--             reshaping, and transforming nested data -->
+
+# Tidy Data
+
+## What Makes Data "Tidy"? 
+
+
+
+::: {.r-stack}
+
+![](../images/tidyverse/tidy-data-def-frag1.jpg){.fragment height=700}
+
+![](../images/tidyverse/tidy-data-def-frag2.jpg){.fragment height=700}
+
+![](../images/tidyverse/tidy-data-def-frag3.jpg){.fragment height=700}
+
+![](../images/tidyverse/tidy-data-def-frag4.jpg){.fragment height=700}
+
+![](../images/tidyverse/tidy-data-def-frag5-FULL.jpg){.fragment height=700}
+:::
+
+<aside>Illustrations from the [Openscapes](https://www.openscapes.org/) blog [Tidy Data for reproducibility, efficiency, and collaboration](https://www.openscapes.org/blog/2020/10/12/tidy-data/) by Julia Lowndes and Allison Horst</aside>
+
+---
+
+![](../images/tidyverse/tolstoy.png){.absolute top="0" right="0" height="200"}
+
+![](../images/tidyverse/tidy-data-quote-frag1.jpg){.fragment height="300"}
+
+
+![](../images/tidyverse/tidy-data-quote-frag2.jpg){.fragment height="300"}
+
+---
+
+::: columns
+
+::: {.column}
+
+![](../images/tidyverse/tidy-data-workshop-frag1.jpg){.fragment height="800"}
+
+:::
+::: {.column}
+
+![](../images/tidyverse/tidy-data-workshop-frag2.jpg){.fragment height="800"}
+:::
+:::
+
+
+## Messy vs. Tidy: Example {data-background-image="../images/mms.jpg" data-background-opacity=0.1}
+
+::::: {.container-fluid style="margin-top: -150px;"}
+:::: {.row style="margin-bottom: 50px;"}
+::: col-6
+
+:::
+::: col-6
+::: {.callout-important style="font-size: 1.2em;"}
+
+## These tables hold exactly the same data!
+
+What are the differences? What are the advantages of each?
+
+:::
+:::
+::::
+
+
+
+
+```{r}
+#| message: false
+#| warning: false
+#| eval: true
+#| echo: false
+library(messy)
+library(tidyverse)
+
+# Generate a messy dataset
+set.seed(123)
+
+mm.raw <- read_tsv("../data/MM.tsv") |> 
+    # Assign an ID number to each row in a column "Bag"
+    mutate(Bag = row_number()) |> 
+    relocate(last_col(), .before = 1)
+
+mm.messy <- mm.raw |> 
+    set_names("ID", "RED", "GREEN", "Blue", "Orannge", "Ylw.", "X", "WT.OZ") |> 
+    relocate(last_col(), .before = 4) |>
+    relocate(X, .after = 2) |>
+    add_whitespace(messiness = .9) |>
+    duplicate_rows(.3) |>
+    make_missing()
+
+mm.tidy <- mm.raw |> 
+    pivot_longer(
+        cols = 2:7,
+        names_to = "Color",
+        values_to = "Number"
+    ) |> 
+    select(Bag, Color, Number, Bag_Weight = Weight)
+    
+```
+
+:::: row
+
+::: col-7
+
+```{r}
+#| echo: true
+#| eval: true
+
+mm.raw
+```
+
+:::
+::: col-5
+
+```{r}
+#| echo: true
+#| eval: true
+mm.tidy
+```
+:::
+::::
+:::::
+
+::: bubble-chain
+  <p class="bubble-left fragment">That messy data looks pretty clean to me...</p>
+  <p class="bubble-right fragment">It *is* clean! It's just not **tidy**.</p>
+:::
+
+# Terminology Detour
+
+## Messy, Clean, Tidy
+
+::::: container-fluid
+
+:::: row
+
+::: col-6
+
+::: {.card .fragment .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Messy data:
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+```{r}
+#| echo: true
+#| eval: true
+mm.raw
+```
+
+:::
+:::
+
+:::
+
+::: col-6
+
+::: {.card .fragment .card-alt1 .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Also messy data:
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+```{r}
+#| echo: true
+#| eval: true
+mm.messy
+```
+
+:::
+:::
+
+:::
+
+::::
+
+:::::
+
+::: notes
+
+**messy ≠ bad** (except in the tidyverse context)
+
+- Data wrangling starts with reading your data, then prepping it for visualization & analysis
+- To use tidyverse packages, this prepping includes tidying messy data
+- This can be shockingly complicated and time-consuming!
+
+:::
+
+
+## "Messy" is messy
+
+**Messy** can either mean "not clean" or "not tidy"
+
+- **Always bad:** unclean + untidy (= messy)
+- **Sometimes good:** clean + untidy (= messy)
+- **Usually good:** clean + tidy (= tidy)
+
+::: bubble-chain
+  <p class="bubble-left fragment">It would make more sense to call it "untidy."</p>
+  <p class="bubble-right fragment">You are not wrong.</p>
+:::
+
+## Tidy Data: Iris
+
+```{r}
+#| include: false
+
+iris_1 <- iris |> head(10)
+
+iris_2 <- iris |> 
+    pivot_longer(
+        cols = c(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),
+        names_to = c("Flower_Part", "Measurement_Type"),
+        names_sep = "\\."
+    ) |>
+    head(10)
+```
+
+::::: container-fluid
+
+:::: row
+
+::: col-4
+
+The `iris` dataset is a classic example of tidy data.
+
+Which of these two versions of `iris` is tidy?
+
+:::
+
+::: {.col-8 style="margin-top: -4.5em; padding-bottom: 1em;"}
+
+::: {.overlap-box .smaller}
+
+::: box-title
+In tidy data:
+:::
+
+::: box-content
+::: nonincremental
+
+<ol>
+<li>Each variable is one column.</li>
+<li>Each observation is one row.</li>
+<li>Each measurement is one cell.</li>
+<li class="fragment">**Each unit depends on the research question.**</li>
+</ol>
+
+:::
+:::
+
+:::
+
+:::
+
+
+
+::::
+
+:::: row
+
+::: col-7
+
+```{r}
+#| echo: true
+
+iris_1
+```
+
+
+:::
+
+::: col-5
+
+```{r}
+#| echo: true
+
+iris_2
+```
+
+
+:::
+
+::::
+
+:::::
+
+
+::: notes
+
+Consider `iris`—each row is one flower with four morphological measurements (sepal length, sepal width, petal length, petal width). This is tidy for the question: **"What morphological features distinguish these species?"**
+
+Could you pivot `iris` longer with columns for `flower_part` (sepal/petal) and `measurement_type` (length/width)? Yes. Would it be tidy? Also yes—but for a different question: **"What determines the size of flower parts in general?"**
+
+**The key distinction:** Are your columns measuring different variables or different levels of the same variable?
+
+- **Different variables** → Keep separate columns
+- **Different levels** → Pivot longer
+
+Tidiness isn't absolute. It's defined by your analytical question. The same dataset can be tidy in multiple forms depending on what you're studying.
+
+:::
+
+## Data Preparation Terms
+
+::: {style="font-size: .9em"}
+
+| Process | Start State | Goal | End State | Examples |
+|-----|-----|-----|-----|-----------|
+| **Data Cleaning:** <br> Error correction | Raw data | Accuracy, consistency, legibility | Clean data, not yet specialized | Removing duplicate data<br>Correcting syntax errors<br>Fixing typos<br>Handling missing values<br>Change data types |
+| **Data Wrangling:**  <br> Data preparation | Clean data | Usability for medium-scope purpose | Interpretable and specialized data, not yet analyzable | Preparing for narrow use cases<br>Grouping and summarizing<br>Transforming variables or values |
+| **Data Transformation:**  <br> Data restructuring | Interpretable data | Usability for narrow-scope tasks | Analyzable and visualizable data | Reshaping long ↔ wide<br>Generating new data-based variables<br>Merging datasets<br>Eliminating unnecessary data |
+
+:::
+
+::: bubble-chain
+<p class="bubble-left fragment">You use them differently in the core project instructions!</p>
+<p class="bubble-left fragment">Those are the same thing!</p>
+<p class="bubble-left fragment">That's not what I learned!</p>
+<p class="bubble-right fragment">**OK FINE. Yes. You're all correct.** You're also all incorrect. Honestly it doesn't really matter. Just mess with your data until they are usable. Call it what you want as long as it works.</p>
+:::
+
+
+
+# Tidyverse Packages
+
+::: {.r-stretch style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em;"}
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/tibble.png){style="max-height: 2em;"}
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[tibble]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Reimagine the dataframe
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/readr.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[readr]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+import and export tabular data
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/dplyr.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[dplyr]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;"}
+
+a grammar of data manipulation
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/tidyr.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[tidyr]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;"}
+
+tidy your messy data
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/purrr.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[purrr]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+enhance R's functional programming
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/stringr.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[stringr]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+simplify working with strings
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/forcats.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[forcats]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+simplify working with factors
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/ggplot2.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[ggplot2]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+a grammar of graphics
+
+:::
+
+:::
+
+:::
+
+# Tidyverse Packages: Week 4
+
+::: {.r-stretch style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em;"}
+
+::: {.contained-box .accent1  style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/tibble.png){style="max-height: 2em;"}
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[tibble]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Reimagine the dataframe
+
+:::
+
+:::
+
+::: {.contained-box .accent1  style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/readr.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[readr]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+import and export tabular data
+
+:::
+
+:::
+
+::: {.contained-box .accent1  style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/dplyr.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[dplyr]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;"}
+
+a grammar of data manipulation
+
+:::
+
+:::
+
+::: {.contained-box .accent1  style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/tidyr.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[tidyr]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;"}
+
+tidy your messy data
+
+:::
+
+:::
+
+::: {.contained-box  style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/purrr.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[purrr]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+enhance R's functional programming
+
+:::
+
+:::
+
+::: {.contained-box  style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/stringr.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[stringr]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+simplify working with strings
+
+:::
+
+:::
+
+::: {.contained-box  style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/forcats.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[forcats]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+simplify working with factors
+
+:::
+
+:::
+
+::: {.contained-box  style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+![](../images/icons/tv-icons/ggplot2.png){style="max-height: 2em;"}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[ggplot2]{.pkg}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+a grammar of graphics
+
+:::
+
+:::
+
+:::
+
+
+# `tibble`
+
+## tibble: Better Data Frames {.left-sidebar-slide fullscreen=true}
+
+![](../images/icons/tv-icons/tibble.png){.absolute top="1em" right="1em" height="4em;"})
+
+
+::: sidebar-column
+::: sidebar-title
+
+[tibble]{.pkg}: <br>Better Data Frames
+
+:::
+
+-   Adaptation of base R's `data.frame` 
+-   Tibbles are *also* data.frames 
+    -   Check with `class()` or `str()`
+-   Tidyverse functions work with tibbles
+    -   usually add the `tibble` class automatically
+-   Functionally equivalent
+
+:::
+
+::: main-content
+
+::: {.r-stack}
+
+![](../images/screenshots/iris-tabular.png){.fragment style="position: absolute; width: 60%; top: 2em; left: 2em;"}
+
+![](../images/screenshots/iris-dataframe.png){.fragment style="position: absolute; width: 60%; top: 50%; left: 50%; transform: translate(-50%, -50%);"}
+
+![](../images/screenshots/iris-tibble.png){.fragment style="position: absolute; width: 60%; bottom: 2em; right: 2em;"}
+
+:::
+
+:::
+
+::: notes
+
+Adaptation of base R's data.frame structure that makes a lot of things easier
+Tibbles are also data.frames (check the class() or str() functions)
+Tidyverse package(s) work with tibbles, not base data.frames
+Load the tidyverse library to use tibble-related functions
+
+:::
+
+
+# `readr`
+
+## [readr]{.pkg}: Read & Write Tibbles {.left-sidebar-slide fullscreen=true}
+
+![](../images/icons/tv-icons/readr.png){.absolute top="1em" right="1em" height="4em;"})
+
+
+::: sidebar-column
+::: sidebar-title
+
+[readr]{.pkg}: <br> Read & Write Tibbles
+
+:::
+::: sidebar-content
+
+-   Import/export tabular data as tibbles
+-   Functions start with `read_*()` and `write_*()`
+-   Handle common file types: CSV, TSV, delimited, fixed-width
+-   Other packages for Excel, SPSS, Google Sheets, JSON, databases
+
+:::
+:::
+
+::: main-content
+
+![](../images/screenshots/readr-specify.png)
+
+:::
+
+
+## What & Where
+
+![](../images/icons/tv-icons/readr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::::: container-fluid
+
+::: {.row .d-flex }
+
+::: {.col-6 .d-flex }
+
+::: {.overlap-box .h-100 .w-100 .d-flex .flex-column}
+
+::: box-title
+
+Determine import function:
+
+:::
+
+::: {.box-content .flex-grow-1}
+
+-   File extension?
+-   Field separators?
+-   Column names?
+-   Non-tabular content?
+-   Multiple sheets?
+
+:::
+        
+:::
+
+:::
+
+::: {.col-6 .d-flex }
+
+::: {.overlap-box .accent1 .h-100 .w-100 .d-flex .flex-column}
+
+::: box-title
+
+Determine file path:
+
+:::
+
+::: {.box-content .flex-grow-1}
+
+-   Located in your repo
+-   Protected data
+    -   Add to `.gitignore` or `localonly`
+    -   Only call in your *local* R scripts
+-   Shared data
+    -   In git-managed directory
+    -   Callable by any/all scripts
+-   Use relative paths
+
+:::
+        
+:::
+:::
+
+::::
+
+:::::
+
+
+## Relative relativity
+
+::: {.card style="font-size: 1.1em; font-weight: bolder; text-align: center; border-width:8px; border-color: #c00; flex: 1 1 100%; background-color: #ffeaa9; margin-bottom: 1.5em;"}
+
+::: {.card-body style="display: flex; align-items: center; justify-content: center; gap: .1em;"}
+
+![](../images/icons/priority.png){style="max-height: 3em;"}
+
+Quarto documents handle relative paths differently than R scripts. 
+
+![](../images/icons/priority.png){style="max-height: 3em;"}
+
+:::
+
+:::
+
+In scripts, relative paths are relative to *the working directory*, your repo or project's top-level. In Quarto docs, relative paths are relative to *the location of the Quarto file itself*.
+
+If you work in a single `.qmd` in the top-level of your repo, these are equivalent. Read from: `repo_name/data/file.csv`
+    
+If your `.qmd` is in any subfolder, you'll need to adjust. To read the same file from a code chunk in `repo_name/quarto/document.qmd`, use: `../data/file.csv`
+
+This is for *all* file operations, not just `readr` functions.
+
+
+::: aside
+[`readr` cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/data-import.pdf)
+:::
+
+
+## Importing with `readr` {.left-sidebar-slide fullscreen=true}
+
+![](../images/icons/tv-icons/readr.png){.absolute top="1em" right="1em" height="4em;"})
+
+::: sidebar-column
+::: sidebar-title
+**Importing** with [readr]{.pkg}: `read_*()`
+:::
+
+::: sidebar-content
+
+-   `read_*()` import tabular data as tibbles
+-   Optional `col_types` & `col_names` arguments:
+-   Assign to object to save imported data
+
+:::
+
+:::
+
+::: {.main-content style="padding-right: 5em;"}
+
+```{.r style="margin-bottom: .5em"}
+# Common read functions
+
+read_csv()    # Comma separated values
+read_csv2()   # Semicolon separator (comma = decimal)
+read_tsv()    # Tab separated values
+read_delim()  # Any delimiter
+read_fwf()    # Fixed width files
+read_table()  # Whitespace separated
+```
+
+```{.r}
+# Default behavior - guesses all data types
+my_tbl <- read_*(file.csv, col_types = NULL)
+
+# Specify columns with cols()
+my_cols <- read_*(file.csv, col_types = cols(
+  my_factor = col_factor(),
+  your_string = col_character()
+))
+
+# String shortcut:
+# needs character for each col in order
+# Use "?" for columns to guess
+my_shortcut <- read_*(file.csv, col_types = "fc")
+```
+
+:::
+
+## Exporting with `readr` {.left-sidebar-slide fullscreen=true}
+
+![](../images/icons/tv-icons/readr.png){.absolute top="1em" right="1em" height="4em;"})
+
+::: sidebar-column
+::: sidebar-title
+**Exporting** with [readr]{.pkg}: `write_*()`
+:::
+
+::: sidebar-content
+
+::: tightlist
+
+::: {.nonincremental .grouped}
+
+-   `read_*()` functions have matched `write_*()` counterparts
+-   Save tibbles to tabular files
+-   Write *intermediate datasets* after:
+    -   De-identifying data
+    -   Complex wrangling
+    -   Dropping unneeded data
+    -   Managing empty data
+-   Run from script or console, no object assignment
+
+:::
+
+:::
+
+:::
+
+:::
+
+::: {.main-content style="padding-right: 5em;"}
+
+```{.r style="margin-bottom: .5em"}
+# Common write_*() functions
+
+write_delim()
+write_csv()
+write_csv2()
+write_excel_csv()
+write_excel_csv2()
+write_tsv()
+```
+
+```{.r}
+# Start with messy data
+messy_df <- read_xlsx("localpath/messy.xlsx", 
+                     sheet="my sheet")
+
+# Process in R: tidy, clean, transform...
+
+# Export clean version
+clean_df <- # ... your cleaning steps
+write_csv(clean_df, "localpath/clean.csv")
+
+# Later, read the clean version
+clean_df <- read_csv("localpath/clean.csv")
+```
+
+:::
+
+::: notes
+
+Export tibbles to create intermediate datasets between initial import and final analysis
+Easily produce de-identified datasets to share with others
+Save computational time by skipping costly read-in and wrangling steps (e.g., big files, many files, complex transformations)
+readr can also export tibbles to tabular files with similar syntax to how it imports
+
+:::
+
+## Workflow {.left-sidebar-slide fullscreen=true}
+
+::: {.container-fluid style="width: 80vw;"}
+
+::: {.row style="margin-top: 1em"}
+
+::: {.col-3 .fragment fragment-index="1"}
+
+![](../images/screenshots/process-messy-file.png){style="max-width: 120% !important; margin-top: 0em" alt="Messy Data File"}
+
+
+:::
+
+::: {.col-1 .fragment fragment-index="2"}
+
+::: {style="text-align: center; margin-top: 50%;"}
+::: {style="font-size: 2em"}
+{{< bi arrow-right-circle-fill>}}
+:::
+:::
+:::
+
+::: {.col-4 .smaller .fragment fragment-index="2"}
+
+```{.r}
+# Read in messy data
+messy_df <- read_xlsx(
+    "localpath/messy.xlsx",
+    sheet="my sheet"
+    )
+```
+
+:::
+
+::: {.col-1 .fragment fragment-index="3"}
+
+::: {style="text-align: center; margin-top: 50%;"}
+::: {style="font-size: 2em"}
+{{< bi arrow-right-circle-fill >}}
+:::
+:::
+
+:::
+
+::: {.col-3 .smaller .fragment fragment-index="3"}
+
+![](../images/icons/cleaning.png){style="max-height: 3.5em;" alt="Clean"} ![](../images/icons/lasso.png){style="max-height: 3.5em;" alt="Wrangle"}
+
+
+
+:::
+
+:::
+
+
+
+<!-- open down arrow row -->
+
+::: row
+
+::: {.col-11 style="text-align: right;" .fragment fragment-index="4"}
+
+::: {style="font-size: 2em"}
+{{< bi arrow-down-circle-fill >}}
+:::
+
+:::
+
+
+::: col-1
+
+[.]{style="font-size: 0em;"}
+
+:::
+
+:::
+
+<!-- close down arrow row -->
+
+
+<!-- open second row -->
+
+::: row
+
+<!-- open tidy data card column -->
+::: {.col-3 .smaller  .fragment fragment-index="6"}
+
+::: {.card}
+
+::: card-header
+::: {.card-title style="color: #fff; font-size: .8em"}
+
+My tidy data file:
+
+:::
+:::
+
+::: {.card-body .lessgap style="font-size: .8em" .nonincremental}
+
+-   Data needed for future R scripts *and nothing else*
+-   Minimal, tabular (.csv)
+-   No protected data
+-   Added variables from initial wrangling
+
+:::
+:::
+
+:::
+
+<!-- close tidy data card column -->
+
+<!-- open circular paths column -->
+
+::: col-6
+
+
+
+<!-- open left path row -->
+
+::: {.row .fragment fragment-index="5"}
+
+::: {.col-2 .fragment fragment-index="6"}
+
+::: {style="text-align: center; "}
+::: {style="font-size: 2em"}
+{{< bi arrow-left-circle-fill >}}
+:::
+:::
+
+:::
+
+::: {.col-8 .smaller}
+
+```{.r}
+# Write out clean version
+write_csv(clean_df, 
+          "localpath/clean.csv")
+```
+
+:::
+
+::: {.col-2}
+
+::: {style="text-align: center;"}
+::: {style="font-size: 2em"}
+{{< bi arrow-left-circle-fill >}}
+:::
+
+:::
+
+:::
+
+:::
+
+<!-- close left path row -->
+
+<!-- open right path row -->
+
+::: {.row style="margin-top: 1em;" .fragment fragment-index="7"}
+
+::: {.col-2}
+
+::: {style="text-align: center;"}
+::: {style="font-size: 2em"}
+{{< bi arrow-right-circle-fill >}}
+:::
+:::
+
+:::
+
+::: {.col-8 .smaller}
+
+```{.r}
+# Read in clean version
+clean_df <- read_csv(
+    "localpath/clean.csv")
+```
+
+:::
+
+::: {.col-2}
+
+::: {style="text-align: center;"}
+::: {style="font-size: 2em"}
+{{< bi arrow-right-circle-fill >}}
+:::
+:::
+
+:::
+
+:::
+
+<!-- close right path row -->
+
+:::
+
+<!-- close circular paths column -->
+
+<!-- open clean_df column -->
+
+::: {.col-3 .fragment fragment-index="4"}
+
+
+::: {.card .card-accent1 style="padding:0px"}
+
+::: card-header
+::: {.card-title style="color: #fff; font-size: .6em"}
+
+`clean_df`:
+
+:::
+:::
+
+::: {.card-body .lessgap style="font-size: .8em" .nonincremental}
+
+-   Clean & tidy tibble
+-   Data needed for analysis *and nothing else*
+
+:::
+:::
+
+:::
+
+
+<!-- close clean_df column -->
+
+:::
+
+<!-- close second row column -->
+
+:::
+
+<!-- close container -->
+
+
+## Bonus: `readxl` & `googlesheets4`
+
+![](../images/icons/tv-icons/readxl.png){.absolute top="-1.5em" right="4em" height="4em;"}
+![](../images/icons/tv-icons/googlesheets4.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::: {.callout-note .large}
+
+### Complementary packages to `readr`
+
+- Mimic readr's [read_*]{.func} functions
+    -   [same cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/data-import.pdf)
+- Specification for converting "complex" documents into a `tbl`-compatible format
+- *Not* tidyverse packages
+    - Install and load them separately!
+
+:::
+
+::: fragment
+
+```{.r}
+# readxl for Excel files
+library(readxl)
+read_excel("data.xlsx")
+
+# googlesheets4 for Google Sheets
+library(googlesheets4)
+read_sheet("spreadsheet_url")
+```
+:::
+
+## Practice: Read & Write (1)
+
+::::: container-fluid
+
+:::: row
+
+::: col-5
+
+::: overlap-box
+
+::: box-title
+
+Read in M&M data:
+
+:::
+
+::: box-content
+
+1. Pull the `student-hub` repo (or find files on GitHub)
+2. Find the Excel spreadsheet: `data/MM data.xlsx`
+3. Install and load the [readxl]{.pkg} library
+4. Use the `read_excel()` function to assign the data to a tibble called `mmdata`
+5. Examine your data in the console to see if it matches the image
+
+:::
+        
+:::
+
+:::
+
+::: col-7
+
+![](../images/screenshots/mmdata-goal.png)
+
+:::
+
+::::
+
+:::::
+
+
+::: bubble-chain
+  <p class="bubble-left fragment">It doesn't!</p>
+  <p class="bubble-right fragment">Oh no! Thank heavens you are smarter than a computer.</p>
+:::
+
+
+
+## Practice: Read & Write (2)
+
+::::: container-fluid
+
+:::: row
+
+::: col-7
+
+::: overlap-box
+
+::: box-title
+
+Fix, read, write:
+
+:::
+
+::: box-content
+
+1. Open `MM data.xlsx` in Excel (or similar) and examine it with your human eyeballs
+    -   What about this file creates problems when you read-in?
+    -   How might you fix the issue here in the Excel document? 
+2. Review the `?read_excel` documentation 
+    -   What arguments can you pass to `read_excel()` to fix the issue on read-in?
+3. Use `read_excel()` to assign the data to a tibble called `mmdata` that looks like the image
+4. Use `write_csv()` to save `mmdata` to an intermediate dataset at the location `student-hub/data/mmdata.csv`
+    -   Use an appropriate relative path!
+
+
+:::
+        
+:::
+
+:::
+
+::: col-5
+
+![](../images/screenshots/mmdata-goal.png)
+
+:::
+
+::::
+
+:::::
+
+
+::: bubble-chain
+  <p class="bubble-left fragment">It says that folder doesn't exist! <br> *(and/or)* <br> It doesn't read/write/both where I want it to!
+</p>
+  <p class="bubble-right fragment">Remember relative relativity. Are you reading and writing from a script, Quarto doc, or the console?</p>
+:::
+
+
+::: notes
+
+Open `MM data.xlsx` in Excel (or similar) and examine it with your human eyeballs
+What about this file creates problems when you read-in?
+How would you fix the issue here in the Excel document? (just think; don't do it!)
+Review the ?read_excel documentation 
+What arguments can you pass to read_excel() to fix the issue on read-in?
+Use the read_excel() function to assign the data to a tibble called mmdata that looks like the image
+Use write_csv() to save mmdata to an intermediate dataset: `in-class-materials/data/mmdata.csv`
+
+:::
+
+
+
+# `dplyr`
+
+
+## [dplyr]{.pkg}: Data Transformation {.left-sidebar-slide fullscreen=true}
+
+![](../images/icons/tv-icons/dplyr.png){.absolute top="1em" right="1em" height="4em;"})
+
+
+::: sidebar-column
+::: sidebar-title
+
+[dplyr]{.pkg}: <br> Grammar of Data Manipulation
+
+:::
+::: sidebar-content
+
+-   Core tidyverse package for data transformation
+-   Works with tibbles (and data.frames)
+-   Build linear pipelines for human-friendly data wrangling
+
+:::
+:::
+
+::: main-content
+
+::: {.r-stretch style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em; margin-top: 3em;"}
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi check2-square>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[select]{.func}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+subset & sort columns
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi funnel>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[filter]{.func}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+subset rows
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi layer-backward>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[arrange]{.func}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;"}
+
+sort rows
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi node-plus-fill>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[mutate]{.func}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+create and modify columns
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi calculator>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[summarize]{.func}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+compute with multiple rows
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi collection>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[group_by]{.func}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+perform operations on subgroups
+
+:::
+
+:::
+
+
+:::
+
+:::
+
+## `select`
+
+
+## `filter`
+
+
+## `arrange`
+
+
+## `mutate`
+
+
+## `summarize`
+
+
+## `group_by`
+
+
+
+
+
+
+
+
+# `tidyr`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# magrittr: THE PIPE %>%
+
+## The Pipe Operator
+
+::: {.callout-note}
+**magrittr**: dependency tidyverse package with one purpose – **the pipe operator: %>%**
+:::
+
+The **%>%** allows you to:
+
+::: {.incremental}
+- create some data %>%
+  - change it with function X %>%
+  - change it with function Y %>%
+  - as much as you like
+:::
+
+::: {.fragment}
+**Human-readable alternative to multiple embedded functions:**
+`as much as you like(change it with function Y(change it with function X(create some data)))`
+:::
+
+## Keyboard Shortcut
+
+::: {.fragment .highlight-red}
+"That's annoying. It's also annoying to type %>% all the time."
+:::
+
+::: {.fragment}
+**Fair! Fortunately, RStudio has a built-in shortcut:**
+
+**shift + cmd/ctrl + m**
+:::
+
+## Pipe Example
+
+```r
+# Assign everything to mmdata.long
+# Using the mmdata tbl...
+mmdata.long <- mmdata %>%
+  # ...select three columns...
+  select(Red, Green, Blue) %>%
+  # ...then make that 3 col tbl long...
+  pivot_longer(cols = c("Red", "Green","Blue"),
+               names_to = "Color",
+               values_to = "Number") %>%
+  # ...then sort that tbl by new Number column...
+  arrange(Number)
+# Pipeline is over, so everything assigned to mmdata.long
+```
+
+## Alternative Pipe: |>
+
+::: {.fragment}
+"I thought this was the pipe: |"
+:::
+
+::: {.fragment}
+Yeah…it is. This is another one. The OR operator pipe `|` looks like a pipe. The tidyverse pipe `%>%` acts like a pipe.
+:::
+
+# dplyr
+
+## dplyr: Tidy Transformation
+
+Use the magrittr **%>%** pipe to make data flow smoothly through these core dplyr functions:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**[filter()]{.func}** - subset/sort rows
+
+**[select()]{.func}** - subset/sort columns
+
+**[mutate()]{.func}** - create new column
+:::
+
+::: {.column width="50%"}
+**[group_by()]{.func}** & **[summarize()]{.func}** - compute summary values
+
+**[arrange()]{.func}** - perform operations on subgroups of data
+:::
+
+::::
+
+## filter(): Create a Subset
+
+```r
+filter(tbl, cond1, cond2, ...)
+```
+
+::: {.incremental}
+- Evaluates on **observations** (rows)
+- **Conditions** are logical evaluations of **values**
+  - specified by column
+  - logical operators: `>`, `>=`, `<`, `<=`, `!=`, `==`
+- **Returns a tbl** made up of all rows that meet all conditions
+:::
+
+**Examples:**
+```r
+# Condition examples
+transport == "bicycle"
+has.handlebars(transport) | transport == "boat"
+(has.handlebars(transport) & n.wheels(transport) < 3) | 
+  (requires.gas(transport) & n.wheels(transport) > 3)
+```
+
+## filter(): Under the Hood
+
+```r
+# Basically 2 embedded 'for' loops
+# FOR each row in tbl
+#   FOR each conditional argument
+#     Evaluate logic
+#     IF true, return tbl (continue loop to next arg.)
+#     ELSE (if false), remove row, return tbl (continue loop)
+#   when no conditional arg. remain, move to next row
+# When no rows remain, return tbl and end loop
+```
+
+::: {.fragment}
+"Can't I just know how to use it without this explanation?"
+:::
+
+::: {.fragment}
+Sure! *But* there's going to be an exercise and mini-project posted next class directly related to this kind of thing, so you may want to keep it in mind.
+:::
+
+## arrange(): Sort Your Rows
+
+```r
+arrange(tbl, col1, col2, ...)
+```
+
+::: {.incremental}
+- Sort rows
+- If 2+ variables, sorts in order given
+- Defaults to ascending order
+- Use [desc()]{.func} or `-` for descending order
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```r
+# Sort trial order within subject
+arrange(data, subject, trial)
+```
+```
+> subject  trial
+> A        1
+> A        2  
+> B        1
+> B        2
+```
+:::
+
+::: {.column width="50%"}
+```r
+# Reverse trial order
+arrange(data, subject, desc(trial))
+arrange(data, subject, -trial)
+```
+```
+> subject  trial
+> A        2
+> A        1
+> B        2
+> B        1
+```
+:::
+
+::::
+
+## select(): Subset, Sort, & Rename Columns
+
+```r
+select(tbl, col1, col2, ...)
+```
+
+**Basic Examples:**
+```r
+# From tibble `data` with columns: colA, colB, colC, colD
+# Return a tibble with only colA and colB
+select(data, colA, colB)
+select(data, -c(colC, colD))
+
+# Rename/reorder while selecting
+select(data, colC, column_A = colA, colB)
+
+# Select ranges
+select(data, colA:colC)    # inclusive range between named columns
+select(data, 1:3)          # inclusive range based on column number
+select(data, -ends_with("D"))  # use "tidy-select" functions
+```
+
+## select(): Advanced Features
+
+::: {.incremental}
+- Operates on **variables** (columns)
+- Returns tibble that **includes:**
+  - argument columns
+  - in arg order
+  - optionally renamed
+- Use hyphen to **exclude** columns
+  - Includes everything else
+:::
+
+**Related function:** [rename()]{.func}
+```r
+# Change column names with similar syntax
+# but don't change tibble structure
+rename(column_B = colB)  # new columns: colA, column_B, colC, colD
+```
+
+## mutate(): Create New Variable
+
+```r
+mutate(tbl, newvar1 = ...)
+```
+
+**Examples:**
+```r
+# All obs. in new column 'hello' have the same value
+mutate(data, hello = "hey there!")
+
+# Obs. in new column are computed by row
+mutate(data, col1_plus_col2 = col1 + col2)
+mutate(data, round_col1_div_col2 = round(col1/col2, 2))
+
+# Multiple operations in sequence
+mutate(data,
+  sum_cols = col1 + col2,
+  prop_col1 = round(col1/sum_cols, 2))
+  
+# Change values in an existing column conditionally
+mutate(data, colA = ifelse(colA == 0, NA, colA))
+```
+
+## group_by() & summarize(): Compute Summary Values
+
+```r
+group_by(tbl, col1, col2, ...)
+summarize(tbl, newcol = fun(col), ...)
+```
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Without Grouping:**
+```r
+# Average all values in score column
+summarize(data, mean_score = mean(score))
+```
+```
+> mean_score
+> 20
+```
+:::
+
+::: {.column width="50%"}
+**With Grouping:**
+```r
+# Average score for each subject
+group_by(data, subject) %>%
+  summarize(sub_mean_score = mean(score),
+           sub_first_score = first(score))
+```
+```
+> subject  sub_mean_score  sub_first_score
+> A        18              17
+> B        22              20
+```
+:::
+
+::::
+
+## Advanced Grouping
+
+```r
+# Grouping by multiple columns creates summary for each 
+# unique combination of values
+group_by(data, subject, condition) %>%
+  summarize(sc_mean_score = mean(score))
+```
+
+```
+> subject  condition  sub_mean_score
+> A        1          17
+> A        2          19
+> B        1          24
+> B        2          20
+```
+
+::: {.callout-note}
+- **[summarize()]{.func}** computes across obs. in a variable
+- Summarizing without grouping computes across all data
+- **[group_by()]{.func}** breaks observations into subsets
+- Returns tbl with *only* new summary columns and any grouping columns
+
+**FYI:** `summarize()` == `summarise()`
+:::
+
+# Combining Data (Preview)
+
+## Just a Preview...
+
+The binding/merging/joining functions in the tidyverse are part of [dplyr]{.pkg}, so I'm adding reference slides here.
+
+They make more sense to talk about together with the [tidyr]{.pkg} functions next class, so we'll skip these for now and come back to them.
+
+## Bind Rows
+
+**Append *rows* of one dataframe after the last row of another**
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**base::[rbind()]{.func}**
+- dataframes must have exactly the same columns in the same order
+:::
+
+::: {.column width="50%"}
+**dplyr::[bind_rows()]{.func}**
+- dataframes can have different column structures, missing values will be treated as *NA*
+:::
+
+::::
+
+::: {.callout-tip}
+**What's with the base:: and dplyr:: bits?**
+
+It's a shortcut to specify what package the function comes from. Usually not necessary in your actual code, but it can come in handy when: 1) you don't have that package loaded and you just need that single specific function or 2) you have multiple packages loaded that define that function and you want to specify which of them to use.
+:::
+
+## Bind Columns
+
+**Append *columns* of one dataframe after the last column of another**
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**base::[cbind()]{.func}**
+- dataframes must have the same number of rows
+:::
+
+::: {.column width="50%"}
+**dplyr::[bind_cols()]{.func}**
+- dataframes must have the same number of rows
+:::
+
+::::
+
+::: {.fragment}
+"If they work the same way, which should I use?"
+:::
+
+::: {.fragment}
+**Neither! Use joins instead.**
+:::
+
+## Merge Data with *_join() Functions
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**[left_join()]{.func}** - includes all the rows of x and only the rows of y that have matches in x
+
+**[right_join()]{.func}** - includes all the rows of y and only the rows of x that have matches in y
+:::
+
+::: {.column width="50%"}
+**[inner_join()]{.func}** - includes only rows present in both x and y
+
+**[full_join()]{.func}** - includes all rows present in either x or y, matched where possible
+:::
+
+::::
+
+::: {.callout-tip}
+See r4ds [Chapter 19: Joins](https://r4ds.hadley.nz/joins.html) for more explanation
+:::
+
+## *_join() Syntax
+
+```r
+*_join(left.tbl, right.tbl, by = ...)
+# replace * with left, right, inner, or full
+```
+
+**Examples:**
+```r
+# These are all identical
+left_join(band_members, band_instruments)
+
+left_join(band_members, band_instruments, 
+         by = join_by(name))
+
+left_join(band_members, band_instruments, 
+         by = "name")
+
+# Specify to match columns with different names:
+by = join_by(name == artist)
+
+# Specify multiple columns to match:
+join_by(a, c == d)
+```
+
+# Practice: dplyr
+
+## 💻 Try It Out
+
+**Using the mmdata tibble you created earlier, experiment with:**
+
+::: {.incremental}
+- **[filter()]{.func}** - Create subsets based on conditions
+- **[select()]{.func}** - Choose specific columns
+- **[mutate()]{.func}** - Create new variables
+- **[arrange()]{.func}** - Sort your data
+- **[group_by()]{.func}** & **[summarize()]{.func}** - Calculate group statistics
+:::
+
+# Exercises
+
+## 💻 W3C2: Read/Write Practice (1 of 2)
+
+**In the first code chunk of a new notebook (R/quarto):**
+
+::: {.incremental}
+- Use readr functions to read in a simple tabular dataset (.csv/.tsv) using a relative path and assign to a new object
+- Use tidyverse functions to transform the data in some way (can be very simple as long as it creates recognizable changes)
+- Use readr functions to write your transformed data to a .csv file in the same location as your original data file (give it a unique file name)
+- Examine the assigned objects and written files; use one of the objects in a second code chunk
+- Make necessary changes if it does not work as expected
+:::
+
+**Replicate** the script above in a new .R script in the same directory as your notebook
+
+**In a new chunk,** *source* the .R script, again examine objects/files and make changes so things work as expected
+
+::: {.callout-note}
+**Assessed:** 9, 10, 22; **Unassessed:** 2, 4, 10
+:::
+
+## 💻 W3C2: Read/Write Practice (2 of 2)
+
+**Find or create a variety of datasets to repeat the process:**
+
+::: {.incremental}
+- **Different file types:** .csv, google sheets, .xlsx, .sav, etc.
+- **Different "extra" stuff:** multiple tabs, rich formatting, non-data text, header(s), etc.
+- **Different combinations of file locations:** notebook and script in root folder, one in root folder and one in a subdirectory, both in two different subdirectories, writing/reading files in a lower-level subdirectory, writing/reading files in a higher-level subdirectory, etc.
+:::
+
+**Pay attention to:**
+- Which packages are necessary to run which functions
+- Which functions include which arguments (and the default argument values)
+- Differences in relative paths depending on function and file locations
+
+## 💻 W3C2: Data Cleaning
+
+::: {.callout-important}
+**Important:** These exercises include functions from tidyverse packages we will cover next class. Look ahead with the resources for next class or do what you can now and finish it next week.
+:::
+
+**Find three data cleaning exercises (1 walkthrough example; 2 structured assignments) in the d2mr-assessment repo.** Complete the mini-projects directly in the existing .qmd like a digital workbook.
+
+::: {.incremental}
+- **Data cleaning walkthrough:** Clean the iris Dataset (example, not a mini-project to complete/submit)
+- **Level 1 Data Cleaning:** Clean the mtcars Dataset - Work with a simple dataset, focus on basic data cleaning tasks
+- **Level 2 Data Cleaning:** Clean the midwest Dataset - Work with a more complex dataset, perform more involved cleaning tasks
+:::
+
+::: {.callout-note}
+**Assessed:** 5, 6, 8, 9, 10, 11, 12; **Unassessed:** 1, 2, 9, 12, 13
+:::
+
+## 💻 W3C2: Group "Uncleaning"
+
+**Work together with a classmate to each "unclean" a dataset for the other(s) to clean.** This will work best in pairs so that you can swap datasets but you can adjust things to do in a small group if you prefer.
+
+::: {.incremental}
+1. Each partner chooses a publicly available dataset (recommend the built-in ones)
+2. In a script or notebook, transform your df to make it messy and save to a .csv
+3. Swap your new messy data files
+4. In a (different) script or notebook, clean your partner's messy data
+5. Discuss the process with your partner/group
+:::
+
+**Associated mini-project:** `d2mr-assessment/01_data-cleaning/03_group-unclean`
+
+::: {.callout-note}
+**Assessed:** 5, 6, 8, 9, 10, 11, 12; **Unassessed:** 1, 2, 5, 9, 14, 22
+:::
+
+# Resources 🗃️
+
+## Today's Class
+
+**tidyverse.org:** [https://www.tidyverse.org/](https://www.tidyverse.org/)
+
+**readr:**
+- [documentation](https://readr.tidyverse.org/) & [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf)
+- [r4ds: 7 – Data import](https://r4ds.hadley.nz/data-import)
+
+**tibble:**
+- [documentation](https://tibble.tidyverse.org/) & [r4ds: tibbles](https://r4ds.had.co.nz/tibbles.html)
+
+**dplyr:**
+- [documentation](https://dplyr.tidyverse.org/) & [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf)
+- [r4ds: 3 – Data transformation](https://r4ds.hadley.nz/data-transform)
+
+## Next Class
+
+**tidyr:**
+- [documentation](https://tidyr.tidyverse.org/) & [cheatsheet](https://rstudio.github.io/cheatsheets/html/tidyr.html)
+- [tidyverse guide to tidy data](https://tidyr.tidyverse.org/articles/tidy-data.html)
+- [r4ds: 5 – Data tidying](https://r4ds.hadley.nz/data-tidy)*
+
+**stringr:**
+- [documentation](https://stringr.tidyverse.org/) & [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/strings.pdf)
+- [r4ds: 14 – Strings](https://r4ds.hadley.nz/strings)*
+- [r4ds: 15 – Regular expressions](https://r4ds.hadley.nz/regexps)
+
+## More Resources
+
+**forcats:**
+- [documentation](https://forcats.tidyverse.org/) & [cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/factors.pdf)
+- [r4ds: 16 – Factors](https://r4ds.hadley.nz/factors)*
+
+**purrr** *(advanced, low priority for d2mr)*:
+- [documentation](https://purrr.tidyverse.org/) & [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/purrr.pdf)
+
+**Quick Help:**
+```r
+?paste
+?paste0
+?filter
+?read_csv
+??read_csv  # search for functions
+```
