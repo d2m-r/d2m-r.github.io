@@ -5,10 +5,13 @@ date: "1/1/2026"
 footer: "D2M-R I & II" #  quarter, week, and class
 
 format: revealjs
-engine: knitr
 
 revealjs-plugins:
   - codefocus
+  - fullscreen
+
+engine: knitr
+fullscreen: false
 
 execute:
   #echo: true
@@ -42,6 +45,29 @@ Depends on javascript in the bubbles.js theme file.
 List must be wrapped in a non-incremental div.
 
 :::
+
+## Left Sidebar Slide {.left-sidebar-slide fullscreen=true}
+
+::: sidebar-column
+::: sidebar-title
+Slide Title Here
+:::
+
+Optional text in the left sidebar with light contrasting text.
+
+:::
+
+::: main-content
+Main content area goes here.
+
+- Can include text
+- Lists
+- Images
+- Code blocks
+- Whatever you need
+
+![](../images/example.png)
+::: 
 
 
 # Standard Column and Box Arrangements
@@ -131,6 +157,191 @@ Left Column, Red Overlap Box
 This slide template uses a single overlap box in the left column, with an image in the right column.
 
 The image is shifted up slightly using a negative top margin to allow for more vertical space, overlapping with title area.
+
+:::
+
+## 2-Row Grid
+
+
+::: {style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); gap: 1.5em; margin-top: 1em;"}
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-1.png)
+
+:::
+
+::: {.box-title}
+Box 1 Title
+:::
+
+::: {.box-content}
+
+- Content
+- here
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-2.png)
+
+:::
+
+::: {.box-title}
+Box 2 Title
+:::
+
+::: {.box-content}
+
+- Content
+- here
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-3.png)
+
+:::
+
+::: {.box-title}
+Box 3 Title
+:::
+
+::: {.box-content}
+
+- Content
+- here
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-4.png)
+
+:::
+
+::: {.box-title}
+Box 4 Title
+:::
+
+::: {.box-content}
+
+- Content
+- here
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-5.png)
+
+:::
+
+::: {.box-title}
+Box 5 Title
+:::
+
+::: {.box-content}
+
+- Content
+- here
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-6.png)
+
+:::
+
+::: {.box-title}
+Box 6 Title
+:::
+
+::: {.box-content}
+
+- Content
+- here
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-7.png)
+
+:::
+
+::: {.box-title}
+Box 7 Title
+:::
+
+::: {.box-content}
+
+- Content
+- here
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/icon-8.png)
+
+:::
+
+::: {.box-title}
+Box 8 Title
+:::
+
+::: {.box-content}
+
+- Content
+- here
+
+:::
+
+:::
+
+:::
+
+
+
+::: notes
+
+4x2 grid of rounded rectangles with icons and heading text
+
+Mix between the process/flowchart slide and the intro slide for the slide sequence
 
 :::
 
