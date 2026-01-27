@@ -47,7 +47,22 @@ Jan-27; Jan-29
 
 **Class plans:**
 
+-   Lecture: Welcome to the Tidyverse
+    -   Tidy data principles
+    -   Import & export with `readr`
+    -   Data manipulation with `dplyr`
+    -   Reshaping data with `tidyr`
+-   Exercises/demos:
+    -   Read-in and -out practice with `readr`
+    -   `dplyr` pipeline demo
+    -   Combining data with `tidyr`
+
 **Primary learning objectives:**
+
+- (5) Importing data with tidyverse tools
+- (6) Data manipulation with dplyr and pipelines
+- (7) Tidy data structure
+- (8) Reshaping data with tidyr
 
 :::
 ::::
@@ -65,16 +80,29 @@ Jan-27; Jan-29
 
 **Class Materials:**
 
-- [Slides]()
-- [Textbook Chapter]()
-
-<!-- software, tools, datasets, etc -->
+-   [Welcome to the Tidyverse Slides](../slides/Q1-W4_tidyverse-1.html)
+-   Demos and Exercises
+    -   Read-in and -out practice with `readr` (instructions in slides)
+        -   Data file: [`MM data.xlsx`](https://github.com/d2m-r/student-hub/blob/main/data/MM%20Data.xlsx)
+    -   [`dplyr` pipeline demo](https://github.com/d2m-r/student-hub/blob/main/demos/dplyr-examples.R)
+    -   [Combining data with `tidyr`](https://github.com/d2m-r/student-hub/blob/main/demos/tidyr-examples.R)
+-   No textbook chapters yet :( 
 
 **Additional Resources:**
 
-- readings
-- cheat-sheets
-- tutorials
+*Note:* Resources from before ~2024 the `%>%` pipe, but everything is transferable to the native R pipe `|>`.
+
+-   STAT545
+    -   [**Chapter 5 - Basic care and feeding of data in R**](https://stat545.com/basic-data-care.html)
+    -   [**Chapter 6 - Introduction to dplyr**](https://stat545.com/dplyr-intro.html)
+    -   [Chapter 9 - Writing and reading files](https://stat545.com/import-export.html)
+-   R for Data Science (2e)
+    -   [Chapter 3 - Data transformation](https://r4ds.hadley.nz/data-transform.html)
+    -   [**Chapter 5 - Data tidying**](https://r4ds.hadley.nz/data-tidy.html)
+    -   [Chapter 7 - Data import](https://r4ds.hadley.nz/data-import.html)
+    -   [**Chapter 19 - Joins**](https://r4ds.hadley.nz/joins.html)
+    -   [Import (Book Section)](https://r4ds.hadley.nz/import.html)
+        -   Beyond simple tabular data, including [spreadsheets](https://r4ds.hadley.nz/spreadsheets.html)
 
 :::
 ::::
@@ -91,9 +119,18 @@ Jan-27; Jan-29
 :::: {#todo-week-4 .accordion-collapse .collapse data-bs-parent="#week-4"}
 ::: accordion-body
 
-**Graded Submissions:**
+**Next Steps:**
 
-**Recommended Exercises:**
+1.  Explore the tidyverse core projects. You can view them in the [student hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/tidyverse) or accept any as GH Classroom assignments via links on the [menu](assessment/menu.html). After this week, you're ready to start any of them, but most have elements that we won't cover until weeks 6 & 7 (working with `stringr` and `forcats`). 
+    -   `clean-level-1-mtcars`: Structured exercise to introduce data manipulation in the tidyverse. Primarily uses `dplyr` and `tidyr`, but includes some manipulation of strings and factors as well
+    -   `clean-level-2-midwest`: Open-ended with a general goal but no step-by-step instructions. Similar content to level 1.
+    -   `clean-group`: Group project where each member makes a clean dataset messy, then cleans another member's messy dataset following tidy data principles.
+    -   `wrangle-level-1-starwars`: Structured exercise to go further into data wrangling. Includes a mix of `dplyr`, `tidyr`, `stringr`, and `forcats`.
+    -   `wrangle-level-2-gapminder`:  Open-ended with a general goal but no step-by-step instructions. Similar content to level 1.
+    -   `wrangle-group`: (Similar to the group cleaning) Group project where each member un-wrangles a dataset, then wrangles another member's dataset to as close to the original as possible.
+    -   `recreate-function`: A more advanced, freeform project where you pick a function from an R package and try to recreate it using tidyverse tools. Complex, and good for showing R programming & tidyverse objectives at a high level at the same time.
+2.  Check in on your accountability plans. Submit your mid-quarter reflection and updated plan to Canvas by next Monday, February 2nd.
+
 
 :::
 ::::
@@ -112,7 +149,9 @@ Jan-27; Jan-29
 
 **Announcements:**
 
-**Reminders:**
+1.  **GitHub Submission:** I promised a screen recording of the github submission process, but have not had time to make it yet. I'll make a Slack announcement when it's ready. In the meantime, you can follow the *extremely detailed* [written instructions](../assessment/misc/gh-submissions.html).
+    -   Need help sooner? Ask the class on Slack! Some students have already figured it out and can give you guidance. Many students are still very confused, so if you're the one to ask for help you're doing *lots* of people a big favor.
+2.  **Submitted assignments:** Qilong and I are double-grading early submissions to make sure we're on the same page with grading standards. If you submitted early and haven't received feedback yet, don't worry -- we're working on it and will get to you as soon as we can!
 
 :::
 ::::

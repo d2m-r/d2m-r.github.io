@@ -1,5 +1,5 @@
 ---
-title: "Data Wrangling in the Tidyverse"
+title: "Welcome to the Tidyverse"
 subtitle: "ecosystem, read-in/-out, data manipulation"
 date: "1/27/2026" # M/D/Y
 footer: "D2M-R I | Week 4" #  quarter, week, and class
