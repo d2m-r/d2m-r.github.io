@@ -99,7 +99,7 @@
     code span.vs { color: #6a3d9a; } /* VerbatimString */
     code span.wa { color: #842222; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-ea30d98071ea0fb780d1135b5f61fe71.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-edb02793229734f165297d83609a3e13.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -482,8 +482,68 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="three-cards-in-a-horizontal-row" class="slide level2">
-<h2>Three Cards in a Horizontal Row</h2>
+<section id="cards-1-row" class="slide level2">
+<h2>2 Cards; 1 Row</h2>
+<div class="container-fluid">
+<div class="row">
+<div class="col-12 fragment">
+<p>Content to appear above the columns/cards.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<div class="card fragment h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>Left Card Title</p>
+</div>
+</div>
+<div class="card-body lessgap">
+<ul>
+<li class="fragment">Body of left card</li>
+<li class="fragment">Incremental list</li>
+<li class="fragment">Tight margins</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div class="card fragment card-alt1 h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>Right Card Title</p>
+</div>
+</div>
+<div class="card-body lessgap">
+<ul>
+<li class="fragment">Body of right card</li>
+<li class="fragment">Incremental list</li>
+<li class="fragment">Tight margins</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>The .h-100 class makes the cards equal height.</p>
+<p>The .lessgap class reduces the padding inside the card body.</p>
+<p>Headings need to be recolored with white text for readability on dark backgrounds. This is an artifact of using Bootstrap cards for both website and revealjs. Can be corrected with additional css at some point.</p>
+<p>Left card (default) is red. Right card uses .card-alt1 class for blue background.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cardsimages-1-row" class="slide level2">
+<h2>3 Cards/Images; 1 Row</h2>
 <div class="container-fluid">
 <div class="row">
 <div class="col-12 fragment">
@@ -530,6 +590,7 @@
 </div>
 </div>
 <aside class="notes">
+<p>Minor modification of the 2-card layout above. Adds an image or other equal-width content.</p>
 <p>The .h-100 class makes the cards equal height.</p>
 <p>The .lessgap class reduces the padding inside the card body.</p>
 <p>Headings need to be recolored with white text for readability on dark backgrounds. This is an artifact of using Bootstrap cards for both website and revealjs. Can be corrected with additional css at some point.</p>

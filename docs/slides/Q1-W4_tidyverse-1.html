@@ -3025,39 +3025,568 @@ Neither! Use joins instead.
 
 </div>
 </section>
-<section id="join-merge-tibbles-by-column-match" class="slide level2" style="font-size: .8em">
-<h2><code>*_join</code>: Merge tibbles by column match</h2>
+<section id="joins-sql-style" class="slide level2 left-sidebar-slide" data-fullscreen="true">
+<h2>Joins (SQL-style)</h2>
+<div class="sidebar-column">
+<div class="sidebar-title">
+<p>Joins</p>
+</div>
+<ul>
+<li class="fragment">Similar to database joins (SQL)</li>
+<li class="fragment">2 tibbles of 2 structures
+<ul>
+<li class="fragment">different rows</li>
+<li class="fragment">different columns</li>
+</ul></li>
+<li class="fragment">Match rows based on common column(s)
+<ul>
+<li class="fragment">1 col: values are unique IDs</li>
+<li class="fragment">2+ cols: values form unique ID combos</li>
+</ul></li>
+</ul>
+</div>
+<div class="main-content" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+<div class="r-stretch" style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.8em; align-items: center;">
+<div class="fragment">
+<p><img data-src="../images/misc/joins/setup.png"></p>
+</div>
+<div class="fragment" style="display: flex; align-items: center; justify-content: center;">
+<p><i class="bi-arrow-right-circle-fill " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="fragment">
+<p><img data-src="../images/misc/joins/setup2.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="left_join-keep-left-df-rows" class="slide level2" style="font-size: .8em">
+<h2><code>left_join</code>: Keep left-df rows</h2>
 <p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
-<div class="container-fluid">
+<div class="container-fluid" style="font-size: .9em;">
 <div class="row">
-<div class="col-6">
+<div class="col-5">
 <div class="overlap-box">
 <div class="box-title">
-<p>Include/exclude syntax:</p>
+<p>Left Join</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="fragment" data-fragment-index="1">
-
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a></a><span class="fu">left_join</span>(</span>
+<span id="cb107-2"><a></a>  x,</span>
+<span id="cb107-3"><a></a>  y,</span>
+<span id="cb107-4"><a></a>  <span class="at">by =</span> <span class="fu">join_by</span>(col1, x_col2 <span class="sc">==</span> y_col2)</span>
+<span id="cb107-5"><a></a>  ...</span>
+<span id="cb107-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="tightlist">
+<ul>
+<li class="fragment">Start with all rows in <strong>left</strong> df <code>x</code></li>
+<li class="fragment">Look for matching rows in <strong>right</strong> df <code>y</code>
+<ul>
+<li class="fragment">Keep rows from right df <code>y</code> that match</li>
+<li class="fragment">Drop unmatched rows from right df <code>y</code></li>
+</ul></li>
+<li class="fragment">Combine columns from right df <code>y</code> into left df <code>x</code>
+<ul>
+<li class="fragment">Matched rows have values in new cols</li>
+<li class="fragment">Unmatched rows have <code>NA</code> in new cols</li>
+</ul></li>
+<li class="fragment">Default: <code>by = NULL</code> -&gt; uses all common column names</li>
+<li class="fragment">Specify common columns with <code>by = join_by()</code>
+<ul>
+<li class="fragment">If same name in both dfs, just use column name</li>
+<li class="fragment">If different names, use <code>x_col == y_col</code> format</li>
+</ul></li>
+<li class="fragment">Additional arguments for handling suffixes, etc.</li>
+</ul>
 </div>
-<div class="fragment" data-fragment-index="2">
-
-</div>
-<div class="fragment" data-fragment-index="3">
-
-</div>
-<div class="fragment" data-fragment-index="4">
-
 </div>
 </div>
 </div>
+<div class="col-7" style="margin-top: -4em">
+<div class="row">
+<div class="col-12">
+<p><img data-src="../images/misc/joins/left.png" style="max-height: 10em"></p>
 </div>
-<div class="col-6" style="margin-top: 1em">
-<div class="fragment" data-fragment-index="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="fragment" data-fragment-index="6" style="margin-top: 1em;">
-
+<div class="row">
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a></a>band_members</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  name  band   
+  &lt;chr&gt; &lt;chr&gt;  
+1 Mick  Stones 
+2 John  Beatles
+3 Paul  Beatles</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a></a>band_instruments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  name  plays 
+  &lt;chr&gt; &lt;chr&gt; 
+1 John  guitar
+2 Paul  bass  
+3 Keith guitar</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a></a>band_instruments2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  artist plays 
+  &lt;chr&gt;  &lt;chr&gt; 
+1 John   guitar
+2 Paul   bass  
+3 Keith  guitar</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<div style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a></a><span class="fu">left_join</span>(band_members, </span>
+<span id="cb114-2"><a></a>    band_instruments</span>
+<span id="cb114-3"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 Mick  Stones  &lt;NA&gt;  
+2 John  Beatles guitar
+3 Paul  Beatles bass  </code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a></a><span class="fu">left_join</span>(band_members, </span>
+<span id="cb116-2"><a></a>    band_instruments2, </span>
+<span id="cb116-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 Mick  Stones  &lt;NA&gt;  
+2 John  Beatles guitar
+3 Paul  Beatles bass  </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="right_join-keep-right-df-rows" class="slide level2" style="font-size: .8em">
+<h2><code>right_join</code>: Keep right-df rows</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid" style="font-size: .9em;">
+<div class="row">
+<div class="col-5">
+<div class="overlap-box">
+<div class="box-title">
+<p>Right Join</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a></a><span class="fu">right_join</span>(</span>
+<span id="cb118-2"><a></a>  x,</span>
+<span id="cb118-3"><a></a>  y,</span>
+<span id="cb118-4"><a></a>  <span class="at">by =</span> <span class="fu">join_by</span>(col1, x_col2 <span class="sc">==</span> y_col2)</span>
+<span id="cb118-5"><a></a>  ...</span>
+<span id="cb118-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="tightlist">
+<ul>
+<li class="fragment">Start with all rows in <strong>right</strong> df <code>y</code></li>
+<li class="fragment">Look for matching rows in <strong>left</strong> df <code>x</code>
+<ul>
+<li class="fragment">Keep rows from left df <code>x</code> that match</li>
+<li class="fragment">Drop unmatched rows from left df <code>x</code></li>
+</ul></li>
+<li class="fragment">Combine columns from left df <code>x</code> into right df <code>y</code>
+<ul>
+<li class="fragment">Matched rows have values in new cols</li>
+<li class="fragment">Unmatched rows have <code>NA</code> in new cols</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong><code>right_join(x,y)</code> is identical to <code>left_join(y,x)</code></strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-7" style="margin-top: -4em">
+<div class="row">
+<div class="col-12">
+<p><img data-src="../images/misc/joins/right.png" style="max-height: 10em"></p>
+</div>
+</div>
+<div class="row">
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a></a>band_members</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  name  band   
+  &lt;chr&gt; &lt;chr&gt;  
+1 Mick  Stones 
+2 John  Beatles
+3 Paul  Beatles</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a></a>band_instruments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  name  plays 
+  &lt;chr&gt; &lt;chr&gt; 
+1 John  guitar
+2 Paul  bass  
+3 Keith guitar</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a></a>band_instruments2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  artist plays 
+  &lt;chr&gt;  &lt;chr&gt; 
+1 John   guitar
+2 Paul   bass  
+3 Keith  guitar</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<div style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb125"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a></a><span class="fu">right_join</span>(band_members, </span>
+<span id="cb125-2"><a></a>    band_instruments</span>
+<span id="cb125-3"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 John  Beatles guitar
+2 Paul  Beatles bass  
+3 Keith &lt;NA&gt;    guitar</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb127"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a></a><span class="fu">right_join</span>(band_members, </span>
+<span id="cb127-2"><a></a>    band_instruments2, </span>
+<span id="cb127-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 John  Beatles guitar
+2 Paul  Beatles bass  
+3 Keith &lt;NA&gt;    guitar</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="inner_join-keep-only-matched-rows" class="slide level2" style="font-size: .8em">
+<h2><code>inner_join</code>: Keep only matched rows</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid" style="font-size: .9em;">
+<div class="row">
+<div class="col-5">
+<div class="overlap-box">
+<div class="box-title">
+<p>Inner Join</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb129"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a></a><span class="fu">inner_join</span>(</span>
+<span id="cb129-2"><a></a>  x,</span>
+<span id="cb129-3"><a></a>  y,</span>
+<span id="cb129-4"><a></a>  <span class="at">by =</span> <span class="fu">join_by</span>(col1, x_col2 <span class="sc">==</span> y_col2)</span>
+<span id="cb129-5"><a></a>  ...</span>
+<span id="cb129-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="tightlist">
+<ul>
+<li class="fragment">Start with all rows in left df <code>x</code></li>
+<li class="fragment">Look for matching rows in right df <code>y</code>
+<ul>
+<li class="fragment">Keep rows from right df <code>y</code> that match</li>
+<li class="fragment">Drop unmatched rows from right df <code>y</code></li>
+</ul></li>
+<li class="fragment">Continue with the modified <code>y</code></li>
+<li class="fragment">Look for matching rows in left df <code>x</code>
+<ul>
+<li class="fragment">Keep rows from left df <code>x</code> that match</li>
+<li class="fragment">Drop unmatched rows from left df <code>x</code></li>
+</ul></li>
+<li class="fragment">Combine columns from modified right df <code>y</code> into modified left df <code>x</code>
+<ul>
+<li class="fragment">Only matched rows exist</li>
+<li class="fragment">Nothing is filled with <code>NA</code></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Same as <code>left_join(x,y)</code> then <code>right_join(x,y)</code> (or vice versa)</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-7" style="margin-top: -4em">
+<div class="row">
+<div class="col-12">
+<p><img data-src="../images/misc/joins/inner.png" style="max-height: 10em"></p>
+</div>
+</div>
+<div class="row">
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a></a>band_members</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  name  band   
+  &lt;chr&gt; &lt;chr&gt;  
+1 Mick  Stones 
+2 John  Beatles
+3 Paul  Beatles</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a></a>band_instruments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  name  plays 
+  &lt;chr&gt; &lt;chr&gt; 
+1 John  guitar
+2 Paul  bass  
+3 Keith guitar</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a></a>band_instruments2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  artist plays 
+  &lt;chr&gt;  &lt;chr&gt; 
+1 John   guitar
+2 Paul   bass  
+3 Keith  guitar</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<div style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a></a><span class="fu">inner_join</span>(band_members, </span>
+<span id="cb136-2"><a></a>    band_instruments</span>
+<span id="cb136-3"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 John  Beatles guitar
+2 Paul  Beatles bass  </code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a></a><span class="fu">inner_join</span>(band_members, </span>
+<span id="cb138-2"><a></a>    band_instruments2,</span>
+<span id="cb138-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 John  Beatles guitar
+2 Paul  Beatles bass  </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="full_join-keep-all-rows" class="slide level2" style="font-size: .8em">
+<h2><code>full_join</code>: Keep all rows</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid" style="font-size: .9em;">
+<div class="row">
+<div class="col-5">
+<div class="overlap-box">
+<div class="box-title">
+<p>Full Join</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a></a><span class="fu">full_join</span>(</span>
+<span id="cb140-2"><a></a>  x,</span>
+<span id="cb140-3"><a></a>  y,</span>
+<span id="cb140-4"><a></a>  <span class="at">by =</span> <span class="fu">join_by</span>(col1, x_col2 <span class="sc">==</span> y_col2)</span>
+<span id="cb140-5"><a></a>  ...</span>
+<span id="cb140-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="tightlist">
+<ul>
+<li class="fragment">Start with all rows in left df <code>x</code></li>
+<li class="fragment">Look for matching rows in right df <code>y</code>
+<ul>
+<li class="fragment"><em>Keep all rows</em></li>
+</ul></li>
+<li class="fragment">Combine columns from right df <code>y</code> into left df <code>x</code>
+<ul>
+<li class="fragment">Matched rows have values in new cols</li>
+<li class="fragment">Unmatched rows have <code>NA</code> in new cols</li>
+</ul></li>
+<li class="fragment">Continue with the modified <code>y</code></li>
+<li class="fragment">Look for matching rows in left df <code>x</code>
+<ul>
+<li class="fragment"><em>Keep all rows</em></li>
+</ul></li>
+<li class="fragment">Combine columns from modified right df <code>y</code> into modified left df <code>x</code>
+<ul>
+<li class="fragment"><em>No rows dropped</em></li>
+<li class="fragment">Cols from both <code>x</code> and <code>y</code> may have <code>NA</code>s</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Critically: (1) rows are not duplicated and (2) no data is lost.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-7" style="margin-top: -4em">
+<div class="row">
+<div class="col-12">
+<p><img data-src="../images/misc/joins/left.png" style="max-height: 10em"></p>
+</div>
+</div>
+<div class="row">
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a></a>band_members</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  name  band   
+  &lt;chr&gt; &lt;chr&gt;  
+1 Mick  Stones 
+2 John  Beatles
+3 Paul  Beatles</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb143"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a></a>band_instruments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  name  plays 
+  &lt;chr&gt; &lt;chr&gt; 
+1 John  guitar
+2 Paul  bass  
+3 Keith guitar</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb145"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a></a>band_instruments2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  artist plays 
+  &lt;chr&gt;  &lt;chr&gt; 
+1 John   guitar
+2 Paul   bass  
+3 Keith  guitar</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<div style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb147"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a></a><span class="fu">left_join</span>(band_members, </span>
+<span id="cb147-2"><a></a>    band_instruments</span>
+<span id="cb147-3"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 Mick  Stones  &lt;NA&gt;  
+2 John  Beatles guitar
+3 Paul  Beatles bass  </code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb149"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a></a><span class="fu">left_join</span>(band_members, </span>
+<span id="cb149-2"><a></a>    band_instruments2,</span>
+<span id="cb149-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  name  band    plays 
+  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
+1 Mick  Stones  &lt;NA&gt;  
+2 John  Beatles guitar
+3 Paul  Beatles bass  </code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -3067,6 +3596,23 @@ Neither! Use joins instead.
 <section id="tidyr" class="title-slide slide level1 center">
 <h1><code>tidyr</code></h1>
 
+</section>
+<section id="example-data-frame-for-tidyr" class="slide level2">
+<h2>Example data frame for <code>tidyr</code></h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb151"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a></a><span class="co"># Generate example data for some tidyr functions</span></span>
+<span id="cb151-2"><a></a>glasses <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb151-3"><a></a>    <span class="at">condition =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb151-4"><a></a>    <span class="at">participant =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>),</span>
+<span id="cb151-5"><a></a>    <span class="at">score =</span> <span class="fu">runif</span>(<span class="dv">12</span>),</span>
+<span id="cb151-6"><a></a>    <span class="at">notes =</span> <span class="fu">c</span>(<span class="st">"glasses_none"</span>, <span class="st">"glasses_none"</span>, <span class="st">"none_none"</span>, <span class="st">"none_none"</span>,</span>
+<span id="cb151-7"><a></a>              <span class="st">"none_incomplete"</span>, <span class="st">"none_incomplete"</span>, <span class="st">"none_none"</span>, <span class="st">"none_none"</span>,</span>
+<span id="cb151-8"><a></a>              <span class="st">"glasses_none"</span>, <span class="st">"glasses_none"</span>, <span class="st">"glasses_late"</span>, <span class="st">"glasses_late"</span>)</span>
+<span id="cb151-9"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+
+</div></div>
 </section>
 <section id="tidyr-tidy-messy-data" class="slide level2 left-sidebar-slide" data-fullscreen="true">
 <h2><code>tidyr</code>: Tidy messy data</h2>
@@ -3238,12 +3784,12 @@ Neither! Use joins instead.
 <p>Reshape long:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb109"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a></a><span class="fu">pivot_longer</span>(</span>
-<span id="cb109-2"><a></a>    data, </span>
-<span id="cb109-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(...), </span>
-<span id="cb109-4"><a></a>    <span class="at">names_to =</span> <span class="st">"new_col1"</span>, </span>
-<span id="cb109-5"><a></a>    <span class="at">values_to =</span> <span class="st">"new_col2"</span>,</span>
-<span id="cb109-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb152"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb152-1"><a></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb152-2"><a></a>    data, </span>
+<span id="cb152-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(...), </span>
+<span id="cb152-4"><a></a>    <span class="at">names_to =</span> <span class="st">"new_col1"</span>, </span>
+<span id="cb152-5"><a></a>    <span class="at">values_to =</span> <span class="st">"new_col2"</span>,</span>
+<span id="cb152-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment" data-fragment-index="1">
 <ul>
 <li>Move from grid of values to key-value pairs</li>
@@ -3307,16 +3853,16 @@ Neither! Use joins instead.
 <div class="longer-code">
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a></a>mm.long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(</span>
-<span id="cb111-2"><a></a>    mm.raw,</span>
-<span id="cb111-3"><a></a>    <span class="co"># pivot columns between Red and Brown</span></span>
-<span id="cb111-4"><a></a>    <span class="at">cols =</span> Red<span class="sc">:</span>Brown, </span>
-<span id="cb111-5"><a></a>    <span class="co"># column names go to "Color"</span></span>
-<span id="cb111-6"><a></a>    <span class="at">names_to =</span> <span class="st">"Color"</span>, </span>
-<span id="cb111-7"><a></a>    <span class="co"># column values go to "Number"</span></span>
-<span id="cb111-8"><a></a>    <span class="at">values_to =</span> <span class="st">"Number"</span>) </span>
-<span id="cb111-9"><a></a></span>
-<span id="cb111-10"><a></a>mm.long</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb154"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a></a>mm.long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb154-2"><a></a>    mm.raw,</span>
+<span id="cb154-3"><a></a>    <span class="co"># pivot columns between Red and Brown</span></span>
+<span id="cb154-4"><a></a>    <span class="at">cols =</span> Red<span class="sc">:</span>Brown, </span>
+<span id="cb154-5"><a></a>    <span class="co"># column names go to "Color"</span></span>
+<span id="cb154-6"><a></a>    <span class="at">names_to =</span> <span class="st">"Color"</span>, </span>
+<span id="cb154-7"><a></a>    <span class="co"># column values go to "Number"</span></span>
+<span id="cb154-8"><a></a>    <span class="at">values_to =</span> <span class="st">"Number"</span>) </span>
+<span id="cb154-9"><a></a></span>
+<span id="cb154-10"><a></a>mm.long</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 4
@@ -3354,12 +3900,12 @@ Neither! Use joins instead.
 <p>Reshape wide:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb113"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a></a><span class="fu">pivot_wider</span>(</span>
-<span id="cb113-2"><a></a>    data, </span>
-<span id="cb113-3"><a></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(...),</span>
-<span id="cb113-4"><a></a>    <span class="at">names_from =</span> <span class="st">"col1"</span>, </span>
-<span id="cb113-5"><a></a>    <span class="at">values_from =</span> <span class="st">"col2"</span>,</span>
-<span id="cb113-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb156"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a></a><span class="fu">pivot_wider</span>(</span>
+<span id="cb156-2"><a></a>    data, </span>
+<span id="cb156-3"><a></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(...),</span>
+<span id="cb156-4"><a></a>    <span class="at">names_from =</span> <span class="st">"col1"</span>, </span>
+<span id="cb156-5"><a></a>    <span class="at">values_from =</span> <span class="st">"col2"</span>,</span>
+<span id="cb156-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment" data-fragment-index="1">
 <ul>
 <li>Move from key-value pairs to grid of values</li>
@@ -3421,16 +3967,16 @@ Neither! Use joins instead.
 <div class="col-7">
 <div class="fragment" data-fragment-index="6">
 <div class="longer-code">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb115"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a></a>mm.wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(</span>
-<span id="cb115-2"><a></a>    mm.long,</span>
-<span id="cb115-3"><a></a>    <span class="co"># Every value in `Color` becomes a column</span></span>
-<span id="cb115-4"><a></a>    <span class="at">names_from =</span> <span class="st">"Color"</span>, </span>
-<span id="cb115-5"><a></a>    <span class="co"># Values from `Number` go to new columns</span></span>
-<span id="cb115-6"><a></a>    <span class="at">values_from =</span> <span class="st">"Number"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb115-7"><a></a><span class="co"># Move `Weight` column to end</span></span>
-<span id="cb115-8"><a></a><span class="fu">relocate</span>(Weight, <span class="at">.after =</span> <span class="fu">last_col</span>())</span>
-<span id="cb115-9"><a></a></span>
-<span id="cb115-10"><a></a>mm.wide</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb158"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a></a>mm.wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(</span>
+<span id="cb158-2"><a></a>    mm.long,</span>
+<span id="cb158-3"><a></a>    <span class="co"># Every value in `Color` becomes a column</span></span>
+<span id="cb158-4"><a></a>    <span class="at">names_from =</span> <span class="st">"Color"</span>, </span>
+<span id="cb158-5"><a></a>    <span class="co"># Values from `Number` go to new columns</span></span>
+<span id="cb158-6"><a></a>    <span class="at">values_from =</span> <span class="st">"Number"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb158-7"><a></a><span class="co"># Move `Weight` column to end</span></span>
+<span id="cb158-8"><a></a><span class="fu">relocate</span>(Weight, <span class="at">.after =</span> <span class="fu">last_col</span>())</span>
+<span id="cb158-9"><a></a></span>
+<span id="cb158-10"><a></a>mm.wide</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -3474,12 +4020,12 @@ Neither! Use joins instead.
 <p>Split column values:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb117"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
-<span id="cb117-2"><a></a>    data, </span>
-<span id="cb117-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"col1"</span>, ...), </span>
-<span id="cb117-4"><a></a>    <span class="at">delim =</span> <span class="st">"delimiter character(s)"</span>, </span>
-<span id="cb117-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"new_col1"</span>, <span class="st">"new_col2"</span>, ...),</span>
-<span id="cb117-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb160"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
+<span id="cb160-2"><a></a>    data, </span>
+<span id="cb160-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"col1"</span>, ...), </span>
+<span id="cb160-4"><a></a>    <span class="at">delim =</span> <span class="st">"delimiter character(s)"</span>, </span>
+<span id="cb160-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"new_col1"</span>, <span class="st">"new_col2"</span>, ...),</span>
+<span id="cb160-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li class="fragment">Split values in column into multiple columns based on delimiter characters</li>
 <li class="fragment">Non-character values (e.g., numbers) are coerced to character</li>
@@ -3520,15 +4066,15 @@ Neither! Use joins instead.
 </div>
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
-<span id="cb119-2"><a></a>    glasses,</span>
-<span id="cb119-3"><a></a>    <span class="at">cols =</span> notes,</span>
-<span id="cb119-4"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
-<span id="cb119-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(</span>
-<span id="cb119-6"><a></a>        <span class="st">"wears_glasses"</span>, <span class="st">"notes"</span></span>
-<span id="cb119-7"><a></a>        )</span>
-<span id="cb119-8"><a></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb119-9"><a></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
+<span id="cb162-2"><a></a>    glasses,</span>
+<span id="cb162-3"><a></a>    <span class="at">cols =</span> notes,</span>
+<span id="cb162-4"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
+<span id="cb162-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(</span>
+<span id="cb162-6"><a></a>        <span class="st">"wears_glasses"</span>, <span class="st">"notes"</span></span>
+<span id="cb162-7"><a></a>        )</span>
+<span id="cb162-8"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb162-9"><a></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3558,14 +4104,14 @@ Neither! Use joins instead.
 <p>Collapse columns:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a></a><span class="fu">unite</span>(</span>
-<span id="cb121-2"><a></a>    data,</span>
-<span id="cb121-3"><a></a>    <span class="at">col =</span> <span class="st">"new_col"</span>,</span>
-<span id="cb121-4"><a></a>    old_col1,</span>
-<span id="cb121-5"><a></a>    old_col2,</span>
-<span id="cb121-6"><a></a>    ... <span class="co"># more columns</span></span>
-<span id="cb121-7"><a></a>    <span class="at">sep =</span> <span class="st">"separator character(s)"</span>,</span>
-<span id="cb121-8"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb164"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a></a><span class="fu">unite</span>(</span>
+<span id="cb164-2"><a></a>    data,</span>
+<span id="cb164-3"><a></a>    <span class="at">col =</span> <span class="st">"new_col"</span>,</span>
+<span id="cb164-4"><a></a>    old_col1,</span>
+<span id="cb164-5"><a></a>    old_col2,</span>
+<span id="cb164-6"><a></a>    ... <span class="co"># more columns</span></span>
+<span id="cb164-7"><a></a>    <span class="at">sep =</span> <span class="st">"separator character(s)"</span>,</span>
+<span id="cb164-8"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li class="fragment">Combine multiple columns into one column</li>
 <li class="fragment">Values are concatenated with specified separator</li>
@@ -3598,20 +4144,20 @@ Neither! Use joins instead.
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
-<span id="cb123-2"><a></a>    glasses,</span>
-<span id="cb123-3"><a></a>    <span class="at">cols =</span> notes,</span>
-<span id="cb123-4"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
-<span id="cb123-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(</span>
-<span id="cb123-6"><a></a>        <span class="st">"wears_glasses"</span>, <span class="st">"notes"</span></span>
-<span id="cb123-7"><a></a>        )</span>
-<span id="cb123-8"><a></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb123-9"><a></a><span class="fu">unite</span>(</span>
-<span id="cb123-10"><a></a>    <span class="at">col =</span> <span class="st">"conditionParticipant"</span>,</span>
-<span id="cb123-11"><a></a>    condition, participant,</span>
-<span id="cb123-12"><a></a>    <span class="at">sep =</span> <span class="st">";"</span>,</span>
-<span id="cb123-13"><a></a>) <span class="sc">|&gt;</span></span>
-<span id="cb123-14"><a></a><span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
+<span id="cb166-2"><a></a>    glasses,</span>
+<span id="cb166-3"><a></a>    <span class="at">cols =</span> notes,</span>
+<span id="cb166-4"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
+<span id="cb166-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(</span>
+<span id="cb166-6"><a></a>        <span class="st">"wears_glasses"</span>, <span class="st">"notes"</span></span>
+<span id="cb166-7"><a></a>        )</span>
+<span id="cb166-8"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb166-9"><a></a><span class="fu">unite</span>(</span>
+<span id="cb166-10"><a></a>    <span class="at">col =</span> <span class="st">"conditionParticipant"</span>,</span>
+<span id="cb166-11"><a></a>    condition, participant,</span>
+<span id="cb166-12"><a></a>    <span class="at">sep =</span> <span class="st">";"</span>,</span>
+<span id="cb166-13"><a></a>) <span class="sc">|&gt;</span></span>
+<span id="cb166-14"><a></a><span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
@@ -3646,20 +4192,20 @@ Neither! Use joins instead.
 <div class="box-content">
 <div class="row">
 <div class="col-6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb125"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a></a><span class="fu">expand</span>(</span>
-<span id="cb125-2"><a></a>    data,</span>
-<span id="cb125-3"><a></a>    <span class="at">col1 =</span> <span class="fu">c</span>(...),</span>
-<span id="cb125-4"><a></a>    <span class="at">col2 =</span> <span class="fu">c</span>(...),</span>
-<span id="cb125-5"><a></a>    ...)</span>
-<span id="cb125-6"><a></a><span class="er">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a></a><span class="fu">expand</span>(</span>
+<span id="cb168-2"><a></a>    data,</span>
+<span id="cb168-3"><a></a>    <span class="at">col1 =</span> <span class="fu">c</span>(...),</span>
+<span id="cb168-4"><a></a>    <span class="at">col2 =</span> <span class="fu">c</span>(...),</span>
+<span id="cb168-5"><a></a>    ...)</span>
+<span id="cb168-6"><a></a><span class="er">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="col-6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a></a><span class="fu">complete</span>(</span>
-<span id="cb126-2"><a></a>    data,</span>
-<span id="cb126-3"><a></a>    <span class="at">col1 =</span> <span class="fu">c</span>(...),</span>
-<span id="cb126-4"><a></a>    <span class="at">col2 =</span> <span class="fu">c</span>(...),</span>
-<span id="cb126-5"><a></a>    ...)</span>
-<span id="cb126-6"><a></a><span class="er">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a></a><span class="fu">complete</span>(</span>
+<span id="cb169-2"><a></a>    data,</span>
+<span id="cb169-3"><a></a>    <span class="at">col1 =</span> <span class="fu">c</span>(...),</span>
+<span id="cb169-4"><a></a>    <span class="at">col2 =</span> <span class="fu">c</span>(...),</span>
+<span id="cb169-5"><a></a>    ...)</span>
+<span id="cb169-6"><a></a><span class="er">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <ul>
@@ -3697,9 +4243,9 @@ Neither! Use joins instead.
 <div class="col-5">
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a></a><span class="fu">expand</span>(weather, </span>
-<span id="cb128-2"><a></a>    date, </span>
-<span id="cb128-3"><a></a>    station)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb171"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a></a><span class="fu">expand</span>(weather, </span>
+<span id="cb171-2"><a></a>    date, </span>
+<span id="cb171-3"><a></a>    station)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3721,7 +4267,7 @@ Neither! Use joins instead.
 <div class="col-7">
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a></a><span class="fu">complete</span>(weather, date, station)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb173"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a></a><span class="fu">complete</span>(weather, date, station)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3755,8 +4301,8 @@ Neither! Use joins instead.
 <div class="box-content">
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a></a><span class="co"># Missing any value in any column</span></span>
-<span id="cb132-2"><a></a><span class="fu">drop_na</span>(weather) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb175"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a></a><span class="co"># Missing any value in any column</span></span>
+<span id="cb175-2"><a></a><span class="fu">drop_na</span>(weather) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 5
@@ -3766,8 +4312,8 @@ Neither! Use joins instead.
 </div></div>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a></a><span class="co"># Missing values in specific columns</span></span>
-<span id="cb134-2"><a></a><span class="fu">drop_na</span>(weather, temp_max, temp_min)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb177"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a></a><span class="co"># Missing values in specific columns</span></span>
+<span id="cb177-2"><a></a><span class="fu">drop_na</span>(weather, temp_max, temp_min)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
@@ -3786,9 +4332,9 @@ Neither! Use joins instead.
 <div class="box-content">
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a></a><span class="fu">replace_na</span>(weather, </span>
-<span id="cb136-2"><a></a>           <span class="fu">list</span>(<span class="at">temp_max =</span> <span class="dv">999</span>, </span>
-<span id="cb136-3"><a></a>                <span class="at">temp_min =</span> <span class="sc">-</span><span class="dv">999</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb179"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a></a><span class="fu">replace_na</span>(weather, </span>
+<span id="cb179-2"><a></a>           <span class="fu">list</span>(<span class="at">temp_max =</span> <span class="dv">999</span>, </span>
+<span id="cb179-3"><a></a>                <span class="at">temp_min =</span> <span class="sc">-</span><span class="dv">999</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
@@ -3818,7 +4364,7 @@ Neither! Use joins instead.
 </div>
 <div class="card-body lessgap">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"down"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb181"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"down"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3844,7 +4390,7 @@ Neither! Use joins instead.
 </div>
 <div class="card-body lessgap">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"up"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb183"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"up"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3870,7 +4416,7 @@ Neither! Use joins instead.
 </div>
 <div class="card-body lessgap">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"downup"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb185"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"downup"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3914,9 +4460,9 @@ Neither! Use joins instead.
 </ul></li>
 </ul>
 <p>Imagine a data frame with columns x, y, and z:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb144"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a></a>df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(x) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(y), <span class="at">sum =</span> <span class="fu">sum</span>(z))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb187"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb187-1"><a></a>df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(x) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(y), <span class="at">sum =</span> <span class="fu">sum</span>(z))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Each row in the summarized output processes data (here the mean of y and the sum of z) about multiple rows in the input, defined by the unique values of the group (here x).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb145"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a></a>df2 <span class="sc">%&gt;%</span> <span class="fu">nest</span>(<span class="at">my_nested_var =</span> <span class="fu">c</span>(y, z))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb188"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb188-1"><a></a>df2 <span class="sc">%&gt;%</span> <span class="fu">nest</span>(<span class="at">my_nested_var =</span> <span class="fu">c</span>(y, z))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Each row in the nested output contains the data itself (unchanged) associated with those rows (the values in columns y and z) as defined by the unique values of everything that isn’t nested (here x). Since the data is unchanged, the data in the new variable is itself a table (or tibble). The columns in the nested tibble are the columns you passed to it and the rows are all the original rows within each “group”.</p>
 </div>
 </div>

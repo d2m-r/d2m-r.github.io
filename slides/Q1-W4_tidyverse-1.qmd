@@ -3040,70 +3040,498 @@ bind_cols(tibble1, tibble5)
 
 :::
 
+## Joins (SQL-style) {.left-sidebar-slide fullscreen=true}
 
-## `*_join`: Merge tibbles by column match {style="font-size: .8em"}
+::: sidebar-column
+::: sidebar-title
+Joins
+:::
+
+-   Similar to database joins (SQL)
+-   2 tibbles of 2 structures
+    -   different rows
+    -   different columns
+-   Match rows based on common column(s)
+    -   1 col: values are unique IDs
+    -   2+ cols: values form unique ID combos
+
+:::
+
+::: {.main-content style="display: flex; align-items: center; justify-content: center; height: 100%;"}
+
+::: {.r-stretch style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.8em; align-items: center;"}
+
+
+::: fragment
+![](../images/misc/joins/setup.png)
+
+:::
+
+::: {.fragment style="display: flex; align-items: center; justify-content: center;"}
+
+{{< bi arrow-right-circle-fill font-size="2em" >}}
+
+:::
+
+::: fragment
+![](../images/misc/joins/setup2.png)
+:::
+:::
+
+:::
+
+
+## `left_join`: Keep left-df rows {style="font-size: .8em"}
 
 ![](../images/icons/tv-icons/dplyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
 
-::::: container-fluid
+::::: {.container-fluid style="font-size: .9em;"}
 
 :::: row
 
-::: col-6
+::: col-5
 
 ::: {.overlap-box}
 
 ::: box-title
 
-Include/exclude syntax:
+Left Join
 
 :::
 
 ::: box-content
 
-```{.r}
 
+```{.r}
+left_join(
+  x,
+  y,
+  by = join_by(col1, x_col2 == y_col2)
+  ...
+)
 ```
 
-::: {.nonincremental .fragment fragment-index="1"}
-
-
-:::
-
-::: {.nonincremental .fragment fragment-index="2"}
-
-
-:::
-
-::: {.nonincremental .fragment fragment-index="3"}
-
-    
-:::
-
-::: {.nonincremental .fragment fragment-index="4"}
-
+::: tightlist
+-   Start with all rows in **left** df `x`
+-   Look for matching rows in **right** df `y`
+    -   Keep rows from right df `y` that match
+    -   Drop unmatched rows from right df `y`
+-   Combine columns from right df `y` into left df `x`
+    -   Matched rows have values in new cols
+    -   Unmatched rows have `NA` in new cols
+-   Default: `by = NULL` -> uses all common column names
+-   Specify common columns with `by = join_by()`
+    -   If same name in both dfs, just use column name
+    -   If different names, use `x_col == y_col` format
+-   Additional arguments for handling suffixes, etc.
 
 :::
-        
 :::
 
 :::
 
 :::
 
-::: {.col-6 style="margin-top: 1em"}
+::: {.col-7 style="margin-top: -4em"}
 
-::: {.fragment fragment-index="5"}
-```{.r}
-
-```
+::: row
+::: col-12
+![](../images/misc/joins/left.png){style="max-height: 10em"}
+:::
 :::
 
-::: {.fragment fragment-index="6" style="margin-top: 1em;"}
+::: row
+::: col-4
 ```{r}
-#| echo: false
-
+band_members
 ```
+:::
+
+::: col-4
+```{r}
+band_instruments
+```
+:::
+
+::: col-4
+```{r}
+band_instruments2
+```
+:::
+:::
+
+::: row
+::: col-6
+::: {style="margin-top: 1em;"}
+```{r}
+#| output-location: fragment
+left_join(band_members, 
+    band_instruments
+    )
+```
+:::
+:::
+
+::: col-6
+::: {style="margin-top: 1em;"}
+```{r}
+#| output-location: fragment
+left_join(band_members, 
+    band_instruments2, 
+    by = join_by(name == artist))
+```
+:::
+:::
+
+:::
+
+:::
+
+::::
+
+:::::
+
+
+
+
+## `right_join`: Keep right-df rows {style="font-size: .8em"}
+
+![](../images/icons/tv-icons/dplyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::::: {.container-fluid style="font-size: .9em;"}
+
+:::: row
+
+::: col-5
+
+::: {.overlap-box}
+
+::: box-title
+
+Right Join
+
+:::
+
+::: box-content
+
+
+```{.r}
+right_join(
+  x,
+  y,
+  by = join_by(col1, x_col2 == y_col2)
+  ...
+)
+```
+
+::: tightlist
+-   Start with all rows in **right** df `y`
+-   Look for matching rows in **left** df `x`
+    -   Keep rows from left df `x` that match
+    -   Drop unmatched rows from left df `x`
+-   Combine columns from left df `x` into right df `y`
+    -   Matched rows have values in new cols
+    -   Unmatched rows have `NA` in new cols
+
+:::
+
+::: {.fragment}
+
+**`right_join(x,y)` is identical to `left_join(y,x)`**
+
+:::
+
+:::
+
+:::
+
+:::
+
+::: {.col-7 style="margin-top: -4em"}
+
+::: row
+::: col-12
+![](../images/misc/joins/right.png){style="max-height: 10em"}
+:::
+:::
+
+::: row
+::: col-4
+```{r}
+band_members
+```
+:::
+
+::: col-4
+```{r}
+band_instruments
+```
+:::
+
+::: col-4
+```{r}
+band_instruments2
+```
+:::
+:::
+
+::: row
+::: col-6
+::: {style="margin-top: 1em;"}
+```{r}
+#| output-location: fragment
+right_join(band_members, 
+    band_instruments
+    )
+```
+:::
+:::
+
+::: col-6
+::: {style="margin-top: 1em;"}
+```{r}
+#| output-location: fragment
+right_join(band_members, 
+    band_instruments2, 
+    by = join_by(name == artist))
+```
+:::
+:::
+
+:::
+
+:::
+
+::::
+
+:::::
+
+
+## `inner_join`: Keep only matched rows {style="font-size: .8em"}
+
+![](../images/icons/tv-icons/dplyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::::: {.container-fluid style="font-size: .9em;"}
+
+:::: row
+
+::: col-5
+
+::: {.overlap-box}
+
+::: box-title
+
+Inner Join
+
+:::
+
+::: box-content
+
+
+```{.r}
+inner_join(
+  x,
+  y,
+  by = join_by(col1, x_col2 == y_col2)
+  ...
+)
+```
+
+::: tightlist
+-   Start with all rows in left df `x`
+-   Look for matching rows in right df `y`
+    -   Keep rows from right df `y` that match
+    -   Drop unmatched rows from right df `y`
+-   Continue with the modified `y`
+-   Look for matching rows in left df `x`
+    -   Keep rows from left df `x` that match
+    -   Drop unmatched rows from left df `x`
+-   Combine columns from modified right df `y` into modified left df `x`
+    -   Only matched rows exist
+    -   Nothing is filled with `NA`
+
+:::
+
+::: {.fragment}
+
+**Same as `left_join(x,y)` then `right_join(x,y)` (or vice versa)**
+
+:::
+
+:::
+
+:::
+
+:::
+
+::: {.col-7 style="margin-top: -4em"}
+
+::: row
+::: col-12
+![](../images/misc/joins/inner.png){style="max-height: 10em"}
+:::
+:::
+
+::: row
+::: col-4
+```{r}
+band_members
+```
+:::
+
+::: col-4
+```{r}
+band_instruments
+```
+:::
+
+::: col-4
+```{r}
+band_instruments2
+```
+:::
+:::
+
+::: row
+::: col-6
+::: {style="margin-top: 1em;"}
+```{r}
+#| output-location: fragment
+inner_join(band_members, 
+    band_instruments
+    )
+```
+:::
+:::
+
+::: col-6
+::: {style="margin-top: 1em;"}
+```{r}
+#| output-location: fragment
+inner_join(band_members, 
+    band_instruments2,
+    by = join_by(name == artist))
+```
+:::
+:::
+
+:::
+
+:::
+
+::::
+
+:::::
+
+
+## `full_join`: Keep all rows {style="font-size: .8em"}
+
+![](../images/icons/tv-icons/dplyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::::: {.container-fluid style="font-size: .9em;"}
+
+:::: row
+
+::: col-5
+
+::: {.overlap-box}
+
+::: box-title
+
+Full Join
+
+:::
+
+::: box-content
+
+
+```{.r}
+full_join(
+  x,
+  y,
+  by = join_by(col1, x_col2 == y_col2)
+  ...
+)
+```
+
+::: tightlist
+-   Start with all rows in left df `x`
+-   Look for matching rows in right df `y`
+    -   *Keep all rows*
+-   Combine columns from right df `y` into left df `x`
+    -   Matched rows have values in new cols
+    -   Unmatched rows have `NA` in new cols
+-   Continue with the modified `y`
+-   Look for matching rows in left df `x`
+    -   *Keep all rows*
+-   Combine columns from modified right df `y` into modified left df `x`
+    -   *No rows dropped*
+    -   Cols from both `x` and `y` may have `NA`s
+
+:::
+::: {.fragment}
+
+**Critically: (1) rows are not duplicated and (2) no data is lost.**
+
+:::
+
+:::
+
+:::
+
+:::
+
+::: {.col-7 style="margin-top: -4em"}
+
+::: row
+::: col-12
+![](../images/misc/joins/left.png){style="max-height: 10em"}
+:::
+:::
+
+::: row
+::: col-4
+```{r}
+band_members
+```
+:::
+
+::: col-4
+```{r}
+band_instruments
+```
+:::
+
+::: col-4
+```{r}
+band_instruments2
+```
+:::
+:::
+
+::: row
+::: col-6
+::: {style="margin-top: 1em;"}
+```{r}
+#| output-location: fragment
+left_join(band_members, 
+    band_instruments
+    )
+```
+:::
+:::
+
+::: col-6
+::: {style="margin-top: 1em;"}
+```{r}
+#| output-location: fragment
+left_join(band_members, 
+    band_instruments2,
+    by = join_by(name == artist))
+```
+:::
+:::
+
 :::
 
 :::
@@ -3116,8 +3544,11 @@ Include/exclude syntax:
 
 # `tidyr`
 
+## Example data frame for `tidyr`
+
 ```{r}
-#| include: false
+#| echo: true
+#| output-location: column
 # Generate example data for some tidyr functions
 glasses <- tibble(
     condition = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2),
