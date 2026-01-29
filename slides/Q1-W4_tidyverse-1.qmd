@@ -580,7 +580,8 @@ a grammar of graphics
 
 ## `tibble`: Better Data Frames {.left-sidebar-slide fullscreen=true}
 
-![](../images/icons/tv-icons/tibble.png){.absolute top="1em" right="1em" height="4em;"})
+![](../images/icons/tv-icons/tibble.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"})
+
 
 
 ::: sidebar-column
@@ -664,7 +665,7 @@ More on the pipe later. For now, know that when these slides show non-executed e
 
 ## `readr`: Read & Write Tibbles {.left-sidebar-slide fullscreen=true}
 
-![](../images/icons/tv-icons/readr.png){.absolute top="1em" right="1em" height="4em;"})
+![](../images/icons/tv-icons/readr.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"})
 
 
 ::: sidebar-column
@@ -1290,7 +1291,7 @@ Use write_csv() to save mmdata to an intermediate dataset: `in-class-materials/d
 
 ## `dplyr`: Data Transformation {.left-sidebar-slide fullscreen=true}
 
-![](../images/icons/tv-icons/dplyr.png){.absolute top="1em" right="1em" height="4em;"})
+![](../images/icons/tv-icons/dplyr.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"})
 
 
 ::: sidebar-column
@@ -1310,7 +1311,7 @@ Use write_csv() to save mmdata to an intermediate dataset: `in-class-materials/d
 
 ::: main-content
 
-::: {.r-stretch style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em; margin-top: 3em;"}
+::: {.r-stretch style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em;"}
 
 ::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
 
@@ -2468,7 +2469,7 @@ As of R 1.4.0, `|>` is the [recommend pipe](https://r4ds.hadley.nz/data-transfor
 ```{r style="font-size: 1.1em;"}
 #| message: false
 #| warning: false
-#| output-location: column
+#| output-location: column-fragment
 # Begin with mm.tidy
 mm.tidy
 ```
@@ -2483,7 +2484,7 @@ mm.tidy
 ```{r style="font-size: 1.1em;"}
 #| message: false
 #| warning: false
-#| output-location: column
+#| output-location: column-fragment
 # Begin with mm.tidy
 mm.tidy |>
     # Create new column: Primary_Color
@@ -2506,7 +2507,7 @@ mm.tidy |>
 ```{r style="font-size: 1.1em;"}
 #| message: false
 #| warning: false
-#| output-location: column
+#| output-location: column-fragment
 # Begin with mm.tidy
 mm.tidy |>
     # Create new column: Primary_Color
@@ -2530,7 +2531,7 @@ mm.tidy |>
 ```{r style="font-size: 1.1em;"}
 #| message: false
 #| warning: false
-#| output-location: column
+#| output-location: column-fragment
 # Begin with mm.tidy
 mm.tidy |>
     # Create new column: Primary_Color
@@ -2556,7 +2557,7 @@ mm.tidy |>
 ```{r style="font-size: 1.1em;"}
 #| message: false
 #| warning: false
-#| output-location: column
+#| output-location: column-fragment
 # Begin with mm.tidy
 mm.tidy |>
     # Create new column: Primary_Color
@@ -2584,7 +2585,7 @@ mm.tidy |>
 ```{r style="font-size: 1.1em;"}
 #| message: false
 #| warning: false
-#| output-location: column
+#| output-location: column-fragment
 # Begin with mm.tidy
 mm.tidy |>
     # Create new column: Primary_Color
@@ -2624,7 +2625,7 @@ We haven't talked about pivot wider yet but it's coming up next!
 ```{r style="font-size: 1.1em;"}
 #| message: false
 #| warning: false
-#| output-location: column
+#| output-location: column-fragment
 # Begin with mm.tidy
 mm.tidy |>
     # Create new column: Primary_Color
@@ -2666,7 +2667,7 @@ mm.tidy |>
 ```{r style="font-size: 1.1em;"}
 #| message: false
 #| warning: false
-#| output-location: column
+#| output-location: column-fragment
 # Begin with mm.tidy
 mm.tidy |>
     # Create new column: Primary_Color
@@ -2703,6 +2704,1588 @@ mm.tidy |>
 :::
 :::
 
+# Combining datasets
+
+*Bridging `base`, `dplyr` and `tidyr`*
+
+::: notes
+
+This is stuff from `dplyr` (and some analogs in base R), but conceptually it's related to reshaping data with `tidyr`.
+
+:::
+
+## Bind and join datasets
+
+Two major categories of dataset combination: [*binding*]{.keyword} & [*joining*]{.keyword}.
+
+
+::::: container-fluid
+
+:::: {.row .equal-height style="height: 50vh;"}
+
+::: col-6
+
+::: {.callout-note .large icon=false style="font-size: 1.1em;" .fragment}
+
+### [⬅︎ Append with `bind`]{style="padding-left:1em;"}
+
+-   "Stack" datasets horizontally or vertically
+-   Assumes similarly structured data frames (or tibbles)
+-   Options from both [base]{.pkg} R and [dplyr]{.pkg}
+
+:::
+
+:::
+
+::: col-6
+
+::: {.callout-tip .large icon=false style="font-size: 1.1em;" .fragment}
+
+### [➡ Merge with `join`]{style="padding-left:1em;"}
+
+-   Combine datasets based on common columns
+-   Works with tibbles and data.frames of variable structure
+-   Core functionality from [dplyr]{.pkg}
+
+:::
+
+:::
+
+::::
+
+:::::
+
+---
+
+## Example Tibbles
+
+```{r}
+#| include: false
+tibble1 <- tibble(col1 = c(1, 2, 3, 4, 5),
+                  col2 = c(6, 7, 8, 9, 10),
+                  col3 = c(11, 12, 13, 14, 15))
+
+tibble2 <- tibble(col1 = c(16, 17, 18, 19, 20),
+                  col2 = c(21, 22, 23, 24, 25),
+                  col3 = c(26, 27, 28, 29, 30))
+
+# a third with an extra column
+tibble3 <- tibble(col1 = c(16, 17, 18, 19, 20),
+                  col2 = c(21, 22, 23, 24, 25),
+                  col3 = c(26, 27, 28, 29, 30),
+                  col4 = c(31, 32, 33, 34, 35))
+
+# a fourth with different column names
+tibble4 <- tibble(col_1 = c(16, 17, 18, 19, 20),
+                  col_2 = c(21, 22, 23, 24, 25),
+                  col_3 = c(26, 27, 28, 29, 30))
+
+# a fifth with a different number of rows
+tibble5 <- tibble(col1 = c(16, 17, 18, 19, 20, 21),
+                  col2 = c(21, 22, 23, 24, 25, 26),
+                  col3 = c(26, 27, 28, 29, 30, 31))
+```
+
+::: container-fluid
+
+::: row
+::: col-4
+`tibble1`
+```{r}
+#| echo: false
+tibble1
+```
+:::
+::: col-4
+`tibble2`
+```{r}
+#| echo: false
+tibble2
+```
+:::
+::: col-4
+`tibble3`
+```{r}
+#| echo: false
+tibble3
+```
+:::
+:::
+
+::: row
+::: col-6
+`tibble4`
+```{r}
+#| echo: false
+tibble4
+```
+:::
+::: col-6
+`tibble5`
+```{r}
+#| echo: false
+tibble5
+```
+:::
+:::
+:::
+
+---
+
+## Binding Rows {style="font-size: .8em"}
+
+![](../images/icons/tv-icons/dplyr.png){.absolute top="1em" right="1em" height="4em;"}
+
+::::: container-fluid
+
+:::: row
+
+::: {.col-12 .fragment}
+
+Append **rows** of one dataframe after the last row of another.
+:::
+:::
+:::: row
+
+::: col-6
+
+::: {.card .fragment .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+[rbind]{.func}
+
+:::
+:::
+
+::: {.card-body .lessgap .nonincremental}
+
+-   Base R function
+-   dfs must have exactly the same columns in exactly the same order
+
+```{r}
+rbind(tibble1, tibble2)
+```
+
+```{.r}
+#| include: false
+rbind(tibble1, tibble3) # error: col4 in tibble3
+```
+
+
+
+:::
+:::
+
+:::
+
+
+::: col-6
+
+::: {.card .fragment .card-alt1 .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+[bind_rows()]{.func}
+
+:::
+:::
+
+::: {.card-body .lessgap .nonincremental}
+
+-   Can have different columns
+-   Missing values -> `NA`
+
+```{r}
+bind_rows(tibble1, tibble3)
+```
+
+
+:::
+:::
+
+:::
+
+::::
+
+:::::
+
+
+---
+
+## Binding Columns {style="font-size: .8em"}
+
+![](../images/icons/tv-icons/dplyr.png){.absolute top="1em" right="1em" height="4em;"}
+
+
+::::: container-fluid
+
+:::: row
+
+::: {.col-12 .fragment}
+
+Append **columns** of one dataframe after the last column of another.
+:::
+:::
+:::: row
+
+::: col-6
+
+::: {.card .fragment .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+[cbind]{.func}
+
+:::
+:::
+
+::: {.card-body .lessgap .nonincremental}
+
+-   Base R function
+-   dfs must have same number rows
+
+```{r}
+cbind(tibble1, tibble4)
+```
+
+```{.r}
+#| include: false
+cbind(tibble1, tibble5) 
+# Error in data.frame(..., check.names = FALSE) :
+# arguments imply differing number of rows
+```
+
+
+
+:::
+:::
+
+:::
+
+
+::: col-6
+
+::: {.card .fragment .card-alt1 .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+[bind_cols()]{.func}
+
+:::
+:::
+
+::: {.card-body .lessgap .nonincremental}
+
+-  `dplyr` function
+-   dfs must have same number rows
+
+```{r}
+bind_cols(tibble1, tibble3)
+```
+
+```{.r}
+#| include: false
+bind_cols(tibble1, tibble5) 
+# Error in `bind_cols()`:
+# ! Can't recycle `..1` (size 5) to match `..2` (size 6).
+```
+
+:::
+:::
+
+:::
+
+::::
+
+:::::
+
+::: bubble-chain
+  <p class="bubble-left fragment">If they work the same, which one should I use?</p>
+  <p class="bubble-right fragment">Neither! Use joins instead.</p>
+:::
+
+
+## Joining Data {.left-sidebar-slide fullscreen=true}
+
+![](../images/icons/tv-icons/dplyr.png){.absolute top="1em" right="1em" height="4em;"})
+
+::: sidebar-column
+
+::: sidebar-title
+
+
+
+:::
+
+::: sidebar-content
+
+
+
+
+:::
+
+:::
+
+
+
+::: main-content
+
+
+
+
+:::
+
+
+## `*_join`: Merge tibbles by column match {style="font-size: .8em"}
+
+![](../images/icons/tv-icons/dplyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::::: container-fluid
+
+:::: row
+
+::: col-6
+
+::: {.overlap-box}
+
+::: box-title
+
+Include/exclude syntax:
+
+:::
+
+::: box-content
+
+```{.r}
+
+```
+
+::: {.nonincremental .fragment fragment-index="1"}
+
+
+:::
+
+::: {.nonincremental .fragment fragment-index="2"}
+
+
+:::
+
+::: {.nonincremental .fragment fragment-index="3"}
+
+    
+:::
+
+::: {.nonincremental .fragment fragment-index="4"}
+
+
+:::
+        
+:::
+
+:::
+
+:::
+
+::: {.col-6 style="margin-top: 1em"}
+
+::: {.fragment fragment-index="5"}
+```{.r}
+
+```
+:::
+
+::: {.fragment fragment-index="6" style="margin-top: 1em;"}
+```{r}
+#| echo: false
+
+```
+:::
+
+:::
+
+::::
+
+:::::
+
+
+
 # `tidyr`
 
-Coming Thursday!
+```{r}
+#| include: false
+# Generate example data for some tidyr functions
+glasses <- tibble(
+    condition = c(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2),
+    participant = c(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6),
+    score = runif(12),
+    notes = c("glasses_none", "glasses_none", "none_none", "none_none",
+              "none_incomplete", "none_incomplete", "none_none", "none_none",
+              "glasses_none", "glasses_none", "glasses_late", "glasses_late")
+)
+```
+
+## `tidyr`: Tidy messy data {.left-sidebar-slide fullscreen=true}
+
+![](../images/icons/tv-icons/tidyr.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"})
+
+
+::: sidebar-column
+::: sidebar-title
+
+[tidyr]{.pkg}: <br> Tidy messy data
+
+:::
+::: sidebar-content
+
+-   Core tidyverse package for data tidying
+-   Functions to reshape, split, merge, nest, and handle missing data
+-   Works seamlessly with `dplyr` and tidy pipelines
+
+:::
+:::
+
+::: main-content
+
+::: {.r-stretch style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em;"}
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi check2-square>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[pivot_*]{.func}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Reshape wide and long data
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi funnel>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[separate_\*_\*]{.func}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Split values into columns
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi collection>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[unite]{.func}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Collapse values across columns
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi layer-backward>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[expand]{.func}(+)
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;"}
+
+Create missing combinations of data
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi node-plus-fill>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[drop_na]{.func}(+)
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Handle missing values
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi calculator>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+[nest]{.func}
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Embed tables in tables
+
+:::
+
+:::
+
+
+
+:::
+
+:::
+
+## Wide vs. Long Data
+
+
+::::: container-fluid
+
+:::: row
+
+::: col-6
+
+::: {.card .fragment .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+W--I--D--E Data
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+-   What Excel wants
+-   First column (usually) contains unique values
+-   Compact and human-friendly
+-   Lacks precision
+-   Difficult to manipulate structurally
+-   Create with pivot_wider()
+
+:::
+:::
+
+:::
+
+
+::: col-6
+
+::: {.card .fragment .card-alt1 .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+L*oooooo*ng Data
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+-   What the Tidyverse wants
+-   First column (often) repeats values
+-   Difficult to spot patterns or comparisons
+-   Precise & standardized
+-   Easily manipulable 
+-   Create with pivot_longer()
+
+:::
+:::
+
+:::
+
+::::
+
+:::::
+
+::: notes
+
+WIDE
+
+What you're used to; "the Excel way"
+First column contains unique values
+Compact and human-friendly
+Lacks precision, hard to manipulate structurally
+create with pivot_wider()
+formerly/alternatively: spread, cast, pivot, unfold
+
+
+LONG
+
+What the tidyverse wants
+First column repeats values
+Difficulty to spot patterns or comparisons
+Easily manipulable, precise, standardized
+create with pivot_longer()
+formerly/alternatively: gather, melt, unpivot, fold
+
+
+:::
+
+
+## `pivot_longer`: Reshape wide to long {style="font-size: .8em"}
+
+![](../images/icons/tv-icons/tidyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::::: container-fluid
+
+:::: row
+
+::: col-5
+
+::: {.overlap-box style="font-size: .9em"}
+
+::: box-title
+
+Reshape long:
+
+:::
+
+::: box-content
+
+```{.r}
+pivot_longer(
+    data, 
+    cols = c(...), 
+    names_to = "new_col1", 
+    values_to = "new_col2",
+    ...)
+```
+
+::: {.nonincremental .fragment fragment-index="1"}
+
+-   Move from grid of values to key-value pairs
+-   Human friendly -> tidyverse friendly
+
+:::
+
+::: {.nonincremental .fragment fragment-index="2"}
+
+-   `cols = c(...)`: Specify columns to pivot
+    -   *Which columns contain the data to consolidate?*
+    -   Accepts tidyselect helpers
+
+:::
+
+::: {.nonincremental .fragment fragment-index="3"}
+
+-   `names_to` = name of new column for former column names
+    -   *Turn the pivoted columns' __names to__ values in this new column.*
+    -   Column names will become strings
+    
+:::
+
+::: {.nonincremental .fragment fragment-index="4"}
+
+-   `values_to` = name of new column for former values
+    -   *Turn the pivoted columns' __values to__ values in this new column.*
+    -   Values must be of the same type
+
+:::
+        
+:::
+
+:::
+
+:::
+
+::: {.col-7 style="margin-top: 1em"}
+
+::: {.fragment fragment-index="5"}
+
+```{r}
+#| echo: false
+#| include: true
+mm.raw
+```
+
+:::
+
+::: row
+
+::: col-12
+
+::: {.fragment fragment-index="6" style="margin-top: 1em;"}
+
+::: longer-code
+
+```{r}
+#| echo: true
+#| output-location: column-fragment
+mm.long <- pivot_longer(
+    mm.raw,
+    # pivot columns between Red and Brown
+    cols = Red:Brown, 
+    # column names go to "Color"
+	names_to = "Color", 
+    # column values go to "Number"
+	values_to = "Number") 
+
+mm.long
+```
+:::
+:::
+
+:::
+
+:::
+
+:::
+
+::::
+
+:::::
+## `pivot_wider`: Reshape wide to long {style="font-size: .8em"}
+
+![](../images/icons/tv-icons/tidyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::::: container-fluid
+
+:::: row
+
+::: col-5
+
+::: {.overlap-box style="font-size: .9em"}
+
+::: box-title
+
+Reshape wide:
+
+:::
+
+::: box-content
+
+```{.r}
+pivot_wider(
+    data, 
+    id_cols = c(...),
+    names_from = "col1", 
+    values_from = "col2",
+    ...)
+```
+
+::: {.nonincremental .fragment fragment-index="1"}
+
+-   Move from key-value pairs to grid of values
+-   Tidyverse friendly -> human friendly
+
+:::
+
+::: {.nonincremental .fragment fragment-index="2"}
+
+-   `id_cols = c(...)`: Specify columns to keep as identifiers
+    -   *Which columns should remain as-is (not pivoted)?*
+    -   Defaults to all non-pivoted columns
+
+:::
+
+::: {.nonincremental .fragment fragment-index="3"}
+
+-   `names_from` = name of column to use for new column names
+    -   *Create column __names from__ values in which column?*
+    
+:::
+
+::: {.nonincremental .fragment fragment-index="4"}
+
+-   `values_from` = name of column to use for new values
+    -   *Fill new columns with __values from__ which column?*
+
+:::
+        
+:::
+
+:::
+
+:::
+
+::: {.col-7 style="margin-top: 1em"}
+
+::: row
+
+::: col-5
+
+::: {.fragment fragment-index="5"}
+
+```{r}
+#| echo: false
+#| include: true
+mm.long
+```
+
+:::
+
+:::
+
+::: col-7
+
+::: {.fragment fragment-index="6" }
+
+::: longer-code
+
+```{.r}
+mm.wide <- pivot_wider(
+    mm.long,
+    # Every value in `Color` becomes a column
+	names_from = "Color", 
+    # Values from `Number` go to new columns
+	values_from = "Number") |> 
+# Move `Weight` column to end
+relocate(Weight, .after = last_col())
+
+mm.wide
+```
+
+:::
+
+:::
+
+:::
+
+:::
+
+::: row
+
+::: col-12
+
+::: {.fragment fragment-index="7" style="margin-top: 1em;"}
+
+```{r}
+#| echo: false
+mm.wide <- pivot_wider(
+        mm.long,
+        # Every value in `Color` becomes a column
+    	names_from = "Color", 
+        # Values from `Number` go to respective new columns
+    	values_from = "Number") |> 
+    # Move `Weight` column to end
+    relocate(Weight, .after = last_col())
+
+mm.wide
+```
+
+:::
+:::
+
+:::
+
+:::
+
+:::
+
+:::
+
+## `separate_wider_delim`: Split column into multiple columns {style="font-size: .8em"}
+
+
+![](../images/icons/tv-icons/tidyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::::: container-fluid
+
+:::: row
+
+::: col-5
+
+::: {.overlap-box style="font-size: .9em"}
+
+::: box-title
+
+Split column values:
+
+:::
+
+::: box-content
+
+```{.r}
+separate_wider_delim(
+    data, 
+    cols = c("col1", ...), 
+    delim = "delimiter character(s)", 
+    names = c("new_col1", "new_col2", ...),
+    ...)
+```
+
+
+-   Split values in column into multiple columns based on delimiter characters
+-   Non-character values (e.g., numbers) are coerced to character
+-   Specify new column names
+-   `cols = c("col1", ...)`: Specify column(s) to separate
+    -   *Which column(s) contain the data to split?*
+-   `delim = "delimiter character(s)"`: Character(s) to split on
+    -   e.g., `,` or `"_"`
+-   `names = c("new_col1", "new_col2", ...)`: Names for new columns
+-   Related: 
+    -   [`separate_wider_regex()`]{.func}: split by regex match
+    -   [`separate_wider_position()`]{.func}: split values by fixed widths
+    -   [`separate_longer_delim()`]{.func}: split into multiple rows
+
+:::
+
+:::
+
+:::
+
+::: col-7
+::: fragment
+```{r}
+#| echo: false
+head(glasses,5)
+```
+:::
+
+::: {.fragment style="margin-top: 1em;"}
+```{r}
+#| output-location: fragment
+separate_wider_delim(
+    glasses,
+    cols = notes,
+    delim = "_",
+    names = c(
+        "wears_glasses", "notes"
+        )
+) |> 
+    head(5)
+```
+:::
+
+```{r}
+#| eval: false
+#| include: false
+# Coerce numeric to character
+separate_wider_delim(
+    mm.raw,
+    cols = Weight,
+    delim = ".",
+    names = c("WT_integer", "WT_decimal")
+) |> 
+    select(Bag, Red, WT_integer, WT_decimal)
+```
+
+:::
+
+::::
+
+:::::
+
+## `unite`: Collapse multiple columns into one {style="font-size: .8em"}
+
+![](../images/icons/tv-icons/tidyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::::: container-fluid
+:::: row
+::: col-5
+::: {.overlap-box style="font-size: .9em"}
+::: box-title
+Collapse columns:
+:::
+::: box-content
+```{.r}
+unite(
+    data,
+    col = "new_col",
+    old_col1,
+    old_col2,
+    ... # more columns
+    sep = "separator character(s)",
+    ...)
+```
+
+-   Combine multiple columns into one column
+-   Values are concatenated with specified separator
+-   `col = "new_col"`: Name of new column
+-   `sep = "separator character(s)"`: Character(s) to insert between values
+    -   Default: `_`
+    -   Use empty string `""` for no separator
+-   Use `remove = FALSE` to keep original columns
+
+:::
+:::
+:::
+
+::: col-7
+
+::: {.fragment}
+
+```{r}
+#| echo: false
+#| include: true
+
+head(glasses,5)
+```
+
+:::
+::: {.fragment style="margin-top: 1em;"}
+```{r}
+#| output-location: column-fragment
+
+separate_wider_delim(
+    glasses,
+    cols = notes,
+    delim = "_",
+    names = c(
+        "wears_glasses", "notes"
+        )
+) |> 
+unite(
+    col = "conditionParticipant",
+    condition, participant,
+    sep = ";",
+) |>
+head(5)
+```
+
+
+:::
+
+:::
+
+::::
+:::::
+
+
+## Tools for handling incomplete and missing data
+
+Create a simple example dataset with missing values:
+
+```{r}
+#| include: false
+# Create example tibble: daily temperature readings with gaps
+weather <- tibble(
+  date = as.Date(c("2026-01-20", "2026-01-21", "2026-01-21", "2026-01-23", "2026-01-24")),
+  station = c("North", "North", "South", "South", "North"),
+  temp_max = c(NA, 32, 28, 30, NA),
+  temp_min = c(18, 15, NA, 20, 17),
+  notes = c("Clear", NA, "Windy", NA, "Cloudy")
+)
+
+weather
+```
+
+
+
+## `expand` & `complete`: Create missing combinations {style="font-size: .8em"}
+
+
+
+
+![](../images/icons/tv-icons/tidyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::::: container-fluid
+:::: row
+
+::: col-5
+
+::: {.overlap-box}
+::: box-title
+Create missing combinations:
+:::
+
+::: box-content
+
+:::: row
+::: col-6
+```{.r}
+expand(
+    data,
+    col1 = c(...),
+    col2 = c(...),
+    ...)
+)
+```
+:::
+
+::: col-6
+```{.r}
+complete(
+    data,
+    col1 = c(...),
+    col2 = c(...),
+    ...)
+)
+```
+:::
+::::
+
+-   [expand]{.func}: Generate all possible combinations of values across specified columns
+-   [complete]{.func}: Fill in missing rows in data with `NA` for missing combinations
+    -   Actually a wrapper for `expand()`
+-   Useful for:
+    -   Identifying non-obvious missing data points
+    -   Preparing data for analyses that require complete cases
+    -   Ensuring consistent structure across datasets
+:::
+
+:::
+:::
+
+::: col-7
+::: {.fragment}
+
+```{r}
+#| echo: false
+#| include: true
+
+head(weather)
+```
+
+
+:::
+
+:::: row
+::: col-5
+::: {.fragment style="margin-top: 1em;"}
+
+```{r}
+#| output-location: fragment
+
+expand(weather, 
+    date, 
+    station)
+```
+:::
+:::
+
+::: col-7
+::: {.fragment style="margin-top: 1em;"}
+```{r}
+#| output-location: fragment
+
+complete(weather, date, station)
+```
+:::
+:::
+::::
+
+:::
+
+
+::::
+:::::
+
+## `drop_na` & `replace_na`: Drop and replace missing values
+
+![](../images/icons/tv-icons/tidyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+::: overlap-box
+
+::: box-title
+
+Drop rows with missing values
+
+:::
+
+::: box-content
+
+```{r}
+#| output-location: column-fragment
+
+# Missing any value in any column
+drop_na(weather) 
+```
+
+```{r}
+#| output-location: column-fragment
+
+# Missing values in specific columns
+drop_na(weather, temp_max, temp_min)
+```
+
+:::
+
+:::
+
+::: {.overlap-box .overlap-box-blue}
+
+::: box-title
+
+Replace all `NA` in columns with specific value
+
+:::
+
+::: box-content
+
+```{r}
+#| output-location: column-fragment
+replace_na(weather, 
+           list(temp_max = 999, 
+                temp_min = -999))
+```
+
+:::
+
+:::
+
+
+## `fill`: Dependently replace missing values {style="font-size: .7em;"}
+
+![](../images/icons/tv-icons/tidyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+
+
+::::: container-fluid
+
+:::: row
+
+::: col-4
+
+::: {.card .fragment .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Fill `NA` with previous:
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+```{r}
+#| output-location: fragment
+
+fill(weather, temp_max, .direction = "down")
+```
+
+
+:::
+:::
+
+:::
+
+::: col-4
+
+::: {.card .fragment .card-alt1 .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Fill `NA` with next:
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+```{r}
+#| output-location: fragment
+
+fill(weather, temp_max, .direction = "up")
+```
+
+:::
+:::
+
+:::
+
+::: col-4
+
+::: {.card .fragment .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Fill previous, then next:
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+```{r}
+#| output-location: fragment
+
+fill(weather, temp_max, .direction = "downup")
+```
+
+:::
+:::
+
+:::
+
+::::
+
+:::::
+
+## Nesting
+
+![](../images/icons/tv-icons/tidyr.png){.absolute top="-1.5em" right="0em" height="4em;"}
+
+[Nesting]{.keyword}: embedding a data frame within a data frame
+
+[Rectangling]{.keyword}: the reverse process of un-nesting (e.g., making JSON into tidy tibbles)
+
+These are beyond the scope of this class, but here's some fine print if you're interested:
+
+::: {.callout-tip .fragment .nonincremental}
+
+### Nested Data
+
+-   nested df is one where 1+ columns is a list of data frames
+-   conceptually related to grouping with `group_by()`: 
+    -   1 row in input -> 1 group in output
+
+Imagine a data frame with columns x, y, and z:
+```{.r}
+df %>% group_by(x) %>% summarize(mean = mean(y), sum = sum(z))
+```
+
+Each row in the summarized output processes data (here the mean of y and the sum of z) about multiple rows in the input, defined by the unique values of the group (here x).
+
+```{.r}
+df2 %>% nest(my_nested_var = c(y, z))
+```
+
+Each row in the nested output contains the data itself (unchanged) associated with those rows (the values in columns y and z) as defined by the unique values of everything that isn't nested (here x). Since the data is unchanged, the data in the new variable is itself a table (or tibble). The columns in the nested tibble are the columns you passed to it and the rows are all the original rows within each "group".
+
+:::
+
+::: {.alert .alert-warning .fragment .nonincremental style="position: absolute; width: 50%; top: 3em; right: 3em;, font-size: .8em"}
+
+**You probably won't need this** so don't stress if that seems like gibberish. It's just a useful concept. 
+
+For more info see [this tidyverse article on nesting](https://tidyr.tidyverse.org/articles/nest.html). 
+
+Page 2 of the [tidyr cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf) is dedicated to nesting concepts and functions.
+
+:::
+
+
+
+
+# Summary
+
+## Tidyverse Workflow
+
+
+## Process/flow with icons
+
+::: {style="display: grid; grid-template-columns: 1fr 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr; grid-template-rows: auto 3em auto; gap: 8px;"}
+
+<!-- Row 1: Steps 1-4 -->
+
+::: {.flow-box style="grid-column: 1; grid-row: 1; background-color: #800000;" .fragment}
+
+
+1. Import data with `readr`
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 2; grid-row: 1;" .fragment}
+
+{{< bi arrow-right-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 3; grid-row: 1; background-color: #6e0e10;" .fragment}
+
+2. Apply structure with `tibble`
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 4; grid-row: 1;" .fragment}
+
+{{< bi arrow-right-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 5; grid-row: 1; background-color: #5b1b21;" .fragment}
+
+3. Tidy data with `tidyr`
+
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 6; grid-row: 1;" .fragment}
+
+{{< bi arrow-right-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 7; grid-row: 1; background-color: #492931;" .fragment}
+
+4. Manipulate tibbles with `dplyr`
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+<!-- Down arrow -->
+
+::: {.flow-arrow style="grid-column: 7; grid-row: 2;" .fragment}
+
+{{< bi arrow-down-circle-fill >}}
+
+:::
+
+<!-- Row 2: Steps 5-8 (in reverse order) -->
+
+::: {.flow-box style="grid-column: 7; grid-row: 3; background-color: #373642;" .fragment}
+
+5. Manipulate strings with `stringr`
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 6; grid-row: 3;" .fragment}
+
+{{< bi arrow-left-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 5; grid-row: 3; background-color: #254452;" .fragment}
+
+6. Manipulate factors with `forcats`
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 4; grid-row: 3;" .fragment}
+
+{{< bi arrow-left-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 3; grid-row: 3; background-color: #125163;" .fragment}
+
+7. Visualize with `ggplot2`
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+::: {.flow-arrow style="grid-column: 2; grid-row: 3;" .fragment}
+
+{{< bi arrow-left-circle-fill >}}
+
+:::
+
+::: {.flow-box style="grid-column: 1; grid-row: 3; background-color: #005f73;" .fragment}
+
+8. Model with `broom` and `modelr`
+
+::: flow-icon-circle
+
+{{< bi diamond-half >}}
+
+:::
+
+:::
+
+:::

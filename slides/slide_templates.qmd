@@ -346,7 +346,89 @@ Mix between the process/flowchart slide and the intro slide for the slide sequen
 :::
 
 
-## Three Cards in a Horizontal Row
+## 2 Cards; 1 Row
+
+::::: container-fluid
+
+:::: row
+
+::: {.col-12 .fragment}
+
+Content to appear above the columns/cards.
+
+:::
+
+::::
+
+:::: row
+
+::: col-6
+
+::: {.card .fragment .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Left Card Title
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+-   Body of left card
+-   Incremental list
+-   Tight margins
+
+:::
+:::
+
+:::
+
+
+::: col-6
+
+::: {.card .fragment .card-alt1 .h-100}
+
+::: card-header
+::: {.card-title style="color: #fff"}
+
+Right Card Title
+
+:::
+:::
+
+::: {.card-body .lessgap}
+
+-   Body of right card
+-   Incremental list
+-   Tight margins
+
+:::
+:::
+
+:::
+
+::::
+
+:::::
+
+::: notes
+
+The .h-100 class makes the cards equal height.
+
+The .lessgap class reduces the padding inside the card body.
+
+Headings need to be recolored with white text for readability on dark backgrounds.
+This is an artifact of using Bootstrap cards for both website and revealjs.
+Can be corrected with additional css at some point.
+
+Left card (default) is red. Right card uses .card-alt1 class for blue background.
+
+:::
+
+
+## 3 Cards/Images; 1 Row
 
 ::::: container-fluid
 
@@ -421,6 +503,9 @@ Right Card Title
 :::::
 
 ::: notes
+
+Minor modification of the 2-card layout above.
+Adds an image or other equal-width content.
 
 The .h-100 class makes the cards equal height.
 

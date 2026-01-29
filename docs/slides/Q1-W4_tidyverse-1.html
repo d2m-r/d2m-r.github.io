@@ -701,7 +701,7 @@ That’s not what I learned!
 </section>
 <section id="tibble-better-data-frames" class="slide level2 left-sidebar-slide" data-fullscreen="true">
 <h2><code>tibble</code>: Better Data Frames</h2>
-<p><img data-src="../images/icons/tv-icons/tibble.png" class="absolute" style="top: 1em; right: 1em; height: 4em;; ">)</p>
+<p><img data-src="../images/icons/tv-icons/tibble.png" class="absolute" style="top: .5em; left: 1em; height: 3em; z-index: 10;; ">)</p>
 <div class="sidebar-column">
 <div class="sidebar-title">
 <p><span class="pkg">tibble</span>: <br>Better Data Frames</p>
@@ -801,7 +801,7 @@ That’s not what I learned!
 </section>
 <section id="readr-read-write-tibbles" class="slide level2 left-sidebar-slide" data-fullscreen="true">
 <h2><code>readr</code>: Read &amp; Write Tibbles</h2>
-<p><img data-src="../images/icons/tv-icons/readr.png" class="absolute" style="top: 1em; right: 1em; height: 4em;; ">)</p>
+<p><img data-src="../images/icons/tv-icons/readr.png" class="absolute" style="top: .5em; left: 1em; height: 3em; z-index: 10;; ">)</p>
 <div class="sidebar-column">
 <div class="sidebar-title">
 <p><span class="pkg">readr</span>: <br> Read &amp; Write Tibbles</p>
@@ -1256,7 +1256,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </section>
 <section id="dplyr-data-transformation" class="slide level2 left-sidebar-slide" data-fullscreen="true">
 <h2><code>dplyr</code>: Data Transformation</h2>
-<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: 1em; right: 1em; height: 4em;; ">)</p>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: .5em; left: 1em; height: 3em; z-index: 10;; ">)</p>
 <div class="sidebar-column">
 <div class="sidebar-title">
 <p><span class="pkg">dplyr</span>: <br> Grammar of Data Manipulation</p>
@@ -1270,7 +1270,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 </div>
 <div class="main-content">
-<div class="r-stretch" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em; margin-top: 3em;">
+<div class="r-stretch" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em;">
 <div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
 <p><i class="bi-check2-square " style="" role="img" aria-hidden="true"></i></p>
@@ -2377,7 +2377,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
 <span id="cb75-2"><a></a>mm.tidy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column">
+</div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 4
      Bag Color  Number Bag_Weight
@@ -2410,7 +2410,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb77-6"><a></a>            Color <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>) <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
 <span id="cb77-7"><a></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Secondary"</span>),    </span>
 <span id="cb77-8"><a></a>        )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column">
+</div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 5
      Bag Color  Number Bag_Weight Color_Type
@@ -2445,7 +2445,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb79-8"><a></a>        ) <span class="sc">|&gt;</span> </span>
 <span id="cb79-9"><a></a>    <span class="co"># Group by color type &amp; bag</span></span>
 <span id="cb79-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column">
+</div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 5
 # Groups:   Color_Type, Bag [60]
@@ -2483,7 +2483,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb81-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag) <span class="sc">|&gt;</span></span>
 <span id="cb81-11"><a></a>    <span class="co"># Summarize total M&amp;Ms per group</span></span>
 <span id="cb81-12"><a></a>    <span class="fu">summarize</span>(<span class="at">Total_Number =</span> <span class="fu">sum</span>(Number))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column">
+</div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 60 × 3
 # Groups:   Color_Type [2]
@@ -2523,7 +2523,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb83-12"><a></a>    <span class="fu">summarize</span>(<span class="at">Total_Number =</span> <span class="fu">sum</span>(Number)) <span class="sc">|&gt;</span></span>
 <span id="cb83-13"><a></a>    <span class="co"># Arrange by bag then color_type</span></span>
 <span id="cb83-14"><a></a>    <span class="fu">arrange</span>(Bag, Color_Type)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column">
+</div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 60 × 3
 # Groups:   Color_Type [2]
@@ -2568,7 +2568,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb85-17"><a></a>        <span class="at">names_from =</span> Color_Type,</span>
 <span id="cb85-18"><a></a>        <span class="at">values_from =</span> Total_Number</span>
 <span id="cb85-19"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column">
+</div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 30 × 3
      Bag Primary Secondary
@@ -2634,7 +2634,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb87-26"><a></a>                <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Equal"</span></span>
 <span id="cb87-27"><a></a>            )</span>
 <span id="cb87-28"><a></a>    ) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column">
+</div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 30 × 4
      Bag Primary Secondary More_Prevalent
@@ -2689,7 +2689,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb89-28"><a></a>    ) <span class="sc">|&gt;</span> </span>
 <span id="cb89-29"><a></a>    <span class="co"># Filter to only bags where primary and secondary are equal</span></span>
 <span id="cb89-30"><a></a>    <span class="fu">filter</span>(More_Prevalent <span class="sc">==</span> <span class="st">"Equal"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column">
+</div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 4
     Bag Primary Secondary More_Prevalent
@@ -2699,12 +2699,1338 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div></div>
 </div>
 </section></section>
+<section>
+<section id="combining-datasets" class="title-slide slide level1 center">
+<h1>Combining datasets</h1>
+<p><em>Bridging <code>base</code>, <code>dplyr</code> and <code>tidyr</code></em></p>
+<aside class="notes">
+<p>This is stuff from <code>dplyr</code> (and some analogs in base R), but conceptually it’s related to reshaping data with <code>tidyr</code>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="bind-and-join-datasets" class="slide level2">
+<h2>Bind and join datasets</h2>
+<p>Two major categories of dataset combination: <span class="keyword"><em>binding</em></span> &amp; <span class="keyword"><em>joining</em></span>.</p>
+<div class="container-fluid">
+<div class="row equal-height" style="height: 50vh;">
+<div class="col-6">
+<div class="large fragment" style="font-size: 1.1em;">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><span style="padding-left:1em;">⬅︎ Append with <code>bind</code></span></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">“Stack” datasets horizontally or vertically</li>
+<li class="fragment">Assumes similarly structured data frames (or tibbles)</li>
+<li class="fragment">Options from both <span class="pkg">base</span> R and <span class="pkg">dplyr</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div class="large fragment" style="font-size: 1.1em;">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><span style="padding-left:1em;">➡ Merge with <code>join</code></span></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment">Combine datasets based on common columns</li>
+<li class="fragment">Works with tibbles and data.frames of variable structure</li>
+<li class="fragment">Core functionality from <span class="pkg">dplyr</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-tibbles" class="slide level2">
+<h2>Example Tibbles</h2>
+<div class="container-fluid">
+<div class="row">
+<div class="col-4">
+<p><code>tibble1</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+   col1  col2  col3
+  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1     1     6    11
+2     2     7    12
+3     3     8    13
+4     4     9    14
+5     5    10    15</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<p><code>tibble2</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+   col1  col2  col3
+  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1    16    21    26
+2    17    22    27
+3    18    23    28
+4    19    24    29
+5    20    25    30</code></pre>
+</div>
+</div>
+</div>
+<div class="col-4">
+<p><code>tibble3</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+   col1  col2  col3  col4
+  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1    16    21    26    31
+2    17    22    27    32
+3    18    23    28    33
+4    19    24    29    34
+5    20    25    30    35</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<p><code>tibble4</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  col_1 col_2 col_3
+  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1    16    21    26
+2    17    22    27
+3    18    23    28
+4    19    24    29
+5    20    25    30</code></pre>
+</div>
+</div>
+</div>
+<div class="col-6">
+<p><code>tibble5</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+   col1  col2  col3
+  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1    16    21    26
+2    17    22    27
+3    18    23    28
+4    19    24    29
+5    20    25    30
+6    21    26    31</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="binding-rows" class="slide level2" style="font-size: .8em">
+<h2>Binding Rows</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: 1em; right: 1em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-12 fragment">
+<p>Append <strong>rows</strong> of one dataframe after the last row of another.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<div class="card fragment h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p><span class="func">rbind</span></p>
+</div>
+</div>
+<div class="card-body lessgap">
+<ul>
+<li>Base R function</li>
+<li>dfs must have exactly the same columns in exactly the same order</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a><span class="fu">rbind</span>(tibble1, tibble2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 3
+    col1  col2  col3
+   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1     1     6    11
+ 2     2     7    12
+ 3     3     8    13
+ 4     4     9    14
+ 5     5    10    15
+ 6    16    21    26
+ 7    17    22    27
+ 8    18    23    28
+ 9    19    24    29
+10    20    25    30</code></pre>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a></a><span class="co">#| include: false</span></span>
+<span id="cb98-2"><a></a><span class="fu">rbind</span>(tibble1, tibble3) <span class="co"># error: col4 in tibble3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div class="card fragment card-alt1 h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p><span class="func">bind_rows()</span></p>
+</div>
+</div>
+<div class="card-body lessgap">
+<ul>
+<li>Can have different columns</li>
+<li>Missing values -&gt; <code>NA</code></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a></a><span class="fu">bind_rows</span>(tibble1, tibble3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+    col1  col2  col3  col4
+   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1     1     6    11    NA
+ 2     2     7    12    NA
+ 3     3     8    13    NA
+ 4     4     9    14    NA
+ 5     5    10    15    NA
+ 6    16    21    26    31
+ 7    17    22    27    32
+ 8    18    23    28    33
+ 9    19    24    29    34
+10    20    25    30    35</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="binding-columns" class="slide level2" style="font-size: .8em">
+<h2>Binding Columns</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: 1em; right: 1em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-12 fragment">
+<p>Append <strong>columns</strong> of one dataframe after the last column of another.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-6">
+<div class="card fragment h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p><span class="func">cbind</span></p>
+</div>
+</div>
+<div class="card-body lessgap">
+<ul>
+<li>Base R function</li>
+<li>dfs must have same number rows</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a></a><span class="fu">cbind</span>(tibble1, tibble4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  col1 col2 col3 col_1 col_2 col_3
+1    1    6   11    16    21    26
+2    2    7   12    17    22    27
+3    3    8   13    18    23    28
+4    4    9   14    19    24    29
+5    5   10   15    20    25    30</code></pre>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a></a><span class="co">#| include: false</span></span>
+<span id="cb103-2"><a></a><span class="fu">cbind</span>(tibble1, tibble5) </span>
+<span id="cb103-3"><a></a><span class="co"># Error in data.frame(..., check.names = FALSE) :</span></span>
+<span id="cb103-4"><a></a><span class="co"># arguments imply differing number of rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div class="card fragment card-alt1 h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p><span class="func">bind_cols()</span></p>
+</div>
+</div>
+<div class="card-body lessgap">
+<ul>
+<li><code>dplyr</code> function</li>
+<li>dfs must have same number rows</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a></a><span class="fu">bind_cols</span>(tibble1, tibble3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 7
+  col1...1 col2...2 col3...3 col1...4 col2...5 col3...6  col4
+     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+1        1        6       11       16       21       26    31
+2        2        7       12       17       22       27    32
+3        3        8       13       18       23       28    33
+4        4        9       14       19       24       29    34
+5        5       10       15       20       25       30    35</code></pre>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a></a><span class="co">#| include: false</span></span>
+<span id="cb106-2"><a></a><span class="fu">bind_cols</span>(tibble1, tibble5) </span>
+<span id="cb106-3"><a></a><span class="co"># Error in `bind_cols()`:</span></span>
+<span id="cb106-4"><a></a><span class="co"># ! Can't recycle `..1` (size 5) to match `..2` (size 6).</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bubble-chain">
+<p class="bubble-left fragment">
+If they work the same, which one should I use?
+</p>
+<p class="bubble-right fragment">
+Neither! Use joins instead.
+</p>
+</div>
+</section>
+<section id="joining-data" class="slide level2 left-sidebar-slide" data-fullscreen="true">
+<h2>Joining Data</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: 1em; right: 1em; height: 4em;; ">)</p>
+<div class="sidebar-column">
+<div class="sidebar-title">
+
+</div>
+<div class="sidebar-content">
+
+</div>
+</div>
+<div class="main-content">
+
+</div>
+</section>
+<section id="join-merge-tibbles-by-column-match" class="slide level2" style="font-size: .8em">
+<h2><code>*_join</code>: Merge tibbles by column match</h2>
+<p><img data-src="../images/icons/tv-icons/dplyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-6">
+<div class="overlap-box">
+<div class="box-title">
+<p>Include/exclude syntax:</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment" data-fragment-index="1">
+
+</div>
+<div class="fragment" data-fragment-index="2">
+
+</div>
+<div class="fragment" data-fragment-index="3">
+
+</div>
+<div class="fragment" data-fragment-index="4">
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-6" style="margin-top: 1em">
+<div class="fragment" data-fragment-index="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment" data-fragment-index="6" style="margin-top: 1em;">
+
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
 <section id="tidyr" class="title-slide slide level1 center">
 <h1><code>tidyr</code></h1>
-<p>Coming Thursday!</p>
-
 
 </section>
+<section id="tidyr-tidy-messy-data" class="slide level2 left-sidebar-slide" data-fullscreen="true">
+<h2><code>tidyr</code>: Tidy messy data</h2>
+<p><img data-src="../images/icons/tv-icons/tidyr.png" class="absolute" style="top: .5em; left: 1em; height: 3em; z-index: 10;; ">)</p>
+<div class="sidebar-column">
+<div class="sidebar-title">
+<p><span class="pkg">tidyr</span>: <br> Tidy messy data</p>
+</div>
+<div class="sidebar-content">
+<ul>
+<li class="fragment">Core tidyverse package for data tidying</li>
+<li class="fragment">Functions to reshape, split, merge, nest, and handle missing data</li>
+<li class="fragment">Works seamlessly with <code>dplyr</code> and tidy pipelines</li>
+</ul>
+</div>
+</div>
+<div class="main-content">
+<div class="r-stretch" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em;">
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
+<div class="box-icon" style="margin-bottom: 0.1em;">
+<p><i class="bi-check2-square " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
+<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
+<p><span class="func">pivot_*</span></p>
+</div>
+</div>
+<div class="box-content" style="text-align: center;">
+<p>Reshape wide and long data</p>
+</div>
+</div>
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
+<div class="box-icon" style="margin-bottom: 0.1em;">
+<p><i class="bi-funnel " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
+<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
+<p><span class="func">separate_*_*</span></p>
+</div>
+</div>
+<div class="box-content" style="text-align: center;">
+<p>Split values into columns</p>
+</div>
+</div>
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
+<div class="box-icon" style="margin-bottom: 0.1em;">
+<p><i class="bi-collection " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
+<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
+<p><span class="func">unite</span></p>
+</div>
+</div>
+<div class="box-content" style="text-align: center;">
+<p>Collapse values across columns</p>
+</div>
+</div>
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
+<div class="box-icon" style="margin-bottom: 0.1em;">
+<p><i class="bi-layer-backward " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
+<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
+<p><span class="func">expand</span>(+)</p>
+</div>
+</div>
+<div class="box-content" style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;">
+<p>Create missing combinations of data</p>
+</div>
+</div>
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
+<div class="box-icon" style="margin-bottom: 0.1em;">
+<p><i class="bi-node-plus-fill " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
+<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
+<p><span class="func">drop_na</span>(+)</p>
+</div>
+</div>
+<div class="box-content" style="text-align: center;">
+<p>Handle missing values</p>
+</div>
+</div>
+<div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
+<div class="box-icon" style="margin-bottom: 0.1em;">
+<p><i class="bi-calculator " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
+<div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
+<p><span class="func">nest</span></p>
+</div>
+</div>
+<div class="box-content" style="text-align: center;">
+<p>Embed tables in tables</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="wide-vs.-long-data" class="slide level2">
+<h2>Wide vs.&nbsp;Long Data</h2>
+<div class="container-fluid">
+<div class="row">
+<div class="col-6">
+<div class="card fragment h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>W–I–D–E Data</p>
+</div>
+</div>
+<div class="card-body lessgap">
+<ul>
+<li class="fragment">What Excel wants</li>
+<li class="fragment">First column (usually) contains unique values</li>
+<li class="fragment">Compact and human-friendly</li>
+<li class="fragment">Lacks precision</li>
+<li class="fragment">Difficult to manipulate structurally</li>
+<li class="fragment">Create with pivot_wider()</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-6">
+<div class="card fragment card-alt1 h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>L<em>oooooo</em>ng Data</p>
+</div>
+</div>
+<div class="card-body lessgap">
+<ul>
+<li class="fragment">What the Tidyverse wants</li>
+<li class="fragment">First column (often) repeats values</li>
+<li class="fragment">Difficult to spot patterns or comparisons</li>
+<li class="fragment">Precise &amp; standardized</li>
+<li class="fragment">Easily manipulable</li>
+<li class="fragment">Create with pivot_longer()</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>WIDE</p>
+<p>What you’re used to; “the Excel way” First column contains unique values Compact and human-friendly Lacks precision, hard to manipulate structurally create with pivot_wider() formerly/alternatively: spread, cast, pivot, unfold</p>
+<p>LONG</p>
+<p>What the tidyverse wants First column repeats values Difficulty to spot patterns or comparisons Easily manipulable, precise, standardized create with pivot_longer() formerly/alternatively: gather, melt, unpivot, fold</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="pivot_longer-reshape-wide-to-long" class="slide level2" style="font-size: .8em">
+<h2><code>pivot_longer</code>: Reshape wide to long</h2>
+<p><img data-src="../images/icons/tv-icons/tidyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-5">
+<div class="overlap-box" style="font-size: .9em">
+<div class="box-title">
+<p>Reshape long:</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb109"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb109-2"><a></a>    data, </span>
+<span id="cb109-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(...), </span>
+<span id="cb109-4"><a></a>    <span class="at">names_to =</span> <span class="st">"new_col1"</span>, </span>
+<span id="cb109-5"><a></a>    <span class="at">values_to =</span> <span class="st">"new_col2"</span>,</span>
+<span id="cb109-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>Move from grid of values to key-value pairs</li>
+<li>Human friendly -&gt; tidyverse friendly</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li><code>cols = c(...)</code>: Specify columns to pivot
+<ul>
+<li><em>Which columns contain the data to consolidate?</em></li>
+<li>Accepts tidyselect helpers</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li><code>names_to</code> = name of new column for former column names
+<ul>
+<li><em>Turn the pivoted columns’ <strong>names to</strong> values in this new column.</em></li>
+<li>Column names will become strings</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li><code>values_to</code> = name of new column for former values
+<ul>
+<li><em>Turn the pivoted columns’ <strong>values to</strong> values in this new column.</em></li>
+<li>Values must be of the same type</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-7" style="margin-top: 1em">
+<div class="fragment" data-fragment-index="5">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 30 × 8
+     Bag   Red Green  Blue Orange Yellow Brown Weight
+   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+ 1     1    15     9     3      3      9    19   49.8
+ 2     2     9    17    19      3      3     8   49.0
+ 3     3    14     8     6      8     19     4   50.4
+ 4     4    15     7     3      8     16     8   49.2
+ 5     5    10     3     7      9     22     4   47.6
+ 6     6    12     7     6      5     17    11   49.8
+ 7     7     6     7     3      6     26    10   50.2
+ 8     8    14    11     4      1     14    17   51.7
+ 9     9     4     2    10      6     18    18   48.4
+10    10     9     9     3      9      8    15   46.2
+# ℹ 20 more rows</code></pre>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12">
+<div class="fragment" data-fragment-index="6" style="margin-top: 1em;">
+<div class="longer-code">
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a></a>mm.long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb111-2"><a></a>    mm.raw,</span>
+<span id="cb111-3"><a></a>    <span class="co"># pivot columns between Red and Brown</span></span>
+<span id="cb111-4"><a></a>    <span class="at">cols =</span> Red<span class="sc">:</span>Brown, </span>
+<span id="cb111-5"><a></a>    <span class="co"># column names go to "Color"</span></span>
+<span id="cb111-6"><a></a>    <span class="at">names_to =</span> <span class="st">"Color"</span>, </span>
+<span id="cb111-7"><a></a>    <span class="co"># column values go to "Number"</span></span>
+<span id="cb111-8"><a></a>    <span class="at">values_to =</span> <span class="st">"Number"</span>) </span>
+<span id="cb111-9"><a></a></span>
+<span id="cb111-10"><a></a>mm.long</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 180 × 4
+     Bag Weight Color  Number
+   &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
+ 1     1   49.8 Red        15
+ 2     1   49.8 Green       9
+ 3     1   49.8 Blue        3
+ 4     1   49.8 Orange      3
+ 5     1   49.8 Yellow      9
+ 6     1   49.8 Brown      19
+ 7     2   49.0 Red         9
+ 8     2   49.0 Green      17
+ 9     2   49.0 Blue       19
+10     2   49.0 Orange      3
+# ℹ 170 more rows</code></pre>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pivot_wider-reshape-wide-to-long" class="slide level2" style="font-size: .8em">
+<h2><code>pivot_wider</code>: Reshape wide to long</h2>
+<p><img data-src="../images/icons/tv-icons/tidyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-5">
+<div class="overlap-box" style="font-size: .9em">
+<div class="box-title">
+<p>Reshape wide:</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb113"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a></a><span class="fu">pivot_wider</span>(</span>
+<span id="cb113-2"><a></a>    data, </span>
+<span id="cb113-3"><a></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(...),</span>
+<span id="cb113-4"><a></a>    <span class="at">names_from =</span> <span class="st">"col1"</span>, </span>
+<span id="cb113-5"><a></a>    <span class="at">values_from =</span> <span class="st">"col2"</span>,</span>
+<span id="cb113-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li>Move from key-value pairs to grid of values</li>
+<li>Tidyverse friendly -&gt; human friendly</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li><code>id_cols = c(...)</code>: Specify columns to keep as identifiers
+<ul>
+<li><em>Which columns should remain as-is (not pivoted)?</em></li>
+<li>Defaults to all non-pivoted columns</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li><code>names_from</code> = name of column to use for new column names
+<ul>
+<li><em>Create column <strong>names from</strong> values in which column?</em></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li><code>values_from</code> = name of column to use for new values
+<ul>
+<li><em>Fill new columns with <strong>values from</strong> which column?</em></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-7" style="margin-top: 1em">
+<div class="row">
+<div class="col-5">
+<div class="fragment" data-fragment-index="5">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 180 × 4
+     Bag Weight Color  Number
+   &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
+ 1     1   49.8 Red        15
+ 2     1   49.8 Green       9
+ 3     1   49.8 Blue        3
+ 4     1   49.8 Orange      3
+ 5     1   49.8 Yellow      9
+ 6     1   49.8 Brown      19
+ 7     2   49.0 Red         9
+ 8     2   49.0 Green      17
+ 9     2   49.0 Blue       19
+10     2   49.0 Orange      3
+# ℹ 170 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="col-7">
+<div class="fragment" data-fragment-index="6">
+<div class="longer-code">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb115"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a></a>mm.wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(</span>
+<span id="cb115-2"><a></a>    mm.long,</span>
+<span id="cb115-3"><a></a>    <span class="co"># Every value in `Color` becomes a column</span></span>
+<span id="cb115-4"><a></a>    <span class="at">names_from =</span> <span class="st">"Color"</span>, </span>
+<span id="cb115-5"><a></a>    <span class="co"># Values from `Number` go to new columns</span></span>
+<span id="cb115-6"><a></a>    <span class="at">values_from =</span> <span class="st">"Number"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb115-7"><a></a><span class="co"># Move `Weight` column to end</span></span>
+<span id="cb115-8"><a></a><span class="fu">relocate</span>(Weight, <span class="at">.after =</span> <span class="fu">last_col</span>())</span>
+<span id="cb115-9"><a></a></span>
+<span id="cb115-10"><a></a>mm.wide</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12">
+<div class="fragment" data-fragment-index="7" style="margin-top: 1em;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 30 × 8
+     Bag   Red Green  Blue Orange Yellow Brown Weight
+   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+ 1     1    15     9     3      3      9    19   49.8
+ 2     2     9    17    19      3      3     8   49.0
+ 3     3    14     8     6      8     19     4   50.4
+ 4     4    15     7     3      8     16     8   49.2
+ 5     5    10     3     7      9     22     4   47.6
+ 6     6    12     7     6      5     17    11   49.8
+ 7     7     6     7     3      6     26    10   50.2
+ 8     8    14    11     4      1     14    17   51.7
+ 9     9     4     2    10      6     18    18   48.4
+10    10     9     9     3      9      8    15   46.2
+# ℹ 20 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="separate_wider_delim-split-column-into-multiple-columns" class="slide level2" style="font-size: .8em">
+<h2><code>separate_wider_delim</code>: Split column into multiple columns</h2>
+<p><img data-src="../images/icons/tv-icons/tidyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-5">
+<div class="overlap-box" style="font-size: .9em">
+<div class="box-title">
+<p>Split column values:</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb117"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
+<span id="cb117-2"><a></a>    data, </span>
+<span id="cb117-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"col1"</span>, ...), </span>
+<span id="cb117-4"><a></a>    <span class="at">delim =</span> <span class="st">"delimiter character(s)"</span>, </span>
+<span id="cb117-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"new_col1"</span>, <span class="st">"new_col2"</span>, ...),</span>
+<span id="cb117-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li class="fragment">Split values in column into multiple columns based on delimiter characters</li>
+<li class="fragment">Non-character values (e.g., numbers) are coerced to character</li>
+<li class="fragment">Specify new column names</li>
+<li class="fragment"><code>cols = c("col1", ...)</code>: Specify column(s) to separate
+<ul>
+<li class="fragment"><em>Which column(s) contain the data to split?</em></li>
+</ul></li>
+<li class="fragment"><code>delim = "delimiter character(s)"</code>: Character(s) to split on
+<ul>
+<li class="fragment">e.g., <code>,</code> or <code>"_"</code></li>
+</ul></li>
+<li class="fragment"><code>names = c("new_col1", "new_col2", ...)</code>: Names for new columns</li>
+<li class="fragment">Related:
+<ul>
+<li class="fragment"><span class="func"><code>separate_wider_regex()</code></span>: split by regex match</li>
+<li class="fragment"><span class="func"><code>separate_wider_position()</code></span>: split values by fixed widths</li>
+<li class="fragment"><span class="func"><code>separate_longer_delim()</code></span>: split into multiple rows</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-7">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  condition participant score notes          
+      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;          
+1         1           1 0.885 glasses_none   
+2         1           1 0.553 glasses_none   
+3         1           2 0.906 none_none      
+4         1           2 0.587 none_none      
+5         1           3 0.423 none_incomplete</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment" style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
+<span id="cb119-2"><a></a>    glasses,</span>
+<span id="cb119-3"><a></a>    <span class="at">cols =</span> notes,</span>
+<span id="cb119-4"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
+<span id="cb119-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(</span>
+<span id="cb119-6"><a></a>        <span class="st">"wears_glasses"</span>, <span class="st">"notes"</span></span>
+<span id="cb119-7"><a></a>        )</span>
+<span id="cb119-8"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb119-9"><a></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  condition participant score wears_glasses notes     
+      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;     
+1         1           1 0.885 glasses       none      
+2         1           1 0.553 glasses       none      
+3         1           2 0.906 none          none      
+4         1           2 0.587 none          none      
+5         1           3 0.423 none          incomplete</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="unite-collapse-multiple-columns-into-one" class="slide level2" style="font-size: .8em">
+<h2><code>unite</code>: Collapse multiple columns into one</h2>
+<p><img data-src="../images/icons/tv-icons/tidyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-5">
+<div class="overlap-box" style="font-size: .9em">
+<div class="box-title">
+<p>Collapse columns:</p>
+</div>
+<div class="box-content">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a></a><span class="fu">unite</span>(</span>
+<span id="cb121-2"><a></a>    data,</span>
+<span id="cb121-3"><a></a>    <span class="at">col =</span> <span class="st">"new_col"</span>,</span>
+<span id="cb121-4"><a></a>    old_col1,</span>
+<span id="cb121-5"><a></a>    old_col2,</span>
+<span id="cb121-6"><a></a>    ... <span class="co"># more columns</span></span>
+<span id="cb121-7"><a></a>    <span class="at">sep =</span> <span class="st">"separator character(s)"</span>,</span>
+<span id="cb121-8"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li class="fragment">Combine multiple columns into one column</li>
+<li class="fragment">Values are concatenated with specified separator</li>
+<li class="fragment"><code>col = "new_col"</code>: Name of new column</li>
+<li class="fragment"><code>sep = "separator character(s)"</code>: Character(s) to insert between values
+<ul>
+<li class="fragment">Default: <code>_</code></li>
+<li class="fragment">Use empty string <code>""</code> for no separator</li>
+</ul></li>
+<li class="fragment">Use <code>remove = FALSE</code> to keep original columns</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-7">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  condition participant score notes          
+      &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;          
+1         1           1 0.885 glasses_none   
+2         1           1 0.553 glasses_none   
+3         1           2 0.906 none_none      
+4         1           2 0.587 none_none      
+5         1           3 0.423 none_incomplete</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment" style="margin-top: 1em;">
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
+<span id="cb123-2"><a></a>    glasses,</span>
+<span id="cb123-3"><a></a>    <span class="at">cols =</span> notes,</span>
+<span id="cb123-4"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
+<span id="cb123-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(</span>
+<span id="cb123-6"><a></a>        <span class="st">"wears_glasses"</span>, <span class="st">"notes"</span></span>
+<span id="cb123-7"><a></a>        )</span>
+<span id="cb123-8"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb123-9"><a></a><span class="fu">unite</span>(</span>
+<span id="cb123-10"><a></a>    <span class="at">col =</span> <span class="st">"conditionParticipant"</span>,</span>
+<span id="cb123-11"><a></a>    condition, participant,</span>
+<span id="cb123-12"><a></a>    <span class="at">sep =</span> <span class="st">";"</span>,</span>
+<span id="cb123-13"><a></a>) <span class="sc">|&gt;</span></span>
+<span id="cb123-14"><a></a><span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  conditionParticipant score wears_glasses notes     
+  &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;     
+1 1;1                  0.885 glasses       none      
+2 1;1                  0.553 glasses       none      
+3 1;2                  0.906 none          none      
+4 1;2                  0.587 none          none      
+5 1;3                  0.423 none          incomplete</code></pre>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tools-for-handling-incomplete-and-missing-data" class="slide level2">
+<h2>Tools for handling incomplete and missing data</h2>
+<p>Create a simple example dataset with missing values:</p>
+</section>
+<section id="expand-complete-create-missing-combinations" class="slide level2" style="font-size: .8em">
+<h2><code>expand</code> &amp; <code>complete</code>: Create missing combinations</h2>
+<p><img data-src="../images/icons/tv-icons/tidyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-5">
+<div class="overlap-box">
+<div class="box-title">
+<p>Create missing combinations:</p>
+</div>
+<div class="box-content">
+<div class="row">
+<div class="col-6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb125"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a></a><span class="fu">expand</span>(</span>
+<span id="cb125-2"><a></a>    data,</span>
+<span id="cb125-3"><a></a>    <span class="at">col1 =</span> <span class="fu">c</span>(...),</span>
+<span id="cb125-4"><a></a>    <span class="at">col2 =</span> <span class="fu">c</span>(...),</span>
+<span id="cb125-5"><a></a>    ...)</span>
+<span id="cb125-6"><a></a><span class="er">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="col-6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a></a><span class="fu">complete</span>(</span>
+<span id="cb126-2"><a></a>    data,</span>
+<span id="cb126-3"><a></a>    <span class="at">col1 =</span> <span class="fu">c</span>(...),</span>
+<span id="cb126-4"><a></a>    <span class="at">col2 =</span> <span class="fu">c</span>(...),</span>
+<span id="cb126-5"><a></a>    ...)</span>
+<span id="cb126-6"><a></a><span class="er">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<ul>
+<li class="fragment"><span class="func">expand</span>: Generate all possible combinations of values across specified columns</li>
+<li class="fragment"><span class="func">complete</span>: Fill in missing rows in data with <code>NA</code> for missing combinations
+<ul>
+<li class="fragment">Actually a wrapper for <code>expand()</code></li>
+</ul></li>
+<li class="fragment">Useful for:
+<ul>
+<li class="fragment">Identifying non-obvious missing data points</li>
+<li class="fragment">Preparing data for analyses that require complete cases</li>
+<li class="fragment">Ensuring consistent structure across datasets</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-7">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  date       station temp_max temp_min notes 
+  &lt;date&gt;     &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; 
+1 2026-01-20 North         NA       18 Clear 
+2 2026-01-21 North         32       15 &lt;NA&gt;  
+3 2026-01-21 South         28       NA Windy 
+4 2026-01-23 South         30       20 &lt;NA&gt;  
+5 2026-01-24 North         NA       17 Cloudy</code></pre>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-5">
+<div class="fragment" style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a></a><span class="fu">expand</span>(weather, </span>
+<span id="cb128-2"><a></a>    date, </span>
+<span id="cb128-3"><a></a>    station)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 2
+  date       station
+  &lt;date&gt;     &lt;chr&gt;  
+1 2026-01-20 North  
+2 2026-01-20 South  
+3 2026-01-21 North  
+4 2026-01-21 South  
+5 2026-01-23 North  
+6 2026-01-23 South  
+7 2026-01-24 North  
+8 2026-01-24 South  </code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="col-7">
+<div class="fragment" style="margin-top: 1em;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a></a><span class="fu">complete</span>(weather, date, station)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 5
+  date       station temp_max temp_min notes 
+  &lt;date&gt;     &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; 
+1 2026-01-20 North         NA       18 Clear 
+2 2026-01-20 South         NA       NA &lt;NA&gt;  
+3 2026-01-21 North         32       15 &lt;NA&gt;  
+4 2026-01-21 South         28       NA Windy 
+5 2026-01-23 North         NA       NA &lt;NA&gt;  
+6 2026-01-23 South         30       20 &lt;NA&gt;  
+7 2026-01-24 North         NA       17 Cloudy
+8 2026-01-24 South         NA       NA &lt;NA&gt;  </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="drop_na-replace_na-drop-and-replace-missing-values" class="slide level2">
+<h2><code>drop_na</code> &amp; <code>replace_na</code>: Drop and replace missing values</h2>
+<p><img data-src="../images/icons/tv-icons/tidyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="overlap-box">
+<div class="box-title">
+<p>Drop rows with missing values</p>
+</div>
+<div class="box-content">
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a></a><span class="co"># Missing any value in any column</span></span>
+<span id="cb132-2"><a></a><span class="fu">drop_na</span>(weather) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 0 × 5
+# ℹ 5 variables: date &lt;date&gt;, station &lt;chr&gt;, temp_max &lt;dbl&gt;, temp_min &lt;dbl&gt;,
+#   notes &lt;chr&gt;</code></pre>
+</div>
+</div></div>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a></a><span class="co"># Missing values in specific columns</span></span>
+<span id="cb134-2"><a></a><span class="fu">drop_na</span>(weather, temp_max, temp_min)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  date       station temp_max temp_min notes
+  &lt;date&gt;     &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;
+1 2026-01-21 North         32       15 &lt;NA&gt; 
+2 2026-01-23 South         30       20 &lt;NA&gt; </code></pre>
+</div>
+</div></div>
+</div>
+</div>
+<div class="overlap-box overlap-box-blue">
+<div class="box-title">
+<p>Replace all <code>NA</code> in columns with specific value</p>
+</div>
+<div class="box-content">
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a></a><span class="fu">replace_na</span>(weather, </span>
+<span id="cb136-2"><a></a>           <span class="fu">list</span>(<span class="at">temp_max =</span> <span class="dv">999</span>, </span>
+<span id="cb136-3"><a></a>                <span class="at">temp_min =</span> <span class="sc">-</span><span class="dv">999</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  date       station temp_max temp_min notes 
+  &lt;date&gt;     &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; 
+1 2026-01-20 North        999       18 Clear 
+2 2026-01-21 North         32       15 &lt;NA&gt;  
+3 2026-01-21 South         28     -999 Windy 
+4 2026-01-23 South         30       20 &lt;NA&gt;  
+5 2026-01-24 North        999       17 Cloudy</code></pre>
+</div>
+</div></div>
+</div>
+</div>
+</section>
+<section id="fill-dependently-replace-missing-values" class="slide level2" style="font-size: .7em;">
+<h2><code>fill</code>: Dependently replace missing values</h2>
+<p><img data-src="../images/icons/tv-icons/tidyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<div class="container-fluid">
+<div class="row">
+<div class="col-4">
+<div class="card fragment h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>Fill <code>NA</code> with previous:</p>
+</div>
+</div>
+<div class="card-body lessgap">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"down"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  date       station temp_max temp_min notes 
+  &lt;date&gt;     &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; 
+1 2026-01-20 North         NA       18 Clear 
+2 2026-01-21 North         32       15 &lt;NA&gt;  
+3 2026-01-21 South         28       NA Windy 
+4 2026-01-23 South         30       20 &lt;NA&gt;  
+5 2026-01-24 North         30       17 Cloudy</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="card fragment card-alt1 h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>Fill <code>NA</code> with next:</p>
+</div>
+</div>
+<div class="card-body lessgap">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"up"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  date       station temp_max temp_min notes 
+  &lt;date&gt;     &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; 
+1 2026-01-20 North         32       18 Clear 
+2 2026-01-21 North         32       15 &lt;NA&gt;  
+3 2026-01-21 South         28       NA Windy 
+4 2026-01-23 South         30       20 &lt;NA&gt;  
+5 2026-01-24 North         NA       17 Cloudy</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div class="card fragment h-100">
+<div class="card-header">
+<div class="card-title" style="color: #fff">
+<p>Fill previous, then next:</p>
+</div>
+</div>
+<div class="card-body lessgap">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb142"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"downup"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 5
+  date       station temp_max temp_min notes 
+  &lt;date&gt;     &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; 
+1 2026-01-20 North         32       18 Clear 
+2 2026-01-21 North         32       15 &lt;NA&gt;  
+3 2026-01-21 South         28       NA Windy 
+4 2026-01-23 South         30       20 &lt;NA&gt;  
+5 2026-01-24 North         30       17 Cloudy</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="nesting" class="slide level2">
+<h2>Nesting</h2>
+<p><img data-src="../images/icons/tv-icons/tidyr.png" class="absolute" style="top: -1.5em; right: 0em; height: 4em;; "></p>
+<p><span class="keyword">Nesting</span>: embedding a data frame within a data frame</p>
+<p><span class="keyword">Rectangling</span>: the reverse process of un-nesting (e.g., making JSON into tidy tibbles)</p>
+<p>These are beyond the scope of this class, but here’s some fine print if you’re interested:</p>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nested Data</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>nested df is one where 1+ columns is a list of data frames</li>
+<li>conceptually related to grouping with <code>group_by()</code>:
+<ul>
+<li>1 row in input -&gt; 1 group in output</li>
+</ul></li>
+</ul>
+<p>Imagine a data frame with columns x, y, and z:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb144"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a></a>df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(x) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(y), <span class="at">sum =</span> <span class="fu">sum</span>(z))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Each row in the summarized output processes data (here the mean of y and the sum of z) about multiple rows in the input, defined by the unique values of the group (here x).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb145"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a></a>df2 <span class="sc">%&gt;%</span> <span class="fu">nest</span>(<span class="at">my_nested_var =</span> <span class="fu">c</span>(y, z))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Each row in the nested output contains the data itself (unchanged) associated with those rows (the values in columns y and z) as defined by the unique values of everything that isn’t nested (here x). Since the data is unchanged, the data in the new variable is itself a table (or tibble). The columns in the nested tibble are the columns you passed to it and the rows are all the original rows within each “group”.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="alert alert-warning fragment" style="position: absolute; width: 50%; top: 3em; right: 3em;, font-size: .8em">
+<p><strong>You probably won’t need this</strong> so don’t stress if that seems like gibberish. It’s just a useful concept.</p>
+<p>For more info see <a href="https://tidyr.tidyverse.org/articles/nest.html">this tidyverse article on nesting</a>.</p>
+<p>Page 2 of the <a href="https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf">tidyr cheatsheet</a> is dedicated to nesting concepts and functions.</p>
+</div>
+</section></section>
+<section>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
+
+</section>
+<section id="tidyverse-workflow" class="slide level2">
+<h2>Tidyverse Workflow</h2>
+</section>
+<section id="processflow-with-icons" class="slide level2 scrollable">
+<h2>Process/flow with icons</h2>
+<div style="display: grid; grid-template-columns: 1fr 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr; grid-template-rows: auto 3em auto; gap: 8px;">
+<!-- Row 1: Steps 1-4 -->
+<div class="flow-box fragment" style="grid-column: 1; grid-row: 1; background-color: #800000;">
+<ol type="1">
+<li class="fragment">Import data with <code>readr</code></li>
+</ol>
+<div class="flow-icon-circle">
+<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
+</div>
+</div>
+<div class="flow-arrow fragment" style="grid-column: 2; grid-row: 1;">
+<p><i class="bi-arrow-right-circle-fill " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="flow-box fragment" style="grid-column: 3; grid-row: 1; background-color: #6e0e10;">
+<ol start="2" type="1">
+<li class="fragment">Apply structure with <code>tibble</code></li>
+</ol>
+<div class="flow-icon-circle">
+<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
+</div>
+</div>
+<div class="flow-arrow fragment" style="grid-column: 4; grid-row: 1;">
+<p><i class="bi-arrow-right-circle-fill " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="flow-box fragment" style="grid-column: 5; grid-row: 1; background-color: #5b1b21;">
+<ol start="3" type="1">
+<li class="fragment">Tidy data with <code>tidyr</code></li>
+</ol>
+<div class="flow-icon-circle">
+<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
+</div>
+</div>
+<div class="flow-arrow fragment" style="grid-column: 6; grid-row: 1;">
+<p><i class="bi-arrow-right-circle-fill " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="flow-box fragment" style="grid-column: 7; grid-row: 1; background-color: #492931;">
+<ol start="4" type="1">
+<li class="fragment">Manipulate tibbles with <code>dplyr</code></li>
+</ol>
+<div class="flow-icon-circle">
+<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
+</div>
+</div>
+<!-- Down arrow -->
+<div class="flow-arrow fragment" style="grid-column: 7; grid-row: 2;">
+<p><i class="bi-arrow-down-circle-fill " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<!-- Row 2: Steps 5-8 (in reverse order) -->
+<div class="flow-box fragment" style="grid-column: 7; grid-row: 3; background-color: #373642;">
+<ol start="5" type="1">
+<li class="fragment">Manipulate strings with <code>stringr</code></li>
+</ol>
+<div class="flow-icon-circle">
+<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
+</div>
+</div>
+<div class="flow-arrow fragment" style="grid-column: 6; grid-row: 3;">
+<p><i class="bi-arrow-left-circle-fill " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="flow-box fragment" style="grid-column: 5; grid-row: 3; background-color: #254452;">
+<ol start="6" type="1">
+<li class="fragment">Manipulate factors with <code>forcats</code></li>
+</ol>
+<div class="flow-icon-circle">
+<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
+</div>
+</div>
+<div class="flow-arrow fragment" style="grid-column: 4; grid-row: 3;">
+<p><i class="bi-arrow-left-circle-fill " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="flow-box fragment" style="grid-column: 3; grid-row: 3; background-color: #125163;">
+<ol start="7" type="1">
+<li class="fragment">Visualize with <code>ggplot2</code></li>
+</ol>
+<div class="flow-icon-circle">
+<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
+</div>
+</div>
+<div class="flow-arrow fragment" style="grid-column: 2; grid-row: 3;">
+<p><i class="bi-arrow-left-circle-fill " style="" role="img" aria-hidden="true"></i></p>
+</div>
+<div class="flow-box fragment" style="grid-column: 1; grid-row: 3; background-color: #005f73;">
+<ol start="8" type="1">
+<li class="fragment">Model with <code>broom</code> and <code>modelr</code></li>
+</ol>
+<div class="flow-icon-circle">
+<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
+</div>
+</div>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
