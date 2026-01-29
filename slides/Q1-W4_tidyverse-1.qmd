@@ -586,8 +586,8 @@ a grammar of graphics
 
 ::: sidebar-column
 ::: sidebar-title
-
-[tibble]{.pkg}: <br>Better Data Frames
+ 
+[tibble]{.pkg}: <br>Better data frames
 
 :::
 

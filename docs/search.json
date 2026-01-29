@@ -46,7 +46,7 @@
     "href": "slides/Q1-W4_tidyverse-1.html#tibble-better-data-frames",
     "title": "Welcome to the Tidyverse",
     "section": "tibble: Better Data Frames",
-    "text": "tibble: Better Data Frames\n)\n\n\ntibble: Better Data Frames\n\n\n\nAdaptation of base R’s data.frame\nTibbles are also data.frames\n\nCheck with class() or str()\n\nTidyverse functions work with tibbles\n\nusually add the tibble class automatically\n\nFunctionally equivalent\n\n\n\n\n\n\n\n\n\n\n\nAdaptation of base R’s data.frame structure that makes a lot of things easier Tibbles are also data.frames (check the class() or str() functions) Tidyverse package(s) work with tibbles, not base data.frames Load the tidyverse library to use tibble-related functions"
+    "text": "tibble: Better Data Frames\n)\n\n\ntibble: Better data frames\n\n\n\nAdaptation of base R’s data.frame\nTibbles are also data.frames\n\nCheck with class() or str()\n\nTidyverse functions work with tibbles\n\nusually add the tibble class automatically\n\nFunctionally equivalent\n\n\n\n\n\n\n\n\n\n\n\nAdaptation of base R’s data.frame structure that makes a lot of things easier Tibbles are also data.frames (check the class() or str() functions) Tidyverse package(s) work with tibbles, not base data.frames Load the tidyverse library to use tibble-related functions"
   },
   {
     "objectID": "slides/Q1-W4_tidyverse-1.html#tibble-implicit-data",
