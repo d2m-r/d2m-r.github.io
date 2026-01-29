@@ -578,7 +578,7 @@ a grammar of graphics
 
 # `tibble`
 
-## `tibble`: Better Data Frames {.left-sidebar-slide fullscreen=true}
+## `tibble`: Better Data Frames {.left-sidebar-slide fullscreen=true style="font-size: .8;"}
 
 ![](../images/icons/tv-icons/tibble.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"})
 
@@ -663,7 +663,7 @@ More on the pipe later. For now, know that when these slides show non-executed e
 
 # `readr`
 
-## `readr`: Read & Write Tibbles {.left-sidebar-slide fullscreen=true}
+## `readr`: Read & Write Tibbles {.left-sidebar-slide fullscreen=true style="font-size: .8;"}
 
 ![](../images/icons/tv-icons/readr.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"})
 
@@ -784,7 +784,7 @@ This is for *all* file operations, not just `readr` functions.
 :::
 
 
-## Importing with `readr` {.left-sidebar-slide fullscreen=true}
+## Importing with `readr` {.left-sidebar-slide fullscreen=true style="font-size: .8;"}
 
 ![](../images/icons/tv-icons/readr.png){.absolute top="1em" right="1em" height="4em;"})
 
@@ -837,7 +837,7 @@ my_shortcut <- read_*(file.csv, col_types = "fc")
 
 :::
 
-## Exporting with `readr` {.left-sidebar-slide fullscreen=true}
+## Exporting with `readr` {.left-sidebar-slide fullscreen=true style="font-size: .8;"}
 
 ![](../images/icons/tv-icons/readr.png){.absolute top="1em" right="1em" height="4em;"})
 
@@ -1289,7 +1289,7 @@ Use write_csv() to save mmdata to an intermediate dataset: `in-class-materials/d
 # `dplyr`
 
 
-## `dplyr`: Data Transformation {.left-sidebar-slide fullscreen=true}
+## `dplyr`: Data Transformation {.left-sidebar-slide fullscreen=true style="font-size: .8;"}
 
 ![](../images/icons/tv-icons/dplyr.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"})
 
@@ -3010,37 +3010,7 @@ bind_cols(tibble1, tibble5)
 :::
 
 
-## Joining Data {.left-sidebar-slide fullscreen=true}
-
-![](../images/icons/tv-icons/dplyr.png){.absolute top="1em" right="1em" height="4em;"})
-
-::: sidebar-column
-
-::: sidebar-title
-
-
-
-:::
-
-::: sidebar-content
-
-
-
-
-:::
-
-:::
-
-
-
-::: main-content
-
-
-
-
-:::
-
-## Joins (SQL-style) {.left-sidebar-slide fullscreen=true}
+## Joins (SQL-style) {.left-sidebar-slide fullscreen=true style="font-size: .8;"}
 
 ::: sidebar-column
 ::: sidebar-title
@@ -3560,7 +3530,7 @@ glasses <- tibble(
 )
 ```
 
-## `tidyr`: Tidy messy data {.left-sidebar-slide fullscreen=true}
+## `tidyr`: Tidy messy data {.left-sidebar-slide fullscreen=true style="font-size: .8;"}
 
 ![](../images/icons/tv-icons/tidyr.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"})
 
