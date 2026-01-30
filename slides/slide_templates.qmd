@@ -5,16 +5,16 @@ date: "1/1/2026"
 footer: "D2M-R I & II" #  quarter, week, and class
 
 format: revealjs
+engine: knitr
 
 revealjs-plugins:
   - codefocus
   - fullscreen
 
-engine: knitr
 fullscreen: false
 
 execute:
-  #echo: true
+  echo: true
   warning: false
   message: false
 editor: source
