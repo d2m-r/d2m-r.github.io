@@ -381,6 +381,14 @@ h6 {
     background-color:$accent3;
 }
 
+.dark1-box {
+    background-color:mix($dark, $accent1, 45%);
+    color: $light;
+}
+
+.dark2-box {
+    background-color:mix($dark, $accent1, 30%);
+}
 
 
  

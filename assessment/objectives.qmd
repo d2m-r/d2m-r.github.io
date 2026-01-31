@@ -1,46 +1,13 @@
 ---
-title: "Core Standards & Learning Objectives"
+title: "Core Learning Objectives"
 ---
-
-## Quarter 1 Core Standards {#sec-core-standards}
-
-The 12 Quarter‑1 core learning objectives are all **technical and observable**. For each one ask: *Is there clear, identifiable code or output that shows this skill?*
-
-The objectives are listed (more or less) in the order they are covered in class, but you can demonstrate them in any order.
-
-1. **RStudio + Quarto workflow**
-    - Create an RStudio project for course work, use relative paths, and knit simple Quarto documents that combine code and narrative.
-    - [Additional guidelines for RStudio/Quarto Workflow objective](misc/workflow-assessment.qmd)
-2. **GitHub repositories and version control**
-    - Create and maintain a GitHub repo with README, .gitignore, and a commit history that reflects real work over time.
-    - [Additional guidelines for GitHub/Version Control objective](misc/gh-assessment.qmd)
-3. **Base R syntax and data structures**
-    - Create, index, and manipulate vectors, lists, and data frames, including handling missing data.
-4. **Control flow (if/else, loops)**
-    - Use if/else and loops to branch logic and automate repetitive tasks in multiple contexts.
-5. **Defining functions in Base R**
-    - Define and use functions with arguments and return values with reusable code logic in multiple contexts.
-6. **Importing data with tidyverse tools**
-    - Import datasets with readr and related packages, handling paths and basic options.
-7. **Data manipulation with dplyr and pipelines**
-    - Use multiple dplyr verbs (filter, select, mutate, summarize, arrange, group_by) in chained pipelines.
-8. **Tidy data structure**
-    - Diagnose untidy data and reshape to a tidy format, with explanation.
-9. **Reshaping data with tidyr**
-    - Use multiple tidyr functions (pivot_longer/pivot_wider/separate/unite) to reshape data.
-10. **Character strings with stringr**
-    - Use stringr functions (e.g., str_detect, str_replace, str_extract) to solve text cleaning or extraction tasks.
-11. **Factors with forcats**
-    - Recode, reorder, and/or lump factor levels to prepare categorical variables for analysis or plotting.
-12. **Basic reporting: plots and descriptives in Quarto**
-    - Create simple ggplot2 plots and compute/report basic descriptive statistics (means, medians, counts, proportions) in a Quarto document with clear captions and narrative.
 
 ## Tiered Scoring
 
-Each standard is scored on a 4 / 5 / 6 point scale based on the quality and independence of your demonstration of the skill. 
+Each objective is scored on a 4 / 5 / 6 point scale based on the quality and independence of your demonstration of the skill. 
 
 | Points | Label | Description |
-| --- | --- | --- |
+| --- | ------ | -------- |
 | *No grade* | *No demonstration* | *You have not yet demonstrated this skill.* |
 | **4** | **Meets Expectations** | You demonstrate the skill correctly in structured or familiar contexts (for example, following a guided assignment or closely modeled example). |
 | **5** | **Exceeds Expectations** | You apply the skill correctly and independently in a novel context, with clear, well-chosen code that would generalize to new datasets or problems. |
@@ -55,14 +22,655 @@ Individual assignments may not be resubmitted for a higher score, but you may im
 
 *Higher scores always replace lower scores for core standards*, so after earning a high score with an impressive assignment, subsequent assignments that use the skill at a more basic level won't lower your score.
 
+## General Grading Guidelines
 
-<!-- ::: callout-note -->
 
-<!-- ### Example -->
+- **It is possible to earn a score without checking off each specific requirement if the overall work clearly demonstrates foundational (4), strong (5), or outstanding (6) skills.** These guidelines are intended to give you confidence in your work before submission. They should not be interpreted as perfectly rigid requirements to work against you. If you have met all the expectations listed for a score, you will not earn lower than that score.
+- Code failing to execute correctly does not necessarily preclude earning points for an objective. R scripts, code chunks, and knitted documents that do not execute or render as intended may still receive credit if the problems are minor and there is evidence of the objective in other parts of the submission.
+- All three levels represent successful demonstrations. No credit is given if the skill is not demonstrated at minimum 4-point level.
+- Higher scores always replace lower scores, so students can improve by submitting new work.
+- Individual assignments cannot be resubmitted for regrading, but students may submit new assignments demonstrating the same standard at a higher level. In rare cases, students may be invited to correct trivial errors or reattempt assignments following significant misunderstanding.
+- The less structured the project, the higher the potential score. Structured projects with extensive scaffolding typically cap at 4-5 points, while unstructured projects can more easily reach 6.
 
-<!-- You submit a "skeleton repo" assignment, showing that you have successfully created a GitHub repository with a README and .gitignore file. This assignment earns you a 4 for Standard 2 (GitHub repositories and version control). Later, you work with a partner on a "make-a-mess" assignment and opt to create a dedicated repo for your work. Both you and your partner contribute commits and branches and effectively use GitHub issues to track your progress, earning you a 5 for Standard 2 that replaces your 4. In future assignments, you can use GitHub minimally and still keep your 5, or you can choose to continue to showing more sophisticated use of GitHub to replace your 5 with a 6. -->
 
-<!-- ::: -->
+## Quarter 1 Core Learning Objectives {#sec-core-standards}
 
+The 12 Quarter‑1 core learning objectives are all **technical and observable**. For each one ask: *Is there clear, identifiable code or output that shows this skill?*
+
+The objectives are listed (more or less) in the order they are covered in class, but you can demonstrate them in any order.
+
+::: {.accordion #q1-objectives} 
+
+::: {.accordion-item}
+::: {.accordion-header .titlebox}
+
+Quarter 1 | Core Learning Objectives
+
+:::
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark1-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-1" aria-expanded="false" aria-controls="obj-1"}
+
+Objective 1: **RStudio + Quarto workflow**
+
+:::
+:::
+
+::: {#obj-1 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+
+**Core standard:** Create an RStudio project for coursework, use relative paths, and knit simple Quarto documents that combine code and narrative.
+
+
+### Grading Criteria:
+
+**Basic Class Expectation, No Points**
+
+To fully participate in the class, you need to have simple proficiency with RStudio and Quarto. You are expected to be able to execute the following workflow, separately from the core standard:
+
+- [ ]  Create an RStudio project (typically by cloning a GitHub Classroom assignment repo)
+- [ ]  Use relative paths to read and write files within your project
+- [ ]  Write a Quarto document that combines code chunks and narrative text
+- [ ]  Knit the .qmd file to an output format (.html, .pdf, or .docx) without errors
+
+**4 Points:**
+
+- [ ]  RStudio project created (typically by cloning repo)
+- [ ]  **At least 2** chunks have labels and a chunk option (e.g., `echo=FALSE`)
+- [ ]  Multiple markdown elements used (headings, lists, text styling)
+- [ ]  .qmd knits without errors to .html, .docx, or .pdf
+- [ ]  At least one line of code reads from relative path and one writes to relative path
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Reasonable directory structure with at least 2 subdirectories
+- [ ]  All code chunks have labels and at least one chunk option
+- [ ]  **At least 2 unique** chunk options used purposefully across document
+- [ ]  Markdown formatting, including **at least 3** common elements heading levels, lists, text styling, blockquotes, hyperlinks, tables)
+- [ ]  **At least 1** YAML header option beyond defaults (e.g., toc, number-sections, theme)
+- [ ]  Produces clean, professional knitted output
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Goes beyond in meaningful ways such as:
+    - Sophisticated project organization
+    - Custom YAML configurations
+    - Advanced chunk options
+    - Multiple output formats
+    - Advanced Quarto features (tabsets, cross-references, custom layouts)
+    - Comprehensive documentation, or additional evidence of workflow mastery
+
+
+:::
+:::
+
+:::    
+
+::: {.accordion-item}
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark2-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-2" aria-expanded="false" aria-controls="obj-2"}
+Objective 2: **GitHub repositories and version control**
+
+:::
+:::
+
+::: {#obj-2 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+**Core standard:** Create and maintain a GitHub repo with README, .gitignore, and a commit history that reflects real work over time.
+
+View the [Git & GitHub Submissions Guidelines](misc/gh-submissions.html) for detailed instructions on how to complete and submit assignments using GitHub Classroom and private GitHub repositories.
+
+### Grading Criteria:
+
+**Basic Class Expectation (No points):**
+
+To fully participate in the class, you need to have simple proficiency with GitHub Classrooms.
+You are expected to be able to execute the following Classrooms workflow, separately from the core standard:
+
+- [ ] Clone the GitHub Classroom assignment repo to your local machine as an RStudio project
+- [ ] Complete work in RStudio
+- [ ] Commit and push changes to the GitHub Classroom assignment repo for submission
+- [ ] Subscribe to the auto-generated pull request to review grades and communicate with your grader
+
+**4 Points:**
+
+- [ ]  GitHub Classroom workflow completed
+- [ ]  `README.md` added or significantly edited describing assignment and repo structure
+- [ ]  .gitignore added or significantly edited with at least one custom rule that actually ignores something
+- [ ]  **At least 3** meaningful commits with descriptive messages reflecting work over time
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Dedicated GitHub repository created from scratch (not just cloning Classroom repo)
+- [ ]  Reasonable structure with **at least 2** subdirectories with files in each
+- [ ]  Instructor/TA invited as collaborators (if not created in the D2M-R repo)
+- [ ]  Repo set to private
+- [ ]  Feedback branch created with pull request initiated
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Goes beyond in meaningful ways such as:
+    - Includes many small, meaningful commits across time
+    - Uses a complex directory structure appropriately
+    - Provides extensive README documentation
+    - Uses advanced Git/GitHub features (branching, merging, issues)
+    - Uses GitHub for collaborative work on shared repo
+
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark1-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-3" aria-expanded="false" aria-controls="obj-3"}
+Objective 3: **Base R syntax and data structures**
+:::
+:::
+
+::: {#obj-3 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+**Core standard:** Create, index, and manipulate vectors, lists, and data frames, including handling missing data.
+
+### Grading Criteria:
+
+**4 Points:**
+
+- [ ]  Creates **at least 2 unique** types of structures such as variables, vectors, lists, and/or data frames using standard syntax
+- [ ]  Uses **at least 1** indexing method to access elements (e.g., `vec[1]`, `df$column`, `list[[1]]`)
+- [ ]  Performs basic manipulations (e.g., adding elements, subsetting, object assignment and reassignment, etc.)
+- [ ]  If dataset includes missing data, it is handled appropriately
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Applies skills to novel dataset or problem not directly modeled in class
+- [ ]  Uses **at least 2** indexing methods appropriately (positional, by name, `[]`, `$`, etc.)
+- [ ]  Handles missing data appropriately, minimally with **at least 1** instance of [`is.na](http://is.na)()` or `na.omit()` (or more advanced method)
+- [ ]  Code demonstrates clear understanding that would transfer to new situations
+- [ ]  Clean, well-commented code
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Combines data structure skills with other techniques in sophisticated ways, e.g.:
+    - Works with nested or complex data structures
+    - Demonstrates advanced indexing or manipulation techniques
+    - Applies skills to particularly complex or unstructured task
+    - Works with data structures outside base R and the tidyverse
+    
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark2-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-4" aria-expanded="false" aria-controls="obj-4"}
+Objective 4: **Control flow (if/else, loops)**
+:::
+:::
+
+::: {#obj-4 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+**Core standard:** Use if/else and loops to branch logic and automate repetitive tasks in multiple contexts.
+
+### Grading Criteria:
+
+**4 Points:**
+
+- [ ]  Uses **at least 1** if/else statement or function to create conditional logic
+- [ ]  Uses **at least 1** for or while loop for automation (may be very simplistic; may be only one type)
+- [ ]  Uses control flow structures in **at least 2** distinct contexts
+- [ ]  Code executes correctly in structured assignments
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Applies control flow to novel problems independently
+- [ ]  Uses control flow structures in **at least 3** distinct contexts
+- [ ]  Combines if/else and loops effectively (e.g., conditional logic within loops)
+- [ ]  Code is generalizable, well-structured, and clearly commented
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Demonstrates advanced applications beyond class examples, e.g.:
+    - Implements complex control flow logic
+    - Uses function alternatives to standard conditional and loops, like the `apply` family of functions or the `data.table` package
+    - Nests control structures appropriately for sophisticated tasks
+    - Uses vectorized alternatives where appropriate, showing understanding of when loops are/aren't needed
+    
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark1-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-5" aria-expanded="false" aria-controls="obj-5"}
+Objective 5: **Defining functions in Base R**
+:::
+:::
+
+::: {#obj-5 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+**Core standard:** Define and use functions with arguments and return values with reusable code logic in multiple contexts.
+
+### Grading Criteria:
+
+**4 Points:**
+
+- [ ]  Follows all guided assignment instructions
+- [ ]  Defines functions using `function()` syntax, **either**:
+    - **At least 2** functions with 1 argument *or*
+    - **At least 1** function with 2 or more arguments
+- [ ]  Function includes return value (explicit or implicit)
+- [ ]  Function demonstrates clear reusable logic
+- [ ]  Uses function in **at least 2** contexts returning different output
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Defines functions independently for novel problems, **both**:
+    - **At least 2** functions with 2 or more required arguments *and*
+    - **At least 1** function with both required and optional arguments
+- [ ]  Uses multiple arguments effectively
+- [ ]  Function definition follows best practices for naming and clear, informative commenting
+- [ ]  Functions are appropriately scoped within their local environment for use in the global environment
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Demonstrates advanced understanding beyond class scope, e.g.:
+    - Defines multiple related functions or nested function calls
+    - Implements sophisticated function logic
+    - Accepts multiple data types within a single argument
+    - Include error handling or input validation
+    
+    
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark2-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-6" aria-expanded="false" aria-controls="obj-6"}
+Objective 6: **Importing data with tidyverse tools**
+:::
+:::
+
+::: {#obj-6 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+**Core standard:** Import datasets with readr and related packages, handling paths and basic options. 
+
+**Note:** For this requirement, you may interpret “`readr` functions” as including functions from related packages, like `googlesheets4` or `readxl`.
+
+- **IMPORTANT: Read and write functions that are provided in assignment documents cannot count toward this objective.**
+
+### Grading Criteria:
+
+**4 Points:**
+
+- [ ]  **IMPORTANT: To receive 4 points for this standard, read-in functions must run without error for the grader after cloning your assignment repository to a local machine.** Ensure that:
+    - All files use correct relative paths (remember that relative paths are handled differently in .R scripts and .qmd code chunks)
+    - Read and write functions do not reference files or directories ignored by Git processes
+- [ ]  Uses `readr` functions to both:
+    - Read in a data file and assign to an R object
+    - Write out an R object to a data file
+- [ ]  Data successfully imported for use in analysis
+- [ ]  May specify basic options (e.g., column types, skip rows)
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  After meeting requirements for 4 points with error-free read-in and write-out, additional requirements for 5 or 6 points may be met with functions that read from or write to ignored files and directories under the following conditions:
+    - Access to the ignored data is not required to execute any code you intend to count toward other objectives (i.e., your grader must be able to evaluate other objectives fully independently from your ignored files)
+    - You clearly document in both your submission markdown file and in the comments of your import script where and how you have used the advanced read/write skills
+- [ ]  Uses multiple read or multiple write functions
+- [ ]  Uses **at least 2 unique** optional arguments in read/write function(s) (e.g., `col_types`, na values, `skip`)
+    - Arguments do not need to be in the same function, but must be unique.
+- [ ]  Clear comments documenting import decisions
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Shows advanced application of reading and writing data, e.g.:
+    - Handles complex import scenarios (messy formats, multiple files, unusual delimiters)
+    - Uses advanced `readr` features or other tidyverse import tools
+    - Uses import and export functions from additional packages
+    - Imports or exports non-tabular data
+    - Integrates import process smoothly into larger workflow
+    - Defines a data manipulation function with embedded data import
+    - Demonstrates troubleshooting of import problems
+
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark1-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-7" aria-expanded="false" aria-controls="obj-7"}
+Objective 7: **Data manipulation with dplyr and pipelines**
+:::
+:::
+
+::: {#obj-7 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+**Core standard:** Use multiple dplyr verbs (filter, select, mutate, summarize, arrange, group_by) in chained pipelines.
+
+### Grading Criteria:
+
+**4 Points:**
+
+- [ ]  Uses pipe operator (`%>%` or `|>`) to chain operations
+- [ ]  Uses **at least 2** `dplyr` functions in **at least 2** pipelines
+- [ ]  Uses **at least 1** `dplyr` function acting on the shape of a tibble, e.g.: `filter()`, `select()`, `arrange()`
+- [ ]  Uses **at least 1** `dplyr` function dependent on values of a tibble, e.g.: `mutate()`, `summarize()`, `group_by()`
+- [ ]  Code executes correctly in structured context
+- [ ]  Achieves stated data manipulation goals
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Creates pipelines independently for novel data problems
+- [ ]  Uses **at least 4 unique** `dplyr` functions across work
+- [ ]  Creates a single pipeline with **at least 4** pipe operators
+- [ ]  Uses **at least 1** of the following:
+    - Joins (`left_join()`, `inner_join()`, etc.)
+    - `mutate()` with `dplyr` conditional logic functions
+    - `group_by()` piped to `summarize()`
+    - tidyselect helper(s)
+- [ ]  Demonstrates understanding of when to use each verb
+- [ ]  Clean, readable, and commented pipeline code with appropriate line breaks
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Shows advanced application of `dplyr` and pipelines, e.g.:
+    - Creates complex multi-step pipelines beyond expectations for a 5
+    - Non-trivially combines techniques for sophisticated data transformations
+    - Uses multiple tidyselect helpers in unique contexts
+    - Demonstrates efficiency and creativity in pipeline design
+    - Uses placeholders (`.` or `_`, depending on pipe) to include non-tidyverse functions in a pipeline
+
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark2-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-8" aria-expanded="false" aria-controls="obj-8"}
+Objective 8: **Tidy data structure**
+:::
+:::
+
+::: {#obj-8 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+**Core standard:** Diagnose untidy data and reshape to a tidy format, with explanation.
+
+**Note:** This objective is about conceptual understanding, which may not be straightforward to demonstrate in code alone. Use of `dplyr` and/or `tidyr` functions to meet objectives 7 & 9 is not sufficient to meet objective 8, though a project that successfully demonstrates 7 or 9 is likely a good opportunity to demonstrate 8 as well.
+
+Use comments to explain decisions about managing tidy data in your code. Use the self-evaluation section of your submission doc to elaborate on how your understanding of tidy data structure factored into the project.
+
+### Grading Criteria:
+
+**4 Points:**
+
+- [ ]  Identifies what makes a dataset untidy
+- [ ]  Reshapes data to tidy format (one variable per column, one observation per row)
+- [ ]  Includes brief explanation of tidy data principles
+- [ ]  Uses functions from tidyverse packages to achieve tidy structure
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Diagnoses untidy data independently in novel context, outside of clear assignment guidance
+- [ ]  Provides clear, detailed explanation of why data is/was untidy
+- [ ]  Articulates tidy data principles clearly
+- [ ]  Transforms data appropriately for intended analysis or additional wrangling
+- [ ]  May discuss trade-offs of tidy vs. wide formats for specific uses
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Demonstrates sophisticated understanding of tidy data principles, e.g.:
+    - Transforms particularly messy or complex data structures into tidy format
+    - Effectively uses both tidy and non-tidy versions of a dataset within a single project
+    - Describes how tidy format enables subsequent analysis steps
+    - Creates comprehensive documentation of transformation process
+
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark1-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-9" aria-expanded="false" aria-controls="obj-9"}
+Objective 9: **Reshaping data with tidyr**
+:::
+:::
+
+::: {#obj-9 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+
+**Core standard:** Use multiple tidyr functions (pivot_longer/pivot_wider/separate/unite) to reshape data.
+
+### Grading Criteria:
+
+**4 Points:**
+
+- [ ]  Uses **at least 2 unique** `tidyr` functions for reshaping data (e.g., `pivot_longer()`, `pivot_wider()`, `separate()`, `unite()`)
+- [ ]  Successfully reshapes data as needed for analysis or further data manipulation with `dplyr` and other tidyverse tools
+- [ ]  Code executes correctly in structured context
+- [ ]  Follows guided assignment instructions
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Applies reshaping skills independently to novel data outside a structured assignment
+- [ ]  Uses **at least 3 unique** tidyr functions or multiple applications of at least 2 unique functions
+- [ ]  Uses **at least 1** tidyr function to manage missing values (e.g., `complete()`, `expand()`, `drop_na()`, `replace_na()`)
+- [ ]  Chooses appropriate functions for specific reshaping needs and explains choices in comments
+- [ ]  Reshaping serves clear purpose in analysis workflow
+- [ ]  Demonstrates clear understanding of function arguments (typically necessitates using optional arguments in some functions)
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Shows advanced application of `tidyr`, e.g.:
+    - Handles complex reshaping scenarios
+    - Chains multiple tidyr operations effectively
+    - Combines `tidyr` with `dplyr` functions in sophisticated pipelines
+    - Uses `tidyr` with nested data
+- [ ]  Works with particularly messy or unusual data structures
+
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark2-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-10" aria-expanded="false" aria-controls="obj-10"}
+Objective 10: **Character strings with stringr**
+:::
+:::
+
+::: {#obj-10 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+**Core standard:** Use `stringr` functions (e.g., `str_detect`, `str_replace`, `str_extract`) to solve text cleaning or extraction tasks.
+
+### Grading Criteria:
+
+**4 Points:**
+
+- [ ]  Uses **at least 2 unique** `stringr` functions effectively
+    - Common functions: `str_detect()`, `str_replace()`, `str_extract()`, `str_to_lower()`, `str_trim()`, `str_sub()`, etc.
+    - **At least 1** function uses pattern matching (tidyverse simplified or regex)
+- [ ]  Solves text cleaning or extraction tasks correctly
+- [ ]  Code executes in structured context
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Applies string manipulation independently to novel problems
+- [ ]  Uses a unique `stringr` function **for each (all) of the following**:
+    - Combining strings (e.g., `str_c()`, `str_flatten()`)
+    - Changing case (e.g., `string_to_upper()`, `str_to_snake()`)
+    - Detecting, modifying, or removing matched patterns (e.g., `str_detect()`, `str_extract()`, `str_remove_all()` , `str_like()`)
+    - Computing, detecting, or modifying length and/or whitespace (e.g., `str_trim()`, `str_trunc()`, `str_length()`)
+- [ ]  Uses **at least 1** of the following:
+    - Regular expressions
+    - Escaped characters
+    - Locale sensitive function with a meaningful `locale` argument
+    - SQL style matching (e.g., using `str_ilike()`)
+- [ ]  Clear commented documentation of string manipulation logic
+- [ ]  String work integrated into larger data manipulation or analysis workflow
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Shows advanced application of `stringr` or regular expressions, e.g.:
+    - Handles complex text manipulation tasks
+    - Creates sophisticated patterns for extraction or replacement
+    - Combines `stringr` functions with string/character manipulation functions from other packages
+
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark1-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-11" aria-expanded="false" aria-controls="obj-11"}
+Objective 11: **Factors with forcats**
+:::
+:::
+::: {#obj-11 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+**Core standard:** Recode, reorder, and/or lump factor levels to prepare categorical variables for analysis or plotting.
+
+### Grading Criteria:
+
+**4 Points:**
+
+- [ ]  Use base R `factor()` in at least one context
+- [ ]  Uses base R `levels()` function *or* `levels` argument
+- [ ]  Uses **at least 1** `forcats` function (e.g., `fct_recode()`, `fct_reorder()`, `fct_lump()`, `fct_relevel()`, `as_factor()`, `fct_infreq()`, etc.)
+- [ ]  Prepares categorical variables appropriately
+- [ ]  Code executes correctly in structured context
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Uses `factor()` with optional variables
+- [ ]  Uses **at least 2** `forcats` functions or demonstrates sophisticated factor manipulation with base `factor()`
+- [ ]  Applies factor skills independently to novel data
+- [ ]  Prepares factors thoughtfully for specific analysis or visualization needs
+- [ ]  Clean, documented factor manipulation code
+- [ ]  Factor work clearly serves analysis or data manipulation goals
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Shows advanced management of factor variables, e.g.:
+    - Handles complex factor manipulation scenarios
+    - Creates custom factor level schemes with clear purpose
+    - Demonstrates advanced `forcats` techniques
+    - Factor manipulation integrated into sophisticated analysis/visualization workflow
+    - Makes informed and well-explained choices about whether to treat variables as factors when not clearly required (e.g., deciding whether a Likert scale should be handled as categorical or continuous)
+
+:::
+:::
+
+:::
+
+::: {.accordion-item}
+
+::: {.accordion-header}
+::: {.accordion-button .collapsed .dark2-box type="button" data-bs-toggle="collapse" data-bs-target="#obj-12" aria-expanded="false" aria-controls="obj-12"}
+Objective 12: **Basic reporting: plots and descriptives in Quarto**
+:::
+:::
+::: {#obj-12 .accordion-collapse .collapse data-bs-parent="#q1-objectives"}
+::: {.accordion-body}
+
+**Core standard:** Create simple ggplot2 plots and compute/report basic descriptive statistics (means, medians, counts, proportions) in a Quarto document with clear captions and narrative.
+
+### Grading Criteria:
+
+**4 Points:**
+
+- [ ]  **IMPORTANT: To receive 4 points for this standard, the Quarto document(s) must run without error for the grader after cloning your assignment repository to a local machine.**
+- [ ]  All plots and analyses are integrated into the Quarto document with code chunks and render into the knitted document
+- [ ]  Uses `ggplot2` to create **at least 2** simple plots
+    - **At least 1** plot must have 2 or more variables
+    - All plots must include **at least 1** `geom` layer and **at least 1** specified aesthetic (`aes()`)
+- [ ]  Includes titles or captions for plots, either using `ggplot` arguments or Quarto markdown syntax
+- [ ]  Computes and reports results of **at least 1** descriptive analysis (means, medians, counts, proportions, etc.)
+    - May be directly reported from the code chunk's R output rather than integrated into Quarto markdown or presented in a styled table
+- [ ]  Includes narrative text explaining results
+
+**5 Points:**
+
+- [ ]  All 4-point expectations met
+- [ ]  Applies skills independently to novel data beyond structured assignment
+- [ ]  Creates **at least 2** plots, where combined contents of all plots include:
+    - **At least 1** categorical variable
+    - **At least 1** continuous variable
+    - **At least 1** layer other than the required `geom` (may be a second `geom` on the same plot)
+- [ ]  Computes and reports results of **at least 2 unique** descriptive analyses (means, medians, counts, proportions, etc.)
+- [ ]  Include **at least 1** inline value reference or code execution (e.g., `r my_table[4,5]` , `r result1 + result2`)
+- [ ]  Uses code chunk options to display output only for figures and results
+- [ ]  Clear, informative captions and narrative
+
+**6 Points:**
+
+- [ ]  All 5-point expectations met
+- [ ]  Shows intermediate or advanced plotting or analysis, beyond what is covered in Quarter 1:
+    - Creates comprehensive reporting document
+    - Uses intermediate/advanced ggplot2 features (themes, facets, scales, etc.)
+    - Computes and reports results of complex descriptive statistics or hypothesis testing
+    - Highly polished, publication-ready output
+    - Sophisticated integration of code, output, and narrative
+    - Reports results using `kable`, `gt`, `stargazer`, or similar
+    
+:::
+:::
+
+:::
+
+:::
 
 
