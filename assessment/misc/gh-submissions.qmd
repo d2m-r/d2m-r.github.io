@@ -11,7 +11,7 @@ A GitHub repository (repo) is where your project files live and where we review 
 There are two main ways your repos are created:
 
 - **GitHub Classroom assignments**: You click an invitation link. GitHub automatically creates a private repo for you in the course organization and sets up a special `feedback` branch and pull request (PR) where your grader leaves comments.
-- **Student-created repositories**: You create your own private repo, either in the `d2m-r` organization (for Core Standards and Enrichment projects) or in your personal GitHub account (for Integrative Data Projects). You then create a `feedback` branch and PR that we use for grading.
+- **Student-created repositories**: You create your own private repo, either in the `d2m-r` organization (for Core Standards and Enrichment projects) or in your personal GitHub account (for Integrative Data Projects). You then create a `feedback` branch and PR that we use for grading. See a demo for repo creation and setup [here](https://uchicago.box.com/s/t0cb155utxtpnz3yhs754qih7yhiwymm).
     
 In both cases:
 
@@ -103,7 +103,9 @@ In these cases, the submission workflow is effectively mimicking what you'd get 
 4. Submit the PR link via the Project Submission Form.
 5. Watch the PR for feedback and, if invited, make revisions.
 
-The sections below spell out these steps in more detail.
+The sections below spell out these steps in more detail. 
+
+See a demo for repo creation and setup [here](https://uchicago.box.com/s/t0cb155utxtpnz3yhs754qih7yhiwymm).
 
 ::: callout-tip
 ### Timing
@@ -164,6 +166,7 @@ For all projects, you must initiate your repos as private. Invite group members 
 **Any collaborators you add will be able to see all pull requests, including feedback and grades.**
 
 To add collaborators:
+
     1. Go to your repo on GitHub.
     2. Open **Settings → Collaborators and teams** (or **Manage access**).
     3. Click **Add people** and add the GitHub usernames. (View course site for instructor/TA info.)

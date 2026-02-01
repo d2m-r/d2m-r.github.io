@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-03162eb8e388d0de2d8f450c45585292.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-8bb6176866c9300bcf83c3191822f65e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -300,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>There are two main ways your repos are created:</p>
 <ul>
 <li><strong>GitHub Classroom assignments</strong>: You click an invitation link. GitHub automatically creates a private repo for you in the course organization and sets up a special <code>feedback</code> branch and pull request (PR) where your grader leaves comments.</li>
-<li><strong>Student-created repositories</strong>: You create your own private repo, either in the <code>d2m-r</code> organization (for Core Standards and Enrichment projects) or in your personal GitHub account (for Integrative Data Projects). You then create a <code>feedback</code> branch and PR that we use for grading.</li>
+<li><strong>Student-created repositories</strong>: You create your own private repo, either in the <code>d2m-r</code> organization (for Core Standards and Enrichment projects) or in your personal GitHub account (for Integrative Data Projects). You then create a <code>feedback</code> branch and PR that we use for grading. See a demo for repo creation and setup <a href="https://uchicago.box.com/s/t0cb155utxtpnz3yhs754qih7yhiwymm">here</a>.</li>
 </ul>
 <p>In both cases:</p>
 <ul>
@@ -378,6 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Watch the PR for feedback and, if invited, make revisions.</li>
 </ol>
 <p>The sections below spell out these steps in more detail.</p>
+<p>See a demo for repo creation and setup <a href="https://uchicago.box.com/s/t0cb155utxtpnz3yhs754qih7yhiwymm">here</a>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -436,7 +437,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="privacy-and-visibility">Privacy and visibility</h3>
 <p>For all projects, you must initiate your repos as private. Invite group members as collaborators for group projects (all members will be able to see all comments in the repo). Invite instructors if the repo is not in the D2M-R organization.</p>
 <p><strong>Any collaborators you add will be able to see all pull requests, including feedback and grades.</strong></p>
-<p>To add collaborators: 1. Go to your repo on GitHub. 2. Open <strong>Settings → Collaborators and teams</strong> (or <strong>Manage access</strong>). 3. Click <strong>Add people</strong> and add the GitHub usernames. (View course site for instructor/TA info.)</p>
+<p>To add collaborators:</p>
+<pre><code>1. Go to your repo on GitHub.
+2. Open **Settings → Collaborators and teams** (or **Manage access**).
+3. Click **Add people** and add the GitHub usernames. (View course site for instructor/TA info.)</code></pre>
 </section>
 </section>
 <section id="create-a-feedback-branch" class="level2">
@@ -451,10 +455,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Click <strong>Push</strong> so that the <code>feedback</code> branch exists on GitHub.</li>
 </ol>
 <p>Command line equivalent:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feedback</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin feedback</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch feedback</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin feedback</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>After this, you should see two branches in your repo on GitHub: <code>main</code> and <code>feedback</code>. At this point, they should be identical.</p>
 <p><strong>Reminder: The <code>feedback</code> branch is for comparison and feedback only. All the work you complete must happen in the <code>main</code> branch.</strong> This means if you continue working on the project after creating the feedback branch, you will need to switch back to <code>main</code>.</p>
 <section id="feedback-n-branches-integrative-data-projects" class="level3">
@@ -473,9 +477,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>By the time you submit, everything you want graded must be pushed to the <code>main</code> branch.</p>
 <p>In RStudio, you should see the name of the current branch in the Git pane. Use the pane to stage files, commit with a final informative message (e.g., <code>Final submission for pet adoption assignment</code> or <code>Integrative data project draft -- submission 2</code>), and push to GitHub.</p>
 <p>Command line equivalent:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Final submission for pet adoption assignment"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Final submission for pet adoption assignment"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="open-the-pull-request-to-feedback-from-main" class="level2">
 <h2 class="anchored" data-anchor-id="open-the-pull-request-to-feedback-from-main">Open the pull request to <code>feedback</code> from <code>main</code></h2>
@@ -500,21 +504,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In the PR description, include your full name, the title of the assignment (it should match what you submit on the form), the contents of the repo, and a <em>brief</em> description of the project (or updates since last submission).</p>
 <p>You can also add a message to your grader if you like.</p>
 <p>Example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assignment</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Name: Natalie Dowling</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Assignment name: Pet Adoption (control flow)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Description: structured control flow exercise</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contents</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>completed pet-adoption.qmd</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>completed submission.qmd</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>README.md</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>.gitignore</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>output/ folder with a knitted pdf of the main doc and an exported .csv of one of the data frames created in the assignment</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Notes for the grader</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>This is the same structured exercise about control flow as the one in the GH classrooms assignment.</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>I built it in its own repo to demonstrate Obj #2.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assignment</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Name: Natalie Dowling</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Assignment name: Pet Adoption (control flow)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Description: structured control flow exercise</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contents</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>completed pet-adoption.qmd</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>completed submission.qmd</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>README.md</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>.gitignore</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>output/ folder with a knitted pdf of the main doc and an exported .csv of one of the data frames created in the assignment</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Notes for the grader</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>This is the same structured exercise about control flow as the one in the GH classrooms assignment.</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>I built it in its own repo to demonstrate Obj #2.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then click Create pull request.</p>
 <p>This PR is now your official submission space, equivalent to the auto-generated PR from GitHub Classroom.</p>
 </section>
