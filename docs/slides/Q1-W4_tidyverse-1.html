@@ -7,9 +7,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-eedebf623301b1c3b9a877dd695003c7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/bootstrap-icons-1.13.1/bootstrap-icons.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+  <meta name="generator" content="quarto-1.5.45">
 
   <meta name="dcterms.date" content="2026-01-27">
   <title>Data to Manuscript in R – Welcome to the Tidyverse</title>
@@ -31,9 +32,8 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -44,7 +44,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -99,7 +99,7 @@
     code span.vs { color: #6a3d9a; } /* VerbatimString */
     code span.wa { color: #842222; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-4a18bd396ab1fde9380f916223dda8fe.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -107,6 +107,204 @@
   <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-code-focus/codefocus.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -242,7 +440,8 @@ Illustrations from the <a href="https://www.openscapes.org/">Openscapes</a> blog
 <p><img data-src="../images/tidyverse/tidy-data-workshop-frag1.jpg" class="fragment" height="800"></p>
 </div><div class="column">
 <p><img data-src="../images/tidyverse/tidy-data-workshop-frag2.jpg" class="fragment" height="800"></p>
-</div></div>
+</div>
+</div>
 </section>
 <section id="messy-vs.-tidy-example" class="slide level2" data-background-image="../images/misc/mms.jpg" data-background-opacity="0.1">
 <h2>Messy vs.&nbsp;Tidy: Example</h2>
@@ -272,7 +471,7 @@ Illustrations from the <a href="https://www.openscapes.org/">Openscapes</a> blog
 <div class="row">
 <div class="col-7">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>mm.raw</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>mm.raw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 30 × 8
      Bag   Red Green  Blue Orange Yellow Brown Weight
@@ -293,7 +492,7 @@ Illustrations from the <a href="https://www.openscapes.org/">Openscapes</a> blog
 </div>
 <div class="col-5">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>mm.tidy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>mm.tidy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 4
      Bag Color  Number Bag_Weight
@@ -341,7 +540,7 @@ It <em>is</em> clean! It’s just not <strong>tidy</strong>.
 </div>
 <div class="card-body lessgap">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>mm.raw</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>mm.raw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 30 × 8
      Bag   Red Green  Blue Orange Yellow Brown Weight
@@ -371,7 +570,7 @@ It <em>is</em> clean! It’s just not <strong>tidy</strong>.
 </div>
 <div class="card-body lessgap">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mm.messy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mm.messy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 39 × 8
    ID    RED   X     GREEN WT.GRAM  Blue  Orannge Ylw. 
@@ -444,6 +643,7 @@ You are not wrong.
 <p>In tidy data:</p>
 </div>
 <div class="box-content">
+<div>
 <ol>
 <li>
 Each variable is one column.
@@ -462,10 +662,11 @@ Each measurement is one cell.
 </div>
 </div>
 </div>
+</div>
 <div class="row">
 <div class="col-7">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>iris_1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>iris_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 1           5.1         3.5          1.4         0.2  setosa
@@ -483,7 +684,7 @@ Each measurement is one cell.
 </div>
 <div class="col-5">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>iris_2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>iris_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
    Species Flower_Part Measurement_Type value
@@ -899,15 +1100,15 @@ That’s not what I learned!
 </div>
 </div>
 <div class="main-content" style="padding-right: 5em;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" style="margin-bottom: .5em"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># Common read functions</span></span>
+<div class="sourceCode" id="cb13" style="margin-bottom: .5em"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># Common read functions</span></span>
 <span id="cb13-2"><a></a></span>
 <span id="cb13-3"><a></a><span class="fu">read_csv</span>()    <span class="co"># Comma separated values</span></span>
 <span id="cb13-4"><a></a><span class="fu">read_csv2</span>()   <span class="co"># Semicolon separator (comma = decimal)</span></span>
 <span id="cb13-5"><a></a><span class="fu">read_tsv</span>()    <span class="co"># Tab separated values</span></span>
 <span id="cb13-6"><a></a><span class="fu">read_delim</span>()  <span class="co"># Any delimiter</span></span>
 <span id="cb13-7"><a></a><span class="fu">read_fwf</span>()    <span class="co"># Fixed width files</span></span>
-<span id="cb13-8"><a></a><span class="fu">read_table</span>()  <span class="co"># Whitespace separated</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" data-code-line-numbers="1|2-3|5-9|11-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a></span>
+<span id="cb13-8"><a></a><span class="fu">read_table</span>()  <span class="co"># Whitespace separated</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14" data-code-line-numbers="1|2-3|5-9|11-14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a></span>
 <span id="cb14-2"><a></a><span class="co"># Default behavior - guesses all data types</span></span>
 <span id="cb14-3"><a></a>my_tbl <span class="ot">&lt;-</span> read_<span class="sc">*</span>(file.csv, <span class="at">col_types =</span> <span class="cn">NULL</span>)</span>
 <span id="cb14-4"><a></a></span>
@@ -920,7 +1121,7 @@ That’s not what I learned!
 <span id="cb14-11"><a></a><span class="co"># String shortcut:</span></span>
 <span id="cb14-12"><a></a><span class="co"># needs character for each col in order</span></span>
 <span id="cb14-13"><a></a><span class="co"># Use "?" for columns to guess</span></span>
-<span id="cb14-14"><a></a>my_shortcut <span class="ot">&lt;-</span> read_<span class="sc">*</span>(file.csv, <span class="at">col_types =</span> <span class="st">"fc"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-14"><a></a>my_shortcut <span class="ot">&lt;-</span> read_<span class="sc">*</span>(file.csv, <span class="at">col_types =</span> <span class="st">"fc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exporting-with-readr" class="slide level2 left-sidebar-slide" data-fullscreen="true" style="font-size: .8;">
@@ -948,15 +1149,15 @@ That’s not what I learned!
 </div>
 </div>
 <div class="main-content" style="padding-right: 5em;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15" style="margin-bottom: .5em"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># Common write_*() functions</span></span>
+<div class="sourceCode" id="cb15" style="margin-bottom: .5em"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># Common write_*() functions</span></span>
 <span id="cb15-2"><a></a></span>
 <span id="cb15-3"><a></a><span class="fu">write_delim</span>()</span>
 <span id="cb15-4"><a></a><span class="fu">write_csv</span>()</span>
 <span id="cb15-5"><a></a><span class="fu">write_csv2</span>()</span>
 <span id="cb15-6"><a></a><span class="fu">write_excel_csv</span>()</span>
 <span id="cb15-7"><a></a><span class="fu">write_excel_csv2</span>()</span>
-<span id="cb15-8"><a></a><span class="fu">write_tsv</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-code-line-numbers="1|2-4|6|8-11|12,13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a></span>
+<span id="cb15-8"><a></a><span class="fu">write_tsv</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16" data-code-line-numbers="1|2-4|6|8-11|12,13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a></span>
 <span id="cb16-2"><a></a><span class="co"># Start with messy data</span></span>
 <span id="cb16-3"><a></a>messy_df <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"localpath/messy.xlsx"</span>, </span>
 <span id="cb16-4"><a></a>                     <span class="at">sheet=</span><span class="st">"my sheet"</span>)</span>
@@ -968,7 +1169,7 @@ That’s not what I learned!
 <span id="cb16-10"><a></a><span class="fu">write_csv</span>(clean_df, <span class="st">"localpath/clean.csv"</span>)</span>
 <span id="cb16-11"><a></a></span>
 <span id="cb16-12"><a></a><span class="co"># Later, read the clean version</span></span>
-<span id="cb16-13"><a></a>clean_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"localpath/clean.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-13"><a></a>clean_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"localpath/clean.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>Export tibbles to create intermediate datasets between initial import and final analysis Easily produce de-identified datasets to share with others Save computational time by skipping costly read-in and wrangling steps (e.g., big files, many files, complex transformations) readr can also export tibbles to tabular files with similar syntax to how it imports</p>
@@ -999,11 +1200,11 @@ That’s not what I learned!
 </div>
 </div>
 <div class="col-4 smaller fragment" data-fragment-index="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># Read in messy data</span></span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># Read in messy data</span></span>
 <span id="cb17-2"><a></a>messy_df <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(</span>
 <span id="cb17-3"><a></a>    <span class="st">"localpath/messy.xlsx"</span>,</span>
 <span id="cb17-4"><a></a>    <span class="at">sheet=</span><span class="st">"my sheet"</span></span>
-<span id="cb17-5"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-5"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="col-1 fragment" data-fragment-index="3">
 <div style="text-align: center; margin-top: 50%;">
@@ -1061,9 +1262,9 @@ That’s not what I learned!
 </div>
 </div>
 <div class="col-8 smaller">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># Write out clean version</span></span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># Write out clean version</span></span>
 <span id="cb18-2"><a></a><span class="fu">write_csv</span>(clean_df, </span>
-<span id="cb18-3"><a></a>          <span class="st">"localpath/clean.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-3"><a></a>          <span class="st">"localpath/clean.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="col-2">
 <div style="text-align: center;">
@@ -1084,9 +1285,9 @@ That’s not what I learned!
 </div>
 </div>
 <div class="col-8 smaller">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># Read in clean version</span></span>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># Read in clean version</span></span>
 <span id="cb19-2"><a></a>clean_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
-<span id="cb19-3"><a></a>    <span class="st">"localpath/clean.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-3"><a></a>    <span class="st">"localpath/clean.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="col-2">
 <div style="text-align: center;">
@@ -1150,13 +1351,13 @@ That’s not what I learned!
 </div>
 </div>
 <div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># readxl for Excel files</span></span>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># readxl for Excel files</span></span>
 <span id="cb20-2"><a></a><span class="fu">library</span>(readxl)</span>
 <span id="cb20-3"><a></a><span class="fu">read_excel</span>(<span class="st">"data.xlsx"</span>)</span>
 <span id="cb20-4"><a></a></span>
 <span id="cb20-5"><a></a><span class="co"># googlesheets4 for Google Sheets</span></span>
 <span id="cb20-6"><a></a><span class="fu">library</span>(googlesheets4)</span>
-<span id="cb20-7"><a></a><span class="fu">read_sheet</span>(<span class="st">"spreadsheet_url"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-7"><a></a><span class="fu">read_sheet</span>(<span class="st">"spreadsheet_url"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="practice-read-write-1" class="slide level2 scrollable">
@@ -1363,7 +1564,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <p>Include/exclude syntax:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">select</span>(tbl, col1, col2, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">select</span>(tbl, col1, col2, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment" data-fragment-index="1">
 <ul>
 <li>Column names are objects, not strings
@@ -1405,7 +1606,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 <div class="col-6" style="margin-top: 1em">
 <div class="fragment" data-fragment-index="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># Include specific columns </span></span>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># Include specific columns </span></span>
 <span id="cb22-2"><a></a><span class="fu">select</span>(mm.sample, Bag, Red, Green, Blue)</span>
 <span id="cb22-3"><a></a></span>
 <span id="cb22-4"><a></a><span class="co"># Exclude specific columns</span></span>
@@ -1419,7 +1620,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb22-12"><a></a></span>
 <span id="cb22-13"><a></a><span class="co"># Exclude columns by position range</span></span>
 <span id="cb22-14"><a></a><span class="do">## `-` requires range in `()`</span></span>
-<span id="cb22-15"><a></a><span class="fu">select</span>(mm.sample, <span class="sc">-</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-15"><a></a><span class="fu">select</span>(mm.sample, <span class="sc">-</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment" data-fragment-index="6" style="margin-top: 1em;">
 <div class="cell">
@@ -1499,9 +1700,9 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="col-3">
 <div class="fragment" style="margin-top: .2em;" data-fragment-index="1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># Select and reorder</span></span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># Select and reorder</span></span>
 <span id="cb24-2"><a></a><span class="fu">select</span>(mm.sample, </span>
-<span id="cb24-3"><a></a>       Green, Blue, Bag, Red)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-3"><a></a>       Green, Blue, Bag, Red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
   Green  Blue   Bag   Red
@@ -1516,11 +1717,11 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 <div class="fragment" style="margin-top: .2em;" data-fragment-index="2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># Select and rename</span></span>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># Select and rename</span></span>
 <span id="cb26-2"><a></a><span class="fu">select</span>(mm.sample, </span>
 <span id="cb26-3"><a></a>       Bag, <span class="at">rojo =</span> Red, </span>
 <span id="cb26-4"><a></a>       <span class="at">vert =</span> Green, </span>
-<span id="cb26-5"><a></a>       <span class="st">`</span><span class="at">aoi 青</span><span class="st">`</span> <span class="ot">=</span> Blue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-5"><a></a>       <span class="st">`</span><span class="at">aoi 青</span><span class="st">`</span> <span class="ot">=</span> Blue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
     Bag  rojo  vert `aoi 青`
@@ -1537,12 +1738,12 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="col-5">
 <div class="fragment" style="margin-top: .2em;" data-fragment-index="3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="co"># Select, reorder, rename</span></span>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="co"># Select, reorder, rename</span></span>
 <span id="cb28-2"><a></a><span class="fu">select</span>(mm.sample, </span>
 <span id="cb28-3"><a></a>       <span class="at">vert =</span> Green, </span>
 <span id="cb28-4"><a></a>       <span class="at">rojo =</span> Red, </span>
 <span id="cb28-5"><a></a>       <span class="st">`</span><span class="at">aoi 青</span><span class="st">`</span> <span class="ot">=</span> Blue, </span>
-<span id="cb28-6"><a></a>       Bag)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb28-6"><a></a>       Bag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
    vert  rojo `aoi 青`   Bag
@@ -1557,11 +1758,11 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 <div class="fragment" style="margin-top: .2em;" data-fragment-index="4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="co"># Rename w/out select or reorder</span></span>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="co"># Rename w/out select or reorder</span></span>
 <span id="cb30-2"><a></a><span class="fu">rename</span>(mm.sample, </span>
 <span id="cb30-3"><a></a>       <span class="at">vert =</span> Green, </span>
 <span id="cb30-4"><a></a>       <span class="at">rojo =</span> Red, </span>
-<span id="cb30-5"><a></a>       <span class="st">`</span><span class="at">aoi 青</span><span class="st">`</span> <span class="ot">=</span> Blue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb30-5"><a></a>       <span class="st">`</span><span class="at">aoi 青</span><span class="st">`</span> <span class="ot">=</span> Blue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 8
     Bag  rojo  vert `aoi 青` Orange Yellow Brown Weight
@@ -1625,9 +1826,9 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="col-4" style="margin-top: -2em">
 <div class="fragment" style="margin-top: .2em;" data-fragment-index="1">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># Select by first character(s)</span></span>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># Select by first character(s)</span></span>
 <span id="cb32-2"><a></a><span class="fu">select</span>(mm.sample, </span>
-<span id="cb32-3"><a></a>       <span class="fu">starts_with</span>(<span class="st">"B"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb32-3"><a></a>       <span class="fu">starts_with</span>(<span class="st">"B"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
     Bag  Blue Brown
@@ -1642,9 +1843,9 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 <div class="fragment" style="margin-top: .2em;" data-fragment-index="2">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># Select by last character(s)</span></span>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># Select by last character(s)</span></span>
 <span id="cb34-2"><a></a><span class="fu">select</span>(mm.sample, </span>
-<span id="cb34-3"><a></a>       <span class="fu">ends_with</span>(<span class="st">"n"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb34-3"><a></a>       <span class="fu">ends_with</span>(<span class="st">"n"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 2
   Green Brown
@@ -1661,9 +1862,9 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="col-4" style="margin-top: -2em">
 <div class="fragment" style="margin-top: .2em;" data-fragment-index="3">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="co"># Select with regex</span></span>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="co"># Select with regex</span></span>
 <span id="cb36-2"><a></a><span class="fu">select</span>(mm.sample, </span>
-<span id="cb36-3"><a></a>       <span class="fu">contains</span>(<span class="st">"ow"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb36-3"><a></a>       <span class="fu">contains</span>(<span class="st">"ow"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 2
   Yellow Brown
@@ -1678,9 +1879,9 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 <div class="fragment" style="margin-top: .2em;" data-fragment-index="4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="co"># Select with regex</span></span>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="co"># Select with regex</span></span>
 <span id="cb38-2"><a></a><span class="fu">select</span>(mm.sample, </span>
-<span id="cb38-3"><a></a>       <span class="fu">matches</span>(<span class="st">"^B|n$"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb38-3"><a></a>       <span class="fu">matches</span>(<span class="st">"^B|n$"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
     Bag Green  Blue Brown
@@ -1724,7 +1925,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <p>Filter syntax &amp; logic:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">filter</span>(tbl, cond1, cond2, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">filter</span>(tbl, cond1, cond2, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Operates on rows (observations)</li>
 <li class="fragment">Conditional evaluation:
@@ -1742,7 +1943,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <!-- Begin right column -->
 <div class="col-7" style="margin-top: -3em; font-size: .8em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="co"># Vehicle dataframe (1 column called `transport`)</span></span>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="co"># Vehicle dataframe (1 column called `transport`)</span></span>
 <span id="cb41-2"><a></a>vehicles <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb41-3"><a></a>    <span class="at">transport =</span> <span class="fu">c</span>(<span class="st">"walking"</span>, <span class="st">"bus"</span>, <span class="st">"bicycle"</span>, <span class="st">"car"</span>, <span class="st">"atv"</span>,</span>
 <span id="cb41-4"><a></a>                   <span class="st">"motorcycle"</span>, <span class="st">"razor scooter"</span>, <span class="st">"the el"</span>, </span>
@@ -1762,7 +1963,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb41-18"><a></a><span class="co"># Condition 3</span></span>
 <span id="cb41-19"><a></a><span class="fu">filter</span>(vehicles, </span>
 <span id="cb41-20"><a></a>       (<span class="fu">has.handlebars</span>(transport) <span class="sc">&amp;</span> <span class="fu">n.wheels</span>(transport) <span class="sc">&lt;</span> <span class="dv">3</span>) <span class="sc">|</span></span>
-<span id="cb41-21"><a></a>           (<span class="fu">requires.gas</span>(transport) <span class="sc">&amp;</span> <span class="fu">n.wheels</span>(transport) <span class="sc">&gt;</span> <span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb41-21"><a></a>           (<span class="fu">requires.gas</span>(transport) <span class="sc">&amp;</span> <span class="fu">n.wheels</span>(transport) <span class="sc">&gt;</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- Begin conditional results row -->
 <div class="row">
@@ -1848,7 +2049,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 <div class="box-content">
 <div class="cell" style="font-size: .9em">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="co"># Condition 1</span></span>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="co"># Condition 1</span></span>
 <span id="cb46-2"><a></a><span class="fu">filter</span>(mm.tidy, Bag_Weight <span class="sc">&gt;</span> <span class="dv">50</span>)</span>
 <span id="cb46-3"><a></a></span>
 <span id="cb46-4"><a></a><span class="co"># Condition 2</span></span>
@@ -1863,7 +2064,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb46-13"><a></a><span class="fu">filter</span>(mm.tidy, </span>
 <span id="cb46-14"><a></a>       (Color <span class="sc">==</span> <span class="st">"Blue"</span> <span class="sc">&amp;</span> Number <span class="sc">&gt;=</span> <span class="dv">5</span>) <span class="sc">|</span></span>
 <span id="cb46-15"><a></a>           (Bag_Weight <span class="sc">&gt;</span> <span class="fl">50.5</span> <span class="sc">|</span> Bag_Weight <span class="sc">&lt;</span> <span class="dv">47</span>),</span>
-<span id="cb46-16"><a></a>       Bag <span class="sc">!=</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb46-16"><a></a>       Bag <span class="sc">!=</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1988,7 +2189,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <p>Arrange syntax:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="fu">arrange</span>(tbl, col1, col2, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="fu">arrange</span>(tbl, col1, col2, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Sort rows by column values</li>
 <li class="fragment">If 2+ variables, sorts in order given</li>
@@ -2006,8 +2207,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="col-4" style="font-size: .8em;">
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a><span class="co"># Sort by (ascending) bag weight</span></span>
-<span id="cb52-2"><a></a><span class="fu">arrange</span>(mm.tidy, Bag_Weight)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a><span class="co"># Sort by (ascending) bag weight</span></span>
+<span id="cb52-2"><a></a><span class="fu">arrange</span>(mm.tidy, Bag_Weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 4
      Bag Color  Number Bag_Weight
@@ -2030,8 +2231,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="col-4" style="font-size: .8em;">
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="co"># Sort by color -&gt; desc number -&gt; desc bag</span></span>
-<span id="cb54-2"><a></a><span class="fu">arrange</span>(mm.tidy, Color, <span class="sc">-</span>Number, <span class="fu">desc</span>(Bag))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="co"># Sort by color -&gt; desc number -&gt; desc bag</span></span>
+<span id="cb54-2"><a></a><span class="fu">arrange</span>(mm.tidy, Color, <span class="sc">-</span>Number, <span class="fu">desc</span>(Bag))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 4
      Bag Color Number Bag_Weight
@@ -2078,10 +2279,10 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <p>Create &amp; modify:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="fu">mutate</span>(tbl, </span>
+<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="fu">mutate</span>(tbl, </span>
 <span id="cb56-2"><a></a>    <span class="at">new_col1 =</span> ..., </span>
 <span id="cb56-3"><a></a>    <span class="at">new_col2 =</span> ..., </span>
-<span id="cb56-4"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb56-4"><a></a>    ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Add named new column</li>
 <li class="fragment">Assign values with <code>=</code></li>
@@ -2098,11 +2299,11 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="col-4" style="font-size: .8em, margin-top: -2em">
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="co"># Create new column: Weight_Oz</span></span>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="co"># Create new column: Weight_Oz</span></span>
 <span id="cb57-2"><a></a><span class="co"># then pipe to select cols</span></span>
 <span id="cb57-3"><a></a><span class="fu">mutate</span>(mm.sample,</span>
 <span id="cb57-4"><a></a>    <span class="at">Type =</span> <span class="st">"Chocolate"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb57-5"><a></a>    <span class="fu">select</span>(Bag, Weight, Type) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb57-5"><a></a>    <span class="fu">select</span>(Bag, Weight, Type) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
     Bag Weight Type     
@@ -2117,10 +2318,10 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a><span class="co"># Create new column: Weight_Oz</span></span>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a><span class="co"># Create new column: Weight_Oz</span></span>
 <span id="cb59-2"><a></a><span class="fu">mutate</span>(mm.sample,</span>
 <span id="cb59-3"><a></a>    <span class="at">Weight_Oz =</span> Weight <span class="sc">/</span> <span class="fl">28.34952</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb59-4"><a></a>    <span class="fu">select</span>(Bag, Weight, Weight_Oz)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb59-4"><a></a>    <span class="fu">select</span>(Bag, Weight, Weight_Oz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
     Bag Weight Weight_Oz
@@ -2137,14 +2338,14 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="col-5" style="margin-top: -4.5em">
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="co"># Create new column (total M&amp;Ms per bag)</span></span>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="co"># Create new column (total M&amp;Ms per bag)</span></span>
 <span id="cb61-2"><a></a><span class="co"># Then another new column (proportion of red M&amp;Ms)</span></span>
 <span id="cb61-3"><a></a><span class="co"># using the first new column</span></span>
 <span id="cb61-4"><a></a><span class="fu">mutate</span>(mm.sample,</span>
 <span id="cb61-5"><a></a>    <span class="at">Total_MMs =</span> Red <span class="sc">+</span> Green <span class="sc">+</span> Blue <span class="sc">+</span> </span>
 <span id="cb61-6"><a></a>        Brown <span class="sc">+</span> Yellow <span class="sc">+</span> Orange,</span>
 <span id="cb61-7"><a></a>        <span class="at">Prop_Red =</span> Red <span class="sc">/</span> Total_MMs) <span class="sc">|&gt;</span> </span>
-<span id="cb61-8"><a></a>    <span class="fu">select</span>(Bag, Red, Total_MMs, Prop_Red)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb61-8"><a></a>    <span class="fu">select</span>(Bag, Red, Total_MMs, Prop_Red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
     Bag   Red Total_MMs Prop_Red
@@ -2159,14 +2360,14 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="co"># Change values in existing column by overwriting</span></span>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="co"># Change values in existing column by overwriting</span></span>
 <span id="cb63-2"><a></a><span class="fu">mutate</span>(mm.sample,</span>
 <span id="cb63-3"><a></a>        <span class="at">Weight =</span> <span class="fu">case_when</span>(</span>
 <span id="cb63-4"><a></a>        Weight <span class="sc">&lt;</span> <span class="dv">48</span> <span class="sc">~</span> <span class="st">"Light"</span>,</span>
 <span id="cb63-5"><a></a>        Weight <span class="sc">&gt;</span> <span class="dv">50</span> <span class="sc">~</span> <span class="st">"Heavy"</span>,</span>
 <span id="cb63-6"><a></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Medium"</span> <span class="co"># anything left after</span></span>
 <span id="cb63-7"><a></a>        )) <span class="sc">|&gt;</span> </span>
-<span id="cb63-8"><a></a><span class="fu">select</span>(Bag, Red, Weight)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb63-8"><a></a><span class="fu">select</span>(Bag, Red, Weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
     Bag   Red Weight
@@ -2207,11 +2408,11 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <p>Group &amp; summarize:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">group_by</span>(tbl, col1, col2, ...)  <span class="sc">|&gt;</span> </span>
+<div class="sourceCode" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">group_by</span>(tbl, col1, col2, ...)  <span class="sc">|&gt;</span> </span>
 <span id="cb65-2"><a></a><span class="fu">summarize</span>(</span>
 <span id="cb65-3"><a></a>    <span class="at">summary_col1 =</span> <span class="fu">summary_func</span>(colA),</span>
 <span id="cb65-4"><a></a>    <span class="at">summary_col2 =</span> <span class="fu">summary_func</span>(colB),</span>
-<span id="cb65-5"><a></a>...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb65-5"><a></a>...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment"><code>group_by()</code> creates subgroups based on unique values across 1+ columns
 <ul>
@@ -2232,9 +2433,9 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="co"># Compute mean weight of all bags</span></span>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="co"># Compute mean weight of all bags</span></span>
 <span id="cb66-2"><a></a><span class="fu">summarize</span>(mm.tidy, </span>
-<span id="cb66-3"><a></a>          <span class="at">Mean_Weight =</span> <span class="fu">mean</span>(Bag_Weight))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb66-3"><a></a>          <span class="at">Mean_Weight =</span> <span class="fu">mean</span>(Bag_Weight))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -2245,12 +2446,12 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 </div>
 <div class="cell" style="margin-top: .1em">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a><span class="co"># Group by color</span></span>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a><span class="co"># Group by color</span></span>
 <span id="cb68-2"><a></a><span class="fu">group_by</span>(mm.tidy, Color) <span class="sc">|&gt;</span>  </span>
 <span id="cb68-3"><a></a><span class="co"># pipe grouped data to next function</span></span>
 <span id="cb68-4"><a></a><span class="co"># Compute total count and mean weight *per color*</span></span>
 <span id="cb68-5"><a></a><span class="fu">summarize</span>(<span class="at">Mean_Weight =</span> <span class="fu">mean</span>(Bag_Weight),</span>
-<span id="cb68-6"><a></a>          <span class="at">Total_Number =</span> <span class="fu">sum</span>(Number))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb68-6"><a></a>          <span class="at">Total_Number =</span> <span class="fu">sum</span>(Number))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment" style="margin-top: .1em">
 <div class="cell-output cell-output-stdout">
@@ -2268,12 +2469,12 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 </div>
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a><span class="co"># `mm.tidy.weights` includes a Weight_Class column</span></span>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a><span class="co"># `mm.tidy.weights` includes a Weight_Class column</span></span>
 <span id="cb70-2"><a></a><span class="co"># Grouping by multiple columns creates a summary value for each </span></span>
 <span id="cb70-3"><a></a><span class="co"># unique combination of values in those columns</span></span>
 <span id="cb70-4"><a></a><span class="fu">group_by</span>(mm.tidy.weights, Color, Weight_Class) <span class="sc">|&gt;</span> </span>
 <span id="cb70-5"><a></a><span class="fu">summarize</span>(<span class="at">Mean_Weight =</span> <span class="fu">mean</span>(Bag_Weight),</span>
-<span id="cb70-6"><a></a>          <span class="at">Total_Number =</span> <span class="fu">sum</span>(Number))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb70-6"><a></a>          <span class="at">Total_Number =</span> <span class="fu">sum</span>(Number))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -2331,21 +2532,21 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="container-fluid">
 <div class="row">
 <div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a>as much as you <span class="fu">like</span>(change it with <span class="cf">function</span> <span class="fu">Y</span>(change it with <span class="cf">function</span> <span class="fu">X</span>(create some data)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a>as much as you <span class="fu">like</span>(change it with <span class="cf">function</span> <span class="fu">Y</span>(change it with <span class="cf">function</span> <span class="fu">X</span>(create some data)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="row" style="margin-top: 1em;">
 <div class="col-6 fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a>create some data <span class="sc">|&gt;</span> </span>
+<div class="sourceCode" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a>create some data <span class="sc">|&gt;</span> </span>
 <span id="cb73-2"><a></a>    change it with <span class="cf">function</span> X <span class="sc">|&gt;</span> </span>
 <span id="cb73-3"><a></a>    change it with <span class="cf">function</span> Y <span class="sc">|&gt;</span> </span>
-<span id="cb73-4"><a></a>    as much as you like</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb73-4"><a></a>    as much as you like</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="col-6 fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a>mm.tidy <span class="sc">|&gt;</span> </span>
+<div class="sourceCode" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a>mm.tidy <span class="sc">|&gt;</span> </span>
 <span id="cb74-2"><a></a>    <span class="fu">group_by</span>(Color) <span class="sc">|&gt;</span> </span>
 <span id="cb74-3"><a></a>    <span class="fu">summarize</span>(<span class="at">Mean_Number =</span> <span class="fu">mean</span>(Number)) <span class="sc">|&gt;</span> </span>
-<span id="cb74-4"><a></a>    <span class="fu">filter</span>(Mean_Number <span class="sc">&lt;</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb74-4"><a></a>    <span class="fu">filter</span>(Mean_Number <span class="sc">&lt;</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="row">
@@ -2375,8 +2576,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="longer-code">
 <div class="cell columns column-output-location" style="font-size: 1.1em;">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
-<span id="cb75-2"><a></a>mm.tidy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<span id="cb75-2"><a></a>mm.tidy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 4
@@ -2394,7 +2595,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 10     2 Orange      3       49.0
 # ℹ 170 more rows</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </section>
 <section id="pipe-example-28" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
@@ -2402,14 +2604,14 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="longer-code">
 <div class="cell columns column-output-location" style="font-size: 1.1em;">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
 <span id="cb77-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
 <span id="cb77-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
 <span id="cb77-4"><a></a>    <span class="fu">mutate</span>(</span>
 <span id="cb77-5"><a></a>        <span class="at">Color_Type =</span> <span class="fu">case_when</span>(</span>
 <span id="cb77-6"><a></a>            Color <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Red"</span>, <span class="st">"Blue"</span>, <span class="st">"Yellow"</span>) <span class="sc">~</span> <span class="st">"Primary"</span>,</span>
 <span id="cb77-7"><a></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Secondary"</span>),    </span>
-<span id="cb77-8"><a></a>        )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb77-8"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 5
@@ -2427,7 +2629,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 10     2 Orange      3       49.0 Secondary 
 # ℹ 170 more rows</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </section>
 <section id="pipe-example-38" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
@@ -2435,7 +2638,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="longer-code">
 <div class="cell columns column-output-location" style="font-size: 1.1em;">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
 <span id="cb79-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
 <span id="cb79-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
 <span id="cb79-4"><a></a>    <span class="fu">mutate</span>(</span>
@@ -2444,7 +2647,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb79-7"><a></a>            <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Secondary"</span>),    </span>
 <span id="cb79-8"><a></a>        ) <span class="sc">|&gt;</span> </span>
 <span id="cb79-9"><a></a>    <span class="co"># Group by color type &amp; bag</span></span>
-<span id="cb79-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb79-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 5
@@ -2463,7 +2666,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 10     2 Orange      3       49.0 Secondary 
 # ℹ 170 more rows</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </section>
 <section id="pipe-example-48" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
@@ -2471,7 +2675,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="longer-code">
 <div class="cell columns column-output-location" style="font-size: 1.1em;">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
 <span id="cb81-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
 <span id="cb81-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
 <span id="cb81-4"><a></a>    <span class="fu">mutate</span>(</span>
@@ -2482,7 +2686,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb81-9"><a></a>    <span class="co"># Group by color type &amp; bag</span></span>
 <span id="cb81-10"><a></a>    <span class="fu">group_by</span>(Color_Type, Bag) <span class="sc">|&gt;</span></span>
 <span id="cb81-11"><a></a>    <span class="co"># Summarize total M&amp;Ms per group</span></span>
-<span id="cb81-12"><a></a>    <span class="fu">summarize</span>(<span class="at">Total_Number =</span> <span class="fu">sum</span>(Number))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb81-12"><a></a>    <span class="fu">summarize</span>(<span class="at">Total_Number =</span> <span class="fu">sum</span>(Number))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 60 × 3
@@ -2501,7 +2705,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 10 Primary       10           20
 # ℹ 50 more rows</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </section>
 <section id="pipe-example-58" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
@@ -2509,7 +2714,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="longer-code">
 <div class="cell columns column-output-location" style="font-size: 1.1em;">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
 <span id="cb83-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
 <span id="cb83-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
 <span id="cb83-4"><a></a>    <span class="fu">mutate</span>(</span>
@@ -2522,7 +2727,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb83-11"><a></a>    <span class="co"># Summarize total M&amp;Ms per group</span></span>
 <span id="cb83-12"><a></a>    <span class="fu">summarize</span>(<span class="at">Total_Number =</span> <span class="fu">sum</span>(Number)) <span class="sc">|&gt;</span></span>
 <span id="cb83-13"><a></a>    <span class="co"># Arrange by bag then color_type</span></span>
-<span id="cb83-14"><a></a>    <span class="fu">arrange</span>(Bag, Color_Type)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb83-14"><a></a>    <span class="fu">arrange</span>(Bag, Color_Type)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 60 × 3
@@ -2541,7 +2746,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 10 Secondary      5           16
 # ℹ 50 more rows</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </section>
 <section id="pipe-example-68" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
@@ -2549,7 +2755,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="longer-code">
 <div class="cell columns column-output-location" style="font-size: 1.1em;">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
 <span id="cb85-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
 <span id="cb85-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
 <span id="cb85-4"><a></a>    <span class="fu">mutate</span>(</span>
@@ -2567,7 +2773,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb85-16"><a></a>    <span class="fu">pivot_wider</span>(</span>
 <span id="cb85-17"><a></a>        <span class="at">names_from =</span> Color_Type,</span>
 <span id="cb85-18"><a></a>        <span class="at">values_from =</span> Total_Number</span>
-<span id="cb85-19"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb85-19"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 30 × 3
@@ -2585,7 +2791,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 10    10      20        33
 # ℹ 20 more rows</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 <aside class="notes">
 <p>We haven’t talked about pivot wider yet but it’s coming up next!</p>
@@ -2606,7 +2813,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="longer-code">
 <div class="cell columns column-output-location" style="font-size: 1.1em;">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
 <span id="cb87-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
 <span id="cb87-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
 <span id="cb87-4"><a></a>    <span class="fu">mutate</span>(</span>
@@ -2633,7 +2840,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb87-25"><a></a>                Primary <span class="sc">&lt;</span> Secondary <span class="sc">~</span> <span class="st">"Secondary"</span>,</span>
 <span id="cb87-26"><a></a>                <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Equal"</span></span>
 <span id="cb87-27"><a></a>            )</span>
-<span id="cb87-28"><a></a>    ) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb87-28"><a></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 30 × 4
@@ -2651,7 +2858,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 10    10      20        33 Secondary     
 # ℹ 20 more rows</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </section>
 <section id="pipe-example-88" class="slide level2 noframenumbering" data-visibility="uncounted" style="font-size: .8em">
@@ -2659,7 +2867,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <div class="longer-code">
 <div class="cell columns column-output-location" style="font-size: 1.1em;">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a><span class="co"># Begin with mm.tidy</span></span>
 <span id="cb89-2"><a></a>mm.tidy <span class="sc">|&gt;</span></span>
 <span id="cb89-3"><a></a>    <span class="co"># Create new column: Primary_Color</span></span>
 <span id="cb89-4"><a></a>    <span class="fu">mutate</span>(</span>
@@ -2688,7 +2896,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <span id="cb89-27"><a></a>            )</span>
 <span id="cb89-28"><a></a>    ) <span class="sc">|&gt;</span> </span>
 <span id="cb89-29"><a></a>    <span class="co"># Filter to only bags where primary and secondary are equal</span></span>
-<span id="cb89-30"><a></a>    <span class="fu">filter</span>(More_Prevalent <span class="sc">==</span> <span class="st">"Equal"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb89-30"><a></a>    <span class="fu">filter</span>(More_Prevalent <span class="sc">==</span> <span class="st">"Equal"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 4
@@ -2696,7 +2904,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
   &lt;int&gt;   &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;         
 1    11      29        29 Equal         </code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </section></section>
 <section>
@@ -2869,7 +3078,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <li>dfs must have exactly the same columns in exactly the same order</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a><span class="fu">rbind</span>(tibble1, tibble2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a><span class="fu">rbind</span>(tibble1, tibble2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 3
     col1  col2  col3
@@ -2886,8 +3095,8 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 10    20    25    30</code></pre>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a></a><span class="co">#| include: false</span></span>
-<span id="cb98-2"><a></a><span class="fu">rbind</span>(tibble1, tibble3) <span class="co"># error: col4 in tibble3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a></a><span class="co">#| include: false</span></span>
+<span id="cb98-2"><a></a><span class="fu">rbind</span>(tibble1, tibble3) <span class="co"># error: col4 in tibble3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2904,7 +3113,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <li>Missing values -&gt; <code>NA</code></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a></a><span class="fu">bind_rows</span>(tibble1, tibble3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a></a><span class="fu">bind_rows</span>(tibble1, tibble3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
     col1  col2  col3  col4
@@ -2950,7 +3159,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <li>dfs must have same number rows</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a></a><span class="fu">cbind</span>(tibble1, tibble4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a></a><span class="fu">cbind</span>(tibble1, tibble4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  col1 col2 col3 col_1 col_2 col_3
 1    1    6   11    16    21    26
@@ -2960,10 +3169,10 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 5    5   10   15    20    25    30</code></pre>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a></a><span class="co">#| include: false</span></span>
+<div class="sourceCode" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a></a><span class="co">#| include: false</span></span>
 <span id="cb103-2"><a></a><span class="fu">cbind</span>(tibble1, tibble5) </span>
 <span id="cb103-3"><a></a><span class="co"># Error in data.frame(..., check.names = FALSE) :</span></span>
-<span id="cb103-4"><a></a><span class="co"># arguments imply differing number of rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb103-4"><a></a><span class="co"># arguments imply differing number of rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2980,7 +3189,7 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 <li>dfs must have same number rows</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a></a><span class="fu">bind_cols</span>(tibble1, tibble3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a></a><span class="fu">bind_cols</span>(tibble1, tibble3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 7
   col1...1 col2...2 col3...3 col1...4 col2...5 col3...6  col4
@@ -2992,10 +3201,10 @@ Remember relative relativity. Are you reading and writing from a script, Quarto 
 5        5       10       15       20       25       30    35</code></pre>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a></a><span class="co">#| include: false</span></span>
+<div class="sourceCode" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a></a><span class="co">#| include: false</span></span>
 <span id="cb106-2"><a></a><span class="fu">bind_cols</span>(tibble1, tibble5) </span>
 <span id="cb106-3"><a></a><span class="co"># Error in `bind_cols()`:</span></span>
-<span id="cb106-4"><a></a><span class="co"># ! Can't recycle `..1` (size 5) to match `..2` (size 6).</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb106-4"><a></a><span class="co"># ! Can't recycle `..1` (size 5) to match `..2` (size 6).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -3055,12 +3264,12 @@ Neither! Use joins instead.
 <p>Left Join</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a></a><span class="fu">left_join</span>(</span>
+<div class="sourceCode" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a></a><span class="fu">left_join</span>(</span>
 <span id="cb107-2"><a></a>  x,</span>
 <span id="cb107-3"><a></a>  y,</span>
 <span id="cb107-4"><a></a>  <span class="at">by =</span> <span class="fu">join_by</span>(col1, x_col2 <span class="sc">==</span> y_col2)</span>
 <span id="cb107-5"><a></a>  ...</span>
-<span id="cb107-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb107-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="tightlist">
 <ul>
 <li class="fragment">Start with all rows in <strong>left</strong> df <code>x</code></li>
@@ -3095,7 +3304,7 @@ Neither! Use joins instead.
 <div class="row">
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a></a>band_members</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a></a>band_members</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   name  band   
@@ -3108,7 +3317,7 @@ Neither! Use joins instead.
 </div>
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a></a>band_instruments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a></a>band_instruments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   name  plays 
@@ -3121,7 +3330,7 @@ Neither! Use joins instead.
 </div>
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a></a>band_instruments2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a></a>band_instruments2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   artist plays 
@@ -3137,9 +3346,9 @@ Neither! Use joins instead.
 <div class="col-6">
 <div style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a></a><span class="fu">left_join</span>(band_members, </span>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a></a><span class="fu">left_join</span>(band_members, </span>
 <span id="cb114-2"><a></a>    band_instruments</span>
-<span id="cb114-3"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb114-3"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3156,9 +3365,9 @@ Neither! Use joins instead.
 <div class="col-6">
 <div style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a></a><span class="fu">left_join</span>(band_members, </span>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a></a><span class="fu">left_join</span>(band_members, </span>
 <span id="cb116-2"><a></a>    band_instruments2, </span>
-<span id="cb116-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb116-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3188,12 +3397,12 @@ Neither! Use joins instead.
 <p>Right Join</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a></a><span class="fu">right_join</span>(</span>
+<div class="sourceCode" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a></a><span class="fu">right_join</span>(</span>
 <span id="cb118-2"><a></a>  x,</span>
 <span id="cb118-3"><a></a>  y,</span>
 <span id="cb118-4"><a></a>  <span class="at">by =</span> <span class="fu">join_by</span>(col1, x_col2 <span class="sc">==</span> y_col2)</span>
 <span id="cb118-5"><a></a>  ...</span>
-<span id="cb118-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb118-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="tightlist">
 <ul>
 <li class="fragment">Start with all rows in <strong>right</strong> df <code>y</code></li>
@@ -3224,7 +3433,7 @@ Neither! Use joins instead.
 <div class="row">
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a></a>band_members</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a></a>band_members</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   name  band   
@@ -3237,7 +3446,7 @@ Neither! Use joins instead.
 </div>
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a></a>band_instruments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a></a>band_instruments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   name  plays 
@@ -3250,7 +3459,7 @@ Neither! Use joins instead.
 </div>
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a></a>band_instruments2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a></a>band_instruments2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   artist plays 
@@ -3266,9 +3475,9 @@ Neither! Use joins instead.
 <div class="col-6">
 <div style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb125"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a></a><span class="fu">right_join</span>(band_members, </span>
+<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a></a><span class="fu">right_join</span>(band_members, </span>
 <span id="cb125-2"><a></a>    band_instruments</span>
-<span id="cb125-3"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb125-3"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3285,9 +3494,9 @@ Neither! Use joins instead.
 <div class="col-6">
 <div style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb127"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a></a><span class="fu">right_join</span>(band_members, </span>
+<div class="sourceCode cell-code" id="cb127"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a></a><span class="fu">right_join</span>(band_members, </span>
 <span id="cb127-2"><a></a>    band_instruments2, </span>
-<span id="cb127-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb127-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3317,12 +3526,12 @@ Neither! Use joins instead.
 <p>Inner Join</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb129"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a></a><span class="fu">inner_join</span>(</span>
+<div class="sourceCode" id="cb129"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a></a><span class="fu">inner_join</span>(</span>
 <span id="cb129-2"><a></a>  x,</span>
 <span id="cb129-3"><a></a>  y,</span>
 <span id="cb129-4"><a></a>  <span class="at">by =</span> <span class="fu">join_by</span>(col1, x_col2 <span class="sc">==</span> y_col2)</span>
 <span id="cb129-5"><a></a>  ...</span>
-<span id="cb129-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb129-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="tightlist">
 <ul>
 <li class="fragment">Start with all rows in left df <code>x</code></li>
@@ -3359,7 +3568,7 @@ Neither! Use joins instead.
 <div class="row">
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a></a>band_members</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a></a>band_members</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   name  band   
@@ -3372,7 +3581,7 @@ Neither! Use joins instead.
 </div>
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a></a>band_instruments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a></a>band_instruments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   name  plays 
@@ -3385,7 +3594,7 @@ Neither! Use joins instead.
 </div>
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a></a>band_instruments2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a></a>band_instruments2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   artist plays 
@@ -3401,9 +3610,9 @@ Neither! Use joins instead.
 <div class="col-6">
 <div style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a></a><span class="fu">inner_join</span>(band_members, </span>
+<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a></a><span class="fu">inner_join</span>(band_members, </span>
 <span id="cb136-2"><a></a>    band_instruments</span>
-<span id="cb136-3"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb136-3"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3419,9 +3628,9 @@ Neither! Use joins instead.
 <div class="col-6">
 <div style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a></a><span class="fu">inner_join</span>(band_members, </span>
+<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a></a><span class="fu">inner_join</span>(band_members, </span>
 <span id="cb138-2"><a></a>    band_instruments2,</span>
-<span id="cb138-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb138-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3450,12 +3659,12 @@ Neither! Use joins instead.
 <p>Full Join</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a></a><span class="fu">full_join</span>(</span>
+<div class="sourceCode" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a></a><span class="fu">full_join</span>(</span>
 <span id="cb140-2"><a></a>  x,</span>
 <span id="cb140-3"><a></a>  y,</span>
 <span id="cb140-4"><a></a>  <span class="at">by =</span> <span class="fu">join_by</span>(col1, x_col2 <span class="sc">==</span> y_col2)</span>
 <span id="cb140-5"><a></a>  ...</span>
-<span id="cb140-6"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb140-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="tightlist">
 <ul>
 <li class="fragment">Start with all rows in left df <code>x</code></li>
@@ -3489,13 +3698,13 @@ Neither! Use joins instead.
 <div class="col-7" style="margin-top: -4em">
 <div class="row">
 <div class="col-12">
-<p><img data-src="../images/misc/joins/left.png" style="max-height: 10em"></p>
+<p><img data-src="../images/misc/joins/full.png" style="max-height: 10em"></p>
 </div>
 </div>
 <div class="row">
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a></a>band_members</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a></a>band_members</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   name  band   
@@ -3508,7 +3717,7 @@ Neither! Use joins instead.
 </div>
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb143"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a></a>band_instruments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb143"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a></a>band_instruments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   name  plays 
@@ -3521,7 +3730,7 @@ Neither! Use joins instead.
 </div>
 <div class="col-4">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb145"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a></a>band_instruments2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a></a>band_instruments2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
   artist plays 
@@ -3537,18 +3746,19 @@ Neither! Use joins instead.
 <div class="col-6">
 <div style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb147"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a></a><span class="fu">left_join</span>(band_members, </span>
+<div class="sourceCode cell-code" id="cb147"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a></a><span class="fu">full_join</span>(band_members, </span>
 <span id="cb147-2"><a></a>    band_instruments</span>
-<span id="cb147-3"><a></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb147-3"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
+<pre><code># A tibble: 4 × 3
   name  band    plays 
   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; 
 1 Mick  Stones  &lt;NA&gt;  
 2 John  Beatles guitar
-3 Paul  Beatles bass  </code></pre>
+3 Paul  Beatles bass  
+4 Keith &lt;NA&gt;    guitar</code></pre>
 </div>
 </div>
 </div>
@@ -3556,9 +3766,9 @@ Neither! Use joins instead.
 <div class="col-6">
 <div style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb149"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a></a><span class="fu">left_join</span>(band_members, </span>
+<div class="sourceCode cell-code" id="cb149"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a></a><span class="fu">left_join</span>(band_members, </span>
 <span id="cb149-2"><a></a>    band_instruments2,</span>
-<span id="cb149-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb149-3"><a></a>    <span class="at">by =</span> <span class="fu">join_by</span>(name <span class="sc">==</span> artist))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -3586,7 +3796,7 @@ Neither! Use joins instead.
 <h2>Example data frame for <code>tidyr</code></h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb151"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a></a><span class="co"># Generate example data for some tidyr functions</span></span>
+<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a></a><span class="co"># Generate example data for some tidyr functions</span></span>
 <span id="cb151-2"><a></a>glasses <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb151-3"><a></a>    <span class="at">condition =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>),</span>
 <span id="cb151-4"><a></a>    <span class="at">participant =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>),</span>
@@ -3594,10 +3804,29 @@ Neither! Use joins instead.
 <span id="cb151-6"><a></a>    <span class="at">notes =</span> <span class="fu">c</span>(<span class="st">"glasses_none"</span>, <span class="st">"glasses_none"</span>, <span class="st">"none_none"</span>, <span class="st">"none_none"</span>,</span>
 <span id="cb151-7"><a></a>              <span class="st">"none_incomplete"</span>, <span class="st">"none_incomplete"</span>, <span class="st">"none_none"</span>, <span class="st">"none_none"</span>,</span>
 <span id="cb151-8"><a></a>              <span class="st">"glasses_none"</span>, <span class="st">"glasses_none"</span>, <span class="st">"glasses_late"</span>, <span class="st">"glasses_late"</span>)</span>
-<span id="cb151-9"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb151-9"><a></a>)</span>
+<span id="cb151-10"><a></a></span>
+<span id="cb151-11"><a></a>glasses</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
-
-</div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 4
+   condition participant  score notes          
+       &lt;dbl&gt;       &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;          
+ 1         1           1 0.885  glasses_none   
+ 2         1           1 0.553  glasses_none   
+ 3         1           2 0.906  none_none      
+ 4         1           2 0.587  none_none      
+ 5         1           3 0.423  none_incomplete
+ 6         1           3 0.950  none_incomplete
+ 7         2           4 0.709  none_none      
+ 8         2           4 0.413  none_none      
+ 9         2           5 0.0184 glasses_none   
+10         2           5 0.567  glasses_none   
+11         2           6 0.490  glasses_late   
+12         2           6 0.879  glasses_late   </code></pre>
+</div>
+</div>
+</div>
 </section>
 <section id="tidyr-tidy-messy-data" class="slide level2 left-sidebar-slide" data-fullscreen="true" style="font-size: .8;">
 <h2><code>tidyr</code>: Tidy messy data</h2>
@@ -3615,10 +3844,10 @@ Neither! Use joins instead.
 </div>
 </div>
 <div class="main-content">
-<div class="r-stretch" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em;">
+<div class="r-stretch" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em; margin-top: -2em;">
 <div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
-<p><i class="bi-check2-square " style="" role="img" aria-hidden="true"></i></p>
+<p><i class="bi-arrow-return-right " style="" role="img" aria-hidden="true"></i></p>
 </div>
 <div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
 <div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
@@ -3631,7 +3860,7 @@ Neither! Use joins instead.
 </div>
 <div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
-<p><i class="bi-funnel " style="" role="img" aria-hidden="true"></i></p>
+<p><i class="bi-scissors " style="" role="img" aria-hidden="true"></i></p>
 </div>
 <div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
 <div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
@@ -3644,7 +3873,7 @@ Neither! Use joins instead.
 </div>
 <div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
-<p><i class="bi-collection " style="" role="img" aria-hidden="true"></i></p>
+<p><i class="bi-plus-circle " style="" role="img" aria-hidden="true"></i></p>
 </div>
 <div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
 <div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
@@ -3657,7 +3886,7 @@ Neither! Use joins instead.
 </div>
 <div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
-<p><i class="bi-layer-backward " style="" role="img" aria-hidden="true"></i></p>
+<p><i class="bi-arrows-fullscreen " style="" role="img" aria-hidden="true"></i></p>
 </div>
 <div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
 <div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
@@ -3670,7 +3899,7 @@ Neither! Use joins instead.
 </div>
 <div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
-<p><i class="bi-node-plus-fill " style="" role="img" aria-hidden="true"></i></p>
+<p><i class="bi-dash-circle-dotted " style="" role="img" aria-hidden="true"></i></p>
 </div>
 <div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
 <div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
@@ -3683,7 +3912,7 @@ Neither! Use joins instead.
 </div>
 <div class="contained-box fragment" style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;">
 <div class="box-icon" style="margin-bottom: 0.1em;">
-<p><i class="bi-calculator " style="" role="img" aria-hidden="true"></i></p>
+<p><i class="bi-pip " style="" role="img" aria-hidden="true"></i></p>
 </div>
 <div class="box-title" style="font-size: 0.9em; margin-bottom: 0.2em;">
 <div style="margin-bottom: -.4em !important; margin-top: -.4em !important;">
@@ -3715,7 +3944,7 @@ Neither! Use joins instead.
 <li class="fragment">Compact and human-friendly</li>
 <li class="fragment">Lacks precision</li>
 <li class="fragment">Difficult to manipulate structurally</li>
-<li class="fragment">Create with pivot_wider()</li>
+<li class="fragment">Create with <code>pivot_wider()</code></li>
 </ul>
 </div>
 </div>
@@ -3734,7 +3963,7 @@ Neither! Use joins instead.
 <li class="fragment">Difficult to spot patterns or comparisons</li>
 <li class="fragment">Precise &amp; standardized</li>
 <li class="fragment">Easily manipulable</li>
-<li class="fragment">Create with pivot_longer()</li>
+<li class="fragment">Create with <code>pivot_longer()</code></li>
 </ul>
 </div>
 </div>
@@ -3769,12 +3998,12 @@ Neither! Use joins instead.
 <p>Reshape long:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb152"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb152-1"><a></a><span class="fu">pivot_longer</span>(</span>
-<span id="cb152-2"><a></a>    data, </span>
-<span id="cb152-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(...), </span>
-<span id="cb152-4"><a></a>    <span class="at">names_to =</span> <span class="st">"new_col1"</span>, </span>
-<span id="cb152-5"><a></a>    <span class="at">values_to =</span> <span class="st">"new_col2"</span>,</span>
-<span id="cb152-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb153-2"><a></a>    data, </span>
+<span id="cb153-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(...), </span>
+<span id="cb153-4"><a></a>    <span class="at">names_to =</span> <span class="st">"new_col1"</span>, </span>
+<span id="cb153-5"><a></a>    <span class="at">values_to =</span> <span class="st">"new_col2"</span>,</span>
+<span id="cb153-6"><a></a>    ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment" data-fragment-index="1">
 <ul>
 <li>Move from grid of values to key-value pairs</li>
@@ -3838,16 +4067,16 @@ Neither! Use joins instead.
 <div class="longer-code">
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb154"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a></a>mm.long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(</span>
-<span id="cb154-2"><a></a>    mm.raw,</span>
-<span id="cb154-3"><a></a>    <span class="co"># pivot columns between Red and Brown</span></span>
-<span id="cb154-4"><a></a>    <span class="at">cols =</span> Red<span class="sc">:</span>Brown, </span>
-<span id="cb154-5"><a></a>    <span class="co"># column names go to "Color"</span></span>
-<span id="cb154-6"><a></a>    <span class="at">names_to =</span> <span class="st">"Color"</span>, </span>
-<span id="cb154-7"><a></a>    <span class="co"># column values go to "Number"</span></span>
-<span id="cb154-8"><a></a>    <span class="at">values_to =</span> <span class="st">"Number"</span>) </span>
-<span id="cb154-9"><a></a></span>
-<span id="cb154-10"><a></a>mm.long</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a></a>mm.long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb155-2"><a></a>    mm.raw,</span>
+<span id="cb155-3"><a></a>    <span class="co"># pivot columns between Red and Brown</span></span>
+<span id="cb155-4"><a></a>    <span class="at">cols =</span> Red<span class="sc">:</span>Brown, </span>
+<span id="cb155-5"><a></a>    <span class="co"># column names go to "Color"</span></span>
+<span id="cb155-6"><a></a>    <span class="at">names_to =</span> <span class="st">"Color"</span>, </span>
+<span id="cb155-7"><a></a>    <span class="co"># column values go to "Number"</span></span>
+<span id="cb155-8"><a></a>    <span class="at">values_to =</span> <span class="st">"Number"</span>) </span>
+<span id="cb155-9"><a></a></span>
+<span id="cb155-10"><a></a>mm.long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 180 × 4
@@ -3865,7 +4094,8 @@ Neither! Use joins instead.
 10     2   49.0 Orange      3
 # ℹ 170 more rows</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -3885,12 +4115,12 @@ Neither! Use joins instead.
 <p>Reshape wide:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb156"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a></a><span class="fu">pivot_wider</span>(</span>
-<span id="cb156-2"><a></a>    data, </span>
-<span id="cb156-3"><a></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(...),</span>
-<span id="cb156-4"><a></a>    <span class="at">names_from =</span> <span class="st">"col1"</span>, </span>
-<span id="cb156-5"><a></a>    <span class="at">values_from =</span> <span class="st">"col2"</span>,</span>
-<span id="cb156-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a></a><span class="fu">pivot_wider</span>(</span>
+<span id="cb157-2"><a></a>    data, </span>
+<span id="cb157-3"><a></a>    <span class="at">id_cols =</span> <span class="fu">c</span>(...),</span>
+<span id="cb157-4"><a></a>    <span class="at">names_from =</span> <span class="st">"col1"</span>, </span>
+<span id="cb157-5"><a></a>    <span class="at">values_from =</span> <span class="st">"col2"</span>,</span>
+<span id="cb157-6"><a></a>    ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment" data-fragment-index="1">
 <ul>
 <li>Move from key-value pairs to grid of values</li>
@@ -3952,16 +4182,16 @@ Neither! Use joins instead.
 <div class="col-7">
 <div class="fragment" data-fragment-index="6">
 <div class="longer-code">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb158"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a></a>mm.wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(</span>
-<span id="cb158-2"><a></a>    mm.long,</span>
-<span id="cb158-3"><a></a>    <span class="co"># Every value in `Color` becomes a column</span></span>
-<span id="cb158-4"><a></a>    <span class="at">names_from =</span> <span class="st">"Color"</span>, </span>
-<span id="cb158-5"><a></a>    <span class="co"># Values from `Number` go to new columns</span></span>
-<span id="cb158-6"><a></a>    <span class="at">values_from =</span> <span class="st">"Number"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb158-7"><a></a><span class="co"># Move `Weight` column to end</span></span>
-<span id="cb158-8"><a></a><span class="fu">relocate</span>(Weight, <span class="at">.after =</span> <span class="fu">last_col</span>())</span>
-<span id="cb158-9"><a></a></span>
-<span id="cb158-10"><a></a>mm.wide</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a></a>mm.wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(</span>
+<span id="cb159-2"><a></a>    mm.long,</span>
+<span id="cb159-3"><a></a>    <span class="co"># Every value in `Color` becomes a column</span></span>
+<span id="cb159-4"><a></a>    <span class="at">names_from =</span> <span class="st">"Color"</span>, </span>
+<span id="cb159-5"><a></a>    <span class="co"># Values from `Number` go to new columns</span></span>
+<span id="cb159-6"><a></a>    <span class="at">values_from =</span> <span class="st">"Number"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb159-7"><a></a><span class="co"># Move `Weight` column to end</span></span>
+<span id="cb159-8"><a></a><span class="fu">relocate</span>(Weight, <span class="at">.after =</span> <span class="fu">last_col</span>())</span>
+<span id="cb159-9"><a></a></span>
+<span id="cb159-10"><a></a>mm.wide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -4005,12 +4235,12 @@ Neither! Use joins instead.
 <p>Split column values:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb160"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
-<span id="cb160-2"><a></a>    data, </span>
-<span id="cb160-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"col1"</span>, ...), </span>
-<span id="cb160-4"><a></a>    <span class="at">delim =</span> <span class="st">"delimiter character(s)"</span>, </span>
-<span id="cb160-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"new_col1"</span>, <span class="st">"new_col2"</span>, ...),</span>
-<span id="cb160-6"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
+<span id="cb161-2"><a></a>    data, </span>
+<span id="cb161-3"><a></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"col1"</span>, ...), </span>
+<span id="cb161-4"><a></a>    <span class="at">delim =</span> <span class="st">"delimiter character(s)"</span>, </span>
+<span id="cb161-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"new_col1"</span>, <span class="st">"new_col2"</span>, ...),</span>
+<span id="cb161-6"><a></a>    ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Split values in column into multiple columns based on delimiter characters</li>
 <li class="fragment">Non-character values (e.g., numbers) are coerced to character</li>
@@ -4051,15 +4281,15 @@ Neither! Use joins instead.
 </div>
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
-<span id="cb162-2"><a></a>    glasses,</span>
-<span id="cb162-3"><a></a>    <span class="at">cols =</span> notes,</span>
-<span id="cb162-4"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
-<span id="cb162-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(</span>
-<span id="cb162-6"><a></a>        <span class="st">"wears_glasses"</span>, <span class="st">"notes"</span></span>
-<span id="cb162-7"><a></a>        )</span>
-<span id="cb162-8"><a></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb162-9"><a></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
+<span id="cb163-2"><a></a>    glasses,</span>
+<span id="cb163-3"><a></a>    <span class="at">cols =</span> notes,</span>
+<span id="cb163-4"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
+<span id="cb163-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(</span>
+<span id="cb163-6"><a></a>        <span class="st">"wears_glasses"</span>, <span class="st">"notes"</span></span>
+<span id="cb163-7"><a></a>        )</span>
+<span id="cb163-8"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb163-9"><a></a>    <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -4089,14 +4319,14 @@ Neither! Use joins instead.
 <p>Collapse columns:</p>
 </div>
 <div class="box-content">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb164"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a></a><span class="fu">unite</span>(</span>
-<span id="cb164-2"><a></a>    data,</span>
-<span id="cb164-3"><a></a>    <span class="at">col =</span> <span class="st">"new_col"</span>,</span>
-<span id="cb164-4"><a></a>    old_col1,</span>
-<span id="cb164-5"><a></a>    old_col2,</span>
-<span id="cb164-6"><a></a>    ... <span class="co"># more columns</span></span>
-<span id="cb164-7"><a></a>    <span class="at">sep =</span> <span class="st">"separator character(s)"</span>,</span>
-<span id="cb164-8"><a></a>    ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a></a><span class="fu">unite</span>(</span>
+<span id="cb165-2"><a></a>    data,</span>
+<span id="cb165-3"><a></a>    <span class="at">col =</span> <span class="st">"new_col"</span>,</span>
+<span id="cb165-4"><a></a>    old_col1,</span>
+<span id="cb165-5"><a></a>    old_col2,</span>
+<span id="cb165-6"><a></a>    ... <span class="co"># more columns</span></span>
+<span id="cb165-7"><a></a>    <span class="at">sep =</span> <span class="st">"separator character(s)"</span>,</span>
+<span id="cb165-8"><a></a>    ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li class="fragment">Combine multiple columns into one column</li>
 <li class="fragment">Values are concatenated with specified separator</li>
@@ -4129,20 +4359,22 @@ Neither! Use joins instead.
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a></a><span class="fu">separate_wider_delim</span>(</span>
-<span id="cb166-2"><a></a>    glasses,</span>
-<span id="cb166-3"><a></a>    <span class="at">cols =</span> notes,</span>
-<span id="cb166-4"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
-<span id="cb166-5"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(</span>
-<span id="cb166-6"><a></a>        <span class="st">"wears_glasses"</span>, <span class="st">"notes"</span></span>
-<span id="cb166-7"><a></a>        )</span>
-<span id="cb166-8"><a></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb166-9"><a></a><span class="fu">unite</span>(</span>
-<span id="cb166-10"><a></a>    <span class="at">col =</span> <span class="st">"conditionParticipant"</span>,</span>
-<span id="cb166-11"><a></a>    condition, participant,</span>
-<span id="cb166-12"><a></a>    <span class="at">sep =</span> <span class="st">";"</span>,</span>
-<span id="cb166-13"><a></a>) <span class="sc">|&gt;</span></span>
-<span id="cb166-14"><a></a><span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb167"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb167-1"><a></a><span class="co"># Split `notes` into two columns</span></span>
+<span id="cb167-2"><a></a><span class="fu">separate_wider_delim</span>(</span>
+<span id="cb167-3"><a></a>    glasses,</span>
+<span id="cb167-4"><a></a>    <span class="at">cols =</span> notes,</span>
+<span id="cb167-5"><a></a>    <span class="at">delim =</span> <span class="st">"_"</span>,</span>
+<span id="cb167-6"><a></a>    <span class="at">names =</span> <span class="fu">c</span>(</span>
+<span id="cb167-7"><a></a>        <span class="st">"wears_glasses"</span>, <span class="st">"notes"</span></span>
+<span id="cb167-8"><a></a>        )</span>
+<span id="cb167-9"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb167-10"><a></a> <span class="co"># (re)unite columns with a `;` delim   </span></span>
+<span id="cb167-11"><a></a><span class="fu">unite</span>(</span>
+<span id="cb167-12"><a></a>    <span class="at">col =</span> <span class="st">"conditionParticipant"</span>,</span>
+<span id="cb167-13"><a></a>    condition, participant,</span>
+<span id="cb167-14"><a></a>    <span class="at">sep =</span> <span class="st">";"</span>,</span>
+<span id="cb167-15"><a></a>) <span class="sc">|&gt;</span></span>
+<span id="cb167-16"><a></a><span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 4
@@ -4154,7 +4386,8 @@ Neither! Use joins instead.
 4 1;2                  0.587 none          none      
 5 1;3                  0.423 none          incomplete</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -4177,20 +4410,20 @@ Neither! Use joins instead.
 <div class="box-content">
 <div class="row">
 <div class="col-6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a></a><span class="fu">expand</span>(</span>
-<span id="cb168-2"><a></a>    data,</span>
-<span id="cb168-3"><a></a>    <span class="at">col1 =</span> <span class="fu">c</span>(...),</span>
-<span id="cb168-4"><a></a>    <span class="at">col2 =</span> <span class="fu">c</span>(...),</span>
-<span id="cb168-5"><a></a>    ...)</span>
-<span id="cb168-6"><a></a><span class="er">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="col-6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a></a><span class="fu">complete</span>(</span>
+<div class="sourceCode" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a></a><span class="fu">expand</span>(</span>
 <span id="cb169-2"><a></a>    data,</span>
 <span id="cb169-3"><a></a>    <span class="at">col1 =</span> <span class="fu">c</span>(...),</span>
 <span id="cb169-4"><a></a>    <span class="at">col2 =</span> <span class="fu">c</span>(...),</span>
 <span id="cb169-5"><a></a>    ...)</span>
-<span id="cb169-6"><a></a><span class="er">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb169-6"><a></a><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="col-6">
+<div class="sourceCode" id="cb170"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a></a><span class="fu">complete</span>(</span>
+<span id="cb170-2"><a></a>    data,</span>
+<span id="cb170-3"><a></a>    <span class="at">col1 =</span> <span class="fu">c</span>(...),</span>
+<span id="cb170-4"><a></a>    <span class="at">col2 =</span> <span class="fu">c</span>(...),</span>
+<span id="cb170-5"><a></a>    ...)</span>
+<span id="cb170-6"><a></a><span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <ul>
@@ -4228,9 +4461,9 @@ Neither! Use joins instead.
 <div class="col-5">
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb171"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a></a><span class="fu">expand</span>(weather, </span>
-<span id="cb171-2"><a></a>    date, </span>
-<span id="cb171-3"><a></a>    station)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb172"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a></a><span class="fu">expand</span>(weather, </span>
+<span id="cb172-2"><a></a>    date, </span>
+<span id="cb172-3"><a></a>    station)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -4252,7 +4485,7 @@ Neither! Use joins instead.
 <div class="col-7">
 <div class="fragment" style="margin-top: 1em;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb173"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a></a><span class="fu">complete</span>(weather, date, station)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb174"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb174-1"><a></a><span class="fu">complete</span>(weather, date, station)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -4286,19 +4519,20 @@ Neither! Use joins instead.
 <div class="box-content">
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb175"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a></a><span class="co"># Missing any value in any column</span></span>
-<span id="cb175-2"><a></a><span class="fu">drop_na</span>(weather) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a></a><span class="co"># Missing any value in any column</span></span>
+<span id="cb176-2"><a></a><span class="fu">drop_na</span>(weather) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 5
 # ℹ 5 variables: date &lt;date&gt;, station &lt;chr&gt;, temp_max &lt;dbl&gt;, temp_min &lt;dbl&gt;,
 #   notes &lt;chr&gt;</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb177"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a></a><span class="co"># Missing values in specific columns</span></span>
-<span id="cb177-2"><a></a><span class="fu">drop_na</span>(weather, temp_max, temp_min)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a></a><span class="co"># Missing values in specific columns</span></span>
+<span id="cb178-2"><a></a><span class="fu">drop_na</span>(weather, temp_max, temp_min)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
@@ -4307,7 +4541,8 @@ Neither! Use joins instead.
 1 2026-01-21 North         32       15 &lt;NA&gt; 
 2 2026-01-23 South         30       20 &lt;NA&gt; </code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 <div class="overlap-box overlap-box-blue">
@@ -4317,9 +4552,9 @@ Neither! Use joins instead.
 <div class="box-content">
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb179"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a></a><span class="fu">replace_na</span>(weather, </span>
-<span id="cb179-2"><a></a>           <span class="fu">list</span>(<span class="at">temp_max =</span> <span class="dv">999</span>, </span>
-<span id="cb179-3"><a></a>                <span class="at">temp_min =</span> <span class="sc">-</span><span class="dv">999</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb180"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a></a><span class="fu">replace_na</span>(weather, </span>
+<span id="cb180-2"><a></a>           <span class="fu">list</span>(<span class="at">temp_max =</span> <span class="dv">999</span>, </span>
+<span id="cb180-3"><a></a>                <span class="at">temp_min =</span> <span class="sc">-</span><span class="dv">999</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
@@ -4331,7 +4566,8 @@ Neither! Use joins instead.
 4 2026-01-23 South         30       20 &lt;NA&gt;  
 5 2026-01-24 North        999       17 Cloudy</code></pre>
 </div>
-</div></div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -4349,7 +4585,7 @@ Neither! Use joins instead.
 </div>
 <div class="card-body lessgap">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb181"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"down"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb182"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb182-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"down"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -4375,7 +4611,7 @@ Neither! Use joins instead.
 </div>
 <div class="card-body lessgap">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb183"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"up"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb184"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb184-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"up"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -4401,7 +4637,7 @@ Neither! Use joins instead.
 </div>
 <div class="card-body lessgap">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb185"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"downup"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb186"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb186-1"><a></a><span class="fu">fill</span>(weather, temp_max, <span class="at">.direction =</span> <span class="st">"downup"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -4445,9 +4681,9 @@ Neither! Use joins instead.
 </ul></li>
 </ul>
 <p>Imagine a data frame with columns x, y, and z:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb187"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb187-1"><a></a>df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(x) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(y), <span class="at">sum =</span> <span class="fu">sum</span>(z))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb188-1"><a></a>df <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(x) <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(y), <span class="at">sum =</span> <span class="fu">sum</span>(z))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Each row in the summarized output processes data (here the mean of y and the sum of z) about multiple rows in the input, defined by the unique values of the group (here x).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb188"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb188-1"><a></a>df2 <span class="sc">%&gt;%</span> <span class="fu">nest</span>(<span class="at">my_nested_var =</span> <span class="fu">c</span>(y, z))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a></a>df2 <span class="sc">%&gt;%</span> <span class="fu">nest</span>(<span class="at">my_nested_var =</span> <span class="fu">c</span>(y, z))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Each row in the nested output contains the data itself (unchanged) associated with those rows (the values in columns y and z) as defined by the unique values of everything that isn’t nested (here x). Since the data is unchanged, the data in the new variable is itself a table (or tibble). The columns in the nested tibble are the columns you passed to it and the rows are all the original rows within each “group”.</p>
 </div>
 </div>
@@ -4560,14 +4796,14 @@ Neither! Use joins instead.
 </div>
 </div>
 
-
-</section></section>
-    </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>D2M-R I | Week 4</p>
 </div>
-</div></div>
+</div>
+</section></section>
+    </div>
+  </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="../site_libs/revealjs/dist/reveal.js"></script>
@@ -4599,8 +4835,7 @@ Neither! Use joins instead.
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
 'smaller': false,
  
@@ -4755,7 +4990,7 @@ Neither! Use joins instead.
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -4820,173 +5055,192 @@ Neither! Use joins instead.
     </script>
 
     <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
-          }
-          return false;
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
         }
-        const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
           for (const childEl of codeEl.children) {
             if (isCodeAnnotation(childEl)) {
               childEl.remove();
             }
           }
           return codeEl.innerText;
-        }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
-            } else {
-              return "";
-            }
-          });
-        }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
-            }
-          } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
-            });
-          }
-        }
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      </script>
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
     
 
 </body></html>
