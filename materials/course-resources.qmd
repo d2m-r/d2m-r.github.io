@@ -15,6 +15,8 @@ Guides and walkthroughs to get you through many of the gritty bits of D2M-R.[^1]
 
 -   [Best Practices](guides/best-practices.html)
     -   A collection of best practices for programming in R (for D2M-R students)
+-   [Hunter's Plain English Guide to R and Some Packages](guides/hunters-r-notes.html)
+    -   An attempt to turn a bunch of notes on R and some functions into language that's a bit easier to understand coming from a non-computer science perspective
 -   [Natalie's Style Guide](guides/natalie-style-guide.html)
     -   Just for reference of what a style guide might look like -- you don't have to use it!
 -   [Using RStudio with GitHub](guides/rstudio-github.html)
