@@ -1,0 +1,581 @@
+---
+title: "a plain english guide to r and some packages"
+short-title: "plain english guide to r"
+date: last-modified
+author: 
+  name: "hunter cheng"
+  github-username: "huntershixin @ github"
+format: 
+  html:
+    toc: true
+    toc-depth: 6
+    toc-location: left-body
+    anchor-sections: true
+---
+# basics {#basics}
+## value types {#value-type}
+| name | abbr. | definition | examples | notes |
+| --- | --- | --- | --- | --- |
+| logical | lgl | booleans, binary yes/no | `TRUE` `FALSE` | |
+| integer | int | self-explanatory | `1L` `20L` | needs L after number to force integer type |
+| double | dbl | non-integer numbers | `1` `20.0` | default numeric storage type |
+| complex | cplx | complex numbers like imaginaries | `i` | ignore for now |
+| character | chr | strings, located within quotation marks | `"a"` `"marky mark"` | |
+
+### functions for value types {#type-function}
+* `typeof()` / `class()`
+  * returns value type
+  * note: `typeof()` will differentiate between integer and double. class() will return `numeric` for both
+* `as.logical()`, `as.character()`, `as.double()`, `as.numeric()`
+  * forces the data you enter into a specific value type
+  * will return error if the result would be nonsensical
+    * e.g., `as.logical("Mary")` would be impossible
+
+## types of data structures {#data-structure}
+| structure | dimensions | mixed elements? | notes |
+| --- | --- | --- | --- |
+| [vector](#vector) | 1d | no | all elements must be same type |
+| [matrix](#matrix) | 2d | no | all elements must be same type |
+| [dataframe](#df) | 2d | yes (column) | each column is a [vector](#vector) |
+| [list](#list) | flexible | yes | can contain all element types |
+
+### vectorized functions vs. loops
+* to put it very simply, vectorized functions act once for an entire vector, whereas loops have to call functions for each element of a vector
+* this means vectorized functions are often faster and less intense power-wise for your computer
+* why does this matter? 
+  * to my best understanding, at our level? it doesn't
+    * unless you're really invested in understanding the fine points of r or if you're doing massive calculations that your computer can't handle
+  * the only relevance for *us* is recognizing when certain functions will need a vector input, like `ifelse()` (vectorized) vs. `if () ... else if ()` (non-vectorized)
+
+### functions for data structures {#structure-function}
+* `length()`
+  * takes a dataset, returns the number of elements in the data
+* `class()`
+  * takes a dataset and returns the type of data structure
+  * note: `typeof()` isn't as helpful with data structures
+* `as.array()`, `as.data.frame()`, `as.matrix()`, `as.list()`
+  * forces a dataset into a specific data structure type
+
+::: {.panel-tabset}
+
+### vectors {#vector}
+
+:::{.callout-note}
+go [here](#vector-subset) for vector subsetting
+:::
+
+* one-dimensional
+* all elements are same type (i.e. all numeric/character/etc.)
+```{r}
+vector_structure <- c(25, 30)
+vector_structure
+```
+* includes scalars, which are vectors with a length of one
+  * e.g., `c(1)`
+* in r, will be recycled (repeated) during operations with other vectors if lengths are not equivalent
+  * returns an warning if the length of the shorter vector isn't a factor of the length of the longer one
+```{r}
+c(25, 30) + c(25, 30)                   # same length, no warning
+c(25, 30) + c(25, 30, 35, 40)           # different lengths but factorable lengths, no warning
+c(25, 30) + c(25, 30, 35)               # different lengths, NOT factorable lengths, warning
+```
+
+### matrices {#matrix}
+
+:::{.callout-note}
+go [here](#matrix-subset) for matrix subsetting
+:::
+
+* two-dimensional; basically [vector](#vector) with another dimension added
+* all elements are same type
+* number of rows and cols must be multiple of data length
+  * nrow and ncol are optional
+```{r}
+matrix_structure <- matrix(25:30, nrow = 2, ncol = 3)
+matrix_structure
+```
+
+### dataframes {#df}
+
+:::{.callout-note}
+go [here](#df-subset) for dataframe subsetting
+:::
+
+* two-dimensional (contains multiple [vectors](#vector); one in each column)
+* columns can contain different element types
+* all rows must be same length
+* equivalent of tidyverse's tibble
+* works easily with dplyr, ggplot2, and tidyr
+```{r}
+dataframe_structure <- data.frame(name = c("A", "B"), age = c(25L, 30L), bday = c(1.1, 2.2), vector_structure)
+dataframe_structure
+```
+
+### lists {#list}
+
+:::{.callout-note}
+go [here](#list-subset) for list subsetting
+:::
+
+* flexible dimensionality 
+* columns can contain different element types (including [vectors](#vector) and [dataframes](#df))
+* rows can be different lengths and contain multiple element types
+```{r}
+list_structure <- list(name = c("A", "B"), age = c(25L, 30L, 35L), bday = c(1.1, 2.2), age_mix = c(25L, 30.25), dataframe_structure, vector_structure)
+list_structure
+```
+
+:::
+
+## subsetting {#subset}
+
+::: {.panel-tabset}
+
+### vectors {#vector-subset}
+* first, call the vector, then specify position or logical test in `[single brackets]`
+* will always return a vector
+```{r}
+vector_structure[1]                           # 1st element
+vector_structure[c(1, 2)]                     # 1st and 2nd element
+vector_structure[-1]                          # all elements except the 1st
+vector_structure[vector_structure < 30]       # all elements smaller than 30
+```
+
+### matrices {#matrix-subset}
+* call the matrix, then use `[row, column]` argumentation with single brackets
+* always returns a vector
+```{r}
+matrix_structure[1, 2]          # element at row 1, column 2
+matrix_structure[2, ]           # entire row 2
+matrix_structure[ , 2]          # entire column 2
+matrix_structure[1:2, 3]        # submatrix of rows 1-2 and column 3
+matrix_structure[ , c(1, 3)]    # columns 1 and 3
+```
+
+### dataframes {#df-subset}
+```{r}
+dataframe_structure[1, ]               # dataframe of 1st row with all columns
+dataframe_structure[ , 2]              # vector of 2nd column with all rows
+dataframe_structure["name"]            # dataframe of "name" column
+dataframe_structure[ , "name"]         # vector of "name" column
+dataframe_structure$name               # vector of "name" column
+dataframe_structure$name[2]            # vector of value at 2nd row, "name" column
+dataframe_structure[["name"]]          # vector of "name" column
+dataframe_structure[1, 2]              # vector of value at 1st row, 2nd column
+dataframe_structure[1:2, "name"]       # vector of rows 1 - 2, "name" column
+dataframe_structure[[1]]               # dataframe of 1st column
+```
+
+### lists {#list-subset}
+* call the list, then use `[single brackets]` to get a sublist
+  * returns as list
+* to get actual elements, use `[[double brackets]]` or `$dollarsign`
+  * returns as vector
+```{r}
+list_structure[1]                 # list of 1st element's contents
+list_structure[[1]]               # vector of 1st element's contents
+list_structure[[1]][2]            # vector of 1st element's 2nd value
+list_structure["name"]            # list of element "name"'s contents
+list_structure$name               # vector of element "name"'s contents
+list_structure$name[2]            # vector of element "name"'s 2nd value
+list_structure[["name"]]          # vector of element "name"'s contents
+list_structure[["name"]][2]       # vector of element "name"'s 2nd value
+```
+
+:::
+
+---
+
+# base r {#base}
+## operators {#base-operators}
+```{r}
+#| eval: false
+
+# arithmetic operators
+x + y
+x - y
+x * y
+x / y
+x ^ y
+x %% y                      # modulus; returns the remainder of x/y
+x %/% y                     # integer division; returns the whole number result of x/y
+
+# assignment operators 
+x <- 2                      # used for assigning values to objects
+mean(x = c(1, 2))           # used to specify what arguments should evaluate to within functions
+
+# comparison operators
+x == x                      # x equals x
+x != y                      # x does NOT equal y
+x > y                       # x is greater than y
+x < y                       # x is less than y
+x >= y                      # x is greater than or equal to y
+x <= y                      # x is less than or equal to y
+
+# logical operators (combine comparison statements)
+logic_x & logic_y           # vectorized AND; logic_x AND logic_y are true
+logic_x && logic_y          # non-vectorized AND; logic_x AND logic_y are true. not used very often
+logic_x ! logic_y           # NOT; logic_x NOT logic_y. can be combined with other operators
+logic_x | logic_y           # vectorized OR; logic_x OR logic_y are true
+logic_x || logic_y          # non-vectorized OR; logic_x OR logic_y are true. not used very often
+
+# misc operators
+1:2                         # 1 through 2
+element_x %in% vector_y     # element_x is in vector_y
+matrix_x %*% matrix_y       # matrix multiplication
+dependent_x ~ independent_y # separates dependent and independent variables in formulas that specify relationships between variables
+```
+
+## exploring data {#base-explore}
+* `head()`
+  * takes a dataset and returns the first six rows
+  * args:
+    * `head(dataset)`
+* `tail()`
+  * takes a dataset and returns the last six rows of the dataset
+  * args:
+    * `tail(dataset)`
+
+## functions {#base-functions}
+### `paste()`, `paste0()`
+
+### `apply()`
+* applies a function to the rows or columns of a matrix or data frame
+* args:
+  * `apply(dataset, vector_of_operating_dimension, function)`
+    * for `vector_of_operating_dimension`, using `1` will apply the function over rows, `2` over columns, and `c(1, 2)` over rows and columns
+
+### `lapply()`, `sapply()`, `vapply()`
+* applies a function over a list or vector
+* `lapply()` returns a list the same length as the input dataset
+* `sapply()` returns a vector or matrix
+  * makes it more user-friendly
+  * is functionally the same as `lapply()` with more possible arguments and customization
+* `vapply()` is similar to `sapply()` but requires an argument that specifies how the return will be formatted
+
+## control flow {#base-control}
+### conditionals {#base-conditional}
+* `if ()`
+* `else ()`
+* `while ()`
+  * you ***MUST*** add a line of code that ensures the `when()` condition eventually ends
+  * if you don't, you're going to make an infinite loop that eventually crashes your r
+  * all `while()` conditionals can be written as `for()` loops, but not all `for()` loops can be written as `while()` conditionals
+
+### loops {#base-loop}
+* there are two ways to run `for ()` loops in r: over elements or over index positions
+* looping over elements looks like this:
+```{r}
+#| eval: FALSE
+
+for (element in vector_structure)) {
+  element == literal_value_of_element_in_the_vector
+}
+```
+* looping over indices looks like this:
+```{r}
+#| eval: FALSE
+
+for (i in seq_along:vector_structure)) {
+  vector_structure[i] == whatever_value_is_in_position_number_i_in_vector_structure
+  i == number_of_loops
+}
+
+# note: the `i` here can be named anything you want
+# using `i` for index positions is most common
+# personally it reminds me i'm looking at positions, not elements
+```
+  * looping over indices may seem more complicated, but it's for a good reason!
+  * using index positions gives you the flexibility to access the actual value of the element at the same time as the position. this isn't as easy if you try to do it the other way around (figure out index position given the value of the element)
+  
+### user-defined functions
+* `stop()`
+* `return()`
+
+* \{\{ \}\} only gets used to refer to an argument when incorporating tidy evaluations into a user-defined function
+
+---
+
+# tidyverse {#tidyverse}
+## dplyr (work in progress!) {#dplyr}
+:::{.callout-note}
+see [here](https://dplyr.tidyverse.org/reference/index.html) for an exhaustive list of functions in dplyr
+:::
+
+### column functions
+#### `select()`
+* mostly used to select a set of columns, can be used to reorder columns or rename them
+  * note: takes column names as objects, not strings (i.e., column_1, not "column_1")
+* returns a tibble (dataframe) with the specified columns and drops all other columns
+* args:
+  * `select(dataset, arguments_for_selecting_columns_here)`
+  * for renaming columns, `select(dataset, new_name = old_name)`
+  * for reordering columns, `select(dataset, column_3, column_1, column_2)`
+* selection helpers
+  * `starts_with("prefix")`, `ends_with("suffix")`, `contains("text")`, `matches("regex")`
+  * `where(function())`
+    * returns variables where `function()` evaluates to `TRUE`
+  * `everything()`
+    * can take the argument `vars = c()` where `c()` is a vector of variable names
+    * if `vars = ` is left empty, takes all variables from the current context/pipe
+
+#### `rename()`
+* renames some or all columns
+* returns a tibble with all of the columns in the original order
+* args:
+  * `rename(dataset, new_name = old_name)`
+
+#### `relocate()`
+* relocates columns in dataframes using relative positions
+* returns a tibble with all of the columns
+* args:
+  * `relocate(dataset, column_3, .before = column_2, .after = column_1)`
+
+#### `mutate()`
+* can be used to add new named columns
+* computes values based on rows
+* columns are created in the order given by the human (you!)
+* args:
+  * `mutate(dataset, new_column_1 = ..., new_column_2 = ...)`
+
+#### `glimpse()`
+* takes a dataframe or tibble
+* returns the number of rows, the number of columns, the names of columns, and the value types of each column
+* args:
+  * `glimpse(dataset)`
+  
+#### `across()`
+*
+
+### row functions
+
+#### `filter()`
+* returns a tibble (dataframe) with the chosen rows, drops all other rows
+* rows are chosen using a condition based on values in one or more columns 
+* args:
+  * `filter(dataset, filter_variable)`
+
+#### `arrange()`
+* arranges a dataframe, sorting rows by column values
+* if given 2 or more variables, sorts it in the priority of order given
+  * strings are sorted alphabetically
+  * default sort is ascending order
+* args:
+  * `arrange(dataset, column_1, column_2)`
+  * for descending order, `arrange(dataset, desc(column_1))`
+
+#### `distinct()`
+* keeps only the unique/distinct rows from a dataframe and removes the repeats
+* good for determining the different values present for a given variable
+  * e.g., you want to figure out the number of unique participants in a long dataset with multiple timepoints
+* args:
+  * `distinct(dataset, .keep_all = FALSE)`
+    * if `.keep_all = TRUE`, all variables in the dataset are retained
+    * if there are some configurations of the rows that aren't unique, the first instance of the row is kept
+    
+#### `summarize()`
+* computes summary statistics across groups
+* returns a new data frame that with one row for each combination of grouping variables
+  * if there are no grouping variables, returns one row summarizing all observations in the data frame
+* works well with `mean()`, `sd()`, `min()`, `max()`, etc.
+* args:
+  * `summarize(dataset, col_name = operation())`
+    
+#### `rowwise()`
+* 
+
+### grouping functions
+#### `group_by()`
+* creates groups of rows based on unique values across one or more columns
+* good for using with functions like `summarize()` or `count()`
+* args:
+  * `group_by(dataset, grouping_variable)`
+
+#### `count()`
+* takes a dataframe or a tibble
+* counts the number of observations in each group
+* args:
+  * `count(dataset, grouping_variable)`
+  
+### vector functions
+#### `case_when()`
+
+
+#### `if_else()`
+
+
+#### `recode_values()` and `replace_values()`
+
+
+## tidyr (work in progress!) {#tidyr}
+`pivot_longer()`
+
+`pivot_wider()`
+
+`separate()`
+
+`unite()`
+
+## ggplot2 {#ggplot}
+* makes cool graphics for data analysis
+* view the official guide [here](https://ggplot2-book.org/)
+* always starts using the format `ggplot(dataset, mapping = aes())`
+* is based on a layer logic - each geom is layered on top of each other
+  * layers can inherit arguments from each other
+  * arguments set for the whole ggplot (in the initial `mapping = aes()`) are inherited by the geoms set afterwards
+
+### geoms {#ggplot-geom}
+:::{.callout-note}
+see [here](https://ggplot2.tidyverse.org/reference/index.html#geoms) for more geom types
+:::
+
+#### `geom_point()`
+* good for scatterplots
+* defaults to `stat = "identity"`
+
+#### `geom_hline()`, `geom_vline()`, `geom_abline()`
+* create flat/straight lines (horizontal, vertical, and specified slope and intercept, respectively)
+* `linetype` can range from 0 to 6 (preset line types)
+  * see [here](https://ggplot2.tidyverse.org/reference/aes_linetype_size_shape.html#shape) for more documentation
+  
+  ![](https://r-charts.com/en/tags/base-r/lines_files/figure-html/line-types.png){width=400}
+* `linewidth` is set in mm
+
+#### `geom_smooth()`
+* creates a line that represents an approximating function
+* takes the argument `method = ` which allows you to specify what type of function to use
+  * defaults to `method = "loess"` (local polynomial regression fitting) when there are over 1,000 observations
+  * defaults to `method = "lm"` (linear model) when there are under 1,000 observations
+* also takes the argument `formula = ` which allows you to specify the specific formula using `x` and `y`
+  * defaults to `formula = NULL`
+
+#### `geom_bar()`
+* makes bar charts, but can also make stacked bar charts
+  * defaults to `position = "stack"`
+* defaults to `stat = "count"`
+* if `x` is categorical, you can go from a stacked bar chart to a grouped/clustered bar chart using `position = "dodge"`
+
+#### `geom_histogram()`
+
+#### `geom_boxplot()`
+
+#### `geom_area()`
+* creates an area that gets shaded in
+* good for area graphs
+
+#### `geom_text()`, `geom_label()`
+* creates text within the plot
+* `geom_text()` only creates text
+  * takes the argument `check_overlap = ` to see if it's overlapping other text
+    * setting to `TRUE` will make sure the text does not overlap with other text, `FALSE` will let it do so
+* `geom_label()` will create text that has a rectangle behind it, making it easier to read
+* requires the argument `label = ` to tell it what to say
+
+
+### aesthetics {#ggplot-aes}
+* geom aesthetics
+  * `x = ` is needed for mapping any ggplot
+    * `y = ` is sometimes required; will default to `"stat = identity"` in specific geoms that require a `y` argument and `"stat = count"` when optional
+      * `"identity"` means it will use `y` as the y-axis plotting variable
+      * `"count"` means it will try to count the instances of `x` and use that as the y-axis plotting variable
+* general aesthetics can be used with scales as well as geoms
+  * `fill` is background/inside color
+    * i like [this](https://r-charts.com/colors/) site for looking up named colors in r
+  * `color` is outline
+  * `alpha` is transparency (100 = opaque, 0 = completely transparent)
+  * `size` is self explanatory
+  * `shape` is the shape of the point
+    * mostly used with geom_point
+    * can range from 0 through 25 (which are preset shapes), a character (which will become the shape of the point), or `NA` for nothing
+![](https://r-charts.com/en/tags/base-r/pch-symbols_files/figure-html/pch-symbols.png){width=400}
+      * only shapes 19 through 25 take `fill` argument
+      * all other shapes only take `color` argument
+    * see [here](https://ggplot2.tidyverse.org/reference/aes_linetype_size_shape.html#shape) for more documentation
+* a cool note: you can set aesthetics to conditionals using `if_else()`
+
+  
+### scales (or: adjusting how data is displayed) {#ggplot-scale}
+* `labs`
+  * creates labels for your plot
+  * typical args are `x = `, `y = `, and `title = `
+  * other args: 
+    * `subtitle = "Your text here"` will create text below the title
+    * `caption = "Your text here"` will create text displayed to the bottom-right of the plot
+      * often used for sources, notes, or copyrights
+    * `tag = "Your text here"` will create text displayed to the top-left of the plot
+      * often used for labelling plots with letters
+    * if you input an aesthetic that maps onto a specific variable, you can set the aesthetic as an argument to title the scale
+      * e.g., if each color represents a specific group, you could do `color  = "Groups"` to title the color legend "Groups" instead of the name of the raw variable
+  * if a plot has a label you want to get rid of, you can set the argument to `= NULL` and get rid of it completely
+    * if you want the space to be still allocated, you can set it to an empty string (`= ""`)
+* `lims()`
+  * controls the limits of the axes for the plot
+  * takes the arguments `(x = c(lower_x_limit, upper_x_limit), y = c(lower_y_limit, upper_y_limit)`
+  * can also take [aesthetics](#ggplot-aes) as arguments
+* scales
+  * `scale_x_discrete()`/`scale_y_discrete`
+    * args:
+      * `labels = c("Label 1", "Label 2")` controls the text of the labels for the axis ticks
+  * `scale_x_continuous()`/`scale_y_continuous`
+    * args:
+      * `n.breaks = ` controls the number of major ticks along the axis
+      * `breaks = c()` controls the exact ticks that will show up
+      * `labels = ` controls the format of the tick labels
+        * example arguments:
+          * `scales::percent`
+          * `scales::label_dollar`
+          * see [here](https://scales.r-lib.org/reference/index.html#axis-labels) for more
+
+### facets {#ggplot-facet}
+* best way to organize a bunch of plots to your specifications; i think the most useful version is `facet_wrap()`
+* args:
+  * `facets = "grouping_variable"`
+    * works the same way as `group_by()`
+  * `nrow = insert_number_of_rows_here`
+  * `ncol = insert_number_of_columns_here`
+  * `scales = `
+    * if set to `"fixed"`, the minimum and maximum value for the x axes and y axes will be the same across all plots
+      * this makes it easy to compare patterns across the plots
+    * if set to `"free_x"` or `"free_y"`, the specified axis will change according to the values of each plot
+    * if set to `"free"`, both the x and y axes will change according to the values of the plot
+
+### guides (axes and legends) {#ggplot-guide}
+* must be wrapped in a bigger `guide()` layer
+* `guide_legend()`
+* `guide_axis()`
+  * takes the argument `angle = `, lets you angle the text
+  * can also be set in the respective scale_* layer as `guide = guide_axis()`
+
+
+## stringr (work in progress!) {#stringr}
+`str_view()`
+
+`str_detect()`
+
+`str_count()`
+
+`str_extract()`, `str_extract_all()`
+
+`str_replace()`, `str_replace_all()`
+
+`str_split()`
+
+### regular expressions (regex)
+
+## purrr (work in progress!) {#purrr}
+`map()`
+
+## forcats (work in progress!) {#forcats}
+
+`fct_relevel()`
+
+`fct_infreq()`
+
+`fct_reorder()`
+
+## lubridate (work in progress!) {#lubridate}
+`make_datetime()`
+
+`ymd()`, `mdy()`, `dmy()`
+
+`year()`, `month()`, `day()`, `wday()`
