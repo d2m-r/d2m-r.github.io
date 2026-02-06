@@ -1,0 +1,225 @@
+---
+title: "Tidyverse Wrangling: String & Factors"
+subtitle: "string & factors w/ base, stringr, and forcats"
+date: "2/10/2026"
+footer: "D2M-R I | Week 6" #  quarter, week, and class
+
+format: revealjs
+engine: knitr
+
+revealjs-plugins:
+  - codefocus
+  - fullscreen
+
+fullscreen: false
+
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+```
+
+# Strings
+
+## Character data
+
+::: notes
+**Character vectors in R**: Define strings as character vectors, the atomic data type for text. Show that single strings are length-1 vectors. Demonstrate checking type with `class()` and `typeof()`.
+:::
+
+## Base R vs tidyverse
+
+::: notes
+**Base R vs tidyverse approach**: Contrast base R's inconsistent naming (`grep`, `sub`, `gsub`) with stringr's consistent `str_*` pattern. Highlight that stringr is vectorized by default and uses consistent argument ordering (string first, pattern second).
+:::
+
+
+## `stringr` package
+
+::: notes
+**Overview of stringr package**: Introduce stringr as part of tidyverse. Show loading with `library(stringr)` or `library(tidyverse)`. Preview key function families: detect, locate, extract, replace, transform.
+:::
+
+
+# Creating and Combining Strings
+
+## Concatenation
+
+::: notes
+**Concatenation**: Compare `paste()` (space separator by default), `paste0()` (no separator), and `str_c()` (no separator, NAs propagate). Show vectorization behavior with multiple inputs. Demonstrate separator and collapse arguments.
+:::
+
+## Interpolation
+
+::: notes
+**String interpolation**: Show `sprintf()` for formatted strings with placeholders (%s, %d, %f). Introduce `str_glue()` for cleaner interpolation using curly braces directly in strings. Demonstrate evaluating R expressions inside glue strings.
+:::
+
+## Collapse
+
+::: notes
+**Collapsing vectors**: Use `str_flatten()` to collapse character vectors into single strings. Show collapse argument for separators. Compare to `paste()` with collapse argument.
+:::
+
+
+# String Detection and Matching
+
+## Pattern detection
+
+::: notes
+**Pattern detection**: Compare `grepl()` (returns logical vector) with `str_detect()`. Show use in filtering with `filter()` or subsetting with brackets. Demonstrate case sensitivity.
+:::
+
+## Pattern location
+
+::: notes
+**Pattern location**: Compare `gregexpr()` output (list of positions) with `str_locate()` and `str_locate_all()` (matrix/list of matrices with start/end). Show how to find where patterns appear.
+:::
+
+## Counting patterns
+
+::: notes
+**Counting patterns**: Demonstrate `str_count()` for counting pattern occurrences in each string. Show use cases like counting words, specific characters, or pattern matches.
+:::
+
+## Subsetting by pattern
+
+::: notes
+**Subsetting by pattern**: Use `str_subset()` as shortcut for `str_detect()` + subsetting. Compare to `grep()` with `value=TRUE`.
+:::
+
+
+# String Manipulation
+
+::: notes
+**Extracting substrings**: Compare `substr()` (position-based, 1-indexed) with `str_sub()` (supports negative indexing from end). Show extraction by character position ranges.
+::: 
+
+::: notes
+**Replacement**: Compare `sub()` (first match) and `gsub()` (all matches) with `str_replace()` and `str_replace_all()`. Demonstrate literal replacement and regex-based replacement. Show backreferences for captured groups.
+:::
+
+::: notes
+**Trimming whitespace**: Compare `trimws()` with `str_trim()` (removes leading/trailing) and `str_squish()` (also collapses internal whitespace). Show cleaning messy text input.
+::: 
+
+::: notes
+**Case conversion**: Compare base R functions (`toupper()`, `tolower()`) with stringr equivalents (`str_to_upper()`, `str_to_lower()`, `str_to_title()`, `str_to_sentence()`). Demonstrate locale-aware conversions.
+:::
+
+
+# Regular Expressions
+
+::: notes
+**Basic regex syntax**: Introduce literal characters, metacharacters (. * + ? [ ] { } ^ $  |). Explain escaping with backslashes (need double backslash in R strings).
+::: 
+
+::: notes
+
+**Character classes and quantifiers**: Show `[abc]`, `[^abc]`, `[a-z]`, `\d`, `\w`, `\s`. Introduce quantifiers: `*` (0+), `+` (1+), `?` (0-1), `{n}`, `{n,}`, `{n,m}`. Demonstrate greedy vs lazy matching.
+::: 
+
+::: notes
+**Anchors and boundaries**: Show `^` (start), `$` (end), `\b` (word boundary). Demonstrate matching entire strings vs substrings. Show use in validation patterns.
+::: 
+
+::: notes
+**Capture groups and backreferences**: Demonstrate `()` for grouping and capturing. Show `\1`, `\2` for backreferences in replacement patterns. Illustrate reordering captured text.
+::: 
+
+::: notes
+**Using regex with stringr functions**: Show that all `str_*` pattern functions accept regex by default. Demonstrate `regex()` for case-insensitive and multiline matching. Introduce `fixed()` for literal matching and `coll()` for locale-aware collation.
+:::
+
+### Introduction to Factors
+
+::: notes
+**What are factors and when to use them**: Define factors as integer vectors with level labels. Explain use for categorical data with fixed, known set of values. Show memory efficiency and ordering benefits.
+::: 
+
+::: notes
+**Factors vs strings**: Compare storage (factors store integers + labels vs strings store full text). Discuss when factors help (ordered categories, modeling, visualization) vs complicate (text manipulation, changing categories).
+::: 
+
+::: notes
+**Base R factor functions**: Introduce `factor()`, `levels()`, `nlevels()`, `as.character()`, `as.numeric()`. Show common base R operations.
+::: 
+
+::: notes
+**Overview of forcats package**: Introduce forcats for factor manipulation. Show `fct_*` naming convention. Preview key operations: reordering, recoding, collapsing.
+:::
+
+# Creating and Inspecting Factors
+
+::: notes
+**Creating factors**: Compare `factor()` (alphabetical levels by default) with `as_factor()` (order of appearance). Show specifying levels explicitly. Demonstrate labels argument for renaming during creation.
+::: 
+
+::: notes
+**Ordered factors**: Introduce `ordered()` for ordinal data with meaningful order. Show how ordering affects comparisons and modeling. Demonstrate use cases like Likert scales, education levels.
+::: 
+
+::: notes
+**Inspecting levels**: Use `levels()` to view level labels, `nlevels()` for count. Introduce `fct_count()` for frequency table. Show `fct_unique()` for unique values preserving order.
+:::
+
+
+# Reordering Factor Levels
+
+::: notes
+**Manual reordering**: Use `fct_relevel()` to move specific levels to front or specific positions. Show partial reordering (other levels stay in original order).
+::: 
+
+::: notes
+**By frequency**: Use `fct_infreq()` to order by frequency (most common first). Show `fct_inorder()` to order by first appearance. Demonstrate use in creating informative bar charts.
+::: 
+
+::: notes
+**By another variable**: Use `fct_reorder()` to order factor by summary statistic of another variable (median by default). Show `fct_reorder2()` for ordering by two variables (useful for line plots). Demonstrate creating sorted plots.
+::: 
+
+::: notes
+**Reversing order**: Use `fct_rev()` to reverse current level order. Show use case in flipping chart ordering.
+:::
+
+
+# Modifying Factor Levels
+
+::: notes
+**Renaming levels**: Use `fct_recode()` to manually rename specific levels. Show old = new syntax. Demonstrate cleaning up messy category names.
+::: 
+
+::: notes
+**Collapsing levels**: Use `fct_collapse()` to combine multiple levels into single level. Show `fct_lump()` to automatically lump least common levels into "Other". Demonstrate `fct_lump_n()`, `fct_lump_prop()`, `fct_lump_min()` for different lumping strategies.
+::: 
+
+::: notes
+**Handling missing values**: Use `fct_explicit_na()` to convert NA to explicit "(Missing)" level. Show use in visualization to make missingness visible.
+::: 
+
+::: notes
+**Dropping unused levels**: Compare `droplevels()` with `fct_drop()` to remove levels with no observations. Show use after filtering data.
+:::
+
+
+# Practical Applications
+
+::: notes
+**Data cleaning workflows**: Demonstrate pipeline combining string cleaning (trimming, case conversion) with factor creation. Show fixing inconsistent categorical entries.
+::: 
+
+::: notes
+**Preparing data for visualization**: Show reordering factors for sorted bar charts and line plots. Demonstrate collapsing rare categories for cleaner plots. Illustrate controlling legend order.
+::: 
+
+::: notes
+**Working with categorical data in models**: Show how factor ordering affects reference levels in regression. Demonstrate ordered factors for ordinal logistic regression. Illustrate releveling to change model interpretation.
+:::
