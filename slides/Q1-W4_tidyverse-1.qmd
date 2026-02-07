@@ -1291,7 +1291,7 @@ Use write_csv() to save mmdata to an intermediate dataset: `in-class-materials/d
 
 ## `dplyr`: Data Transformation {.left-sidebar-slide fullscreen=true style="font-size: .8;"}
 
-![](../images/icons/tv-icons/dplyr.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"})
+![](../images/icons/tv-icons/dplyr.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"}
 
 
 ::: sidebar-column

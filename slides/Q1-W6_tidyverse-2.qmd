@@ -1,8 +1,8 @@
 ---
-title: "Tidyverse Wrangling: String & Factors"
+title: "Tidyverse Wrangling: Strings & Factors"
 subtitle: "string & factors w/ base, stringr, and forcats"
 date: "2/10/2026"
-footer: "D2M-R I | Week 6" #  quarter, week, and class
+footer: "D2M-R I | Week 6 & 7" #  quarter, week, and class
 
 format: revealjs
 engine: knitr
@@ -31,39 +31,395 @@ library(tidyverse)
 
 ## Character data
 
+-   [Character data]{.keyword}: R datatype for text
+-   [Character]{.keyword}: Smallest unit of text
+-   [String]{.keyword}: Sequence of zero or more characters
+-   [Character vector]{.keyword}: Collection of one or more strings
+
+```{r}
+favorite_class <- "d2m-R"
+
+typeof(favorite_class) # data type
+class(favorite_class) # object class
+length(favorite_class) # no. elements
+str_length(favorite_class) # no. characters
+```
+
+```{r}
+favorite_class_parts <- c("d", "2", "m", "-", "R")
+
+typeof(favorite_class_parts) # data type
+class(favorite_class_parts) # object class
+length(favorite_class_parts) # no. elements
+str_length(favorite_class_parts) # no. char.
+```
 ::: notes
-**Character vectors in R**: Define strings as character vectors, the atomic data type for text. Show that single strings are length-1 vectors. Demonstrate checking type with `class()` and `typeof()`.
+`typeof()` vs. `class()`: `typeof()` gives the low-level data type (character), while `class()` gives the high-level object class (character vector). A single string is a character vector of length 1, while multiple strings form a character vector of length > 1.
+With strings this will be the same (character), but you'll see the difference with factors.
 :::
 
 ## Base R vs tidyverse
 
+**Base R**: Inconsistent naming
+
+- `grep`, `grepl`, `sub`, `gsub`, `regexpr`, `gregexpr`
+- Inconsistent argument order
+
+**stringr**: Consistent `str_*` pattern
+
+- `str_detect`, `str_replace`, `str_replace_all`
+- Always: string first, pattern second
+- Vectorized by default
+
 ::: notes
-**Base R vs tidyverse approach**: Contrast base R's inconsistent naming (`grep`, `sub`, `gsub`) with stringr's consistent `str_*` pattern. Highlight that stringr is vectorized by default and uses consistent argument ordering (string first, pattern second).
+**Base R vs tidyverse approach**: 
+Like most things in the tidyverse, stringr improves upon base r options by providing a consistent naming scheme and argument order.
+Contrast base R's inconsistent naming (`grep`, `sub`, `gsub`) with stringr's consistent `str_*` pattern. stringr is vectorized by default and uses consistent argument ordering (string first, pattern second).
+
+What does it mean to be "vectorized by default?"
+
+It means that stringr functions are designed to work with vectors of strings without needing to use `sapply()` or loops. You can pass a character vector to a stringr function, and it will operate on each element of the vector automatically, returning a vector of results. In contrast, many base R string functions are not vectorized and require additional steps to apply them to each element of a character vector.
+
 :::
 
 
-## `stringr` package
+## `stringr`: Simplify working with strings {.left-sidebar-slide fullscreen=true style="font-size: .8;"}
 
-::: notes
-**Overview of stringr package**: Introduce stringr as part of tidyverse. Show loading with `library(stringr)` or `library(tidyverse)`. Preview key function families: detect, locate, extract, replace, transform.
+![](../images/icons/tv-icons/stringr.png){.absolute top=".5em" left="1em" height="3em; z-index: 10;"}
+
+::: sidebar-column
+
+::: sidebar-title
+
+[stringr]{.pkg}: <br> Simplify working with strings
+
+:::
+
+::: sidebar-content
+
+-   Core tidyverse package for text manipulation
+-   Consistent `str_*` naming pattern
+-   Vectorized functions for efficient string processing
+
+:::
+
+:::
+
+::: main-content
+
+::: {.r-stretch style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 0.8em;"}
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi calculator>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+Combine
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Join strings
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi check2-square>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+Detect
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Find patterns
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi funnel>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+Extract
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Pull out text
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi layer-backward>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+Replace
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center; overflow: hidden; min-height: 0; font-size: 0.9em; line-height: .9;"}
+
+Modify text
+
+:::
+
+:::
+
+::: {.contained-box .fragment style="display: flex; flex-direction: column; align-items: center; padding: 0.4em 0.3em 0.2em 0.3em;"}
+
+::: {.box-icon style="margin-bottom: 0.1em;"}
+
+{{< bi node-plus-fill>}}
+
+:::
+
+::: {.box-title style="font-size: 0.9em; margin-bottom: 0.2em;"}
+
+::: {style="margin-bottom: -.4em !important; margin-top: -.4em !important;"}
+
+Transform
+
+:::
+
+:::
+
+::: {.box-content style="text-align: center;"}
+
+Change format
+
+:::
+
+:::
+
+:::
+
 :::
 
 
-# Creating and Combining Strings
+
+::: notes
+**Key function families:**
+
+- **Combine**: Join strings (`str_c`, `str_flatten`)
+- **Detect**: Find patterns (`str_detect`, `str_locate`)
+- **Extract**: Pull out text (`str_sub`, `str_extract`)
+- **Replace**: Modify text (`str_replace`, `str_remove`)
+- **Transform**: Change format (`str_to_upper`, `str_trim`)
+
+:::
+
+
+
+
+# Create and Combine Strings
 
 ## Concatenation
 
+-   [Concatenate]{.keyword}: Join multiple strings together into one string
+
+**Base R**
+
+- `paste()`: space separator by default
+- `paste0()`: no separator
+
+
+**stringr**
+
+- `str_c()`: no separator, `NA`s propagate
+
+Combine vs. concatenate: 
+
+```{r}
+#| label: combine-vs-concatenate
+
+c("hello", "world") # combine strings into a vector
+c(1, 2, 100) # combine any data type into a vector
+
+paste("hello", "world") # concatenate strings into a string
+str_c("hello", "world") # concatenate strings into a string (no sep.)
+
+
+```
+
+
+
+Compare separator behavior:
+
+```{r}
+#| label: compare-separator
+paste("hello", "world") # default space separator
+str_c("hello", "world", sep = " ") # custom space separator
+
+paste0("hello", "world") # no separator
+str_c("hello", "world") # no separator
+```
+```{r}
+#| label: compare-na-propagate
+
+paste("hello", NA) # NA treated as "NA"
+str_c("hello", NA) # NA propagates to result
+```
+
+
+Both `paste()` and `str_c()` are vectorized:
+
+```{r}
+#| label: show-vectorization
+
+strings1 <- c("hello", "goodbye")
+strings2 <- c("world", "everyone")
+
+paste(strings1, strings2) # vectorized with space separator
+str_c(strings1, strings2) # vectorized with no separator
+
+```
+
+
+Compare `sep` and `collapse` behavior:
+
+<!-- separators are for combining multiple strings, each provided as a separate argument. collapse is for combining elements of a single vector into one string. -->
+
+```{r}
+#| label: sep-collapse
+
+strings <- c("apple", "banana", "cherry")
+
+paste(strings, sep = ", ") # sep does not affect single vector
+
+paste(strings, collapse = ", ") # collapse with comma
+str_flatten(strings, collapse = ", ") # collapse with comma
+
+```
+
+
 ::: notes
-**Concatenation**: Compare `paste()` (space separator by default), `paste0()` (no separator), and `str_c()` (no separator, NAs propagate). Show vectorization behavior with multiple inputs. Demonstrate separator and collapse arguments.
+NA propagates: In `paste()`, if any argument is `NA`, it is treated as the string "NA". In contrast, `str_c()` propagates `NA` values, meaning that if any argument is `NA`, the result will also be `NA`. This allows you to preserve missing values in your data instead of converting them to a string representation.
+
+Vectorized: they can operate on vectors of strings element-wise without needing loops or `sapply()`. However, their default separator behavior differs, and `str_c()` propagates `NA` values instead of converting them to the string "NA".
+
+What's the difference between `sep` and `collapse`?
+- `sep`: Specifies the string to use to separate individual elements when concatenating multiple strings together. It is used when you want to combine multiple strings into a single string with a specific separator between them. For example, `str_c("hello", "world", sep = " ")` will produce "hello world".
+- `collapse`: Specifies the string to use to separate elements when collapsing a vector of strings into a single string. It is used when you have a vector of strings and want to combine them into one string with a specific separator between each element. For example, `str_flatten(c("apple", "banana", "cherry"), collapse = ", ")` will produce "apple, banana, cherry".
 :::
 
 ## Interpolation
+
+-   [Interpolate]{.keyword}: Embed variable values or expressions directly within strings
+
+**Traditional: sprintf()**
+
+- Use placeholders: `%s` (string), `%d` (integer), `%f` (float)
+
+CODE BLOCK: sprintf example with placeholders
+
+```{r}
+#| label: sprintf-example
+
+name <- "Natalie"
+age <- 67
+
+sprintf("My name is %s and I am %d years old.", name, age)
+```
+
+
+**Modern: str_glue()**
+
+- Evaluate R expressions directly in strings using `{}`
+
+```{r}
+#| label: str-glue-example
+
+name <- "Natalie"
+age <- 67
+
+str_glue("My name is {name} and I am {age} years old.")
+```
+
+
+CODE BLOCK: str_glue example with variable interpolation
+
+```{r}
+#| label: str-glue-expression
+
+x <- 10
+str_glue("The value of x is {x} and x squared is {x^2}.")
+
+```
+
+
+CODE BLOCK: str_glue with R expressions (e.g., calculations)
+
+```{r}
+#| label: str-glue-calculation
+
+a <- 5
+b <- 3
+
+str_glue("The sum of a and b is {a + b} and their product is {a * b}.")
+```
+
 
 ::: notes
 **String interpolation**: Show `sprintf()` for formatted strings with placeholders (%s, %d, %f). Introduce `str_glue()` for cleaner interpolation using curly braces directly in strings. Demonstrate evaluating R expressions inside glue strings.
 :::
 
 ## Collapse
+
+**Collapse multiple strings into one**
+
+CODE BLOCK: Create a character vector
+
+CODE BLOCK: Use str_flatten() with different separators (comma, space)
+
+CODE BLOCK: Compare to paste() with collapse argument
 
 ::: notes
 **Collapsing vectors**: Use `str_flatten()` to collapse character vectors into single strings. Show collapse argument for separators. Compare to `paste()` with collapse argument.
@@ -72,44 +428,141 @@ library(tidyverse)
 
 # String Detection and Matching
 
-## Pattern detection
+## Detect patterns
+
+**Does the pattern exist?**
+
+- `grepl()` / `str_detect()` return logical vectors
+
+CODE BLOCK: Create vector of strings, use grepl() and str_detect() to find pattern
+
+CODE BLOCK: Use in filtering (with filter() or bracket subsetting)
+
+CODE BLOCK: Demonstrate case sensitivity with [ignore.case](http://ignore.case) or regex(ignore_case = TRUE)
 
 ::: notes
 **Pattern detection**: Compare `grepl()` (returns logical vector) with `str_detect()`. Show use in filtering with `filter()` or subsetting with brackets. Demonstrate case sensitivity.
 :::
 
-## Pattern location
+## Locate patterns
+
+**Where does the pattern appear?**
+
+- `gregexpr()`: Returns list of positions (messy)
+- `str_locate()`: First match, returns matrix with start/end
+- `str_locate_all()`: All matches, returns list of matrices
+
+CODE BLOCK: Show str_locate() on single string
+
+CODE BLOCK: Show str_locate_all() finding all matches
 
 ::: notes
 **Pattern location**: Compare `gregexpr()` output (list of positions) with `str_locate()` and `str_locate_all()` (matrix/list of matrices with start/end). Show how to find where patterns appear.
 :::
 
-## Counting patterns
+## Count patterns
+
+**How many times does the pattern appear?**
+
+`str_count()`: Count occurrences per string
+
+CODE BLOCK: Count specific character in strings
+
+CODE BLOCK: Count words (using pattern for word boundaries)
+
+CODE BLOCK: Count regex pattern matches
 
 ::: notes
 **Counting patterns**: Demonstrate `str_count()` for counting pattern occurrences in each string. Show use cases like counting words, specific characters, or pattern matches.
 :::
 
-## Subsetting by pattern
+## Subset by pattern
+
+**Extract strings that match pattern**
+
+- `grep(value = TRUE)` / `str_subset()`: Return matching strings
+- Shortcut for `str_detect()` + subsetting
+
+CODE BLOCK: Create vector, use grep with value=TRUE
+
+CODE BLOCK: Same operation with str_subset()
 
 ::: notes
 **Subsetting by pattern**: Use `str_subset()` as shortcut for `str_detect()` + subsetting. Compare to `grep()` with `value=TRUE`.
 :::
 
-
 # String Manipulation
+
+## Extract by position
+
+**Extract by position**
+
+`substr(x, start, stop)`
+
+- 1-indexed
+- Positive indices only
+
+`str_sub(x, start, end)`
+
+- 1-indexed
+- **Negative indexing from end**
+
+CODE BLOCK: Extract characters 1-5 from a string
+
+CODE BLOCK: Use negative indexing with str_sub() to get last 3 characters
 
 ::: notes
 **Extracting substrings**: Compare `substr()` (position-based, 1-indexed) with `str_sub()` (supports negative indexing from end). Show extraction by character position ranges.
 ::: 
 
+## Replace patterns
+
+**Replace patterns in strings**
+
+| Base R | stringr | Behavior |
+| --- | --- | --- |
+| `sub()` | `str_replace()` | Replace **first** match |
+| `gsub()` | `str_replace_all()` | Replace **all** matches |
+
+CODE BLOCK: Literal replacement example
+
+CODE BLOCK: Regex-based replacement
+
+CODE BLOCK: Using backreferences to reorder captured groups
+
 ::: notes
 **Replacement**: Compare `sub()` (first match) and `gsub()` (all matches) with `str_replace()` and `str_replace_all()`. Demonstrate literal replacement and regex-based replacement. Show backreferences for captured groups.
 :::
 
+
+## Trim whitespace
+
+**Clean up messy text**
+
+- `trimws()` / `str_trim()`: Remove leading/trailing whitespace
+- `str_squish()`: Also collapse internal whitespace to single spaces
+
+CODE BLOCK: Create string with extra whitespace
+
+CODE BLOCK: Compare str_trim() vs str_squish() results
+
 ::: notes
 **Trimming whitespace**: Compare `trimws()` with `str_trim()` (removes leading/trailing) and `str_squish()` (also collapses internal whitespace). Show cleaning messy text input.
 ::: 
+
+
+## Convert case
+
+| Base R | stringr | Result |
+| --- | --- | --- |
+| `toupper()` | `str_to_upper()` | ALL CAPS |
+| `tolower()` | `str_to_lower()` | all lowercase |
+| — | `str_to_title()` | Title Case Each Word |
+| — | `str_to_sentence()` | Sentence case |
+
+CODE BLOCK: Demonstrate each conversion function
+
+CODE BLOCK: Show locale-aware behavior (optional)
 
 ::: notes
 **Case conversion**: Compare base R functions (`toupper()`, `tolower()`) with stringr equivalents (`str_to_upper()`, `str_to_lower()`, `str_to_title()`, `str_to_sentence()`). Demonstrate locale-aware conversions.
@@ -118,73 +571,316 @@ library(tidyverse)
 
 # Regular Expressions
 
+## Regex overview
+
+**Literal characters**: Match exactly
+
+**Metacharacters** (special meaning):
+
+`. * + ? [ ] { } ^ $ \ |`
+
+**Escaping**: Use double backslash in R strings
+
+- Match literal period: `\.` → `"\\."` in R
+- Match literal asterisk: `\*` → `"\\*"` in R
+
+CODE BLOCK: Examples of literal matches vs metacharacter matches
+
 ::: notes
 **Basic regex syntax**: Introduce literal characters, metacharacters (. * + ? [ ] { } ^ $  |). Explain escaping with backslashes (need double backslash in R strings).
 ::: 
+
+
+## Character classes & quantifiers
+
+**Character classes**
+
+- `[abc]`: a, b, or c
+- `[^abc]`: NOT a, b, or c
+- `[a-z]`: any lowercase
+- `\d`: digit
+- `\w`: word character
+- `\s`: whitespace
+
+**Quantifiers**
+
+- `*`: 0 or more
+- `+`: 1 or more
+- `?`: 0 or 1
+- `{n}`: exactly n
+- `{n,}`: n or more
+- `{n,m}`: between n and m
+
+CODE BLOCK: Examples using character classes
+
+CODE BLOCK: Examples using quantifiers
+
+CODE BLOCK: Greedy vs lazy matching (.*? vs .*)
 
 ::: notes
 
 **Character classes and quantifiers**: Show `[abc]`, `[^abc]`, `[a-z]`, `\d`, `\w`, `\s`. Introduce quantifiers: `*` (0+), `+` (1+), `?` (0-1), `{n}`, `{n,}`, `{n,m}`. Demonstrate greedy vs lazy matching.
 ::: 
 
+## Anchors & boundaries
+
+**Control where matches occur**
+
+- `^`: Start of string
+- `$`: End of string
+- `\b`: Word boundary
+
+CODE BLOCK: Match pattern at start with ^
+
+CODE BLOCK: Match entire string with ^ and $
+
+CODE BLOCK: Use word boundaries for whole word matching
+
+CODE BLOCK: Validation pattern example (e.g., email, phone)
+
 ::: notes
 **Anchors and boundaries**: Show `^` (start), `$` (end), `\b` (word boundary). Demonstrate matching entire strings vs substrings. Show use in validation patterns.
 ::: 
+
+## Capture groups & back-references
+
+**Extract and reuse matched portions**
+
+- `()`: Create capture group
+- `\1`, `\2`, etc.: Reference captured groups in replacement
+
+CODE BLOCK: Capture groups with parentheses
+
+CODE BLOCK: Use backreferences in str_replace() to reorder text
+
+CODE BLOCK: Example swapping first and last name
 
 ::: notes
 **Capture groups and backreferences**: Demonstrate `()` for grouping and capturing. Show `\1`, `\2` for backreferences in replacement patterns. Illustrate reordering captured text.
 ::: 
 
+
+## Regex + `stringr` 
+
+**Pattern modifiers**
+
+All `str_*` functions accept regex by default
+
+- `regex(ignore_case = TRUE)`: Case-insensitive
+- `regex(multiline = TRUE)`: Multiline mode
+- `fixed()`: Literal matching (no regex)
+- `coll()`: Locale-aware collation
+
+CODE BLOCK: Case-insensitive matching with regex()
+
+CODE BLOCK: Fast literal matching with fixed()
+
 ::: notes
 **Using regex with stringr functions**: Show that all `str_*` pattern functions accept regex by default. Demonstrate `regex()` for case-insensitive and multiline matching. Introduce `fixed()` for literal matching and `coll()` for locale-aware collation.
 :::
 
-### Introduction to Factors
+# Introduction to Factors
+
+## Factor data
+
+**Definition**: Integer vectors with level labels
+
+CODE BLOCK: Create a factor, show its structure with str()
+
+**When to use factors:**
+
+- Categorical data with fixed set of values
+- Ordered categories (e.g., low/medium/high)
+- Memory efficiency for repeated values
+- Control ordering in plots and models
+
 
 ::: notes
 **What are factors and when to use them**: Define factors as integer vectors with level labels. Explain use for categorical data with fixed, known set of values. Show memory efficiency and ordering benefits.
 ::: 
 
+
+## Factors vs. strings
+
+**Factors**
+
+- Store: integers + labels
+- Memory efficient
+- Control ordering
+- Great for: modeling, visualization
+
+**Strings**
+
+- Store: full text
+- More memory
+- Flexible manipulation
+- Great for: text processing, changing categories
+
+CODE BLOCK: Compare object size of factor vs character vector with repeated values
+
 ::: notes
 **Factors vs strings**: Compare storage (factors store integers + labels vs strings store full text). Discuss when factors help (ordered categories, modeling, visualization) vs complicate (text manipulation, changing categories).
 ::: 
+
+
+## Base R factor functions
+
+**Core functions:**
+
+- `factor()`: Create factor
+- `levels()`: View/set levels
+- `nlevels()`: Count levels
+- `as.character()`: Convert to string
+- `as.numeric()`: Get underlying integers
+
+CODE BLOCK: Create factor and demonstrate each function
 
 ::: notes
 **Base R factor functions**: Introduce `factor()`, `levels()`, `nlevels()`, `as.character()`, `as.numeric()`. Show common base R operations.
 ::: 
 
+## `forcats` package
+
+**For categorical variables**
+
+CODE BLOCK: Load forcats or tidyverse
+
+**Consistent `fct_*` naming:**
+
+- **Reorder**: `fct_relevel`, `fct_reorder`, `fct_infreq`
+- **Modify levels**: `fct_recode`, `fct_collapse`, `fct_lump`
+- **Other**: `fct_drop`, `fct_rev`, `fct_explicit_na`
+
 ::: notes
 **Overview of forcats package**: Introduce forcats for factor manipulation. Show `fct_*` naming convention. Preview key operations: reordering, recoding, collapsing.
 :::
 
-# Creating and Inspecting Factors
+# Create and Inspect Factors
+
+## Create factors
+
+**For** **categorical variables**
+
+CODE BLOCK: Load forcats or tidyverse
+
+**Consistent `fct_*` naming:**
+
+- **Reorder**: `fct_relevel`, `fct_reorder`, `fct_infreq`
+- **Modify levels**: `fct_recode`, `fct_collapse`, `fct_lump`
+- **Other**: `fct_drop`, `fct_rev`, `fct_explicit_na`
 
 ::: notes
 **Creating factors**: Compare `factor()` (alphabetical levels by default) with `as_factor()` (order of appearance). Show specifying levels explicitly. Demonstrate labels argument for renaming during creation.
 ::: 
 
+## Ordered factors
+
+**For ordinal data with meaningful order**
+
+`ordered()`: Creates ordered factor
+
+**Use cases:**
+
+- Likert scales (Strongly Disagree → Strongly Agree)
+- Education levels (HS → Bachelor's → Master's → PhD)
+- Sizes (Small → Medium → Large)
+
+CODE BLOCK: Create ordered factor
+
+CODE BLOCK: Show that comparisons work (low < high)
+
+CODE BLOCK: Impact on modeling (polynomial contrasts)
+
 ::: notes
 **Ordered factors**: Introduce `ordered()` for ordinal data with meaningful order. Show how ordering affects comparisons and modeling. Demonstrate use cases like Likert scales, education levels.
 ::: 
+
+
+## Inspect levels
+
+**Examine factor structure**
+
+- `levels()`: View level labels
+- `nlevels()`: Count levels
+- `fct_count()`: Frequency table
+- `fct_unique()`: Unique values (preserves order)
+
+CODE BLOCK: Create factor and use each inspection function
 
 ::: notes
 **Inspecting levels**: Use `levels()` to view level labels, `nlevels()` for count. Introduce `fct_count()` for frequency table. Show `fct_unique()` for unique values preserving order.
 :::
 
 
-# Reordering Factor Levels
+# Reorder Factor Levels
+
+## Manual reordering
+
+`fct_relevel()`: Move levels to specific positions
+
+- Move to front
+- Move to specific position
+- Partial reordering (other levels unchanged)
+
+CODE BLOCK: Create factor with levels in wrong order
+
+CODE BLOCK: Use fct_relevel() to move specific level to front
+
+CODE BLOCK: Move level to specific position
 
 ::: notes
 **Manual reordering**: Use `fct_relevel()` to move specific levels to front or specific positions. Show partial reordering (other levels stay in original order).
 ::: 
 
+## Reorder by frequency
+
+- `fct_infreq()`: Most common first
+- `fct_inorder()`: Order by first appearance
+
+**Perfect for bar charts!**
+
+CODE BLOCK: Create factor with repeated values
+
+CODE BLOCK: Reorder with fct_infreq()
+
+CODE BLOCK: Create bar chart showing ordered bars
+
 ::: notes
 **By frequency**: Use `fct_infreq()` to order by frequency (most common first). Show `fct_inorder()` to order by first appearance. Demonstrate use in creating informative bar charts.
 ::: 
 
+
+## Reorder by another variable
+
+`fct_reorder(f, x, fun)`: Order factor by summary of another variable
+
+- Default: median
+- Great for sorted plots
+
+`fct_reorder2(f, x, y)`: Order by relationship with two variables
+
+- Perfect for line plots (legend matches line order)
+
+CODE BLOCK: Create dataset with categorical and numeric variables
+
+CODE BLOCK: Use fct_reorder() to sort by median
+
+CODE BLOCK: Create sorted plot
+
 ::: notes
 **By another variable**: Use `fct_reorder()` to order factor by summary statistic of another variable (median by default). Show `fct_reorder2()` for ordering by two variables (useful for line plots). Demonstrate creating sorted plots.
 ::: 
+
+
+## Reverse order
+
+`fct_rev()`: Reverse current level order
+
+**Use case**: Flip bar chart from top-to-bottom to bottom-to-top
+
+CODE BLOCK: Take ordered factor and reverse it
+
+CODE BLOCK: Show effect in a plot
 
 ::: notes
 **Reversing order**: Use `fct_rev()` to reverse current level order. Show use case in flipping chart ordering.
@@ -193,17 +889,76 @@ library(tidyverse)
 
 # Modifying Factor Levels
 
+## Rename levels
+
+`fct_recode()`: Manually rename specific levels
+
+**Syntax**: `new_name = "old_name"`
+
+CODE BLOCK: Create factor with messy level names
+
+CODE BLOCK: Use fct_recode() to clean up names
+
 ::: notes
 **Renaming levels**: Use `fct_recode()` to manually rename specific levels. Show old = new syntax. Demonstrate cleaning up messy category names.
 ::: 
+
+
+## Collapse levels
+
+**Manual**: `fct_collapse()`
+
+- Combine multiple levels into one
+- `new_name = c("old1", "old2")`
+
+**Automatic**: `fct_lump_*()` family
+
+- `fct_lump_n()`: Keep n most common, lump rest
+- `fct_lump_prop()`: Keep levels above proportion
+- `fct_lump_min()`: Keep levels with min count
+
+CODE BLOCK: Use fct_collapse() to combine levels manually
+
+CODE BLOCK: Use fct_lump_n() to keep top 5, lump rest
+
+CODE BLOCK: Show in a cleaner plot
+
 
 ::: notes
 **Collapsing levels**: Use `fct_collapse()` to combine multiple levels into single level. Show `fct_lump()` to automatically lump least common levels into "Other". Demonstrate `fct_lump_n()`, `fct_lump_prop()`, `fct_lump_min()` for different lumping strategies.
 ::: 
 
+## Handle missing values
+
+`fct_explicit_na()`: Convert NA to explicit level
+
+**Why?**
+
+- Make missingness visible in plots
+- Include NAs in counts and summaries
+
+CODE BLOCK: Create factor with NAs
+
+CODE BLOCK: Convert NAs to explicit "(Missing)" level
+
+CODE BLOCK: Show difference in a plot
+
 ::: notes
 **Handling missing values**: Use `fct_explicit_na()` to convert NA to explicit "(Missing)" level. Show use in visualization to make missingness visible.
 ::: 
+
+## Drop unused levels
+
+**Remove levels with no observations**
+
+- `droplevels()` (base R)
+- `fct_drop()` (forcats)
+
+**Common after filtering data**
+
+CODE BLOCK: Create factor, filter to subset, show unused levels remain
+
+CODE BLOCK: Use fct_drop() to remove unused levels
 
 ::: notes
 **Dropping unused levels**: Compare `droplevels()` with `fct_drop()` to remove levels with no observations. Show use after filtering data.
@@ -212,13 +967,59 @@ library(tidyverse)
 
 # Practical Applications
 
+## Data cleaning workflow
+
+**String cleaning → Factor creation**
+
+Common workflow:
+
+1. Trim whitespace
+2. Standardize case
+3. Fix inconsistencies
+4. Convert to factor
+
+CODE BLOCK: Messy categorical data with inconsistent entries
+
+CODE BLOCK: Pipeline using str_trim(), str_to_lower(), str_replace(), then factor()
+
+CODE BLOCK: Show cleaned factor
+
+
 ::: notes
 **Data cleaning workflows**: Demonstrate pipeline combining string cleaning (trimming, case conversion) with factor creation. Show fixing inconsistent categorical entries.
 ::: 
 
+## Visualization preparation
+
+**Make better plots with factor control**
+
+- Reorder for sorted bars (`fct_infreq`, `fct_reorder`)
+- Collapse rare categories (`fct_lump_*`)
+- Control legend order
+
+CODE BLOCK: Create unsorted bar chart
+
+CODE BLOCK: Reorder factor and recreate chart (much better!)
+
+CODE BLOCK: Lump rare categories for cleaner visualization
+
 ::: notes
 **Preparing data for visualization**: Show reordering factors for sorted bar charts and line plots. Demonstrate collapsing rare categories for cleaner plots. Illustrate controlling legend order.
 ::: 
+
+## Modeling categorical data
+
+**Factor order matters in models**
+
+- First level = reference category in regression
+- Ordered factors for ordinal models
+- Relevel to change interpretation
+
+CODE BLOCK: Fit regression model, show first level as reference
+
+CODE BLOCK: Use fct_relevel() to change reference level
+
+CODE BLOCK: Refit model and compare interpretation
 
 ::: notes
 **Working with categorical data in models**: Show how factor ordering affects reference levels in regression. Demonstrate ordered factors for ordinal logistic regression. Illustrate releveling to change model interpretation.
