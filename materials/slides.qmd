@@ -12,8 +12,8 @@ format: html
 -   Week 3: [R Programming Language](../slides/Q1-W3_r-programming.html)
 -   Week 4: [Welcome to the Tidyverse](../slides/Q1-W4_tidyverse-1.html)
 -   Week 5: *no slides*
--   Week 6: Tidyverse Data Wrangling, part 1
--   Week 7: Tidyverse Data Wrangling, part 2
+-   Week 6: [Tidyverse Data Wrangling with Strings](../slides/Q1-W6_tidyverse-strings.html)
+-   Week 7: Tidyverse Data Wrangling with Factors
 -   Week 8: Data Reporting Essentials
 -   Week 9: *no slides*
 

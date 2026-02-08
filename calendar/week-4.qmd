@@ -59,10 +59,10 @@ Jan-27; Jan-29
 
 **Primary learning objectives:**
 
-- (5) Importing data with tidyverse tools
-- (6) Data manipulation with dplyr and pipelines
-- (7) Tidy data structure
-- (8) Reshaping data with tidyr
+- (6) Importing data with tidyverse tools
+- (7) Data manipulation with dplyr and pipelines
+- (8) Tidy data structure
+- (9) Reshaping data with tidyr
 
 :::
 ::::
@@ -103,6 +103,8 @@ Jan-27; Jan-29
     -   [**Chapter 19 - Joins**](https://r4ds.hadley.nz/joins.html)
     -   [Import (Book Section)](https://r4ds.hadley.nz/import.html)
         -   Beyond simple tabular data, including [spreadsheets](https://r4ds.hadley.nz/spreadsheets.html)
+-   Experimentology
+    -   [Appendix: Tidyverse](https://experimentology.io/103-tidyverse.html)
 
 :::
 ::::

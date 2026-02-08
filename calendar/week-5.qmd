@@ -47,7 +47,8 @@ Feb-3; Feb-5
 
 **Class plans:**
 
-**Primary learning objectives:**
+-   Finish up `tidyr` slides
+-   Independent and group work
 
 :::
 ::::
@@ -65,16 +66,7 @@ Feb-3; Feb-5
 
 **Class Materials:**
 
-- [Slides]()
-- [Textbook Chapter]()
-
-<!-- software, tools, datasets, etc -->
-
-**Additional Resources:**
-
-- readings
-- cheat-sheets
-- tutorials
+None
 
 :::
 ::::
@@ -91,9 +83,9 @@ Feb-3; Feb-5
 :::: {#todo-week-5 .accordion-collapse .collapse data-bs-parent="#week-5"}
 ::: accordion-body
 
-**Graded Submissions:**
+This weeks is for catching up on any missed work and getting ahead on the next few weeks.
 
-**Recommended Exercises:**
+Now is a good time to preview other packages from the tidyverse (`ggplot2`, `forcats`, `stringr`, etc.) and start working on projects that use these packages.
 
 :::
 ::::
@@ -110,9 +102,9 @@ Feb-3; Feb-5
 :::: {#misc-week-5 .accordion-collapse .collapse data-bs-parent="#week-5"}
 ::: accordion-body
 
-**Announcements:**
-
 **Reminders:**
+
+-   Did you turn in your accountability plan????
 
 :::
 ::::

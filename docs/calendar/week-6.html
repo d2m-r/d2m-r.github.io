@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-03162eb8e388d0de2d8f450c45585292.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-2d6844ac1bd792b9f6361cb8f3ccdccf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -244,7 +244,35 @@ Text to appear before the accordion
 <div id="overview-week-6" class="accordion-collapse collapse" data-bs-parent="#week-6">
 <div class="accordion-body">
 <p><strong>Class plans:</strong></p>
+<ul>
+<li>Lecture: Tidyverse Wrangling with Strings
+<ul>
+<li>Basics of text data</li>
+<li>String manipulation with base R</li>
+<li>Comparable manipulation with <code>stringr</code></li>
+<li>Regular expressions (if time allows)
+<ul>
+<li>If we don’t get to it, work through the slides on your own.</li>
+</ul></li>
+</ul></li>
+<li>Exercises/demos:
+<ul>
+<li><code>stringr</code> demo</li>
+</ul></li>
+</ul>
+<p>If by some miracle we get through strings, we’ll introduce factors and <code>forcats</code> on Thursday.</p>
 <p><strong>Primary learning objectives:</strong></p>
+<ul>
+<li><ol start="7" type="1">
+<li>Data manipulation with dplyr and pipelines</li>
+</ol></li>
+<li><ol start="8" type="1">
+<li>Tidy data structure</li>
+</ol></li>
+<li><ol start="10" type="1">
+<li>String manipulation with stringr</li>
+</ol></li>
+</ul>
 </div>
 </div>
 </div>
@@ -258,15 +286,33 @@ Text to appear before the accordion
 <div class="accordion-body">
 <p><strong>Class Materials:</strong></p>
 <ul>
-<li><a href="">Slides</a></li>
-<li><a href="">Textbook Chapter</a></li>
+<li><a href="../slides/Q1-W6_tidyverse-strings.html">Tidyverse Wrangling with Strings</a></li>
+<li><a href="https://github.com/d2m-r/student-hub/blob/main/demos/stringr-examples.qmd">strings and <code>stringr</code> demo</a>
+<ul>
+<li>More or less follows the lecture slides giving you something to play with</li>
+</ul></li>
+<li>Textbook
+<ul>
+<li><strong>Reminder:</strong> The textbook is in its infancy! I hope you’ll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources. Remember you can always contribute to incomplete chapters for core objectives and enrichment credit.</li>
+<li><a href="https://d2m-r.github.io/book/chapters/stringr.html">Ch10: Strings and Character Data</a>
+<ul>
+<li>Chapter status (Feb 2026): ~20% first draft, just the basics of the data type</li>
+</ul></li>
+</ul></li>
 </ul>
 <!-- software, tools, datasets, etc -->
 <p><strong>Additional Resources:</strong></p>
 <ul>
-<li>readings</li>
-<li>cheat-sheets</li>
-<li>tutorials</li>
+<li><code>stringr</code> <a href="https://stringr.tidyverse.org/">documentation</a> &amp; <a href="https://github.com/rstudio/cheatsheets/blob/main/strings.pdf">cheatsheet</a></li>
+<li>R for Data Science
+<ul>
+<li><a href="https://r4ds.hadley.nz/strings"><strong>Ch14 Strings</strong></a>*</li>
+<li><a href="https://r4ds.hadley.nz/regexps.html">Ch15 Regular expressions</a></li>
+</ul></li>
+<li>STAT545
+<ul>
+<li><a href="https://stat545.com/character-vectors.html">Ch11 Character vectors</a></li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -279,8 +325,26 @@ Text to appear before the accordion
 </div>
 <div id="todo-week-6" class="accordion-collapse collapse" data-bs-parent="#week-6">
 <div class="accordion-body">
-<p><strong>Graded Submissions:</strong></p>
-<p><strong>Recommended Exercises:</strong></p>
+<p><strong>Next Steps:</strong></p>
+<ol type="1">
+<li><em>SAME AS WEEK 4</em> – Explore the tidyverse core projects. You can view them in the <a href="https://github.com/d2m-r/student-hub/tree/main/project-documents/tidyverse">student hub</a> or accept any as GH Classroom assignments via links on the <a href="assessment/menu.html">menu</a>. After this week, you’re ready to start any of them, but most have have some tasks related to factor variables, which we’ll cover week 7.
+<ul>
+<li><code>clean-level-1-mtcars</code>: Structured exercise to introduce data manipulation in the tidyverse. Primarily uses <code>dplyr</code> and <code>tidyr</code>, but includes some manipulation of strings and factors as well</li>
+<li><code>clean-level-2-midwest</code>: Open-ended with a general goal but no step-by-step instructions. Similar content to level 1.</li>
+<li><code>clean-group</code>: Group project where each member makes a clean dataset messy, then cleans another member’s messy dataset following tidy data principles.</li>
+<li><code>wrangle-level-1-starwars</code>: Structured exercise to go further into data wrangling. Includes a mix of <code>dplyr</code>, <code>tidyr</code>, <code>stringr</code>, and <code>forcats</code>.</li>
+<li><code>wrangle-level-2-gapminder</code>: Open-ended with a general goal but no step-by-step instructions. Similar content to level 1.</li>
+<li><code>wrangle-group</code>: (Similar to the group cleaning) Group project where each member un-wrangles a dataset, then wrangles another member’s dataset to as close to the original as possible.</li>
+<li><code>recreate-function</code>: A more advanced, freeform project where you pick a function from an R package and try to recreate it using tidyverse tools. Complex, and good for showing R programming &amp; tidyverse objectives at a high level at the same time.</li>
+</ul></li>
+<li><strong>Where is your data project?</strong> We’re more than half-way through the quarter.
+<ul>
+<li>By this point you should minimally have a dedicated GitHub repository for your data project that syncs with an RStudio project. It should include the standard git repo files and structure (like your README and gitignore), data in the form of a .csv or other tablar file, and a Quarto notebook with a basic outline of the project.</li>
+<li>Ideally you also have one or more R scripts that do things like define functions and perform initial data read-in, wrangling, and write-out.</li>
+<li><em>If you haven’t started yet, this needs to be a top priority.</em></li>
+<li>If you have started, consider submitting whatever you have for feedback. Remember you absolutely do not have to have a complete project to submit (I strongly recommend you do not wait nearly that long!). Indicate what objectives you’re attempting and get clear feedback on whether you’re meeting expectations (and if not, how to do so). Even if you’re only attempting to demonstrate a few objectives, there’s no harm in getting guidance on what you have so far.</li>
+</ul></li>
+</ol>
 </div>
 </div>
 </div>
@@ -292,8 +356,14 @@ Text to appear before the accordion
 </div>
 <div id="misc-week-6" class="accordion-collapse collapse" data-bs-parent="#week-6">
 <div class="accordion-body">
-<p><strong>Announcements:</strong></p>
-<p><strong>Reminders:</strong></p>
+<ol type="1">
+<li><strong>GitHub Submission:</strong> This is now a <a href="https://uchicago.box.com/s/t0cb155utxtpnz3yhs754qih7yhiwymm">screen recording</a> of the github submission process you can view here <em>extremely detailed</em> <a href="../assessment/misc/gh-submissions.html">written instructions</a>.</li>
+<li><strong>Hunter’s Plain-English Guide to R:</strong> Hunter has turned his notes into a Quarto document and allowed me to share it on the website. It’s a great resource for beginners and a nice complement to the textbook and lecture materials. You can find it <a href="https://d2m-r.github.io/materials/guides/hunters-r-notes.html">here</a>.</li>
+<li><strong>Example data project:</strong> As I mentioned last week, I’m setting up an example data project that shows how to meet the basic requirements for the integrated data project. I have initialized that repo in the d2m-r github org, and you can view it <a href="https://github.com/d2m-r/schelling-data-project-example">here</a>.
+<ul>
+<li><strong>Note:</strong> As of Feb 8 2026, this repo <em>is not complete.</em> It does not currently meet the requirements for the integrative data project! I’ll be updating it as I have time, but I wanted to share it in its current state in case it’s helpful to anyone as a starting point. I’ll make an announcement when it’s complete.</li>
+</ul></li>
+</ol>
 </div>
 </div>
 </div>

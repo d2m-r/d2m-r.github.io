@@ -86,11 +86,11 @@ Jan-6; Jan-8
 -   Textbook
     -   **Reminder:** The textbook is in its infancy! I hope you'll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources.
     -   [Ch1: Introduction to D2M-R](https://d2m-r.com/book/chapters/intro.html)
-        - Chapter status (Jan 2025): overview of what the book is and isn't, basically nothing else
+        - Chapter status (Jan 2026): overview of what the book is and isn't, basically nothing else
     -   [Ch2: Solving (Your Own) Problems](https://d2m-r.com/book/chapters/r-programming.html)
-        - Chapter status (Jan 2025): ~90% first draft for Best Practices section; 2% for debugging (stick to slides for now)
+        - Chapter status (Jan 2026): ~90% first draft for Best Practices section; 2% for debugging (stick to slides for now)
     -   [Ch3: RStudio Essentials](https://d2m-r.com/book/chapters/rstudio.html)
-        - Chapter status (Jan 2025): ~75% first draft
+        - Chapter status (Jan 2026): ~75% first draft
 
 <!-- software, tools, datasets, etc -->
 

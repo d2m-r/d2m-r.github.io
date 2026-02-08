@@ -87,11 +87,11 @@ Jan-20; Jan-22
 -   Textbook
     -   **Reminder:** The textbook is in its infancy! I hope you'll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources. Remember you can always contribute to incomplete chapters for core objectives and enrichment credit.
     -   [Ch5: R Language Basics](https://d2m-r.github.io/book/chapters/r-language-basics.html)
-        - Chapter status (Jan 2025): ~90% first draft
+        - Chapter status (Jan 2026): ~90% first draft
     -   [Ch6: Packages](https://d2m-r.github.io/book/chapters/packages.html)
-        - Chapter status (Jan 2025): ~90% first draft
+        - Chapter status (Jan 2026): ~90% first draft
     -   [Ch7: Intro to Programming in R](https://d2m-r.github.io/book/chapters/r-programming.html)
-        - Chapter status (Jan 2025): ~40% first draft
+        - Chapter status (Jan 2026): ~40% first draft
 
 **Additional Resources:**
 

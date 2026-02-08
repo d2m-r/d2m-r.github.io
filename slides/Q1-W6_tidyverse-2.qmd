@@ -1,6 +1,6 @@
 ---
 title: "Tidyverse Wrangling: Strings & Factors"
-subtitle: "string & factors w/ base, stringr, and forcats"
+subtitle: "string & factors w/ base, `stringr`, and `forcats`"
 date: "2/10/2026"
 footer: "D2M-R I | Week 6 & 7" #  quarter, week, and class
 
@@ -37,12 +37,24 @@ library(tidyverse)
 -   [Character vector]{.keyword}: Collection of one or more strings
     -   A single string is a character vector of length 1
 
+
+## Create strings and character vectors {.smaller}
+
+:::: row
+
+::: {.col-6 .fragment}
 Use single `'` or double `"` quotes to define strings:
 
 ```{r}
 #| label: create-strings
+#| echo: true
 
 favorite_class <- "d2m-R"
+```
+
+```{r class="fragment"}
+#| label: create-strings-properties
+#| echo: true
 
 typeof(favorite_class) # data type
 class(favorite_class) # object class
@@ -50,18 +62,32 @@ length(favorite_class) # no. elements
 str_length(favorite_class) # no. characters
 ```
 
-Use the combine function [c()]{.fun} to create vectors of strings:
+:::
+
+::: {.col-6 .fragment}
+
+Use the combine function [c()]{.func} to create vectors of strings:
 
 ```{r}
 #| label: create-char-vector
+#| echo: true
 
 favorite_class_units <- c("d", "2", "m", "-", "R")
+```
+
+```{r class="fragment"}
+#| label: create-char-vector-properties
+#| echo: true
 
 typeof(favorite_class_units) # data type
 class(favorite_class_units) # object class
 length(favorite_class_units) # no. elements
 str_length(favorite_class_units) # no. char.
 ```
+
+:::
+
+::::
 
 ::: notes
 `typeof()` vs. `class()`: `typeof()` gives the low-level data type (character), while `class()` gives the high-level object class (character vector). A single string is a character vector of length 1, while multiple strings form a character vector of length > 1.
@@ -72,15 +98,17 @@ With strings this will be the same (character), but you'll see the difference wi
 
 *Define strings and vectors to use as examples in later slides:*
 
-Use single `'` or double `"` quotes to define strings:
-
 ```{r}
 #| label: create-examples
+#| echo: true
 
+# Strings
 sentence <- 'The QUICK brown fox jumps over the LAZY dog.'
 favorite_class <- "d2m-R"
-favorite_class_units <- c("d", "2", "m", "-", "R")
+messy_string <- "   Hello,   World!   "
 
+# Character vectors
+favorite_class_units <- c("d", "2", "m", "-", "R")
 fruit <- c("apple", "banana", "cherry", "date", "elderberry")
 greeting <- c("hello", "world")
 farewell <- c("goodbye", "everyone")
@@ -88,28 +116,64 @@ abed_ratings <- c("cool", "cool cool cool", "cool cool", "cool", "sarcastic: ok"
 ```
 
 
-
 ## Base R vs tidyverse
 
-**Base R**: Inconsistent naming
+:::: row
 
-- `grep`, `grepl`, `sub`, `gsub`, `regexpr`, `gregexpr`
-- Inconsistent argument order
+::: col-6
 
-**stringr**: Consistent `str_*` pattern
+::: overlap-box
 
-- `str_detect`, `str_replace`, `str_replace_all`
-- Always: string first, pattern second
+::: box-title
+Base R
+:::
+
+::: box-content
+-   Inconsistent naming
+    -   `grep`, `grepl`, `sub`, `gsub`, `regexpr`, `gregexpr`
+-   Inconsistent argument order
+    -   Commonly `(pattern, string)`
+-   Not vectorized by default
+    -   Often need `sapply()` or loops for vectors
+    
+:::
+
+:::
+
+:::
+
+::: col-6
+
+::: {.overlap-box .accent1}
+
+::: box-title
+`stringr`
+:::
+
+::: box-content
+-   Consistent `str_*` pattern
+    - `str_detect`, `str_replace`, `str_replace_all`
+- Consistent order
+    -   Always `(string, pattern)`
 - Vectorized by default
+    -   Works with strings *or* vectors of strings
+
+:::
+
+:::
+
+:::
+
+::::
 
 ::: notes
 **Base R vs tidyverse approach**: 
-Like most things in the tidyverse, stringr improves upon base r options by providing a consistent naming scheme and argument order.
-Contrast base R's inconsistent naming (`grep`, `sub`, `gsub`) with stringr's consistent `str_*` pattern. stringr is vectorized by default and uses consistent argument ordering (string first, pattern second).
+Like most things in the tidyverse, `stringr` improves upon base r options by providing a consistent naming scheme and argument order.
+Contrast base R's inconsistent naming (`grep`, `sub`, `gsub`) with `stringr`'s consistent `str_*` pattern. `stringr` is vectorized by default and uses consistent argument ordering (string first, pattern second).
 
 What does it mean to be "vectorized by default?"
 
-It means that stringr functions are designed to work with vectors of strings without needing to use `sapply()` or loops. You can pass a character vector to a stringr function, and it will operate on each element of the vector automatically, returning a vector of results. In contrast, many base R string functions are not vectorized and require additional steps to apply them to each element of a character vector.
+It means that `stringr` functions are designed to work with vectors of strings without needing to use `sapply()` or loops. You can pass a character vector to a `stringr` function, and it will operate on each element of the vector automatically, returning a vector of results. In contrast, many base R string functions are not vectorized and require additional steps to apply them to each element of a character vector.
 
 :::
 
@@ -144,7 +208,7 @@ It means that stringr functions are designed to work with vectors of strings wit
 
 ::: {.box-icon style="margin-bottom: 0.1em;"}
 
-{{< bi calculator>}}
+{{< bi arrows-collapse-vertical>}}
 
 :::
 
@@ -170,7 +234,7 @@ Join strings
 
 ::: {.box-icon style="margin-bottom: 0.1em;"}
 
-{{< bi calculator>}}
+{{< bi braces-asterisk>}}
 
 :::
 
@@ -196,7 +260,7 @@ Embed variables in strings
 
 ::: {.box-icon style="margin-bottom: 0.1em;"}
 
-{{< bi check2-square>}}
+{{< bi search>}}
 
 :::
 
@@ -222,7 +286,7 @@ Find patterns
 
 ::: {.box-icon style="margin-bottom: 0.1em;"}
 
-{{< bi funnel>}}
+{{< bi box-arrow-right>}}
 
 :::
 
@@ -248,7 +312,7 @@ Pull out text
 
 ::: {.box-icon style="margin-bottom: 0.1em;"}
 
-{{< bi layer-backward>}}
+{{< bi recycle>}}
 
 :::
 
@@ -274,7 +338,7 @@ Modify text
 
 ::: {.box-icon style="margin-bottom: 0.1em;"}
 
-{{< bi node-plus-fill>}}
+{{< bi capslock-fill>}}
 
 :::
 
@@ -320,11 +384,11 @@ Change format
 # Create and Combine Strings
 
 
-
 ## Combine: Concatenate
 
--   [Concatenate]{.keyword}: Join multiple strings together into one string
--   Concatenation functions take *strings* as arguments, not vectors of multiple strings
+[Concatenate]{.keyword}: Join multiple strings together into one string
+
+-   Take *strings* as separate arguments; return single string
 
 **Base:**
 
@@ -336,59 +400,175 @@ Change format
 
 - `str_c()`: no separator, `NA`s propagate
 
-Combine [c()]{.fun} vs. concatenate [paste()]{.fun} / [str_c()]{.fun}: 
+## Compare combine vs concatenate
+
+Combine [c()]{.func} vs. concatenate [paste()]{.func} / [str_c()]{.func}: 
+
+::::: container-fluid
+
+:::: row
+
+::: col-4
+
+Base:
 
 ```{r}
-#| label: combine-vs-concatenate
+#| label: combine-with-c
 
-greeting <- c("hello", "world")
+# combine strings into vector
+# not concatenated
+c("hello", "world")
+```
 
-paste("hello", "world") # concatenate strings into a string
-paste(greeting) # vector of strings treated as one argument, not concatenated
+:::
 
-str_c("hello", "world") # concatenate strings into a string (no sep.)
-str_c(greeting) # vector of strings treated as one argument, not concatenated
+::: col-4
 
+Base:
+
+```{r}
+#| label: concat-paste
+
+# concatenate strings into a string
+paste("hello", "world") 
+
+# vector treated as 1 argument
+# not concatenated
+paste(greeting) 
+```
+
+:::
+
+::: col-4
+
+`stringr`:
+
+```{r}
+#| label: concat-str-c
+
+# concatenate strings into 1 string 
+# no separator by default
+str_c("hello", "world") 
+
+# vector treated as 1 argument
+# not concatenated
+str_c(greeting) 
+```
+
+:::
+
+::::
+
+:::::
+
+## Compare separator behavior
+
+:::: row
+
+::: col-6
+
+Base:
+
+```{r}
+#| label: compare-separator-base
+
+# default space separator
+paste("hello", "world") 
+
+# default no separator
+paste0("hello", "world") 
 
 ```
 
+::: 
 
-Compare separator behavior:
+::: col-6
 
-```{r}
-#| label: compare-separator
-paste("hello", "world") # default space separator
-str_c("hello", "world", sep = " ") # custom space separator
-
-paste0("hello", "world") # no separator
-str_c("hello", "world") # no separator
-```
-
-Compare NA handling:
+`stringr`:
 
 ```{r}
-#| label: compare-na-propagate
+#| label: compare-separator-str-c
 
-paste("hello", NA) # NA treated as "NA" (string)
-str_c("hello", NA) # NA propagates to result
+# default no separator
+str_c("hello", "world")
+
+# custom space separator
+str_c("hello", "world", sep = " ") 
 ```
 
+:::
 
-Both `paste()` and `str_c()` are vectorized:
+::::
+
+## Compare NA handling
+
+:::: row
+
+::: col-6
+
+Base:
 
 ```{r}
-#| label: show-vectorization
+#| label: compare-na-propagate-base
 
-strings1 <- c("hello", "goodbye")
-strings2 <- c("world", "everyone")
+# NA treated as "NA" (string)
+paste("hello", NA) 
+```
 
-paste(strings1, strings2) # vectorized with space separator
-str_c(strings1, strings2) # vectorized with no separator
+:::
+
+::: col-6
+
+`stringr`:
+
+```{r}
+#| label: compare-na-propagate-stringr
+
+# NA propagates to result
+str_c("hello", NA) 
+```
+
+:::
+
+::::
+
+## Compare vectorized (same)
+
+Both `paste()` and `str_c()` are vectorized (can operate on strings or vectors of strings).
+
+```{r}
+#| label: print-greeting-vectors
+#| output-location: column
+greeting_vector <- c("hello", "goodbye")
+audience_vector <- c("world", "everyone")
+```
+
+:::: row
+
+::: col-6
+
+```{r}
+#| label: show-vectorization-base
+
+# vectorized with space separator
+paste(greeting_vector, audience_vector) 
+```
+
+:::
+
+::: col-6
+
+```{r}
+#| label: show-vectorization-stringr
+
+# vectorized with no separator
+str_c(greeting_vector, audience_vector) 
 
 ```
 
+:::
 
-
+::::
 
 ::: notes
 NA propagates: In `paste()`, if any argument is `NA`, it is treated as the string "NA". In contrast, `str_c()` propagates `NA` values, meaning that if any argument is `NA`, the result will also be `NA`. This allows you to preserve missing values in your data instead of converting them to a string representation.
@@ -396,40 +576,56 @@ NA propagates: In `paste()`, if any argument is `NA`, it is treated as the strin
 Vectorized: they can operate on vectors of strings element-wise without needing loops or `sapply()`. However, their default separator behavior differs, and `str_c()` propagates `NA` values instead of converting them to the string "NA".
 :::
 
-## Combine: Collapse
+## Combine: Collapse {.smaller}
 
 -   [Collapse]{.keyword}: Join elements of a string vector into a single string
--   Collapse-type functions take *vectors* as arguments, not individual strings
+-   Take *vector* of strings as single argument; return single string
+    -   {{< bi check-circle-fill>}} String vector: `c("apple", "banana", "cherry", "date", "elderberry")`
+    -   {{< bi x-circle-fill>}} Multiple string arguments: `"apple", "banana", "cherry", "date", "elderberry"`
 
 
-**Base:** Base `paste()` concatenates with `sep` arg and collapses vectors with `collapse` arg
+:::: row
 
-Compare `sep` and `collapse` behavior:
+::: col-6
+
+**Base:** Concat with `paste()`'s `sep` arg, collapse with `collapse` arg:
 
 ```{r}
 #| label: sep-collapse
 
-paste(fruit, sep = ", ") # sep does not affect vector
-paste(fruit, collapse = ", ") # collapse with comma
+# sep does not affect vector
+paste(fruit, sep = ", ") 
+
+# collapse with comma
+paste(fruit, collapse = ", ") 
 
 # sep ignored when collapse is used)
 paste(fruit, sep = "SEPARATOR!!!", collapse = ", ") 
 
 ```
 
-**`stringr`:** `str_flatten()` collapses vectors with `collapse` arg, no `sep` arg
+:::
 
-Use `str_flatten()` with different (collapsing) separators:
+::: col-6
+
+**`stringr`:** Collapse vectors with [str_flatten]{.func}'s `collapse` arg, no `sep` arg:
 
 ```{r}
 #| label: str-flatten-examples
 
-str_flatten(fruit) # default no separator
-str_flatten(fruit, collapse = ", ") # collapse with comma
-str_flatten(fruit, collapse = " ") # collapse with space
+ # default no separator
+str_flatten(fruit)
+
+# collapse with comma
+str_flatten(fruit, collapse = ", ") 
+
+# collapse with space
+str_flatten(fruit, collapse = " ") 
 ```
 
+:::
 
+::::
 
 
 ::: notes
@@ -444,8 +640,14 @@ What's the difference between `sep` and `collapse`?
 ## Interpolate
 
 -   [Interpolate]{.keyword}: Embed variable values or expressions directly within strings
+-   Take *string* with placeholders/expressions; return single string with values filled in
+    -   Base `sprintf()` requires substitutions for the placeholders as additional arguments
 
-**Base:** Interpolate with placeholders using `sprintf()`
+:::: row
+
+::: col-6
+
+**Base:** Interpolate with placeholders using [sprintf()]{.func}
 
 -   Use placeholders: `%s` (string), `%d` (integer), `%f` (float)
 
@@ -453,11 +655,15 @@ What's the difference between `sep` and `collapse`?
 #| label: sprintf-example
 
 name <- "Natalie"
-age <- 67
+age <- 99
 
+# Arguments will replace placeholders in order
 sprintf("My name is %s and I am %d years old.", name, age)
 ```
 
+:::
+
+::: col-6
 
 **`stringr`:** Interpolate directly with `str_glue()`
 
@@ -466,25 +672,38 @@ sprintf("My name is %s and I am %d years old.", name, age)
 ```{r}
 #| label: str-glue-example
 
-name <- "Natalie"
+name <- "Jenn Allen-Pho"
 age <- 67
 
 str_glue("My name is {name} and I am {age} years old.")
 ```
 
+:::
 
--   Include simple calculations:
+::::
+
+## Interpolate: Calculations and functions
+
+:::: row
+
+::: col-6
+
+Include simple calculations:
 
 ```{r}
 #| label: str-glue-calculation
 
 x <- 10
-str_glue("The value of x is {x} and x squared is {x^2}.")
+str_glue("The value of x is {x} 
+    and x squared is {x^2}.")
 
 ```
 
+:::
 
--   Include embedded R code:
+::: col-6
+
+Include embedded R code:
 
 ```{r}
 #| label: str-glue-functions
@@ -492,42 +711,75 @@ str_glue("The value of x is {x} and x squared is {x^2}.")
 a <- 5
 b <- 3
 
-str_glue("The sum of a and b is {a + b} and their mean is {mean(c(a,b))}.")
+str_glue("The sum of a and b is {a + b} 
+    and their mean is {mean(c(a,b))}.")
 ```
 
+:::
 
+::::
+
+::: note
+
+`str_glue()` is whitespace sensitive, meaning that unlike in the rest of R, newlines and indentation will be preserved in the resulting string. This can be useful for formatting multi-line strings, but it also means you need to be careful with how you format your code inside `str_glue()` to avoid unintended whitespace in the output.
+
+In these slides I often put in line breaks to allow for code in columns without scrolling, but notice that when I do it with `str_glue()`, the resulting string also has line breaks. 
+
+:::
 
 
 # String Detection and Matching
 
 ## Detect: Identify patterns
 
-**Does the pattern exist?** Detect patterns in character vectors of any length (i.e., vectorized or single strings).
-
-**Base:** Find pattern (T/F) with `grepl()` (=grep logical)
-
-- `grepl()`
+**Does the pattern exist?** : Return logical `TRUE` or `FALSE`
 
 ```{r}
+#| label: print-fruit
+#| output-location: column
+fruit
+```
+
+
+:::: row
+
+::: col-6
+
+**Base:** Find pattern with [grepl()]{.func} (=grep **l**ogical)
+
+```{r class="smaller"}
 #| label: detect-grepl
 
-grepl("a", "banana") # returns TRUE
-grepl("z", "banana") # returns FALSE
-grepl("err", fruit) # returns TRUE for strings containing "err"
-
+grepl("a", "banana")
+grepl("z", "banana")
+grepl("err", fruit)
+!grepl("err", fruit)
 ```
 
-**`stringr`:** Find pattern (T/F) with `str_detect()`
+:::
 
-```{r}
+::: col-6
+
+**`stringr`:** Find pattern with [str_detect()]{.func}
+
+```{r class="smaller"}
 #| label: detect-str-detect
 
-str_detect("banana", "a") # returns TRUE
-str_detect("banana", "z") # returns FALSE
-str_detect(fruit, "err") # returns TRUE for strings containing "err"
-str_detect(fruit, "err", negate = TRUE) # returns TRUE for strings NOT containing "err"
+str_detect("banana", "an") 
+str_detect("banana", "z") 
+str_detect(fruit, "err") 
+str_detect(fruit, "err", negate = TRUE) 
 ```
 
+:::
+
+::::
+
+## Tidy string detection
+
+:::: row
+
+::: col-6
 
 Use `str_detect()` in tidy pipelines:
 
@@ -536,25 +788,32 @@ Use `str_detect()` in tidy pipelines:
 
 # Using str_detect() in filter()
 data.frame(fruit) |> 
-  filter(str_detect(fruit, "a")) # keep fruits containing "a"
+    # keep fruits containing "a"
+    filter(str_detect(fruit, "a")) 
 
 ```
 
+:::
+
+::: col-6
 
 Detection is case-sensitive by default, but can be made case-insensitive with `regex()` wrapper and  `ignore_case` arg:
 
 ```{r}
 #| label: detect-case-insensitive
 
-str_detect("Banana", "a") # case-sensitive, returns TRUE
-str_detect("Banana", "A") # case-sensitive, returns FALSE
+str_detect("Banana", "a") 
+str_detect("Banana", "A")
 
-# Use regex to make case-insensitive, returns TRUE
+# Use regex to make case-insensitive
 str_detect("Banana", 
     regex("A", ignore_case = TRUE)) 
 
 ```
 
+:::
+
+::::
 
 ::: notes
 grep detection can be used in pipelines too, but `str_` functions are more consistent and easier to read as things get more complex.
@@ -563,97 +822,165 @@ grep doesn't have a simple way of negating the pattern (i.e., find strings that 
 
 :::
 
-## Detect: Locate patterns
 
-**Where does the pattern appear?**
+## Detect: Locate patterns (first)
 
-**Base:** Use `regexpr()` or `gregexpr()` to find position of first match or all matches, respectively
+**Where does the pattern appear _first_?** : Return position of first match
+
+:::: row
+
+::: col-6
+
+**Base:** Find first match with [regexpr()]{.func}, return an integer with attributes
 
 ```{r}
-#| label: detect-regexpr
+#| label: detect-regexpr-first
 
-# regexpr() returns position of first match only
+# regexpr() returns start position of first match
 base_first_match <- regexpr("an", "banana") 
 base_first_match
-class(base_first_match) # integer with attributes
-
-# gregexpr() returns positions of all matches
-base_all_match <- gregexpr("an", "banana") 
-base_all_match
-class(base_all_match) # list of integer vectors with attributes
+class(base_first_match)
 
 ```
 
+:::
 
-**`stringr`:** Use `str_locate()` or `str_locate_all()` to find start/end positions of first match or all matches, respectively
+::: col-6
+
+**`stringr`:** Find first match with [str_locate()]{.func}, return a matrix with start/end columns
 
 ```{r}
-#| label: detect-str-locate
+#| label: detect-str-locate-first
 
 # str_locate() returns matrix with start/end of first match
 stringr_first_match <- str_locate("banana", "an") 
 stringr_first_match
-class(stringr_first_match) # matrix with start/end columns
+class(stringr_first_match) 
 
-# str_locate_all() returns list of matrices with start/end of all matches
-stringr_all_match <- str_locate_all("banana", "an")
-stringr_all_match
-class(stringr_all_match) # list of matrices with start/end columns
 
 ```
+
+:::
+
+::::
 
 
 ::: notes
 **Pattern location**: Compare `gregexpr()` output (list of positions) with `str_locate()` and `str_locate_all()` (matrix/list of matrices with start/end).
 :::
 
+## Detect: Locate patterns (all)
+
+**Where does the pattern appear _anywhere_?** : Return integer position(s) of all matches
+
+:::: row
+
+::: col-6
+
+**Base:** Find all matches with [gregexpr()]{.func}, return list of integers
+
+```{r}
+#| label: detect-regexpr-all
+
+# gregexpr() returns positions of all matches 
+# as list of integer vectors with attributes
+base_all_match <- gregexpr("an", "banana") 
+base_all_match
+class(base_all_match)
+
+```
+
+:::
+
+::: col-6
+
+**`stringr`:** Find all matches with [str_locate_all]{.func}, return list of matrices
+
+```{r}
+#| label: detect-str-locate
+
+# str_locate_all() returns start and end positions
+# of all matches as list of matrices
+stringr_all_match <- str_locate_all("banana", "an")
+stringr_all_match
+class(stringr_all_match)
+
+```
+
+:::
+
+::::
+
+
+::: notes
+**Pattern location**: Compare `gregexpr()` output (list of positions) with `str_locate()` and `str_locate_all()` (matrix/list of matrices with start/end).
+:::
+
+
 ## Detect: Count patterns
 
-**How many times does the pattern appear?**
+**How many times does the pattern appear?** : Return integer count of matches
 
-**Base:** Use `gregexpr()` + `lengths()` to count all matches
+:::: row
+
+::: col-6
+
+**Base:** Count matches with `gregexpr()` + [lengths()]{.func}
 
 ```{r}
 #| label: detect-count-base
 
-# Use gregexpr() to find all matches, then lengths() to count
-lengths(gregexpr("an", "banana"))
+# Use gregexpr() to find all matches, 
+# then lengths() to count
+lengths(
+    gregexpr("an", "banana")
+    )
 ```
 
-**`stringr`:** Use `str_count()` to count occurrences of pattern in each string
+**`stringr`:** Count matches with [str_count()]{.func} 
 
 ```{r}
 #| label: detect-count-str-count
 
-str_count("banana", "an") # counts occurrences in single string
+# counts occurrences in single string
+str_count("banana", "an") 
 ```
 
 
-Count words (using regex pattern for word boundaries: `\b` = word boundary, `\w+` = one or more word characters):
+::: 
 
-```{r}
-#| label: count-words
+::: col-6
 
-sentence <- "The quick brown fox jumps over the lazy dog."
-
-# Count words using word boundary pattern
-str_count(sentence, "\\b\\w+\\b") # counts words by matching word boundaries
-
-```
-
-Vectorized counting across a vector of strings:
+**`str_count` is vectorized:**
 
 ```{r}
 #| label: count-vector
 
-# Count occurrences of "cool" in each string of abed_ratings vector
+# Count occurrences of "cool" in 
+# each string of abed_ratings vector
 str_count(abed_ratings, "cool")
 ```
 
+**Example:** Count words with regex
 
+```{r}
+#| label: count-words
+
+sentence
+
+# Count words using word boundary pattern
+str_count(sentence, "\\b\\w+\\b")
+
+```
+
+:::
+
+::::
 
 ::: notes
 **Counting patterns**: `str_count()` for counting pattern occurrences in each string. use cases like counting words, specific characters, or pattern matches.
+
+Need `lengths()`, not `length()`, because `gregexpr()` returns a list of integer vectors (one for each string), and `lengths()` counts the number of matches in each vector, while `length()` would just give the number of strings in the list.
 :::
 
 
@@ -661,23 +988,30 @@ str_count(abed_ratings, "cool")
 
 ## Extract: Subset by pattern
 
-**Extract strings that match pattern**
+**Extract strings that match pattern**: Return strings with matched pattern
 
-**Base:** Use `grep()` with `value = TRUE` to return matching strings
+:::: row
+
+::: col-6
+
+**Base:** Return matching strings with [grep()]{.func} and `value = TRUE`
 
 ```{r}
 #| label: grep-value-true
 
-grep("a", fruit, value = TRUE) # returns strings containing "a"
+grep("a", fruit, value = TRUE) 
 ```
 
+:::
 
-**`stringr`:** Use `str_subset()` to return strings that match pattern
+::: col-6
+
+**`stringr`:** Return matching strings with  [str_subset()]{.func}
 
 ```{r}
 #| label: str-subset
 
-str_subset(fruit, "a") # returns strings containing "a"
+str_subset(fruit, "a")
 ```
 
 
@@ -691,47 +1025,61 @@ str_subset(fruit, "a") # returns strings containing "a"
 fruit[str_detect(fruit, "a")]
 ```
 
-
-
-::: notes
-**Subsetting by pattern**: Use `str_subset()` as shortcut for `str_detect()` + subsetting. Compare to `grep()` with `value=TRUE`.
 :::
+
+::::
+
 
 ## Extract: Subset by position
 
-**Extract by position**
+**Extract by position**: Return substring based on character positions
+
+```{r}
+#| label: print-sentence-subset
+#| output-location: column
+sentence
+```
+
+
+:::: row
+
+::: col-4
 
 **Base:** Use `substr()` to extract substring by character positions
 
-`substr(x, start, stop)`
-
-- 1-indexed
-- Positive indices only
+`substr(x, start, stop)`; positive indices only
 
 ```{r}
 #| label: substr-example
 
-substr(sentence, 1, 9) # extract characters 1-9
-
+# extract characters 1-9
+substr(sentence, 1, 9) 
 ```
 
+:::
+
+::: col-4
 
 **`stringr`:** Use `str_sub()` to extract substring by character positions, supports negative indexing
 
-`str_sub(x, start, end)`
+`str_sub(x, start, end)`; accepts negative indices
 
-- 1-indexed
-- **Negative indexing from end**
 
 ```{r}
 #| label: str-sub-example
 
-str_sub(sentence, 1, 9) # extract characters 1-9
-str_sub(sentence, -4, -1) # extract last 4 characters
+# extract characters 1-9
+str_sub(sentence, 1, 9) 
+
+# extract last 4 characters
+str_sub(sentence, -4, -1) 
 ```
 
+:::
 
-Bonus: interpolate with `str_glue()` to create dynamic substrings:
+::: col-4
+
+**Example use case:** Extract specific parts of a string and interpolate with `str_glue()`
 
 ```{r}
 #| label: str-glue-substring
@@ -739,48 +1087,261 @@ Bonus: interpolate with `str_glue()` to create dynamic substrings:
 pos_start <- 1
 neg_end <- -1
 
-str_glue("Abridged sentence: {str_sub(sentence, pos_start, 9)} {str_sub(sentence, -4, neg_end)}")
+str_glue(
+    "Abridged sentence:
+    {str_sub(sentence, pos_start, 9)} {str_sub(sentence, -4, neg_end)}"
+    )
 ```
+
+:::
+
+::::
 
 
 ::: notes
-**Extracting substrings**: Compare `substr()` (position-based, 1-indexed) with `str_sub()` (supports negative indexing from end). Extraction by character position ranges. Use case: pulling out specific parts of a string and interpolating with str_glue
+
+`substr()` is an example of where base string functions can be inconsistent.
+Since there is no pattern matching in this kind of extraction, there is no pattern to come first, so the string to search comes first.
+This is perfectly reasonable, but it can be confusing when you are used to the pattern-first convention of other string functions. 
+In contrast, `str_sub()` follows the consistent structure of string as first argument. This consistency in argument order helps reduce confusion and makes it easier to remember how to use different functions within the `stringr` package. It also makes *all* stringr functions play nice in pipelines, where the result of one line is implicitly the first argument of the next.
+
+Coding challenge:
+
+Use regex, str_glue, and str_sub to detect the first occurrence of an animal and of
+an adjective in the sentence, extract them, and create a new string with them. For example, if the sentence is "The QUICK brown fox jumps over the LAZY dog.", you could extract "fox" (animal) and "QUICK" (adjective) and create a new string like "Look at the QUICK fox!" 
+
+R doesn't know what "fox" or "LAZY" mean, so you'll need to define what counts as an animal and an adjective for this challenge. The simplest way to do this is just to name the words directly in a vector or within the regex pattern, but you can try for a more adaptable or creative definition if you want to make it more interesting!
+
+Challengier:
+
+Create a function that lets your user decide whether the resulting sentence should use
+the first or second occurrence of the animal and adjective. For example, if the user chooses "first", the function would extract "QUICK" and "fox" to create "Look at the QUICK fox!", but if they choose "second", it would extract "LAZY" and "dog" to create "Look at the LAZY dog!".
+
+Yet even more challengier:
+
+Allow your user to specify first animal and second adjective (or vice versa), or to specify a different sentence to analyze. Make sure your function can handle cases where the specified occurrence doesn't exist (e.g., if the user asks for the second animal but there is only one animal in the sentence) and provide informative error messages.
+
 ::: 
 
-## Replace patterns
+## Replace: Extract by pattern
 
-**Replace patterns in strings**
+**Extract pattern from strings** : Return matched pattern as string
 
-| Base R | stringr | Behavior |
-| --- | --- | --- |
-| `sub()` | `str_replace()` | Replace **first** match |
-| `gsub()` | `str_replace_all()` | Replace **all** matches |
+:::: row
 
-**Base:** `sub()` replaces first match, `gsub()` replaces all matches
+::: col-6
+
+**Base:** Extract pattern with `gregexpr()` (find positions) then [regmatches()]{.func} (extract matches by positions)
+
+```{r}
+#| label: extract-regmatches
+
+# extract first "o"
+regmatches(sentence, regexpr("o", sentence))
+
+# extract all "o"
+regmatches(sentence, gregexpr("o", sentence))
+```
+
+:::
+
+::: col-6
+
+**`stringr`:** Extract pattern with [str_extract()]{.func} (first match) or [str_extract_all()]{.func} (all matches)
+
+```{r}
+#| label: extract-str-extract
+
+# extract first "o"
+str_extract(sentence, "o")
+
+# extract all "o"
+str_extract_all(sentence, "o")
+
+```
+:::
+
+::::
+
+Not terribly useful for literal pattern matching.
+
+::: notes
+
+Notice how in the base version one function wants the string as the first argument and the other wants the string as the second argument? This is where stringr's consistency in argument order is much less confusing.
+
+:::
+
+## Replace: Extract by pattern with regex
+
+**Extract regex pattern from strings** : Return matched non-literal pattern as string
+
+:::: {.row .smaller}
+
+::: col-6
+
+**Base:** Extract pattern with `gregexpr()` (find positions) then [regmatches()]{.func} (extract matches by positions)
+
+```{r}
+#| label: extract-regmatches-regex
+
+# extract first word
+regmatches(sentence, regexpr("\\b\\w+\\b", sentence))
+
+# extract all words
+regmatches(sentence, gregexpr("\\b\\w+\\b", sentence))
+
+# extract capitalized words
+regmatches(sentence, gregexpr("\\b[A-Z]+\\b", sentence))
+
+```
+
+:::
+
+::: col-6
+
+**`stringr`:** Extract pattern with [str_extract()]{.func} (first match) or [str_extract_all()]{.func} (all matches)
+
+```{r}
+#| label: extract-str-extract-regex
+
+# extract first word
+str_extract(sentence, "\\b\\w+\\b")
+
+# extract all words
+str_extract_all(sentence, "\\b\\w+\\b")
+
+# extract capitalized words
+str_extract_all(sentence, "\\b[A-Z]+\\b")
+
+```
+:::
+
+::::
+
+## Replace: Exchange 2 patterns
+
+**Replace patterns in strings** : Return modified string with pattern replaced by new text
+
+:::: row
+
+::: col-6
+
+**Base:** [sub()]{.func} replaces first match, [gsub()]{.func} replaces all matches
 
 ```{r}
 #| label: base-replace
-
-sub("a", "X", "banana") # replaces first "a" with "X"
-gsub("a", "Y", "banana") # replaces all "a" with "Y"
-gsub("err", "Z", fruit) # replaces "err" with "Z" in all strings containing "err"
+# replace first "a" with "X"
+sub("a", "X", "banana") 
+# replace all "a" with "Y"
+gsub("a", "Y", "banana")
+# replace "err" with "Z" in all strings containing "err"
+gsub("err", "Z", fruit) 
 ```
 
+:::
 
-**`stringr:`** Use `str_replace()` to replace first match, `str_replace_all()` to replace all matches
+::: col-6
+
+**`stringr:`** Use [str_replace()]{.func} to replace first match, [str_replace_all()]{.func} to replace all matches
 
 ```{r}
 #| label: str-replace
 
-str_replace("banana", "a", "X") # replaces first "a" with "X"
-str_replace_all("banana", "a", "Y") # replaces all "a" with "Y"
-str_replace_all(fruit, "err", "Z") # replaces "err" with "Z" in all strings containing "err"
+# replace first "a" with "X"
+str_replace("banana", "a", "X") 
+# replace all "a" with "Y"
+str_replace_all("banana", "a", "Y") 
+# replace "err" with "Z" in all strings containing "err"
+str_replace_all(fruit, "err", "Z") 
 ```
 
-Use regex patterns in replacement:
+:::
+
+::::
+
+## Replace: Remove patterns
+
+**Remove patterns from strings** : Return modified string with pattern removed
+
+:::: row
+
+::: col-4
+
+**Base:** Remove pattern with `sub()` or `gsub()` and replacing with empty string `""`
 
 ```{r}
-#| label: regex-replace
+#| label: base-remove
+#| echo: true
+
+# remove first "a" from "banana"
+sub("a", "", "banana")
+# remove "err" from all strings
+gsub("err", "", fruit)
+```
+
+:::
+
+::: col-4
+
+**`stringr:`** Remove pattern with `str_replace()` or `str_replace_all()`
+
+```{r}
+#| label: stringr-replace-empty
+#| echo: true
+
+# remove first "a" from "banana"
+str_replace("banana", "a", "")
+# remove "err" from all strings
+str_replace_all(fruit, "err", "")
+```
+
+:::
+
+::: col-4
+
+**`stringr:`** Remove pattern with [str_remove()]{.func} or [str_remove_all()]{.func}
+
+```{r}
+#| label: stringr-remove
+#| echo: true
+
+# remove first "a" from "banana"
+str_remove("banana", "a")
+# remove "err" from all strings
+str_remove_all(fruit, "err")
+```
+
+:::
+
+::::
+
+
+
+## Replace: regex patterns
+
+Use regex patterns in replacement with both base and `stringr` functions to do more complex replacements. For example, you can use regex groups to reorder parts of a string:
+
+:::: row
+
+::: col-6
+
+```{r}
+#| label: regex-replace-base
+
+# replace all words with "WORD"
+gsub("\\b\\w+\\b", "WORD", sentence)
+
+# Relace all vowels with "*" and spaces with "_"
+gsub(" ", "_", gsub("[aeiouAEIOU]", "*", sentence))
+```
+
+
+:::
+
+::: col-6
+
+```{r}
+#| label: regex-replace-stringr
 
 # replace all words with "WORD"
 str_replace_all(sentence, "\\b\\w+\\b", "WORD") 
@@ -791,54 +1352,79 @@ str_replace_all(sentence, "[aeiouAEIOU]", "*") |>
 
 ```
 
+:::
 
-
-
-Regex explanation:
-
--   `(fox)`: Capture "fox" as group 1
--   `(.*)`: Capture everything in between as group 2
--   `(dog)`: Capture "dog" as group 3
--   Replacement `\\3\\2\\1`: Reorder to "dog" + middle + "fox"
--   Everything before "fox" and after "dog" remains unchanged
+::::
 
 
 ::: notes
 **Replacement**: Compare `sub()` (first match) and `gsub()` (all matches) with `str_replace()` and `str_replace_all()`. Demonstrate literal replacement and regex-based replacement. 
+
+the base version can be more concise; the stringr version allows for complex but readable pipelines
 :::
 
 
 ## Transform: Trim whitespace
 
-**Clean up messy text**
+**Clean up messy text** : Return modified string with leading/trailing whitespace removed
 
-**Base:** Use `trimws()` to remove leading and trailing whitespace
+```{r}
+#| label: define-messy-string
+messy_string <- "   Hello,   World!   "
+```
+
+
+:::: row
+
+::: col-4
+
+**Base:** Remove leading/trailing whitespace with [trimws()]{.func}
 
 ```{r}
 #| label: trimws-example
 
-messy_string <- "   Hello,   World!   "
-trimws(messy_string) # removes leading and trailing whitespace
-trimws(messy_string, which = "left") # removes leading whitespace only)
-trimws(messy_string, which = "right") # removes trailing whitespace only)
+# remove leading & trailing whitespace
+trimws(messy_string) 
+# remove leading whitespace only
+trimws(messy_string, which = "left") 
+
 ```
 
+:::
 
-**`stringr`:** Use `str_trim()` to remove leading and trailing whitespace, `str_squish()` to also collapse internal whitespace
+::: col-4
+
+**`stringr`:** Remove leading/trailing whitespace with [str_trim()]{.func}
 
 ```{r}
-#| label: str-trim-squish
+#| label: str-trim
 
-str_trim(messy_string) # removes leading and trailing whitespace
-str_trim(messy_string, side = "left") # removes leading whitespace only
-str_trim(messy_string, side = "right") # removes trailing whitespace only
+# remove leading & trailing whitespace
+str_trim(messy_string)
+# remove trailing whitespace only
+str_trim(messy_string, side = "right") 
+
+```
+
+:::
+
+::: col-4
+
+**`stringr`:** *Also* collapse internal whitespace with [str_squish()]{.func}
+
+```{r}
+#| label: str-squish
 
 # removing both leading and trailing
-# AND ALSO collapse any internal whitespace to a single space
+# AND ALSO collapse any internal 
+# whitespace to a single space
 str_squish(messy_string)
 
 ```
 
+:::
+
+::::
 
 
 ::: notes
@@ -848,180 +1434,299 @@ str_squish(messy_string)
 
 ## Transform: Convert case
 
-| Base R | stringr | Result |
-| --- | --- | --- |
-| `toupper()` | `str_to_upper()` | ALL CAPS |
-| `tolower()` | `str_to_lower()` | all lowercase |
-| — | `str_to_title()` | Title Case Each Word |
-| — | `str_to_sentence()` | Sentence case |
+**Change letter case** : Return modified string with case converted
 
-**Base:** Use `toupper()` and `tolower()` for case conversion
+```{r}
+#| label: print-sentence-case
+#| output-location: column
+sentence
+```
+
+:::: row
+
+::: col-4
+
+**Base:** Convert to all upper/lower case with [toupper()]{.func} & [tolower()]{.func}
 
 ```{r}
 #| label: base-case-conversion
 
-toupper(sentence) # converts to ALL CAPS
-tolower(sentence) # converts to all lowercase
+toupper(sentence)
+tolower(sentence)
 ```
 
+:::
 
-**`stringr:`** Use `str_to_upper()`, `str_to_lower()`, `str_to_title()`, and `str_to_sentence()` for case conversion
+::: col-4
 
+**`stringr:`** Convert to all upper/lower case with [str_to_upper()]{.func} & [str_to_lower()]{.func} 
 ```{r}
 #| label: str-case-conversion
 
-str_to_upper(sentence) # converts to ALL CAPS
-str_to_lower(sentence) # converts to all lowercase
-str_to_title(sentence) # converts to Title Case Each Word
-str_to_sentence(sentence) # converts to Sentence case
+str_to_upper(sentence)
+str_to_lower(sentence)
 ```
 
+:::
 
+::: col-4
 
+**`stringr:`** Convert to title/sentence case with [str_to_title()]{.func} & [str_to_sentence()]{.func} 
+
+```{r}
+#| label: str-case-conversion-more
+
+# Captialize Each Word
+str_to_title(sentence)
+# Capitalize first word.
+str_to_sentence(sentence)
+```
+
+:::
+
+::::
 
 ::: notes
-**Case conversion**: Compare base R functions (`toupper()`, `tolower()`) with stringr equivalents (`str_to_upper()`, `str_to_lower()`, `str_to_title()`, `str_to_sentence()`). str functions have local-aware case conversion like Turkish dotted/dotless i: `str_to_upper("i", locale = "tr")` returns "İ" (dotted capital I) and `str_to_lower("I", "tr")` returns "ı" (dotless lowercase i) in Turkish locale, while base R's `toupper("i")` and `tolower("I")` return "I" and "i" respectively regardless of locale.
+**Case conversion**: Compare base R functions (`toupper()`, `tolower()`) with `stringr` equivalents (`str_to_upper()`, `str_to_lower()`, `str_to_title()`, `str_to_sentence()`). str functions have local-aware case conversion like Turkish dotted/dotless i: `str_to_upper("i", locale = "tr")` returns "İ" (dotted capital I) and `str_to_lower("I", "tr")` returns "ı" (dotless lowercase i) in Turkish locale, while base R's `toupper("i")` and `tolower("I")` return "I" and "i" respectively regardless of locale.
 :::
 
 
 # Regular Expressions
 
-## Regex overview
+## Regex overview {.smaller}
 
-**Literal characters**: Match exactly
+:::: row
 
-**Metacharacters** (special meaning):
+::: col-7
 
-`. * + ? [ ] { } ^ $ \ |`
+**Literal characters**: Match exactly as written
 
-**Escaping**: Use double backslash in R strings
+**Metacharacters** have special meaning, like defining what kinds of characters to recognize, how many times to match, or where in the string to look. Common metacharacters:
+
+::: {style="font-size: 0.9em;"}
+
+| Metacharacter | Meaning |
+| --- | ----------------- |
+| `.` | Any single character except newline |
+| `*` | 0 or more of the preceding element |
+| `+` | 1 or more of the preceding element |
+| `?` | 0 or 1 of the preceding element |
+| `[]` | Character class (matches any one character inside) |
+| `{}` | Quantifier (specifies number of occurrences) |
+| `^` | Start of string |
+| `$` | End of string |
+| `\` | Escape character (treat next character literally) |
+| `|` | Alternation (matches the pattern before or after) |
+
+:::
+
+**Escaping** allows you to match metacharacters as literal characters by preceding them with the escape metacharacter.
 
 - Match literal period: `\.` → `"\\."` in R
 - Match literal asterisk: `\*` → `"\\*"` in R
 
+:::
+
+::: col-5
+
+Match with metacharacter:
+
 ```{r}
-#| label: regex-literal-vs-metacharacter
+#| label: regex-metacharacter
 
-# Literal match with metacharacter
-str_detect("file.txt", "\\.") # matches literal period
-str_detect("filetxt", "\\.") # no match, no period
+str_detect("filetxt", ".") 
+str_detect("", ".")
+```
 
-# Metacharacter match
-str_detect("filetxt", ".") # matches any character
-str_detect("", ".") # no match, empty string has no characters
+Literal match with escaped metacharacter:
 
+```{r}
+#| label: regex-literal
+
+# 
+str_detect("file.txt", "\\.")
+str_detect("filetxt", "\\.")
 ```
 
 
-::: notes
-::: 
+:::
 
+::::
 
-## Character classes & quantifiers
+## Character classes
 
-**Character classes**
+:::: row
 
-- `[abc]`: a, b, or c
-- `[^abc]`: NOT a, b, or c
-- `[a-z]`: any lowercase
-- `\d`: digit
-- `\w`: word character
-- `\s`: whitespace
+::: col-6
 
-**Quantifiers**
+**Character classes** match any one character from a set. Common character classes:
 
-- `*`: 0 or more
-- `+`: 1 or more
-- `?`: 0 or 1
-- `{n}`: exactly n
-- `{n,}`: n or more
-- `{n,m}`: between n and m
+| Class | Meaning |
+| --- | --------- |
+| `[abc]` | a, b, or c |
+| `[^abc]` | NOT a, b, or c |
+| `[a-z]` | any lowercase letter |
+| `\d` | digit |
+| `\w` | word character (letter, digit, or underscore) |
+| `\s` | whitespace character (space, tab, newline) |
 
-CODE BLOCK: Examples using character classes
+:::
+
+::: {.col-6 .smaller}
 
 ```{r}
 #| label: character-classes
 
-str_detect("apple", "[aeiou]") # matches if contains any vowel
-str_detect("apple", "[^aeiou]") # matches if contains any non-vowel
-str_detect("apple", "\\d") # matches if contains any digit
-str_detect("apple", "\\w") # matches if contains any word character (letter, digit, or underscore)
-str_detect("apple", "\\s") # matches if contains any whitespace
+str_detect("apple", "[aeiou]") 
+str_detect("apple", "[^aeiou]") 
+str_detect("apple", "\\d") 
+str_detect("apple", "\\w") 
+str_detect("apple", "\\s") 
 ```
 
+:::
 
-CODE BLOCK: Examples using quantifiers
+::::
+
+## Quantifiers
+
+:::: row
+
+::: col-6
+
+**Quantifiers** specify how many times the preceding element should be matched:
+
+| Quantifier | Meaning |
+| --- | --- |
+| `*` | 0 or more of the preceding element |
+| `+` | 1 or more of the preceding element |
+| `?` | 0 or 1 of the preceding element |
+| `{n}` | exactly n of the preceding element |
+| `{n,}` | n or more of the preceding element |
+| `{n,m}` | between n and m of the preceding element |
+
+:::
+
+::: {.col-6 .smaller}
 
 ```{r}
 #| label: quantifiers
 
-str_detect("aaab", "a*") # matches 0 or more a's (matches entire string)
-str_detect("aaab", "a+") # matches 1 or more a's (matches "aaab")
-str_detect("aaab", "a?") # matches 0 or 1 a (matches "a" at the start)
-str_detect("aaab", "a{3}") # matches exactly 3 a's (matches "aaa")
-str_detect("aaab", "a{2,}") # matches 2 or more a's (matches "aaab")
-str_detect("aaab", "a{2,3}") # matches between 2 and 3 a's (matches "aaab" because it has 3 a's, but would not match "aab" because it only has 2 a's)
+str_detect("aaab", "a*") 
+str_detect("aaab", "a+") 
+str_detect("aaab", "a?") 
+str_detect("aaab", "a{3}") 
+str_detect("aaab", "a{2,}")
+str_detect("aaab", "a{2,3}") 
 
 ```
+
+:::
+
+::::
+
+## Example: Quantifiers in stringr functions
+
+Use quantifiers in `stringr` functions to specify how many occurrences to replace, locate, count, etc.:
+
 ```{r}
 #| label: other-str-functions
 
-str_replace_all("aaab", "a{2,3}", "X") # replaces 2 or 3 a's with "X" (result: "Xb")
-str_locate_all("aaab", "a{2,3}") # locates positions of 2 or 3 a's (result: list of matrices with start/end positions)
-str_count("aaab", "a{2,3}") # counts occurrences of 2 or 3 a's (result: 1)
+# replace 2 or 3 a's with "X"
+str_replace_all("aaab", "a{2,3}", "X") 
+# locates positions of 2 or 3 a's 
+str_locate_all("aaab", "a{2,3}") 
+# counts occurrences of 2 or 3 a's
+str_count("aaab", "a{2,3}") 
 
 ```
 
 
-CODE BLOCK: Greedy vs lazy matching (.*? vs .*)
+## Greedy vs lazy matching
 
-Greedy matches as much as possible, while lazy matches as little as possible. In the example below, the greedy pattern `.*` captures everything between "Start" and "end", while the lazy pattern `.*?` captures only the text in between without consuming everything.
+:::: row
+
+::: col-6
+
+-   [Greedy]{.keyword}: match as much as possible with `.*`
+    -   Stop at the end of the string or the last possible match
+-   [Lazy]{.keyword}: match as little as possible with `.*?`
+    -   Stop at the first possible match
+
+:::
+
+::: col-6
+
+```{r}
+#| label: define-double-dog
+double_dog <- "The quick brown fox jumps over 
+    the lazy dog. The dog was displeased."
+```
+
+:::
+
+::::
 
 ```{r}
 #| label: greedy-vs-lazy
 
-double_dog <- "The quick brown fox jumps over the lazy dog. The dog was displeased."
+# Greedy match (matches everything between first "The" and last "dog")
+str_extract(double_dog, "The.*dog")
 
-# Greedy match (matches everything between "The" and "dog")
-str_extract(double_dog, "The.*dog") # Result: "The quick brown fox jumps over the lazy dog. The dog"
-
-# Lazy match (matches the shortest string between "The" and "dog")
-str_extract(double_dog, "The.*?dog") # Result: "The quick brown fox jumps over the lazy dog"
+# Lazy match (matches the shortest string between first "The" and first "dog")
+str_extract(double_dog, "The.*?dog")
 
 ```
 
-
-::: notes
-
-**Character classes and quantifiers**: Show `[abc]`, `[^abc]`, `[a-z]`, `\d`, `\w`, `\s`. Introduce quantifiers: `*` (0+), `+` (1+), `?` (0-1), `{n}`, `{n,}`, `{n,m}`. Demonstrate greedy vs lazy matching.
-::: 
 
 ## Anchors & boundaries
 
-**Control where matches occur**
+:::: row
 
-- `^`: Start of string
-- `$`: End of string
-- `\b`: Word boundary
+::: col-6
 
-CODE BLOCK: Match pattern at start with ^
+**Anchors** specify where in the string to look for a match:
+
+| Anchor | Meaning |
+| --- | ---------- |
+| `^` | Start of string[^Note that the carat `^` has two uses: as an anchor for the start of the string, and as a negation symbol when used inside square brackets for character classes.] |
+| `$` | End of string |
+| `\b` | Word boundary (position between a word character and a non-word character
+| `\B` | Non-word boundary (position between two word characters or two non-word characters) |
+
+
+:::
+
+::: {.col-6 .smaller}
+
+Match partial string with `^` *or* `$`:
 
 ```{r}
-#| label: anchor-start
+#| label: anchor-one-side
 
-str_detect("banana", "^ba") # matches "ba" at start
-str_detect("banana", "^na") # does not match "na" at start
+str_detect("banana", "^ba")
+str_detect("banana", "na$")
 ```
 
 
-CODE BLOCK: Match entire string with ^ and $
+Match entire string with `^` *and* `$`:
+
 ```{r}
 #| label: anchor-start-end
 
-str_detect("banana", "^banana$") # matches entire string "banana"
-str_detect("banana", "^ban$") # does not match because "ban" is not the entire string
+str_detect("banana", "^banana$")
+str_detect("banana", "^ban$")
 ```
 
+:::
+
+::::
+
+::: notes
+
+Note that the carat `^` has two uses: as an anchor for the start of the string, and as a negation symbol when used inside square brackets for character classes (e.g., `[^abc]` means "not a, b, or c"). The meaning depends on the context in which it is used.
+
+:::
 
 Use word boundaries for whole word matching:
 
@@ -1030,13 +1735,13 @@ Use word boundaries for whole word matching:
 
 sea_cat <- "The cat is on the catamaran. She's a weird cat."
 
-str_count(sea_cat, " cat ") # matches "cat" surrounded by spaces
-str_count(sea_cat, "\\bcat\\b") # matches "cat" as a whole word
-str_count(sea_cat, "cat") # matches "cat" as part of "cat" and "catamaran"
+str_count(sea_cat, " cat ") 
+str_count(sea_cat, "\\bcat\\b") 
+str_count(sea_cat, "cat")
 ```
 
 
-CODE BLOCK: Validation pattern example (e.g., email, phone)
+Validation pattern example (e.g., email, phone)
 
 ```{r}
 #| label: validation-pattern
@@ -1051,14 +1756,15 @@ str_detect("invalid email@spammer,com", email_pattern) # returns FALSE for inval
 
 
 
+
 ## Capture groups & back-references
 
-**Extract and reuse matched portions**
+**Capture** groups to extract specific parts of a matched pattern and **back-reference** them in replacement or later in the regex. 
 
 - `()`: Create capture group
 - `\1`, `\2`, etc.: Reference captured groups in replacement
 
-Use backreferences to reorder captured groups:
+Use `back-references` to reorder captured groups:
 
 ```{r}
 #| label: backreferences
@@ -1068,27 +1774,51 @@ str_replace(sentence, "(fox)(.*)(dog)", "\\3\\2\\1")
 
 ```
 
-Example: Reorder US dates `MM/DD/YYYY` to `YYYY-MM-DD` using capture groups and backreferences:
+## Example: Reorder US date format
+
+Reorder US dates `MM/DD/YYYY` to `YYYY-MM-DD` using capture groups and back-references:
+
+```{r}
+#| label: define-date-strings
+
+new_year <- "The date is 12/31/2025. Happy New Year!"
+birthday <- "The date is 6/7/25. Happy birthday!"
+```
+
 
 ```{r}
 #| label: date-reorder
 
-new_year <- "The date is 12/31/2025. Happy New Year!"
-birthday <- "The date is 6/7/25. Happy birthday!"
-
 # Capture month, day, year and reorder to YYYY-MM-DD
-str_replace(new_year, "(\\d{2})/(\\d{2})/(\\d{4})", "\\3-\\1-\\2") # matches because month, day, and year are expected number of digits
-str_replace(birthday, "(\\d{1,2})/(\\d{1,2})/(\\d{2,4})", "\\3-\\1-\\2") # account for the possibility of 1-digit month/day and 2-digit year
+str_replace(new_year, "(\\d{2})/(\\d{2})/(\\d{4})", "\\3-\\1-\\2") 
 
-
+# account for the possibility of 1-digit month/day and 2-digit year
+str_replace(birthday, "(\\d{1,2})/(\\d{1,2})/(\\d{2,4})", "\\3-\\1-\\2") 
 ```
 
 
+## Regex Challenge
 
-::: notes
-CHALLENGE! Create a function for the date reordering that can handle both 1 or 2 digit month/day and 2 or 4 digit year formats as input but always deliver a consistent `YYYY-MM-DD` output format. Use capture groups to extract the components and backreferences to reorder them in the desired format. Test your function on various date strings to ensure it works correctly.
+Create a function for the date reordering that can handle both 1 or 2 digit month/day and 2 or 4 digit year formats as input but always deliver a consistent `YYYY-MM-DD` output format. Use capture groups to extract the components and back-references to reorder them in the desired format. Test your function on various date strings to ensure it works correctly.
 
-::: 
+```{.r}
+#| label: regex-challenge
+
+# Create function `reorder_date()`
+reorder_date <- function(date_string) {
+    
+  # Define regex pattern to capture month, day, and year with flexible digit counts
+
+  # Use str_replace to reorder the date components to YYYY-MM-DD
+
+}
+
+# Test with multiple string types
+reorder_date("4/5/2023") # Expected: "2023-04-05"
+
+```
+ 
+Even challengier: Handle multiple date formats by adding arguments for the user to specify the input and/or format.
 
 
 
@@ -1107,6 +1837,7 @@ CODE BLOCK: Create a factor, show its structure with str()
 - Memory efficiency for repeated values
 - Control ordering in plots and models
 
+`stringr`
 
 ::: notes
 **What are factors and when to use them**: Define factors as integer vectors with level labels. Explain use for categorical data with fixed, known set of values. Show memory efficiency and ordering benefits.

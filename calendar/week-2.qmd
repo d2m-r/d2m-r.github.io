@@ -84,9 +84,9 @@ Jan-13; Jan-15
 -   Textbook
     -   **Reminder:** The textbook is in its infancy! I hope you'll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources.
     -   [Ch3: RStudio Essentials](https://d2m-r.com/book/chapters/rstudio.html)
-        - Chapter status (Jan 2025): ~75% first draft
+        - Chapter status (Jan 2026): ~75% first draft
     -   [Ch4: Git and GitHub](https://d2m-r.github.io/book/chapters/git-github.html)
-        - Chapter status (Jan 2025): primarily just outline, includes some content and speaker notes from slides
+        - Chapter status (Jan 2026): primarily just outline, includes some content and speaker notes from slides
 
 <!-- software, tools, datasets, etc -->
 

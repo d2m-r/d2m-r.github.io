@@ -47,7 +47,22 @@ Feb-10; Feb-12
 
 **Class plans:**
 
+-   Lecture: Tidyverse Wrangling with Strings
+    -   Basics of text data
+    -   String manipulation with base R
+    -   Comparable manipulation with `stringr`
+    -   Regular expressions (if time allows)
+        -   If we don't get to it, work through the slides on your own.
+-   Exercises/demos:
+    -   `stringr` demo
+    
+If by some miracle we get through strings, we'll introduce factors and `forcats` on Thursday.
+
 **Primary learning objectives:**
+
+- (7) Data manipulation with dplyr and pipelines
+- (8) Tidy data structure
+- (10) String manipulation with stringr
 
 :::
 ::::
@@ -65,16 +80,24 @@ Feb-10; Feb-12
 
 **Class Materials:**
 
-- [Slides]()
-- [Textbook Chapter]()
+-   [Tidyverse Wrangling with Strings](../slides/Q1-W6_tidyverse-strings.html)
+-   [strings and `stringr` demo](https://github.com/d2m-r/student-hub/blob/main/demos/stringr-examples.qmd)
+    -   More or less follows the lecture slides giving you something to play with
+-   Textbook
+    -   **Reminder:** The textbook is in its infancy! I hope you'll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources. Remember you can always contribute to incomplete chapters for core objectives and enrichment credit.
+    -   [Ch10: Strings and Character Data](https://d2m-r.github.io/book/chapters/stringr.html)
+        - Chapter status (Feb 2026): ~20% first draft, just the basics of the data type
 
 <!-- software, tools, datasets, etc -->
 
 **Additional Resources:**
 
-- readings
-- cheat-sheets
-- tutorials
+-   `stringr` [documentation](https://stringr.tidyverse.org/) & [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/strings.pdf)
+-   R for Data Science 
+    -   [**Ch14 Strings**](https://r4ds.hadley.nz/strings)*
+    -   [Ch15 Regular expressions](https://r4ds.hadley.nz/regexps.html)
+-   STAT545
+    -   [Ch11 Character vectors](https://stat545.com/character-vectors.html)
 
 :::
 ::::
@@ -91,9 +114,21 @@ Feb-10; Feb-12
 :::: {#todo-week-6 .accordion-collapse .collapse data-bs-parent="#week-6"}
 ::: accordion-body
 
-**Graded Submissions:**
+**Next Steps:**
 
-**Recommended Exercises:**
+1.  *SAME AS WEEK 4* -- Explore the tidyverse core projects. You can view them in the [student hub](https://github.com/d2m-r/student-hub/tree/main/project-documents/tidyverse) or accept any as GH Classroom assignments via links on the [menu](assessment/menu.html). After this week, you're ready to start any of them, but most have have some tasks related to factor variables, which we'll cover week 7.
+    -   `clean-level-1-mtcars`: Structured exercise to introduce data manipulation in the tidyverse. Primarily uses `dplyr` and `tidyr`, but includes some manipulation of strings and factors as well
+    -   `clean-level-2-midwest`: Open-ended with a general goal but no step-by-step instructions. Similar content to level 1.
+    -   `clean-group`: Group project where each member makes a clean dataset messy, then cleans another member's messy dataset following tidy data principles.
+    -   `wrangle-level-1-starwars`: Structured exercise to go further into data wrangling. Includes a mix of `dplyr`, `tidyr`, `stringr`, and `forcats`.
+    -   `wrangle-level-2-gapminder`:  Open-ended with a general goal but no step-by-step instructions. Similar content to level 1.
+    -   `wrangle-group`: (Similar to the group cleaning) Group project where each member un-wrangles a dataset, then wrangles another member's dataset to as close to the original as possible.
+    -   `recreate-function`: A more advanced, freeform project where you pick a function from an R package and try to recreate it using tidyverse tools. Complex, and good for showing R programming & tidyverse objectives at a high level at the same time.
+2.  **Where is your data project?** We're more than half-way through the quarter. 
+    -   By this point you should minimally have a dedicated GitHub repository for your data project that syncs with an RStudio project. It should include the standard git repo files and structure (like your README and gitignore), data in the form of a .csv or other tablar file, and a Quarto notebook with a basic outline of the project. 
+    -   Ideally you also have one or more R scripts that do things like define functions and perform initial data read-in, wrangling, and write-out.
+    -   *If you haven't started yet, this needs to be a top priority.*
+    -   If you have started, consider submitting whatever you have for feedback. Remember you absolutely do not have to have a complete project to submit (I strongly recommend you do not wait nearly that long!). Indicate what objectives you're attempting and get clear feedback on whether you're meeting expectations (and if not, how to do so). Even if you're only attempting to demonstrate a few objectives, there's no harm in getting guidance on what you have so far.
 
 :::
 ::::
@@ -110,9 +145,10 @@ Feb-10; Feb-12
 :::: {#misc-week-6 .accordion-collapse .collapse data-bs-parent="#week-6"}
 ::: accordion-body
 
-**Announcements:**
-
-**Reminders:**
+1.  **GitHub Submission:** This is now a [screen recording](https://uchicago.box.com/s/t0cb155utxtpnz3yhs754qih7yhiwymm) of the github submission process you can view here *extremely detailed* [written instructions](../assessment/misc/gh-submissions.html).
+2.  **Hunter's Plain-English Guide to R:** Hunter has turned his notes into a Quarto document and allowed me to share it on the website. It's a great resource for beginners and a nice complement to the textbook and lecture materials. You can find it [here](https://d2m-r.github.io/materials/guides/hunters-r-notes.html).
+3.  **Example data project:** As I mentioned last week, I'm setting up an example data project that shows how to meet the basic requirements for the integrated data project. I have initialized that repo in the d2m-r github org, and you can view it [here](https://github.com/d2m-r/schelling-data-project-example).
+    -   **Note:** As of Feb 8 2026, this repo *is not complete.* It does not currently meet the requirements for the integrative data project! I'll be updating it as I have time, but I wanted to share it in its current state in case it's helpful to anyone as a starting point. I'll make an announcement when it's complete.
 
 :::
 ::::
