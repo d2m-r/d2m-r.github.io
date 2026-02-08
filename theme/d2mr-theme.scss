@@ -1134,11 +1134,19 @@ pre > code.sourceCode > span {
 
 .reveal .cell-output-stdout,
 .reveal .cell-output {
-  font-size: 1.3em !important;  /* Adjust em value as needed */
+  font-size: 1.2em !important;  /* Adjust em value as needed */
   background-color: $cool-white !important;
   border: 2px solid $dark-greystone !important;
   border-radius: 6px !important;
   padding: 10px !important;
+  margin-top: -.5em !important;
+  margin-bottom: .8em !important;
+}
+
+// Prevent extra spacing code output-location is `column`
+// kinda janky but it gets the job done
+.reveal .columns > .column > .cell-output.cell-output-stdout {
+    margin-top: 0em !important;
 }
 
 //.reveal .cell-output code { }
