@@ -389,16 +389,11 @@ Change format
 [Concatenate]{.keyword}: Join multiple strings together into one string
 
 -   Take *strings* as separate arguments; return single string
-
-**Base:**
-
-- `paste()`: space separator by default
-- `paste0()`: no separator
-
-
-**`stringr`:**
-
-- `str_c()`: no separator, `NA`s propagate
+-   **Base:**
+    - `paste()`: space separator by default
+    - `paste0()`: no separator
+-   **`stringr`:**
+    - `str_c()`: no separator, `NA`s propagate
 
 ## Compare combine vs concatenate
 
@@ -408,7 +403,7 @@ Combine [c()]{.func} vs. concatenate [paste()]{.func} / [str_c()]{.func}:
 
 :::: row
 
-::: col-4
+::: {.col-4 .fragment}
 
 Base:
 
@@ -422,7 +417,7 @@ c("hello", "world")
 
 :::
 
-::: col-4
+::: {.col-4 .fragment}
 
 Base:
 
@@ -439,7 +434,7 @@ paste(greeting)
 
 :::
 
-::: col-4
+::: {.col-4 .fragment}
 
 `stringr`:
 
@@ -465,7 +460,7 @@ str_c(greeting)
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 Base:
 
@@ -482,7 +477,7 @@ paste0("hello", "world")
 
 ::: 
 
-::: col-6
+::: {.col-6 .fragment}
 
 `stringr`:
 
@@ -504,7 +499,7 @@ str_c("hello", "world", sep = " ")
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 Base:
 
@@ -517,7 +512,7 @@ paste("hello", NA)
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 `stringr`:
 
@@ -545,7 +540,7 @@ audience_vector <- c("world", "everyone")
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 ```{r}
 #| label: show-vectorization-base
@@ -556,7 +551,7 @@ paste(greeting_vector, audience_vector)
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 ```{r}
 #| label: show-vectorization-stringr
@@ -576,7 +571,7 @@ NA propagates: In `paste()`, if any argument is `NA`, it is treated as the strin
 Vectorized: they can operate on vectors of strings element-wise without needing loops or `sapply()`. However, their default separator behavior differs, and `str_c()` propagates `NA` values instead of converting them to the string "NA".
 :::
 
-## Combine: Collapse {.smaller}
+## Combine: Collapse 
 
 -   [Collapse]{.keyword}: Join elements of a string vector into a single string
 -   Take *vector* of strings as single argument; return single string
@@ -584,9 +579,11 @@ Vectorized: they can operate on vectors of strings element-wise without needing 
     -   {{< bi x-circle-fill>}} Multiple string arguments: `"apple", "banana", "cherry", "date", "elderberry"`
 
 
+## Combine: Collapse
+
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Base:** Concat with `paste()`'s `sep` arg, collapse with `collapse` arg:
 
@@ -606,7 +603,7 @@ paste(fruit, sep = "SEPARATOR!!!", collapse = ", ")
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 **`stringr`:** Collapse vectors with [str_flatten]{.func}'s `collapse` arg, no `sep` arg:
 
@@ -645,7 +642,7 @@ What's the difference between `sep` and `collapse`?
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Base:** Interpolate with placeholders using [sprintf()]{.func}
 
@@ -663,7 +660,7 @@ sprintf("My name is %s and I am %d years old.", name, age)
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 **`stringr`:** Interpolate directly with `str_glue()`
 
@@ -686,7 +683,7 @@ str_glue("My name is {name} and I am {age} years old.")
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 Include simple calculations:
 
@@ -701,7 +698,7 @@ str_glue("The value of x is {x}
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 Include embedded R code:
 
@@ -719,7 +716,7 @@ str_glue("The sum of a and b is {a + b}
 
 ::::
 
-::: note
+::: notes
 
 `str_glue()` is whitespace sensitive, meaning that unlike in the rest of R, newlines and indentation will be preserved in the resulting string. This can be useful for formatting multi-line strings, but it also means you need to be careful with how you format your code inside `str_glue()` to avoid unintended whitespace in the output.
 
@@ -730,7 +727,7 @@ In these slides I often put in line breaks to allow for code in columns without 
 
 # String Detection and Matching
 
-## Detect: Identify patterns
+## Detect: Identify patterns {.smaller}
 
 **Does the pattern exist?** : Return logical `TRUE` or `FALSE`
 
@@ -743,11 +740,11 @@ fruit
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Base:** Find pattern with [grepl()]{.func} (=grep **l**ogical)
 
-```{r class="smaller"}
+```{r}
 #| label: detect-grepl
 
 grepl("a", "banana")
@@ -758,11 +755,11 @@ grepl("err", fruit)
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 **`stringr`:** Find pattern with [str_detect()]{.func}
 
-```{r class="smaller"}
+```{r}
 #| label: detect-str-detect
 
 str_detect("banana", "an") 
@@ -779,7 +776,7 @@ str_detect(fruit, "err", negate = TRUE)
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 Use `str_detect()` in tidy pipelines:
 
@@ -795,7 +792,7 @@ data.frame(fruit) |>
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 Detection is case-sensitive by default, but can be made case-insensitive with `regex()` wrapper and  `ignore_case` arg:
 
@@ -829,7 +826,7 @@ grep doesn't have a simple way of negating the pattern (i.e., find strings that 
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Base:** Find first match with [regexpr()]{.func}, return an integer with attributes
 
@@ -845,7 +842,7 @@ class(base_first_match)
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 **`stringr`:** Find first match with [str_locate()]{.func}, return a matrix with start/end columns
 
@@ -875,7 +872,7 @@ class(stringr_first_match)
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Base:** Find all matches with [gregexpr()]{.func}, return list of integers
 
@@ -892,7 +889,7 @@ class(base_all_match)
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 **`stringr`:** Find all matches with [str_locate_all]{.func}, return list of matrices
 
@@ -925,6 +922,8 @@ class(stringr_all_match)
 
 ::: col-6
 
+::: fragment
+
 **Base:** Count matches with `gregexpr()` + [lengths()]{.func}
 
 ```{r}
@@ -937,6 +936,10 @@ lengths(
     )
 ```
 
+:::
+
+::: fragment
+
 **`stringr`:** Count matches with [str_count()]{.func} 
 
 ```{r}
@@ -946,10 +949,13 @@ lengths(
 str_count("banana", "an") 
 ```
 
+:::
 
 ::: 
 
 ::: col-6
+
+::: fragment
 
 **`str_count` is vectorized:**
 
@@ -960,6 +966,10 @@ str_count("banana", "an")
 # each string of abed_ratings vector
 str_count(abed_ratings, "cool")
 ```
+
+:::
+
+::: fragment
 
 **Example:** Count words with regex
 
@@ -975,6 +985,7 @@ str_count(sentence, "\\b\\w+\\b")
 
 :::
 
+:::
 ::::
 
 ::: notes
@@ -992,7 +1003,7 @@ Need `lengths()`, not `length()`, because `gregexpr()` returns a list of integer
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Base:** Return matching strings with [grep()]{.func} and `value = TRUE`
 
@@ -1004,7 +1015,7 @@ grep("a", fruit, value = TRUE)
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 **`stringr`:** Return matching strings with  [str_subset()]{.func}
 
@@ -1043,7 +1054,7 @@ sentence
 
 :::: row
 
-::: col-4
+::: {.col-4 .fragment}
 
 **Base:** Use `substr()` to extract substring by character positions
 
@@ -1058,7 +1069,7 @@ substr(sentence, 1, 9)
 
 :::
 
-::: col-4
+::: {.col-4 .fragment}
 
 **`stringr`:** Use `str_sub()` to extract substring by character positions, supports negative indexing
 
@@ -1077,7 +1088,7 @@ str_sub(sentence, -4, -1)
 
 :::
 
-::: col-4
+::: {.col-4 .fragment}
 
 **Example use case:** Extract specific parts of a string and interpolate with `str_glue()`
 
@@ -1129,7 +1140,7 @@ Allow your user to specify first animal and second adjective (or vice versa), or
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Base:** Extract pattern with `gregexpr()` (find positions) then [regmatches()]{.func} (extract matches by positions)
 
@@ -1145,7 +1156,7 @@ regmatches(sentence, gregexpr("o", sentence))
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 **`stringr`:** Extract pattern with [str_extract()]{.func} (first match) or [str_extract_all()]{.func} (all matches)
 
@@ -1163,7 +1174,9 @@ str_extract_all(sentence, "o")
 
 ::::
 
+::: aside
 Not terribly useful for literal pattern matching.
+:::
 
 ::: notes
 
@@ -1171,13 +1184,13 @@ Notice how in the base version one function wants the string as the first argume
 
 :::
 
-## Replace: Extract by pattern with regex
+## Replace: Extract by pattern with regex {.smaller}
 
 **Extract regex pattern from strings** : Return matched non-literal pattern as string
 
-:::: {.row .smaller}
+:::: {.row}
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Base:** Extract pattern with `gregexpr()` (find positions) then [regmatches()]{.func} (extract matches by positions)
 
@@ -1197,7 +1210,7 @@ regmatches(sentence, gregexpr("\\b[A-Z]+\\b", sentence))
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 **`stringr`:** Extract pattern with [str_extract()]{.func} (first match) or [str_extract_all()]{.func} (all matches)
 
@@ -1224,7 +1237,7 @@ str_extract_all(sentence, "\\b[A-Z]+\\b")
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Base:** [sub()]{.func} replaces first match, [gsub()]{.func} replaces all matches
 
@@ -1240,7 +1253,7 @@ gsub("err", "Z", fruit)
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
 
 **`stringr:`** Use [str_replace()]{.func} to replace first match, [str_replace_all()]{.func} to replace all matches
 
@@ -1265,7 +1278,7 @@ str_replace_all(fruit, "err", "Z")
 
 :::: row
 
-::: col-4
+::: {.col-4 .fragment}
 
 **Base:** Remove pattern with `sub()` or `gsub()` and replacing with empty string `""`
 
@@ -1281,7 +1294,7 @@ gsub("err", "", fruit)
 
 :::
 
-::: col-4
+::: {.col-4 .fragment}
 
 **`stringr:`** Remove pattern with `str_replace()` or `str_replace_all()`
 
@@ -1297,7 +1310,7 @@ str_replace_all(fruit, "err", "")
 
 :::
 
-::: col-4
+::: {.col-4 .fragment}
 
 **`stringr:`** Remove pattern with [str_remove()]{.func} or [str_remove_all()]{.func}
 
@@ -1323,7 +1336,9 @@ Use regex patterns in replacement with both base and `stringr` functions to do m
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
+
+**Base**
 
 ```{r}
 #| label: regex-replace-base
@@ -1338,7 +1353,9 @@ gsub(" ", "_", gsub("[aeiouAEIOU]", "*", sentence))
 
 :::
 
-::: col-6
+::: {.col-6 .fragment}
+
+**`stringr`**
 
 ```{r}
 #| label: regex-replace-stringr
@@ -1376,7 +1393,7 @@ messy_string <- "   Hello,   World!   "
 
 :::: row
 
-::: col-4
+::: {.col-4 .fragment}
 
 **Base:** Remove leading/trailing whitespace with [trimws()]{.func}
 
@@ -1392,7 +1409,7 @@ trimws(messy_string, which = "left")
 
 :::
 
-::: col-4
+::: {.col-4 .fragment}
 
 **`stringr`:** Remove leading/trailing whitespace with [str_trim()]{.func}
 
@@ -1408,7 +1425,7 @@ str_trim(messy_string, side = "right")
 
 :::
 
-::: col-4
+::: {.col-4 .fragment}
 
 **`stringr`:** *Also* collapse internal whitespace with [str_squish()]{.func}
 
@@ -1432,6 +1449,46 @@ str_squish(messy_string)
 ::: 
 
 
+## Transform: Pad strings
+
+**Pad strings to fixed width** : Return modified string with padding added to reach specified width
+
+:::: row
+
+::: {.col-6 .fragment}
+
+**Base:** Pad strings with [sprintf()]{.func} and width specifier
+
+```{r}
+#| label: pad-sprintf
+#| echo: true
+
+# pad "42" to width of 5 with spaces
+sprintf("%5s", "42")
+# pad "42" to width of 5 with zeros
+sprintf("%05s", "42")
+```
+
+:::
+
+::: {.col-6 .fragment}
+
+**`stringr:`** Pad strings with [str_pad()]{.func} and `width`, `side`, `pad` args
+
+```{r}
+#| label: str-pad
+#| echo: true
+
+# pad "42" to width of 5 with spaces on the left
+str_pad("42", width = 5, side = "left")
+# pad "42" to width of 5 with zeros on the right
+str_pad("42", width = 5, side = "right", pad = "0")
+```
+
+:::
+
+::::
+
 ## Transform: Convert case
 
 **Change letter case** : Return modified string with case converted
@@ -1444,7 +1501,7 @@ sentence
 
 :::: row
 
-::: col-4
+::: {.col-4 .fragment}
 
 **Base:** Convert to all upper/lower case with [toupper()]{.func} & [tolower()]{.func}
 
@@ -1457,7 +1514,7 @@ tolower(sentence)
 
 :::
 
-::: col-4
+::: {.col-4 .fragment}
 
 **`stringr:`** Convert to all upper/lower case with [str_to_upper()]{.func} & [str_to_lower()]{.func} 
 ```{r}
@@ -1469,7 +1526,7 @@ str_to_lower(sentence)
 
 :::
 
-::: col-4
+::: {.col-4 .fragment}
 
 **`stringr:`** Convert to title/sentence case with [str_to_title()]{.func} & [str_to_sentence()]{.func} 
 
@@ -1493,17 +1550,21 @@ str_to_sentence(sentence)
 
 # Regular Expressions
 
-## Regex overview {.smaller}
+## Regex overview 
 
 :::: row
 
 ::: col-7
 
+::: fragment
 **Literal characters**: Match exactly as written
+:::
 
+::: fragment
 **Metacharacters** have special meaning, like defining what kinds of characters to recognize, how many times to match, or where in the string to look. Common metacharacters:
+:::
 
-::: {style="font-size: 0.9em;"}
+::: {.fragment style="font-size: 0.8em;"}
 
 | Metacharacter | Meaning |
 | --- | ----------------- |
@@ -1520,14 +1581,17 @@ str_to_sentence(sentence)
 
 :::
 
+::: {.fragment .nonincremental}
 **Escaping** allows you to match metacharacters as literal characters by preceding them with the escape metacharacter.
-
 - Match literal period: `\.` → `"\\."` in R
 - Match literal asterisk: `\*` → `"\\*"` in R
+:::
 
 :::
 
-::: col-5
+::: {.col-5 style="margin-top: -3em"}
+
+::: fragment
 
 Match with metacharacter:
 
@@ -1537,6 +1601,10 @@ Match with metacharacter:
 str_detect("filetxt", ".") 
 str_detect("", ".")
 ```
+
+:::
+
+::: fragment
 
 Literal match with escaped metacharacter:
 
@@ -1548,7 +1616,7 @@ str_detect("file.txt", "\\.")
 str_detect("filetxt", "\\.")
 ```
 
-
+:::
 :::
 
 ::::
@@ -1557,7 +1625,7 @@ str_detect("filetxt", "\\.")
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Character classes** match any one character from a set. Common character classes:
 
@@ -1572,7 +1640,7 @@ str_detect("filetxt", "\\.")
 
 :::
 
-::: {.col-6 .smaller}
+::: {.col-6 .fragment style="margin-top: -3em;"}
 
 ```{r}
 #| label: character-classes
@@ -1592,7 +1660,7 @@ str_detect("apple", "\\s")
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Quantifiers** specify how many times the preceding element should be matched:
 
@@ -1607,7 +1675,7 @@ str_detect("apple", "\\s")
 
 :::
 
-::: {.col-6 .smaller}
+::: {.col-6 .smaller .fragment style="margin-top: -3em;"}
 
 ```{r}
 #| label: quantifiers
@@ -1629,6 +1697,8 @@ str_detect("aaab", "a{2,3}")
 
 Use quantifiers in `stringr` functions to specify how many occurrences to replace, locate, count, etc.:
 
+::: fragment
+
 ```{r}
 #| label: other-str-functions
 
@@ -1641,12 +1711,13 @@ str_count("aaab", "a{2,3}")
 
 ```
 
+:::
 
 ## Greedy vs lazy matching
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 -   [Greedy]{.keyword}: match as much as possible with `.*`
     -   Stop at the end of the string or the last possible match
@@ -1655,7 +1726,7 @@ str_count("aaab", "a{2,3}")
 
 :::
 
-::: col-6
+::: {.col-6}
 
 ```{r}
 #| label: define-double-dog
@@ -1666,6 +1737,8 @@ double_dog <- "The quick brown fox jumps over
 :::
 
 ::::
+
+::: fragment
 
 ```{r}
 #| label: greedy-vs-lazy
@@ -1678,12 +1751,13 @@ str_extract(double_dog, "The.*?dog")
 
 ```
 
+:::
 
 ## Anchors & boundaries
 
 :::: row
 
-::: col-6
+::: {.col-6 .fragment}
 
 **Anchors** specify where in the string to look for a match:
 
@@ -1697,7 +1771,7 @@ str_extract(double_dog, "The.*?dog")
 
 :::
 
-::: {.col-6 .smaller}
+::: {.col-6 .fragment .smaller style="margin-top: -3em;"}
 
 Match partial string with `^` *or* `$`:
 
@@ -1728,6 +1802,8 @@ Note that the carat `^` has two uses: as an anchor for the start of the string, 
 
 :::
 
+## Example: Whole-Word Matching
+
 Use word boundaries for whole word matching:
 
 ```{r}
@@ -1740,6 +1816,7 @@ str_count(sea_cat, "\\bcat\\b")
 str_count(sea_cat, "cat")
 ```
 
+## Example: Pattern Validation
 
 Validation pattern example (e.g., email, phone)
 
@@ -1756,13 +1833,18 @@ str_detect("invalid email@spammer,com", email_pattern) # returns FALSE for inval
 
 
 
-
 ## Capture groups & back-references
+
+::: fragment
 
 **Capture** groups to extract specific parts of a matched pattern and **back-reference** them in replacement or later in the regex. 
 
 - `()`: Create capture group
 - `\1`, `\2`, etc.: Reference captured groups in replacement
+
+:::
+
+::: fragment
 
 Use `back-references` to reorder captured groups:
 
@@ -1774,9 +1856,13 @@ str_replace(sentence, "(fox)(.*)(dog)", "\\3\\2\\1")
 
 ```
 
+:::
+
 ## Example: Reorder US date format
 
 Reorder US dates `MM/DD/YYYY` to `YYYY-MM-DD` using capture groups and back-references:
+
+::: fragment
 
 ```{r}
 #| label: define-date-strings
@@ -1785,6 +1871,9 @@ new_year <- "The date is 12/31/2025. Happy New Year!"
 birthday <- "The date is 6/7/25. Happy birthday!"
 ```
 
+:::
+
+::: fragment
 
 ```{r}
 #| label: date-reorder
@@ -1796,6 +1885,7 @@ str_replace(new_year, "(\\d{2})/(\\d{2})/(\\d{4})", "\\3-\\1-\\2")
 str_replace(birthday, "(\\d{1,2})/(\\d{1,2})/(\\d{2,4})", "\\3-\\1-\\2") 
 ```
 
+:::
 
 ## Regex Challenge
 
@@ -1818,5 +1908,5 @@ reorder_date("4/5/2023") # Expected: "2023-04-05"
 
 ```
  
-Even challengier: Handle multiple date formats by adding arguments for the user to specify the input and/or format.
+*Even challengier:* Handle multiple date formats by adding arguments for the user to specify the input and/or format.
 
