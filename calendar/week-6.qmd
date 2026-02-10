@@ -83,6 +83,7 @@ If by some miracle we get through strings, we'll introduce factors and `forcats`
 -   [Tidyverse Wrangling with Strings](../slides/Q1-W6_tidyverse-strings.html)
 -   [strings and `stringr` demo](https://github.com/d2m-r/student-hub/blob/main/demos/stringr-examples.qmd)
     -   More or less follows the lecture slides giving you something to play with
+-   [In-class strings exercise](https://github.com/d2m-r/student-hub/blob/main/demos/strings-exercises.qmd)
 -   Textbook
     -   **Reminder:** The textbook is in its infancy! I hope you'll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources. Remember you can always contribute to incomplete chapters for core objectives and enrichment credit.
     -   [Ch10: Strings and Character Data](https://d2m-r.github.io/book/chapters/stringr.html)
