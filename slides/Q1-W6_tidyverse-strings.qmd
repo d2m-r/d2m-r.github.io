@@ -590,13 +590,14 @@ Vectorized: they can operate on vectors of strings element-wise without needing 
 ```{r}
 #| label: sep-collapse
 
-# sep does not affect vector
+# sep does not affect vector length > 1
 paste(fruit, sep = ", ") 
 
 # collapse with comma
 paste(fruit, collapse = ", ") 
 
-# sep ignored when collapse is used)
+# sep ignored when collapse is used
+# because sep can't apply to a vector length > 1
 paste(fruit, sep = "SEPARATOR!!!", collapse = ", ") 
 
 ```
@@ -1134,7 +1135,7 @@ Allow your user to specify first animal and second adjective (or vice versa), or
 
 ::: 
 
-## Replace: Extract by pattern
+## Extract: Extract by pattern
 
 **Extract pattern from strings** : Return matched pattern as string
 
@@ -1184,7 +1185,7 @@ Notice how in the base version one function wants the string as the first argume
 
 :::
 
-## Replace: Extract by pattern with regex {.smaller}
+## Extract: Extract by pattern with regex {.smaller}
 
 **Extract regex pattern from strings** : Return matched non-literal pattern as string
 
@@ -1611,7 +1612,6 @@ Literal match with escaped metacharacter:
 ```{r}
 #| label: regex-literal
 
-# 
 str_detect("file.txt", "\\.")
 str_detect("filetxt", "\\.")
 ```
@@ -1730,8 +1730,7 @@ str_count("aaab", "a{2,3}")
 
 ```{r}
 #| label: define-double-dog
-double_dog <- "The quick brown fox jumps over 
-    the lazy dog. The dog was displeased."
+double_dog <- "The quick brown fox jumps over the lazy dog. The dog was displeased."
 ```
 
 :::
@@ -1750,6 +1749,12 @@ str_extract(double_dog, "The.*dog")
 str_extract(double_dog, "The.*?dog")
 
 ```
+
+:::
+
+::: notes
+
+For inquiring minds: the reason this did not work in the lecture is that the definition included a line break, and by default the dot `.` does not match newlines. So it did not find a matching pattern between the first the and first dog, but did find it in the first two words of the second sentence. There was only one true match, so both greedy and lazy returned it: `"The dog"` 
 
 :::
 
