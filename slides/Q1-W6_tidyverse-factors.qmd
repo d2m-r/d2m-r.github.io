@@ -33,20 +33,22 @@ library(tidyverse)
 
 **Definition**: Integer vectors with level labels
 
-CODE BLOCK: Create a factor, show its structure with str()
+```{r}
+#| label: factor-structure
+
+f <- factor(c("low", "medium", "high", "medium", "low"))
+
+typeof(f)
+str(f)
+```
+
 
 **When to use factors:**
 
 - Categorical data with fixed set of values
-- Ordered categories (e.g., low/medium/high)
+- Ordered categories (e.g., low/medium/high, education levels)
 - Memory efficiency for repeated values
 - Control ordering in plots and models
-
-`stringr`
-
-::: notes
-**What are factors and when to use them**: Define factors as integer vectors with level labels. Explain use for categorical data with fixed, known set of values. Show memory efficiency and ordering benefits.
-::: 
 
 
 ## Factors vs. strings
@@ -54,21 +56,56 @@ CODE BLOCK: Create a factor, show its structure with str()
 **Factors**
 
 - Store: integers + labels
-- Memory efficient
+- Memory efficient (at large scale)
 - Control ordering
 - Great for: modeling, visualization
 
 **Strings**
 
 - Store: full text
-- More memory
+- More memory (at large scale)
 - Flexible manipulation
 - Great for: text processing, changing categories
 
 CODE BLOCK: Compare object size of factor vs character vector with repeated values
 
+```{r}
+#| label: factor-vs-string-small-scale
+
+# Small scale 
+strings <- c("low", "medium", "high", "medium", "low")
+factors <- factor(strings)
+
+object.size(strings)
+object.size(factors)
+
+```
+
+```{r}
+#| label: factor-vs-string-large-scale
+
+# Larger scale
+big_strings <- rep(c("low", "medium", "high"), length.out = 10000)
+big_factors <- factor(big_strings)
+
+object.size(big_strings)  # ~80 KB
+object.size(big_factors)  # ~40 KB - BETTER
+```
+
+```{r}
+#| label: factor-vs-string-long-strings
+
+# Long strings
+long_strings <- rep(c("Very or Extremely Dissatisfied", "Somewhat or a Little Dissatisfied", "Neutral and/or no response"), length.out = 1000)
+long_factors <- factor(long_strings)
+
+object.size(long_strings)  # ~8 KB
+object.size(long_factors)  # ~5 KB - BETTER
+```
+
+
 ::: notes
-**Factors vs strings**: Compare storage (factors store integers + labels vs strings store full text). Discuss when factors help (ordered categories, modeling, visualization) vs complicate (text manipulation, changing categories).
+Break point for memory efficiency is somewhere around 200ish strings (depending on length, number of unique levels, etc.). For small datasets where strings are more or equally efficient, it's not going to matter enough to care about the size distinction. For enormous datasets where you do need to care about efficiency, that's where factors do impact processing notably.
 ::: 
 
 
@@ -82,51 +119,133 @@ CODE BLOCK: Compare object size of factor vs character vector with repeated valu
 - `as.character()`: Convert to string
 - `as.numeric()`: Get underlying integers
 
-CODE BLOCK: Create factor and demonstrate each function
+```{r}
+#| label: base-r-factors
+
+f <- factor(c("low", "medium", "high", "medium", "low"))
+
+levels(f)  # View levels
+nlevels(f) # Count levels
+as.character(f)  # Convert to strings
+as.numeric(f)  # Get underlying integers
+```
+
 
 ::: notes
-**Base R factor functions**: Introduce `factor()`, `levels()`, `nlevels()`, `as.character()`, `as.numeric()`. Show common base R operations.
+Integers are assigned in alphabetical order by default (high=1, low=2, medium=3), not order of appearance.
 ::: 
 
 ## `forcats` package
 
 **For categorical variables**
 
-CODE BLOCK: Load forcats or tidyverse
-
 **Consistent `fct_*` naming:**
 
 - **Reorder**: `fct_relevel`, `fct_reorder`, `fct_infreq`
 - **Modify levels**: `fct_recode`, `fct_collapse`, `fct_lump`
 - **Other**: `fct_drop`, `fct_rev`, `fct_explicit_na`
 
-::: notes
-**Overview of forcats package**: Introduce forcats for factor manipulation. Show `fct_*` naming convention. Preview key operations: reordering, recoding, collapsing.
-:::
 
 # Create and Inspect Factors
 
 ## Create factors
 
-**For** **categorical variables**
+-   `factor()`: Base R function
+    -   Default levels in alphabetical order
+    -   Includes arguments to specify order, labels, and more
+-   `as_factor()`: From `forcats`
+    -   Preserves order of appearance
+    -   No additional specification needed or possible
 
-CODE BLOCK: Load forcats or tidyverse
+```{r}
+#| label: create-factors-factor
 
-**Consistent `fct_*` naming:**
+# Using factor()
+f1 <- factor(c("low", "medium", "high", "medium", "low"))
+levels(f1)  # Alphabetical order
+as.numeric(f1)  # high=1, low=2, medium=3
+```
 
-- **Reorder**: `fct_relevel`, `fct_reorder`, `fct_infreq`
-- **Modify levels**: `fct_recode`, `fct_collapse`, `fct_lump`
-- **Other**: `fct_drop`, `fct_rev`, `fct_explicit_na`
+```{r}
+#| label: create-factors-as-factor
+
+# Using as_factor() from forcats
+f2 <- as_factor(c("low", "medium", "high", "medium", "low"))
+levels(f2)  # Order of appearance
+as.numeric(f2)  # low=1, medium=2, high=3
+```
+
+
+## Specify levels
+
+**Control level order**
+
+-   Define levels when creating factors: `f <- factor(x, levels = c(...))`
+    -   `levels` argument: Set specific levels and order
+    -   Overrides default (alphabetical)
+    -   Elements of `levels` vector must match unique values in `x`
+    -   Levels not in `x` will be created but have no observations
+    -   Observations in `x` without corresponding levels will become NA
+-   View levels of an existing factor: `levels(f)`
+-   Redefine levels of an existing factor: `f <- levels(f)`
+
+```{r}
+#| label: specify-levels-factor
+
+x <- c("B", "A", "C", "A", "B")
+f <- factor(x, levels = c("C", "B", "A"))
+f
+levels(f)  # Custom order
+```
+
+```{r}
+#| label: specify-levels-levels-function
+
+# begin with existing factor `f` from previous example
+# running levels() function WITH assignment SETS levels
+levels(f) <- c("A", "B", "C")  # Set levels on existing factor
+f
+# running levels() function WITHOUT assignment RETURNS EXISTING levels
+levels(f) 
+```
+
+
+
+## Specify labels
+
+**Control level order and assign new names**
+
+`factor(x, levels = c(...), labels = c(...))`
+
+```{r}
+#| label: specify-labels
+
+x <- c("B", "A", "C", "A", "B")
+f <- factor(x, levels = c("A", "B", "C"), labels = c("Alpha", "Beta", "Gamma"))
+f
+levels(f)  # Custom labels
+
+```
 
 ::: notes
-**Creating factors**: Compare `factor()` (alphabetical levels by default) with `as_factor()` (order of appearance). Show specifying levels explicitly. Demonstrate labels argument for renaming during creation.
-::: 
+
+In other languages (like Stata), factors can have both levels and labels, where levels are the underlying values and labels are the human-readable names. In R, the `levels` of a factor serve both purposes: they define the unique categories (levels) and also provide the labels that are displayed when you print the factor. When you use the `labels` argument in `factor()`, it essentially renames the levels to the specified labels. So in R, levels and labels are intertwined, and you control both with the `levels` and `labels` arguments when creating a factor.
+
+:::
+
 
 ## Ordered factors
 
 **For ordinal data with meaningful order**
 
-`ordered()`: Creates ordered factor
+`factor(..., ordered = TRUE)`: Creates ordered factor
+`ordered()`: Same as factor with `ordered = TRUE` as default
+
+*Didn't we just define and redefine order?*
+
+Kind of.  Regular factors have levels with no inherent order (nominal data), where the "order" is simply how R stores and displays them. 
+
+Ordered factors explicitly encode an order among the levels (ordinal data).
 
 **Use cases:**
 
@@ -134,14 +253,44 @@ CODE BLOCK: Load forcats or tidyverse
 - Education levels (HS → Bachelor's → Master's → PhD)
 - Sizes (Small → Medium → Large)
 
-CODE BLOCK: Create ordered factor
 
-CODE BLOCK: Show that comparisons work (low < high)
+```{r}
+#| label: unordered-factors
 
-CODE BLOCK: Impact on modeling (polynomial contrasts)
+sizes_unordered <- factor(c("medium", "small", "large", "small", "medium"),
+                 levels = c("small", "medium", "large"),
+                 ordered = FALSE) # F is the default, no need to specify
+sizes_unordered
+levels(sizes_unordered)
+as.numeric(sizes_unordered)  # small=1, medium=2, large=3
+
+```
+
+```{r}
+#| label: ordered-factors
+
+sizes_ordered <- factor(c("medium", "small", "large", "small", "medium"),
+                 levels = c("small", "medium", "large"),
+                 ordered = TRUE) # or use ordered() function without `ordered` argument
+sizes_ordered
+levels(sizes_ordered)
+as.numeric(sizes_ordered)  # small=1, medium=2, large=3
+
+```
+```{r}
+#| label: ordered-factor-comparisons
+
+sizes_ordered[1] < sizes_ordered[3]  # TRUE: medium < large
+sizes_ordered[2] > sizes_ordered[4]  # FALSE: small > small
+sizes_ordered[2] == sizes_ordered[4] # TRUE: small == small
+```
 
 ::: notes
-**Ordered factors**: Introduce `ordered()` for ordinal data with meaningful order. Show how ordering affects comparisons and modeling. Demonstrate use cases like Likert scales, education levels.
+Levels always have an order, because they are stored as integers and integers are necessarily ordered.
+*Ordered* factors explicitly encode that order for ordinal data. This allows for meaningful comparisons and appropriate statistical treatment in models.
+
+When you actually view the contents of an ordered factor, you'll see that its levels aren't just listed in order, they have `<` between them. 
+This is saying to the human user (and R functions that respect ordered factors) that there is a meaningful order to these levels, not simply an arbitrary assignment to numerals that happen to have an order because that's how numbers work.
 ::: 
 
 
@@ -149,54 +298,162 @@ CODE BLOCK: Impact on modeling (polynomial contrasts)
 
 **Examine factor structure**
 
-- `levels()`: View level labels
-- `nlevels()`: Count levels
-- `fct_count()`: Frequency table
-- `fct_unique()`: Unique values (preserves order)
+- Base:
+    - `levels()`: View level labels
+        -    returns character vector of level names
+    - `nlevels()`: Count levels
+- `forcats`:
+    - `fct_unique()`: Unique values of levels
+        -    returns factor of unique levels
+    - `fct_count()`: Frequency table    
 
-CODE BLOCK: Create factor and use each inspection function
 
-::: notes
-**Inspecting levels**: Use `levels()` to view level labels, `nlevels()` for count. Introduce `fct_count()` for frequency table. Show `fct_unique()` for unique values preserving order.
-:::
+```{r}
+#| label: create-factor-inspect
+x <- factor(c("medium", "high", "low", "high", "high", "medium"))
+```
 
+
+```{r}
+#| label: inspect-levels-base
+
+levels(x)  # View level labels
+nlevels(x) # Count levels
+```
+
+```{r}
+#| label: inspect-levels-forcats
+fct_unique(x)  # Unique values of levels
+fct_count(x)   # Frequency table
+```
+
+# `forcats`
+
+Aside from `factor` and `levels`, it's `forcats` only from here on out!
 
 # Reorder Factor Levels
 
-## Manual reordering
+## Manual reordering/releveling
 
 `fct_relevel()`: Move levels to specific positions
 
-- Move to front
-- Move to specific position
-- Partial reordering (other levels unchanged)
+-   Move to front
+-   Move relative to another level
+-   Move to specific position
+-   Note: Conceptually this is reordering levels, but there is a different function called `fct_reorder()` (coming up) that does reorders levels with a different mechanism. In most cases when you need to manually reorder levels, you're going to use `relevel()`.
 
-CODE BLOCK: Create factor with levels in wrong order
+```{r}
+#| label: manual-reordering-create
 
-CODE BLOCK: Use fct_relevel() to move specific level to front
+f <- factor(c("medium", "low", "high", "medium", "low"))
+f
+levels(f)  # Current order
+```
 
-CODE BLOCK: Move level to specific position
 
-::: notes
-**Manual reordering**: Use `fct_relevel()` to move specific levels to front or specific positions. Show partial reordering (other levels stay in original order).
-::: 
+Move specific level to front
+
+```{r}
+#| label: manual-reordering-move-front
+
+fct_relevel(f, "low")  # Move "low" to front
+```
+
+
+Move one level relative to another
+
+```{r}
+#| label: manual-reordering-relative-position
+
+fct_relevel(f, "medium", "high")  # Move "medium" before "high"
+```
+
+Move one level to specific position
+
+```{r}
+#| label: manual-reordering-absolute-position
+
+# Move "high" after first level
+fct_relevel(f, "high", after = 1)  
+
+# Move "medium" to first position
+### same as fct_relevel(f, "medium")
+fct_relevel(f, "medium", after = 0) 
+
+# Move "low" to last position
+fct_relevel(f, "low", after = Inf)
+```
+
+## Reorder by appearance
+
+- `fct_inorder()`: Order by first appearance
+
+```{r}
+#| label: reorder-by-appearance-create
+
+f <- factor(c("b", "b", "a", "c", "c", "c"))
+f
+```
+
+Reorder by first appearance
+
+```{r}
+#| label: reorder-by-appearance-inorder
+
+fct_inorder(f)
+```
+
+Equivalent to creating with `as_factor()`
+
+```{r}
+f <- as_factor(c("b", "b", "a", "c", "c", "c"))
+f
+```
+
 
 ## Reorder by frequency
 
 - `fct_infreq()`: Most common first
-- `fct_inorder()`: Order by first appearance
 
-**Perfect for bar charts!**
+```{r}
+#| label: reorder-by-frequency-create
+f <- factor(c("b", "b", "a", "c", "c", "c"))
+f
+```
 
-CODE BLOCK: Create factor with repeated values
+Reorder by frequency, most common first
 
-CODE BLOCK: Reorder with fct_infreq()
+```{r}
+fct_infreq(f)
+```
 
-CODE BLOCK: Create bar chart showing ordered bars
 
-::: notes
-**By frequency**: Use `fct_infreq()` to order by frequency (most common first). Show `fct_inorder()` to order by first appearance. Demonstrate use in creating informative bar charts.
-::: 
+## `fct_infreq()` use case: bar charts
+
+Probably the most common use case for `fct_infreq()` is to create bar charts with bars ordered by frequency (most common first). This is often more informative than the default alphabetical ordering.
+
+```{r}
+#| label: bar-chart-factor-create
+
+f <- factor(c("b", "b", "b", "a", "c", "c"))
+```
+
+
+```{r}
+#| label: bar-chart-default-ordered
+
+ggplot(data.frame(f), aes(x = f)) +
+  geom_bar() +
+  labs(title = "Bar Chart with Default (Alphabetical) Ordered Factor")
+```
+
+```{r}
+#| label: bar-chart-infreq-ordered
+
+ggplot(data.frame(f), aes(x = fct_infreq(f))) +
+  geom_bar() +
+  labs(title = "Bar Chart with Frequency-Ordered Factor")
+```
 
 
 ## Reorder by another variable
@@ -210,14 +467,64 @@ CODE BLOCK: Create bar chart showing ordered bars
 
 - Perfect for line plots (legend matches line order)
 
-CODE BLOCK: Create dataset with categorical and numeric variables
+Create dataset with categorical and numeric variables
+
+```{r}
+#| label: reorder-by-other-variable-create
+
+summary(diamonds)
+```
+
 
 CODE BLOCK: Use fct_reorder() to sort by median
 
-CODE BLOCK: Create sorted plot
+```{r}
+#| label: reorder-by-other-variable-median
+
+ggplot(diamonds, aes(x = fct_reorder(cut, carat), y = carat)) +
+  geom_boxplot() +
+  labs(title = "Boxplot with Categories Reordered by Median Carat Value")
+```
+
+
+CODE BLOCK: Create sorted plot with something other than median
+
+```{r}
+#| label: reorder-by-other-variable-max
+
+ggplot(diamonds, aes(x = fct_reorder(cut, carat, max), y = carat)) +
+  geom_boxplot() +
+  labs(title = "Boxplot with Categories Reordered by Maximum Carat Value")
+```
+
+Use `fct_reorder2()` to order by relationship between two variables (e.g., for line plot)
+
+```{r}
+#| label: reorder-by-other-variable-reorder2-basic
+
+diamonds |> 
+slice_sample(n = 100) |> 
+ggplot(aes(x = carat, y = price, 
+                     color = fct_reorder2(cut, carat, price))) +
+  geom_line(stat = "summary", fun = mean) +
+  labs(title = "Line Plot with Legend Ordered by Endpoint")
+```
+
+```{r}
+#| label: reorder-by-other-variable-reorder2
+
+diamonds |> 
+slice_sample(n = 100) |> 
+ggplot(aes(x = carat, y = price, 
+                     color = cut)) +
+  geom_line(stat = "summary", fun = mean) +
+  labs(title = "Line Plot with Legend Ordered by Endpoint")
+```
+
+
 
 ::: notes
-**By another variable**: Use `fct_reorder()` to order factor by summary statistic of another variable (median by default). Show `fct_reorder2()` for ordering by two variables (useful for line plots). Demonstrate creating sorted plots.
+Notice that if you use a forcats variable like fct_reorder on a non-factor variable, it will convert it to a factor with the new order. This is a common way to reorder factors on the fly for plotting without needing to create a new variable in your dataset.
 ::: 
 
 
@@ -229,11 +536,34 @@ CODE BLOCK: Create sorted plot
 
 CODE BLOCK: Take ordered factor and reverse it
 
-CODE BLOCK: Show effect in a plot
+```{r}
+#| label: reverse-order-create
 
-::: notes
-**Reversing order**: Use `fct_rev()` to reverse current level order. Show use case in flipping chart ordering.
-:::
+f <- factor(c("large", "small", "medium", "medium", "small", "medium", "small", "medium", "medium", "medium"), levels = c("small", "medium", "large"))
+f
+```
+
+```{r}
+#| label: reverse-order-rev
+
+fct_rev(f)
+```
+
+
+
+```{r}
+ggplot(data.frame(f), aes(x = f)) + 
+  geom_bar() +
+  labs(title = "Bar Chart with Original Factor Order")
+```
+
+
+```{r}
+ggplot(data.frame(f), aes(x = fct_rev(f))) +
+  geom_bar() +
+  labs(title = "Bar Chart with Reversed Factor Order")
+```
+
 
 
 # Modifying Factor Levels
@@ -244,13 +574,31 @@ CODE BLOCK: Show effect in a plot
 
 **Syntax**: `new_name = "old_name"`
 
-CODE BLOCK: Create factor with messy level names
+Create factor with messy level names
 
-CODE BLOCK: Use fct_recode() to clean up names
+```{r}
+#| label: rename-levels-create
 
-::: notes
-**Renaming levels**: Use `fct_recode()` to manually rename specific levels. Show old = new syntax. Demonstrate cleaning up messy category names.
-::: 
+f <- factor(c("Low ", "Medium", "High", "Medium ", "Low", "high", "Hihg"))
+f
+```
+
+
+Use fct_recode() to clean up names. 
+
+Map multiple old levels to same new or existing level individually.
+
+```{r}
+f_clean <- fct_recode(f,
+                      Low = "Low ",
+                      Medium = "Medium ",
+                      High = "high",
+                      High = "Hihg")
+
+f_clean
+```
+
+
 
 
 ## Collapse levels
@@ -266,11 +614,57 @@ CODE BLOCK: Use fct_recode() to clean up names
 - `fct_lump_prop()`: Keep levels above proportion
 - `fct_lump_min()`: Keep levels with min count
 
-CODE BLOCK: Use fct_collapse() to combine levels manually
+Use fct_collapse() to combine levels manually
 
-CODE BLOCK: Use fct_lump_n() to keep top 5, lump rest
+```{r}
+#| label: collapse-levels-create
 
-CODE BLOCK: Show in a cleaner plot
+f <- factor(c("A", "A", "B", "B", "B", "C", "C", "C", "C", "D", "E", "F", "G", "G", "G", "G", "G"))
+
+```
+
+
+```{r}
+#| label: collapse-levels-manual
+
+f_collapsed <- fct_collapse(f,
+                            Group1 = c("A", "B"),
+                            Group2 = c("C", "D"),
+                            Group3 = "E")
+
+f_collapsed
+```
+
+
+Use fct_lump_n() to keep most frequent 3, lump rest
+
+```{r}
+#| label: collapse-levels-lump-n
+
+
+f_lumped_n <- fct_lump_n(f, n = 3)
+
+f_lumped_n
+```
+
+
+Use fct_lump_prop() to keep levels above 20% frequency
+
+```{r}
+#| label: collapse-levels-lump-prop
+
+f_lumped_prop <- fct_lump_prop(f, prop = 0.2)
+f_lumped_prop
+```
+
+Use fct_lump_min() to keep levels with at least 3 observations
+
+```{r}
+#| label: collapse-levels-lump-min
+
+f_lumped_min <- fct_lump_min(f, min = 4)
+f_lumped_min
+```
 
 
 ::: notes
@@ -279,7 +673,7 @@ CODE BLOCK: Show in a cleaner plot
 
 ## Handle missing values
 
-`fct_explicit_na()`: Convert NA to explicit level
+`fct_na_value_to_level()`: Convert betweem `NA` values and `NA` levels
 
 **Why?**
 
@@ -288,12 +682,33 @@ CODE BLOCK: Show in a cleaner plot
 
 CODE BLOCK: Create factor with NAs
 
+```{r}
+#| label: handle-missing-values-create
+
+f <- factor(c("A", "B", NA, "A", "C", NA, "B"))
+f
+```
+
+
 CODE BLOCK: Convert NAs to explicit "(Missing)" level
 
-CODE BLOCK: Show difference in a plot
+```{r}
+#| label: handle-missing-values-na-level
+
+f_na <- fct_na_value_to_level(f)
+f_na
+```
+
+
+```{r}
+#| label: handle-missing-values-named-level
+
+f_missing <- fct_na_value_to_level(f, level = "(Missing)")
+f_missing
+```
 
 ::: notes
-**Handling missing values**: Use `fct_explicit_na()` to convert NA to explicit "(Missing)" level. Show use in visualization to make missingness visible.
+`fct_explicit_na()` is deprecated, but you'll still see it and it still works. The new name `fct_na_value_to_level()` is more descriptive of what the function actually does, which is to convert NA to explicit "(Something)" level.
 ::: 
 
 ## Drop unused levels
