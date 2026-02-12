@@ -1303,6 +1303,11 @@ f_clean
 
 :::
 
+::: notes
+
+You can create new codes and they don't have to be strings
+:::
+
 ## Reassign: collapse levels manually
 
 `fct_collapse()`: Combine multiple levels into one `new_name = c("old1", "old2")`
