@@ -24,7 +24,7 @@ Text to appear before the accordion
 
 :::: accordion-item
 ::: {.accordion-header .titlebox}
-Week 6 | Tidyverse Data Wrangling, part 1
+Week 6 | Tidyverse Data Wrangling
 :::
 ::::
 
@@ -47,6 +47,8 @@ Feb-10; Feb-12
 
 **Class plans:**
 
+*Tuesday*
+
 -   Lecture: Tidyverse Wrangling with Strings
     -   Basics of text data
     -   String manipulation with base R
@@ -56,13 +58,19 @@ Feb-10; Feb-12
 -   Exercises/demos:
     -   `stringr` demo
     
-If by some miracle we get through strings, we'll introduce factors and `forcats` on Thursday.
+*Thursday*
+
+-   Lecture: Tidyverse Wrangling with Factors
+    -   Basics of factors
+    -   Simple factor manipulation with base R
+    -   Advanced manipulation with `forcats`
 
 **Primary learning objectives:**
 
-- (7) Data manipulation with dplyr and pipelines
+- (7) Data manipulation with `dplyr` and pipelines
 - (8) Tidy data structure
-- (10) String manipulation with stringr
+- (10) String manipulation with `stringr`
+- (11) Factor manipulation with `forcats`
 
 :::
 ::::
@@ -81,8 +89,11 @@ If by some miracle we get through strings, we'll introduce factors and `forcats`
 **Class Materials:**
 
 -   [Tidyverse Wrangling with Strings](../slides/Q1-W6_tidyverse-strings.html)
+-   [Tidyverse Wrangling with Factors](../slides/Q1-W6_tidyverse-factors.html)
 -   [strings and `stringr` demo](https://github.com/d2m-r/student-hub/blob/main/demos/stringr-examples.qmd)
     -   More or less follows the lecture slides giving you something to play with
+-   [factors and `forcats` demo](https://github.com/d2m-r/student-hub/blob/main/demos/forcats-examples.qmd)
+    -   Exactly follows the lecture slides giving you something to play with
 -   [In-class strings exercise](https://github.com/d2m-r/student-hub/blob/main/demos/strings-exercises.qmd)
 -   Textbook
     -   **Reminder:** The textbook is in its infancy! I hope you'll take advantage of what is there now, but plan to rely primarily on the slides, course guides, and additional resources. Remember you can always contribute to incomplete chapters for core objectives and enrichment credit.
@@ -93,12 +104,22 @@ If by some miracle we get through strings, we'll introduce factors and `forcats`
 
 **Additional Resources:**
 
+*Strings*
+
 -   `stringr` [documentation](https://stringr.tidyverse.org/) & [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/strings.pdf)
 -   R for Data Science 
     -   [**Ch14 Strings**](https://r4ds.hadley.nz/strings)*
     -   [Ch15 Regular expressions](https://r4ds.hadley.nz/regexps.html)
 -   STAT545
     -   [Ch11 Character vectors](https://stat545.com/character-vectors.html)
+
+*Factors*
+
+-   `forcats` [documentation](https://forcats.tidyverse.org/) & [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/factors.pdf)
+-   R for Data Science
+    -   [**Ch16 Factors**](https://r4ds.hadley.nz/factors)*
+-   STAT545
+    -   [Ch10 Be the Boss of Your Factors](https://stat545.com/factors-boss.html)
 
 :::
 ::::

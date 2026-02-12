@@ -8,13 +8,16 @@ format: html
 ## D2M-R Quarter I Slides
 
 -   Week 1: [Introduction to D2M-R](../slides/Q1-W1_introduction.html) and [Problem Solving Strategies](../slides/Q1-W1_problem-solving.html)
--   Week 2: [Git & GitHub](../slides/Q1-W2_git-github.html) and [RStudio & Quarto](../slides/Q1-W2_rstudio-quarto.html)
+-   Week 2: 
+    -   [Git & GitHub](../slides/Q1-W2_git-github.html)
+    -   [RStudio & Quarto](../slides/Q1-W2_rstudio-quarto.html)
 -   Week 3: [R Programming Language](../slides/Q1-W3_r-programming.html)
 -   Week 4: [Welcome to the Tidyverse](../slides/Q1-W4_tidyverse-1.html)
 -   Week 5: *no slides*
--   Week 6: [Tidyverse Data Wrangling with Strings](../slides/Q1-W6_tidyverse-strings.html)
--   Week 7: Tidyverse Data Wrangling with Factors
--   Week 8: Data Reporting Essentials
+-   Week 6: 
+    -   [Tidyverse Data Wrangling with Strings](../slides/Q1-W6_tidyverse-strings.html)
+    -   [Tidyverse Data Wrangling with Factors](../slides/Q1-W6_tidyverse-factors.html)
+-   Week 7 & 8: Data Reporting Essentials
 -   Week 9: *no slides*
 
 ## D2M-R Quarter II Slides
