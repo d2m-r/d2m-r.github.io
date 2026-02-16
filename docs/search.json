@@ -3992,140 +3992,140 @@
   {
     "objectID": "slides/Q1-W7_reporting-1.html#data-visualization",
     "href": "slides/Q1-W7_reporting-1.html#data-visualization",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Data Visualization",
     "text": "Data Visualization\nWhat is data visualization?\n\nI’ve made charts and graphs that should finally make it clear. (I’ve prepared a lecture.)\nGraphical representation of quantitative information\nIdentify, interpret, communicate patterns\nIn academic research, data viz tells (not sells) a story"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#core-principles",
     "href": "slides/Q1-W7_reporting-1.html#core-principles",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Core Principles",
     "text": "Core Principles\n\nClarity\n\nCommunicate all – and only – information necessary to tell the story\n\nSimplicity\n\nMinimize distraction & send one message at a time\n\nAccuracy\n\nUse reliable data (garbage in, garbage out) and be faithful to it\n\nConsistency\n\nRepresent similar ideas in similar ways & meet audience expectations\n\nRelevance\n\nKnow your audience & speak to them"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#plotting-with-base-r",
     "href": "slides/Q1-W7_reporting-1.html#plotting-with-base-r",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Plotting with base R",
     "text": "Plotting with base R\n\nBase plots:\n\n“pen and paper” style\neasy to use, hard to modify\n\n\n\n# First create the scatter plot\nplot(iris$Sepal.Length, iris$Sepal.Width,\n     main = \"base R: Iris Sepal Length vs Width\",\n     xlab = \"Sepal Length\",\n     ylab = \"Sepal Width\",\n     col = as.numeric(iris$Species),\n     pch = 19)\n\n# Add regression lines for each species\nspecies_levels &lt;- levels(iris$Species)\ncolors &lt;- 1:3\n\nfor(i in 1:3) {\n    subset_data &lt;- iris[iris$Species == species_levels[i], ]\n    reg &lt;- lm(Sepal.Width ~ Sepal.Length, data = subset_data)\n    abline(reg, col = colors[i], lwd = 2)\n}\n\n# Add legend\nlegend(\"topright\", \n       legend = levels(iris$Species), \n       col = colors, \n       pch = 19)"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#plotting-with-lattice",
     "href": "slides/Q1-W7_reporting-1.html#plotting-with-lattice",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Plotting with lattice",
     "text": "Plotting with lattice\n\nlattice\n\nlots of customization\nconstrained structure\n\n\n\n# Lattice plot\n# uses one function with many arguments\nxyplot(Sepal.Width ~ Sepal.Length, \n       data = iris,\n       groups = Species,\n       auto.key = TRUE,\n       type = c(\"p\", \"r\"),\n       main = \"lattice: Iris Sepal Length vs Width\",\n       xlab = \"Sepal Length\",\n       ylab = \"Sepal Width\")"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#plotting-with-ggplot2",
     "href": "slides/Q1-W7_reporting-1.html#plotting-with-ggplot2",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Plotting with ggplot2",
     "text": "Plotting with ggplot2\n\nggplot2\n\nflexible and powerful\ntidyverse approach to data science\n\n\n\n# ggplot plot\n# begins with a ggplot() function\n# then adds layers to customize\n\nggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = TRUE) +\n  labs(title = \"ggplot2: Iris Sepal Length vs Width\",\n       x = \"Sepal Length\",\n       y = \"Sepal Width\") +\n  theme_minimal()"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#tidyverses-ggplot2-package",
     "href": "slides/Q1-W7_reporting-1.html#tidyverses-ggplot2-package",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Tidyverse’s ggplot2 package",
     "text": "Tidyverse’s ggplot2 package\n\n“easy” plotting system for R\n“grammar of graphics” akin to dplyr’s “grammar for data manipulation”\n\nadding layers ~ adding pipes\n\nflows best with tidy datasets\n\n\n(bubbles)\nWhat’s the difference between ggplot and ggplot2?\nggplot() is a function, ggplot2 is a package\nSo ggplot2 is version 2?\nNo."
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#customization",
     "href": "slides/Q1-W7_reporting-1.html#customization",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Customization",
     "text": "Customization\n\nggplots are highly customizable\nmodify many visual properties on the fly\n\n\nggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +\n  # Add points with custom appearance\n  geom_point(size = 3, alpha = 0.7) +\n  # Add regression lines with custom appearance\n  geom_smooth(method = \"lm\", se = TRUE, alpha = 0.2, \n             linewidth = 1.2, linetype = \"dashed\") +\n  # Customize colors using a custom palette\n  scale_color_manual(values = c(\"#FF6B6B\", \"#4ECDC4\", \"#45B7D1\")) +\n  # Add labels with custom formatting\n  labs(title = \"Sepal Dimensions Across Iris Species\",\n       subtitle = \"Comparing Length vs Width with Trend Lines\",\n       x = \"Sepal Length (cm)\",\n       y = \"Sepal Width (cm)\",\n       caption = \"Data: Edgar Anderson's Iris Dataset\") +\n  # Customize theme elements: title, axis, legend, panel, borders\n  theme_minimal() +\n  theme(\nplot.title = element_text(size = 16, face = \"bold\", margin = margin(b = 20)),\n    plot.subtitle = element_text(size = 12, color = \"grey40\"),\naxis.title = element_text(size = 10, face = \"bold\"),\n    axis.text = element_text(size = 9),\nlegend.position = \"bottom\",\n    legend.title = element_text(face = \"bold\"),\n    legend.background = element_rect(fill = \"white\", color = \"grey90\"),\npanel.grid.major = element_line(color = \"grey90\"),\n    panel.grid.minor = element_blank(),\nplot.background = element_rect(fill = \"white\", color = NA),\n    panel.border = element_rect(color = \"grey90\", fill = NA)\n  ) +\n  # Set specific axis limits\n  coord_cartesian(\n    xlim = c(min(iris$Sepal.Length) - 0.2, max(iris$Sepal.Length) + 0.2),\n    ylim = c(min(iris$Sepal.Width) - 0.2, max(iris$Sepal.Width) + 0.2)\n  )\n\n\n\n“on the fly” as in you can tweak very big and very tiny things entirely independently"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#flexibility",
     "href": "slides/Q1-W7_reporting-1.html#flexibility",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Flexibility",
     "text": "Flexibility\n\nhighly flexible\nrepresent the same data in dramatically different ways\n\n\nggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +\n  geom_point() + # scatter plot\n  geom_smooth(method = \"lm\", se = TRUE) + # regression line\n  labs(title = \"ggplot2: Iris Sepal Length vs Width\",\n       x = \"Sepal Length\",\n       y = \"Sepal Width\") +\n  theme_minimal()"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#flexibility-1",
     "href": "slides/Q1-W7_reporting-1.html#flexibility-1",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Flexibility",
     "text": "Flexibility\n\nhighly flexible\nrepresent the same data in dramatically different ways\n\n\nggplot(iris, aes(x=Species, y=Sepal.Length, fill=Species)) +\n  geom_violin(alpha=0.5) + # violin plots\n  geom_boxplot(width=0.2, alpha=0.8) + # boxplots\n  theme_minimal() +\n  labs(title=\"Distribution of Sepal Length by Species\",\n       y=\"Sepal Length (cm)\")"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#flexibility-2",
     "href": "slides/Q1-W7_reporting-1.html#flexibility-2",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Flexibility",
     "text": "Flexibility\n\nhighly flexible\nrepresent the same data in dramatically different ways\n\n\npivot_longer(iris, cols=c(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),\n    names_to=\"Measurement\",\n    values_to=\"Value\") %&gt;% \nggplot(aes(x=Value, fill=Species)) +\n  geom_histogram(alpha=0.8, bins = 15, # histogram\n    position = \"identity\") +\n  facet_wrap(~Measurement, scales=\"free\") + # subplots\n  theme_minimal() +\n  labs(title=\"Density Distributions of Iris Measurements\",\n       x=\"Measurement Value (cm)\")"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#what-do-you-need-to-generate-this",
     "href": "slides/Q1-W7_reporting-1.html#what-do-you-need-to-generate-this",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "What do you need to generate this?",
     "text": "What do you need to generate this?\n\nggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +\n  # Add points with custom appearance\n  geom_point(size = 3, alpha = 0.7) +\n  # Add regression lines with custom appearance\n  geom_smooth(method = \"lm\", se = TRUE, alpha = 0.2, \n             linewidth = 1.2, linetype = \"dashed\") +\n  # Customize colors using a custom palette\n  scale_color_manual(values = c(\"#FF6B6B\", \"#4ECDC4\", \"#45B7D1\")) +\n  # Add labels with custom formatting\n  labs(title = \"Sepal Dimensions Across Iris Species\",\n       subtitle = \"Comparing Length vs Width with Trend Lines\",\n       x = \"Sepal Length (cm)\",\n       y = \"Sepal Width (cm)\",\n       caption = \"Data: Edgar Anderson's Iris Dataset\") +\n  # Customize theme elements: title, axis, legend, panel, borders\n  theme_minimal() +\n  theme(\nplot.title = element_text(size = 16, face = \"bold\", margin = margin(b = 20)),\n    plot.subtitle = element_text(size = 12, color = \"grey40\"),\naxis.title = element_text(size = 10, face = \"bold\"),\n    axis.text = element_text(size = 9),\nlegend.position = \"bottom\",\n    legend.title = element_text(face = \"bold\"),\n    legend.background = element_rect(fill = \"white\", color = \"grey90\"),\npanel.grid.major = element_line(color = \"grey90\"),\n    panel.grid.minor = element_blank(),\nplot.background = element_rect(fill = \"white\", color = NA),\n    panel.border = element_rect(color = \"grey90\", fill = NA)\n  ) +\n  # Set specific axis limits\n  coord_cartesian(\n    xlim = c(min(iris$Sepal.Length) - 0.2, max(iris$Sepal.Length) + 0.2),\n    ylim = c(min(iris$Sepal.Width) - 0.2, max(iris$Sepal.Width) + 0.2)\n  )\n\n\n\nThe data themselves (iris) What goes on the x and y axis & what makes the colors The kinds of graphs we want (scatter + regression line) Decorative stuff, like transparency of the dots and making the lines dashed How the axes are labeled (the range of numbers on the axes) What and where all the text should be, like axis names, title, caption, etc."
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#grammatical-elements",
     "href": "slides/Q1-W7_reporting-1.html#grammatical-elements",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Grammatical Elements",
     "text": "Grammatical Elements\n\ndata: ggplot(data = df)\n\nTidy dataframe to visualize\n\naesthetics: aes()\n\nMapping data structures to visual properties\n\ngeometries: geom_*()\n\nPlotting structures\n\nstatistics: stat_*() or geom_*(stat = \"...\")\n\nStatistical transformations before plotting\n\nscales: scale_[aes-type]_[data-type]()\n\nRelationships between mapped data and visual space\n\ncoordinates: coord()\n\nSpatial structures for visual representation\n\nfacets: facet_wrap() or facet_grid()\n\nSubplots based on data mapping\n\nthemes: theme()\n\nUnmapped, fixed visual properties\n\n\n\nThe grammar, more or less in order of importance: Data: The data you want to visualize. This is the foundation of your visualization. Can’t map data to aesthetics without data. Aesthetics: The visual properties of the data. This is how you map your data to visual elements like color, shape, size, etc. Critically, aesthetics are the visuals that are actually mapped to your data, the stuff that will change if your data change. Ironically, “aesthetics” does not refer to the parts of your plots that are purely aesthetic1, like the color of the background or the size of the axis labels (those are in the “theme” layer). Geometries (aka “geoms”): The shapes you use to represent your data, like points, lines, bars, etc. This is pretty much just defining what kind of plot you’re making – line scatterplots, line graphs, histograms, etc. Statistics (aka “stats”): Statistical transformations that you apply to your data before plotting, like calculating means, binning observations, or fitting regression lines. Scales: How data maps onto space. The axes and legends will generate based on the data, aesthetics, and geometries you’ve defined, but scales are what determine how the data is actually represented on those axes. For example, they can determine the range of values that are represented, the breaks between values, and the labels that are used. Coordinates: The space in which your data is represented. This is where you define the type of plot you’re making – Cartesian, polar, etc. Nearly anything you plot will be Cartesian, the basic X-Y space, and you can usually ignore this layer. Facets: How you divide your data into subplots. This is useful for visualizing data that has multiple categories or dimensions, especially if you are already mapping grouping aesthetics like color, shape, or size to other variables. Themes: The non-data, non-aesthetic parts of your plot. (Except the actually are aesthetic, they just aren’t ggplot’s “aesthetics.” I hate this.) This is how you change visuals that aren’t mapped to your data, the stuff that should stay the same even if your data change. Theme layers are commonly used to customize things like appearance of grid lines, font and size of axis labels, and non-data-dependent color (like if you just want all points to be blue no matter what), but they can do much more. Themes let you customize the visual properties of nearly anything in your plot."
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#layers",
     "href": "slides/Q1-W7_reporting-1.html#layers",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Layers",
     "text": "Layers\n\nLayers work together to plot elements\n\nNot all layers are necessary\nEach can have a powerful effect on outcome\n\n\n\nggplot(data = iris,                 # Data layer\n       aes(x = Sepal.Length,        # Aesthetics\n           y = Sepal.Width,\n           color = Species)) +\n  geom_point() +                    # Geometries\n  stat_smooth(method = \"lm\") +      # Statistics\n  scale_color_viridis_d() +         # Scale\n  coord_cartesian(xlim = c(4, 8)) + # Coordinates\n  facet_wrap(~Species) +            # Facets\n  theme_minimal()                   # Theme"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#layers-1",
     "href": "slides/Q1-W7_reporting-1.html#layers-1",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Layers",
     "text": "Layers\n\nLayers work together to plot elements\n\nNot all layers are necessary\nEach can have a powerful effect on outcome\n\n\n\nggplot(data = iris,                 # Data layer\n       aes(x = Sepal.Length,        # Aesthetics\n           y = Sepal.Width,\n           color = Species)) +\n  geom_point() +                    # Geometries\n  #stat_smooth(method = \"lm\") +      # Statistics\n  scale_color_viridis_d() +         # Scale\n  coord_cartesian(xlim = c(4, 8)) + # Coordinates\n  #facet_wrap(~Species) +            # Facets\n  theme_minimal()                   # Theme"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#layers-2",
     "href": "slides/Q1-W7_reporting-1.html#layers-2",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Layers",
     "text": "Layers\n\nLayers work together to plot elements\n\nNot all layers are necessary\nEach can have a powerful effect on outcome\n\n\n\nggplot(data = iris,                 # Data layer\n       aes(x = Sepal.Length,        # Aesthetics\n           y = Sepal.Width,\n           color = Species)) +\n  geom_point() +                    # Geometries\n  stat_smooth(method = \"lm\") +      # Statistics\n  #scale_color_viridis_d() +         # Scale\n  #coord_cartesian(xlim = c(4, 8)) + # Coordinates\n  facet_wrap(~Species) #+            # Facets\n\n  #theme_minimal()                   # Theme"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#layered-layers",
     "href": "slides/Q1-W7_reporting-1.html#layered-layers",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Layered Layers",
     "text": "Layered Layers\n\nGrammatical layers in tidyverse “stack” in sequence\nGrammar of data manipulation (pipelines)\n\nlink lines of code (pipes) with |&gt; or %&gt;%\neach line serves 1 purpose\nadd, change, remove single lines independently\nmodify data sequentially (vs. embedding)\n\nGrammar of graphics\n\nlink lines of code (layers) with +\neach line assigns attributes to 1 layer\nadd, change, remove single lines independently\nlayer data and visuals sequentially (vs. dependently)\n\n\n\n\n“Grammatical” elements of ggplot are called layers\n\nImagine transparent sheets with images that stack on top of one another\nSome just add to the image; others overlap to obscure what came before\nSequence matters\n\n\nEach line serves a single purpose Add, change, or remove any line without reworking the whole pipeline Power comes from sequencing\nEach line is a layer, assigning attributes to that layer Add, change, or remove any layer without reworking the whole plot Sequencing creates a data-dependent and beautiful plot"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#layer-necessity",
     "href": "slides/Q1-W7_reporting-1.html#layer-necessity",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Layer Necessity",
     "text": "Layer Necessity\n\nEssential:\n\nData\nAesthetics\nGeometries\n\nCommon:\n\nScales\nFacets\nThemes\n\nAs needed:\n\nStatistics\nCoordinate"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#layer-data",
     "href": "slides/Q1-W7_reporting-1.html#layer-data",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Layer: Data",
     "text": "Layer: Data\n\nYou need data to plot data.\nIt has to be a data frame.\nHelps if it’s tidy.\n\n\nLike with dplyr pipelines, the data is always the first argument of a ggplot, which means you can combine pipes and plots"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#layer-aesthetics-aes",
     "href": "slides/Q1-W7_reporting-1.html#layer-aesthetics-aes",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Layer: Aesthetics (aes)",
     "text": "Layer: Aesthetics (aes)\n\nVisual properties of a ggplot that are mapped to data\nDependent on type of plot, e.g.:\n\nUse the linetype aes with a line graph, but not a scatterplot\nUse the fill aes for filled shapes like bar graphs, but not line graphs\n\nDependent on data type of variable, e.g.:\n\nUse shape with categorical/discrete data, because there is a fixed set of shapes to use\nUse size with continuous data, because size itself is continuous and unbounded\nUse color for continuous or categorical, because colors can be assigned discretely or generated across a spectrum"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#terminology-aesthetics-vs-aesthetic",
     "href": "slides/Q1-W7_reporting-1.html#terminology-aesthetics-vs-aesthetic",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "Terminology: aesthetics vs “aesthetic”",
     "text": "Terminology: aesthetics vs “aesthetic”\n\nfill, color, size, etc. can be aesthetic or aesthetic\naesthetic: data-dependent visual properties\n\ndefined as arguments in an aes() function\n\nFixed properties use the same elements without data-dependence\n\ntreated as “theme” even if not part of a theme layer\n\n\nColor aesthetic:\ngeom_point(aes(x=length, y=width, color=species))\nAesthetic color:\ngeom_point(aes(x=length, y=width), color=\"blue\")\n\nIn ggplot, an aesthetic is a visual property dependent on data. They are defined as arguments in an aes() function. Visual properties that are fixed and not data-dependent use the same arguments (color, fill, size, etc.) outside of an aes() function. They are not called aesthetics, and are usually considered part of a “theme” even if they aren’t actually in a theme layer.\n(bubbles) Why are the things that are purely aesthetic not called “aesthetics”?\nGREAT QUESTION. I DO NOT KNOW."
   },
@@ -4286,15 +4286,92 @@
   {
     "objectID": "slides/Q1-W7_reporting-1.html#aes-reference-12",
     "href": "slides/Q1-W7_reporting-1.html#aes-reference-12",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "aes reference (1/2)",
     "text": "aes reference (1/2)\n\n\n\n\n\n\n\n\n\nAesthetic\nDescription\nMapped data\nUnmapped specs\n\n\n\n\nx and y (position)\nx and y coordinates of the plot. Nearly every plot requires at least one of these “position” aesthetics.\ncontinuous, categorical\nn/a\n\n\ngroup\nHow observations are grouped together (if not defined with another grouping aes)\ncategorical\nn/a\n\n\ncolor\nColor of points, lines, text, and other 1D shapes. For filled shapes, this will be the outline color.\ncontinuous, categorical\nstring (color name or hex code)\n\n\nfill\nFill color of 2D shapes like bars, polygons, etc.\ncontinuous, categorical\nstring (color name or hex code)\n\n\nalpha\nOpacity/transparency of any element\ncontinuous\nnumber between 0 and 1"
   },
   {
     "objectID": "slides/Q1-W7_reporting-1.html#aes-reference-22",
     "href": "slides/Q1-W7_reporting-1.html#aes-reference-22",
-    "title": "Intro to Data Reporting",
+    "title": "Intro to Data Visualization",
     "section": "aes reference (2/2)",
     "text": "aes reference (2/2)\n\n\n\nAesthetic\nDescription\nMapped data\nUnmapped specs\n\n\n\n\nsize\nSize of points and width of lines\ncontinuous\nnumeric values\n\n\nshape\nShape of points, out of 26 options. Default is a solid circle (19)\ncategorical\nintegers 0-25 or shape name (string) (view guide)\n\n\nlinetype\nType of line, out of 6 options or blank (0). Default is solid line (1).\ncategorical\nintegers 0-6 or line name (string) (view guide)\n\n\nlinewidth\nWidth of lines\ncontinuous\nnumeric values\n\n\nstroke\nWidth of shape outlines\ncontinuous\nnumeric values\n\n\nlabel\nText content\ncontinuous, categorical\nstrings\n\n\nfontface\nFont style for text\ncategorical\nString: “plain”, “bold”, “italic”, or “bold.italic”\n\n\nfamily\nFont family for text\ncategorical\nString with font name"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#spot-the-aesthetics-14",
+    "href": "slides/Q1-W7_reporting-1.html#spot-the-aesthetics-14",
+    "title": "Intro to Data Visualization",
+    "section": "Spot the aesthetics (1/4)",
+    "text": "Spot the aesthetics (1/4)\n ## Spot the aesthetics (2/4)"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#spot-the-aesthetics-34",
+    "href": "slides/Q1-W7_reporting-1.html#spot-the-aesthetics-34",
+    "title": "Intro to Data Visualization",
+    "section": "Spot the aesthetics (3/4)",
+    "text": "Spot the aesthetics (3/4)"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#spot-the-aesthetics-44",
+    "href": "slides/Q1-W7_reporting-1.html#spot-the-aesthetics-44",
+    "title": "Intro to Data Visualization",
+    "section": "Spot the aesthetics (4/4)",
+    "text": "Spot the aesthetics (4/4)"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#geometries",
+    "href": "slides/Q1-W7_reporting-1.html#geometries",
+    "title": "Intro to Data Visualization",
+    "section": "Geometries",
+    "text": "Geometries\n\ndefine plot shape (i.e., graph type)\nrequired aes defined in an aes() function\nrequired & optional aesthetics depend on type of geom\nScatter plots: geom_point()\n\nRequire 2 continuous variables mapped to x and y\nAccept additional continuous or categorical variables mapped to color, shape, size, etc.\n\nBar charts: geom_bar()\n\nRequire exactly 1 categorical variable mapped to x\nAccept additional categorical variable mapped to fill\nDo not allow a y mapping\n\n\n\nDefine the shape of the plot, basically the “type” of graph Require aesthetics defined in an aes() function aes() can be in its own layer or an argument of the geom_() layer Required and optional aesthetics depend on type of plot, e.g.: Scatter plots – geom_point() – require 2 continuous variables mapped to x and y aesthetics (axes) accept additional continuous or categorical variables mapped to color, shape, size… Bar charts – geom_bar(): require one categorical variable mapped to x accept an additional categorical variable mapped to fill do not allow a y mapping**"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#geoms",
+    "href": "slides/Q1-W7_reporting-1.html#geoms",
+    "title": "Intro to Data Visualization",
+    "section": "Geoms",
+    "text": "Geoms"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#geom-reference",
+    "href": "slides/Q1-W7_reporting-1.html#geom-reference",
+    "title": "Intro to Data Visualization",
+    "section": "Geom reference",
+    "text": "Geom reference\n\n\n\n\n\n\n\n\n\nGeom Layer\nVariables*\nDescription\nData Types\n\n\n\n\ngeom_histogram()\n1\nCreates bins and counts observations within each bin\nContinuous x\n\n\ngeom_density()\n1\nCreates a smoothed density estimate\nContinuous x\n\n\ngeom_boxplot()\n1-2\nShows distribution summary with quartiles and outliers\nContinuous y, Optional categorical x\n\n\ngeom_violin()\n1-2\nShows density estimate symmetrically\nContinuous y, Categorical x\n\n\ngeom_bar()\n1-2\nCreates bars with heights proportional to number of cases\nCategorical x\n\n\ngeom_point()\n2\nCreates a scatter plot\nContinuous x & y\n\n\ngeom_line()\n2\nConnects observations in order\nContinuous x & y\n\n\ngeom_smooth()\n2\nAdds a smoothed conditional mean\nContinuous x & y\n\n\ngeom_area()\n2\nCreates a line plot filled to the x-axis\nContinuous x & y\n\n\ngeom_tile()\n2-3\nCreates rectangles based on x and y positions\nAny x & y, Optional fill"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#pick-your-plot",
+    "href": "slides/Q1-W7_reporting-1.html#pick-your-plot",
+    "title": "Intro to Data Visualization",
+    "section": "Pick your plot",
+    "text": "Pick your plot\n\nggplot’s flexibility is a double edged sword!\nIt makes the plot you ask for, not caring if it is confusing, messy, uninterpretable, or pointless\n\nRecall the “garbage in, garbage out” principle\n\nBuild the plot that matches your data and tells your story\n\n\nggplot’s flexibility is a double edged sword, allowing you to create many plots that are confusing, messy, uninterpretable, and pointless Selecting the best plot for your data and message is the most important part of the data visualization process, and it’s something you-the-human have to do. The “right” visualization is the one that best communicates your message to your audience."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#continuous-variable",
+    "href": "slides/Q1-W7_reporting-1.html#continuous-variable",
+    "title": "Intro to Data Visualization",
+    "section": "1 Continuous Variable",
+    "text": "1 Continuous Variable\n\ngeom_histogram()\ngeom_density()\ngeom_boxplot()\ngeom_violin()"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#categorical-variable",
+    "href": "slides/Q1-W7_reporting-1.html#categorical-variable",
+    "title": "Intro to Data Visualization",
+    "section": "1 Categorical Variable",
+    "text": "1 Categorical Variable\n\ngeom_bar()\ngeom_col()"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#continuous-variables",
+    "href": "slides/Q1-W7_reporting-1.html#continuous-variables",
+    "title": "Intro to Data Visualization",
+    "section": "2+ Continuous Variables",
+    "text": "2+ Continuous Variables\n\ngeom_point()\ngeom_jitter()\ngeom_smooth()"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#ordered-variables",
+    "href": "slides/Q1-W7_reporting-1.html#ordered-variables",
+    "title": "Intro to Data Visualization",
+    "section": "2+ Ordered Variables",
+    "text": "2+ Ordered Variables\n\ngeom_line()\ngeom_area()"
   }
 ]

@@ -7,12 +7,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-eedebf623301b1c3b9a877dd695003c7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-contrib/bootstrap-icons-1.13.1/bootstrap-icons.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-eedebf623301b1c3b9a877dd695003c7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="dcterms.date" content="2026-02-17">
-  <title>Data to Manuscript in R – Intro to Data Reporting</title>
+  <title>Data to Manuscript in R – Intro to Data Visualization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -203,8 +202,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Intro to Data Reporting</h1>
-  <p class="subtitle">revisiting quarto, visualization basics</p>
+  <h1 class="title">Intro to Data Visualization</h1>
+  <p class="subtitle">visualization basics, ggplot2, grammar of graphics</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -915,30 +914,154 @@
 </tr>
 </tbody>
 </table>
+</section>
+<section id="spot-the-aesthetics-14" class="slide level2">
+<h2>Spot the aesthetics (1/4)</h2>
+<p><img data-src="../images/tidyverse/plots/aes1.png"> ## Spot the aesthetics (2/4)</p>
+<p><img data-src="../images/tidyverse/plots/aes2.png"></p>
+</section>
+<section id="spot-the-aesthetics-34" class="slide level2">
+<h2>Spot the aesthetics (3/4)</h2>
+
+<img data-src="../images/tidyverse/plots/aes3.png" class="r-stretch"></section>
+<section id="spot-the-aesthetics-44" class="slide level2">
+<h2>Spot the aesthetics (4/4)</h2>
+
+<img data-src="../images/tidyverse/plots/aes4.png" class="r-stretch"></section>
+<section id="geometries" class="slide level2">
+<h2>Geometries</h2>
+<ul>
+<li class="fragment"><p>define plot shape (i.e., graph type)</p></li>
+<li class="fragment"><p>required aes defined in an <code>aes()</code> function</p></li>
+<li class="fragment"><p>required &amp; optional aesthetics depend on type of geom</p></li>
+<li class="fragment"><p>Scatter plots: <code>geom_point()</code></p>
+<ul>
+<li class="fragment"><strong>Require</strong> 2 continuous variables mapped to <code>x</code> and <code>y</code></li>
+<li class="fragment"><strong>Accept</strong> additional continuous or categorical variables mapped to <code>color</code>, <code>shape</code>, <code>size</code>, etc.</li>
+</ul></li>
+<li class="fragment"><p>Bar charts: <code>geom_bar()</code></p>
+<ul>
+<li class="fragment"><strong>Require</strong> exactly 1 categorical variable mapped to <code>x</code></li>
+<li class="fragment"><strong>Accept</strong> additional categorical variable mapped to <code>fill</code></li>
+<li class="fragment"><strong>Do not allow</strong> a <code>y</code> mapping</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Define the shape of the plot, basically the “type” of graph Require aesthetics defined in an aes() function aes() can be in its own layer or an argument of the geom_<em>() layer Required and optional aesthetics depend on type of plot, e.g.: Scatter plots – geom_point() – require 2 continuous</em> variables mapped to x and y aesthetics (axes) accept additional continuous or categorical variables mapped to color, shape, size… Bar charts – geom_bar(): require one categorical variable mapped to x accept an additional categorical variable mapped to fill do not allow a y mapping**</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="geoms" class="slide level2">
+<h2>Geoms</h2>
+
+<img data-src="../images/tidyverse/plots/geoms.png" class="r-stretch"></section>
+<section id="geom-reference" class="slide level2">
+<h2>Geom reference</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Geom Layer</strong></th>
+<th><strong>Variables</strong>*</th>
+<th><strong>Description</strong></th>
+<th><strong>Data Types</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>geom_histogram()</code></td>
+<td>1</td>
+<td>Creates bins and counts observations within each bin</td>
+<td>Continuous x</td>
+</tr>
+<tr class="even">
+<td><code>geom_density()</code></td>
+<td>1</td>
+<td>Creates a smoothed density estimate</td>
+<td>Continuous x</td>
+</tr>
+<tr class="odd">
+<td><code>geom_boxplot()</code></td>
+<td>1-2</td>
+<td>Shows distribution summary with quartiles and outliers</td>
+<td>Continuous y, Optional categorical x</td>
+</tr>
+<tr class="even">
+<td><code>geom_violin()</code></td>
+<td>1-2</td>
+<td>Shows density estimate symmetrically</td>
+<td>Continuous y, Categorical x</td>
+</tr>
+<tr class="odd">
+<td><code>geom_bar()</code></td>
+<td>1-2</td>
+<td>Creates bars with heights proportional to number of cases</td>
+<td>Categorical x</td>
+</tr>
+<tr class="even">
+<td><code>geom_point()</code></td>
+<td>2</td>
+<td>Creates a scatter plot</td>
+<td>Continuous x &amp; y</td>
+</tr>
+<tr class="odd">
+<td><code>geom_line()</code></td>
+<td>2</td>
+<td>Connects observations in order</td>
+<td>Continuous x &amp; y</td>
+</tr>
+<tr class="even">
+<td><code>geom_smooth()</code></td>
+<td>2</td>
+<td>Adds a smoothed conditional mean</td>
+<td>Continuous x &amp; y</td>
+</tr>
+<tr class="odd">
+<td><code>geom_area()</code></td>
+<td>2</td>
+<td>Creates a line plot filled to the x-axis</td>
+<td>Continuous x &amp; y</td>
+</tr>
+<tr class="even">
+<td><code>geom_tile()</code></td>
+<td>2-3</td>
+<td>Creates rectangles based on x and y positions</td>
+<td>Any x &amp; y, Optional fill</td>
+</tr>
+</tbody>
+</table>
 </section></section>
 <section>
-<section id="basic-layouts" class="title-slide slide level1 center">
-<h1>Basic Layouts</h1>
+<section id="basic-construction" class="title-slide slide level1 center">
+<h1>Basic Construction</h1>
 
 </section>
-<section id="grouped-lists" class="slide level2">
-<h2>Grouped Lists</h2>
-<div class="tightlist grouped">
+<section id="pick-your-plot" class="slide level2">
+<h2>Pick your plot</h2>
 <ul>
-<li>1st level bullet
+<li class="fragment"><code>ggplot</code>’s flexibility is a double edged sword!</li>
+<li class="fragment">It makes the plot you ask for, not caring if it is confusing, messy, uninterpretable, or pointless
 <ul>
-<li>2nd level will appear with top level</li>
+<li class="fragment">Recall the “garbage in, garbage out” principle</li>
 </ul></li>
-<li>Another 1st level bullet
-<ul>
-<li>Another 2nd level bullet</li>
-</ul></li>
+<li class="fragment">Build the plot that matches your data and tells your story</li>
 </ul>
-</div>
 <aside class="notes">
-<p>This slide template uses grouped lists to show multiple levels of bullet points at once.</p>
-<p>Depends on javascript in the bubbles.js theme file.</p>
-<p>List must be wrapped in a non-incremental div.</p>
+<p>ggplot’s flexibility is a double edged sword, allowing you to create many plots that are confusing, messy, uninterpretable, and pointless Selecting the best plot for your data and message is the most important part of the data visualization process, and it’s something you-the-human have to do. The “right” visualization is the one that best communicates your message to your audience.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -951,1222 +1074,36 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="left-sidebar-slide" class="slide level2 left-sidebar-slide" data-fullscreen="true">
-<h2>Left Sidebar Slide</h2>
-<div class="sidebar-column">
-<div class="sidebar-title">
-<p>Slide Title Here</p>
-</div>
-<p>Optional text in the left sidebar with light contrasting text.</p>
-</div>
-<div class="main-content">
-<p>Main content area goes here.</p>
+<section id="continuous-variable" class="slide level2">
+<h2>1 Continuous Variable</h2>
 <ul>
-<li class="fragment">Can include text</li>
-<li class="fragment">Lists</li>
-<li class="fragment">Images</li>
-<li class="fragment">Code blocks</li>
-<li class="fragment">Whatever you need</li>
+<li class="fragment"><code>geom_histogram()</code></li>
+<li class="fragment"><code>geom_density()</code></li>
+<li class="fragment"><code>geom_boxplot()</code></li>
+<li class="fragment"><code>geom_violin()</code></li>
 </ul>
-<p><img data-src="../images/example.png"></p>
-</div>
-</section></section>
-<section>
-<section id="standard-column-and-box-arrangements" class="title-slide slide level1 center">
-<h1>Standard Column and Box Arrangements</h1>
-
 </section>
-<section id="two-overlap-boxes-vertically-stacked" class="slide level2">
-<h2>Two Overlap Boxes, Vertically Stacked</h2>
-<div class="overlap-box">
-<div class="box-title">
-<p>Top Red Box</p>
-</div>
-<div class="box-content">
+<section id="categorical-variable" class="slide level2">
+<h2>1 Categorical Variable</h2>
 <ul>
-<li class="fragment">Content for the top red box</li>
-<li class="fragment">More content for the top red box</li>
+<li class="fragment"><code>geom_bar()</code></li>
+<li class="fragment"><code>geom_col()</code></li>
 </ul>
-</div>
-</div>
-<div class="overlap-box overlap-box-blue">
-<div class="box-title">
-<p>Bottom Blue Box</p>
-</div>
-<div class="box-content">
-<ul>
-<li class="fragment">Content for the bottom blue box</li>
-<li class="fragment">More content for the bottom blue box</li>
-</ul>
-</div>
-</div>
-<aside class="notes">
-<p>This slide template uses two overlap boxes, one stacked on top of the other. The top box is red, and the bottom box is blue.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="single-overlap-box-with-image-columns" class="slide level2">
-<h2>Single Overlap Box with Image, Columns</h2>
-<div class="container-fluid">
-<div class="row">
-<div class="col-7">
-<div class="overlap-box">
-<div class="box-title">
-<p>Left Column, Red Overlap Box</p>
-</div>
-<div class="box-content">
+<section id="continuous-variables" class="slide level2">
+<h2>2+ Continuous Variables</h2>
 <ul>
-<li class="fragment">Content for the left red box</li>
-<li class="fragment">More content for the left red box</li>
+<li class="fragment"><code>geom_point()</code></li>
+<li class="fragment"><code>geom_jitter()</code></li>
+<li class="fragment"><code>geom_smooth()</code></li>
 </ul>
-</div>
-</div>
-</div>
-<div class="col-5">
-<div class="quarto-figure quarto-figure-center" style="margin-top: -2em;">
-<figure>
-<p><img data-src="../images/file.png"></p>
-<figcaption>Image caption</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>This slide template uses a single overlap box in the left column, with an image in the right column.</p>
-<p>The image is shifted up slightly using a negative top margin to allow for more vertical space, overlapping with title area.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="row-grid" class="slide level2">
-<h2>2-Row Grid</h2>
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); gap: 1.5em; margin-top: 1em;">
-<div class="contained-box fragment">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-1.png"></p>
-</div>
-<div class="box-title">
-<p>Box 1 Title</p>
-</div>
-<div class="box-content">
+<section id="ordered-variables" class="slide level2">
+<h2>2+ Ordered Variables</h2>
 <ul>
-<li class="fragment">Content</li>
-<li class="fragment">here</li>
+<li class="fragment"><code>geom_line()</code></li>
+<li class="fragment"><code>geom_area()</code></li>
 </ul>
-</div>
-</div>
-<div class="contained-box fragment">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-2.png"></p>
-</div>
-<div class="box-title">
-<p>Box 2 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li class="fragment">Content</li>
-<li class="fragment">here</li>
-</ul>
-</div>
-</div>
-<div class="contained-box fragment">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-3.png"></p>
-</div>
-<div class="box-title">
-<p>Box 3 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li class="fragment">Content</li>
-<li class="fragment">here</li>
-</ul>
-</div>
-</div>
-<div class="contained-box fragment">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-4.png"></p>
-</div>
-<div class="box-title">
-<p>Box 4 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li class="fragment">Content</li>
-<li class="fragment">here</li>
-</ul>
-</div>
-</div>
-<div class="contained-box fragment">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-5.png"></p>
-</div>
-<div class="box-title">
-<p>Box 5 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li class="fragment">Content</li>
-<li class="fragment">here</li>
-</ul>
-</div>
-</div>
-<div class="contained-box fragment">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-6.png"></p>
-</div>
-<div class="box-title">
-<p>Box 6 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li class="fragment">Content</li>
-<li class="fragment">here</li>
-</ul>
-</div>
-</div>
-<div class="contained-box fragment">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-7.png"></p>
-</div>
-<div class="box-title">
-<p>Box 7 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li class="fragment">Content</li>
-<li class="fragment">here</li>
-</ul>
-</div>
-</div>
-<div class="contained-box fragment">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-8.png"></p>
-</div>
-<div class="box-title">
-<p>Box 8 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li class="fragment">Content</li>
-<li class="fragment">here</li>
-</ul>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>4x2 grid of rounded rectangles with icons and heading text</p>
-<p>Mix between the process/flowchart slide and the intro slide for the slide sequence</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="cards-1-row" class="slide level2">
-<h2>2 Cards; 1 Row</h2>
-<div class="container-fluid">
-<div class="row">
-<div class="col-12 fragment">
-<p>Content to appear above the columns/cards.</p>
-</div>
-</div>
-<div class="row">
-<div class="col-6">
-<div class="card fragment h-100">
-<div class="card-header">
-<div class="card-title" style="color: #fff">
-<p>Left Card Title</p>
-</div>
-</div>
-<div class="card-body lessgap">
-<ul>
-<li class="fragment">Body of left card</li>
-<li class="fragment">Incremental list</li>
-<li class="fragment">Tight margins</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-6">
-<div class="card fragment card-alt1 h-100">
-<div class="card-header">
-<div class="card-title" style="color: #fff">
-<p>Right Card Title</p>
-</div>
-</div>
-<div class="card-body lessgap">
-<ul>
-<li class="fragment">Body of right card</li>
-<li class="fragment">Incremental list</li>
-<li class="fragment">Tight margins</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>The .h-100 class makes the cards equal height.</p>
-<p>The .lessgap class reduces the padding inside the card body.</p>
-<p>Headings need to be recolored with white text for readability on dark backgrounds. This is an artifact of using Bootstrap cards for both website and revealjs. Can be corrected with additional css at some point.</p>
-<p>Left card (default) is red. Right card uses .card-alt1 class for blue background.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="cardsimages-1-row" class="slide level2">
-<h2>3 Cards/Images; 1 Row</h2>
-<div class="container-fluid">
-<div class="row">
-<div class="col-12 fragment">
-<p>Content to appear above the columns/cards.</p>
-</div>
-</div>
-<div class="row">
-<div class="col-4">
-<div class="card fragment h-100">
-<div class="card-header">
-<div class="card-title" style="color: #fff">
-<p>Left Card Title</p>
-</div>
-</div>
-<div class="card-body lessgap">
-<ul>
-<li class="fragment">Body of left card</li>
-<li class="fragment">Incremental list</li>
-<li class="fragment">Tight margins</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-4">
-<!-- Content of center column -->
-<p><img data-src="../images/file.png"></p>
-</div>
-<div class="col-4">
-<div class="card fragment card-alt1 h-100">
-<div class="card-header">
-<div class="card-title" style="color: #fff">
-<p>Right Card Title</p>
-</div>
-</div>
-<div class="card-body lessgap">
-<ul>
-<li class="fragment">Body of right card</li>
-<li class="fragment">Incremental list</li>
-<li class="fragment">Tight margins</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Minor modification of the 2-card layout above. Adds an image or other equal-width content.</p>
-<p>The .h-100 class makes the cards equal height.</p>
-<p>The .lessgap class reduces the padding inside the card body.</p>
-<p>Headings need to be recolored with white text for readability on dark backgrounds. This is an artifact of using Bootstrap cards for both website and revealjs. Can be corrected with additional css at some point.</p>
-<p>Left card (default) is red. Right card uses .card-alt1 class for blue background.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="columns-with-callout-style-boxes" class="slide level2">
-<h2>Columns with Callout-Style Boxes</h2>
-<div class="container-fluid">
-<div class="row equal-height" style="height: 50vh;">
-<div class="col-6">
-<div class="large" style="font-size: 1.1em;">
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong><span style="padding-left:1em;">⬅︎ Left Box</span></strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment">Note style box is blue</li>
-<li class="fragment">Default icon hidden; custom text “icon” added</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-6">
-<div class="large" style="font-size: 1.1em;">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong><span style="padding-left:1em;">➡︎ Right Box</span></strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li class="fragment">Tip style box is green</li>
-<li class="fragment">Default icon hidden; custom text “icon” added</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="mixed-layout-card-list-alert" class="slide level2">
-<h2>Mixed Layout: Card, List, Alert</h2>
-<div class="container-fluid">
-<div class="row">
-<div class="col-4">
-<div class="card fragment">
-<div class="card-header">
-<div class="card-title" style="color: #fff">
-<p>Card Title</p>
-</div>
-</div>
-<div class="card-body">
-<ul>
-<li class="fragment">Card body</li>
-<li class="fragment">Incremental list</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-8 d-flex align-content-between flex-wrap">
-<div style="width: 100%">
-<p><span class="fragment" style="font-size: 1.5em; font-weight: bold;">Mock Heading</span></p>
-<ul>
-<li class="fragment">Content</li>
-</ul>
-</div>
-<div class="alert alert-warning fragment flex-grow-1">
-<p><span style="font-size: 1.3em"><strong>Alert Mock Heading</strong></span></p>
-<p>This text is in a yellow (warning) alert box.</p>
-</div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>This layout includes two columns.</p>
-<p>Left: Red card, full height</p>
-<p>Right: Heading and list at top, yellow alert box at bottom</p>
-<p>Setting off the list with a literal div (not fence) is the only way I can get the spacing to work for some reason.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="content-with-slide-height-stacked-images" class="slide level2">
-<h2>Content with Slide-Height Stacked Images</h2>
-<div class="container-fluid" style="max-width: 40%; margin-left: 0; margin-right: auto;">
-<p>Content in the left column.</p>
-<ul>
-<li class="fragment">Approximately half the slide width
-<ul>
-<li class="fragment">Allowing for some margin between content and images</li>
-</ul></li>
-</ul>
-</div>
-<div class="container-fluid" style="position: absolute; width: 60%; right: -100px; top: -100px; bottom: -100px; margin: auto;">
-<p><img data-src="../images/top.png" style="width: 100%"></p>
-<p><img data-src="../images/bottom.png" style="width: 100%"></p>
-</div>
-<aside class="notes">
-<p>This layout includes content in the left column, and two stacked images on the right side of the slide.</p>
-<p>The images are absolutely positioned to fill the right side of the slide, with negative offsets to extend beyond the slide content box vertically and horizontally, approximately to edges of the slide.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="centered-content-w-images-over-boxes" class="slide level2">
-<h2>Centered Content w/ Images over Boxes</h2>
-<div class="container-fluid" style="margin-top: -1em">
-<div class="row">
-<div class="col-2">
-<p><img data-src="../images/icons/icon.png" style="max-height: 6em; margin-top: 1em"></p>
-</div>
-<div class="col-8" style="text-align: center;">
-<div style="font-size: 1.2em; text-align: center;">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Centered title</strong></p>
-</div>
-<div class="callout-content">
-<p>Callout box content.</p>
-<p>Tip callout is green.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-2" style="text-align: right;">
-<p><img data-src="../images/icons/icon.png" style="max-height: 6em; margin-top: 1em;"></p>
-</div>
-</div>
-<div class="row">
-<div class="col-6">
-<div class="card h-100">
-<div class="card-header">
-<div class="card-title" style="color: #fff">
-<p>Left box title</p>
-</div>
-</div>
-<div class="card-body">
-<ul>
-<li class="fragment">Content of</li>
-<li class="fragment">the left</li>
-<li class="fragment">red box.</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-6">
-<div class="card card-alt1 h-100">
-<div class="card-header">
-<div class="card-title" style="color: #fff">
-<p>Right box title</p>
-</div>
-</div>
-<div class="card-body">
-<ul>
-<li class="fragment">Content of</li>
-<li class="fragment">the right</li>
-<li class="fragment">blue box.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="organized-series-of-related-slides" class="title-slide slide level1 center">
-<h1>Organized Series of Related Slides</h1>
-<!-- Example: Best Practices Slides with standardized, intelligible, maintainable, contextualized content -->
-</section>
-<section id="introduction-slide" class="slide level2">
-<h2>Introduction Slide</h2>
-<div class="d-flex" style="gap: 1em;">
-<div class="contained-box fragment" style="flex: 1;">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-1.png"></p>
-</div>
-<div class="box-title">
-<p>Box 1 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li>Box 1</li>
-<li>Content</li>
-</ul>
-</div>
-</div>
-<div class="contained-box fragment" style="flex: 1;">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-2.png"></p>
-</div>
-<div class="box-title">
-<p>Box 2 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li>Box 2</li>
-<li>Content</li>
-</ul>
-</div>
-</div>
-<div class="contained-box fragment" style="flex: 1;">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-3.png"></p>
-</div>
-<div class="box-title">
-<p>Box 3 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li>Box 3</li>
-<li>Content</li>
-</ul>
-</div>
-</div>
-<div class="contained-box fragment" style="flex: 1;">
-<div class="box-icon">
-<p><img data-src="../images/icons/icon-4.png"></p>
-</div>
-<div class="box-title">
-<p>Box 4 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li>Box 4</li>
-<li>Content</li>
-</ul>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Four side-by-side boxes of equal height and width using flexbox.</p>
-<p>Each has a large icon, filled box with title, and unfilled box with content.</p>
-<p>Box components are wrapped as classes for easier modification.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="sub-content-slide-with-overlap-boxes" class="slide level2">
-<h2><img data-src="../images/icons/icon-1.png" style="height: 1em; vertical-align: middle; margin-right: 0.4em;"> Sub-content Slide with Overlap Boxes</h2>
-<div class="d-flex" style="gap: 0.4em; margin-bottom: 2em; margin-top: -1em; font-size: 0.7em;">
-<p><span style="background-color: #8B1A1A; color: white; padding: 0.2em 0.6em; border-radius: 3px;"><strong>Active Topic</strong></span> <span style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;">Inactive Topic</span> <span style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;">Inactive Topic</span> <span style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;">Inactive Topic</span></p>
-</div>
-<div class="container-fluid">
-<div class="row">
-<div class="col-6">
-<div class="overlap-box fragment">
-<div class="box-title">
-<p>Box 1 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li>Top left</li>
-<li>Text and box appear together
-<ul>
-<li>Non-incremental list</li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div class="overlap-box fragment">
-<div class="box-title">
-<p>Box 2 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li>Bottom left</li>
-<li>Text and box appear together
-<ul>
-<li>Non-incremental list</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-6">
-<div class="overlap-box overlap-box-blue fragment">
-<div class="box-title">
-<p>Box 3 Title</p>
-</div>
-<div class="box-content">
-<ul>
-<li>Right (full column)</li>
-<li>Text and box appear together
-<ul>
-<li>Non-incremental list</li>
-</ul></li>
-<li>Blue box</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>This slide template is part of a series of related slides.</p>
-<p>It includes a header with an icon and topic indicators.</p>
-<p>The main content area has two columns with overlap boxes.</p>
-<p>The left column has two stacked boxes, and the right column has a single box.</p>
-<p>The boxes use non-incremental lists to show all content at once.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="complex-layout" class="slide level2">
-<h2><img data-src="../images/icons/icon-2.png" style="height: 1em; vertical-align: middle; margin-right: 0.4em;"> Complex Layout</h2>
-<div class="d-flex" style="gap: 0.4em; margin-bottom: 2em; margin-top: -1em; font-size: 0.7em;">
-<p><span style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;">Inactive Topic</span> <span style="background-color: #8B1A1A; color: white; padding: 0.2em 0.6em; border-radius: 3px;"><strong>Active Topic</strong></span> <span style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;">Inactive Topic</span> <span style="background-color: #ddd; color: #666; padding: 0.2em 0.6em; border-radius: 3px;">Inactive Topic</span></p>
-</div>
-<!-- Important Note Card w/ text and surrounding"!!!" icons -->
-<div class="card" style="font-size: 1.1em; font-weight: bolder; text-align: center; margin-top: -5em; float: right; width: 35%; border-width:8px; border-color: #c00; flex: 1 1 100%; background-color: #ffeaa9;">
-<div class="card-body" style="display: flex; align-items: center; justify-content: center; gap: .1em;">
-<p><img data-src="../images/icons/priority.png" style="max-height: 3em;"></p>
-<p>Priority box text, surrounded by “!!!” icons for emphasis.</p>
-<p><img data-src="../images/icons/priority.png" style="max-height: 3em;"></p>
-</div>
-</div>
-<div class="row">
-<div class="col-6">
-<blockquote>
-<p>Blockquote</p>
-<p><em>— Name</em></p>
-</blockquote>
-<ul>
-<li class="fragment">List content</li>
-<li class="fragment">Immediately</li>
-<li class="fragment">Under</li>
-<li class="fragment">the blockquote
-<ul>
-<li class="fragment">Not a different container</li>
-</ul></li>
-</ul>
-</div>
-<div class="col-6">
-<p><img data-src="../images/file.png" style="float: right; margin-top:0px"></p>
-</div>
-</div>
-<div class="credit" style="bottom: 30px;">
-<p>Right aligned image credit text</p>
-</div>
-<aside class="notes">
-<p>This slide template is part of a series of related slides.</p>
-<p>It includes a header with an icon and topic indicators.</p>
-<p>The main content area has two columns.</p>
-<p>The left column has a blockquote and list as one block of content.</p>
-<p>The right column has a right-aligned image.</p>
-<p>The slide also includes a highlighted card at the top right for important notes, outside the columns container. The card is nudged upward to overlap with the title area.</p>
-<p>This priority box can be used as an asset elsewhere.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="tables" class="title-slide slide level1 center">
-<h1>Tables</h1>
-
-</section>
-<section id="incremental-table-with-images" class="slide level2">
-<h2>Incremental Table With Images</h2>
-<table class="compact" style="width: 80%;">
-<tbody><tr style="font-size: 1.2em;">
-<th>
-Column 1
-</th>
-<th>
-Column 2
-</th>
-</tr>
-<tr class="fragment">
-<td style="width: 40%; vertical-align: middle;">
-<img src="../images/icon.svg" alt="Icon Alt Text" style="height: 2em;">
-</td>
-<td>
-<ul>
-<li>
-List
-</li>
-<li>
-Items
-</li>
-<li>
-Here
-</li>
-</ul>
-</td>
-</tr>
-<tr class="fragment">
-<td style="vertical-align: middle;">
-<img src="../images/icon.svg" alt="Icon Alt Text" style="height: 2em;">
-</td>
-<td>
-<ul>
-<li>
-List
-</li>
-<li>
-Items
-</li>
-<li>
-Here
-</li>
-</ul>
-</td>
-</tr>
-<tr class="fragment">
-<td style="vertical-align: middle;">
-<img src="../images/icon.svg" alt="Icon Alt Text" style="height: 2em;">
-</td>
-<td>
-<ul>
-<li>
-List
-</li>
-<li>
-Items
-</li>
-<li>
-Here
-</li>
-</ul>
-</td>
-</tr>
-<tr class="fragment">
-<td style="vertical-align: middle;">
-<img src="../images/icon.svg" alt="Icon Alt Text" style="height: 2em;">
-</td>
-<td>
-<ul>
-<li>
-List
-</li>
-<li>
-Items
-</li>
-<li>
-Here
-</li>
-</ul>
-</td>
-</tr>
-</tbody></table>
-<aside class="notes">
-<p>Only first content row needs width styling.</p>
-<p>Each row is a fragment for incremental reveal. All content for each row appears at once.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="code-blocks" class="title-slide slide level1 center">
-<h1>Code Blocks</h1>
-
-</section>
-<section id="simple-animated-block-non-executable" class="slide level2">
-<h2>Simple Animated Block (Non-executable)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" data-code-line-numbers="|1-2|4-5|7-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># Fragment 1</span></span>
-<span id="cb16-2"><a></a>fragment <span class="dv">1</span> <span class="ot">&lt;-</span> <span class="st">"example code"</span></span>
-<span id="cb16-3"><a></a></span>
-<span id="cb16-4"><a></a><span class="co"># Fragment 2</span></span>
-<span id="cb16-5"><a></a>fragment <span class="dv">2</span> <span class="ot">&lt;-</span> <span class="st">"example code"</span></span>
-<span id="cb16-6"><a></a></span>
-<span id="cb16-7"><a></a><span class="co"># Fragment 3</span></span>
-<span id="cb16-8"><a></a>fragment <span class="dv">3</span> <span class="ot">&lt;-</span> <span class="st">"example code"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<aside class="notes">
-<p>Non-executable code block.</p>
-<p>All text visible initially, then fragments revealed in three steps.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="matched-fragments" class="slide level2">
-<h2>Matched Fragments</h2>
-<!-- The codefocus plugin is required for correct animations on this slide. https://github.com/reuning/codefocus/tree/main/_extensions/codefocus -->
-<div class="container-fluid">
-<div class="row">
-<div class="col-4" style="font-size: .8em">
-<p>Slide has two columns, complex styling in each, and animated fragments of code matched to animated fragments of lists in the other column.</p>
-<div class="fragment" data-code-focus="1,9" style="display: block; margin-top: 2em; margin-bottom: 1em;">
-<p><span class="custom-keyword" style="background-color: #2ac8fe80; color: #000;">Styled blue</span>: unstyled text</p>
-</div>
-<div class="fragment" data-code-focus="2,3" style="display: block; margin-bottom: 1em;">
-<p><span class="custom-keyword" style="background-color: #da6d7180; color: #000;">Styled red</span>: unstyled text</p>
-</div>
-<div class="fragment" data-code-focus="4-6,8" style="display: block; margin-bottom: 1em;">
-<p><span class="custom-keyword" style="background-color: #f1f56c80; color: #000;">Styled yellow</span>: unstyled text</p>
-</div>
-<div class="fragment" data-code-focus="7" style="display: block; margin-bottom: 1em;">
-<p><span class="custom-keyword" style="background-color: #39eef280; color: #000;">Styled cyan</span>: unstyled text</p>
-</div>
-<div class="fragment" data-code-focus="11" style="display: block;">
-<p><span class="custom-keyword" style="background-color: #f5c36c80; color: #000;">Styled orange</span>: unstyled text</p>
-</div>
-</div>
-<div class="col-8" style="border-width:6px !important; border-style: solid !important; border-color: #ccc !important; border-radius: 8px; padding: 10px; background-color: #f9f9f9; font-size: .8em;">
-<!-- This div mimics non-revealjs styling to recreate documentation + code -->
-<h3 style="margin-top:0em" id="title-of-the-bordered-box">Title of the bordered box</h3>
-<h4 id="heading-4-uses-fences">Heading 4 uses fences</h4>
-<p>Text looks the same as outside this div.</p>
-<p><em><span style="color: #999">…grayed out text…</span></em></p>
-<h4 id="example-non-executable-code-for-animation">Example non-executable code for animation</h4>
-<p>Everything begins grayed out.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">inner_join</span>(</span>
-<span id="cb17-2"><a></a>  x,</span>
-<span id="cb17-3"><a></a>  y,</span>
-<span id="cb17-4"><a></a>  <span class="at">by =</span> <span class="cn">NULL</span>,</span>
-<span id="cb17-5"><a></a>  <span class="at">copy =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb17-6"><a></a>  <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">".x"</span>, <span class="st">".y"</span>),</span>
-<span id="cb17-7"><a></a>  ...,</span>
-<span id="cb17-8"><a></a>  <span class="at">keep =</span> <span class="cn">NULL</span></span>
-<span id="cb17-9"><a></a>)</span>
-<span id="cb17-10"><a></a></span>
-<span id="cb17-11"><a></a><span class="fu">left_join</span>(</span>
-<span id="cb17-12"><a></a>  x,</span>
-<span id="cb17-13"><a></a>  y,</span>
-<span id="cb17-14"><a></a>  <span class="at">by =</span> <span class="cn">NULL</span>,</span>
-<span id="cb17-15"><a></a>  <span class="at">copy =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb17-16"><a></a>  <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">".x"</span>, <span class="st">".y"</span>),</span>
-<span id="cb17-17"><a></a>  ...,</span>
-<span id="cb17-18"><a></a>  <span class="at">keep =</span> <span class="cn">NULL</span></span>
-<span id="cb17-19"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>This slide template uses the codefocus plugin to highlight specific lines of code in sync with corresponding list items.</p>
-<p>Each list item is a fragment that highlights specific lines in the code block when revealed.</p>
-<p>The code block is styled with a border and background color to distinguish it from the rest of the slide content.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="animation" class="title-slide slide level1 center">
-<h1>Animation</h1>
-
-</section>
-<section id="callouts-with-stacked-images" class="slide level2">
-<h2>Callouts with stacked images</h2>
-<div class="container-fluid">
-<div class="row">
-<div class="col-5">
-<div class="fragment" data-fragment-index="1">
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Warning callout</strong></p>
-</div>
-<div class="callout-content">
-<p>Warning callout is red, with a yield sign.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment" data-fragment-index="2">
-<div class="callout callout-caution callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Caution callout</strong></p>
-</div>
-<div class="callout-content">
-<p>Caution callout is orange with a pylon.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment" data-fragment-index="3">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip callout</strong></p>
-</div>
-<div class="callout-content">
-<p>Tip callout is green with a light bulb.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-7">
-<div class="r-stack">
-<p><img data-src="../images/warning-match.png" class="fragment" data-fragment-index="1"></p>
-<p><img data-src="../images/caution-match.png" class="fragment" data-fragment-index="2"></p>
-<p><img data-src="../images/tip-match.png" class="fragment" data-fragment-index="3"></p>
-</div>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>This slide template uses callout boxes with matching stacked images.</p>
-<p>The callouts and images are revealed in sync as fragments.</p>
-<p>Callouts appear vertically in a left column.</p>
-<p>Images layer on top of each other in a right column.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="column-text-overlapping-images" class="slide level2">
-<h2>Column text; overlapping images</h2>
-<div class="container-fluid">
-<div class="row">
-<div class="col-4 fragment" data-fragment-index="1">
-<p><strong>Column 1</strong></p>
-<ul>
-<li>Content</li>
-<li>here</li>
-</ul>
-</div>
-<div class="col-4 fragment" data-fragment-index="2">
-<p><strong>Column 2</strong></p>
-<ul>
-<li>Content</li>
-<li>here</li>
-</ul>
-</div>
-<div class="col-4 fragment" data-fragment-index="3">
-<p><strong>Column 3</strong></p>
-<ul>
-<li>Content</li>
-<li>here</li>
-</ul>
-</div>
-</div>
-<div class="row">
-<div class="r-stack fragment" data-fragment-index="1">
-<p><img data-src="../images/stack-1.png" style="position: absolute; left: 0; bottom: 0; max-height: 50%;"></p>
-</div>
-<div class="r-stack fragment" data-fragment-index="2">
-<p><img data-src="../images/stack-2.png" style="position: absolute; left: 0; right: 0; bottom: 0; margin-inline: auto; max-height: 50%;"></p>
-</div>
-<div class="r-stack fragment" data-fragment-index="3">
-<p><img data-src="../images/stack-3.png" style="position: absolute; right: 0; bottom: 0; max-height: 50%;"></p>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>This slide template uses three columns of text that appear incrementally.</p>
-<p>Each column corresponds to an image fragment. Images are stacked for partial overlap to allow for larger images that don’t require sustained focus.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="processflow-with-icons" class="slide level2">
-<h2>Process/flow with icons</h2>
-<div style="display: grid; grid-template-columns: 1fr 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr; grid-template-rows: auto 3em auto; gap: 8px;">
-<!-- Row 1: Steps 1-4 -->
-<div class="flow-box fragment" style="grid-column: 1; grid-row: 1; background-color: #800000;">
-<p>Text for box 1</p>
-<div class="flow-icon-circle">
-<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
-</div>
-</div>
-<div class="flow-arrow fragment" style="grid-column: 2; grid-row: 1;">
-<p><i class="bi-arrow-right-circle-fill " style="" role="img" aria-hidden="true"></i></p>
-</div>
-<div class="flow-box fragment" style="grid-column: 3; grid-row: 1; background-color: #6e0e10;">
-<p>Text for box 2</p>
-<div class="flow-icon-circle">
-<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
-</div>
-</div>
-<div class="flow-arrow fragment" style="grid-column: 4; grid-row: 1;">
-<p><i class="bi-arrow-right-circle-fill " style="" role="img" aria-hidden="true"></i></p>
-</div>
-<div class="flow-box fragment" style="grid-column: 5; grid-row: 1; background-color: #5b1b21;">
-<p>Text for box 3</p>
-<div class="flow-icon-circle">
-<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
-</div>
-</div>
-<div class="flow-arrow fragment" style="grid-column: 6; grid-row: 1;">
-<p><i class="bi-arrow-right-circle-fill " style="" role="img" aria-hidden="true"></i></p>
-</div>
-<div class="flow-box fragment" style="grid-column: 7; grid-row: 1; background-color: #492931;">
-<p>Text for box 4</p>
-<div class="flow-icon-circle">
-<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
-</div>
-</div>
-<!-- Down arrow -->
-<div class="flow-arrow fragment" style="grid-column: 7; grid-row: 2;">
-<p><i class="bi-arrow-down-circle-fill " style="" role="img" aria-hidden="true"></i></p>
-</div>
-<!-- Row 2: Steps 5-8 (in reverse order) -->
-<div class="flow-box fragment" style="grid-column: 7; grid-row: 3; background-color: #373642;">
-<p>Text for box 5</p>
-<div class="flow-icon-circle">
-<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
-</div>
-</div>
-<div class="flow-arrow fragment" style="grid-column: 6; grid-row: 3;">
-<p><i class="bi-arrow-left-circle-fill " style="" role="img" aria-hidden="true"></i></p>
-</div>
-<div class="flow-box fragment" style="grid-column: 5; grid-row: 3; background-color: #254452;">
-<p>Text for box 6</p>
-<div class="flow-icon-circle">
-<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
-</div>
-</div>
-<div class="flow-arrow fragment" style="grid-column: 4; grid-row: 3;">
-<p><i class="bi-arrow-left-circle-fill " style="" role="img" aria-hidden="true"></i></p>
-</div>
-<div class="flow-box fragment" style="grid-column: 3; grid-row: 3; background-color: #125163;">
-<p>Text for box 7</p>
-<div class="flow-icon-circle">
-<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
-</div>
-</div>
-<div class="flow-arrow fragment" style="grid-column: 2; grid-row: 3;">
-<p><i class="bi-arrow-left-circle-fill " style="" role="img" aria-hidden="true"></i></p>
-</div>
-<div class="flow-box fragment" style="grid-column: 1; grid-row: 3; background-color: #005f73;">
-<p>Text for box 8</p>
-<div class="flow-icon-circle">
-<p><i class="bi-diamond-half " style="" role="img" aria-hidden="true"></i></p>
-</div>
-</div>
-</div>
-</section>
-<section id="popover-centered-image" class="slide level2">
-<h2>Popover Centered Image</h2>
-<div id="top-right-image" style="position: absolute; top: -1em; right: 4em; height: 4em;">
-<!-- for logos, icons, small images -->
-<p><img data-src="../images/file.png" style="height: 2em;"></p>
-</div>
-<div class="row">
-<div class="col-5">
-<p>Column content</p>
-<ul>
-<li class="fragment">With</li>
-<li class="fragment">a</li>
-<li class="fragment">list</li>
-</ul>
-</div>
-<div class="col-7" style="margin-top: 0em;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># Code that will execute</span></span>
-<span id="cb18-2"><a></a>rstudio_is_cool <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"R"</span>, <span class="st">"and"</span>, <span class="st">"RStudio"</span>, <span class="st">"work"</span>, <span class="st">"together!"</span>)</span>
-<span id="cb18-3"><a></a></span>
-<span id="cb18-4"><a></a><span class="co"># Output will appear as a fragment beneath code block</span></span>
-<span id="cb18-5"><a></a>rstudio_is_cool</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell fragment">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "R and RStudio work together!"</code></pre>
-</div>
-</div>
-</div>
-</div>
-<!-- centered large image, covering slide content -->
-<p><img data-src="../images/popover-image.png" class="fragment" style="position: absolute; right: 0; left: 0; top: 0; bottom: 0; margin-inline: auto; z-index: 99;"></p>
-<aside class="notes">
-<p>This slide template uses a popover image that appears centered over the slide content.</p>
-<p>The code block in the right column executes and reveals output as a fragment.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 
 
 </section></section>
