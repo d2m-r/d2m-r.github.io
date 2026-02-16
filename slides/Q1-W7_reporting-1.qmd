@@ -1,0 +1,662 @@
+---
+title: "Intro to Data Visualization"
+subtitle: "visualization basics, ggplot2, grammar of graphics"
+date: "2/17/2026"
+footer: "D2M-R I" #  quarter, week, and class
+
+format: revealjs
+engine: knitr
+
+revealjs-plugins:
+  - codefocus
+  - fullscreen
+
+fullscreen: false
+
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source
+---
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+library(lattice)
+```
+
+
+# Data Visualization Basics
+
+
+## Data Visualization
+
+What is data visualization? 
+
+-   [I've made charts and graphs that should finally make it clear. (I've prepared a lecture.)](https://youtu.be/yiFLQklABUg?si=TD5sZhEuFHoTrsWo&t=104)
+-   Graphical representation of quantitative information
+-   Identify, interpret, communicate patterns
+-   In academic research, data viz *tells* (not sells) a story
+
+
+![](../images/comics-memes/xkcd-valentine.png)
+
+
+## Core Principles
+
+-   Clarity
+    -   Communicate all – and only – information necessary to tell the story
+-   Simplicity
+    -   Minimize distraction & send one message at a time
+-   Accuracy
+    -   Use reliable data (garbage in, garbage out) and be faithful to it
+-   Consistency
+    -   Represent similar ideas in similar ways & meet audience expectations
+-   Relevance
+    -   Know your audience & speak to them
+
+
+# Data Viz in R
+
+## Plotting with base R
+
+-   Base plots:
+    -   "pen and paper" style
+    -   easy to use, hard to modify
+
+
+```{r}
+#| label: iris-plot-base
+
+# First create the scatter plot
+plot(iris$Sepal.Length, iris$Sepal.Width,
+     main = "base R: Iris Sepal Length vs Width",
+     xlab = "Sepal Length",
+     ylab = "Sepal Width",
+     col = as.numeric(iris$Species),
+     pch = 19)
+
+# Add regression lines for each species
+species_levels <- levels(iris$Species)
+colors <- 1:3
+
+for(i in 1:3) {
+    subset_data <- iris[iris$Species == species_levels[i], ]
+    reg <- lm(Sepal.Width ~ Sepal.Length, data = subset_data)
+    abline(reg, col = colors[i], lwd = 2)
+}
+
+# Add legend
+legend("topright", 
+       legend = levels(iris$Species), 
+       col = colors, 
+       pch = 19)
+
+```
+
+## Plotting with `lattice`
+
+-   [lattice]{.pkg:}
+    -   lots of customization
+    -   constrained structure
+
+
+```{r}
+#| label: iris-plot-lattice
+
+
+# Lattice plot
+# uses one function with many arguments
+xyplot(Sepal.Width ~ Sepal.Length, 
+       data = iris,
+       groups = Species,
+       auto.key = TRUE,
+       type = c("p", "r"),
+       main = "lattice: Iris Sepal Length vs Width",
+       xlab = "Sepal Length",
+       ylab = "Sepal Width")
+
+```
+
+## Plotting with `ggplot2`
+
+-   [ggplot2]{.pkg}
+    -   flexible and powerful
+    -   tidyverse approach to data science
+
+```{r}
+#| label: iris-plot-ggplot
+
+# ggplot plot
+# begins with a ggplot() function
+# then adds layers to customize
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(title = "ggplot2: Iris Sepal Length vs Width",
+       x = "Sepal Length",
+       y = "Sepal Width") +
+  theme_minimal()
+
+```
+
+
+# `ggplot2`
+
+## Tidyverse's `ggplot2` package
+
+-   "easy" plotting system for R
+-   "grammar of graphics" akin to `dplyr`'s "grammar for data manipulation"
+    -   adding layers ~ adding pipes
+-   flows best with tidy datasets
+
+::: notes
+(bubbles)
+
+What's the difference between ggplot and ggplot2?
+
+ggplot() is a function, ggplot2 is a package
+
+So ggplot2 is version 2?
+
+No.
+
+:::
+
+## Customization
+
+-   ggplots are highly customizable
+-   modify many visual properties on the fly
+
+```{r}
+#| label: iris-plot-ggplot-custom
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  # Add points with custom appearance
+  geom_point(size = 3, alpha = 0.7) +
+  # Add regression lines with custom appearance
+  geom_smooth(method = "lm", se = TRUE, alpha = 0.2, 
+             linewidth = 1.2, linetype = "dashed") +
+  # Customize colors using a custom palette
+  scale_color_manual(values = c("#FF6B6B", "#4ECDC4", "#45B7D1")) +
+  # Add labels with custom formatting
+  labs(title = "Sepal Dimensions Across Iris Species",
+       subtitle = "Comparing Length vs Width with Trend Lines",
+       x = "Sepal Length (cm)",
+       y = "Sepal Width (cm)",
+       caption = "Data: Edgar Anderson's Iris Dataset") +
+  # Customize theme elements: title, axis, legend, panel, borders
+  theme_minimal() +
+  theme(
+plot.title = element_text(size = 16, face = "bold", margin = margin(b = 20)),
+    plot.subtitle = element_text(size = 12, color = "grey40"),
+axis.title = element_text(size = 10, face = "bold"),
+    axis.text = element_text(size = 9),
+legend.position = "bottom",
+    legend.title = element_text(face = "bold"),
+    legend.background = element_rect(fill = "white", color = "grey90"),
+panel.grid.major = element_line(color = "grey90"),
+    panel.grid.minor = element_blank(),
+plot.background = element_rect(fill = "white", color = NA),
+    panel.border = element_rect(color = "grey90", fill = NA)
+  ) +
+  # Set specific axis limits
+  coord_cartesian(
+    xlim = c(min(iris$Sepal.Length) - 0.2, max(iris$Sepal.Length) + 0.2),
+    ylim = c(min(iris$Sepal.Width) - 0.2, max(iris$Sepal.Width) + 0.2)
+  )
+
+```
+
+::: notes
+"on the fly" as in you can tweak very big and very tiny things entirely independently
+:::
+
+
+## Flexibility
+
+-   highly flexible
+-   represent the same data in dramatically different ways
+
+```{r}
+#| label: iris-plot-ggplot-flexible-scatter
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point() + # scatter plot
+  geom_smooth(method = "lm", se = TRUE) + # regression line
+  labs(title = "ggplot2: Iris Sepal Length vs Width",
+       x = "Sepal Length",
+       y = "Sepal Width") +
+  theme_minimal()
+
+```
+
+## Flexibility
+
+-   highly flexible
+-   represent the same data in dramatically different ways
+
+```{r}
+#| label: iris-plot-ggplot-flexible-violin-box
+
+ggplot(iris, aes(x=Species, y=Sepal.Length, fill=Species)) +
+  geom_violin(alpha=0.5) + # violin plots
+  geom_boxplot(width=0.2, alpha=0.8) + # boxplots
+  theme_minimal() +
+  labs(title="Distribution of Sepal Length by Species",
+       y="Sepal Length (cm)")
+
+
+```
+
+## Flexibility
+
+-   highly flexible
+-   represent the same data in dramatically different ways
+
+```{r}
+#| label: iris-plot-ggplot-flexible-facets-hist
+
+pivot_longer(iris, cols=c(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),
+	names_to="Measurement",
+	values_to="Value") %>% 
+ggplot(aes(x=Value, fill=Species)) +
+  geom_histogram(alpha=0.8, bins = 15, # histogram
+	position = "identity") +
+  facet_wrap(~Measurement, scales="free") + # subplots
+  theme_minimal() +
+  labs(title="Density Distributions of Iris Measurements",
+       x="Measurement Value (cm)")
+
+```
+# Grammar of Graphics
+
+## What do you need to generate this?
+
+```{r}
+#| label: iris-name-elements
+
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  # Add points with custom appearance
+  geom_point(size = 3, alpha = 0.7) +
+  # Add regression lines with custom appearance
+  geom_smooth(method = "lm", se = TRUE, alpha = 0.2, 
+             linewidth = 1.2, linetype = "dashed") +
+  # Customize colors using a custom palette
+  scale_color_manual(values = c("#FF6B6B", "#4ECDC4", "#45B7D1")) +
+  # Add labels with custom formatting
+  labs(title = "Sepal Dimensions Across Iris Species",
+       subtitle = "Comparing Length vs Width with Trend Lines",
+       x = "Sepal Length (cm)",
+       y = "Sepal Width (cm)",
+       caption = "Data: Edgar Anderson's Iris Dataset") +
+  # Customize theme elements: title, axis, legend, panel, borders
+  theme_minimal() +
+  theme(
+plot.title = element_text(size = 16, face = "bold", margin = margin(b = 20)),
+    plot.subtitle = element_text(size = 12, color = "grey40"),
+axis.title = element_text(size = 10, face = "bold"),
+    axis.text = element_text(size = 9),
+legend.position = "bottom",
+    legend.title = element_text(face = "bold"),
+    legend.background = element_rect(fill = "white", color = "grey90"),
+panel.grid.major = element_line(color = "grey90"),
+    panel.grid.minor = element_blank(),
+plot.background = element_rect(fill = "white", color = NA),
+    panel.border = element_rect(color = "grey90", fill = NA)
+  ) +
+  # Set specific axis limits
+  coord_cartesian(
+    xlim = c(min(iris$Sepal.Length) - 0.2, max(iris$Sepal.Length) + 0.2),
+    ylim = c(min(iris$Sepal.Width) - 0.2, max(iris$Sepal.Width) + 0.2)
+  )
+
+```
+
+
+::: notes
+
+The data themselves (iris)
+What goes on the x and y axis & what makes the colors
+The kinds of graphs we want (scatter + regression line)
+Decorative stuff, like transparency of the dots and making the lines dashed
+How the axes are labeled (the range of numbers on the axes)
+What and where all the text should be, like axis names, title, caption, etc.
+
+:::
+
+## Grammatical Elements
+
+-   [data]{.keyword}: `ggplot(data = df)`
+    -   Tidy dataframe to visualize
+-   [aesthetics]{.keyword}: `aes()`
+    -   Mapping data structures to visual properties
+-   [geometries]{.keyword}: `geom_*()`
+    -   Plotting structures
+-   [statistics]{.keyword}: `stat_*()` or `geom_*(stat = "...")`
+    -   Statistical transformations before plotting
+-   [scales]{.keyword}: `scale_[aes-type]_[data-type]()`
+    -   Relationships between mapped data and visual space
+-   [coordinates]{.keyword}: `coord()`
+    -   Spatial structures for visual representation
+-   [facets]{.keyword}: `facet_wrap()` or `facet_grid()`
+    -   Subplots based on data mapping
+-   [themes]{.keyword}: `theme()`
+    -   *Unmapped*, fixed visual properties
+    
+::: notes
+The grammar, more or less in order of importance:
+Data: The data you want to visualize. This is the foundation of your visualization. Can’t map data to aesthetics without data.
+Aesthetics: The visual properties of the data. This is how you map your data to visual elements like color, shape, size, etc. Critically, aesthetics are the visuals that are actually mapped to your data, the stuff that will change if your data change. Ironically, “aesthetics” does not refer to the parts of your plots that are purely aesthetic1, like the color of the background or the size of the axis labels (those are in the “theme” layer).
+Geometries (aka “geoms”): The shapes you use to represent your data, like points, lines, bars, etc. This is pretty much just defining what kind of plot you’re making – line scatterplots, line graphs, histograms, etc.
+Statistics (aka “stats”): Statistical transformations that you apply to your data before plotting, like calculating means, binning observations, or fitting regression lines.
+Scales: How data maps onto space. The axes and legends will generate based on the data, aesthetics, and geometries you’ve defined, but scales are what determine how the data is actually represented on those axes. For example, they can determine the range of values that are represented, the breaks between values, and the labels that are used.
+Coordinates: The space in which your data is represented. This is where you define the type of plot you’re making – Cartesian, polar, etc. Nearly anything you plot will be Cartesian, the basic X-Y space, and you can usually ignore this layer.
+Facets: How you divide your data into subplots. This is useful for visualizing data that has multiple categories or dimensions, especially if you are already mapping grouping aesthetics like color, shape, or size to other variables.
+Themes: The non-data, non-aesthetic parts of your plot. (Except the actually are aesthetic, they just aren’t ggplot’s “aesthetics.” I hate this.) This is how you change visuals that aren’t mapped to your data, the stuff that should stay the same even if your data change. Theme layers are commonly used to customize things like appearance of grid lines, font and size of axis labels, and non-data-dependent color (like if you just want all points to be blue no matter what), but they can do much more. Themes let you customize the visual properties of nearly anything in your plot.
+:::
+
+## Layers
+
+-   Layers work together to plot elements
+    -   Not all layers are necessary
+    -   Each can have a powerful effect on outcome
+
+```{r}
+#| label: iris-layers-all
+
+ggplot(data = iris,                 # Data layer
+       aes(x = Sepal.Length,        # Aesthetics
+           y = Sepal.Width,
+           color = Species)) +
+  geom_point() +                    # Geometries
+  stat_smooth(method = "lm") +      # Statistics
+  scale_color_viridis_d() +         # Scale
+  coord_cartesian(xlim = c(4, 8)) + # Coordinates
+  facet_wrap(~Species) +            # Facets
+  theme_minimal()                   # Theme 
+```
+
+## Layers
+
+-   Layers work together to plot elements
+    -   Not all layers are necessary
+    -   Each can have a powerful effect on outcome
+
+```{r}
+#| label: iris-layers-alt1
+
+ggplot(data = iris,                 # Data layer
+       aes(x = Sepal.Length,        # Aesthetics
+           y = Sepal.Width,
+           color = Species)) +
+  geom_point() +                    # Geometries
+  #stat_smooth(method = "lm") +      # Statistics
+  scale_color_viridis_d() +         # Scale
+  coord_cartesian(xlim = c(4, 8)) + # Coordinates
+  #facet_wrap(~Species) +            # Facets
+  theme_minimal()                   # Theme 
+```
+
+## Layers
+
+-   Layers work together to plot elements
+    -   Not all layers are necessary
+    -   Each can have a powerful effect on outcome
+
+```{r}
+#| label: iris-layers-alt2
+
+ggplot(data = iris,                 # Data layer
+       aes(x = Sepal.Length,        # Aesthetics
+           y = Sepal.Width,
+           color = Species)) +
+  geom_point() +                    # Geometries
+  stat_smooth(method = "lm") +      # Statistics
+  #scale_color_viridis_d() +         # Scale
+  #coord_cartesian(xlim = c(4, 8)) + # Coordinates
+  facet_wrap(~Species) #+            # Facets
+  #theme_minimal()                   # Theme 
+```
+
+## Layered Layers
+
+-   Grammatical layers in tidyverse "stack" in sequence
+-   Grammar of data manipulation (pipelines)
+    -   link lines of code (pipes) with `|>` or `%>%`
+    -   each line serves 1 purpose
+    -   add, change, remove single lines independently
+    -   modify data sequentially (vs. embedding)
+-   Grammar of graphics
+    -   link lines of code (layers) with `+`
+    -   each line assigns attributes to 1 layer
+    -   add, change, remove single lines independently
+    -   layer data and visuals sequentially (vs. dependently)
+
+
+
+
+
+::: notes
+
+-   "Grammatical" elements of ggplot are called layers
+    -   Imagine transparent sheets with images that stack on top of one another
+    -   Some just add to the image; others overlap to obscure what came before
+    -   Sequence matters
+    
+Each line serves a single purpose
+Add, change, or remove any line without reworking the whole pipeline
+Power comes from sequencing
+
+Each line is a layer, assigning attributes to that layer
+Add, change, or remove any layer without reworking the whole plot 
+Sequencing creates a data-dependent and beautiful plot
+
+
+:::
+
+
+## Layer Necessity
+
+-   Essential:
+    -   Data
+    -   Aesthetics
+    -   Geometries
+-   Common:
+    -   Scales
+    -   Facets
+    -   Themes
+-   As needed:
+    -   Statistics
+    -   Coordinate
+
+## Layer: Data
+
+-   You need data to plot data.
+-   It has to be a data frame.
+-   Helps if it's tidy.
+
+
+::: notes
+
+Like with dplyr pipelines, the data is always the first argument of a ggplot, which means you can combine pipes and plots
+
+:::
+
+## Layer: Aesthetics (`aes`)
+
+-   Visual properties of a ggplot that are mapped to data
+-   Dependent on type of plot, e.g.:
+    -   Use the `linetype` aes with a line graph, but not a scatterplot
+    -   Use the `fill` aes for filled shapes like bar graphs, but not line graphs
+-   Dependent on data type of variable, e.g.:
+    -   Use `shape` with categorical/discrete data, because there is a fixed set of shapes to use
+    -   Use `size` with continuous data, because size itself is continuous and unbounded
+    -   Use `color` for continuous or categorical, because colors can be assigned discretely or generated across a spectrum
+
+## Terminology: `aesthetics` vs "aesthetic"
+
+-   `fill`, `color`, `size`, etc. can be `aes`thetic or *aesthetic*
+
+-   [`aesthetic`]{.keyword}: data-dependent visual properties
+    -   defined as arguments in an `aes()` function
+-   Fixed properties use the same elements without data-dependence
+    -   treated as "theme" even if not part of a theme layer
+    
+Color `aes`thetic:
+
+```{.r}
+geom_point(aes(x=length, y=width, color=species))
+```
+
+Aesthetic color:
+
+```{.r}
+geom_point(aes(x=length, y=width), color="blue")
+```
+
+::: notes
+In ggplot, an aesthetic is a visual property dependent on data. They are defined as arguments in an aes() function.
+Visual properties that are fixed and not data-dependent use the same arguments (color, fill, size, etc.) outside of an aes() function. They are not called aesthetics, and are usually considered part of a "theme" even if they aren't actually in a theme layer.
+
+(bubbles)
+Why are the things that are purely aesthetic not called "aesthetics"?
+
+GREAT QUESTION. I DO NOT KNOW.
+:::
+
+
+## `aes` reference (1/2)
+
+| **Aesthetic** | **Description** | **Mapped data** | **Unmapped specs** |
+| --- | --- | --- | --- |
+| x and y (position) | x and y coordinates of the plot. Nearly every plot requires at least one of these “position” aesthetics. | continuous, categorical | n/a |
+| group | How observations are grouped together (if not defined with another grouping aes) | categorical | n/a |
+| color | Color of points, lines, text, and other 1D shapes. For filled shapes, this will be the outline color. | continuous, categorical | string (color name or hex code) |
+| fill | Fill color of 2D shapes like bars, polygons, etc. | continuous, categorical | string (color name or hex code) |
+| alpha | Opacity/transparency of any element | continuous | number between 0 and 1 |
+
+
+## `aes` reference (2/2)
+
+| **Aesthetic** | **Description** | **Mapped data** | **Unmapped specs** |
+| --- | --- | --- | --- |
+| size | Size of points and width of lines | continuous | numeric values |
+| shape | Shape of points, out of 26 options. Default is a solid circle (19) | categorical | integers 0-25 or shape name (string) ([view guide](http://www.cookbook-r.com/Graphs/Shapes_and_line_types/)) |
+| linetype | Type of line, out of 6 options or blank (0). Default is solid line (1). | categorical | integers 0-6 or line name (string) ([view guide](http://www.cookbook-r.com/Graphs/Shapes_and_line_types/)) |
+| linewidth | Width of lines | continuous | numeric values |
+| stroke | Width of shape outlines | continuous | numeric values |
+| label | Text content | continuous, categorical | strings |
+| fontface | Font style for text | categorical | String: "plain", "bold", "italic", or "bold.italic" |
+| family | Font family for text | categorical | String with font name |
+
+
+## Spot the aesthetics (1/4)
+
+![](../images/tidyverse/plots/aes1.png)
+## Spot the aesthetics (2/4)
+
+![](../images/tidyverse/plots/aes2.png)
+
+## Spot the aesthetics (3/4)
+
+![](../images/tidyverse/plots/aes3.png)
+
+
+## Spot the aesthetics (4/4)
+
+![](../images/tidyverse/plots/aes4.png)
+
+## Geometries
+
+-   define plot shape (i.e., graph type)
+-   required aes defined in an `aes()` function
+-   required & optional aesthetics depend on type of geom
+
+-   Scatter plots: `geom_point()`
+    -   **Require** 2 continuous variables mapped to `x` and `y`
+    -   **Accept** additional continuous or categorical variables mapped to `color`, `shape`, `size`, etc.
+-   Bar charts: `geom_bar()`
+    -   **Require** exactly 1 categorical variable mapped to `x`
+    -   **Accept** additional categorical variable mapped to `fill`
+    -   **Do not allow** a `y` mapping
+
+::: notes
+
+Define the shape of the plot, basically the "type" of graph
+Require aesthetics defined in an aes() function
+aes() can be in its own layer or an argument of the geom_*() layer
+Required and optional aesthetics depend on type of plot, e.g.:
+Scatter plots – geom_point() – 
+require 2 continuous* variables mapped to x and y aesthetics (axes)
+accept additional continuous or categorical variables mapped to color, shape, size...
+Bar charts – geom_bar():
+require one categorical variable mapped to x 
+accept an additional categorical variable mapped to fill
+do not allow a y mapping**
+
+:::
+
+## Geoms
+
+![](../images/tidyverse/plots/geoms.png)
+
+
+## Geom reference
+
+| **Geom Layer** | **Variables*** | **Description** | **Data Types** |
+| --- | --- | --- | --- |
+| `geom_histogram()` | 1 | Creates bins and counts observations within each bin | Continuous x |
+| `geom_density()` | 1 | Creates a smoothed density estimate | Continuous x |
+| `geom_boxplot()` | 1-2 | Shows distribution summary with quartiles and outliers | Continuous y, Optional categorical x |
+| `geom_violin()` | 1-2 | Shows density estimate symmetrically | Continuous y, Categorical x |
+| `geom_bar()` | 1-2 | Creates bars with heights proportional to number of cases | Categorical x |
+| `geom_point()` | 2 | Creates a scatter plot | Continuous x & y |
+| `geom_line()` | 2 | Connects observations in order | Continuous x & y |
+| `geom_smooth()` | 2 | Adds a smoothed conditional mean | Continuous x & y |
+| `geom_area()` | 2 | Creates a line plot filled to the x-axis | Continuous x & y |
+| `geom_tile()` | 2-3 | Creates rectangles based on x and y positions | Any x & y, Optional fill |
+
+# Basic Construction
+
+## Pick your plot
+
+-   `ggplot`'s flexibility is a double edged sword!
+-   It makes the plot you ask for, not caring if it is confusing, messy, uninterpretable, or pointless
+    -   Recall the "garbage in, garbage out" principle
+-   Build the plot that matches your data and tells your story
+
+::: notes
+ggplot's flexibility is a double edged sword, allowing you to create many plots that are confusing, messy, uninterpretable, and pointless
+Selecting the best plot for your data and message is the most important part of the data visualization process, and it's something you-the-human have to do.
+The "right" visualization is the one that best communicates your message to your audience.
+
+:::
+
+## 1 Continuous Variable
+
+-   `geom_histogram()`
+-   `geom_density()`
+-   `geom_boxplot()`
+-   `geom_violin()`
+
+## 1 Categorical Variable
+
+-   `geom_bar()`
+-   `geom_col()`
+
+## 2+ Continuous Variables
+
+-   `geom_point()`
+-   `geom_jitter()`
+-   `geom_smooth()`
+
+## 2+ Ordered Variables
+
+-   `geom_line()`
+-   `geom_area()`
+

@@ -3988,5 +3988,313 @@
     "title": "Tidyverse Wrangling with Strings",
     "section": "",
     "text": "Character data: R datatype for text\nCharacter: Smallest unit of text\nString: Sequence of zero or more characters\nCharacter vector: Collection of one or more strings\n\nA single string is a character vector of length 1\n\n\n\n\n\n\n\nUse single ' or double \" quotes to define strings:\n\nfavorite_class &lt;- \"d2m-R\"\n\n\ntypeof(favorite_class) # data type\n\n[1] \"character\"\n\nclass(favorite_class) # object class\n\n[1] \"character\"\n\nlength(favorite_class) # no. elements\n\n[1] 1\n\nstr_length(favorite_class) # no. characters\n\n[1] 5\n\n\n\n\nUse the combine function c() to create vectors of strings:\n\nfavorite_class_units &lt;- c(\"d\", \"2\", \"m\", \"-\", \"R\")\n\n\ntypeof(favorite_class_units) # data type\n\n[1] \"character\"\n\nclass(favorite_class_units) # object class\n\n[1] \"character\"\n\nlength(favorite_class_units) # no. elements\n\n[1] 5\n\nstr_length(favorite_class_units) # no. char.\n\n[1] 1 1 1 1 1\n\n\n\n\n\ntypeof() vs. class(): typeof() gives the low-level data type (character), while class() gives the high-level object class (character vector). A single string is a character vector of length 1, while multiple strings form a character vector of length &gt; 1. With strings this will be the same (character), but you’ll see the difference with factors.\n\n\n\n\nDefine strings and vectors to use as examples in later slides:\n\n# Strings\nsentence &lt;- 'The QUICK brown fox jumps over the LAZY dog.'\nfavorite_class &lt;- \"d2m-R\"\nmessy_string &lt;- \"   Hello,   World!   \"\n\n# Character vectors\nfavorite_class_units &lt;- c(\"d\", \"2\", \"m\", \"-\", \"R\")\nfruit &lt;- c(\"apple\", \"banana\", \"cherry\", \"date\", \"elderberry\")\ngreeting &lt;- c(\"hello\", \"world\")\nfarewell &lt;- c(\"goodbye\", \"everyone\")\nabed_ratings &lt;- c(\"cool\", \"cool cool cool\", \"cool cool\", \"cool\", \"sarcastic: ok\", \"evil: hot\")\n\n\n\n\n\n\n\n\nBase R\n\n\n\nInconsistent naming\n\ngrep, grepl, sub, gsub, regexpr, gregexpr\n\nInconsistent argument order\n\nCommonly (pattern, string)\n\nNot vectorized by default\n\nOften need sapply() or loops for vectors\n\n\n\n\n\n\n\n\nstringr\n\n\n\nConsistent str_* pattern\n\nstr_detect, str_replace, str_replace_all\n\nConsistent order\n\nAlways (string, pattern)\n\nVectorized by default\n\nWorks with strings or vectors of strings\n\n\n\n\n\n\n\nBase R vs tidyverse approach: Like most things in the tidyverse, stringr improves upon base r options by providing a consistent naming scheme and argument order. Contrast base R’s inconsistent naming (grep, sub, gsub) with stringr’s consistent str_* pattern. stringr is vectorized by default and uses consistent argument ordering (string first, pattern second).\nWhat does it mean to be “vectorized by default?”\nIt means that stringr functions are designed to work with vectors of strings without needing to use sapply() or loops. You can pass a character vector to a stringr function, and it will operate on each element of the vector automatically, returning a vector of results. In contrast, many base R string functions are not vectorized and require additional steps to apply them to each element of a character vector.\n\n\n\n\n\n\n\nstringr:  Simplify working with strings\n\n\n\nCore tidyverse package for text manipulation\nConsistent str_* naming pattern\nVectorized functions for efficient string processing\n\n\n\n\n\n\n\n\n\n\n\nCombine\n\n\n\nJoin strings\n\n\n\n\n\n\n\n\nInterpolate\n\n\n\nEmbed variables in strings\n\n\n\n\n\n\n\n\nDetect\n\n\n\nFind patterns\n\n\n\n\n\n\n\n\nExtract\n\n\n\nPull out text\n\n\n\n\n\n\n\n\nReplace\n\n\n\nModify text\n\n\n\n\n\n\n\n\nTransform\n\n\n\nChange format\n\n\n\n\n\nKey function families:\n\nCombine: Join strings (str_c, str_flatten)\nDetect: Find patterns (str_detect, str_locate)\nExtract: Pull out text (str_sub, str_extract)\nReplace: Modify text (str_replace, str_remove)\nTransform: Change format (str_to_upper, str_trim)"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#data-visualization",
+    "href": "slides/Q1-W7_reporting-1.html#data-visualization",
+    "title": "Intro to Data Reporting",
+    "section": "Data Visualization",
+    "text": "Data Visualization\nWhat is data visualization?\n\nI’ve made charts and graphs that should finally make it clear. (I’ve prepared a lecture.)\nGraphical representation of quantitative information\nIdentify, interpret, communicate patterns\nIn academic research, data viz tells (not sells) a story"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#core-principles",
+    "href": "slides/Q1-W7_reporting-1.html#core-principles",
+    "title": "Intro to Data Reporting",
+    "section": "Core Principles",
+    "text": "Core Principles\n\nClarity\n\nCommunicate all – and only – information necessary to tell the story\n\nSimplicity\n\nMinimize distraction & send one message at a time\n\nAccuracy\n\nUse reliable data (garbage in, garbage out) and be faithful to it\n\nConsistency\n\nRepresent similar ideas in similar ways & meet audience expectations\n\nRelevance\n\nKnow your audience & speak to them"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#plotting-with-base-r",
+    "href": "slides/Q1-W7_reporting-1.html#plotting-with-base-r",
+    "title": "Intro to Data Reporting",
+    "section": "Plotting with base R",
+    "text": "Plotting with base R\n\nBase plots:\n\n“pen and paper” style\neasy to use, hard to modify\n\n\n\n# First create the scatter plot\nplot(iris$Sepal.Length, iris$Sepal.Width,\n     main = \"base R: Iris Sepal Length vs Width\",\n     xlab = \"Sepal Length\",\n     ylab = \"Sepal Width\",\n     col = as.numeric(iris$Species),\n     pch = 19)\n\n# Add regression lines for each species\nspecies_levels &lt;- levels(iris$Species)\ncolors &lt;- 1:3\n\nfor(i in 1:3) {\n    subset_data &lt;- iris[iris$Species == species_levels[i], ]\n    reg &lt;- lm(Sepal.Width ~ Sepal.Length, data = subset_data)\n    abline(reg, col = colors[i], lwd = 2)\n}\n\n# Add legend\nlegend(\"topright\", \n       legend = levels(iris$Species), \n       col = colors, \n       pch = 19)"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#plotting-with-lattice",
+    "href": "slides/Q1-W7_reporting-1.html#plotting-with-lattice",
+    "title": "Intro to Data Reporting",
+    "section": "Plotting with lattice",
+    "text": "Plotting with lattice\n\nlattice\n\nlots of customization\nconstrained structure\n\n\n\n# Lattice plot\n# uses one function with many arguments\nxyplot(Sepal.Width ~ Sepal.Length, \n       data = iris,\n       groups = Species,\n       auto.key = TRUE,\n       type = c(\"p\", \"r\"),\n       main = \"lattice: Iris Sepal Length vs Width\",\n       xlab = \"Sepal Length\",\n       ylab = \"Sepal Width\")"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#plotting-with-ggplot2",
+    "href": "slides/Q1-W7_reporting-1.html#plotting-with-ggplot2",
+    "title": "Intro to Data Reporting",
+    "section": "Plotting with ggplot2",
+    "text": "Plotting with ggplot2\n\nggplot2\n\nflexible and powerful\ntidyverse approach to data science\n\n\n\n# ggplot plot\n# begins with a ggplot() function\n# then adds layers to customize\n\nggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = TRUE) +\n  labs(title = \"ggplot2: Iris Sepal Length vs Width\",\n       x = \"Sepal Length\",\n       y = \"Sepal Width\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#tidyverses-ggplot2-package",
+    "href": "slides/Q1-W7_reporting-1.html#tidyverses-ggplot2-package",
+    "title": "Intro to Data Reporting",
+    "section": "Tidyverse’s ggplot2 package",
+    "text": "Tidyverse’s ggplot2 package\n\n“easy” plotting system for R\n“grammar of graphics” akin to dplyr’s “grammar for data manipulation”\n\nadding layers ~ adding pipes\n\nflows best with tidy datasets\n\n\n(bubbles)\nWhat’s the difference between ggplot and ggplot2?\nggplot() is a function, ggplot2 is a package\nSo ggplot2 is version 2?\nNo."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#customization",
+    "href": "slides/Q1-W7_reporting-1.html#customization",
+    "title": "Intro to Data Reporting",
+    "section": "Customization",
+    "text": "Customization\n\nggplots are highly customizable\nmodify many visual properties on the fly\n\n\nggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +\n  # Add points with custom appearance\n  geom_point(size = 3, alpha = 0.7) +\n  # Add regression lines with custom appearance\n  geom_smooth(method = \"lm\", se = TRUE, alpha = 0.2, \n             linewidth = 1.2, linetype = \"dashed\") +\n  # Customize colors using a custom palette\n  scale_color_manual(values = c(\"#FF6B6B\", \"#4ECDC4\", \"#45B7D1\")) +\n  # Add labels with custom formatting\n  labs(title = \"Sepal Dimensions Across Iris Species\",\n       subtitle = \"Comparing Length vs Width with Trend Lines\",\n       x = \"Sepal Length (cm)\",\n       y = \"Sepal Width (cm)\",\n       caption = \"Data: Edgar Anderson's Iris Dataset\") +\n  # Customize theme elements: title, axis, legend, panel, borders\n  theme_minimal() +\n  theme(\nplot.title = element_text(size = 16, face = \"bold\", margin = margin(b = 20)),\n    plot.subtitle = element_text(size = 12, color = \"grey40\"),\naxis.title = element_text(size = 10, face = \"bold\"),\n    axis.text = element_text(size = 9),\nlegend.position = \"bottom\",\n    legend.title = element_text(face = \"bold\"),\n    legend.background = element_rect(fill = \"white\", color = \"grey90\"),\npanel.grid.major = element_line(color = \"grey90\"),\n    panel.grid.minor = element_blank(),\nplot.background = element_rect(fill = \"white\", color = NA),\n    panel.border = element_rect(color = \"grey90\", fill = NA)\n  ) +\n  # Set specific axis limits\n  coord_cartesian(\n    xlim = c(min(iris$Sepal.Length) - 0.2, max(iris$Sepal.Length) + 0.2),\n    ylim = c(min(iris$Sepal.Width) - 0.2, max(iris$Sepal.Width) + 0.2)\n  )\n\n\n\n“on the fly” as in you can tweak very big and very tiny things entirely independently"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#flexibility",
+    "href": "slides/Q1-W7_reporting-1.html#flexibility",
+    "title": "Intro to Data Reporting",
+    "section": "Flexibility",
+    "text": "Flexibility\n\nhighly flexible\nrepresent the same data in dramatically different ways\n\n\nggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +\n  geom_point() + # scatter plot\n  geom_smooth(method = \"lm\", se = TRUE) + # regression line\n  labs(title = \"ggplot2: Iris Sepal Length vs Width\",\n       x = \"Sepal Length\",\n       y = \"Sepal Width\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#flexibility-1",
+    "href": "slides/Q1-W7_reporting-1.html#flexibility-1",
+    "title": "Intro to Data Reporting",
+    "section": "Flexibility",
+    "text": "Flexibility\n\nhighly flexible\nrepresent the same data in dramatically different ways\n\n\nggplot(iris, aes(x=Species, y=Sepal.Length, fill=Species)) +\n  geom_violin(alpha=0.5) + # violin plots\n  geom_boxplot(width=0.2, alpha=0.8) + # boxplots\n  theme_minimal() +\n  labs(title=\"Distribution of Sepal Length by Species\",\n       y=\"Sepal Length (cm)\")"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#flexibility-2",
+    "href": "slides/Q1-W7_reporting-1.html#flexibility-2",
+    "title": "Intro to Data Reporting",
+    "section": "Flexibility",
+    "text": "Flexibility\n\nhighly flexible\nrepresent the same data in dramatically different ways\n\n\npivot_longer(iris, cols=c(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),\n    names_to=\"Measurement\",\n    values_to=\"Value\") %&gt;% \nggplot(aes(x=Value, fill=Species)) +\n  geom_histogram(alpha=0.8, bins = 15, # histogram\n    position = \"identity\") +\n  facet_wrap(~Measurement, scales=\"free\") + # subplots\n  theme_minimal() +\n  labs(title=\"Density Distributions of Iris Measurements\",\n       x=\"Measurement Value (cm)\")"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#what-do-you-need-to-generate-this",
+    "href": "slides/Q1-W7_reporting-1.html#what-do-you-need-to-generate-this",
+    "title": "Intro to Data Reporting",
+    "section": "What do you need to generate this?",
+    "text": "What do you need to generate this?\n\nggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +\n  # Add points with custom appearance\n  geom_point(size = 3, alpha = 0.7) +\n  # Add regression lines with custom appearance\n  geom_smooth(method = \"lm\", se = TRUE, alpha = 0.2, \n             linewidth = 1.2, linetype = \"dashed\") +\n  # Customize colors using a custom palette\n  scale_color_manual(values = c(\"#FF6B6B\", \"#4ECDC4\", \"#45B7D1\")) +\n  # Add labels with custom formatting\n  labs(title = \"Sepal Dimensions Across Iris Species\",\n       subtitle = \"Comparing Length vs Width with Trend Lines\",\n       x = \"Sepal Length (cm)\",\n       y = \"Sepal Width (cm)\",\n       caption = \"Data: Edgar Anderson's Iris Dataset\") +\n  # Customize theme elements: title, axis, legend, panel, borders\n  theme_minimal() +\n  theme(\nplot.title = element_text(size = 16, face = \"bold\", margin = margin(b = 20)),\n    plot.subtitle = element_text(size = 12, color = \"grey40\"),\naxis.title = element_text(size = 10, face = \"bold\"),\n    axis.text = element_text(size = 9),\nlegend.position = \"bottom\",\n    legend.title = element_text(face = \"bold\"),\n    legend.background = element_rect(fill = \"white\", color = \"grey90\"),\npanel.grid.major = element_line(color = \"grey90\"),\n    panel.grid.minor = element_blank(),\nplot.background = element_rect(fill = \"white\", color = NA),\n    panel.border = element_rect(color = \"grey90\", fill = NA)\n  ) +\n  # Set specific axis limits\n  coord_cartesian(\n    xlim = c(min(iris$Sepal.Length) - 0.2, max(iris$Sepal.Length) + 0.2),\n    ylim = c(min(iris$Sepal.Width) - 0.2, max(iris$Sepal.Width) + 0.2)\n  )\n\n\n\nThe data themselves (iris) What goes on the x and y axis & what makes the colors The kinds of graphs we want (scatter + regression line) Decorative stuff, like transparency of the dots and making the lines dashed How the axes are labeled (the range of numbers on the axes) What and where all the text should be, like axis names, title, caption, etc."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#grammatical-elements",
+    "href": "slides/Q1-W7_reporting-1.html#grammatical-elements",
+    "title": "Intro to Data Reporting",
+    "section": "Grammatical Elements",
+    "text": "Grammatical Elements\n\ndata: ggplot(data = df)\n\nTidy dataframe to visualize\n\naesthetics: aes()\n\nMapping data structures to visual properties\n\ngeometries: geom_*()\n\nPlotting structures\n\nstatistics: stat_*() or geom_*(stat = \"...\")\n\nStatistical transformations before plotting\n\nscales: scale_[aes-type]_[data-type]()\n\nRelationships between mapped data and visual space\n\ncoordinates: coord()\n\nSpatial structures for visual representation\n\nfacets: facet_wrap() or facet_grid()\n\nSubplots based on data mapping\n\nthemes: theme()\n\nUnmapped, fixed visual properties\n\n\n\nThe grammar, more or less in order of importance: Data: The data you want to visualize. This is the foundation of your visualization. Can’t map data to aesthetics without data. Aesthetics: The visual properties of the data. This is how you map your data to visual elements like color, shape, size, etc. Critically, aesthetics are the visuals that are actually mapped to your data, the stuff that will change if your data change. Ironically, “aesthetics” does not refer to the parts of your plots that are purely aesthetic1, like the color of the background or the size of the axis labels (those are in the “theme” layer). Geometries (aka “geoms”): The shapes you use to represent your data, like points, lines, bars, etc. This is pretty much just defining what kind of plot you’re making – line scatterplots, line graphs, histograms, etc. Statistics (aka “stats”): Statistical transformations that you apply to your data before plotting, like calculating means, binning observations, or fitting regression lines. Scales: How data maps onto space. The axes and legends will generate based on the data, aesthetics, and geometries you’ve defined, but scales are what determine how the data is actually represented on those axes. For example, they can determine the range of values that are represented, the breaks between values, and the labels that are used. Coordinates: The space in which your data is represented. This is where you define the type of plot you’re making – Cartesian, polar, etc. Nearly anything you plot will be Cartesian, the basic X-Y space, and you can usually ignore this layer. Facets: How you divide your data into subplots. This is useful for visualizing data that has multiple categories or dimensions, especially if you are already mapping grouping aesthetics like color, shape, or size to other variables. Themes: The non-data, non-aesthetic parts of your plot. (Except the actually are aesthetic, they just aren’t ggplot’s “aesthetics.” I hate this.) This is how you change visuals that aren’t mapped to your data, the stuff that should stay the same even if your data change. Theme layers are commonly used to customize things like appearance of grid lines, font and size of axis labels, and non-data-dependent color (like if you just want all points to be blue no matter what), but they can do much more. Themes let you customize the visual properties of nearly anything in your plot."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#layers",
+    "href": "slides/Q1-W7_reporting-1.html#layers",
+    "title": "Intro to Data Reporting",
+    "section": "Layers",
+    "text": "Layers\n\nLayers work together to plot elements\n\nNot all layers are necessary\nEach can have a powerful effect on outcome\n\n\n\nggplot(data = iris,                 # Data layer\n       aes(x = Sepal.Length,        # Aesthetics\n           y = Sepal.Width,\n           color = Species)) +\n  geom_point() +                    # Geometries\n  stat_smooth(method = \"lm\") +      # Statistics\n  scale_color_viridis_d() +         # Scale\n  coord_cartesian(xlim = c(4, 8)) + # Coordinates\n  facet_wrap(~Species) +            # Facets\n  theme_minimal()                   # Theme"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#layers-1",
+    "href": "slides/Q1-W7_reporting-1.html#layers-1",
+    "title": "Intro to Data Reporting",
+    "section": "Layers",
+    "text": "Layers\n\nLayers work together to plot elements\n\nNot all layers are necessary\nEach can have a powerful effect on outcome\n\n\n\nggplot(data = iris,                 # Data layer\n       aes(x = Sepal.Length,        # Aesthetics\n           y = Sepal.Width,\n           color = Species)) +\n  geom_point() +                    # Geometries\n  #stat_smooth(method = \"lm\") +      # Statistics\n  scale_color_viridis_d() +         # Scale\n  coord_cartesian(xlim = c(4, 8)) + # Coordinates\n  #facet_wrap(~Species) +            # Facets\n  theme_minimal()                   # Theme"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#layers-2",
+    "href": "slides/Q1-W7_reporting-1.html#layers-2",
+    "title": "Intro to Data Reporting",
+    "section": "Layers",
+    "text": "Layers\n\nLayers work together to plot elements\n\nNot all layers are necessary\nEach can have a powerful effect on outcome\n\n\n\nggplot(data = iris,                 # Data layer\n       aes(x = Sepal.Length,        # Aesthetics\n           y = Sepal.Width,\n           color = Species)) +\n  geom_point() +                    # Geometries\n  stat_smooth(method = \"lm\") +      # Statistics\n  #scale_color_viridis_d() +         # Scale\n  #coord_cartesian(xlim = c(4, 8)) + # Coordinates\n  facet_wrap(~Species) #+            # Facets\n\n  #theme_minimal()                   # Theme"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#layered-layers",
+    "href": "slides/Q1-W7_reporting-1.html#layered-layers",
+    "title": "Intro to Data Reporting",
+    "section": "Layered Layers",
+    "text": "Layered Layers\n\nGrammatical layers in tidyverse “stack” in sequence\nGrammar of data manipulation (pipelines)\n\nlink lines of code (pipes) with |&gt; or %&gt;%\neach line serves 1 purpose\nadd, change, remove single lines independently\nmodify data sequentially (vs. embedding)\n\nGrammar of graphics\n\nlink lines of code (layers) with +\neach line assigns attributes to 1 layer\nadd, change, remove single lines independently\nlayer data and visuals sequentially (vs. dependently)\n\n\n\n\n“Grammatical” elements of ggplot are called layers\n\nImagine transparent sheets with images that stack on top of one another\nSome just add to the image; others overlap to obscure what came before\nSequence matters\n\n\nEach line serves a single purpose Add, change, or remove any line without reworking the whole pipeline Power comes from sequencing\nEach line is a layer, assigning attributes to that layer Add, change, or remove any layer without reworking the whole plot Sequencing creates a data-dependent and beautiful plot"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#layer-necessity",
+    "href": "slides/Q1-W7_reporting-1.html#layer-necessity",
+    "title": "Intro to Data Reporting",
+    "section": "Layer Necessity",
+    "text": "Layer Necessity\n\nEssential:\n\nData\nAesthetics\nGeometries\n\nCommon:\n\nScales\nFacets\nThemes\n\nAs needed:\n\nStatistics\nCoordinate"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#layer-data",
+    "href": "slides/Q1-W7_reporting-1.html#layer-data",
+    "title": "Intro to Data Reporting",
+    "section": "Layer: Data",
+    "text": "Layer: Data\n\nYou need data to plot data.\nIt has to be a data frame.\nHelps if it’s tidy.\n\n\nLike with dplyr pipelines, the data is always the first argument of a ggplot, which means you can combine pipes and plots"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#layer-aesthetics-aes",
+    "href": "slides/Q1-W7_reporting-1.html#layer-aesthetics-aes",
+    "title": "Intro to Data Reporting",
+    "section": "Layer: Aesthetics (aes)",
+    "text": "Layer: Aesthetics (aes)\n\nVisual properties of a ggplot that are mapped to data\nDependent on type of plot, e.g.:\n\nUse the linetype aes with a line graph, but not a scatterplot\nUse the fill aes for filled shapes like bar graphs, but not line graphs\n\nDependent on data type of variable, e.g.:\n\nUse shape with categorical/discrete data, because there is a fixed set of shapes to use\nUse size with continuous data, because size itself is continuous and unbounded\nUse color for continuous or categorical, because colors can be assigned discretely or generated across a spectrum"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#terminology-aesthetics-vs-aesthetic",
+    "href": "slides/Q1-W7_reporting-1.html#terminology-aesthetics-vs-aesthetic",
+    "title": "Intro to Data Reporting",
+    "section": "Terminology: aesthetics vs “aesthetic”",
+    "text": "Terminology: aesthetics vs “aesthetic”\n\nfill, color, size, etc. can be aesthetic or aesthetic\naesthetic: data-dependent visual properties\n\ndefined as arguments in an aes() function\n\nFixed properties use the same elements without data-dependence\n\ntreated as “theme” even if not part of a theme layer\n\n\nColor aesthetic:\ngeom_point(aes(x=length, y=width, color=species))\nAesthetic color:\ngeom_point(aes(x=length, y=width), color=\"blue\")\n\nIn ggplot, an aesthetic is a visual property dependent on data. They are defined as arguments in an aes() function. Visual properties that are fixed and not data-dependent use the same arguments (color, fill, size, etc.) outside of an aes() function. They are not called aesthetics, and are usually considered part of a “theme” even if they aren’t actually in a theme layer.\n(bubbles) Why are the things that are purely aesthetic not called “aesthetics”?\nGREAT QUESTION. I DO NOT KNOW."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#aes-reference",
+    "href": "slides/Q1-W7_reporting-1.html#aes-reference",
+    "title": "Intro to Data Reporting",
+    "section": "aes reference",
+    "text": "aes reference\n\n\n\nAesthetic\nDescription\nMapped data\nUnmapped specs\n\n\n\n\nx and y (position)\nx and y coordinates of the plot. Nearly every plot requires at least one of these “position” aesthetics.\ncontinuous, categorical\nn/a\n\n\ngroup\nHow observations are grouped together (if not defined with another grouping aes)\ncategorical\nn/a\n\n\ncolor\nColor of points, lines, text, and other 1D shapes. For filled shapes, this will be the outline color.\ncontinuous, categorical\nstring (color name or hex code)\n\n\nfill\nFill color of 2D shapes like bars, polygons, etc.\ncontinuous, categorical\nstring (color name or hex code)\n\n\nalpha\nOpacity/transparency of any element\ncontinuous\nnumber between 0 and 1\n\n\nsize\nSize of points and width of lines\ncontinuous\nnumeric values\n\n\nshape\nShape of points, out of 26 options. Default is a solid circle (19)\ncategorical\nintegers 0-25 or shape name (string) (view guide)\n\n\nlinetype\nType of line, out of 6 options or blank (0). Default is solid line (1).\ncategorical\nintegers 0-6 or line name (string) (view guide)\n\n\nlinewidth\nWidth of lines\ncontinuous\nnumeric values\n\n\nstroke\nWidth of shape outlines\ncontinuous\nnumeric values\n\n\nlabel\nText content\ncontinuous, categorical\nstrings\n\n\nfontface\nFont style for text\ncategorical\nString: “plain”, “bold”, “italic”, or “bold.italic”\n\n\nfamily\nFont family for text\ncategorical\nString with font name"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#grouped-lists",
+    "href": "slides/Q1-W7_reporting-1.html#grouped-lists",
+    "title": "Intro to Data Reporting",
+    "section": "Grouped Lists",
+    "text": "Grouped Lists\n\n\n1st level bullet\n\n2nd level will appear with top level\n\nAnother 1st level bullet\n\nAnother 2nd level bullet\n\n\n\n\nThis slide template uses grouped lists to show multiple levels of bullet points at once.\nDepends on javascript in the bubbles.js theme file.\nList must be wrapped in a non-incremental div."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#left-sidebar-slide",
+    "href": "slides/Q1-W7_reporting-1.html#left-sidebar-slide",
+    "title": "Intro to Data Reporting",
+    "section": "Left Sidebar Slide",
+    "text": "Left Sidebar Slide\n\n\nSlide Title Here\n\nOptional text in the left sidebar with light contrasting text.\n\n\nMain content area goes here.\n\nCan include text\nLists\nImages\nCode blocks\nWhatever you need"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#two-overlap-boxes-vertically-stacked",
+    "href": "slides/Q1-W7_reporting-1.html#two-overlap-boxes-vertically-stacked",
+    "title": "Intro to Data Reporting",
+    "section": "Two Overlap Boxes, Vertically Stacked",
+    "text": "Two Overlap Boxes, Vertically Stacked\n\n\nTop Red Box\n\n\n\nContent for the top red box\nMore content for the top red box\n\n\n\n\n\nBottom Blue Box\n\n\n\nContent for the bottom blue box\nMore content for the bottom blue box\n\n\n\n\nThis slide template uses two overlap boxes, one stacked on top of the other. The top box is red, and the bottom box is blue."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#single-overlap-box-with-image-columns",
+    "href": "slides/Q1-W7_reporting-1.html#single-overlap-box-with-image-columns",
+    "title": "Intro to Data Reporting",
+    "section": "Single Overlap Box with Image, Columns",
+    "text": "Single Overlap Box with Image, Columns\n\n\n\n\n\nLeft Column, Red Overlap Box\n\n\n\nContent for the left red box\nMore content for the left red box\n\n\n\n\n\n\n\n\nImage caption\n\n\n\n\n\n\nThis slide template uses a single overlap box in the left column, with an image in the right column.\nThe image is shifted up slightly using a negative top margin to allow for more vertical space, overlapping with title area."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#row-grid",
+    "href": "slides/Q1-W7_reporting-1.html#row-grid",
+    "title": "Intro to Data Reporting",
+    "section": "2-Row Grid",
+    "text": "2-Row Grid\n\n\n\n\n\n\nBox 1 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 2 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 3 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 4 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 5 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 6 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 7 Title\n\n\n\nContent\nhere\n\n\n\n\n\n\n\n\nBox 8 Title\n\n\n\nContent\nhere\n\n\n\n\n\n4x2 grid of rounded rectangles with icons and heading text\nMix between the process/flowchart slide and the intro slide for the slide sequence"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#cards-1-row",
+    "href": "slides/Q1-W7_reporting-1.html#cards-1-row",
+    "title": "Intro to Data Reporting",
+    "section": "2 Cards; 1 Row",
+    "text": "2 Cards; 1 Row\n\n\n\nContent to appear above the columns/cards.\n\n\n\n\n\n\n\nLeft Card Title\n\n\n\n\nBody of left card\nIncremental list\nTight margins\n\n\n\n\n\n\n\n\nRight Card Title\n\n\n\n\nBody of right card\nIncremental list\nTight margins\n\n\n\n\n\n\n\nThe .h-100 class makes the cards equal height.\nThe .lessgap class reduces the padding inside the card body.\nHeadings need to be recolored with white text for readability on dark backgrounds. This is an artifact of using Bootstrap cards for both website and revealjs. Can be corrected with additional css at some point.\nLeft card (default) is red. Right card uses .card-alt1 class for blue background."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#cardsimages-1-row",
+    "href": "slides/Q1-W7_reporting-1.html#cardsimages-1-row",
+    "title": "Intro to Data Reporting",
+    "section": "3 Cards/Images; 1 Row",
+    "text": "3 Cards/Images; 1 Row\n\n\n\nContent to appear above the columns/cards.\n\n\n\n\n\n\n\nLeft Card Title\n\n\n\n\nBody of left card\nIncremental list\nTight margins\n\n\n\n\n\n\n\n\n\n\n\n\nRight Card Title\n\n\n\n\nBody of right card\nIncremental list\nTight margins\n\n\n\n\n\n\n\nMinor modification of the 2-card layout above. Adds an image or other equal-width content.\nThe .h-100 class makes the cards equal height.\nThe .lessgap class reduces the padding inside the card body.\nHeadings need to be recolored with white text for readability on dark backgrounds. This is an artifact of using Bootstrap cards for both website and revealjs. Can be corrected with additional css at some point.\nLeft card (default) is red. Right card uses .card-alt1 class for blue background."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#columns-with-callout-style-boxes",
+    "href": "slides/Q1-W7_reporting-1.html#columns-with-callout-style-boxes",
+    "title": "Intro to Data Reporting",
+    "section": "Columns with Callout-Style Boxes",
+    "text": "Columns with Callout-Style Boxes\n\n\n\n\n\n\n\n⬅︎ Left Box\n\n\n\nNote style box is blue\nDefault icon hidden; custom text “icon” added\n\n\n\n\n\n\n\n\n\n\n\n➡︎ Right Box\n\n\n\nTip style box is green\nDefault icon hidden; custom text “icon” added"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#mixed-layout-card-list-alert",
+    "href": "slides/Q1-W7_reporting-1.html#mixed-layout-card-list-alert",
+    "title": "Intro to Data Reporting",
+    "section": "Mixed Layout: Card, List, Alert",
+    "text": "Mixed Layout: Card, List, Alert\n\n\n\n\n\n\nCard Title\n\n\n\n\nCard body\nIncremental list\n\n\n\n\n\n\nMock Heading\n\nContent\n\n\n\nAlert Mock Heading\nThis text is in a yellow (warning) alert box.\n\n\n\n\n\nThis layout includes two columns.\nLeft: Red card, full height\nRight: Heading and list at top, yellow alert box at bottom\nSetting off the list with a literal div (not fence) is the only way I can get the spacing to work for some reason."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#content-with-slide-height-stacked-images",
+    "href": "slides/Q1-W7_reporting-1.html#content-with-slide-height-stacked-images",
+    "title": "Intro to Data Reporting",
+    "section": "Content with Slide-Height Stacked Images",
+    "text": "Content with Slide-Height Stacked Images\n\nContent in the left column.\n\nApproximately half the slide width\n\nAllowing for some margin between content and images\n\n\n\n\n\n\n\n\nThis layout includes content in the left column, and two stacked images on the right side of the slide.\nThe images are absolutely positioned to fill the right side of the slide, with negative offsets to extend beyond the slide content box vertically and horizontally, approximately to edges of the slide."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#centered-content-w-images-over-boxes",
+    "href": "slides/Q1-W7_reporting-1.html#centered-content-w-images-over-boxes",
+    "title": "Intro to Data Reporting",
+    "section": "Centered Content w/ Images over Boxes",
+    "text": "Centered Content w/ Images over Boxes\n\n\n\n\n\n\n\n\n\n\nCentered title\n\n\nCallout box content.\nTip callout is green.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLeft box title\n\n\n\n\nContent of\nthe left\nred box.\n\n\n\n\n\n\n\n\nRight box title\n\n\n\n\nContent of\nthe right\nblue box."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#introduction-slide",
+    "href": "slides/Q1-W7_reporting-1.html#introduction-slide",
+    "title": "Intro to Data Reporting",
+    "section": "Introduction Slide",
+    "text": "Introduction Slide\n\n\n\n\n\n\nBox 1 Title\n\n\n\nBox 1\nContent\n\n\n\n\n\n\n\n\nBox 2 Title\n\n\n\nBox 2\nContent\n\n\n\n\n\n\n\n\nBox 3 Title\n\n\n\nBox 3\nContent\n\n\n\n\n\n\n\n\nBox 4 Title\n\n\n\nBox 4\nContent\n\n\n\n\n\nFour side-by-side boxes of equal height and width using flexbox.\nEach has a large icon, filled box with title, and unfilled box with content.\nBox components are wrapped as classes for easier modification."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#sub-content-slide-with-overlap-boxes",
+    "href": "slides/Q1-W7_reporting-1.html#sub-content-slide-with-overlap-boxes",
+    "title": "Intro to Data Reporting",
+    "section": " Sub-content Slide with Overlap Boxes",
+    "text": "Sub-content Slide with Overlap Boxes\n\nActive Topic Inactive Topic Inactive Topic Inactive Topic\n\n\n\n\n\n\nBox 1 Title\n\n\n\nTop left\nText and box appear together\n\nNon-incremental list\n\n\n\n\n\n\nBox 2 Title\n\n\n\nBottom left\nText and box appear together\n\nNon-incremental list\n\n\n\n\n\n\n\n\nBox 3 Title\n\n\n\nRight (full column)\nText and box appear together\n\nNon-incremental list\n\nBlue box\n\n\n\n\n\n\n\nThis slide template is part of a series of related slides.\nIt includes a header with an icon and topic indicators.\nThe main content area has two columns with overlap boxes.\nThe left column has two stacked boxes, and the right column has a single box.\nThe boxes use non-incremental lists to show all content at once."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#complex-layout",
+    "href": "slides/Q1-W7_reporting-1.html#complex-layout",
+    "title": "Intro to Data Reporting",
+    "section": " Complex Layout",
+    "text": "Complex Layout\n\nInactive Topic Active Topic Inactive Topic Inactive Topic\n\n\n\n\n\nPriority box text, surrounded by “!!!” icons for emphasis.\n\n\n\n\n\n\nBlockquote\n— Name\n\n\nList content\nImmediately\nUnder\nthe blockquote\n\nNot a different container\n\n\n\n\n\n\n\n\nRight aligned image credit text\n\n\nThis slide template is part of a series of related slides.\nIt includes a header with an icon and topic indicators.\nThe main content area has two columns.\nThe left column has a blockquote and list as one block of content.\nThe right column has a right-aligned image.\nThe slide also includes a highlighted card at the top right for important notes, outside the columns container. The card is nudged upward to overlap with the title area.\nThis priority box can be used as an asset elsewhere."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#incremental-table-with-images",
+    "href": "slides/Q1-W7_reporting-1.html#incremental-table-with-images",
+    "title": "Intro to Data Reporting",
+    "section": "Incremental Table With Images",
+    "text": "Incremental Table With Images\n\n\n\nColumn 1\n\n\nColumn 2\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\n\n\n\n\n\nList\n\n\nItems\n\n\nHere\n\n\n\n\n\n\nOnly first content row needs width styling.\nEach row is a fragment for incremental reveal. All content for each row appears at once."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#simple-animated-block-non-executable",
+    "href": "slides/Q1-W7_reporting-1.html#simple-animated-block-non-executable",
+    "title": "Intro to Data Reporting",
+    "section": "Simple Animated Block (Non-executable)",
+    "text": "Simple Animated Block (Non-executable)\n# Fragment 1\nfragment 1 &lt;- \"example code\"\n\n# Fragment 2\nfragment 2 &lt;- \"example code\"\n\n# Fragment 3\nfragment 3 &lt;- \"example code\"\n\nNon-executable code block.\nAll text visible initially, then fragments revealed in three steps."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#matched-fragments",
+    "href": "slides/Q1-W7_reporting-1.html#matched-fragments",
+    "title": "Intro to Data Reporting",
+    "section": "Matched Fragments",
+    "text": "Matched Fragments\n\n\n\n\nSlide has two columns, complex styling in each, and animated fragments of code matched to animated fragments of lists in the other column.\n\nStyled blue: unstyled text\n\n\nStyled red: unstyled text\n\n\nStyled yellow: unstyled text\n\n\nStyled cyan: unstyled text\n\n\nStyled orange: unstyled text\n\n\n\n\nTitle of the bordered box\nHeading 4 uses fences\nText looks the same as outside this div.\n…grayed out text…\nExample non-executable code for animation\nEverything begins grayed out.\ninner_join(\n  x,\n  y,\n  by = NULL,\n  copy = FALSE,\n  suffix = c(\".x\", \".y\"),\n  ...,\n  keep = NULL\n)\n\nleft_join(\n  x,\n  y,\n  by = NULL,\n  copy = FALSE,\n  suffix = c(\".x\", \".y\"),\n  ...,\n  keep = NULL\n)\n\n\n\n\nThis slide template uses the codefocus plugin to highlight specific lines of code in sync with corresponding list items.\nEach list item is a fragment that highlights specific lines in the code block when revealed.\nThe code block is styled with a border and background color to distinguish it from the rest of the slide content."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#callouts-with-stacked-images",
+    "href": "slides/Q1-W7_reporting-1.html#callouts-with-stacked-images",
+    "title": "Intro to Data Reporting",
+    "section": "Callouts with stacked images",
+    "text": "Callouts with stacked images\n\n\n\n\n\n\n\n\n\n\nWarning callout\n\n\nWarning callout is red, with a yield sign.\n\n\n\n\n\n\n\n\n\n\n\nCaution callout\n\n\nCaution callout is orange with a pylon.\n\n\n\n\n\n\n\n\n\n\n\nTip callout\n\n\nTip callout is green with a light bulb.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis slide template uses callout boxes with matching stacked images.\nThe callouts and images are revealed in sync as fragments.\nCallouts appear vertically in a left column.\nImages layer on top of each other in a right column."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#column-text-overlapping-images",
+    "href": "slides/Q1-W7_reporting-1.html#column-text-overlapping-images",
+    "title": "Intro to Data Reporting",
+    "section": "Column text; overlapping images",
+    "text": "Column text; overlapping images\n\n\n\nColumn 1\n\nContent\nhere\n\n\n\nColumn 2\n\nContent\nhere\n\n\n\nColumn 3\n\nContent\nhere\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis slide template uses three columns of text that appear incrementally.\nEach column corresponds to an image fragment. Images are stacked for partial overlap to allow for larger images that don’t require sustained focus."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#processflow-with-icons",
+    "href": "slides/Q1-W7_reporting-1.html#processflow-with-icons",
+    "title": "Intro to Data Reporting",
+    "section": "Process/flow with icons",
+    "text": "Process/flow with icons\n\n\n\nText for box 1\n\n\n\n\n\n\n\n\nText for box 2\n\n\n\n\n\n\n\n\nText for box 3\n\n\n\n\n\n\n\n\nText for box 4\n\n\n\n\n\n\n\n\n\n\nText for box 5\n\n\n\n\n\n\n\n\nText for box 6\n\n\n\n\n\n\n\n\nText for box 7\n\n\n\n\n\n\n\n\nText for box 8"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#popover-centered-image",
+    "href": "slides/Q1-W7_reporting-1.html#popover-centered-image",
+    "title": "Intro to Data Reporting",
+    "section": "Popover Centered Image",
+    "text": "Popover Centered Image\n\n\n\n\n\n\nColumn content\n\nWith\na\nlist\n\n\n\n\n# Code that will execute\nrstudio_is_cool &lt;- paste(\"R\", \"and\", \"RStudio\", \"work\", \"together!\")\n\n# Output will appear as a fragment beneath code block\nrstudio_is_cool\n\n\n\n[1] \"R and RStudio work together!\"\n\n\n\n\n\n\n\nThis slide template uses a popover image that appears centered over the slide content.\nThe code block in the right column executes and reveals output as a fragment."
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#aes-reference-12",
+    "href": "slides/Q1-W7_reporting-1.html#aes-reference-12",
+    "title": "Intro to Data Reporting",
+    "section": "aes reference (1/2)",
+    "text": "aes reference (1/2)\n\n\n\n\n\n\n\n\n\nAesthetic\nDescription\nMapped data\nUnmapped specs\n\n\n\n\nx and y (position)\nx and y coordinates of the plot. Nearly every plot requires at least one of these “position” aesthetics.\ncontinuous, categorical\nn/a\n\n\ngroup\nHow observations are grouped together (if not defined with another grouping aes)\ncategorical\nn/a\n\n\ncolor\nColor of points, lines, text, and other 1D shapes. For filled shapes, this will be the outline color.\ncontinuous, categorical\nstring (color name or hex code)\n\n\nfill\nFill color of 2D shapes like bars, polygons, etc.\ncontinuous, categorical\nstring (color name or hex code)\n\n\nalpha\nOpacity/transparency of any element\ncontinuous\nnumber between 0 and 1"
+  },
+  {
+    "objectID": "slides/Q1-W7_reporting-1.html#aes-reference-22",
+    "href": "slides/Q1-W7_reporting-1.html#aes-reference-22",
+    "title": "Intro to Data Reporting",
+    "section": "aes reference (2/2)",
+    "text": "aes reference (2/2)\n\n\n\nAesthetic\nDescription\nMapped data\nUnmapped specs\n\n\n\n\nsize\nSize of points and width of lines\ncontinuous\nnumeric values\n\n\nshape\nShape of points, out of 26 options. Default is a solid circle (19)\ncategorical\nintegers 0-25 or shape name (string) (view guide)\n\n\nlinetype\nType of line, out of 6 options or blank (0). Default is solid line (1).\ncategorical\nintegers 0-6 or line name (string) (view guide)\n\n\nlinewidth\nWidth of lines\ncontinuous\nnumeric values\n\n\nstroke\nWidth of shape outlines\ncontinuous\nnumeric values\n\n\nlabel\nText content\ncontinuous, categorical\nstrings\n\n\nfontface\nFont style for text\ncategorical\nString: “plain”, “bold”, “italic”, or “bold.italic”\n\n\nfamily\nFont family for text\ncategorical\nString with font name"
   }
 ]
