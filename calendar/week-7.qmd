@@ -24,7 +24,7 @@ Text to appear before the accordion
 
 :::: accordion-item
 ::: {.accordion-header .titlebox}
-Week 7 | Tidyverse Data Wrangling, part 2
+Week 7 | Data Reporting, Part 1
 :::
 ::::
 
@@ -45,9 +45,20 @@ Feb-17; Feb-19
 :::: {#overview-week-7 .accordion-collapse .collapse data-bs-parent="#week-7"}
 ::: accordion-body
 
-**Class plans:**
+**Class plans: TBD!**
+
+Depending on class interest, we may cover some combination of:
+
+-   Intro to Data Viz & ggplot2
+-   Large- and/or small-group workshopping of integrative data projects
+-   Crash course in reporting with a "results memo" example & template
+-   More stringr and forcats practice
+-   Intro to psychologists' most used descriptive and inferential statistics in R
 
 **Primary learning objectives:**
+
+- (7) Data manipulation with `dplyr` and pipelines
+- (12) Basic reporting: plots and descriptives in Quarto
 
 :::
 ::::
@@ -65,16 +76,21 @@ Feb-17; Feb-19
 
 **Class Materials:**
 
-- [Slides]()
-- [Textbook Chapter]()
+This is fully dependent on what we cover in class, but here are some tentative materials we may use:
+
+-   [Intro to Data Visualization](../slides/Q1-W7_reporting-1.html)
+-   Results memo
+    -   [Example results memo](https://github.com/d2m-r/student-hub/blob/main/demos/results-memo-penguins.qmd)
+    -   [Results memo template](https://github.com/d2m-r/student-hub/blob/main/demos/results-memo-template.qmd)
+-   Statistics walkthroughs
+    -   [Descriptive statistics](https://github.com/d2m-r/student-hub/blob/main/demos/stats-demo-descriptive.qmd)
+    -   [Predictive statistics](https://github.com/d2m-r/student-hub/blob/main/demos/stats-demo-predictive.qmd)
 
 <!-- software, tools, datasets, etc -->
 
 **Additional Resources:**
 
-- readings
-- cheat-sheets
-- tutorials
+- I will add some links once I have a better sense of how these next 2 weeks will go.
 
 :::
 ::::
