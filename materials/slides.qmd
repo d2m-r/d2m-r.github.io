@@ -18,6 +18,7 @@ format: html
     -   [Tidyverse Data Wrangling with Strings](../slides/Q1-W6_tidyverse-strings.html)
     -   [Tidyverse Data Wrangling with Factors](../slides/Q1-W6_tidyverse-factors.html)
 -   Week 7 & 8: Data Reporting Essentials
+    -   [Intro to Data Visualization](../slides/Q1-W7_reporting-1.html)
 -   Week 9: *no slides*
 
 ## D2M-R Quarter II Slides

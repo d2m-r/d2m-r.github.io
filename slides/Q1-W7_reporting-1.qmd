@@ -4,7 +4,9 @@ subtitle: "visualization basics, ggplot2, grammar of graphics"
 date: "2/17/2026"
 footer: "D2M-R I" #  quarter, week, and class
 
-format: revealjs
+format: 
+  revealjs:
+    code-block-height: 650px
 engine: knitr
 
 revealjs-plugins:
@@ -22,9 +24,13 @@ editor: source
 
 ```{r}
 #| label: setup
+#| include: false
 
 library(tidyverse)
 library(lattice)
+
+theme_set(theme_minimal())
+theme_update(text = element_text(size=20))
 ```
 
 
@@ -46,29 +52,131 @@ What is data visualization?
 
 ## Core Principles
 
--   Clarity
-    -   Communicate all – and only – information necessary to tell the story
--   Simplicity
-    -   Minimize distraction & send one message at a time
--   Accuracy
-    -   Use reliable data (garbage in, garbage out) and be faithful to it
--   Consistency
-    -   Represent similar ideas in similar ways & meet audience expectations
--   Relevance
-    -   Know your audience & speak to them
+
+::: {style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(1, 1fr); gap: 1.5em; margin-top: 1em;"}
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/clarity.png)
+
+:::
+
+::: {.box-title}
+Clarity
+:::
+
+::: {.box-content}
+
+Communicate all – and *only* – information necessary to tell the story
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/simplicity.png)
+
+:::
+
+::: {.box-title}
+Simplicity
+:::
+
+::: {.box-content}
+
+Minimize distraction & send one message at a time
+
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/accuracy.png)
+
+:::
+
+::: {.box-title}
+Accuracy
+:::
+
+::: {.box-content}
+
+Use reliable data (garbage in, garbage out) and be faithful to it
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/consistency.png)
+
+:::
+
+::: {.box-title}
+Consistency
+:::
+
+::: {.box-content}
+
+Represent similar ideas in similar ways & meet audience expectations
+
+:::
+
+:::
+
+::: {.contained-box .fragment}
+
+::: {.box-icon}
+
+![](../images/icons/timeline.png)
+
+:::
+
+::: {.box-title}
+Relevance
+:::
+
+::: {.box-content}
+
+Know your audience & speak to them
+
+:::
+
+:::
+
+:::
+
+
+
 
 
 # Data Viz in R
 
-## Plotting with base R
+## Plotting with base R {.code-2to3}
 
 -   Base plots:
     -   "pen and paper" style
     -   easy to use, hard to modify
 
+::: fragment
 
 ```{r}
 #| label: iris-plot-base
+#| echo: true
+#| output-location: column
+#| code-line-numbers: "|1-7|9-18|20-24"
 
 # First create the scatter plot
 plot(iris$Sepal.Length, iris$Sepal.Width,
@@ -84,7 +192,8 @@ colors <- 1:3
 
 for(i in 1:3) {
     subset_data <- iris[iris$Species == species_levels[i], ]
-    reg <- lm(Sepal.Width ~ Sepal.Length, data = subset_data)
+    reg <- lm(Sepal.Width ~ Sepal.Length, 
+              data = subset_data)
     abline(reg, col = colors[i], lwd = 2)
 }
 
@@ -96,38 +205,57 @@ legend("topright",
 
 ```
 
-## Plotting with `lattice`
+:::
 
--   [lattice]{.pkg:}
+::: notes
+
+pen and paper -> you draw it, it's there. 
+
+:::
+
+
+## Plotting with `lattice` {.code-2to3}
+
+-   [lattice]{.pkg}
     -   lots of customization
     -   constrained structure
 
+::: fragment
 
 ```{r}
 #| label: iris-plot-lattice
-
+#| echo: true
+#| output-location: column
+#| code-line-numbers: "|1-3|4-7|8-10"
 
 # Lattice plot
 # uses one function with many arguments
 xyplot(Sepal.Width ~ Sepal.Length, 
        data = iris,
        groups = Species,
-       auto.key = TRUE,
-       type = c("p", "r"),
+       auto.key = TRUE, # add legend
+       type = c("p", "r"), # points and regression line
        main = "lattice: Iris Sepal Length vs Width",
        xlab = "Sepal Length",
        ylab = "Sepal Width")
 
 ```
 
-## Plotting with `ggplot2`
+:::
+
+## Plotting with `ggplot2` {.code-2to3}
 
 -   [ggplot2]{.pkg}
     -   flexible and powerful
     -   tidyverse approach to data science
 
+::: fragment
+
 ```{r}
 #| label: iris-plot-ggplot
+#| echo: true
+#| output-location: column
+#| code-line-numbers: "|1-5|6,7|8-11"
 
 # ggplot plot
 # begins with a ggplot() function
@@ -138,66 +266,69 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
   geom_smooth(method = "lm", se = TRUE) +
   labs(title = "ggplot2: Iris Sepal Length vs Width",
        x = "Sepal Length",
-       y = "Sepal Width") +
-  theme_minimal()
+       y = "Sepal Width")
 
 ```
 
+:::
 
 # `ggplot2`
 
 ## Tidyverse's `ggplot2` package
 
--   "easy" plotting system for R
+-   easy plotting system for R
 -   "grammar of graphics" akin to `dplyr`'s "grammar for data manipulation"
     -   adding layers ~ adding pipes
 -   flows best with tidy datasets
+-   customizable
+    -   modify many visual properties on the fly
+-   highly flexible
+    -   represent the same data in dramatically different ways
 
-::: notes
-(bubbles)
+::: bubble-chain
 
-What's the difference between ggplot and ggplot2?
-
-ggplot() is a function, ggplot2 is a package
-
-So ggplot2 is version 2?
-
-No.
-
+  <p class="bubble-left fragment">What's the difference between ggplot and ggplot2?</p>
+  <p class="bubble-right fragment">ggplot() is a function, ggplot2 is a package.</p>
+  <p class="bubble-left fragment">So ggplot2 is version 2?</p>
+  <p class="bubble-right fragment">No.</p>
+  
 :::
 
-## Customization
-
--   ggplots are highly customizable
--   modify many visual properties on the fly
+## Customization {.code-2to3}
 
 ```{r}
 #| label: iris-plot-ggplot-custom
+#| output-location: column
 
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, 
+                 color = Species)) +
   # Add points with custom appearance
   geom_point(size = 3, alpha = 0.7) +
   # Add regression lines with custom appearance
   geom_smooth(method = "lm", se = TRUE, alpha = 0.2, 
              linewidth = 1.2, linetype = "dashed") +
   # Customize colors using a custom palette
-  scale_color_manual(values = c("#FF6B6B", "#4ECDC4", "#45B7D1")) +
+  scale_color_manual(values = 
+                         c("#FF6B6B", "#4ECDC4", "#45B7D1")) +
   # Add labels with custom formatting
   labs(title = "Sepal Dimensions Across Iris Species",
        subtitle = "Comparing Length vs Width with Trend Lines",
        x = "Sepal Length (cm)",
        y = "Sepal Width (cm)",
        caption = "Data: Edgar Anderson's Iris Dataset") +
-  # Customize theme elements: title, axis, legend, panel, borders
+  # Customize theme elements: 
+  # title, axis, legend, panel, borders
   theme_minimal() +
   theme(
-plot.title = element_text(size = 16, face = "bold", margin = margin(b = 20)),
+plot.title = element_text(size = 16, face = "bold", 
+                          margin = margin(b = 20)),
     plot.subtitle = element_text(size = 12, color = "grey40"),
 axis.title = element_text(size = 10, face = "bold"),
     axis.text = element_text(size = 9),
 legend.position = "bottom",
     legend.title = element_text(face = "bold"),
-    legend.background = element_rect(fill = "white", color = "grey90"),
+    legend.background = element_rect(
+        fill = "white", color = "grey90"),
 panel.grid.major = element_line(color = "grey90"),
     panel.grid.minor = element_blank(),
 plot.background = element_rect(fill = "white", color = NA),
@@ -205,8 +336,10 @@ plot.background = element_rect(fill = "white", color = NA),
   ) +
   # Set specific axis limits
   coord_cartesian(
-    xlim = c(min(iris$Sepal.Length) - 0.2, max(iris$Sepal.Length) + 0.2),
-    ylim = c(min(iris$Sepal.Width) - 0.2, max(iris$Sepal.Width) + 0.2)
+    xlim = c(min(iris$Sepal.Length) - 0.2, 
+             max(iris$Sepal.Length) + 0.2),
+    ylim = c(min(iris$Sepal.Width) - 0.2, 
+             max(iris$Sepal.Width) + 0.2)
   )
 
 ```
@@ -216,17 +349,19 @@ plot.background = element_rect(fill = "white", color = NA),
 :::
 
 
-## Flexibility
+## Flexibility {.code-2to3}
 
--   highly flexible
--   represent the same data in dramatically different ways
+### Iris Sepal Length vs Width: Scatter Plot + Regression Line
 
 ```{r}
 #| label: iris-plot-ggplot-flexible-scatter
+#| output-location: column-fragment
 
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+ggplot(iris, aes(x = Sepal.Length, 
+                 y = Sepal.Width, 
+                 color = Species)) +
   geom_point() + # scatter plot
-  geom_smooth(method = "lm", se = TRUE) + # regression line
+  geom_smooth(method = "lm", se = TRUE) + # reg. line
   labs(title = "ggplot2: Iris Sepal Length vs Width",
        x = "Sepal Length",
        y = "Sepal Width") +
@@ -234,13 +369,22 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
 
 ```
 
-## Flexibility
+
+::: notes
 
 -   highly flexible
 -   represent the same data in dramatically different ways
 
+:::
+
+
+## Flexibility {.code-2to3}
+
+### Iris Sepal Length by Species: Violin + Box Plots
+
 ```{r}
 #| label: iris-plot-ggplot-flexible-violin-box
+#| output-location: column-fragment
 
 ggplot(iris, aes(x=Species, y=Sepal.Length, fill=Species)) +
   geom_violin(alpha=0.5) + # violin plots
@@ -252,13 +396,13 @@ ggplot(iris, aes(x=Species, y=Sepal.Length, fill=Species)) +
 
 ```
 
-## Flexibility
+## Flexibility {.code-2to3}
 
--   highly flexible
--   represent the same data in dramatically different ways
+### Density Distributions of Iris Measurements: Faceted Histograms
 
 ```{r}
 #| label: iris-plot-ggplot-flexible-facets-hist
+#| output-location: column-fragment
 
 pivot_longer(iris, cols=c(Sepal.Length, Sepal.Width, Petal.Length, Petal.Width),
 	names_to="Measurement",
@@ -272,12 +416,14 @@ ggplot(aes(x=Value, fill=Species)) +
        x="Measurement Value (cm)")
 
 ```
+
 # Grammar of Graphics
 
 ## What do you need to generate this?
 
 ```{r}
 #| label: iris-name-elements
+#| echo: false
 
 
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
@@ -331,14 +477,23 @@ What and where all the text should be, like axis names, title, caption, etc.
 
 ## Grammatical Elements
 
--   [data]{.keyword}: `ggplot(data = df)`
+:::: row
+
+::: col-6
+
+-   [data]{.critical}: `ggplot(data = df)`
     -   Tidy dataframe to visualize
--   [aesthetics]{.keyword}: `aes()`
+-   [aesthetics]{.critical}: `aes()`
     -   Mapping data structures to visual properties
--   [geometries]{.keyword}: `geom_*()`
+-   [geometries]{.critical}: `geom_*()`
     -   Plotting structures
 -   [statistics]{.keyword}: `stat_*()` or `geom_*(stat = "...")`
     -   Statistical transformations before plotting
+    
+:::
+
+::: col-6
+
 -   [scales]{.keyword}: `scale_[aes-type]_[data-type]()`
     -   Relationships between mapped data and visual space
 -   [coordinates]{.keyword}: `coord()`
@@ -347,6 +502,10 @@ What and where all the text should be, like axis names, title, caption, etc.
     -   Subplots based on data mapping
 -   [themes]{.keyword}: `theme()`
     -   *Unmapped*, fixed visual properties
+    
+:::
+
+::::
     
 ::: notes
 The grammar, more or less in order of importance:
@@ -360,14 +519,20 @@ Facets: How you divide your data into subplots. This is useful for visualizing d
 Themes: The non-data, non-aesthetic parts of your plot. (Except the actually are aesthetic, they just aren’t ggplot’s “aesthetics.” I hate this.) This is how you change visuals that aren’t mapped to your data, the stuff that should stay the same even if your data change. Theme layers are commonly used to customize things like appearance of grid lines, font and size of axis labels, and non-data-dependent color (like if you just want all points to be blue no matter what), but they can do much more. Themes let you customize the visual properties of nearly anything in your plot.
 :::
 
-## Layers
+## Layers {.code-2to3}
 
+::: nonincremental
 -   Layers work together to plot elements
     -   Not all layers are necessary
     -   Each can have a powerful effect on outcome
+    
+:::
+
+::: {.fragment style="margin-top: .8em;"}
 
 ```{r}
 #| label: iris-layers-all
+#| output-location: column-fragment
 
 ggplot(data = iris,                 # Data layer
        aes(x = Sepal.Length,        # Aesthetics
@@ -378,17 +543,24 @@ ggplot(data = iris,                 # Data layer
   scale_color_viridis_d() +         # Scale
   coord_cartesian(xlim = c(4, 8)) + # Coordinates
   facet_wrap(~Species) +            # Facets
-  theme_minimal()                   # Theme 
+  theme_bw() +                      # Theme 
+  labs(title = "Iris Plot")
 ```
 
-## Layers
+:::
 
+## Layers {.code-2to3}
+
+::: nonincremental
 -   Layers work together to plot elements
     -   Not all layers are necessary
     -   Each can have a powerful effect on outcome
+    
+:::
 
 ```{r}
 #| label: iris-layers-alt1
+#| output-location: column-fragment
 
 ggplot(data = iris,                 # Data layer
        aes(x = Sepal.Length,        # Aesthetics
@@ -399,18 +571,23 @@ ggplot(data = iris,                 # Data layer
   scale_color_viridis_d() +         # Scale
   coord_cartesian(xlim = c(4, 8)) + # Coordinates
   #facet_wrap(~Species) +            # Facets
-  theme_minimal()                   # Theme 
+  theme_bw() +                      # Theme 
+  labs(title = "Iris Plot")
 ```
 
-## Layers
+## Layers {.code-2to3}
 
+::: nonincremental
 -   Layers work together to plot elements
     -   Not all layers are necessary
     -   Each can have a powerful effect on outcome
+    
+:::
 
 ```{r}
 #| label: iris-layers-alt2
-
+#| output-location: column-fragment
+ 
 ggplot(data = iris,                 # Data layer
        aes(x = Sepal.Length,        # Aesthetics
            y = Sepal.Width,
@@ -419,27 +596,65 @@ ggplot(data = iris,                 # Data layer
   stat_smooth(method = "lm") +      # Statistics
   #scale_color_viridis_d() +         # Scale
   #coord_cartesian(xlim = c(4, 8)) + # Coordinates
-  facet_wrap(~Species) #+            # Facets
-  #theme_minimal()                   # Theme 
+  facet_wrap(~Species) +            # Facets
+  #theme_bw()                        # Theme 
+  labs(title = "Iris Plot")
 ```
+
 
 ## Layered Layers
 
--   Grammatical layers in tidyverse "stack" in sequence
--   Grammar of data manipulation (pipelines)
-    -   link lines of code (pipes) with `|>` or `%>%`
-    -   each line serves 1 purpose
-    -   add, change, remove single lines independently
-    -   modify data sequentially (vs. embedding)
--   Grammar of graphics
-    -   link lines of code (layers) with `+`
-    -   each line assigns attributes to 1 layer
-    -   add, change, remove single lines independently
-    -   layer data and visuals sequentially (vs. dependently)
+:::: row
 
+::: col-6
 
+::: overlap-box
 
+::: {.box-title .smaller}
 
+Grammar of data manipulation
+
+:::
+
+::: box-content
+
+-   `dplyr` pipelines
+-   link lines of code (pipes) with `|>` or `%>%`
+-   each line serves 1 purpose
+-   add, change, remove single lines independently
+-   modify data sequentially (vs. embedding)
+
+:::
+
+:::
+
+:::
+
+::: col-6
+
+::: {.overlap-box .overlap-box-blue}
+
+::: {.box-title .smaller}
+
+Grammar of graphics
+
+:::
+
+::: box-content
+
+-   `ggplot2` layers
+-   link lines of code (layers) with `+`
+-   each line assigns attributes to 1 layer
+-   add, change, remove single lines independently
+-   layer data and visuals sequentially (vs. dependently)
+
+:::
+
+:::
+
+:::
+
+::::
 
 ::: notes
 
@@ -462,17 +677,74 @@ Sequencing creates a data-dependent and beautiful plot
 
 ## Layer Necessity
 
--   Essential:
-    -   Data
-    -   Aesthetics
-    -   Geometries
--   Common:
-    -   Scales
-    -   Facets
-    -   Themes
--   As needed:
-    -   Statistics
-    -   Coordinate
+:::: row
+
+::: col-4
+
+::: overlap-box
+
+::: box-title
+
+Essential
+
+:::
+
+::: box-content
+
+-   Data
+-   Aesthetics
+-   Geometries
+
+:::
+
+:::
+
+:::
+
+::: col-4
+
+::: {.overlap-box .accent1}
+
+::: box-title
+
+Common
+
+:::
+
+::: box-content
+
+-   Scales
+-   Facets
+-   Themes
+
+:::
+
+:::
+
+:::
+
+::: col-4
+
+::: {.overlap-box .accent1}
+
+::: box-title
+
+Specialized
+
+:::
+
+::: box-content
+
+-   Statistics
+-   Coordinate
+
+:::
+
+:::
+
+:::
+
+::::
 
 ## Layer: Data
 
@@ -502,22 +774,30 @@ Like with dplyr pipelines, the data is always the first argument of a ggplot, wh
 
 -   `fill`, `color`, `size`, etc. can be `aes`thetic or *aesthetic*
 
--   [`aesthetic`]{.keyword}: data-dependent visual properties
+-   [aesthetic]{.keyword}: data-dependent visual properties
     -   defined as arguments in an `aes()` function
 -   Fixed properties use the same elements without data-dependence
     -   treated as "theme" even if not part of a theme layer
-    
+
+::: fragment
+
 Color `aes`thetic:
 
-```{.r}
+```{.r class="bigger"}
 geom_point(aes(x=length, y=width, color=species))
 ```
 
-Aesthetic color:
+:::
 
-```{.r}
+::: fragment
+
+*Aesthetic* color:
+
+```{.r class="bigger"}
 geom_point(aes(x=length, y=width), color="blue")
 ```
+
+:::
 
 ::: notes
 In ggplot, an aesthetic is a visual property dependent on data. They are defined as arguments in an aes() function.
@@ -557,19 +837,84 @@ GREAT QUESTION. I DO NOT KNOW.
 
 ## Spot the aesthetics (1/4)
 
+```{r}
+#| echo: false
+ggplot(mpg, aes(displ, hwy, color = class)) +
+  geom_point()
+```
+
+
+::: notes
+
 ![](../images/tidyverse/plots/aes1.png)
+
+Data-dependent: x & y axis, color
+
+Static: shape and size possibly?
+
+:::
+
 ## Spot the aesthetics (2/4)
 
+```{r}
+#| echo: false
+
+ggplot(mtcars, aes(factor(cyl), mpg, fill=factor(am))) +
+    geom_violin(linewidth=1, color="forestgreen", alpha=0.5)
+```
+
+
+::: notes
 ![](../images/tidyverse/plots/aes2.png)
+
+Data-dependent: x (continuous) & y (categorical) axis
+
+Static: color & fill
+
+:::
 
 ## Spot the aesthetics (3/4)
 
+```{r}
+#| echo: false
+ggplot(mtcars, aes(mpg, wt, shape = factor(cyl))) +
+  geom_point(aes(color = factor(cyl)), size = 4) +
+  geom_point(color = "grey90", size = 1.5)
+```
+
+
+
+
+::: notes
+
 ![](../images/tidyverse/plots/aes3.png)
+
+this one is kind of tricky...there's layering going on
+
+Data-dependent: x & y axis, color, shape
+
+Static: color, size (x2)
+
+:::
+
+
 
 
 ## Spot the aesthetics (4/4)
 
+```{r}
+#| echo: false
+
+ggplot(economics_long, aes(date, value01, linetype = variable, alpha=variable)) +
+  geom_line(key_glyph = "timeseries", 
+            linewidth = .9, 
+            color = "steelblue")
+```
+
+::: notes
 ![](../images/tidyverse/plots/aes4.png)
+
+:::
 
 ## Geometries
 
@@ -577,13 +922,51 @@ GREAT QUESTION. I DO NOT KNOW.
 -   required aes defined in an `aes()` function
 -   required & optional aesthetics depend on type of geom
 
--   Scatter plots: `geom_point()`
-    -   **Require** 2 continuous variables mapped to `x` and `y`
-    -   **Accept** additional continuous or categorical variables mapped to `color`, `shape`, `size`, etc.
--   Bar charts: `geom_bar()`
-    -   **Require** exactly 1 categorical variable mapped to `x`
-    -   **Accept** additional categorical variable mapped to `fill`
-    -   **Do not allow** a `y` mapping
+
+:::: row
+
+::: col-6
+
+::: {.overlap-box .accent1 .fragment}
+
+::: box-title
+Scatter plots: 
+:::
+
+::: box-content
+
+-   `geom_point()`
+-   **Require** 2 continuous variables mapped to `x` and `y`
+-   **Accept** continuous or categorical variables mapped to `color`, `shape`, `size`, etc.
+
+:::
+
+:::
+
+:::
+
+::: col-6
+
+::: {.overlap-box .fragment}
+
+::: box-title
+Bar charts: 
+:::
+
+::: box-content
+-   `geom_bar()`
+-   **Require** exactly 1 categorical variable mapped to `x`
+-   **Accept** categorical variable mapped to `fill`
+-   **Do not allow** a `y` mapping
+
+:::
+
+:::
+
+:::
+
+::::
+
 
 ::: notes
 
@@ -606,7 +989,7 @@ do not allow a y mapping**
 ![](../images/tidyverse/plots/geoms.png)
 
 
-## Geom reference
+## Geom reference (1/2)
 
 | **Geom Layer** | **Variables*** | **Description** | **Data Types** |
 | --- | --- | --- | --- |
@@ -615,6 +998,11 @@ do not allow a y mapping**
 | `geom_boxplot()` | 1-2 | Shows distribution summary with quartiles and outliers | Continuous y, Optional categorical x |
 | `geom_violin()` | 1-2 | Shows density estimate symmetrically | Continuous y, Categorical x |
 | `geom_bar()` | 1-2 | Creates bars with heights proportional to number of cases | Categorical x |
+
+## Geom reference (2/2)
+
+| **Geom Layer** | **Variables*** | **Description** | **Data Types** |
+| --- | --- | --- | --- |
 | `geom_point()` | 2 | Creates a scatter plot | Continuous x & y |
 | `geom_line()` | 2 | Connects observations in order | Continuous x & y |
 | `geom_smooth()` | 2 | Adds a smoothed conditional mean | Continuous x & y |
@@ -639,24 +1027,252 @@ The "right" visualization is the one that best communicates your message to your
 
 ## 1 Continuous Variable
 
--   `geom_histogram()`
--   `geom_density()`
--   `geom_boxplot()`
--   `geom_violin()`
+:::: row
 
-## 1 Categorical Variable
+::: {.col-6 .fragment}
 
--   `geom_bar()`
--   `geom_col()`
+`geom_histogram()`: binned distribution
+
+```{r}
+#| label: geom-histogram-example
+
+ggplot(iris, aes(x=Sepal.Length)) +
+  geom_histogram(binwidth = 0.5, fill="steelblue", color="white") +
+  labs(title="Histogram of Sepal Length",
+       x="Sepal Length (cm)",
+       y="Count")
+```
+
+
+:::
+
+::: {.col-6 .fragment}
+
+`geom_density()`: smoothed distribution
+
+```{r}
+#| label: geom-density-example
+
+ggplot(iris, aes(x=Sepal.Length)) +
+  geom_density(fill="steelblue", alpha=0.5) +
+  labs(title="Density Plot of Sepal Length",
+       x="Sepal Length (cm)",
+       y="Density")
+```
+
+
+:::
+
+::::
+
+## 1 Continuous & 1(+) Categorical Variable
+
+:::: row
+
+::: {.col-6 .fragment}
+
+`geom_boxplot()`: distribution with quartiles and outliers
+
+```{r}
+#| label: geom-boxplot-example
+
+ggplot(iris, aes(x=Species, y=Sepal.Length, fill=Species)) +
+  geom_boxplot() +
+  labs(title="Box Plot of Sepal Length by Species",
+       x="Species",
+       y="Sepal Length (cm)") 
+```
+
+
+:::
+
+::: {.col-6 .fragment}
+
+`geom_violin()`: distribution summary with density estimate
+
+```{r}
+#| label: geom-violin-example
+
+ggplot(iris, aes(x=Species, y=Sepal.Length, fill=Species)) +
+  geom_violin(alpha=0.5) +
+  labs(title="Violin Plot of Sepal Length by Species",
+       x="Species",
+       y="Sepal Length (cm)")
+```
+
+
+:::
+
+::::
+
+
+## 1-2 Categorical Variables {.code-2to3}
+
+:::: row
+
+::: {.col-4 .fragment}
+
+`geom_bar()`: count of observations in each category
+
+```{r}
+#| label: geom-bar-example
+
+ggplot(slice_sample(iris, n=50), aes(x=Species)) +
+    geom_bar(fill="steelblue", color="white") +
+    labs(title="Bar Chart of Iris Species",
+        x="Species",
+        y="Count")
+```
+
+
+
+:::
+
+::: {.col-8 .fragment}
+
+`geom_col()`: height of bars based on pre-summarized data
+
+```{r}
+#| label: geom-col-example
+#| output-location: column
+
+iris |>
+  pivot_longer(
+    cols = starts_with("Sepal"),
+    names_to = "Measurement",
+    values_to = "Value"
+  ) |>
+  group_by(Species, Measurement) |>
+  summarise(Value = mean(Value), 
+            .groups = "drop") |>
+  ggplot(aes(x = Species, y = Value, 
+             fill = Measurement)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Mean sepal measurements by species",
+    x = "Species",
+    y = "Mean (cm)"
+  )
+```
+
+
+:::
+
+::::
+
+::: notes
+
+**For comparing quantities across categories:**
+- `geom_bar()`: Use for counting occurrences in categorical data. Default behavior counts observations in each category[57].
+- `geom_col()`: Use when you already have pre-calculated values to plot (requires y-values)[56].
+
+
+THE DIFFERENCE between bar and col is in the default stat used for mapping. in bar, it's "count", in col it's "identity"
+
+BAR CHARTS ARE BAD FOR COMPARING MEANS. Use boxplots, violin plots, or dot plots instead, which show the distribution of the data and allow for more accurate comparisons of central tendency and variability across groups.
+
+Aside from not showing distribution, bar charts are necessarily filled from the bottom up, which gives an illusion of a meaningful baseline that something is rising above or below, "filling in" the area under the curve, which is not actually meaningful in most cases. This can lead to misinterpretation of the data, especially if the bars are not starting at zero or if the differences between groups are small.
+
+
+:::
 
 ## 2+ Continuous Variables
 
--   `geom_point()`
--   `geom_jitter()`
--   `geom_smooth()`
+:::: row
+
+::: {.col-6 .fragment}
+
+`geom_point()`: scatter plot
+
+```{r}
+#| label: geom-point-example
+
+ggplot(iris, aes(x=Sepal.Length, 
+                 y=Sepal.Width, color=Species)) +
+  geom_point() +
+  labs(title="Scatter Plot of Sepal Length vs Width",
+       x="Sepal Length (cm)",
+       y="Sepal Width (cm)")
+```
+
+
+:::
+
+::: {.col-6 .fragment}
+
+`geom_jitter()`: scatter plot with random noise
+
+`geom_smooth()`: smoothed mean (e.g., regression line)
+
+```{r}
+#| label: geom-jitter-example
+
+ggplot(iris, aes(x=Sepal.Length, 
+                 y=Sepal.Width, color=Species)) +
+  geom_jitter() +
+  geom_smooth(method="lm") +
+  labs(title="Jittered Scatter Plot with Regression Line",
+       x="Sepal Length (cm)",
+       y="Sepal Width (cm)")
+```
+
+
+:::
+
+::::
+
+::: notes
+
+the point of jittering is to reduce overlap, an alternative is using alpha to make points more transparent
+
+geom_smooth is rarely used alone. almost always layered over a geom_point() or geom_jitter() to show the relationship between the points and the smoothed line
+
+by default smooth uses method = "loess", which is a non-parametric local regression. method = "lm" fits a linear regression line, which is more interpretable and often more appropriate for simple relationships
+
+:::
 
 ## 2+ Ordered Variables
 
--   `geom_line()`
--   `geom_area()`
+:::: row
 
+::: {.col-6 .fragment}
+
+`geom_line()`: connects observations in order
+
+```{r}
+#| label: geom-line-example
+
+ggplot(economics_long, aes(x=date, y=value01, color=variable)) +
+  geom_line() +
+  labs(title="Time Series of Economic Indicators",
+       x="Date",
+       y="Value (normalized)")
+```
+
+::: 
+
+::: {.col-6 .fragment}
+
+`geom_area()`: line plot filled to x-axis
+
+```{r}
+#| label: geom-area-example
+
+ggplot(economics_long, aes(x=date, y=value01, fill=variable)) +
+  geom_area(alpha=0.6) +
+  labs(title="Area Plot of Economic Indicators",
+       x="Date",
+       y="Value (normalized)")
+```
+
+:::
+
+::::
+
+::: notes
+
+LINE GRAPHS ARE LESS USEFUL THAT YOU THINK. The idea is that each point is connected to the next in a meaningful way, but often the points are just measurements taken at regular intervals and the line is just a visual aid to show the overall trend. In those cases, a scatter plot or a smoothed line might be more appropriate.
+
+They are good for time because time always moves forward at a continuous rate. One point in time is always meaningfully connected to the next, and the line helps show the overall trend. But for other types of data, the line can be misleading if it implies a connection that isn't really there.
+
+:::
