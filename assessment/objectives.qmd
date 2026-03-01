@@ -673,4 +673,8 @@ Objective 12: **Basic reporting: plots and descriptives in Quarto**
 
 :::
 
+## Submission & Grading
 
+All core objectives projects should be submitted via GitHub pull requests and finalized for grading with the online [Submission Form](https://d2m-r.github.io/submit.html).
+
+**The final deadline to submit core objectives project is Friday, March 6th.** Requests for extensions should be made by contacting the TA and are granted/denied *entirely at the TA's discretion.*

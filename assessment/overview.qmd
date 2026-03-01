@@ -13,7 +13,7 @@ This course uses a **standards-based grading** system designed to support your s
 
 ### Self‑Pacing, Deadlines, and Workflow
 
-- **No fixed interim deadlines:** You may complete nearly all assignments on your own schedule within the quarter. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback).
+- **No fixed interim deadlines:** You may complete nearly all assignments on your own schedule within the quarter. There are fixed deadlines for creating and maintaining the schedule itself (the accountability plan), and there are several hard deadlines based around course logistics (e.g., end of quarter submissions, allowances for timely feedback). *See end-of-quarter timeline below for these exceptions.*
 - **Planning is part of the grade:** The Accountability & Reflection component ensures that you set a realistic plan and revisit it as your research and other commitments evolve.
 - **Early completion is allowed:** You can, in principle, earn all 80 points for core standards mastery and the integrative data project and another 10 points for enrichment early in the quarter. However, you must still maintain an active accountability plan and community engagement throughout the quarter.
 
@@ -89,3 +89,18 @@ You are in control of your grades, and your course grade will be transparent thr
     - Start contributing on Slack early and often to build engagement points over time, since it can become more stressful and confusing to jump in as the course progresses.
     - Ask for help from classmates, the instructor, and the TA before challenges become crises.
 
+## End-of-Quarter Deadlines
+
+1. **Week 9: Tuesday, March 3rd**
+    -   All IDP _drafts_ (for feedback) 
+    -   Requests for pass/fail or incomplete
+2. **Week 9: Friday, March 6th**
+    -   Core objectives projects 
+    -   Enrichment projects
+    -   Extension requests for IDPs
+    -   Finalized plans for pass/fail or incomplete
+3. **Week 10/Finals: Tuesday, March 10th**
+    -   **FINAL DEADLINE FOR INTEGRATIVE DATA PROJECTS**
+    -   Community engagement self-evaluation
+4. **Week 11: Tuesday, March 17th**
+    -   Final course grades submitted to registrar

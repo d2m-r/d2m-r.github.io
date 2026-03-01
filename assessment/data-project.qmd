@@ -59,11 +59,11 @@ Unless an assignment says otherwise or you receive advance permission from the p
 
 :::
 
+## Submission & Grading
 
+All integrative data projects should be submitted via GitHub pull requests and finalized for grading with the online [Submission Form](https://d2m-r.github.io/submit.html). IDPs should be contained in a private repo, with Dr. Dowling and TA(s) added as collaborators.
 
+**The final deadline to submit IDP _drafts_ for feedback is Tuesday, March 3rd.** Drafts submitted between Tuesday of Week 9 and the final submission deadline may receive feedback, time permitting. Drafts are graded in order of submission.
 
-<!-- ## Data Selection -->
-
-<!-- How to be sure your dataset meets the requirements for the project -->
-<!-- How to find a dataset if you don't have one already -->
+**The final deadline to submit _final IDPs_ is Tuesday, March 10th.** Requests for extensions should be made by contacting Dr. Dowling *by Friday, March 6th* and are granted/denied *entirely at Dr. Dowling's discretion.* Barring exceptional circumstances, extensions are granted in order of received requests.
 
