@@ -24,7 +24,7 @@ Text to appear before the accordion
 
 :::: accordion-item
 ::: {.accordion-header .titlebox}
-Week 8 | Data Reporting Essentials
+Week 8 | Data Reporting, Part 2
 :::
 ::::
 
@@ -47,7 +47,34 @@ Feb-24; Feb-26
 
 **Class plans:**
 
-**Primary learning objectives:**
+We're playing it by ear for the last two weeks due to the cancellation of D2M-R II next quarter. In general, I'm opening things up to the class to decide what would be most useful in two respects:
+
+1. What do you need to get what you wanted out of *this quarter's* material?
+2. What would be helpful to preview out of *next quarter's* materials?
+
+There is an ongoing poll on the Slack Announcements channel to vote on #2. Summarized:
+
+1. Data analysis: descriptive stats
+2. Data analysis: hypothesis testing
+3. Reporting: publication-quality tables
+4. Reporting: publication-quality ggplots
+5. Reporting: dynamic code and value reference
+6. Publication: more markdown & quarto features
+7. Publication: bibtex, inline citations, references pages
+8. Publication: apaquarto extension
+
+During week 8, we will *definitely*:
+
+1. Review ggplot2 basics
+2. Introduce overviews of common descriptive statistics and hypothesis testing
+
+**Primary learning objectives:** May vary, but most likely...
+
+-   (1) RStudio + Quarto workflow
+-   (7) Data manipulation with `dplyr` and pipelines
+-   (11) Factors with forcats
+-   (12) Basic reporting: plots and descriptives in Quarto
+
 
 :::
 ::::
@@ -65,8 +92,12 @@ Feb-24; Feb-26
 
 **Class Materials:**
 
-- [Slides]()
-- [Textbook Chapter]()
+-   Results memo
+    -   [Example results memo](https://github.com/d2m-r/student-hub/blob/main/demos/results-memo-penguins.qmd)
+    -   [Results memo template](https://github.com/d2m-r/student-hub/blob/main/demos/results-memo-template.qmd)
+-   Statistics walkthroughs
+    -   [Descriptive statistics](https://github.com/d2m-r/student-hub/blob/main/demos/stats-demo-descriptive.qmd)
+    -   [Predictive statistics](https://github.com/d2m-r/student-hub/blob/main/demos/stats-demo-predictive.qmd)
 
 <!-- software, tools, datasets, etc -->
 
@@ -91,9 +122,11 @@ Feb-24; Feb-26
 :::: {#todo-week-8 .accordion-collapse .collapse data-bs-parent="#week-8"}
 ::: accordion-body
 
-**Graded Submissions:**
+**Next steps:**
 
-**Recommended Exercises:**
+1. Complete core objectives projects, keeping in mind the goal you set for yourself in your accountability plan.
+2. **Submit your final accountability check-in** by next Monday, February 23.
+3. Submit a draft of your IDP soon to ensure timely feedback for another revision.
 
 :::
 ::::
@@ -112,7 +145,7 @@ Feb-24; Feb-26
 
 **Announcements:**
 
-**Reminders:**
+**D2M-R II will no longer be offered in Spring 2026.** This is due to an unfortunate, unavoidable, and unpredictable scheduling conflict that arose very recently. I'm making every effort to be available to any students who had intended to take D2M-R II next quarter, including (if there is interest) a working group for continued development of data reporting skills using R and Quarto.
 
 :::
 ::::

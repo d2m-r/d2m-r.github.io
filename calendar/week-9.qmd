@@ -47,7 +47,33 @@ Mar-3; Mar-5
 
 **Class plans:**
 
-**Primary learning objectives:**
+We're playing it by ear for the last two weeks due to the cancellation of D2M-R II next quarter. In general, I'm opening things up to the class to decide what would be most useful in two respects:
+
+1. What do you need to get what you wanted out of *this quarter's* material?
+2. What would be helpful to preview out of *next quarter's* materials?
+
+There is an ongoing poll on the Slack Announcements channel to vote on #2. Summarized:
+
+1. Data analysis: descriptive stats
+2. Data analysis: hypothesis testing
+3. Reporting: publication-quality tables
+4. Reporting: publication-quality ggplots
+5. Reporting: dynamic code and value reference
+6. Publication: more markdown & quarto features
+7. Publication: bibtex, inline citations, references pages
+8. Publication: apaquarto extension
+
+During week 9, we will *definitely*:
+
+1. Have dedicated time to work on IDPs, including large-group workshops, small group collaboration, and/or individual work time
+2. Introduce basics of BibTeX and citations
+3. Review end-of-quarter logistics and IDP expectations
+
+**Primary learning objectives:** May vary, but most likely...
+
+-   (1) RStudio + Quarto workflow
+-   (7) Data manipulation with `dplyr` and pipelines
+-   (12) Basic reporting: plots and descriptives in Quarto
 
 :::
 ::::
@@ -65,16 +91,22 @@ Mar-3; Mar-5
 
 **Class Materials:**
 
-- [Slides]()
-- [Textbook Chapter]()
+-   BibTeX and citation basics
+    -   Lecture
+    -   Demo
+-   [BibTeX References with Zotero & citr](https://d2m-r.github.io/materials/guides/bibtex-citr-zotero.html)
 
 <!-- software, tools, datasets, etc -->
 
 **Additional Resources:**
 
-- readings
-- cheat-sheets
-- tutorials
+-   [Better BibTeX for Zotero](https://retorque.re/zotero-better-bibtex/)
+    -   Requires Zotero 8 or above
+-   [Zotero](https://www.zotero.org/)
+-   [Quarto: Citations](https://quarto.org/docs/authoring/citations.html)
+-   [CSL Project](https://github.com/citation-style-language/styles)
+    - repo with .bib files for hundreds of citation style languages, including [APA7](https://github.com/citation-style-language/styles/blob/master/apa.csl) and several variations
+
 
 :::
 ::::
@@ -91,9 +123,33 @@ Mar-3; Mar-5
 :::: {#todo-week-9 .accordion-collapse .collapse data-bs-parent="#week-9"}
 ::: accordion-body
 
-**Graded Submissions:**
+**Next steps:**
 
-**Recommended Exercises:**
+It's the end of the quarter!! Here are the deadlines you need to know ("me"/"I" = Dr. Dowling):
+
+1. **Tuesday, March 3rd**
+    -   Deadline for IDP _drafts_ (for feedback) 
+        -   This is a bit of a soft deadline, and I will continue to grade drafts as they come in if I am able to. There is simply a practical limitation here, where I have a queue of projects to grade and a limited amount of time to do so. Consider also that you'll need to revise after my feedback.
+    -   Deadline to request pass/fail or incomplete
+        -   *If you have not already arranged a plan,* email me by Tuesday, then we discuss a plan over email and finalize by the end of the week. If we already made a plan earlier in the quarter, you're good to go.
+2. **Friday, March 6th**
+    -   Deadline for core objectives projects 
+        -   You may request extensions directly with *Qilong.* His ability to grant extensions depends on the number of projects that come in before the deadline, and **whether to grant an extension or not is entirely at Qilong's discretion.** Do not contact Dr. Dowling to request a core project extension.
+    -   Deadline for enrichment projects
+        -   You may request extensions by emailing *Dr. Dowling*. I will be as flexible with extensions as I am able. Basically this comes down to how many IDP drafts and final submissions are in my queue, which will take priority.
+        -   Submissions granted exceptions may not receive written comments.
+    -   Deadline to request extensions for IDPs
+        -   With the flexibility I offer for submissions across the board, I have to draw a line somewhere in order to ensure I can submit grades to the registrar on time. As always, I will grant as many requests as I can, but there will come a point where I simply cannot accommodate any more.
+    -   Deadline to finalize plans for pass/fail or incomplete
+        -   We will discuss what this means after you contact me earlier in the week.
+3. **Tuesday, March 10th**
+    -   **FINAL DEADLINE FOR INTEGRATIVE DATA PROJECTS**
+        -   Whatever version you have submitted at the end of the day will be the version that gets the final grade. If you submitted a late draft that I didn't get to and then submitted an update, I will grade the most recent version only.
+    -   Community engagement self-evaluation due
+        -   Canvas submission of a brief reflection and suggested grade out of 10 points. More detailed instructions on Canvas.
+4. **Tuesday, March 17th**
+    -   *All grades due to the registrar.* There's nothing you need to do as a student here, but I just want to be transparent about grading and extension timelines. Remember that instructional work for any given class is just one part of the responsibilities of your professors and TAs. We have other classes, research, advising, and admin work (on top of general being-a-human stuff), and even the most generous late policies have to have limits at the end of the quarter. Also, when you don't see grades posted until the last minute, it's never (well, rarely) because your professor wants to torture you. We are literally grading through the last minute.
+
 
 :::
 ::::
@@ -112,7 +168,9 @@ Mar-3; Mar-5
 
 **Announcements:**
 
-**Reminders:**
+**D2M-R II will no longer be offered in Spring 2026.** This is due to an unfortunate, unavoidable, and unpredictable scheduling conflict that arose very recently. I'm making every effort to be available to any students who had intended to take D2M-R II next quarter, including (if there is interest) a working group for continued development of data reporting skills using R and Quarto.
+
+If you are interested in joining a working group/workshop in the Spring to continue getting support on thesis projects or other ongoing work with R, RStudio, or other topics related to the class, please reach out to let me know what kind of group you'd be interested in.
 
 :::
 ::::

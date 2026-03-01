@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-2d6844ac1bd792b9f6361cb8f3ccdccf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f46a9910d6fab306d75e1b560ceb1ca9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -244,7 +244,40 @@ Text to appear before the accordion
 <div id="overview-week-9" class="accordion-collapse collapse" data-bs-parent="#week-9">
 <div class="accordion-body">
 <p><strong>Class plans:</strong></p>
-<p><strong>Primary learning objectives:</strong></p>
+<p>We’re playing it by ear for the last two weeks due to the cancellation of D2M-R II next quarter. In general, I’m opening things up to the class to decide what would be most useful in two respects:</p>
+<ol type="1">
+<li>What do you need to get what you wanted out of <em>this quarter’s</em> material?</li>
+<li>What would be helpful to preview out of <em>next quarter’s</em> materials?</li>
+</ol>
+<p>There is an ongoing poll on the Slack Announcements channel to vote on #2. Summarized:</p>
+<ol type="1">
+<li>Data analysis: descriptive stats</li>
+<li>Data analysis: hypothesis testing</li>
+<li>Reporting: publication-quality tables</li>
+<li>Reporting: publication-quality ggplots</li>
+<li>Reporting: dynamic code and value reference</li>
+<li>Publication: more markdown &amp; quarto features</li>
+<li>Publication: bibtex, inline citations, references pages</li>
+<li>Publication: apaquarto extension</li>
+</ol>
+<p>During week 9, we will <em>definitely</em>:</p>
+<ol type="1">
+<li>Have dedicated time to work on IDPs, including large-group workshops, small group collaboration, and/or individual work time</li>
+<li>Introduce basics of BibTeX and citations</li>
+<li>Review end-of-quarter logistics and IDP expectations</li>
+</ol>
+<p><strong>Primary learning objectives:</strong> May vary, but most likely…</p>
+<ul>
+<li><ol type="1">
+<li>RStudio + Quarto workflow</li>
+</ol></li>
+<li><ol start="7" type="1">
+<li>Data manipulation with <code>dplyr</code> and pipelines</li>
+</ol></li>
+<li><ol start="12" type="1">
+<li>Basic reporting: plots and descriptives in Quarto</li>
+</ol></li>
+</ul>
 </div>
 </div>
 </div>
@@ -258,15 +291,26 @@ Text to appear before the accordion
 <div class="accordion-body">
 <p><strong>Class Materials:</strong></p>
 <ul>
-<li><a href="">Slides</a></li>
-<li><a href="">Textbook Chapter</a></li>
+<li>BibTeX and citation basics
+<ul>
+<li>Lecture</li>
+<li>Demo</li>
+</ul></li>
+<li><a href="https://d2m-r.github.io/materials/guides/bibtex-citr-zotero.html">BibTeX References with Zotero &amp; citr</a></li>
 </ul>
 <!-- software, tools, datasets, etc -->
 <p><strong>Additional Resources:</strong></p>
 <ul>
-<li>readings</li>
-<li>cheat-sheets</li>
-<li>tutorials</li>
+<li><a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX for Zotero</a>
+<ul>
+<li>Requires Zotero 8 or above</li>
+</ul></li>
+<li><a href="https://www.zotero.org/">Zotero</a></li>
+<li><a href="https://quarto.org/docs/authoring/citations.html">Quarto: Citations</a></li>
+<li><a href="https://github.com/citation-style-language/styles">CSL Project</a>
+<ul>
+<li>repo with .bib files for hundreds of citation style languages, including <a href="https://github.com/citation-style-language/styles/blob/master/apa.csl">APA7</a> and several variations</li>
+</ul></li>
 </ul>
 </div>
 </div>
@@ -279,8 +323,56 @@ Text to appear before the accordion
 </div>
 <div id="todo-week-9" class="accordion-collapse collapse" data-bs-parent="#week-9">
 <div class="accordion-body">
-<p><strong>Graded Submissions:</strong></p>
-<p><strong>Recommended Exercises:</strong></p>
+<p><strong>Next steps:</strong></p>
+<p>It’s the end of the quarter!! Here are the deadlines you need to know (“me”/“I” = Dr.&nbsp;Dowling):</p>
+<ol type="1">
+<li><strong>Tuesday, March 3rd</strong>
+<ul>
+<li>Deadline for IDP <em>drafts</em> (for feedback)
+<ul>
+<li>This is a bit of a soft deadline, and I will continue to grade drafts as they come in if I am able to. There is simply a practical limitation here, where I have a queue of projects to grade and a limited amount of time to do so. Consider also that you’ll need to revise after my feedback.</li>
+</ul></li>
+<li>Deadline to request pass/fail or incomplete
+<ul>
+<li><em>If you have not already arranged a plan,</em> email me by Tuesday, then we discuss a plan over email and finalize by the end of the week. If we already made a plan earlier in the quarter, you’re good to go.</li>
+</ul></li>
+</ul></li>
+<li><strong>Friday, March 6th</strong>
+<ul>
+<li>Deadline for core objectives projects
+<ul>
+<li>You may request extensions directly with <em>Qilong.</em> His ability to grant extensions depends on the number of projects that come in before the deadline, and <strong>whether to grant an extension or not is entirely at Qilong’s discretion.</strong> Do not contact Dr.&nbsp;Dowling to request a core project extension.</li>
+</ul></li>
+<li>Deadline for enrichment projects
+<ul>
+<li>You may request extensions by emailing <em>Dr.&nbsp;Dowling</em>. I will be as flexible with extensions as I am able. Basically this comes down to how many IDP drafts and final submissions are in my queue, which will take priority.</li>
+<li>Submissions granted exceptions may not receive written comments.</li>
+</ul></li>
+<li>Deadline to request extensions for IDPs
+<ul>
+<li>With the flexibility I offer for submissions across the board, I have to draw a line somewhere in order to ensure I can submit grades to the registrar on time. As always, I will grant as many requests as I can, but there will come a point where I simply cannot accommodate any more.</li>
+</ul></li>
+<li>Deadline to finalize plans for pass/fail or incomplete
+<ul>
+<li>We will discuss what this means after you contact me earlier in the week.</li>
+</ul></li>
+</ul></li>
+<li><strong>Tuesday, March 10th</strong>
+<ul>
+<li><strong>FINAL DEADLINE FOR INTEGRATIVE DATA PROJECTS</strong>
+<ul>
+<li>Whatever version you have submitted at the end of the day will be the version that gets the final grade. If you submitted a late draft that I didn’t get to and then submitted an update, I will grade the most recent version only.</li>
+</ul></li>
+<li>Community engagement self-evaluation due
+<ul>
+<li>Canvas submission of a brief reflection and suggested grade out of 10 points. More detailed instructions on Canvas.</li>
+</ul></li>
+</ul></li>
+<li><strong>Tuesday, March 17th</strong>
+<ul>
+<li><em>All grades due to the registrar.</em> There’s nothing you need to do as a student here, but I just want to be transparent about grading and extension timelines. Remember that instructional work for any given class is just one part of the responsibilities of your professors and TAs. We have other classes, research, advising, and admin work (on top of general being-a-human stuff), and even the most generous late policies have to have limits at the end of the quarter. Also, when you don’t see grades posted until the last minute, it’s never (well, rarely) because your professor wants to torture you. We are literally grading through the last minute.</li>
+</ul></li>
+</ol>
 </div>
 </div>
 </div>
@@ -293,7 +385,8 @@ Text to appear before the accordion
 <div id="misc-week-9" class="accordion-collapse collapse" data-bs-parent="#week-9">
 <div class="accordion-body">
 <p><strong>Announcements:</strong></p>
-<p><strong>Reminders:</strong></p>
+<p><strong>D2M-R II will no longer be offered in Spring 2026.</strong> This is due to an unfortunate, unavoidable, and unpredictable scheduling conflict that arose very recently. I’m making every effort to be available to any students who had intended to take D2M-R II next quarter, including (if there is interest) a working group for continued development of data reporting skills using R and Quarto.</p>
+<p>If you are interested in joining a working group/workshop in the Spring to continue getting support on thesis projects or other ongoing work with R, RStudio, or other topics related to the class, please reach out to let me know what kind of group you’d be interested in.</p>
 </div>
 </div>
 </div>
