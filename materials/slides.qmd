@@ -19,8 +19,9 @@ format: html
     -   [Tidyverse Data Wrangling with Factors](../slides/Q1-W6_tidyverse-factors.html)
 -   Week 7 & 8: Data Reporting Essentials
     -   [Intro to Data Visualization](../slides/Q1-W7_reporting-1.html)
--   Week 9: *no slides*
+-   Week 9: [Dynamic References](https://uchicago.box.com/s/ih8ryg2egjcjqk827asvqotakn7uabcx)
+    -   *Note:* This is an archived version of powerpoint slides used in a previous quarter of D2M-R. The course was organized differently (most notably, being centered on using the apaquarto extension and covering all content in a single quarter). Some links and content may be out of date, and not all content will be applicable to D2M-R I students.
 
 ## D2M-R Quarter II Slides
 
-*D2M-R II slides will be available in Spring 2026.*
+~~*D2M-R II slides will be available in Spring 2026.*~~ D2M-R II will not be offered Spring 2026. Some materials may be published throughout the Spring and Summer. Others will not be available until Spring 2027. Refer to the course resources page for links to many excellent resources for learning plotting, analysis, and data reporting skills independently.

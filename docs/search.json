@@ -1831,21 +1831,21 @@
     "href": "materials/slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Week 1: Introduction to D2M-R and Problem Solving Strategies\nWeek 2:\n\nGit & GitHub\nRStudio & Quarto\n\nWeek 3: R Programming Language\nWeek 4: Welcome to the Tidyverse\nWeek 5: no slides\nWeek 6:\n\nTidyverse Data Wrangling with Strings\nTidyverse Data Wrangling with Factors\n\nWeek 7 & 8: Data Reporting Essentials\n\nIntro to Data Visualization\n\nWeek 9: no slides"
+    "text": "Week 1: Introduction to D2M-R and Problem Solving Strategies\nWeek 2:\n\nGit & GitHub\nRStudio & Quarto\n\nWeek 3: R Programming Language\nWeek 4: Welcome to the Tidyverse\nWeek 5: no slides\nWeek 6:\n\nTidyverse Data Wrangling with Strings\nTidyverse Data Wrangling with Factors\n\nWeek 7 & 8: Data Reporting Essentials\n\nIntro to Data Visualization\n\nWeek 9: Dynamic References\n\nNote: This is an archived version of powerpoint slides used in a previous quarter of D2M-R. The course was organized differently (most notably, being centered on using the apaquarto extension and covering all content in a single quarter). Some links and content may be out of date, and not all content will be applicable to D2M-R I students."
   },
   {
     "objectID": "materials/slides.html#d2m-r-quarter-i-slides",
     "href": "materials/slides.html#d2m-r-quarter-i-slides",
     "title": "Slides",
     "section": "",
-    "text": "Week 1: Introduction to D2M-R and Problem Solving Strategies\nWeek 2:\n\nGit & GitHub\nRStudio & Quarto\n\nWeek 3: R Programming Language\nWeek 4: Welcome to the Tidyverse\nWeek 5: no slides\nWeek 6:\n\nTidyverse Data Wrangling with Strings\nTidyverse Data Wrangling with Factors\n\nWeek 7 & 8: Data Reporting Essentials\n\nIntro to Data Visualization\n\nWeek 9: no slides"
+    "text": "Week 1: Introduction to D2M-R and Problem Solving Strategies\nWeek 2:\n\nGit & GitHub\nRStudio & Quarto\n\nWeek 3: R Programming Language\nWeek 4: Welcome to the Tidyverse\nWeek 5: no slides\nWeek 6:\n\nTidyverse Data Wrangling with Strings\nTidyverse Data Wrangling with Factors\n\nWeek 7 & 8: Data Reporting Essentials\n\nIntro to Data Visualization\n\nWeek 9: Dynamic References\n\nNote: This is an archived version of powerpoint slides used in a previous quarter of D2M-R. The course was organized differently (most notably, being centered on using the apaquarto extension and covering all content in a single quarter). Some links and content may be out of date, and not all content will be applicable to D2M-R I students."
   },
   {
     "objectID": "materials/slides.html#d2m-r-quarter-ii-slides",
     "href": "materials/slides.html#d2m-r-quarter-ii-slides",
     "title": "Slides",
     "section": "D2M-R Quarter II Slides",
-    "text": "D2M-R Quarter II Slides\nD2M-R II slides will be available in Spring 2026."
+    "text": "D2M-R Quarter II Slides\nD2M-R II slides will be available in Spring 2026. D2M-R II will not be offered Spring 2026. Some materials may be published throughout the Spring and Summer. Others will not be available until Spring 2027. Refer to the course resources page for links to many excellent resources for learning plotting, analysis, and data reporting skills independently."
   },
   {
     "objectID": "materials/finding-data.html",
