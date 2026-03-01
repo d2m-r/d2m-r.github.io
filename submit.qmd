@@ -1,8 +1,6 @@
 ---
 title: "Project Submission"
 format: html
-execute: 
-  enabled: false
 ---
 
 Use this form to submit work to the grading queue.
@@ -10,6 +8,10 @@ Creating a pull request on your repo and/or tagging instructors *will not* count
 
 See more about how to submit work for D2M-R in the [GitHub submissions guidelines](assessment/misc/gh-submissions.qmd).
 
+*Form not appearing? [Open in a new tab](https://nrdowling.notion.site/ebd//2ca7b904f28d80519a9ac671d8ef7b87).*
+
 ::: {#notion-frame style="border:2px solid black;" }
+
 <iframe src="https://nrdowling.notion.site/ebd//2ca7b904f28d80519a9ac671d8ef7b87" width="100%" height="600" frameborder="0" allowfullscreen />
+
 :::
